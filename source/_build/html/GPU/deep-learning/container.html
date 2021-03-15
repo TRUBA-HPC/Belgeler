@@ -1,0 +1,326 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="tr" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Container imajları ile çalışın &mdash; TRUBA Belgeler  belgelendirmesi</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Dizin" href="../../genindex.html" />
+    <link rel="search" title="Ara" href="../../search.html" />
+    <link rel="prev" title="Sanal ortam yaratarak çalışın" href="virtual-env.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> TRUBA Belgeler
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">GPU kaynaklarını kullanın</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Derin öğrenme modelleri gelişitirin</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="virtual-env.html">Sanal ortam yaratarak çalışın</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Container imajları ile çalışın</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sbatch-ile-kuyruga-is-gonderin">sbatch ile kuyruğa iş gönderin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#salloc-ile-jupyter-notebook-kullanarak-interaktif-calisin">salloc ile Jupyter Notebook kullanarak interaktif çalışın</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">TRUBA Belgeler</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">GPU kaynaklarını kullanın</a> &raquo;</li>
+        
+          <li><a href="index.html">Derin öğrenme modelleri gelişitirin</a> &raquo;</li>
+        
+      <li>Container imajları ile çalışın</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/GPU/deep-learning/container.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="container-imajlari-ile-calisin">
+<h1>Container imajları ile çalışın<a class="headerlink" href="#container-imajlari-ile-calisin" title="Bu başlık için kalıcı bağlantı">¶</a></h1>
+<p>TRUBA kuyruklarında Singularity kullanarak container imajları çalıştırabilirsiniz.</p>
+<div class="admonition note">
+<p class="admonition-title">Not</p>
+<p><a class="reference external" href="https://sylabs.io/guides/3.7/user-guide/introduction.html#introduction-to-singularity">Singularity</a>, karmaşık uygulamaların YBH kümelerinde taşınabilir ve tekrarlanabilir şekilde çalıştırılmasını sağlar. Singularity kullanarak</p>
+</div>
+<p>Başlamadan önce:</p>
+<ul class="simple">
+<li><p>Singularity kullanıcı kılavuzunun <a class="reference external" href="https://sylabs.io/guides/3.7/user-guide/gpu.html">GPU ile ilgili kısmını</a> inceleyin.</p></li>
+<li><p>levrek1 arayüz sunucusuna ssh ile bağlanın. <code class="docutils literal notranslate"><span class="pre">hostname</span></code> komutunun çıktısı <code class="docutils literal notranslate"><span class="pre">levrek1.yonetim</span></code> olmalıdır.</p></li>
+</ul>
+<div class="section" id="sbatch-ile-kuyruga-is-gonderin">
+<h2>sbatch ile kuyruğa iş gönderin<a class="headerlink" href="#sbatch-ile-kuyruga-is-gonderin" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<p>DockerHub’daki <a class="reference external" href="https://hub.docker.com/r/tensorflow/tensorflow">tensorflow imajlarından</a> uygun etiketli (gpu) birini seçin ve <a class="reference external" href="https://sylabs.io/guides/3.7/user-guide/cli/singularity_pull.html">singularity pull</a> kullanarak indirin:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>singularity pull docker://tensorflow/tensorflow:latest-gpu
+</pre></div>
+</div>
+<p>Örnek python kodu hazırlayın: <strong>print_gpu.py</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">list_physical_devices</span><span class="p">(</span><span class="s1">&#39;GPU&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Kuyruğa iş göndermek için bir <a class="reference external" href="https://slurm.schedmd.com/sbatch.html">slurm betiği</a> hazırlayın: <strong>tensorflow-gpu.sh</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH -p akya-ai        # Kuyruk adi: Uzerinde GPU olan kuyruk olmasina dikkat edin.</span>
+<span class="c1">#SBATCH -A [USERNAME]     # Kullanici adi</span>
+<span class="c1">#SBATCH -J print_gpu      # Gonderilen isin ismi</span>
+<span class="c1">#SBATCH -o print_gpu.out  # Ciktinin yazilacagi dosya adi</span>
+<span class="c1">#SBATCH --gres=gpu:1      # Kac GPU istiyorsunuz? Maksimum sayiyi kontrol edin.</span>
+<span class="c1">#SBATCH -N 1              # Gorev kac node&#39;da calisacak?</span>
+<span class="c1">#SBATCH -n 1              # Ayni gorevden kac adet calistirilacak?</span>
+<span class="c1">#SBATCH -c 8              # Her bir gorev kac cekirdek kullanacak?</span>
+<span class="c1">#SBATCH --time=0:01:00    # Sure siniri koyun.</span>
+
+<span class="c1"># NVIDIA GPU kullanmak icin --nv opsiyonunu kullanin.</span>
+singularity run --nv tensorflow_latest-gpu.sif python print_gpu.py
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Not</p>
+<p>Betikteki <code class="docutils literal notranslate"><span class="pre">[USERNAME]</span></code> yertutucusunu kullanıcı adınızla değiştirmeyi unutmayın.</p>
+</div>
+<p>İşi kuyruğa gönderin:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sbatch tensorflow-gpu.sh
+</pre></div>
+</div>
+<p>Kuyruğa gönderdiğiniz işleri kontrol edin:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>squeue
+</pre></div>
+</div>
+<p>İş bittikten sonra output dosyasını terminalde görüntüleyin:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat print_gpu.out
+</pre></div>
+</div>
+</div>
+<div class="section" id="salloc-ile-jupyter-notebook-kullanarak-interaktif-calisin">
+<h2>salloc ile Jupyter Notebook kullanarak interaktif çalışın<a class="headerlink" href="#salloc-ile-jupyter-notebook-kullanarak-interaktif-calisin" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<p>Jupyter ve gpu etiketli tensorflow docker imajlarından birini indirin:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>singularity pull docker://tensorflow/tensorflow:latest-gpu-jupyter
+</pre></div>
+</div>
+<p><a class="reference external" href="https://slurm.schedmd.com/salloc.html">salloc</a> kullanarak üzerinde GPU bulunan kuyruklardan tahsis talep edin:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>salloc -c <span class="m">8</span> --gres<span class="o">=</span>gpu:1 -p akya-ai --time <span class="m">1</span>:00:00
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Not</p>
+<p><code class="docutils literal notranslate"><span class="pre">--gres=gpu:1</span></code> parametresindeki rakamı daha fazla gpu talep etmek için değiştirebilirsiniz.</p>
+</div>
+<p>Talebinizin durumunu görüntüleyin.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>squeue
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Not</p>
+<p>Terminal çıktısında <code class="docutils literal notranslate"><span class="pre">[JOBID]</span></code>’yi not edin.</p>
+</div>
+<p>Talebiniz karşılanınca terminalde mesaj göreceksiniz: <code class="docutils literal notranslate"><span class="pre">salloc:</span> <span class="pre">Granted</span> <span class="pre">job</span> <span class="pre">allocation</span> <span class="pre">[JOBID]</span></code>. <code class="docutils literal notranslate"><span class="pre">squeue</span></code> komutunu kullandığınız zaman ST (state) R (running) olarak gözükür.</p>
+<p>Tahsis ettiğiniz kaynakta shell çalıştırın.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>srun --jobid<span class="o">=[</span>JOBID<span class="o">]</span> --pty /bin/bash
+</pre></div>
+</div>
+<p>Jupyter’in çalıştığı makinenin ismini öğrenin: <code class="docutils literal notranslate"><span class="pre">[HOSTNAME]</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hostname
+</pre></div>
+</div>
+<p>Çalışan imaja bağlamak için notebooks klasörü oluşturun:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir notebooks
+</pre></div>
+</div>
+<p>Jupyter notebook başlatın.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>singularity run --nv -B notebooks:/tf/notebooks tensorflow_latest-gpu-jupyter.sif
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Not</p>
+<p>URL’deki port numarasını <code class="docutils literal notranslate"><span class="pre">[PORT]</span></code> ve token’i not edin.</p>
+</div>
+<p>Jupyter Notebook’a erişmek için yeni bir terminal kullanarak ssh tüneli oluşturun:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh -N -L <span class="m">8888</span>:<span class="o">[</span>HOSTNAME<span class="o">]</span>:<span class="o">[</span>PORT<span class="o">]</span> <span class="o">[</span>levrek1 ip addr<span class="o">]</span>
+</pre></div>
+</div>
+<p>Web tarayıcınızda <a class="reference external" href="http://localhost:8888">http://localhost:8888</a> üzerinden Jupyter Notebook’a token kullanarak giriş yapabilirsiniz. <strong>notebooks</strong> klasöründe yaptığınız çalışmalar kalıcı olacaktır.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="virtual-env.html" class="btn btn-neutral float-left" title="Sanal ortam yaratarak çalışın" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Telif hakkı 2021, TUBITAK ULAKBIM.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
