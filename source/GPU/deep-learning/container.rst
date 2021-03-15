@@ -130,6 +130,6 @@ Jupyter Notebook'a erişmek için yeni bir terminal kullanarak ssh tüneli oluş
 
 .. code-block:: bash
 
-    ssh -N -L 8888:[HOSTNAME]:[PORT] [levrek1 ip addr]
+    ssh -N -L 8888:[HOSTNAME]:[PORT] 172.16.7.1
 
 Web tarayıcınızda http://localhost:8888 üzerinden Jupyter Notebook'a token kullanarak giriş yapabilirsiniz. **notebooks** klasöründe yaptığınız çalışmalar kalıcı olacaktır.
