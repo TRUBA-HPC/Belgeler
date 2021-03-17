@@ -1,5 +1,5 @@
 ===================================
-Derin öğrenme modelleri gelişitirin
+Derin öğrenme modelleri geliştirin
 ===================================
 
 .. toctree::
