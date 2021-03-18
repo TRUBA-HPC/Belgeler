@@ -35,7 +35,7 @@ Kuyruğa iş göndermek için bir `slurm betiği <https://slurm.schedmd.com/sbat
 .. code-block:: bash
 
     #!/bin/bash
-    #SBATCH -p akya-ai        # Kuyruk adi: Uzerinde GPU olan kuyruk olmasina dikkat edin.
+    #SBATCH -p akya-cuda        # Kuyruk adi: Uzerinde GPU olan kuyruk olmasina dikkat edin.
     #SBATCH -A [USERNAME]     # Kullanici adi
     #SBATCH -J print_gpu      # Gonderilen isin ismi
     #SBATCH -o print_gpu.out  # Ciktinin yazilacagi dosya adi
@@ -83,7 +83,7 @@ Jupyter ve gpu etiketli tensorflow docker imajlarından birini indirin:
 
 .. code-block:: bash
 
-    salloc -c 8 --gres=gpu:1 -p akya-ai --time 1:00:00
+    salloc -c 8 --gres=gpu:1 -p akya-cuda --time 1:00:00
 
 .. note::
     ``--gres=gpu:1`` parametresindeki rakamı daha fazla gpu talep etmek için değiştirebilirsiniz.
