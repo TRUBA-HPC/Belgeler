@@ -1,3 +1,5 @@
 .vscode
 build
 source/_build
+source/internal
+truba-belgeler.code-workspace

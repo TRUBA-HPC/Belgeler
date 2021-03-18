@@ -17,9 +17,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'TRUBA Belgeler'
-copyright = '2021, TUBITAK ULAKBIM'
-author = 'TUBITAK ULAKBIM'
+project = 'TRUBA Kullanıcı Dökümanları'
+copyright = '2021, TÜBİTAK ULAKBİM'
+author = 'TÜBİTAK ULAKBİM'
 
 
 # -- General configuration ---------------------------------------------------

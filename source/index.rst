@@ -10,4 +10,5 @@ TRUBA Kullanıcı Dökümanları
 .. toctree::
    :maxdepth: 2
    
+   internal/index.rst
    GPU/index.rst
