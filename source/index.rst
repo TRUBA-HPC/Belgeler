@@ -8,6 +8,21 @@ TRUBA Kullanıcı Dökümanları
 ===========================
 
 .. toctree::
+   :caption: Başlangıç
+   :maxdepth: 2
+
+.. toctree::
+   :caption: Nasıl yapılır?
    :maxdepth: 2
    
-   GPU/index.rst
+   how-to-guides/GPU/index.rst
+
+.. toctree::
+   :caption: TRUBA Mimarisi
+   :maxdepth: 2
+   
+
+.. toctree::
+   :caption: Eğitim materyalleri
+   :maxdepth: 2
+   
