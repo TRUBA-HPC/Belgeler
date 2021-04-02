@@ -2,7 +2,7 @@
 TRUBA'da LAMMPS Programı Nasıl Kullanılır?
 ==========================================
 
-Kendi kullanıcınıza kurduğunuz LAMMPS programını TRUBA sisteminde çalıştırmak için örnek iş betiği dosyası aşağıdaki gibidir:
+Bir önceki adımda anlatıdığı gibi (:ref:`LAMMPS kurulumu <lammps_install_truba>`) kendi kullanıcınıza kurduğunuz LAMMPS programını TRUBA sisteminde çalıştırmak için örnek iş betiği dosyası aşağıdaki gibidir:
 
 ------------------
 lammps_run.slurm

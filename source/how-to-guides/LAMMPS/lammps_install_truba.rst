@@ -28,7 +28,7 @@ Aşağıdaki komutları kullanarak Intel Parallel Studio'nun güncel versiyonunu
    module load centos7.3/comp/intel/PS2018-update2
    module load centos7.3/lib/openmpi/4.0.1-intel-PS2018
 
-LAMMPS modulü, LAMMPS kullanım kitapçığındaki standart `CMake prosedürünü <https://lammps.sandia.gov/doc/Build_cmake.html>`_ izler. Kurulumu CMake ile yapmak için ilgili modülü load ediniz:
+LAMMPS modülü, LAMMPS kullanım kitapçığındaki standart `CMake prosedürünü <https://lammps.sandia.gov/doc/Build_cmake.html>`_ izler. Kurulumu CMake ile yapmak için ilgili modülü load ediniz:
 
 .. code-block:: bash
 
@@ -43,13 +43,13 @@ Kurulum yapmak istediğiniz klasörün altında LAMMPS için derleme ortamını 
    mkdir build-intel18-openmpi4
    cd build-intel18-openmpi4
 
-C/C++ ve Fortran90 derleyicilerin tanımlamalarını yapınız:
+Bulunduğunuz klasör lammps_stable/build-intel18-openmpi4 olmalı. C/C++ ve Fortran90 derleyicilerin tanımlamalarını yapınız:
 
 .. code-block:: bash
 
    export CC=mpicc CXX=mpic++ FC=mpif90
 
-``-D PKG_NAME=value`` komutu ile kurulmasını istediğiniz paketleri belirtebilirsiniz. Paket ayrıntıları için LAMMPS kullanma kitapçığını inceleyebilirsiniz (https://lammps.sandia.gov/doc/Packages.html).
+``-D PKG_NAME=yes`` komutu ile kurulmasını istediğiniz paketleri belirtebilirsiniz. Paket ayrıntıları için LAMMPS kullanma kitapçığını inceleyebilirsiniz (https://lammps.sandia.gov/doc/Packages.html).
 
 Örnek olarak aşağıdaki kurulum komutuna MANYBODY, DIPOLE, PHONON, REAXC gibi kullanıcı paketleri eklenmiştir:
 
@@ -62,6 +62,7 @@ Daha sonrasında CMake ile build komutunu çalışarak LAMMPS’i derleyiniz:
 .. code-block:: bash
 
    cmake --build .
+   make install
 
 Yukarıdaki kurulum adımları tamamlandığında bulunduğunuz ``build-intel18-openmpi4`` dizininde ``bin`` klasörü altında çalıştırılabilir ``lmp`` dosyası yer alacaktır.
 
