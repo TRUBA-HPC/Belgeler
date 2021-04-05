@@ -12,7 +12,7 @@ Debian/Ubuntu Linux için:
 Sisteminizde bazı paketlerin kurulu olması gerekmektedir. Bunları
 
 .. code-block:: bash
- 
+
    sudo apt install <paket adları>
 
 ile kurabilirsiniz. Gerekli paket listesi aşağıdaki gibidir:
@@ -80,3 +80,11 @@ LAMMPS’ın derlenmesi için iki yöntem mevcuttur. Burada CMAKE yöntemini kul
 
    cmake --build . 
    make install
+
+-------------------
+Windows 10 için:
+-------------------
+
+Window subsystem for Linux (WSL)’yi etkinleştiriniz ve Ubuntu kurunuz. Daha sonra yukarıdaki Ubuntu talimatlarını uygulayınız. 
+
+* WSL kurulumu için  `<https://docs.microsoft.com/tr-tr/windows/wsl/install-win10>`_ adresinden yardım alabilirsiniz. 
