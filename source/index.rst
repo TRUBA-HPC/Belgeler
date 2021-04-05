@@ -33,5 +33,3 @@ TRUBA Kullanıcı Dökümanları
    
    education/big-data/index.rst
 
-
-test
