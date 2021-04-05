@@ -18,6 +18,7 @@ TRUBA Kullanıcı Dökümanları
    :maxdepth: 2
    
    how-to-guides/GPU/index.rst
+   how-to-guides/LAMMPS/index.rst
 
 .. toctree::
    :caption: TRUBA hakkında
@@ -32,5 +33,3 @@ TRUBA Kullanıcı Dökümanları
    
    education/big-data/index.rst
 
-
-test sevil
