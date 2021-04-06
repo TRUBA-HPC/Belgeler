@@ -1,6 +1,6 @@
-=============================
-Sanal ortam yaratarak çalışın
-=============================
+======================================
+Sanal ortam yaratarak nasıl çalışılır?
+======================================
 
 TRUBA altyapısında Anaconda kullanarak yarattığınız sanal ortama CUDA yükleyebilirsiniz.
 
@@ -14,9 +14,9 @@ Başlamadan önce:
 * NVIDIA GPU ile çalışmak için `uyumlu Python, Tensorflow, CUDA ve cuDNN versiyonlarını <https://www.tensorflow.org/install/source#gpu>`_ öğrenin.
 * sbatch ile `kuyruğa iş gönderme dökümanına <https://slurm.schedmd.com/sbatch.html>`_ bakın.
 
-----------------------------
-Ev dizininize Anaconda kurun
-----------------------------
+-----------------------------------
+Ev dizinine nasıl Anaconda kurulur?
+-----------------------------------
 
 .. note::
     Miniconda, Anaconda'nın yalnızca conda, Python, bağlı oldukları paketleri ve pip, zlib ve diğer birkaçını da içeren az sayıda başka yararlı paketi içeren küçük, önyükleme sürümüdür.
@@ -78,9 +78,9 @@ Conda kullanarak sanal ortam yaratın (tf-gpu) ve yarattığınız ortamı aktif
         conda create --name tf-gpu
         conda activate tf-gpu
 
--------------------------------------
-sbatch kullanarak kuyruğa iş gönderin
--------------------------------------
+----------------------------------------------
+sbatch kullanarak kuyruğa nasıl iş gönderilir?
+----------------------------------------------
 
 Örnek kod hazırlayın: **print_gpu.py**
 

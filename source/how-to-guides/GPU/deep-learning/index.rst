@@ -1,5 +1,5 @@
 ===========================================
-Nasıl derin öğrenme modelleri geliştiririm?
+Derin öğrenme modelleri nasıl geliştirilir?
 ===========================================
 
 .. toctree::
