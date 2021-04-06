@@ -1,6 +1,6 @@
-==============================
-Container imajları ile çalışın
-==============================
+======================================
+Konteyner imajlarıyla nasıl çalışılır?
+======================================
 
 TRUBA kuyruklarında Singularity kullanarak container imajları çalıştırabilirsiniz.
 
@@ -12,9 +12,9 @@ Başlamadan önce:
 * Singularity kullanıcı kılavuzunun `GPU ile ilgili kısmını <https://sylabs.io/guides/3.7/user-guide/gpu.html>`_ inceleyin.
 * levrek1 arayüz sunucusuna ssh ile bağlanın. ``hostname`` komutunun çıktısı ``levrek1.yonetim`` olmalıdır.
 
-------------------------------
-sbatch ile kuyruğa iş gönderin
-------------------------------
+---------------------------------------
+sbatch ile kuyruğa nasıl iş gönderilir?
+---------------------------------------
 
 DockerHub'daki `tensorflow imajlarından <https://hub.docker.com/r/tensorflow/tensorflow>`_ uygun etiketli (gpu) birini seçin ve `singularity pull <https://sylabs.io/guides/3.7/user-guide/cli/singularity_pull.html>`_ kullanarak indirin:
 
@@ -69,9 +69,9 @@ Kuyruğa gönderdiğiniz işleri kontrol edin:
 
     cat print_gpu.out
 
----------------------------------------------------------
-salloc ile Jupyter Notebook kullanarak interaktif çalışın
----------------------------------------------------------
+---------------------------------------------
+salloc ile nasıl Jupyter Notebook kullanılır?
+---------------------------------------------
 
 Jupyter ve gpu etiketli tensorflow docker imajlarından birini indirin:
 

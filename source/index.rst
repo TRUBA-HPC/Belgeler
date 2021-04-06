@@ -10,7 +10,7 @@ TRUBA Kullanıcı Dökümanları
 .. toctree::
    :caption: Başlangıç
    :maxdepth: 2
-   
+
    getting-started/index.rst
 
 .. toctree::
@@ -32,4 +32,3 @@ TRUBA Kullanıcı Dökümanları
    :maxdepth: 2
    
    education/big-data/index.rst
-
