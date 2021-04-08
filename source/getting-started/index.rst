@@ -9,10 +9,10 @@ Kullanıcı adı ve parola ile OpenVPN Erişimi
 
 OpenVPN bağlantısını, herhangi bir sertifikaya ihtiyaç olmadan, TRUBA kullanıcılarının sistem üzerindeki kullanıcı adları ve parolalarını kullanarak gerçekleştirmeleri mümkündür. Kullanıcı adı ve parola kullanarak farklı işletim sistemleri üzerinden bağlantı gerçekleştirmek için openvpn 'in ilgili sürümü indirilerek, ilgili yapılandırma dosyası OpenVPN kurulum dizinindeki config dizinine kopyalanmalıdır. OpenVPN'nin eski sürümleri kullanıcı adı - parola doğrulamasını desteklemediği için, daha önce yüklenmiş olan OpenVPN programlarının da güncellenmesi gerekmektedir. 
 
-* `OpenVPN genel yapılandırma dosyası </assets/openvpn-howto/config-files/truba-genel.ovpn>`__
-* `OpenVPN android yapılandırma dosyası </assets/openvpn-howto/config-files/truba-android.ovpn>`__
-* `OpenVPN iOS yapılandırma dosyası </assets/openvpn-howto/config-files/truba-ios.ovpn>`__
-* `Viscocity genel yapılandırma dosyası </assets/openvpn-howto/config-files/truba-viscosity.ovpn>`__
+* :download:`OpenVPN genel yapılandırma dosyası </assets/openvpn-howto/config-files/truba-genel.ovpn>`
+* :download:`OpenVPN Android yapılandırma dosyası </assets/openvpn-howto/config-files/truba-android.ovpn>`
+* :download:`OpenVPN iOS yapılandırma dosyası </assets/openvpn-howto/config-files/truba-ios.ovpn>`
+* :download:`Viscocity genel yapılandırma dosyası </assets/openvpn-howto/config-files/truba-viscosity.ovpn>`
 
 **Önemli:** Kaydedilen dosya adının ``.ovpn`` ile bitmesi önemlidir. Bazı sistemlerde ve web tarayıcılarda dosya adının sonuna txt eklenebilmektedir.
 
