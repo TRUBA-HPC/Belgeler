@@ -1,6 +1,6 @@
-==========================
-TRUBA'da LAMMPS Kurulumu
-==========================
+========================================
+TRUBA'da LAMMPS kurulumu nasıl yapılır?
+========================================
 TRUBA sisteminde kurulu olan programlar hakkındaki bilgiye
 
 .. code-block:: bash
