@@ -32,3 +32,6 @@ TRUBA Kullanıcı Dökümanları
    :maxdepth: 2
    
    education/big-data/index.rst
+
+
+Bugun bu dokumanları güncelliyoruz.
