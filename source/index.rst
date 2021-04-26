@@ -10,7 +10,7 @@ TRUBA Kullanıcı Dökümanları
 .. toctree::
    :caption: Başlangıç
    :maxdepth: 2
-   
+
    getting-started/index.rst
 
 .. toctree::
@@ -18,6 +18,7 @@ TRUBA Kullanıcı Dökümanları
    :maxdepth: 2
    
    how-to-guides/GPU/index.rst
+   how-to-guides/LAMMPS/index.rst
 
 .. toctree::
    :caption: TRUBA hakkında
@@ -31,8 +32,11 @@ TRUBA Kullanıcı Dökümanları
    :maxdepth: 2
    
    education/big-data/index.rst
+<<<<<<< HEAD
 
 
 test sevil
 
 test sevil 2
+=======
+>>>>>>> 5c705c7521fe64de91015d9de3511c62b2eeae22
