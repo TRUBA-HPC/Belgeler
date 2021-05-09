@@ -14,21 +14,21 @@ Kütüphaneler
 * GPU Hesaplamada kütüphane kullanımı, genelde kullanımı oldukça kolay olan ve iyi performans veren bir seçenek olarak yer almakta. **Örnek** : Thrust
 
 .. note::
-    Thrust kütüphanesi kullanılarak vektör toplama işlemi örneği için tıklayınız.
+    Thrust kütüphanesi kullanılarak vektör toplama işlemi örneği için :ref:`tıklayınız <thrust-vector-addition>`.
 
 Derleyici Direktifleri (Compiler Directives)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * Derleyici direktifleri kolay kullanım sunmaları ve taşınabilir kod oluşturmaları açısından tercih edilen başka bir yöntemdir. **Örnek** : OpenACC
 
 .. note::
-    OpenACC kullanılarak vektör toplama işlemi örneği için tıklayınız.
+    OpenACC kullanılarak vektör toplama işlemi örneği için :ref:`tıklayınız <openacc-vector-addition>`.
 
 Programlama Dilleri
 ^^^^^^^^^^^^^^^^^^^
-* Programlama dilleri sunduğu performans ve esneklik açısından GPU  programlamada tercih edilen bir başka yöntemdir. **Örnek** : CUDA
+* Programlama dilleri sunduğu performans ve esneklik açısından GPU programlamada tercih edilen bir başka yöntemdir. **Örnek** : CUDA C/C++
 
 .. note::
-    CUDA kullanılarak vektör toplama işlemi örneği için tıklayınız.
+    CUDA kullanılarak vektör toplama işlemi örneği için :ref:`tıklayınız <cuda-vector-addition>`.
 
 
 CUDA

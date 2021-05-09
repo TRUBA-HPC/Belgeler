@@ -21,7 +21,7 @@ Yukarıdaki görselde veri paralelleşmesi, vektör toplama işleminde gösteril
 
 CUDA Vektör Toplama Host Kodu 
 -----------------------------
-Önceki bölümde paralelleşme yapısından bahsettiğimiz vektör toplama örneğinin host kodunu yakından inceleyelim. Kodun tamamına ulaşmak için tıklayınız.
+Önceki bölümde paralelleşme yapısından bahsettiğimiz vektör toplama örneğinin host kodunu yakından inceleyelim. Kodun tamamına ulaşmak için :ref:`tıklayınız <cuda-vector-addition>`.
 
 .. code-block:: C++
 
