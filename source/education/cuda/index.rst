@@ -19,5 +19,5 @@ CUDA
    02_cuda_c_giris/02_02.rst
    02_cuda_c_giris/02_03.rst
    02_cuda_c_giris/02_04.rst
-   
-
+   02_cuda_c_giris/02_06.rst   
+   02_cuda_c_giris/02_lab_01.rst
