@@ -76,6 +76,7 @@ Bloklar hakkında başka bir önemli nokta ise farklı bloklar içerisinde bulun
    
    | Yukarıdaki görselde 3 boyutlu bir veriyi temsil etmek için kullanılmış 3 boyutlu blok yapısı gösterilmektedir.
 
+Ayrıca iş parçacığı blokları **şebeke (grid)** adı verilen bir yapı içerisinde gruplaşır. İş parçacığı ile blok arasındaki ilişki, blok ile **şebeke** arasında bulunur. 
 
 CUDA Çekirdeği
 ^^^^^^^^^^^^^^
