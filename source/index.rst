@@ -32,11 +32,3 @@ TRUBA Kullanıcı Dökümanları
    :maxdepth: 2
    
    education/big-data/index.rst
-<<<<<<< HEAD
-
-
-test sevil
-
-test sevil 2
-=======
->>>>>>> 5c705c7521fe64de91015d9de3511c62b2eeae22
