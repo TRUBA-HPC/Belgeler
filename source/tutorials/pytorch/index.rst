@@ -8,9 +8,9 @@ PyTorch
     intro_installation.rst
     tensors.rst
 
-- Logistic regression 
+- Lojistik regresyon 
 - Feed-forward neural network
 - Convolutional neural network 
-- Graph neural networks with PyTorch Geometric
-- Distributed training using torch.distributed
-- PyTorch C++ interface
+- Graph neural networks ile PyTorch Geometric
+- Kullanılarak dağıtılmış eğitim torch.distributed
+- PyTorch C++ arayüz 
