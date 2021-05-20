@@ -14,11 +14,18 @@ TRUBA Kullanıcı Dökümanları
    getting-started/index.rst
 
 .. toctree::
+   :caption: Öğreticiler 
+   :maxdepth: 2
+   
+   tutorials/pytorch/index.rst
+
+.. toctree::
    :caption: Nasıl yapılır?
    :maxdepth: 2
    
    how-to-guides/GPU/index.rst
    how-to-guides/LAMMPS/index.rst
+   tutorials/pytorch/index.rst
 
 .. toctree::
    :caption: TRUBA hakkında
@@ -32,3 +39,4 @@ TRUBA Kullanıcı Dökümanları
    :maxdepth: 2
    
    education/big-data/index.rst
+
