@@ -8,8 +8,8 @@
 
 *  Basit CUDA host (CPU) fonksiyonları hakkında bilgi sahibi olmak.
 
-   *  Device(GPU) bellek ayırma işlemi
-   *  Host-Device veri kopyalama işlemi
+   *  Cihaz(GPU) bellek ayırma işlemi
+   *  Host-Cihaz veri kopyalama işlemi
 
 
 Veri Paralelleşmesi
@@ -50,7 +50,7 @@ CUDA Vektör Toplama Host Kodu
         //BOLUM-3
     }
 
-BOLUM-1 kısmında öncelikle bellek ayırma işlemi ve toplanacak verilerin cihaz (GPU) 'a aktarımı sağlanmaktadır. Ardından BOLUM-2 kısmında vektör toplama işlemi yapan kernel çağrılıp toplama işlemi sağlanmaktadır. BOLUM-3 ise cihaz üzerinde yapılan hesaplamanın sonucunu host'a kopyalama işlemini ve ardından kullanılan belleğin temizlenme işlemini içermektedir.
+BOLUM-1 kısmında öncelikle bellek ayırma işlemi ve toplanacak verilerin cihaz (GPU) 'a aktarımı sağlanmaktadır. Ardından BOLUM-2 kısmında vektör toplama işlemi yapan çekirdek (kernel) çağrılıp toplama işlemi sağlanmaktadır. BOLUM-3 ise cihaz üzerinde yapılan hesaplamanın sonucunu host'a kopyalama işlemini ve ardından kullanılan belleğin temizlenme işlemini içermektedir.
 
 Genel bir CUDA programındaki akışı aşağıdaki görselle açıklanabilir.
 
@@ -58,8 +58,8 @@ Genel bir CUDA programındaki akışı aşağıdaki görselle açıklanabilir.
    :width: 500
 
 * Hesaplamada kullanılacak veri için yeterli bellek miktarı GPU belleği üzerinde ayrılır ve hesaplamada kullanılacak veri GPU belleğine kopyalanır.
-* GPU kernel'i ile gerekli hesaplama işlemini gerçekleştirir.
-* GPU belleğinde bulunan sonuç hosta kopyalanır ve GPU da bu hesaplama için kullanılmış bellek temizlenir. 
+* GPU çekirdeği (kernel) ile gerekli hesaplama işlemini gerçekleştirir.
+* GPU belleğinde bulunan sonuç hosta kopyalanır ve GPU'da bu hesaplama için kullanılmış bellek temizlenir. 
 
 
 CUDA Bellek Yapısı 
@@ -68,10 +68,10 @@ CUDA Bellek Yapısı
 .. image:: /assets/cuda/02/02/03.jpg
    :width: 600
 
-*  En basit haliyle CUDA bellek yapısını inceleyelim. Device üzerinde bulunan global bellek ve her ayrı iş parçacığının(thread) kendi bellekleri turuncu ile gösterilmiştir. 
+*  En basit haliyle CUDA bellek yapısını inceleyelim. Cihaz üzerinde bulunan evrensel(global) bellek ve her ayrı iş parçacığının(thread) kendi bellekleri turuncu ile gösterilmiştir. 
 
-   *  Host tarafında çalışan kod bu ortak belleğe ve iş parçacıklarının kendi belleklerine veri yazma ve veri okuma işlemlerini gerçekleştirebilir.
-   *  Cihaz tarafında çalışan kod ise ortak bellek alanında yazma ve okuma işlemleri gerçekleştirebilir.
+   *  Host tarafında çalışan kod bu evrensel belleğe ve iş parçacıklarının kendi belleklerine veri yazma ve veri okuma işlemlerini gerçekleştirebilir.
+   *  Cihaz tarafında çalışan kod ise evrensel bellek alanında yazma ve okuma işlemleri gerçekleştirebilir.
 
 İlerleyen bölümlerde CUDA bellek yapısının çok daha detaylı olarak inceleyeceğiz. Bellek yönetim fonskiyonlarından bahsetmeden önce bu iki ana noktayı bilmemiz yeterlidir.
 
@@ -81,7 +81,7 @@ CUDA Bellek Yönetim Fonksiyonları
 cudaMalloc()
 ^^^^^^^^^^^^
 
-cudaMalloc() fonksiyonu C malloc() fonksiyonu ile benzer şekilde, bellekte veri için yer açmamıza olanak sağlar. cudaMalloc() kullanılarak GPU üzerindeki **ortak bellekte** yer ayırma işlemini gerçekleştirilir. 
+cudaMalloc() fonksiyonu C malloc() fonksiyonu ile benzer şekilde, bellekte veri için yer açmamıza olanak sağlar. cudaMalloc() kullanılarak GPU üzerindeki **evrensel bellekte** yer ayırma işlemini gerçekleştirilir. 
 
 *  cudaMalloc() iki adet parametre kabul etmektedir: 
 
@@ -94,7 +94,7 @@ Bu noktada malloc() fonskiyonundan farklı olarak cudaMalloc() ayırdığı bell
 cudaFree()
 ^^^^^^^^^^
 
-cudaFree() fonksiyonu, C free() fonksiyonu ile benzer şekilde parametre olarak kabul ettiği alandaki veriyi temizlemek için kullanılır. cudaFree() parametre olarak aldığı adresi GPU ortak belleğinden silerek serbest bırakır.
+cudaFree() fonksiyonu, C free() fonksiyonu ile benzer şekilde parametre olarak kabul ettiği alandaki veriyi temizlemek için kullanılır. cudaFree() parametre olarak aldığı adresi GPU evrensel belleğinden silerek serbest bırakır.
 
 cudaMemcpy()
 ^^^^^^^^^^^^
@@ -143,7 +143,7 @@ CUDA bellek fonskiyonları ile ilgili şuana kadar öğrendiklerimizle birkaç b
         //BOLUM-3
     }
 
-*  Vektör toplama işleminin gerçekleşeceği iki vektör için cihaz üzerindeki ortak bellekte yeterli miktarda yer açılmıştır (cudaMalloc), ayrıca toplama işleminin sonucunda oluşacak vektör için de aynı boyutta bir yer ayırma işlemi yapılmıştır. (BOLUM-1)
+*  Vektör toplama işleminin gerçekleşeceği iki vektör için cihaz üzerindeki evrensel bellekte yeterli miktarda yer açılmıştır (cudaMalloc), ayrıca toplama işleminin sonucunda oluşacak vektör için de aynı boyutta bir yer ayırma işlemi yapılmıştır. (BOLUM-1)
 
 *  Ayrılan yere cudaMemcpy() ile toplama işleminde kullanılacak iki vektör kopyalanmıştır. Burada kopyalamanın yönü **cudaMemcpyHostToDevice** olarak verilmiştir. Çünkü toplama işlemi yapacağımız vektörler programın başında ana bellekte bulunmaktadır. (BOLUM-2)
 

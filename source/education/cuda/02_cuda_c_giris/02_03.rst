@@ -82,5 +82,5 @@ CUDA Çekirdeği
 
 CUDA **Çekirdeğinin** cihaz üzerinde çalışan kod parçası olduğundan bahsetmiştik ve CUDA paralel modelindeki iş parçağı hiyerarşisine değindik. Blok sayısı ve blok içerisindeki iş parçacığı sayısının ne olduğundan bahsettik. Bu noktada bir CUDA **çekirdeğinin** nasıl çağrıldığından da bahsetmek gerekmektedir.
 
-1 boyutlu blok yapısı kullanan bir CUDA programı için **çekirdek** çağırma işleminde önemli iki adet parametre bulunmaktadır. Kullanılacak blok sayısı ve her blok içerisindeki iş parçacığı sayısı. Sözdizimi olarak **çekirdekAdı<<<blokSayısı, threadSayısı>>>(parametreler)**. Örnek olarak daha önceki bölümlerde kullandığımız vektör toplama kodunu buraya  :ref:`tıklayarak <cuda-vector-addition>` inceleyebilirsiniz.
+1 boyutlu blok yapısı kullanan bir CUDA programı için **çekirdek** çağırma işleminde önemli iki adet parametre bulunmaktadır. Kullanılacak blok sayısı ve her blok içerisindeki iş parçacığı sayısı. Sözdizimi olarak **çekirdekAdı<<<blokSayısı, işParçacığıSayısı>>>(parametreler)**. Örnek olarak daha önceki bölümlerde kullandığımız vektör toplama kodunu buraya  :ref:`tıklayarak <cuda-vector-addition>` inceleyebilirsiniz.
 
