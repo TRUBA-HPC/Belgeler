@@ -38,7 +38,7 @@ CUDA C/C++, FORTRAN ve Python gibi çeşitli programlama dilleri ile kullanılab
 
 Bu dokümantasyon serisinde göreceğiniz CUDA kodlarında C/C++ kullanılmış olup, örnekler TRUBA üzerinde çalıştırılmıştır. 
 
-İlerleyen bölümlerde genel bir CUDA programında sıklıkla kullandığımız fonksiyonlardan ve program akışından bahsediyor olacağız ancak kullanacağımız terimler ve genel anlamda CUDA hakkında biraz daha bilgi sahibi olmak için aşağıdaki görseli inceleyelim.
+İlerleyen bölümlerde genel bir CUDA programında sıklıkla kullandığımız fonksiyonlardan ve program akışından bahsediyor olacağız ancak kullanacağımız terimler ve genel anlamda CUDA hakkında biraz daha bilgi sahibi olmak için CUDA programlarının derlenmesini gösteren aşağıdaki görseli inceleyelim.
 
 .. image:: /assets/cuda/02/01/01.jpg
    :width: 400
@@ -55,6 +55,6 @@ Görüldüğü üzere CUDA C programı NVIDIA nvcc derleyicisi ile derlenmesiyle
 
         nvcc -o program main.cu
 
-    kullanılabilir.
+    kullanılabilir. Daha detaylı olarak derleme işlemlerini ilerleyen bölümlerde inceleyceğiz.
 
          

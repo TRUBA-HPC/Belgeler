@@ -13,7 +13,7 @@ Heterojen hesaplama birden fazla hesaplama ünitesi kullanarak (bu uniteler birb
 
 İşlemciler (CPU) : Gecikme Süresi Hedefli Cihazlar
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-* İİşlemcilerin başlıca özelliklerinden ilki aritmetik ve mantıksal işlemleri gerçekleştiren Aritmetik Mantık Biriminin maksimum performans elde edilecek şekilde düzenlenmiş olmasıdır. İşlemcilerde güçlü Aritmetik Mantık Birimi, aritmetik ve mantık işlemlerinin düşük gecikme süreleri ile işlenmesini sağlar.
+* İşlemcilerin başlıca özelliklerinden ilki aritmetik ve mantıksal işlemleri gerçekleştiren Aritmetik Mantık Biriminin maksimum performans elde edilecek şekilde düzenlenmiş olmasıdır. İşlemcilerde güçlü Aritmetik Mantık Birimi, aritmetik ve mantık işlemlerinin düşük gecikme süreleri ile işlenmesini sağlar.
 * İşlemcilerin bir diğer özelliği ise büyük önbelleklere sahip olmalarıdır. Önbellek, uzun süren bellek işlemlerinin gecikme süresinde etkisini azaltmak için oldukça önemlidir.
 * İşlemcilerde kullanılan ve kontrol sinyallerini üreten kontrol ünitesi de oldukça gelişmiştir. Dallanma öngörüsü (branch prediction) ve Veri Yönlendirme (Data forwarding) yöntemleriyle dallanma ve veri gecikmelerini azaltmak için kullanılan başlıca yöntemlerdendir. 
 
