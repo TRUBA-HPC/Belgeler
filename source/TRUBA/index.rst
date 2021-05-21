@@ -11,3 +11,4 @@ TRUBA Mimarisi
     moduller.rst
     kutuphaneler.rst
     derleyiciler.rst
+    kullanicihesaplari.rst
