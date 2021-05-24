@@ -1,6 +1,6 @@
-------------------------------------
+==================================
 Mevcut uygulamalar ve kütüphaneler
-------------------------------------
+==================================
 
 TRUBA altyapısını kullanan araştırmacılarımızın kullanımına sunulmuş, farklı işletim sistemleri ve farklı işlemci mimarileri için derlenmiş, lisansı ücretsiz (açık kaynak kodlu) uygulamalar merkezi yazılım alanına (/truba/sw) yüklenmiş bulunmaktadır. Hiyerarşik olarak uygulamalar ``app``, kütüphaneler ``lib`` ve derleyiciler ``comp`` dizinine yerleştirilmiştir.
 
