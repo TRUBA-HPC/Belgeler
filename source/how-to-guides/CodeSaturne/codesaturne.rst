@@ -450,7 +450,7 @@ Kullanıcı-Tanımlı Fonksiyonlar
 
    .. container:: center
 
-      .. image:: /assets/codesaturne/images/species.PNG
+      .. image:: /assets/codesaturne/images/species.png
          :alt: image
 
 -  Akışkan özellikleri bölümünden akışkanın cinsine ve ortam koşullarına
