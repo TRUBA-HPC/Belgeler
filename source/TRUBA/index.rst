@@ -10,3 +10,4 @@
     kutuphaneler.rst
     derleyiciler.rst
     TRUBAtesekkur.rst
+    sss.rst
