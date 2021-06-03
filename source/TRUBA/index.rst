@@ -1,13 +1,14 @@
 
-.. toctree::
-    :maxdepth: 1
+======
+TRUBA
+======
 
-    TRUBAmimarisi.rst
-    kullanicihesaplari.rst
-    hesaplamakumeleri.rst
-    yazilimlar.rst
-    moduller.rst
-    kutuphaneler.rst
-    derleyiciler.rst
-    TRUBAtesekkur.rst
+.. toctree::
+    :maxdepth: 2
+
+    kullanici-el-kitabi/index.rst
+    ardeb-hsbvsb-2021.rst
+    ozelkurum-hsbvsb-2021.rst
+    duyurular/index.rst
     sss.rst
+    kullanici-el-kitabi/TRUBAtesekkur.rst

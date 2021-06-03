@@ -6,12 +6,14 @@ TRUBA hesaplama kaynaklarını araştırmacılar arasında verimli bir şekilde 
 
 TRUBA hesaplama kaynaklarının kullanıldığı tüm bilimsel çalışmalarda (makale, tez, bildiri, poster sunumu, v.b.) değerli araştırmacılarımızın aşağıdaki teşekkür ("acknowledgement") metinlerine yayınlarında yer vermeleri gerekmektedir.
 
+------------------------
 Türkçe Teşekkür Örneği
-^^^^^^^^^^^^^^^^^^^^^^^
+------------------------
 
 Bu araştırmada yer alan tüm/kısmi nümerik hesaplamalar TÜBİTAK ULAKBİM, Yüksek Başarım ve Grid Hesaplama Merkezi'nde (TRUBA kaynaklarında) gerçekleştirilmiştir.
 
+--------------------------
 İngilizce Teşekkür Örneği
-^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------
 
 The numerical calculations reported in this paper were fully/partially performed at TUBITAK ULAKBIM, High Performance and Grid Computing Center (TRUBA resources). 

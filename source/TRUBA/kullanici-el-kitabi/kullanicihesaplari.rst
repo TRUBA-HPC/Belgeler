@@ -65,6 +65,7 @@ Standart kullanıcı hesaplarına tanınan hesaplama kaynaklarının yeterli olm
 
 ARDEB'e proje başvurusunda bulunacak kullanıcılar proje başvurusu sırasında, yeni hesaplama donanımı alımı için fon talebinde bulunabilecekleri gibi, uygulamalarının TRUBA üzerinde çalışması mümkünse, hesaplarını TRUBA'da yürütmeyi tercih edebilirler.
 
+----------------------------
 TRUBA Kullanıcı Politikası
 ----------------------------
 

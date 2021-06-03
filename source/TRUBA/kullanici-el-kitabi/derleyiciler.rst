@@ -1,6 +1,6 @@
--------------
+=============
 Derleyiciler
--------------
+=============
 
 Mart 2018 itibari ile SMP kümesinde hizmet veren Orkinos1 sunucusu haric tüm hesap sunucularının büyük kısmında CentOS7.3 işletim sistemi yüklü bulunmaktadır. Orkinos1 sunucu üzerinde RedHat7.2 işletim sistemi bulunmaktadır.
 
