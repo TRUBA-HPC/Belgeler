@@ -7,3 +7,4 @@ Büyük Veri
 
     intro/index.rst
     sparkML/index.rst
+    hadoopMapReduce/index.rst
