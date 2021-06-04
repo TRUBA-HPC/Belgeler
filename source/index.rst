@@ -19,6 +19,7 @@ TRUBA Kullanıcı Dökümanları
    
    how-to-guides/GPU/index.rst
    how-to-guides/LAMMPS/index.rst
+   how-to-guides/VASP/index.rst
 
 .. toctree::
    :caption: TRUBA hakkında
