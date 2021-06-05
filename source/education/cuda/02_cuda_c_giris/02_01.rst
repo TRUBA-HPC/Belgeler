@@ -1,5 +1,5 @@
 ====================
-02_01 - CUDA C Giriş
+CUDA C Giriş
 ====================
 
 Öğrenim Hedefleri

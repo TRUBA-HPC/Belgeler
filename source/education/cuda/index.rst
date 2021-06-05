@@ -13,7 +13,7 @@ CUDA
 .. toctree::
    :maxdepth: 2
    :titlesonly:
-   :caption: CUDA C
+   :caption: CUDA C Giriş
 
    02_cuda_c_giris/02_01.rst
    02_cuda_c_giris/02_02.rst
@@ -21,3 +21,11 @@ CUDA
    02_cuda_c_giris/02_04.rst
    02_cuda_c_giris/02_06.rst   
    02_cuda_c_giris/02_lab_01.rst
+
+.. toctree::
+   :maxdepth: 2
+   :titlesonly:
+   :caption: CUDA C Giriş
+
+   03_cuda_par_model/03_01.rst
+
