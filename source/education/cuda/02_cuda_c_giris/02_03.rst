@@ -1,5 +1,5 @@
 ==============================================
-02_03 - CUDA Paralelleşmesi ve İş Parçacıkları
+CUDA Paralelleşmesi ve İş Parçacıkları
 ==============================================
 
 

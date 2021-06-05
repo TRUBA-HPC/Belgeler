@@ -1,5 +1,5 @@
 ====================================
-01_01 - Heterojen Hesaplamaya Giriş
+Heterojen Hesaplamaya Giriş
 ====================================
 
 Öğrenim Hedefleri

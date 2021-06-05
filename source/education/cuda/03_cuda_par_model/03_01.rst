@@ -1,5 +1,5 @@
 ============================================
-03_01 - CUDA Çekirdek ve SPMD Paralelleşmesi
+CUDA Çekirdek ve SPMD Paralelleşmesi
 ============================================
 
 
@@ -32,7 +32,7 @@ CUDA Paralelleşme modeli ve çekirdek kullanımını daha yakından incelemek i
 
 * **void sumVector(int *vec1, int* vec2, int* outVec, int size)** kısmından görebileceğiniz üzere çekirdek fonksiyonunun geri döndürdüğü bir değer yok. CUDA çekirdek fonksiyonlarının geri değer döndürmesini desteklemez. Bu yüzden CUDA çekirdeklerinizi yazarken *void* fonskiyonlar yazmalısınız. Bunun dışında parametreler toplanacak olan vektörler, sonuç vektörü ve vektörlerin büyüklüğü olarak sıralanabilir. Daha önceki bölümlerde CUDA bellek ayırma ve kopyalama işlemlerinden bahsetmiştik. Bu noktada gerekli ayırma ve kopyalama işlemlerinin yapıldığını varsayıyoruz. Yani çekirdek fonksiyonuna parametre olarak gelen adresler grafik işlem biriminin belleğinde bir adres olup toplanacak vektörlerin elemanları bu adrese kopyalanmıştır.
 
-*  Aynı işlemi yapan çok sayıda iş parçacığını kullanarak elde ettiğimiz paralelleşme modelimiz için hangi iş parçacığının hangi veri üzerinde çalışacağını belirlememiz gerekir. **int index = ..** kısmındaki hesaplama ile her bir iş parçacığı için evrensel indis bulunur ve toplama işleminin gerçekleştirileceği vektörlerin *index*. elemanı bu iş parçacığı tarafından gerçekleştirilir.
+*  Aynı işlemi yapan çok sayıda iş parçacığını kullanarak elde ettiğimiz paralelleşme modelimiz için hangi iş parçacığının hangi veri üzerinde çalışacağını belirlememiz gerekir. **int index = ..** kısmındaki hesaplama ile her bir iş parçacığı için **evrensel indis** bulunur ve toplama işleminin gerçekleştirileceği vektörlerin *index*. elemanı bu iş parçacığı tarafından gerçekleştirilir.
 
 *  İndis hesabından sonra görmüş olduğumuz **if(index<size)** kontrolü ise vektörlerin eleman sayısıdan fazla sayıda iş parçacığı bulunduğu koşulda yanlış/gereksiz bir toplama işlemi yapmamak için gereklidir.
 

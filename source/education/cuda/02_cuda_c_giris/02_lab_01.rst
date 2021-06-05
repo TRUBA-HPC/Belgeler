@@ -1,5 +1,5 @@
 =========================
-Lab 02_01 - Cihaz Sorgusu
+Lab 01 - Cihaz Sorgusu
 =========================
 
 Amaç
