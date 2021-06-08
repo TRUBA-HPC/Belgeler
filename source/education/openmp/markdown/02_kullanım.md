@@ -16,7 +16,7 @@
 - Bu dokümentasyon Truba'da yüklü olan `gcc` (C++ için `g++` olarak çağırılır.) derleyecisini kullanacaktır.
 
 
-- Trubaya giriş yaptığımızda yüklü `gcc` versiyonunun 4.8 olduğunu görüyoruz. (Haziran,2021 itibariyle)
+- Truba'ya giriş yaptığımızda yüklü `gcc` versiyonunun 4.8 olduğunu görüyoruz. (Haziran,2021 itibariyle)
 - Bu bazı örnekler için yeterli olmakla birlikte yeni C++ ve OpenMP özelliklerini desteklememekte. Dolayısıyla yeni bir versiyonun modül sistemiyle yüklenmesi önerilir.
 - `module avail gcc` komutu kullanılarak çevre modülü (İngilizce: environment module) sistemi kullanılarak yüklenebilecek `gcc` versiyonları görüntülenebilir.
 - Daha sonra `module load <gcc versiyonu>` şekline bu modüller yüklenebilir. 
