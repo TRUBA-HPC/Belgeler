@@ -168,3 +168,157 @@ Short, mid1, mid2 ve long kuyruklarını diğer kuyrukları kapsayacak üst kuyr
 *levrekv2-cuda, akya-cuda* ve *barbun-cuda* kuyruklarına gönderilen işlerin GPU kullanabilecek ve GPU talep eden işler olması zorunludur. Yeni düzenleme ile aynı GPU'u birden fazla iş tarafından kullanabilecektir. 
 
 
+*Single*
+^^^^^^^^
+
+Bu kuyruğa tek çekirdeklik (genelde seri) işler gönderilir. Toplam çekirdek sayısı 1 den fazla ise, iş başka bir kuyruğa gönderilmiş olsa bile, otomatik olarak bu kuyruğa yönlendirilir. 
+
+Bu kuyruktaki herhangi bir işin çalışma süresi en fazla 15 gündür. 15 Gün içinde tamamlanmamış işler sistem tarafından otomatik olarak sonlandırılmaktadır. 
+
+Bu kuyruk ile ilgili ayrıntılı bilgi
+
+.. code-block::
+
+   scontrol show partition=single 
+
+komutu ile görülebilir. 
+
+*Short*
+^^^^^^^
+
+Kısa sürmesi beklenen işler bu kuyruğa gönderilmelidir. Kuyruktaki işler en fazla 4 saat çalışır. 4 saat içerisinde tamamlanmamış işler sistem tarafından otomatik olarak sonlandırılmaktadır. 
+
+Bu kuyruk ile ilgili ayrıntılı bilgi 
+
+.. code-block::
+
+   scontrol show partition=short 
+
+komutu ile görülebilir. 
+
+*Mid1*
+^^^^^^
+
+Bu kuyrukta çalışma süresi en fazla 4 gün olan işler çalıştırılır. Bu süre içerisinde tamamlanmamış işler sistem tarafından otomatik olarak sonlandırılmaktadır.
+
+Bu kuyruk ile ilgili ayrıntılı bilgi 
+
+.. code-block::
+
+   scontrol show partition=mid1 
+
+komutu ile görülebilir. 
+
+*Mid2*
+^^^^^^
+
+Mid2 kuyruğundaki işlerin çalışma süresi en fazla 8 gündür. 8 gün içerisinde tamamlanmamış işler sistem tarafından otomatik olarak sonlandırılmaktadır. 
+
+Bu kuyruk ile ilgili ayrıntılı bilgi 
+
+.. code-block::
+
+   scontrol show partition=mid2 
+
+komutu ile görülebilir. 
+
+*Long*
+^^^^^^
+
+Long kuyruğundaki işlerin çalışma süresi en fazla 15 gündür. Bu süre zarfında tamamlanmamış işler sistem tarafından otomatik olarak sonlandırılmaktadır. 
+
+Bu kuyruk ile ilgili ayrıntılı bilgi 
+
+.. code-block::
+
+   scontrol show partition=long 
+
+komutu ile görülebilir. 
+
+*Interactive*
+^^^^^^^^^^^^^
+
+Interaktif işler çalıştırmak için kullanılır. İnteraktif işler ``Ondemand`` üzerinden ya da SSH terminalinden ``srun``, ``salloc`` ile kuyruğa gönderilebilir. Bu kuyrukta levrekv2 sunucuları kullanılmaktadır.
+
+*Smp*
+^^^^^
+
+*Smp* kuyruğunda sadece *orkinos1* sunucusu bulunmaktadır. Kuyruk rezervasyon yönetimi ile çalıştırılmaktadır. Bu kuyruğu kullanmak isteyen kullanıcıların e-posta ile başvuruda bulunarak sistemi ne kadar süre ile kullanacaklarını, ne kadar kaynağa (işlemci/bellek) ihtiyaç duyduklarını bildirmeleri, ve ihtiyaçlarına göre bir rezervasyon yaptırmaları gerekmektedir. 
+
+Bu kuyruk ile ilgili ayrıntılı bilgi 
+
+.. code-block::
+
+   scontrol show partition=smp 
+
+komutu ile görülebilir. 
+
+
+*Sardalya*
+^^^^^^^^^^
+
+Her bir sunucuda 28 çekirdek ve 256GB bellek bulunmaktadır. Kuyrukta işlerin en fazla çalışma süresi 15 gündür. Sistemin verimli kullanılabilmesi için gönderilecek işler en az 14 çekirdek talep etmelidir. Kuyruğa gönderilebilecek işlerin minimum çekirdek sayısı 4'tür. 
+
+İşlerde bellek sınırlaması kullanılmaktadır. Gönderilen işlerin sunucuların bellek sınırlamalarına uygun olarak gönderilmesi gerekmektedir. Bu kuyruk ile ilgili ayrıntılı bilgi 
+
+.. code-block::
+
+   scontrol show partition=sardalya 
+
+komutu ile görülebilir. 
+
+*Barbun*
+^^^^^^^^
+
+Her bir sunucuda 40 çekirdek ve 384GB bellek bulunmaktadır. Kuyrukta işlerin en fazla çalışma süresi 15 gündür. Sistemin verimli kullanılabilmesi için gönderilecek işler en az 20 çekirdek talep etmelidir. Kuyruğa gönderilebilecek işlerin minimum çekirdek sayısı 4'tür. 
+
+İşlerde bellek sınırlaması kullanılmaktadır. Gönderilen işlerin sunucuların bellek sınırlamalarına uygun olarak gönderilmesi gerekmektedir. Bu kuyruk ile ilgili ayrıntılı bilgi 
+
+.. code-block::
+
+   scontrol show partition=barbun 
+
+komutu ile görülebilir. 
+
+*Barbun-cuda*
+^^^^^^^^^^
+
+Her bir sunucuda 40 çekirdek ve 384GB bellek ayrıca 2'şer adet Nvidia P100 16GB GPU kartı bulunmaktadır. Kuyrukta işlerin en fazla çalışma süresi 15 gündür. Sistemin verimli kullanılabilmesi için gönderilecek işler en az 20 çekirdek ve 1 GPU talep etmelidir. 
+
+*Aynı sunucuda çalışmaya başlayan birden fazla iş aynı GPU kartını paylaşabilmektedir.*
+
+İşlerde bellek sınırlaması kullanılmaktadır. Gönderilen işlerin sunucuların bellek sınırlamalarına uygun olarak gönderilmesi gerekmektedir. Bu kuyruk ile ilgili ayrıntılı bilgi 
+
+.. code-block::
+
+   scontrol show partition=barbun-cuda 
+
+komutu ile görülebilir. 
+
+*Akya-cuda*
+^^^^^^^^^^
+
+Her bir sunucuda 40 çekirdek ve 384GB bellek ayrıca 4'er adet Nvidia V100 16GB GPU (NVLink) kartı bulunmaktadır. Kuyrukta işlerin en fazla çalışma süresi 15 gündür. Sistemin verimli kullanılabilmesi için gönderilecek işler en az 40 çekirdek ve 4 GPU talep etmelidir. Ayrica sistemlerde scratch olarak kullanilmak uzere 1.4TB NVME disk /tmp dizinine baglanmistir. Yuksek I/O gerekiren islerin /tmp dizininde calıştırılması gerekmektedir. 
+
+*Aynı sunucuda çalışmaya başlayan birden fazla iş aynı GPU kartını paylaşabilmektedir.*
+
+İşlerde bellek sınırlaması kullanılmaktadır. Gönderilen işlerin sunucuların bellek sınırlamalarına uygun olarak gönderilmesi gerekmektedir. Bu kuyruk ile ilgili ayrıntılı bilgi 
+
+.. code-block::
+
+   scontrol show partition=akya-cuda 
+
+komutu ile görülebilir. 
+
+*Hamsi*
+^^^^^^
+
+Her bir sunucuda 56 çekirdek ve 192GB bellek bulunmaktadır. Kuyrukta işlerin en fazla çalışma süresi 3 gündür. Sistemin verimli kullanılabilmesi için gönderilecek işler en az 28 çekirdek talep etmelidir. Kuyruğa gönderilebilecek işlerin minimum çekirdek sayısı 28'dir. 
+
+İşlerde bellek sınırlaması kullanılmaktadır. Gönderilen işlerin sunucuların bellek sınırlamalarına uygun olarak gönderilmesi gerekmektedir. Bu kuyruk ile ilgili ayrıntılı bilgi 
+
+.. code-block::
+
+   scontrol show partition=hamsi
+
+komutu ile görülebilir.
