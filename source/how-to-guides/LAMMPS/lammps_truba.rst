@@ -36,11 +36,10 @@ lammps_run.slurm
 
   exit
 
-Güncel LAMMPS versiyonu için benzer betik dosyasını ``/truba/sw/scripts`` klasörü altında bulabilirsiniz (lammps-4Feb21-openmpi-1.8.8-gcc.slurm). Çalıştığınız klasör içerisinde yukarıdaki betik dosyasını düzenleyip oluşturduktan sonra :
+Güncel LAMMPS versiyonu için benzer betik dosyasını ``/truba/sw/scripts`` klasörü altında bulabilirsiniz (lammps-4Feb21-openmpi-1.8.8-gcc.slurm). Çalıştığınız klasör içerisinde yukarıdaki betik dosyasını düzenleyip oluşturduktan sonra aşağıdaki adıma geçebilirsiniz.
 
 .. code-block:: bash
   
-   sbatch lammps_run.slurm
+   sbatch vasp_run.slurm
 
-komutu ile TRUBA sistemine işinizi gönderebilirsiniz.
-
+Komutu ile TRUBA sistemine işinizi gönderebilirsiniz.
