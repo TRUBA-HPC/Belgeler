@@ -15,7 +15,7 @@ TRUBA Kullanıcı Dökümanları
 
 .. toctree::
    :caption: Nasıl yapılır?
-   :maxdepth: 2
+   :maxdepth: 1
    
    how-to-guides/GPU/index.rst
    how-to-guides/LAMMPS/index.rst
@@ -23,13 +23,13 @@ TRUBA Kullanıcı Dökümanları
 
 .. toctree::
    :caption: TRUBA hakkında
-   :maxdepth: 2
+   :maxdepth: 1
 
    TRUBA/index.rst
    
 
 .. toctree::
    :caption: Eğitim materyalleri
-   :maxdepth: 2
+   :maxdepth: 1
    
    education/big-data/index.rst
