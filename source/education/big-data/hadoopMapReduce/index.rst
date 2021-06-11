@@ -97,19 +97,19 @@ kelime için ``<kelime, 1>`` ara çıktısını üretecektir. Örneğin,
 kullanılan blok boyutu gereğince girdi dosyamızın
 
 .. list-table::
-    :widths: 8 1 8 1 8  
+    :align: left
+    :widths: 5 5 5  
     
     * - elma armut elma erik
-      - \+
       - çilek elma armut armut
-      - \+
       - erik çilek erik erik
   
 şeklinde üç bloka ayrılacağını varsayarsak, çalıştırılacak üç Map
 görevi tarafından
 
 .. list-table::
-   :widths: 3 1 3 1 3  
+   :align: left
+   :widths: 5 5 5  
 
    * - <elma, 1>
        
@@ -118,7 +118,7 @@ görevi tarafından
        <elma, 1>
        
        <erik, 1>
-     - \+
+     
      - <çilek, 1>
        
        <elma, 1>
@@ -126,7 +126,7 @@ görevi tarafından
        <armut, 1>
        
        <armut, 1>
-     - \+
+     
      - <erik, 1>
        
        <çilek, 1>
@@ -143,12 +143,13 @@ tarafından meyve ismi anahtar alanına göre aşağıdaki şekilde
 gruplanıp sıralanabilecektir: 
 
 .. list-table::
-   :widths: 10 2 10
+   :align: left
+   :widths: 5 5
 
    * - <armut, List(1, 1, 1)>
        
        <çilek, List(1, 1)>
-     - \+
+     
      - <elma, List(1, 1, 1)>
        
        <erik, List(1, 1, 1, 1)>
@@ -171,12 +172,13 @@ ismine karşılık gelen 1 değerlerinin toplamını bulup aşağıdaki
 sonucu üretecektir: 
 
 .. list-table::
-   :widths: 6 2 6
+   :align: left
+   :widths: 5 5
 
    * - <armut, 3>
        
        <çilek, 2>
-     - \+
+     
      - <elma, 3>
        
        <erik, 4>
@@ -192,20 +194,21 @@ anında Combiner işlevine aktarılacak ve aşağıdaki sonuçlar elde
 edilecektir: 
 
 .. list-table::
-   :widths: 6 2 6 2 6  
+   :align: left
+   :widths: 5 5 5  
 
    * - <elma, 2>
        
        <armut, 1>
        
        <erik, 1>
-     - \+
+     
      - <çilek, 1>
        
        <elma, 1>
        
        <armut, 2>
-     - \+
+     
      - <erik, 3>
        
        <çilek, 1>
@@ -220,12 +223,13 @@ de, Reducer görevlerine iletilmek üzere şu sonuçlar elde edilmiş
 olacaktır:
 
 .. list-table::
-   :widths: 4 1 4
+   :align: left
+   :widths: 5 5
 
    * - <armut, List(1, 2)>
        
        <çilek, List(1, 1)>
-     - \+
+     
      - <elma, List(2, 1)>
        
        <erik, List(1, 3)>
@@ -234,12 +238,13 @@ Bu grupların Reduce görevleri tarafından işlenmesinin ardından,
 yukarıdaki ile aynı sonuçlar elde edilmiş olacaktır:
 
 .. list-table::
-   :widths: 6 2 6
+   :align: left
+   :widths: 5 5
 
    * - <armut, 3>
        
        <çilek, 2>
-     - \+
+     
      - <elma, 3>
        
        <erik, 4>
