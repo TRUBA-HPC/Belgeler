@@ -76,6 +76,8 @@ Akya sunucuları 24 adet Supermicro 1029GQ-TRT model sunuculardan oluşmaktadır
 ^^^^^^^^^^^^^^^^^^^^
 Hamsi sunucuları 144 adet INSPUR NF5180M5 sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adetIntel(R) Xeon(R) Gold 6258R CPU @ 2.70GHz işlemci ve toplam 56 adet işlemci çekirdeği bulunmaktadır. Sunucular birbirlerine HDR100 (100Gbps) Infiniband ağ kartları ile non-blocking yapıda bağlıdırlar. 
 
+.. _partitions:
+
 ----------------------
 Kuyruklar (partitions)
 ----------------------
@@ -266,6 +268,8 @@ Her bir sunucuda 28 çekirdek ve 256GB bellek bulunmaktadır. Kuyrukta işlerin 
 
 komutu ile görülebilir.
 
+.. _barbun-node:
+
 *Barbun*
 ^^^^^^^^
 
@@ -278,6 +282,8 @@ Her bir sunucuda 40 çekirdek ve 384GB bellek bulunmaktadır. Kuyrukta işlerin 
    scontrol show partition=barbun
 
 komutu ile görülebilir.
+
+.. _barbuncuda-node:
 
 *Barbun-cuda*
 ^^^^^^^^^^
@@ -308,6 +314,8 @@ Her bir sunucuda 40 çekirdek ve 384GB bellek ayrıca 4'er adet Nvidia V100 16GB
    scontrol show partition=akya-cuda
 
 komutu ile görülebilir.
+
+.. _hamsi-node:
 
 *Hamsi*
 ^^^^^^

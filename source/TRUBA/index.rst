@@ -10,5 +10,6 @@
     ardeb-hsbvsb-2021.rst
     ozelkurum-hsbvsb-2021.rst
     kullanici-el-kitabi/TRUBAtesekkur.rst
+    eurohpc-erisim/index.rst
 
 
