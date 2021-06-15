@@ -21,7 +21,7 @@ Aşağıda görmüş olduğunuz görsel küçük bir **çok boyutlu** CUDA çeki
 
 Görmüş olduğunuz gibi her bir **blok** içerisinde  (2 * 2 * 4 = 16 olacak şekilde) 16 adet **iş parçacığı** bulunmaktadır.
 
-Örnek: Çok Boyutlu CUDA Çekirdeği ile 2 Boyutlu Fotoğraf İşleme
+Örnek: Çok Boyutlu CUDA Çekirdeği ile 2 Boyutlu Resim İşleme
 ---------------------------------------------------------------
 Çok boyutlu CUDA çekirdeğinin genel yapısını bir önceki bölümde bir örnek üzerinden gördük. Bu örnekle çok boyutlu bir CUDA çekirdeğinin nasıl kullanıldığını inceleyeceğiz. 
 
@@ -30,7 +30,7 @@ Aşağıda görmüş olduğunuz 62 piksel (boy) x 76 piksel (en) boyutlarındak�
 .. image:: /assets/cuda/03/01/01.png
    :width: 600
 
-62 piksellik uzunluk için bize en az 4 adet alt alta dizilmiş **blok** gerekmektedir. 4 adet bu şekilde konfigüre edilmiş **blok** bize 64 piksellik bir uzunluk sağlar bu yüzden fotoğrafda da gözüktüğü gibi 2 adet satır hesaplamaya katılmayacaktır. Ayrıca 76 piksel uzunluğu için bize en az 5 adet yan yana dizilmiş **blok** gerekmektedir. Bu şekilde konfigüre edilmiş 5 blok bize 80 piksellik bir uzunluk sağlar bu yüzden 4 adet sütun hesaplamaya katılmayacaktır.
+62 piksellik uzunluk için bize en az 4 adet alt alta dizilmiş **blok** gerekmektedir. 4 adet bu şekilde konfigüre edilmiş **blok** bize 64 piksellik bir uzunluk sağlar bu yüzden resimde de gözüktüğü gibi 2 adet satır hesaplamaya katılmayacaktır. Ayrıca 76 piksel uzunluğu için bize en az 5 adet yan yana dizilmiş **blok** gerekmektedir. Bu şekilde konfigüre edilmiş 5 blok bize 80 piksellik bir uzunluk sağlar bu yüzden 4 adet sütun hesaplamaya katılmayacaktır.
 
 Satır Bazlı Sıralama
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -41,9 +41,9 @@ C/C++ dillerinde oluşturduğumuz 2 boyutlu yapılar, bellek üzerinde lineer ş
 
 Görüldüğü üzere 2 boyutlu yapıdaki satırlar bölünmeden arka arkaya eklenerek lineerize edilmiştir. Bu noktada **satır ve sütun indisleri** ile kaçıncı sırada bulunacağı hesaplanabilir. Örnek vermek gerekirse üçüncü satır ikinci eleman olan M\ :sub:`2,1`\, 2 boyutlu yapı lineerize edildikten sonra 10. sırada yer almaktadır (**indis** = 9). Bu **indisi** hesaplamak için **satır indisi** ile bir satırda kaç adet girdi olduğu çarpılıp üzerine **sütun indisi** eklenebilir. Örnek üzerinden ilerlersek  M\ :sub:`2,1`\  girdisinde **satır indisi** 2, **sütun indisi** 1 ve her satırda 4 adet girdi bulunmaktadır. Lineerize edildikten sonraki **indis** (2 * 4) + 1 = 9 şeklinde bulunabilir.
 
-2 Boyutlu Fotoğraf İşleme Çekirdek Ve Host Kodu
+2 Boyutlu Resim İşleme Çekirdek Ve Host Kodu
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Satır bazlı sıralama hakında bilgi sahibi olduktan sonra 2 boyutlu fotoğraf işleme örneğinin çekirdek ve host kodunu inceleyelim.
+Satır bazlı sıralama hakında bilgi sahibi olduktan sonra 2 boyutlu resim işleme örneğinin çekirdek ve host kodunu inceleyelim.
 
 CUDA Çekirdek Kodu
 ^^^^^^^^^^^^^^^^^^
@@ -60,7 +60,7 @@ CUDA Çekirdek Kodu
       // Eger satir indisi toplam gereken boy uzunlugundan kucuk ise ve
       // Eger sutun indisi toplam gereken en uzunlugundan kucuk ise hesaplama yapılacak 
       if ((Row < height) && (Col < width)) {
-         // 2 boyutlu fotograf tek boyutlu halde geldiginden ve 
+         // 2 boyutlu resim tek boyutlu halde geldiginden ve 
          // satır bazlı sıralama ile lineerize oldugundan oturu
          // indis hesaplaması yapılması gerekmektedir.
          d_Pout[Row*width+Col] = 2.0*d_Pin[Row*width+Col]; 
@@ -71,7 +71,7 @@ CUDA Host Kodu
 ^^^^^^^^^^^^^^
 .. code-block:: C++
 
-   // islenecek fotografin boyutları = m X n,
+   // islenecek resimin boyutları = m X n,
    // y ekseninde m piksel ve x ekseninde n piksel
    // d_Pin icin gerekli yer cihaz uzerinde ayrilmis ve cihaza kopyalama islemi tamanlanmis oldugu varsayilmakta
    // d_Pout icin gerekli yer cihaz uzerinde ayrilmis oldugu varsayilmakta
@@ -80,11 +80,11 @@ CUDA Host Kodu
    dim3 DimBlock(16, 16, 1); PictureKernel<<<DimGrid,DimBlock>>>(d_Pin, d_Pout, m, n);
    ...
 
-**Şebeke** boyutu daha önceki bölümlerde gördüğümüz gibi en az hesaplamayı başarıyla tamamlayacak kadar **blok** içermektedir. Örnek fotoğraf boyuları ile düşünürsek x ekseninde 5, y ekseninde 4 adet **blok** bulunduracak bir 2 boyutlu **şebeke** yapısı konfigüre edilmektedir. Ayrıca örneğin başında bahsettiğimiz gibi her bir **blok** 16x16 **iş parçacığı** içerecek şekilde 2 boyutlu bir yapıya sahiptir.
+**Şebeke** boyutu daha önceki bölümlerde gördüğümüz gibi en az hesaplamayı başarıyla tamamlayacak kadar **blok** içermektedir. Örnek resim boyuları ile düşünürsek x ekseninde 5, y ekseninde 4 adet **blok** bulunduracak bir 2 boyutlu **şebeke** yapısı konfigüre edilmektedir. Ayrıca örneğin başında bahsettiğimiz gibi her bir **blok** 16x16 **iş parçacığı** içerecek şekilde 2 boyutlu bir yapıya sahiptir.
 
-62x76 Piksellik Fotoğrafı 16x16 Bloklar ile Kaplamak
+62x76 Piksellik Resimi 16x16 Bloklar ile Kaplamak
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Blok içerisindeki program kontrol akışı düşünüldüğünde işlemiş olduğumuz örnekte 4 farklı bölge bulunmaktadır. Aşağıdaki fotoğrafda 1 ile işaretlenmiş bölgedeki **blokların** içindeki her **iş parçacığı** fotoğrafdaki bir piksele denk gelmektedir ve bu yüzden bu **bloklardaki** her bir **iş parçacığı** bir piksel işleyecektir. 2.bölgedeki **bloklar** ise 4 sütunda bulunan **iş parçacıklarına** fotoğraf üzerindeki herhangi bir piksel denk gelmemektedir. Bu **iş parçacıkları** hesaplama yapmayacaklardır. 3.bölgedeki **bloklardaki** 2 satırda bulunan **iş parçacıklarına** fotoğraf üzerinde herhangi bir piksel denk gelmemektedir. Bu **iş parçacıkları** hesaplama yapmayacaklardır. Son olarak 4.bölgedeki **bloklardaki** 4 sütun ve 2 satırda bulunan **iş parçacıklarına** fotoğraf üzerindeki herhangi bir piksel denk gelmemektedir. Bu yüzden bu **iş parçacıkları** hesaplama yapmayacaktır.
+Blok içerisindeki program kontrol akışı düşünüldüğünde işlemiş olduğumuz örnekte 4 farklı bölge bulunmaktadır. Aşağıdaki resimde 1 ile işaretlenmiş bölgedeki **blokların** içindeki her **iş parçacığı** resimdeki bir piksele denk gelmektedir ve bu yüzden bu **bloklardaki** her bir **iş parçacığı** bir piksel işleyecektir. 2.bölgedeki **bloklar** ise 4 sütunda bulunan **iş parçacıklarına** resim üzerindeki herhangi bir piksel denk gelmemektedir. Bu **iş parçacıkları** hesaplama yapmayacaklardır. 3.bölgedeki **bloklardaki** 2 satırda bulunan **iş parçacıklarına** resim üzerinde herhangi bir piksel denk gelmemektedir. Bu **iş parçacıkları** hesaplama yapmayacaklardır. Son olarak 4.bölgedeki **bloklardaki** 4 sütun ve 2 satırda bulunan **iş parçacıklarına** resim üzerindeki herhangi bir piksel denk gelmemektedir. Bu yüzden bu **iş parçacıkları** hesaplama yapmayacaktır.
 
 .. image:: /assets/cuda/03/01/01.png
    :width: 600
