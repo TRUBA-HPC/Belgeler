@@ -32,3 +32,4 @@ TRUBA Kullanıcı Dökümanları
    :maxdepth: 2
    
    education/big-data/index.rst
+   education/CFD/index.rst
