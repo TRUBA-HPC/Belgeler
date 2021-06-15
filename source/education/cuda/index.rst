@@ -23,9 +23,9 @@ CUDA
    02_cuda_c_giris/02_lab_01.rst
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 4
    :titlesonly:
-   :caption: CUDA C Giriş
+   :caption: CUDA Paralelleşme Modeli
 
    03_cuda_par_model/03_01.rst
-
+   03_cuda_par_model/03_02.rst
