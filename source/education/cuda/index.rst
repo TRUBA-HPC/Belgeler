@@ -31,3 +31,4 @@ CUDA
    03_cuda_par_model/03_02.rst
    03_cuda_par_model/03_03.rst
    03_cuda_par_model/03_04.rst
+   03_cuda_par_model/03_05.rst   
