@@ -1,0 +1,75 @@
+============================
+Örnek: Resim Bulanıklaştırma
+============================
+
+
+Öğrenim Hedefleri
+-----------------
+
+*  Çok boyutlu CUDA çekirdekleri hakkında, pratik bir örnek üzerinden daha detaylı şekilde bilgi sahibi olmak
+
+Örnek: Çok Boyutlu CUDA Çekirdeği Kullanarak Resimi Bulanıklaştırmak
+--------------------------------------------------------------------
+Bu bölümde çok boyutlu CUDA çekirdeği kullanarak renkli bir resimin bulanıklaştırılmasını inceleyeceğiz. Bu örnek önceki bölümde incelediğimiz renkli resimi gri tonlamaya çevirme örneğinden algoritma açısından biraz daha karmaşık olsa da temel olarak aynı mantığa sahiptir.
+
+.. image:: /assets/cuda/03/01/01.png
+   :width: 600
+
+Yukardaki görselde yapacağımız işlemin bir örneğini görebilirsiniz.
+
+Öncelikle her bir **iş parçacığı** sonuç resimindeki bir pikselin üretilmesinden sorumlu olacaktır. Her bir piksel için çevresindeki piksellerin RGB değerlerinin ortalaması alınarak RGB değeri belirlenecek ve böylece bulanıklaştırma işlemi tamamlanmış olacaktır. Bizim örneğimizde her bir piksel için her yönden (üst, alt, sağ ve sol) 4 piksel uzaklığındaki alanın ortalaması alınacaktır. Burada dikkat edilmesi gereken nokta resimin uçlarına yakın olan piksellerin 4 piksel uzaklığında başka bir piksel bulunmayabilir. Bu nedenle ortalaması alınacak alandaki piksellerin resimin dışına çıkmadığından emin olmalıyız. Aşağıda ortalama alma işlemi için örnek bir görsel bulunmaktadır.
+
+.. image:: /assets/cuda/03/01/01.png
+   :width: 600
+
+
+CUDA Çekirdek Kodu
+^^^^^^^^^^^^^^^^^^
+Çekirdek kodunun genel yapısını inceleyerek başlayalım.
+
+.. code-block:: C++
+
+   __global__ void blurKernel(unsigned char * in, unsigned char * out, int w, int h) 
+   {
+      int Col = blockIdx.x * blockDim.x + threadIdx.x; 
+      int Row = blockIdx.y * blockDim.y + threadIdx.y;
+      if (Col < w && Row < h) 
+      { 
+         ... // Çekirdeğin devamı
+      }
+   }
+
+Burada dikkat etmemiz gereken nokta, ilk 3 unsigned charın ilk pikselin sırasıyla R, G ve B değerlerini ifade ediyor olmasıdır. 2.pikselin ilk değerinin (R) indisi ise 3 olacaktır.
+
+Çekirdek kodunun tamanı üzerinden gerekli hesaplama kısmını da inceleyelim.
+
+.. code-block:: C++
+
+   __global__ void blurKernel(unsigned char * in, unsigned char * out, int w, int h) 
+   {
+      int Col = blockIdx.x * blockDim.x + threadIdx.x; 
+      int Row = blockIdx.y * blockDim.y + threadIdx.y;
+      if (Col < w && Row < h) 
+      {
+         int pixVal = 0;
+         int pixels = 0;
+         
+         // 2xBLUR_SIZE x 2xBLUR_SIZE boyutlarindaki kutunun ortalamasini al
+         for(int blurRow = -BLUR_SIZE; blurRow < BLUR_SIZE+1; ++blurRow) 
+         { 
+            for(int blurCol = -BLUR_SIZE; blurCol < BLUR_SIZE+1; ++blurCol) 
+            {
+               int curRow = Row + blurRow;
+               int curCol = Col + blurCol;
+               // Ortalama alma islemi icin kontrol ettigimiz pikselin resim sinirlari icerisinde oldugunu kontrol et
+               if(curRow > -1 && curRow < h && curCol > -1 && curCol < w) 
+               {
+                  pixVal += in[curRow * w + curCol];
+                  pixels++; // Toplam hesabina kac adet piksel dahil edildigini tut
+               }
+            } 
+         }   
+         // Sonuc pikselini hesapla ve yaz
+         out[Row * w + Col] = (unsigned char)(pixVal / pixels);
+      }
+   }
