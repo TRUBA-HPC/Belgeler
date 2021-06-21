@@ -86,19 +86,14 @@ TRUBA Kullanıcı Politikası
   * TRUBA kaynakları yasadışı herhangi bir amaçla, altyapının yönetimini ve güvenliğini tehdit edecek biçimde kullanılamaz. 
   
   * Sistemde bir güvenlik açığı gören yada böyle bir durumdan şüphelenen bir kullanıcının ivedilikle ``grid-teknik@ulakbim.gov.tr`` e-posta adresini kullanarak ya da 0 312 298 93 63 numaralı telefon numarasını arayarak altyapı işletenlerini uyarması gerekmektedir. 
-  
-  * Kullanıcının Grid kullanımında karşılaşabileceği sorunlardan TRUBA Oluşumu sorumlu değildir. Gridin sürekli çalışır durumda kalacağının, kullanıcının çalışma ortamına uygun olacağının ya da uygun hale getirileceğinin garantisi yoktur. 
-  
+    
   * Kayıtlı kullanıcı bilgisi, TRUBA tarafından sadece yönetsel, operasyonel, kaynakların kullanımında kimlik doğrulama ve yetkilendirme amaçlı kullanılabilir. Bu amaçlar dışında mevcut kimlik bilgilerinin gizli tutulması esastır. 
-  
-  * Kaynak sağlayıcılar, sanal organizasyonlar, Grid site yöneticileri yönetsel, operasyonel ya da güvenlik amaçlı olmak üzere Grid'e erişimi düzenlemede ya da sonlandırmada tam yetkilidir. Kullanıcılar bu düzenleme ya da değişiklikleri kabul etmek durumundadır. 
   
   * TRUBA altyapısı uygulama geliştirme amaçlı kullanılamaz. Kullanıcılar ancak geliştirilmiş uygulamalarını (arayüz makinasında ya da kendi makinalarında derlenmiş çalıştırılabilir iş ve veri dosyalarını) TRUBA altyapısına aktarabilirler. 
   
   * Kullanıcı arayüz makinasından konsol aracılığıyla gridi kullanan kullanıcılar programlarını arayüz makinasında derleyip derlenmiş çalıştırılabilir dosyalarını küme bilgisayara ya da Grid'e göndermek durumundadırlar. 
   
-  * P-GRADE web portalından Grid'i kullanan kullanıcılar derlenmiş çalıştırılabilir programlarını gride göndermek durumundadırlar.   
-  * TRUBA kullanıcılarının yürütmekte oldukları çalışma ve projeler yıllık olarak değerlendirilecektir. Bu değerlendirme sonucunda verimsiz ve yetersiz çalıştığı görülen kullanıcı/kullanıcı grubunun kullanım hakkı TRUBA Danışma Kurulu üyeleri tarafından değerlendirilerek gerek görülmesi halinde kapatılacaktır. 
+  * TRUBA kullanıcılarının yürütmekte oldukları çalışma ve projeler yıllık olarak değerlendirilecektir.
   
   * Kullanıcı kabul edilebilir kullanım politikasında yer alan şartlardan herhangi birine uymamasından doğacak sonuçlardan sorumludur. 
 
