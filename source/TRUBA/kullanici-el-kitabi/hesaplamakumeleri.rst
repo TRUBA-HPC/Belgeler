@@ -3,15 +3,13 @@
 Hesaplama Kümeleri
 ==================
 
-Şu an için TRUBA iki farklı küme ile (Lüfer ve Levrek kümesi) hizmet vermektedir. TRUBA-lufer kümesindeki donanımlar lüfer sunucularından ve mercan sunucularının bir kısmından oluşmaktadır. TRUBA-levrek kümesinde ise levrek sunucuları ve mercan sunucularının bir kısmı bulunmaktadır.
-
-TRUBA, her yıl yapılan düzenli alımlarla adım adım geliştirilmektedir. Yapılan her alım, zamanın ihtiyaçları ve mevcut sunucu teknolojileri gözüne alınarak yapıldığından, alınan hesaplama sunucularının modelleri, işlemcileri, çekirdek sayıları ve bellek miktarı farklılık göstermektedir.
+TRUBA hesaplama kümeleri, her yıl geliştirilerek güncellenmektedir. Yapılan her güncelleme, zamanın ihtiyaçları ve mevcut sunucu teknolojileri gözüne alınarak yapıldığından, alınan hesaplama sunucularının modelleri, işlemcileri, çekirdek sayıları ve bellek miktarı farklılık göstermektedir.
 	
 ----------------
 TRUBA Kaynakları
 ----------------
 
-2003 yılında faaliyete geçen TÜBİTAK ULAKBİM Yüksek Başarımlı ve Grid Hesaplama Merkezi'nde bulunan kaynaklar TRUBA'ya dahildir. Günümüzde TRUBA ~15.000 işlemci çekirdeği, 36 adet GPU ve toplamda 4PB Lustre dosya sistemi ile araştırmacılarımıza hizmet vermektedir.
+2003 yılında faaliyete geçen TÜBİTAK ULAKBİM Yüksek Başarımlı ve Grid Hesaplama Merkezi'nde bulunan kaynaklar TRUBA'ya dahildir. Günümüzde TRUBA >25.000 işlemci çekirdeği, 216 adet GPU ve toplamda 7.5PByte yapılandırılmış yüksek performanslı Lustre dosya sistemi ile araştırmacılarımıza hizmet vermektedir. 
 
 +----+------+------------------------------------------+----------------------------------+----------------------+---------------------------+-----------------------+--------------------------+
 |Yıl | Adet | CPU/GPU                                  | İşlemci Modeli                   | SPECfp_rate_base2006 | Teorik Gflops             | Bellek                | Tanımı                   |
@@ -42,11 +40,15 @@ TRUBA Kaynakları
 +----+------+------------------------------------------+----------------------------------+----------------------+---------------------------+-----------------------+--------------------------+
 |2017| 128  | 14 çekirdek x 2 CPU                      | Xeon E5-2690 v3 2.60GHz          | 970                  | 1164 Gflops               | 256 GB                | Sardalya Kümesi          |
 +----+------+------------------------------------------+----------------------------------+----------------------+---------------------------+-----------------------+--------------------------+
-|2018| 120  | 20 çekirdek x 2 CPU                      | Xeon Scalable 6148 2.40GHz       | 1400                 | 2048Gflops                | 384 GB                | Barbun Kümesi            |
+|2018| 120  | 20 çekirdek x 2 CPU                      | Xeon 6148 2.40GHz                | 1400                 | 2048Gflops                | 384 GB                | Barbun Kümesi            |
 +----+------+------------------------------------------+----------------------------------+----------------------+---------------------------+-----------------------+--------------------------+
-|2018| 24   | 20 çekirdek x 2CPU & 2xNvidia P100 GPU   | Xeon Scalable 6148 2.40GHz       | 1400                 | 2048Gflops & 9400Gflops   | 384 GB & 2x16 GB HBM2 | Barbun-Cuda Kümesi       |
+|2018| 24   | 20 çekirdek x 2CPU & 2xNvidia P100 GPU   | Xeon 6148 2.40GHz                | 1400                 | 2048Gflops & 9400Gflops   | 384 GB & 2x16 GB HBM2 | Barbun-Cuda Kümesi       |
 +----+------+------------------------------------------+----------------------------------+----------------------+---------------------------+-----------------------+--------------------------+
-|2021| 144  | 28 çekirdek x 2 CPU                      | Xeon(R) Gold 6258R CPU @ 2.70GHz | -                    | 3.234 Tflops              | 192 GB                | Hamsi Kümesi             |
+|2018| 24   | 20 çekirdek x 2CPU & 4xNvidia V100 GPU   | Xeon 6148 2.40GHz                | 1400                 | 2048Gflops & 4x7800Gflops   | 384 GB & 2x16 GB HBM | Akya-Cuda Kümesi        |
++----+------+------------------------------------------+----------------------------------+----------------------+---------------------------+-----------------------+--------------------------+
+|2021| 144  | 28 çekirdek x 2 CPU                      | Xeon 6258R 2.70GHz               | -                    | 3.234 Tflops              | 192 GB                | Hamsi Kümesi             |
++----+------+------------------------------------------+----------------------------------+----------------------+---------------------------+-----------------------+--------------------------+
+|2021| 9    | 64 çekirdek x 2CPU & 8xNvidia A100 GPU   | AMD 7742 2.24GHz                 | -                    | 4.600Gflops & 8x9600Gflops| 192 GB & 8x80GB HBM   | Palamut-Cuda Kümesi      |
 +----+------+------------------------------------------+----------------------------------+----------------------+---------------------------+-----------------------+--------------------------+
 
 ----------------------
@@ -72,9 +74,13 @@ Barbun sunucuları 120 adet Dell R640, Barbun-cuda sunucuları R740 model sunucu
 ^^^^^^^^^^^
 Akya sunucuları 24 adet Supermicro 1029GQ-TRT model sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet Intel Xeon Scalable Gold 6148 işlemci ve toplam 40 adet işlemci çekirdeği ve 4 adet Nvidia Tesla V100 (32GB, NVLink ) GPU karti bulunmaktadır. Sunucular birbirlerine EDR (100Gbps) Infiniband ağ kartları ile non-blocking yapıda bağlıdırlar.
 
-*Hamsi (Yeni Nesil)*
+*Hamsi (Yeni Küme)*
 ^^^^^^^^^^^^^^^^^^^^
 Hamsi sunucuları 144 adet INSPUR NF5180M5 sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adetIntel(R) Xeon(R) Gold 6258R CPU @ 2.70GHz işlemci ve toplam 56 adet işlemci çekirdeği bulunmaktadır. Sunucular birbirlerine HDR100 (100Gbps) Infiniband ağ kartları ile non-blocking yapıda bağlıdırlar. 
+
+*Palamut-cuda (Yeni Küme)*
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+Palamut sunucuları 9 adet HP Proliant XL675d Gen10 Plus model sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet AMD EPYC 7742 2.24GHz işlemci ve toplam 128 adet işlemci çekirdeği ve 8 adet Nvidia Tesla A100 (80GB, NVLink ) GPU karti bulunmaktadır. Sunucular birbirlerine 4xHDR (200Gbps) Infiniband ağ kartları ile non-blocking yapıda bağlıdırlar.
 
 ----------------------
 Kuyruklar (partitions)
@@ -97,75 +103,65 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
 |partitions   |   nodes      | #nodes  |  max run time | priority | min core | defMemPerCore  | maxMemPerCore |
 +=============+==============+=========+===============+==========+==========+================+===============+
-|  single     |  levrekv2    |     8   |  15-00:00:00  |  15000   |    1     |    9500MB      |    10500Mb    |
+|  single     |  levrekv2    |     8   |  15-00:00:00  |  2000    |    1     |    9500MB      |    10500MB    |
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  short      |  sardalya    |    99   |  00-04:00:00  |  20000   |    4     |    8000MB      |    9000Mb     |
+|  short      |  sardalya    |    99   |  00-04:00:00  |  3600    |    4     |    8000MB      |    9000MB     |
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  short      |  barbun      |   119   |  00-04:00:00  |  20000   |    4     |    8500MB      |    9500Mb     |
+|  short      |  barbun      |   119   |  00-04:00:00  |  3600    |    4     |    8500MB      |    9500MB     |
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  mid1       |  barbun      |   119   |  04-00:00:00  |  17500   |    4     |    8500MB      |    9500Mb     |
+|  mid1       |  barbun      |   119   |  04-00:00:00  |  3400    |    4     |    8500MB      |    9500MB     |
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  mid1       |  sardalya    |    99   |  04-00:00:00  |  17500   |    4     |    8000MB      |    9000Mb     |
+|  mid1       |  sardalya    |    99   |  04-00:00:00  |  3400    |    4     |    8000MB      |    9000MB     |
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  mid2       |  barbun      |   119   |  08-00:00:00  |  15000   |    4     |    8500MB      |    9500Mb     |
+|  mid2       |  barbun      |   119   |  08-00:00:00  |  3200    |    4     |    8500MB      |    9500MB     |
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  mid2       |  sardalya    |    99   |  08-00:00:00  |  15000   |    4     |    8000MB      |    9000Mb     |
+|  mid2       |  sardalya    |    99   |  08-00:00:00  |  3200    |    4     |    8000MB      |    9000MB     |
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  long       |  barbun      |   119   |  15-00:00:00  |  12500   |    4     |    8500MB      |    9500Mb     |
+|  long       |  barbun      |   119   |  15-00:00:00  |  3000    |    4     |    8500MB      |    9500MB     |
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  long       |  sardalya    |    99   |  15-00:00:00  |  12500   |    4     |    8000MB      |    9000Mb     |
+|  long       |  sardalya    |    99   |  15-00:00:00  |  3000    |    4     |    8000MB      |    9000MB     |
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-| levrekv2    |  levrekv2    |    48   |  15-00:00:00  |  12500   |    4     |    9500MB      |    10500Mb    |
+|  smp        |  orkinos     |     1   |  8-00:00:00   |  2800    |    4     |    17000MB     |    18400MB    |
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|levrekv2-cuda|  levrekv2    |    16   |  15-00:00:00  |  12500   |    4     |    9500MB      |    10500Mb    |
+|  sardalya   |  sardalya    |   100   |  15-00:00:00  |  2800    |    4     |    8000MB      |    9000MB     |
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  smp        |  orkinos     |     1   |  15-00:00:00  |  12500   |    4     |    17000MB     |    18400Mb    |
+|  barbun     |  barbun      |   119   |  15-00:00:00  |  2800    |    4     |    8500MB      |    9500MB     |
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  sardalya   |  sardalya    |   100   |  15-00:00:00  |  12500   |    4     |    8000MB      |    9000Mb     |
+| interactive |  levrekv2    |    14   |  15-00:00:00  |  3000    |    1     |    8000MB      |    9000MB    |
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  barbun     |  barbun      |   119   |  15-00:00:00  |  12500   |    4     |    8500MB      |    9500Mb     |
+| barbun-cuda |  barbun-cuda |    24   |  15-00:00:00  |  2800    |   20     |    8500MB      |    9500MB     |
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-| interactive |  levrekv2    |     3   |  15-00:00:00  |  12500   |    1     |    9500MB      |    10500Mb    |
+|  akya-cuda  |  akya-cuda   |    20   |  15-00:00:00  |  2800    |   20     |    8500MB      |    9500MB     |
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-| Barbun-cuda |  barbun-cuda |    24   |  15-00:00:00  |  12500   |   20     |    8500MB      |    9500Mb     |
+|  akya-ai    |  akya-cuda   |    4    |  15-00:00:00  |  2800    |   20     |    8500MB      |    9500MB     |
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  Akya-cuda  |  akya-cuda   |    20   |  15-00:00:00  |  12500   |   20     |    8500MB      |    9500Mb     |
+|  hamsi      |   hamsi      |   144   |  03-00:00:00  |  2800    |   28     |    3400MB      |    3400MB    |
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  Hamsi      |   hamsi      |   144   |  03-00:00:00  |  12500   |    1     |    3400MB      |    34000Mb    |
+| palamut-cuda|  palamut     |    9    |  03-00:00:00  |  2800    |   16     |    7500MB      |    8000MB     |
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  debug      |  barbun      |   119   |  00-00:15:00  |  12500   |    1     |    8500MB      |    9500Mb     |
+|  debug      |  barbun      |   119   |  00-00:15:00  |  65535   |    1     |    8500MB      |    9500Mb     |
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  debug      |  barbun-cuda |    24   |  00-00:15:00  |  12500   |   20     |    8500MB      |    9500Mb     |
+|  debug      |  barbun-cuda |    24   |  00-00:15:00  |  65535   |   20     |    8500MB      |    9500Mb     |
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  debug      |  akya-cuda   |    24   |  00-00:15:00  |  12500   |   10     |    8500MB      |    9500Mb     |
+|  debug      |  akya-cuda   |    24   |  00-00:15:00  |  65535   |   10     |    8500MB      |    9500Mb     |
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  debug      |  orkinos     |     1   |  00-00:15:00  |  12500   |    1     |    17000MB     |    18400Mb    |
+|  debug      |  orkinos     |     1   |  00-00:15:00  |  65535   |    1     |    17000MB     |    18400Mb    |
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  debug      |  sardalya    |    99   |  00-00:15:00  |  12500   |    1     |    8000MB      |    9000Mb     |
+|  debug      |  sardalya    |    99   |  00-00:15:00  |  65535   |    1     |    8000MB      |    9000Mb     |
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
 
-Short, mid1, mid2 ve long kuyrukları, CPU tabanlı tüm sunucuları kapsayacak şekilde genişletilmiştir. Kuyrukların önceliklerinde çeşitli ayarlamalar yapılmış, süresi daha kısa olan kuyruklara gönderilen işlerin öncelikleri arttırılarak kısa süreli kuyruklara gönderilecek işlerin daha kısa sürede başlaması sağlanmıştır. 
-
-  * Short kuyruğuna gönderilen işlerin önceliği 20000 
-  * Mid1 kuyruğuna gönderilen işlerin önceliği 17500 
-  * Mid2 kuyruğuna gönderilen işlerin önceliği 15000 
-  * Single kuyruğuna gönderilen işlerin önceliği 15000 
-  * Long ve geri kalan tüm kuyruklara gönderilen işlerin önceliği 12500 den başlamaktadır. 
-  
-Short, mid1, mid2 ve long kuyruklarını diğer kuyrukları kapsayacak üst kuyruklar olarak düşünülmelidir. Bu kuyruklara gönderilen işler levrek, levrekv2, sardalya ya da barbun sunucularının herhangi birinde çalışmaya başlayabilirler. Bu kuyruklara gönderilecek işlerin belli bir sunucu ailesi üzerinde çalışması isteniyorsa, betik dosyalarına aşağıdaki tanımlar yazılmalıdır: 
+Short, mid1, mid2 ve long kuyruklarını diğer kuyrukları kapsayacak üst kuyruklar olarak düşünülmelidir. Bu kuyruklara gönderilen işler sardalya ya da barbun sunucularının herhangi birinde çalışmaya başlayabilirler. Bu kuyruklara gönderilecek işlerin belli bir sunucu ailesi üzerinde çalışması isteniyorsa, betik dosyalarına aşağıdaki tanımlar yazılmalıdır: 
 
   * barbunlar için #SBATCH --constraint=barbun 
-  * levrekler için #SBATCH --constraint=levrek 
   * sardalyalar için #SBATCH --constraint=sardalya 
-  * levrekv2ler için #SBATCH --constraint=levrekv2 
 
 .. note::
 
    --contstraint parametresi yerine -C de kullanılabilir. 
 
-İşler önceden olduğu gibi üst kuyruklar yerine doğrudan mercan, levrekv2, sardalya ve barbun kuyruklarına gönderilebilir. 
+İşler önceden olduğu gibi üst kuyruklar yerine doğrudan sardalya, barbun veya diğer kuyruklarına gönderilebilir. 
 
-*levrekv2-cuda, akya-cuda* ve *barbun-cuda* kuyruklarına gönderilen işlerin GPU kullanabilecek ve GPU talep eden işler olması zorunludur. Yeni düzenleme ile aynı GPU'u birden fazla iş tarafından kullanabilecektir. 
+*barbun-cuda, akya-cuda* ve *palamut-cuda* kuyruklarına gönderilen işlerin GPU kullanabilecek ve GPU talep eden işler olması zorunludur. Yeni düzenleme ile aynı GPU'u birden fazla iş tarafından kullanabilecektir. 
 
 *Single*
 ^^^^^^^^^
@@ -299,8 +295,6 @@ komutu ile görülebilir.
 
 Her bir sunucuda 40 çekirdek ve 384GB bellek ayrıca 4'er adet Nvidia V100 16GB GPU (NVLink) kartı bulunmaktadır. Kuyrukta işlerin en fazla çalışma süresi 15 gündür. Sistemin verimli kullanılabilmesi için gönderilecek işler en az 40 çekirdek ve 4 GPU talep etmelidir. Ayrica sistemlerde scratch olarak kullanilmak uzere 1.4TB NVME disk /tmp dizinine baglanmistir. Yuksek I/O gerekiren islerin /tmp dizininde calıştırılması gerekmektedir.
 
-*Aynı sunucuda çalışmaya başlayan birden fazla iş aynı GPU kartını paylaşabilmektedir.*
-
 İşlerde bellek sınırlaması kullanılmaktadır. Gönderilen işlerin sunucuların bellek sınırlamalarına uygun olarak gönderilmesi gerekmektedir. Bu kuyruk ile ilgili ayrıntılı bilgi
 
 .. code-block::
@@ -319,5 +313,18 @@ Her bir sunucuda 56 çekirdek ve 192GB bellek bulunmaktadır. Kuyrukta işlerin 
 .. code-block::
 
    scontrol show partition=hamsi
+
+komutu ile görülebilir.
+
+*Palamut-cuda*
+^^^^^^^^^^^^^^
+
+Her bir sunucuda 128 çekirdek ve 1TB bellek ayrıca 8'er adet Nvidia A100 80GB GPU (NVLink) kartı bulunmaktadır. Kuyrukta işlerin en fazla çalışma süresi 3 gündür. Sistemin verimli kullanılabilmesi için gönderilecek işler en az 16 çekirdek ve 1 GPU talep etmelidir. Ayrica sistemlerde scratch olarak kullanilmak uzere 12TB NVME disk /localscratch dizinine baglanmistir. Yuksek I/O gerekiren islerin /localscratch dizininde calıştırılması gerekmektedir.
+
+İşlerde bellek sınırlaması kullanılmaktadır. Gönderilen işlerin sunucuların bellek sınırlamalarına uygun olarak gönderilmesi gerekmektedir. Bu kuyruk ile ilgili ayrıntılı bilgi
+
+.. code-block::
+
+   scontrol show partition=palamut-cuda
 
 komutu ile görülebilir.

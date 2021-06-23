@@ -36,43 +36,43 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 
 :ref:`16. En fazla ne kadar kaynak kullanabilirim? <target to ss16>`
 
-:ref:`17. Levrek kümesinden Lüfer kümesindeki dosyalarıma ulaşamıyorum <target to ss16>`
+:ref:`17. Tanımlanan hesaplama çekirdeği miktarını nereden öğrenebilirim? <target to ss17>`
 
-:ref:`18. Ev dizinime dosya kopyalayamıyorum, neden? <target to ss17>`
+:ref:`18. Ev dizinime dosya kopyalayamıyorum, neden? <target to ss18>`
 
-:ref:`19. Disk kotamı nasıl görürüm? <target to ss18>`
+:ref:`19. Disk kotamı nasıl görürüm? <target to ss19>`
 
-:ref:`20. Parolamı nasıl değiştiririm? <target to ss19>`
+:ref:`20. Parolamı nasıl değiştiririm? <target to ss20>`
 
-:ref:`21. Diğer kullanıcılar verilerime ulaşabiliyorlar, nasıl engellerim? <target to ss20>`
+:ref:`21. Diğer kullanıcılar verilerime ulaşabiliyorlar, nasıl engellerim? <target to ss21>`
 
-:ref:`22. İşlerim tekrar tekrar en baştan başlıyor neden? <target to ss21>`
+:ref:`22. İşlerim tekrar tekrar en baştan başlıyor neden? <target to ss22>`
 
-:ref:`23. Bazı e-postalarım cevaplanmıyor, e-postaları okuyor musunuz? <target to ss22>`
+:ref:`23. Bazı e-postalarım cevaplanmıyor, e-postaları okuyor musunuz? <target to ss23>`
 
-:ref:`24. Bana aynı anda XX çekirdeğe kadar kullanabileceğim söylenmesine rağmen işlerim kuyrukta neden çok uzun süreler boyunca bekliyor? <target to ss23>`
+:ref:`24. Bana aynı anda XX çekirdeğe kadar kullanabileceğim söylenmesine rağmen işlerim kuyrukta neden çok uzun süreler boyunca bekliyor? <target to ss24>`
 
-:ref:`25. Derlediğim uygulamalar bazı kuyruklarda çok hızlı çalışıyorken bazılarında çok yavaş çalışıyor,  neden? <target to ss24>`
+:ref:`25. Derlediğim uygulamalar bazı kuyruklarda çok hızlı çalışıyorken bazılarında çok yavaş çalışıyor,  neden? <target to ss25>`
 
-:ref:`26. Kullandığım parallel uygulamanın performansını arttırmak için ne yapabilirim? <target to ss25>`
+:ref:`26. Kullandığım parallel uygulamanın performansını arttırmak için ne yapabilirim? <target to ss26>`
 
-:ref:`27. Hangi tür paralelleştirme daha başarılıdır: MPI mı OpenMP mi? <target to ss26>`
+:ref:`27. Hangi tür paralelleştirme daha başarılıdır: MPI mı OpenMP mi? <target to ss27>`
 
-:ref:`28. Sistemde hazır bulunan uygulamalar benim derlediklerimden neden yavaş çalışıyor? <target to ss27>`
+:ref:`28. Sistemde hazır bulunan uygulamalar benim derlediklerimden neden yavaş çalışıyor? <target to ss28>`
 
-:ref:`29. Sunucu başına en fazla ne kadar GPU kullanabilirim? <target to ss28>`
+:ref:`29. Sunucu başına en fazla ne kadar GPU kullanabilirim? <target to ss29>`
 
-:ref:`30. Tek çekirdekli işlerim çalışıyorken çok çekirdekli/çok nodlu işlerim çalışmıyor, neden? <target to ss29>`
+:ref:`30. Tek çekirdekli işlerim çalışıyorken çok çekirdekli/çok nodlu işlerim çalışmıyor, neden? <target to ss30>`
 
-:ref:`31. Sistemde "IDLE" node ve "IDLE" çekirdek olmasına rağmen kuyrukta bekleyen işim neden çalışmıyor? <target to ss30>`
+:ref:`31. Sistemde "IDLE" node ve "IDLE" çekirdek olmasına rağmen kuyrukta bekleyen işim neden çalışmıyor? <target to ss31>`
 
-:ref:`32. İşlerin daha çabuk başlaması için ne yapabilirim? <target to ss31>`
+:ref:`32. İşlerin daha çabuk başlaması için ne yapabilirim? <target to ss32>`
 
-:ref:`33. Hesaplama kuyruklarındaki donanımların kullanım durumlarını nasıl görebilirim? <target to ss32>`
+:ref:`33. Hesaplama kuyruklarındaki donanımların kullanım durumlarını nasıl görebilirim? <target to ss33>`
 
-:ref:`34. İşlerim "AssociationJobLimit" veya "AssocGrpCPUMinutesLimit" uyarısı vererek başlamıyor, neden? <target to ss33>`
+:ref:`34. İşlerim "AssociationJobLimit" veya "AssocGrpCPUMinutesLimit" uyarısı vererek başlamıyor, neden? <target to ss34>`
 
-:ref:`35. Kullanıcı dizinlerinin başka kullanıcıların erişimine açılması (ACL) <target to ss34>`
+:ref:`35. Kullanıcı dizinlerinin başka kullanıcıların erişimine açılması (ACL) <target to ss35>`
 
 
 .. _target to ss1:
@@ -201,17 +201,17 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 
 16. En Fazla ne kadar kaynak kullanabilirim?
 
+	Lisans öğrencileri için kendi hesaplarına denemeleri için aynı anda 4 çekirdek kullanımı tanımlanmaktadır. Lisan öğrencileri danışmanlarının sahip olduğu proje hesaplarından faydalanabilirler. Yüksek lisans öğrencileri için tanımlanan en fazla çekirdek sayısı 40'dır. Doktora öğrencisi ve akademik kullanıcılar için tanımlanan en fazla çekirdek sayısı 160'dır. 
+	
 	Standart kullanıcılar için tanımlanan en fazla çekirdek sayısı 160'dır. Bu sayı sistemin yoğunluğuna göre dönem dönem arttırılabilir ya da azaltılabilir. Bu sayı kaynak olduğu müddetçe kullanılabilecek rakamı belirtir. Kullanıcının her an bu miktardaki kaynağı kullanabileceği garanti değildir.
 
 	ARDEB destekli bir proje kapsamında çalışmalarını yürüten bir kullanıcı, standart kullanıcı için tanımlanmış kaynak miktarının yanında, projesi kapsamında tanımlanmış miktar kadar kaynak kullanabilir.
 
 .. _target to ss17:
 
-17. Levrek kümesinden Lüfer kümesindeki dosyalarıma ulaşamıyorum
+17. Tanımlanan hesaplama çekirdeği miktarını nereden öğrenebilirim?
 
-	Levrek Kümesinde ev ve yazılım dizinleri /truba dosya sisteminde bulunmaktadır. Lüfer kümesinde ise ev dizinleri /home_palamut (/home_palamut1 /home_palamut2 ve /home_eymir) dosya sisteminde bulunmaktadır. Yakın tarihte tüm kullanıclar /truba dosya sistemine geçirilerek /home_palamut dosya sistemi kapatılacaktır. Bu nedenle kullanıcılar önemli verilerini ivedilikle /truba/home da bulunan ev dizinlerine taşımalıdırlar. Ancak Levrek kümesindeki hiç bir sunucunun eski dosya sistemine (/home_palamut) erişimi bulunmamaktadır. Tersi Lüfer kümesi için de geçerlidir. Ancak her iki kümenin de /truba_scratch dosya sistemine erişimi bulunmaktadır. Kullanıcılar taşımak istedikleri verilerini /truba_scratch 'deki dizinine atarak kümeler arasında dosya transferi yapabilir.
-
-	Bir diğer metod ise, lufer1 sunucusu ile levrek1 sunucusu arasında SCP komutu ile dosya kopyalamak olabilir.
+	Herhangi bir tanım değişikliği yapıldığı zaman portal.truba.gov.tr adresindeki duyurular kısmında paylaşılmaktadır.
 
 .. _target to ss18:
 
