@@ -10,14 +10,15 @@ Bu dokümanda *MPI* arayüzünün en önemli fonksiyonları işlenirken, genel o
     :maxdepth: 1
 
     Slurm-ile-MPI-kullanımı.rst
+    Seri-ve-Paralel-Bölgeler.rst
     MPI_Send-ve-MPI_Recv.rst
+    Engellemeyen-İletişim.rst
+    Toplu-Islemler.rst
 
 
 Yakında eklenecek eğitimler:
 
-* Seri ve Paralel Bölgeler
 * Paralel Paradigmalar ve Paralel Algoritmalar
-* Engellemeyen İletişim
 * Toplu İşlemler
 * Özel Veri Yapıları
 * Sanal Topolojiler

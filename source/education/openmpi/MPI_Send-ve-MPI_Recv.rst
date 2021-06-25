@@ -58,7 +58,7 @@ MPI_Recv
 
 **datatype:** alınacak verinin tipi
 
-**destination:** verilerin alınacağı programın sıra numarası
+**source:** verilerin alınacağı programın sıra numarası
 
 **tag:** bir mesaj etiketi (integer)
 
