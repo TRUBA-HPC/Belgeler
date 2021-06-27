@@ -9,8 +9,8 @@ PyTorch'un ana yapı taşı tensörleridir. Ölçekleyici değerlerinden n boyut
 
 .. Creating tensors
 
-Tensörler oluşturma 
--------------------
+Tensörler oluşturma
+--------------------
 
 .. From existing data
 
@@ -133,7 +133,7 @@ Mevcut tensörler gibi tensörler yaratılabilir. Bu, değerleri, şekli ve veri
    all_sevens = torch.zeros_like(rand_nor) # aynı şekil ve veri türü 
    all_ones = torch.ones_like(rand_nor, dtype=torch.float64) # aynı şekil, farklı  
                                                                # veri türü
-   exact_copy = rand_nor.clone().detach() # aynı şekil, farklı veri türü 
+   exact_copy = rand_nor.clone().detach() # aynı tensör
 
    print(f"Orijinal tensör \n{rand_nor}\n")
    print(f"Aynı şekil ve veri türü \n{all_sevens}\n")
@@ -167,15 +167,6 @@ Mevcut tensörler gibi tensörler yaratılabilir. Bu, değerleri, şekli ve veri
 
 Tensör manipülasyonu 
 --------------------
-
-.. In-place and out-of-place operations
-
-Yerinde ve yerinde olmayan operasyonlar 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. Generally, all functions are out-of-place meaning that a call to an operation will not modify the operands and will return a new data structure. However, functions that end with the ``_`` character are in-place. For example, ``t3 = t1.mul(t2)`` will element-wise multiply the tensors ``t1`` and ``t2`` and store the result in ``t3``. However, ``t1.mul_(t2)`` will element-wise multiply ``t1`` and ``t2`` them and store the result in ``t1``.
-
-Genel olarak, tüm işlevler yerinde değildir, yani bir işleme yapılan bir çağrının işlenenleri değiştirmeyeceği ve yeni bir veri yapısı döndüreceği anlamına gelir. Bununla birlikte, ``_`` karakteriyle biten işlevler yerindedir. Örneğin, ``t3 = t1.mul (t2)``, eleman bazında ``t1`` ve ``t2`` tensörlerini çarpacak ve sonucu ``t3`` içinde saklayacaktır. Ancak, ``t1.mul_(t2)``, ``t1`` ve ``t2`` yi eleman bazında çarpacak ve sonucu ``t1`` de saklayacaktır. 
 
 .. Accessing tensors (slicing)
 
@@ -222,6 +213,88 @@ Bir tensöre, numpy benzeri sözdizimi ile kolayca erişilebilir ve dilimlenebil
    tensor([[2., 3.],
          [5., 6.]])
 
+
+.. Reshaping tensors
+
+Tensörleri yeniden şekillendirmek 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. Tensors can be reshaped easily using the ``reshape`` and ``reshape_as`` functions. Important: these functions will return a new tensor, but the new tensor might use the same data as the original tensor. You can use the ``clone`` function to make sure the data of the original tensor is copied to the new one.
+
+Tensörler, ``reshape`` ve ``reshape_as`` işlevleri kullanılarak kolayca yeniden şekillendirilebilir. Önemli: bu işlevler yeni bir tensör döndürür, ancak yeni tensör orijinal tensörle aynı verileri kullanabilir. Orijinal tensörün verilerinin yenisine kopyalandığından emin olmak için 'klon' işlevini kullanabilirsiniz. 
+
+.. code-block:: python
+
+   import torch
+
+   all_ones = torch.zeros(2,4)
+
+   diff_shape = all_ones.reshape((2,4)) # Şekli bir demet ile belirtin 
+
+   diff_shape_1 = all_ones.reshape((1,2,4))
+
+   diff_shape_2 = all_ones.reshape(-1, 2) # Putting -1 at a dimension tells PyTorch to infer the value automatically
+                     # Bir boyuta -1 koymak, PyTorch'a değeri otomatik olarak çıkarmasını söyler
+
+   rand_t = torch.empty((2, 2, 2)) 
+   diff_shape_3 = all_ones.reshape_as(rand_t) #Başka bir tensörün şekliyle
+                                             # eşleşmeyi kullanabilirsiniz 
+
+
+   new_tensor = all_ones.clone().detach().reshape((2,4)) 
+                                       #Başka bir tensörün şekliyle
+                                       # eşleşmeyi kullanabilirsiniz 
+
+   print("Şekil: (2,3)")
+   print(all_ones)
+   print("\nŞekil: (3,2)")
+   print(diff_shape)
+   print("\nŞekil: (1,2,3)")
+   print(diff_shape_1)
+   print("\nŞekil: (4,2)")
+   print(diff_shape_2)
+   print("\nŞekil: (2,2,2)")
+   print(diff_shape_3)
+   print("\nYeni tensör:")
+   print(new_tensor)
+
+   
+.. Output:
+
+.. admonition:: Çıktı
+   :class: dropdown, information
+
+   .. code-block:: 
+   
+      Şekil: (2,3)
+      tensor([[0., 0., 0., 0.],
+            [0., 0., 0., 0.]])
+
+      Şekil: (3,2)
+      tensor([[0., 0., 0., 0.],
+            [0., 0., 0., 0.]])
+
+      Şekil: (1,2,3)
+      tensor([[[0., 0., 0., 0.],
+               [0., 0., 0., 0.]]])
+
+      Şekil: (4,2)
+      tensor([[0., 0.],
+            [0., 0.],
+            [0., 0.],
+            [0., 0.]])
+
+      Şekil: (2,2,2)
+      tensor([[[0., 0.],
+               [0., 0.]],
+
+            [[0., 0.],
+               [0., 0.]]])
+
+      Yeni tensör:
+      tensor([[0., 0., 0., 0.],
+            [0., 0., 0., 0.]])
+
 .. Concatenating tensors
 
 Tensörleri birleştirme 
@@ -235,8 +308,8 @@ Tensörler herhangi bir eksende birleştirilebilir. Birleştirilmiş tensör, ye
 
    import torch
 
-   all_ones = torch.zeros(2,3)
-   all_zeros = torch.ones_like(all_ones) # all_ones ile aynı şekil 
+   all_ones = torch.ones(2,3)
+   all_zeros = torch.zeros_like(all_ones) # all_ones ile aynı şekil 
 
    con_hor = torch.cat([all_ones, all_zeros], dim=1) # yatay  
    con_ver = torch.cat([all_ones, all_zeros], dim=0) # dikey
@@ -251,19 +324,19 @@ Tensörler herhangi bir eksende birleştirilebilir. Birleştirilmiş tensör, ye
 .. code-block::
 
    Yatay birleştirme
-   tensor([[0., 0., 0., 1., 1., 1.],
-         [0., 0., 0., 1., 1., 1.]])
+   tensor([[1., 1., 1., 0., 0., 0.],
+           [1., 1., 1., 0., 0., 0.]])
 
    Dikey birleştirme
-   tensor([[0., 0., 0.],
-         [0., 0., 0.],
-         [1., 1., 1.],
-         [1., 1., 1.]])
+   tensor([[1., 1., 1.],
+           [1., 1., 1.],
+           [0., 0., 0.],
+           [0., 0., 0.]])
 
 .. Mathematical operations
 
 Matematiksel işlemler 
-~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^
 
 .. There are many mathematical operations that can be done on tensors. A full list can be found `here <https://pytorch.org/docs/stable/torch.html#math-operations>`_.
 
@@ -321,6 +394,59 @@ Tensörler üzerinde yapılabilecek birçok matematiksel işlem vardır. Tam bir
    tensor([[4., 4., 4.],
          [4., 4., 4.],
          [4., 4., 4.]])
+
+
+GPU üzerindeki tensörler 
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Tensors can be moved to the GPU from the CPU and back easily. They can also be created directly on the GPU. Operations cannot happen between tensors on different devices.
+
+.. code-block:: python
+
+   import torch
+
+   gpu_0_also = torch.device('cuda:0') # 
+   gpu_0 = torch.device('cuda') #
+   gpu_1 = torch.device('cuda:1')
+   cpu_device = torch.device('cpu')
+
+   t1 = torch.tensor([1,2,3], device=gpu_0)
+   print(f"t1 on GPU 0: \n{t1}\n")
+   t2 = torch.tensor([1,2,3])
+   print(f"t2 on CPU: \n{t2}\n")
+   t2 = t2.to(gpu_0)
+   print(f"t2 on GPU 0: \n{t2}\n")
+   t3 = t2 + t1
+   t3 = t3.to(cpu_device)
+   print(f"t3 on GPU 0: \n{t3}\n")
+
+
+.. admonition:: Çıktı
+   :class: dropdown, information
+
+   .. code-block:: 
+
+      t1 on GPU 0:
+      tensor([1, 2, 3], device='cuda:0')
+
+      t2 on CPU:
+      tensor([1, 2, 3])
+
+      t2 on GPU 0:
+      tensor([1, 2, 3], device='cuda:0')
+
+      t3 on CPU:
+      tensor([2, 4, 6])
+   
+
+.. In-place and out-of-place operations
+
+Yerinde ve yerinde olmayan operasyonlar 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. Generally, all functions are out-of-place meaning that a call to an operation will not modify the operands and will return a new data structure. However, functions that end with the ``_`` character are in-place. For example, ``t3 = t1.mul(t2)`` will element-wise multiply the tensors ``t1`` and ``t2`` and store the result in ``t3``. However, ``t1.mul_(t2)`` will element-wise multiply ``t1`` and ``t2`` them and store the result in ``t1``.
+
+Genel olarak, tüm işlevler yerinde değildir, yani bir işleme yapılan bir çağrının işlenenleri değiştirmeyeceği ve yeni bir veri yapısı döndüreceği anlamına gelir. Bununla birlikte, ``_`` karakteriyle biten işlevler yerindedir. Örneğin, ``t3 = t1.mul (t2)``, eleman bazında ``t1`` ve ``t2`` tensörlerini çarpacak ve sonucu ``t3`` içinde saklayacaktır. Ancak, ``t1.mul_(t2)``, ``t1`` ve ``t2`` yi eleman bazında çarpacak ve sonucu ``t1`` de saklayacaktır. 
 
 .. Gradient calculation
 

@@ -7,10 +7,7 @@ PyTorch
 
     intro_installation.rst
     tensors.rst
-
-- Lojistik regresyon 
-- Feed-forward neural network
-- Convolutional neural network 
-- Graph neural networks ile PyTorch Geometric
-- Kullanılarak dağıtılmış eğitim torch.distributed
-- PyTorch C++ arayüz 
+    log_reg.rst
+    dnn.rst
+    dist.rst
+    gnn.rst

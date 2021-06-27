@@ -48,30 +48,29 @@ Conda'yı yükleme
 
 .. #. On the following webpage: `https://www.anaconda.com/products/individual <https://www.anaconda.com/products/individual>`_ go to the bottom of the page to the "Anaconda Installers" section and copy the link for the "64-Bit (x86) Installer".
 
-#. Aşağıdaki web sayfasında: `https://www.anaconda.com/products/individual <https://www.anaconda.com/products/individual>`  _ "Anaconda Installers" bölümüne sayfanın en altına git ve "64-Bit (x86) Installer" bağlantısını kopyalayın. 
-.. #. On TRUBA, download the installer script using the ``wget`` command using the link copied above
 
-#.TRUBA'da, yukarıda kopyalanan bağlantıyı kullanarak ``wget`` komutunu kullanarak yükleyici komut dosyasını indirin. 
+#. Aşağıdaki web sayfasında: `https://www.anaconda.com/products/individual <https://www.anaconda.com/products/individual>`_ "Anaconda Installers" bölümüne sayfanın en altına git ve "64-Bit (x86) Installer" bağlantısını kopyalayın. 
+
+#. TRUBA'da, yukarıda kopyalanan bağlantıyı kullanarak ``wget`` komutunu kullanarak yükleyici komut dosyasını indirin. 
+
 
    .. code-block:: bash
 
        wget https://repo.anaconda.com/archive/Anaconda3-<your_version>
-
-.. #. After the script is downloaded successfully, run it using the ``bash`` command:
-
 #. Komut dosyası başarıyla indirildikten sonra, ``bash`` komutunu kullanarak onu çalıştırın: 
 
    .. code-block:: bash
 
        bash Anaconda3-<your_version>
+#. Kurulumu tamamlamak için komut dizisindeki talimatları izleyin. 
+#. Sen almak etkisine kurulum için kesmek ve tekrar bağlanma gerekecektir. 
 
+
+.. #. On TRUBA, download the installer script using the ``wget`` command using the link copied above
+.. #. After the script is downloaded successfully, run it using the ``bash`` command:
 .. #. Follow the instructions of the script to complete the installation.
 
-#. Kurulumu tamamlamak için komut dizisindeki talimatları izleyin. 
-
 .. #. You will need to disconnect and reconnect for the installation to take effect.
-
-#. Sen almak etkisine kurulum için kesmek ve tekrar bağlanma gerekecektir. 
 
 .. Installing PyTorch
 
@@ -139,7 +138,8 @@ PyTorch'u Conda kullanarak TRUBA'ya kurduysanız, o zaman Conda'yı başlatmanı
    #SBATCH --job-name=pyt_ex
    #SBATCH --ntasks=1
    #SBATCH --time=1-00:00:00
-                                                                                                                                                                                                                                                                                                                                                                   # Setup environment
+
+   # Setup environment
    module purge
    bash
    source /truba/home/<user_name>/anaconda3/bin/activate
