@@ -26,7 +26,7 @@ OpenMP’ye Giriş
 -  Bir programda birden fazla paralel alan bulunabilir ve her alan
    farklı sayıda iş parçacığı kullanabilir.
 
-.. image:: %22../images/fork_join.png%22
+.. figure:: %22../images/fork_join.png%22
    :alt: Çatallanma modelini gösteren bir figür. İlk paralel alan 3,
    ikinci paralel alan 2 iş parçacığı kullanacak şekilde ayarlanmış.
 

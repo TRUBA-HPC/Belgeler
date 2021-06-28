@@ -10,6 +10,10 @@ OpenMP birçok işletim sistemi ve çoğu işlemci mimarisi üzerinde paralel uy
 
    rst/01_giris
    rst/02_kullanim
+   rst/03_is_paylasimi
+   rst/04_veri_kapsamlari
+   rst/05_senkronizasyon
+   rst/06_is_dagitimi
 
 Yakında Eklenilecek Eğitimler:
 
