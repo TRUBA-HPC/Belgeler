@@ -258,32 +258,33 @@ Komut dosyasında, kullanmak istediğimiz düğüm sayısını ve eğitimde yer 
    # -N ve -n, bu iş adımında kullanılan düğüm sayısını ve görev sayısını belirtir 
    srun -N 2 -n 2 python 01_distributed.p
 
-Output:
+.. admonition:: Çıktı
+      :class: dropdown, information
 
-After dispatching the SLURM script on the Palamut-cuda partition, we receive the following output:
+                After dispatching the SLURM script on the Palamut-cuda partition, we receive the following output:
 
-Palamut-cuda bölümünde SLURM betiğini gönderdikten sonra aşağıdaki çıktıyı alıyoruz:
+                Palamut-cuda bölümünde SLURM betiğini gönderdikten sonra aşağıdaki çıktıyı alıyoruz:
 
-.. code-block:: bash
+                .. code-block:: bash
 
-   Bu, eğitim için kullanılacak 1 düğümden 2 düğüm numarasıdır. Toplamda, eğitim için kullanılacak toplam 6 GPU vardır. 
-   Bu, eğitim için kullanılacak 0 düğümden 2 düğüm numarasıdır. Toplamda, eğitim için kullanılacak toplam 6 GPU vardır. 
-   bu düğümün sıralaması  5. Bu işlemin bu cihazda kullanacağı GPU numarası 2 
-   loss at rank 5 is 72.71366119384766
-   loss at rank 5 is 22.71541976928711
-   bu düğümün sıralaması  4. Bu işlemin bu cihazda kullanacağı GPU numarası 1 
-   loss at rank 4 is 73.31228637695312
-   loss at rank 4 is 23.012968063354492
-   bu düğümün sıralaması  1. Bu işlemin bu cihazda kullanacağı GPU numarası 1 
-   loss at rank 1 is 72.8398208618164
-   loss at rank 1 is 21.87244415283203
-   bu düğümün sıralaması  3. Bu işlemin bu cihazda kullanacağı GPU numarası 0 
-   loss at rank 3 is 71.55941009521484
-   loss at rank 3 is 21.87774085998535
-   bu düğümün sıralaması  2. Bu işlemin bu cihazda kullanacağı GPU numarası 2 
-   loss at rank 2 is 72.82304382324219
-   loss at rank 2 is 21.772422790527344
-   bu düğümün sıralaması  0. Bu işlemin bu cihazda kullanacağı GPU numarası 0 
-   loss at rank 0 is 73.36946105957031
-   loss at rank 0 is 23.250808715820312
-   10000 test görüntüsünde ağın doğruluğu : 92.79 %
+                   Bu, eğitim için kullanılacak 1 düğümden 2 düğüm numarasıdır. Toplamda, eğitim için kullanılacak toplam 6 GPU vardır. 
+                   Bu, eğitim için kullanılacak 0 düğümden 2 düğüm numarasıdır. Toplamda, eğitim için kullanılacak toplam 6 GPU vardır. 
+                   bu düğümün sıralaması  5. Bu işlemin bu cihazda kullanacağı GPU numarası 2 
+                   loss at rank 5 is 72.71366119384766
+                   loss at rank 5 is 22.71541976928711
+                   bu düğümün sıralaması  4. Bu işlemin bu cihazda kullanacağı GPU numarası 1 
+                   loss at rank 4 is 73.31228637695312
+                   loss at rank 4 is 23.012968063354492
+                   bu düğümün sıralaması  1. Bu işlemin bu cihazda kullanacağı GPU numarası 1 
+                   loss at rank 1 is 72.8398208618164
+                   loss at rank 1 is 21.87244415283203
+                   bu düğümün sıralaması  3. Bu işlemin bu cihazda kullanacağı GPU numarası 0 
+                   loss at rank 3 is 71.55941009521484
+                   loss at rank 3 is 21.87774085998535
+                   bu düğümün sıralaması  2. Bu işlemin bu cihazda kullanacağı GPU numarası 2 
+                   loss at rank 2 is 72.82304382324219
+                   loss at rank 2 is 21.772422790527344
+                   bu düğümün sıralaması  0. Bu işlemin bu cihazda kullanacağı GPU numarası 0 
+                   loss at rank 0 is 73.36946105957031
+                   loss at rank 0 is 23.250808715820312
+                   10000 test görüntüsünde ağın doğruluğu : 92.79 %

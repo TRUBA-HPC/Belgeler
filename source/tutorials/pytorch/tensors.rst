@@ -40,19 +40,20 @@ Python iç içe diziler oluşturabilir ve bunları tensörler oluşturmak için 
 
 .. Output:
 
-Çıktı:
+.. admonition:: Çıktı
+   :class: dropdown, information
 
-.. code-block::
+   .. code-block::
 
-   Ölçekleyiciler
-   10
+      Ölçekleyiciler
+      10
 
-   1D dizisi
-   tensor([1., 2.])
+      1D dizisi
+      tensor([1., 2.])
 
-   2D matris
-   tensor([[  3.1000,   4.0000,   5.0000],
-         [  6.5000, -71.0000,   8.0200]])
+      2D matris
+      tensor([[  3.1000,   4.0000,   5.0000],
+            [  6.5000, -71.0000,   8.0200]])
 
 .. Using constant values
 
@@ -85,37 +86,38 @@ Tensörler, gerekli tensör şekli belirtilerek oluşturulabilir. Bu durumda ten
 
 .. Output:
 
-Çıktı:
+.. admonition:: Çıktı
+   :class: dropdown, information
 
 
-.. code-block::
+   .. code-block::
 
-   Tekdüze dağılımdan rastgele
-   tensor([[0.5713, 0.6914, 0.8229],
-         [0.6467, 0.3670, 0.2972]])
+      Tekdüze dağılımdan rastgele
+      tensor([[0.5713, 0.6914, 0.8229],
+            [0.6467, 0.3670, 0.2972]])
 
-   Normal dağılımdan rastgele
-   tensor([[-0.2732, -1.3975,  0.3833],
-         [-0.3211,  0.2996,  0.0519]])
+      Normal dağılımdan rastgele
+      tensor([[-0.2732, -1.3975,  0.3833],
+            [-0.3211,  0.2996,  0.0519]])
 
-   Birler
-   tensor([1., 1., 1., 1.])
+      Birler
+      tensor([1., 1., 1., 1.])
 
-   Sıfırlar
-   tensor([[[0., 0.],
-            [0., 0.],
-            [0., 0.]],
+      Sıfırlar
+      tensor([[[0., 0.],
+               [0., 0.],
+               [0., 0.]],
 
-         [[0., 0.],
-            [0., 0.],
-            [0., 0.]]])
+            [[0., 0.],
+               [0., 0.],
+               [0., 0.]]])
 
-   Sabit
-   tensor([[6, 6],
-         [6, 6]])
+      Sabit
+      tensor([[6, 6],
+            [6, 6]])
 
-   Bir dizi değer
-   tensor([1.0000, 1.2000, 1.4000, 1.6000, 1.8000])
+      Bir dizi değer
+      tensor([1.0000, 1.2000, 1.4000, 1.6000, 1.8000])
 .. Using other tensors
 
 Diğer tensörleri kullanma 
@@ -142,26 +144,27 @@ Mevcut tensörler gibi tensörler yaratılabilir. Bu, değerleri, şekli ve veri
 
 .. Output:
 
-Çıktı:
+.. admonition:: Çıktı
+   :class: dropdown, information
 
 
-.. code-block::
+   .. code-block::
 
-   Orijinal tensör
-   tensor([[ 0.5975,  1.1559,  0.5189],
-         [-1.1280, -0.0791,  1.2801]])
+      Orijinal tensör
+      tensor([[ 0.5975,  1.1559,  0.5189],
+            [-1.1280, -0.0791,  1.2801]])
 
-   Aynı şekil ve veri türü
-   tensor([[0., 0., 0.],
-         [0., 0., 0.]])
+      Aynı şekil ve veri türü
+      tensor([[0., 0., 0.],
+            [0., 0., 0.]])
 
-   Aynı şekil, farklı veri türü
-   tensor([[1., 1., 1.],
-         [1., 1., 1.]], dtype=torch.float64)
+      Aynı şekil, farklı veri türü
+      tensor([[1., 1., 1.],
+            [1., 1., 1.]], dtype=torch.float64)
 
-   Tam kopya
-   tensor([[ 0.5975,  1.1559,  0.5189],
-         [-1.1280, -0.0791,  1.2801]])
+      Tam kopya
+      tensor([[ 0.5975,  1.1559,  0.5189],
+            [-1.1280, -0.0791,  1.2801]])
 
 .. Tensor manipulation
 
@@ -196,22 +199,23 @@ Bir tensöre, numpy benzeri sözdizimi ile kolayca erişilebilir ve dilimlenebil
 .. Output:
 
 
-Çıktı:
+.. admonition:: Çıktı
+   :class: dropdown, information
 
-.. code-block::
+   .. code-block::
 
-   Tek eleman
-   6.0
+      Tek eleman
+      6.0
 
-   İlk sıra
-   tensor([1., 2., 3.])
+      İlk sıra
+      tensor([1., 2., 3.])
 
-   İkinci sütun
-   tensor([2., 5.])
+      İkinci sütun
+      tensor([2., 5.])
 
-   Alt matris
-   tensor([[2., 3.],
-         [5., 6.]])
+      Alt matris
+      tensor([[2., 3.],
+            [5., 6.]])
 
 
 .. Reshaping tensors
@@ -319,19 +323,20 @@ Tensörler herhangi bir eksende birleştirilebilir. Birleştirilmiş tensör, ye
 
 .. Output:
 
-Çıktı:
+.. admonition:: Çıktı
+   :class: dropdown, information
 
-.. code-block::
+   .. code-block::
 
-   Yatay birleştirme
-   tensor([[1., 1., 1., 0., 0., 0.],
-           [1., 1., 1., 0., 0., 0.]])
+      Yatay birleştirme
+      tensor([[1., 1., 1., 0., 0., 0.],
+            [1., 1., 1., 0., 0., 0.]])
 
-   Dikey birleştirme
-   tensor([[1., 1., 1.],
-           [1., 1., 1.],
-           [0., 0., 0.],
-           [0., 0., 0.]])
+      Dikey birleştirme
+      tensor([[1., 1., 1.],
+            [1., 1., 1.],
+            [0., 0., 0.],
+            [0., 0., 0.]])
 
 .. Mathematical operations
 
@@ -366,34 +371,35 @@ Tensörler üzerinde yapılabilecek birçok matematiksel işlem vardır. Tam bir
 .. Output:
 
 
-Çıktı:
+.. admonition:: Çıktı
+   :class: dropdown, information
 
-.. code-block::
+   .. code-block::
 
-   Bir tensöre ölçekleyici ekleme
-   tensor([[5., 5.],
-         [5., 5.],
-         [5., 5.]])
+      Bir tensöre ölçekleyici ekleme
+      tensor([[5., 5.],
+            [5., 5.],
+            [5., 5.]])
 
-   İki tensör eklemek
-   tensor([[-2., -2.],
-         [-2., -2.],
-         [-2., -2.]])
+      İki tensör eklemek
+      tensor([[-2., -2.],
+            [-2., -2.],
+            [-2., -2.]])
 
-   Bir tensörün bir ölçekleyici ile çarpılması
-   tensor([[2., 2.],
-         [2., 2.],
-         [2., 2.]])
+      Bir tensörün bir ölçekleyici ile çarpılması
+      tensor([[2., 2.],
+            [2., 2.],
+            [2., 2.]])
 
-   Element-bilge çarpma
-   tensor([[3., 3.],
-         [3., 3.],
-         [3., 3.]])
+      Element-bilge çarpma
+      tensor([[3., 3.],
+            [3., 3.],
+            [3., 3.]])
 
-   Matris çarpımı
-   tensor([[4., 4., 4.],
-         [4., 4., 4.],
-         [4., 4., 4.]])
+      Matris çarpımı
+      tensor([[4., 4., 4.],
+            [4., 4., 4.],
+            [4., 4., 4.]])
 
 
 GPU üzerindeki tensörler 
@@ -486,22 +492,23 @@ Bir tensör gradyanının hesaplanabilir olması için, tensöre belirli bir ten
 
 .. Output:
 
-Çıktı:
+.. admonition:: Çıktı
+   :class: dropdown, information
 
-.. code-block::
+   .. code-block::
 
-   t0
-   tensor([1., 1., 1.], requires_grad=True)
-   t1
-   tensor([0., 0., 0.])
+      t0
+      tensor([1., 1., 1.], requires_grad=True)
+      t1
+      tensor([0., 0., 0.])
 
-   t1
-   tensor([0., 0., 0.], requires_grad=True)
-   t1'de manuel olarak etkinleştirilen gradyan hesaplaması
+      t1
+      tensor([0., 0., 0.], requires_grad=True)
+      t1'de manuel olarak etkinleştirilen gradyan hesaplaması
 
-   t1
-   tensor([0., 0., 0.])
-   Manuel olarak devre dışı bıraktı
+      t1
+      tensor([0., 0., 0.])
+      Manuel olarak devre dışı bıraktı
 
 .. Calculating gradient
 
@@ -526,12 +533,13 @@ Bir tensör ``t``, ``required_grad`` seçeneğini ``True`` olarak ayarladığın
 
 .. Output:
 
-Çıktı:
+.. admonition:: Çıktı
+   :class: dropdown, information
 
-.. code-block::
+   .. code-block::
 
-   t1 = 1.0
-   t1'e göre t2'nin gradyanı  = 2.0
+      t1 = 1.0
+      t1'e göre t2'nin gradyanı  = 2.0
 
 .. Deeper functions
 
@@ -574,14 +582,15 @@ Tensörlerin gradyanları zincir kuralı kullanılarak hesaplanır, bu da onlar�
 
 .. Output:
 
-Çıktı:
+.. admonition:: Çıktı
+   :class: dropdown, information
 
-.. code-block::
+   .. code-block::
 
-   t1 = 1.0, t2 = -4.0, t3 = -5.0, t4 = 625.0
-   t1'ye göre t2'nin gradyanı  = 2.0
-   t1'e göre t3'ün gradyanı  = 4.0
-   t1'e göre t4 gradyanı  = -2000.0
+      t1 = 1.0, t2 = -4.0, t3 = -5.0, t4 = 625.0
+      t1'ye göre t2'nin gradyanı  = 2.0
+      t1'e göre t3'ün gradyanı  = 4.0
+      t1'e göre t4 gradyanı  = -2000.0
 
 .. Updating tensors using gradients
 
@@ -609,11 +618,12 @@ Genel olarak, makine öğrenimi ardışık düzenlerinde, bir tensörün gradyan
 
 .. Output:
 
-Çıktı:
+.. admonition:: Çıktı
+   :class: dropdown, information
 
-.. code-block:: python
+   .. code-block:: python
 
-   t1 = 1.0
-   t1'e göre t2'nin gradyanı  = 2.0
+      t1 = 1.0
+      t1'e göre t2'nin gradyanı  = 2.0
 
-   güncellemeden sonra t1  = -1.0
+      güncellemeden sonra t1  = -1.0

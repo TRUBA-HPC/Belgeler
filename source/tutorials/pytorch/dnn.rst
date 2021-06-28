@@ -49,11 +49,12 @@ Bu veri kümelerinin her birinde, bir öğe bir örneğe karşılık gelir. Her 
    print(f"Eğitim örneğindeki 0. örnek, {zeroth_sample[0].shape} boyutunda özellik tensörünü içerir ve sınıfı {zeroth_sample[1]}'dir. ")
    #print(f"Example 0 in the training example contains a feature tensor of size {zeroth_sample[0].shape} and its class is {zeroth_sample[1]}.")
 
-Output:
+.. admonition:: Çıktı
+   :class: dropdown, information
 
-.. code-block:: python
+        .. code-block:: python
 
-   Eğitim örneğindeki 0. örnek, torch.Size([1, 28, 28]) boyutunda özellik tensörünü içerir ve sınıfı 5'dir.
+            Eğitim örneğindeki 0. örnek, torch.Size([1, 28, 28]) boyutunda özellik tensörünü içerir ve sınıfı 5'dir.
 
 Creating Model - Model Oluşturma
 ================================
@@ -111,19 +112,20 @@ Modu oluşturup modeli GPU'ya gönderiyoruz.
    model = DeepNeuralNetwork(num_layers, num_features, num_hidden_features, num_classes).to(device)
    print(model)
 
-Output:
+.. admonition:: Çıktı
+   :class: dropdown, information
 
-.. code-block:: python
+    .. code-block:: python
 
-   DeepNeuralNetwork(
-     (hidden_layers): ModuleList(
-       (0): Linear(in_features=784, out_features=128, bias=True)
-       (1): Linear(in_features=128, out_features=128, bias=True)
-       (2): Linear(in_features=128, out_features=128, bias=True)
-       (3): Linear(in_features=128, out_features=10, bias=True)
-     )
-     (relu_activation): ReLU()
-   )
+        DeepNeuralNetwork(
+            (hidden_layers): ModuleList(
+            (0): Linear(in_features=784, out_features=128, bias=True)
+            (1): Linear(in_features=128, out_features=128, bias=True)
+            (2): Linear(in_features=128, out_features=128, bias=True)
+            (3): Linear(in_features=128, out_features=10, bias=True)
+            )
+            (relu_activation): ReLU()
+        )
 
 Optimizer and loss - Optimize edici ve kayıp
 ============================================
@@ -140,18 +142,19 @@ Modelimiz için bir Adam optimizer tanımlıyoruz ve ona öğrenme oranını ver
    optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)  
    loss_function = nn.CrossEntropyLoss()
 
-Output:
+.. admonition:: Çıktı
+   :class: dropdown, information
 
-.. code-block:: python
+    .. code-block:: python
 
-   Adam (
-   Parameter Group 0
-       amsgrad: False
-       betas: (0.9, 0.999)
-       eps: 1e-08
-       lr: 0.01
-       weight_decay: 0
-   )
+        Adam (
+        Parameter Group 0
+            amsgrad: False
+            betas: (0.9, 0.999)
+            eps: 1e-08
+            lr: 0.01
+            weight_decay: 0
+        )
 
 Data loaders - Veri yükleyiciler
 ================================
@@ -220,22 +223,23 @@ Belirli sayıda çağ boyunca çalışacak eğitim döngüsünü oluşturuyoruz.
            if i%100 == 0:
                print(f"Epoch {epoch}: finished batch {i}/{len(train_loader)} with loss {loss}")
 
-Output:
+.. admonition:: Çıktı
+   :class: dropdown, information
 
-.. code-block:: python
+    .. code-block:: python
 
-   Epoch 0: finished batch 0/600 with loss 2.2971487045288086
-   Epoch 0: finished batch 100/600 with loss 0.4326843023300171
-   Epoch 0: finished batch 200/600 with loss 0.2942448556423187
-   Epoch 0: finished batch 300/600 with loss 0.2156781703233719
-   Epoch 0: finished batch 400/600 with loss 0.227325901389122
-   Epoch 0: finished batch 500/600 with loss 0.12324336916208267
-   Epoch 1: finished batch 0/600 with loss 0.19837243854999542
-   Epoch 1: finished batch 100/600 with loss 0.19496408104896545
-   Epoch 1: finished batch 200/600 with loss 0.15394555032253265
-   Epoch 1: finished batch 300/600 with loss 0.3124085068702698
-   Epoch 1: finished batch 400/600 with loss 0.164706289768219
-   Epoch 1: finished batch 500/600 with loss 0.05262318626046181
+        Epoch 0: finished batch 0/600 with loss 2.2971487045288086
+        Epoch 0: finished batch 100/600 with loss 0.4326843023300171
+        Epoch 0: finished batch 200/600 with loss 0.2942448556423187
+        Epoch 0: finished batch 300/600 with loss 0.2156781703233719
+        Epoch 0: finished batch 400/600 with loss 0.227325901389122
+        Epoch 0: finished batch 500/600 with loss 0.12324336916208267
+        Epoch 1: finished batch 0/600 with loss 0.19837243854999542
+        Epoch 1: finished batch 100/600 with loss 0.19496408104896545
+        Epoch 1: finished batch 200/600 with loss 0.15394555032253265
+        Epoch 1: finished batch 300/600 with loss 0.3124085068702698
+        Epoch 1: finished batch 400/600 with loss 0.164706289768219
+        Epoch 1: finished batch 500/600 with loss 0.05262318626046181
 
 Evaluation - Değerlendirme
 ==========================
@@ -264,8 +268,9 @@ Son olarak, modelin doğruluğunu değerlendiririz. Test verilerini mini partile
        acc = 100.0 * n_correct / n_samples
        print(f'10000 test görüntüsünde ağın doğruluğu : {acc} %')
 
-Output:
+.. admonition:: Çıktı
+   :class: dropdown, information
 
-.. code-block:: python
+    .. code-block:: python
 
-   10000 test görüntüsünde ağın doğruluğu : 96.23 %
+        10000 test görüntüsünde ağın doğruluğu : 96.23 %

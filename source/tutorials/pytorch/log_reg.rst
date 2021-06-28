@@ -59,12 +59,13 @@ Not: ``sklearn``\ 'i kurmak için aşağıdaki komutu çalıştırın:
    # Test setinde aynı standardizasyonu kullanın 
    X_test = sc.transform(X_test)
 
-Output
+.. admonition:: Çıktı
+   :class: dropdown, information
 
-.. code-block:: python
+   .. code-block:: python
 
-   569 örnek var.Her örnek 30 özellik içerir.
-   398 eğitim örneği ve 171 test örneği var
+      569 örnek var.Her örnek 30 özellik içerir.
+      398 eğitim örneği ve 171 test örneği var
 
 Converting to Tensors and moving to GPU
 ---------------------------------------
@@ -101,12 +102,13 @@ Veri kümeleri şu anda ``numpy.ndarray`` türündedir. PyTorch modelimiz ile ku
    # Önceki tüm işlemleri tek satırda yapın 
    y_test = torch.from_numpy(y_test).to(gpu_device, dtype=torch.float32).reshape(y_test.shape[0],1)
 
-Output:
+.. admonition:: Çıktı
+   :class: dropdown, information
 
-.. code-block:: python
+   .. code-block:: python
 
-   Şekil değiştirmeden önce etiketlerin şekli torch.Size([398])
-   Şekil değiştirmeden sonra etiketlerin şekli torch.Size([398, 1])
+      Şekil değiştirmeden önce etiketlerin şekli torch.Size([398])
+      Şekil değiştirmeden sonra etiketlerin şekli torch.Size([398, 1])
 
 Creating Model - Model Oluşturma
 ================================
@@ -148,13 +150,14 @@ Sınıfı tanımladıktan sonra modelimizin bir örneğini oluşturup GPU'ya gö
    model = LogisticRegression(num_features).to(gpu_device)
    print(model)
 
-Output
+.. admonition:: Çıktı
+   :class: dropdown, information
 
-.. code-block:: python
+   .. code-block:: python
 
-   LogisticRegression(
-     (linear_layer): Linear(in_features=30, out_features=1, bias=True)
-   )
+      LogisticRegression(
+         (linear_layer): Linear(in_features=30, out_features=1, bias=True)
+      )
 
 Defining the optimizer - Optimize ediciyi tanımlama
 ===================================================
@@ -177,18 +180,19 @@ Kayıp fonksiyonunu da tanımlıyoruz. Bu fonksiyon, modelin her girdi örneğin
 
    print(optimizer)
 
-Output:
+.. admonition:: Çıktı
+   :class: dropdown, information
 
-.. code-block:: python
+   .. code-block:: python
 
-   SGD (
-   Parameter Group 0
-       dampening: 0
-       lr: 0.01
-       momentum: 0
-       nesterov: False
-       weight_decay: 0
-   )
+      SGD (
+      Parameter Group 0
+         dampening: 0
+         lr: 0.01
+         momentum: 0
+         nesterov: False
+         weight_decay: 0
+      )
 
 Training loop and evaluation step - Eğitim döngüsü ve değerlendirme adımı
 =========================================================================
@@ -237,10 +241,11 @@ Ayrıca her 25 çağda bir test setini kullanarak modeli değerlendireceğiz.
                accuracy = num_correct/y_test.shape[0]
                print(f"Epoch {epoch}: loss {loss} model accuracy = {accuracy.item()}")
 
-Output:
+.. admonition:: Çıktı
+   :class: dropdown, information
 
-.. code-block:: python
+   .. code-block:: python
 
-   Epoch 0: loss 0.6590105891227722 model accuracy = 0.6198830604553223
-   Epoch 25: loss 0.41418391466140747 model accuracy = 0.8771929740905762
-   Epoch 50: loss 0.32267412543296814 model accuracy = 0.9298245906829834
+      Epoch 0: loss 0.6590105891227722 model accuracy = 0.6198830604553223
+      Epoch 25: loss 0.41418391466140747 model accuracy = 0.8771929740905762
+      Epoch 50: loss 0.32267412543296814 model accuracy = 0.9298245906829834

@@ -78,7 +78,7 @@ PyG tanımları, grafik veri kümelerini tanımlamak için ``torch_geometric.dat
 
 The above attributes are not all required to create a ``Data`` object. In addition, we can extend the object with our own attributes if needed, e.g., edge weights.
 
- In the following example, we define an undirected graph with four nodes and three edges. We also add feature vectors for all the nodes in the graph:
+In the following example, we define an undirected graph with four nodes and three edges. We also add feature vectors for all the nodes in the graph:
 
 Yukarıdaki niteliklerin tümü bir ``Data`` nesnesi oluşturmak için gerekli değildir. Ek olarak, gerekirse nesneyi, örneğin kenar ağırlıkları gibi kendi özniteliklerimizle genişletebiliriz.
 
@@ -98,13 +98,14 @@ Aşağıdaki örnekte, dört düğümü ve üç kenarı olan yönsüz bir grafik
    print(f"Düğüm özellikleri ekledikten sonraki grafik: {graph}")
    print(f"grafiğin {graph.num_nodes} düğümü ve {graph.num_edges} kenarı vardır")
 
-Output:
+.. admonition:: Çıktı
+   :class: dropdown, information
 
-.. code-block:: python
+    .. code-block:: python
 
-   Grafik: Data(edge_index=[2, 6])
-   Düğüm özellikleri ekledikten sonraki grafik: Data(edge_index=[2, 6], x=[4, 5])
-   grafiğin 4 düğümü ve 6 kenarı vardır
+        Grafik: Data(edge_index=[2, 6])
+        Düğüm özellikleri ekledikten sonraki grafik: Data(edge_index=[2, 6], x=[4, 5])
+        grafiğin 4 düğümü ve 6 kenarı vardır
 
 Data objects have many useful utility functions. Here are some examples:
 
@@ -124,20 +125,21 @@ Data objects have many useful utility functions. Here are some examples:
 
    print(f"grafik yönlendirilmiş mi? {data.is_directed()}")
 
-Output:
+.. admonition:: Çıktı
+   :class: dropdown, information
+   
+    .. code-block:: 
 
-.. code-block:: 
-
-   `Data` nesnesinde hangi verilerin olduğunu kontrol edin: ['x', 'edge_index']
-   tensor([[ 1.7464,  0.0523, -0.1089,  0.3255, -0.3031],
-   [-0.8393,  2.7257,  0.7538,  0.0997, -0.3187],
-   [-0.6025, -0.8008, -0.3081,  1.0320, -0.2903],
-   [ 2.2594,  0.0473, -0.7182,  0.1754, -0.8136]])
-   edge_attr verilerde mi? False
-   düğüm özellikleri sayısı 5
-   Grafik izole düğümler içeriyor mu? True
-   Grafik kendi kendine döngüler içeriyor mu? True
-   grafik yönlendirilmiş mi? True
+        `Data` nesnesinde hangi verilerin olduğunu kontrol edin: ['x', 'edge_index']
+        tensor([[ 1.7464,  0.0523, -0.1089,  0.3255, -0.3031],
+        [-0.8393,  2.7257,  0.7538,  0.0997, -0.3187],
+        [-0.6025, -0.8008, -0.3081,  1.0320, -0.2903],
+        [ 2.2594,  0.0473, -0.7182,  0.1754, -0.8136]])
+        edge_attr verilerde mi? False
+        düğüm özellikleri sayısı 5
+        Grafik izole düğümler içeriyor mu? True
+        Grafik kendi kendine döngüler içeriyor mu? True
+        grafik yönlendirilmiş mi? True
 
 Creating a model using existing GNN layers - Mevcut GNN katmanlarını kullanarak bir model oluşturma
 ===================================================================================================
@@ -179,13 +181,14 @@ Bu veri kümesini yüklerken, ``root`` parametresinde veri kümesini indirmek is
    # Grafikteki düğüm sınıflarının sayısı 
    num_classes = cora.y.max().item()+1
 
-Output:
+.. admonition:: Çıktı
+   :class: dropdown, information
 
-.. code-block:: python
+    .. code-block:: python
 
-   dataset'de 1 grafik var
-   Data(edge_index=[2, 10556], test_mask=[2708], train_mask=[2708], val_mask=[2708], x=[2708, 1433], y=[2708])
-   Düğümlerin özellik vektörleri 1433 özelliğe sahiptir. Düğümler için toplam 7 sınıf var
+        dataset'de 1 grafik var
+        Data(edge_index=[2, 10556], test_mask=[2708], train_mask=[2708], val_mask=[2708], x=[2708, 1433], y=[2708])
+        Düğümlerin özellik vektörleri 1433 özelliğe sahiptir. Düğümler için toplam 7 sınıf var
 
 Creating model - Model oluşturma
 --------------------------------
@@ -254,17 +257,18 @@ Grafiği GNN'lerden geçirdikten sonra, düğüm özelliklerini doğrusal bir ka
    model = GNN(num_node_features, num_hidden_feats, num_classes).to(device)
    print(model)
 
-Output
+.. admonition:: Çıktı
+   :class: dropdown, information
 
-.. code-block:: python
+    .. code-block:: python
 
-   (gnn_layers): ModuleList(
-       (0): GCNConv(1433, 128)
-       (1): GATConv(128, 128, heads=1)
-     )
-     (lin): Linear(in_features=128, out_features=7, bias=True)
-     (relu): ReLU()
-   )
+        (gnn_layers): ModuleList(
+            (0): GCNConv(1433, 128)
+            (1): GATConv(128, 128, heads=1)
+            )
+            (lin): Linear(in_features=128, out_features=7, bias=True)
+            (relu): ReLU()
+        )
 
 Optimizer and loss - Optimize edici ve kayıp
 --------------------------------------------
@@ -311,15 +315,16 @@ Eğitim sırasında, verilerimizin bir kısmını eğitim için, bir kısmını 
        if epoch % 20 == 0:
            print(f"Epoch {epoch}: loss {loss}")
 
-Output
+.. admonition:: Çıktı
+   :class: dropdown, information
 
-.. code-block:: python
+    .. code-block:: python
 
-   Epoch 0: loss 1.9444819688796997
-   Epoch 20: loss 0.0636444166302681
-   Epoch 40: loss 0.007010670844465494
-   Epoch 60: loss 0.00019191707542631775
-   Epoch 80: loss 3.740669853868894e-05
+        Epoch 0: loss 1.9444819688796997
+        Epoch 20: loss 0.0636444166302681
+        Epoch 40: loss 0.007010670844465494
+        Epoch 60: loss 0.00019191707542631775
+        Epoch 80: loss 3.740669853868894e-05
 
 Testing loop - Test döngüsü
 ---------------------------
@@ -336,11 +341,12 @@ Grafikler üzerinde öğrenme prosedürünü test ediyoruz, yapılandırılmış
        score =  prediction.eq(cora.y[cora.test_mask]).sum().item()
        print(f"Final accuracy = {100*score/cora.test_mask.sum()}")
 
-Output:
+.. admonition:: Çıktı
+   :class: dropdown, information
 
-.. code-block:: python
+    .. code-block:: python
 
-   Final accuracy = 71.8000%
+        Final accuracy = 71.8000%
 
 Constructing a GNN layer - message passing interface - GNN katmanı oluşturma - mesaj geçiş arayüzü
 ==================================================================================================
@@ -350,45 +356,47 @@ Theory - teori
 
 In the previous example, we constructed a machine learning model that can process graphs and carry out node classification. However, we used already existing graph neural network layers. In the following example, we will create our own GNN layer and use it in a model that will do graph classification. 
 
-Generalizing convolutions to unstructured data (e.g., graphs) is often referred to as *message passing.* The message passing schema can be expressed as follows, given that $\mathbf{x}\ *i^{k}$ is the feature vector of node $i$ at layer $k$, and $\mathbf{e}*\ {i,j}$ is an optional feature vector associated with the edge $(i,j)$:
+Generalizing convolutions to unstructured data (e.g., graphs) is often referred to as *message passing.* The message passing schema can be expressed as follows, given that :math:`\mathbf{x} *i^{k}` is the feature vector of node :math:`i` at layer :math:`k`, and :math:`\mathbf{e}_{i,j}` is an optional feature vector associated with the edge :math:`(i,j)`:
 
 Önceki örnekte, grafikleri işleyebilen ve düğüm sınıflandırmasını gerçekleştirebilen bir makine öğrenimi modeli oluşturduk. Ancak, zaten var olan grafik sinir ağı katmanlarını kullandık. Aşağıdaki örnekte kendi GNN katmanımızı oluşturacağız ve bunu grafik sınıflandırması yapacak bir modelde kullanacağız.
 
-Konvolüsyonları yapılandırılmamış verilere (örneğin grafikler) genelleştirmeye genellikle *mesaj geçişi denir.* İleti geçiş şeması, $\mathbf{x}i^{k}$ düğümün özellik vektörü olduğu göz önüne alındığında aşağıdaki gibi ifade edilebilir. $k$ katmanında $i$ ve $\mathbf{e}_{i,j}$, $(i,j)$ kenarıyla ilişkili isteğe bağlı bir özellik vektörüdür:
+Konvolüsyonları yapılandırılmamış verilere (örneğin grafikler) genelleştirmeye genellikle *mesaj geçişi denir.* İleti geçiş şeması, :math:`\mathbf{x} *i^{k}` düğümün özellik vektörü olduğu göz önüne alındığında aşağıdaki gibi ifade edilebilir. :math:`k` katmanında :math:`i` ve :math:`\mathbf{e}_{i,j}`, :math:`(i,j)` kenarıyla ilişkili isteğe bağlı bir özellik vektörüdür:
 
-$$\mathbf{x}_i^{(k)} = \gamma^{(k)} \left( \mathbf{x}\ *i^{(k-1)}, \square*\ {j \in \mathcal{N}(i)} \, \phi^{(k)}\left(\mathbf{x}_i^{(k-1)}, \mathbf{x}\ *j^{(k-1)},\mathbf{e}*\ {j,i}\right) \right),$$
+.. math::
 
-Where $\square$ is a permutation invariable function (order of operands does not matter) called the *aggregation* function like the summation, max, or mean functions, and $\gamma$ and $\phi$ are differentiable functions (such as linear neural network layers.)
+    \mathbf{x}_i^{(k)} = \gamma^{(k)} \left( \mathbf{x}\ *i^{(k-1)}, \square*\ {j \in \mathcal{N}(i)} \, \phi^{(k)}\left(\mathbf{x}_i^{(k-1)}, \mathbf{x}\ *j^{(k-1)},\mathbf{e}*\ {j,i}\right) \right)
 
-$\square$ bir permütasyon değişmez işlevi olduğunda (işlenenlerin sırası önemli değildir), toplama, maksimum veya ortalama işlevler gibi *toplama* işlevi olarak adlandırılır ve $\gamma$ ve 
+Where :math:`\square` is a permutation invariable function (order of operands does not matter) called the *aggregation* function like the summation, max, or mean functions, and :math:`\gamma` and :math:`\phi` are differentiable functions (such as linear neural network layers.)
 
-$\gamma$ türevlenebilir işlevlerdir (örneğin doğrusal sinir ağı katmanları.)
+:math:`\square` bir permütasyon değişmez işlevi olduğunda (işlenenlerin sırası önemli değildir), toplama, maksimum veya ortalama işlevler gibi *toplama* işlevi olarak adlandırılır ve :math:`\gamma` ve 
 
-In other words, to calculate the feature vector of a node $i$ after message passing layer $k$, we do the following steps:
-Başka bir deyişle, $k$ katmanından mesaj geçtikten sonra bir $i$ düğümünün öznitelik vektörünü hesaplamak için aşağıdaki adımları yaparız:
+:math:`\gamma` türevlenebilir işlevlerdir (örneğin doğrusal sinir ağı katmanları.)
+
+In other words, to calculate the feature vector of a node :math:`i` after message passing layer :math:`k`, we do the following steps:
+Başka bir deyişle, :math:`k` katmanından mesaj geçtikten sonra bir :math:`i` düğümünün öznitelik vektörünü hesaplamak için aşağıdaki adımları yaparız:
 
 
-#. For every incoming neighbor $j$ of node $i$, we apply the function $\phi$ to generate a "message" from these neighbors. The function $\phi$ uses the feature vectors of $i$, $j$, and optionally the feature vector of the edge $(i,j)$.
-   $i$ düğümünün gelen her $j$ komşusu için, bu komşulardan bir "mesaj" üretmek için $\phi$ fonksiyonunu uygularız. $\phi$ işlevi, $i, j$'nin öznitelik vektörlerini ve isteğe bağlı olarak $(i,j)$ kenarın öznitelik vektörünü kullanır.
-#. We aggregate all the messages coming to node $i$ using the function $\square$ into a single vector. The function $\square$ can be a summation over all messages, mean of all messages, or the max message. This will generate a single representation of all the messages to node $i$.
-   $\square$ fonksiyonunu kullanarak $i$ düğümüne gelen tüm mesajları tek bir vektörde topluyoruz. $\square$ işlevi, tüm mesajların toplamı, tüm mesajların ortalaması veya maksimum mesaj olabilir. Bu, $i$ düğümüne gönderilen tüm mesajların tek bir temsilini oluşturacaktır.
-#. Finally, we apply the transformation $\gamma$ to the aggregated representation of the messages and the embedding of the node itself. The final output would be the new feature vector of the node.
-   Son olarak, $\gamma$ dönüşümünü mesajların toplu gösterimine ve düğümün kendisinin gömülmesine uygularız. Nihai çıktı, düğümün yeni özellik vektörü olacaktır.
+#. For every incoming neighbor :math:`j` of node :math:`i`, we apply the function :math:`\phi` to generate a "message" from these neighbors. The function :math:`\phi` uses the feature vectors of :math:`i`, :math:`j`, and optionally the feature vector of the edge :math:`(i,j)`.
+   :math:`i` düğümünün gelen her :math:`j` komşusu için, bu komşulardan bir "mesaj" üretmek için :math:`\phi` fonksiyonunu uygularız. :math:`\phi` işlevi, :math:`i, j`'nin öznitelik vektörlerini ve isteğe bağlı olarak :math:`(i,j)` kenarın öznitelik vektörünü kullanır.
+#. We aggregate all the messages coming to node :math:`i` using the function :math:`\square` into a single vector. The function :math:`\square` can be a summation over all messages, mean of all messages, or the max message. This will generate a single representation of all the messages to node :math:`i`.
+   :math:`\square` fonksiyonunu kullanarak :math:`i` düğümüne gelen tüm mesajları tek bir vektörde topluyoruz. :math:`\square` işlevi, tüm mesajların toplamı, tüm mesajların ortalaması veya maksimum mesaj olabilir. Bu, :math:`i` düğümüne gönderilen tüm mesajların tek bir temsilini oluşturacaktır.
+#. Finally, we apply the transformation :math:`\gamma` to the aggregated representation of the messages and the embedding of the node itself. The final output would be the new feature vector of the node.
+   Son olarak, :math:`\gamma` dönüşümünü mesajların toplu gösterimine ve düğümün kendisinin gömülmesine uygularız. Nihai çıktı, düğümün yeni özellik vektörü olacaktır.
 
 The ``torch_geometric.nn.MessagePassing`` is an interface that allows classes that inherit it to implement the procedure described above with ease. The following functions provide this functionality:
 ``Torch_geometric.nn.MessagePassing``\ , kendisini miras alan sınıfların yukarıda açıklanan prosedürü kolaylıkla uygulamasına izin veren bir arayüzdür. Aşağıdaki işlevler bu işlevi sağlar:
 
 
-* ``MessagePassing(aggr="add", flow="source_to_target", node_dim=-2)``\ : The ``aggr`` parameter defines the aggregation schema($\square$) (\ ``"add"``\ , ``"sum"``\ , or ``"max"``\ ), and ``flow`` describes the flow of messages - whether they are from an edge's source to target or vice versa. 
-  ``MessagePassing(aggr="add", flow="source_to_target", node_dim=-2)``\ : ``aggr`` parametresi, toplama şemasını($\square$) (\ ``"add"``\ , ``"sum"`` veya ``"max"``\ ) tanımlar ve ``flow``\ , mesaj akışı - bir uç kaynağın kaynağından hedefe mi yoksa tam tersi mi?
-* `MessagePassing.propagate(edge_index, **kwargs)`: this function will carry out the message passing procedure. It takes the edge connectivity information (`edge_index`), as well as any other data  (e.g. node feature vectors `x`, edge feature vectors `edge_attr`, etc.) that is needed for constructing messages and updating embeddings, and returns a matrix containing a vector for each node in the input graph. `propogate()` will call the following three functions:
-  `MessagePassing.propagate(edge_index, **kwargs)`: bu fonksiyon mesaj geçirme prosedürünü gerçekleştirecektir. İletileri oluşturmak ve yerleştirmeleri güncellemek için gerekli olan uç bağlantı bilgilerini (`edge_index`) ve diğer tüm verileri (ör. düğüm özellik vektörleri `x`, kenar özellik vektörleri `edge_attr`, vb.) alır ve her biri için bir vektör içeren bir matris döndürür. giriş grafiğindeki düğüm. `propogate()` aşağıdaki üç işlevi çağırır:
+* ``MessagePassing(aggr="add", flow="source_to_target", node_dim=-2)``\ : The ``aggr`` parameter defines the aggregation schema(:math:`\square`) (\ ``"add"``\ , ``"sum"``\ , or ``"max"``\ ), and ``flow`` describes the flow of messages - whether they are from an edge's source to target or vice versa. 
+  ``MessagePassing(aggr="add", flow="source_to_target", node_dim=-2)``\ : ``aggr`` parametresi, toplama şemasını(:math:`\square`) (\ ``"add"``\ , ``"sum"`` veya ``"max"``\ ) tanımlar ve ``flow``\ , mesaj akışı - bir uç kaynağın kaynağından hedefe mi yoksa tam tersi mi?
+* ``MessagePassing.propagate(edge_index, **kwargs)``: this function will carry out the message passing procedure. It takes the edge connectivity information (``edge_index``), as well as any other data  (e.g. node feature vectors ``x``, edge feature vectors ``edge_attr``, etc.) that is needed for constructing messages and updating embeddings, and returns a matrix containing a vector for each node in the input graph. ``propogate()`` will call the following three functions:
+  ``MessagePassing.propagate(edge_index, **kwargs)``: bu fonksiyon mesaj geçirme prosedürünü gerçekleştirecektir. İletileri oluşturmak ve yerleştirmeleri güncellemek için gerekli olan uç bağlantı bilgilerini (``edge_index``) ve diğer tüm verileri (ör. düğüm özellik vektörleri ``x``, kenar özellik vektörleri ``edge_attr``, vb.) alır ve her biri için bir vektör içeren bir matris döndürür. giriş grafiğindeki düğüm. ``propogate()`` aşağıdaki üç işlevi çağırır:
 
-  #. `MessagePassing.message(...)`: This function represents the $\phi$ function in the formulation above. It will take as parameters all the parameters that are passed to `propagate()`, and optionally, it can also be passed *feature vectors mapped to the source and destination of the edges of the graph.* To elaborate, if the `propagate()` function was passed a matrix containing feature vertices, say a matrix `node_feats: tensor([num_nodes, num_feats])\ ``, with a row for each node in the graph, and the call to the``\ message()\ ``function contained a parameter``\ node_feats_i\ ``, then``\ node_feats_i\ ``would be a matrix of size``\ [num_edges, num_feats]\ ``with``\ node_feats_i[a]\ ``being``\ node_feats[edge_index[1][a]\ ``, i.e., the row of``\ node_feats\ ``pertaining to the target node of edge``\ a\ ``. On the other hand, if it is passed a parameter``\ node_feats_j\ ``, then it will contain mappings of the``\ node_feats\ ``matrix but based on the sources of edges. The programmer can use these functions, as well as any other parameters passed to the``\ propagate()\ ``function to generate messages. This function must return a matrix``\ msgs\ ``with a row for each edge, where row``\ msgs[a]\ ``will be a message sent to the target node of edge``\ a\ ``, i.e., a message sent to node``\ edge_index[1][a]\ ``(and vice versa for the opposite flow.)``\ MessagePassing.message(...)\ ``: Bu fonksiyon, yukarıdaki formüldeki $\phi$ fonksiyonunu temsil eder.``\ propagate()\ ``işlevine iletilen tüm parametreleri parametre olarak alacaktır ve isteğe bağlı olarak, grafiğin kenarlarının kaynağına ve hedefine eşlenen özellik vektörlerinden de geçirilebilir. Detaylandırmak için,``\ propagate()\ ``işlevi özellik köşeleri içeren bir matristen geçirilmişse, bir matris``\ node_feats söyleyin: tensor([num_nodes, num_feats])\ ``, grafikteki her düğüm için bir satır ve``\ message()\ ``işlevine çağrı``\ node_feats_i\ ``parametresini içeriyorsa, o zaman``\ node_feats_i, [sayı_edgeleri, sayı_feats]\ ``boyutunda bir matris olur ve``\ node_feats_i[a]\ ``,``\ node_feats[edge_index[1][a]\ ``olur, yani, a kenarının hedef düğümüne ait``\ node_feats\ ``satırı. Öte yandan, bir``\ node_feats_j\ ``parametresi iletilirse, o zaman``\ node_feats\ ``matrisinin eşlemelerini içerecek, ancak kenarların kaynaklarına dayalı olacaktır. Programcı, mesajları oluşturmak için``\ propagate()\ ``işlevine iletilen diğer parametrelerin yanı sıra bu işlevleri kullanabilir. Bu işlev, her kenar için bir satır içeren bir matris msj döndürmelidir, burada``\ msgs[a]\ ``satırı, kenar a'nın hedef düğümüne gönderilen bir mesaj, yani``\ edge_index[1][a]` düğümüne gönderilen bir mesaj olacaktır (ve yardımcısı tersi akış için.)
-  #. ``MessagePassing.aggregate(msgs, ...)``\ : this function will take all the messages returned by the ``message()`` function, and apply the $\square$ function in the formulation above. i.e., it will aggregate them (sum them up, find their max, or find their mean) into a single vector for each vertex and return the matrix containing one final vector per node. 
-     ``MessagePassing.aggregate(msgs, ...)``\ : bu fonksiyon, ``message()`` fonksiyonu tarafından döndürülen tüm mesajları alacak ve yukarıdaki formüldeki $\square$ fonksiyonunu uygulayacaktır. yani, onları her köşe için tek bir vektörde toplar (toplar, maksimumlarını bulur veya ortalamalarını bulur) ve düğüm başına bir son vektör içeren matrisi döndürür.
-  #. ``MessagePassing.update(aggr_out, ...)``\ : This function will take the matrix that ``aggregate()`` returns that contains the result of message aggregation for each vertex, as well as any parameters that were passed to ``propagate()``\ , and apply the $\gamma$ transformation in the formulation above and return the final output of the propagation process.
-     ``MessagePassing.update(aggr_out, ...)``\ : Bu işlev, propagate() öğesine iletilen tüm parametrelerin yanı sıra her bir köşe için ileti toplamanın sonucunu içeren ``propagate()`` öğesinin döndürdüğü matrisi alır ve $\gamma$ yukarıdaki formülasyondaki gama dönüşümü ve yayılma sürecinin son çıktısını döndürür.
+  #. ``MessagePassing.message(...)``: This function represents the :math:`\phi` function in the formulation above. It will take as parameters all the parameters that are passed to ``propagate()``, and optionally, it can also be passed *feature vectors mapped to the source and destination of the edges of the graph.* To elaborate, if the ``propagate()`` function was passed a matrix containing feature vertices, say a matrix ``node_feats: tensor([num_nodes, num_feats])\``, with a row for each node in the graph, and the call to the ``message()`` function contained a parameter ``node_feats_i``, then ``node_feats_i`` would be a matrix of size ``[num_edges, num_feats]`` with ``node_feats_i[a]`` being ``node_feats[edge_index[1][a]`` , i.e., the row of ``node_feats`` pertaining to the target node of edge ``a`` . On the other hand, if it is passed a parameter ``node_feats_j``, then it will contain mappings of the ``node_feats`` matrix but based on the sources of edges. The programmer can use these functions, as well as any other parameters passed to the ``propagate()`` function to generate messages. This function must return a matrix ``msgs`` with a row for each edge, where row ``msgs[a]`` will be a message sent to the target node of edge ``a`` , i.e., a message sent to node ``edge_index[1][a]`` (and vice versa for the opposite flow.) ``MessagePassing.message(...)`` : Bu fonksiyon, yukarıdaki formüldeki :math:`\phi` fonksiyonunu temsil eder. ``propagate()`` işlevine iletilen tüm parametreleri parametre olarak alacaktır ve isteğe bağlı olarak, grafiğin kenarlarının kaynağına ve hedefine eşlenen özellik vektörlerinden de geçirilebilir. Detaylandırmak için, ``propagate()`` işlevi özellik köşeleri içeren bir matristen geçirilmişse, bir matris ``node_feats söyleyin: tensor([num_nodes, num_feats])``, grafikteki her düğüm için bir satır ve ``message()`` işlevine çağrı ``node_feats_i`` parametresini içeriyorsa, o zaman ``node_feats_i``, ``[sayı_edgeleri, sayı_feats]`` boyutunda bir matris olur ve ``node_feats_i[a]``, ``node_feats[edge_index[1][a]`` olur, yani, a kenarının hedef düğümüne ait ``node_feats`` satırı. Öte yandan, bir ``node_feats_j`` parametresi iletilirse, o zaman ``node_feats`` matrisinin eşlemelerini içerecek, ancak kenarların kaynaklarına dayalı olacaktır. Programcı, mesajları oluşturmak için ``propagate()`` işlevine iletilen diğer parametrelerin yanı sıra bu işlevleri kullanabilir. Bu işlev, her kenar için bir satır içeren bir matris msj döndürmelidir, burada ``msgs[a]`` satırı, kenar a'nın hedef düğümüne gönderilen bir mesaj, yani ``edge_index[1][a]`` düğümüne gönderilen bir mesaj olacaktır (ve yardımcısı tersi akış için.)
+  #. ``MessagePassing.aggregate(msgs, ...)``: this function will take all the messages returned by the ``message()`` function, and apply the :math:`\square` function in the formulation above. i.e., it will aggregate them (sum them up, find their max, or find their mean) into a single vector for each vertex and return the matrix containing one final vector per node. 
+     ``MessagePassing.aggregate(msgs, ...)``: bu fonksiyon, ``message()`` fonksiyonu tarafından döndürülen tüm mesajları alacak ve yukarıdaki formüldeki :math:`\square` fonksiyonunu uygulayacaktır. yani, onları her köşe için tek bir vektörde toplar (toplar, maksimumlarını bulur veya ortalamalarını bulur) ve düğüm başına bir son vektör içeren matrisi döndürür.
+  #. ``MessagePassing.update(aggr_out, ...)``\ : This function will take the matrix that ``aggregate()`` returns that contains the result of message aggregation for each vertex, as well as any parameters that were passed to ``propagate()``\ , and apply the :math:`\gamma` transformation in the formulation above and return the final output of the propagation process.
+     ``MessagePassing.update(aggr_out, ...)``\ : Bu işlev, propagate() öğesine iletilen tüm parametrelerin yanı sıra her bir köşe için ileti toplamanın sonucunu içeren ``propagate()`` öğesinin döndürdüğü matrisi alır ve :math:`\gamma` yukarıdaki formülasyondaki gama dönüşümü ve yayılma sürecinin son çıktısını döndürür.
 
 The following figure demonstrates an example of a call to the ``propagate()`` function that takes as parameters the connectivity information of the graph (\ ``edge_index``\ ) as well as a matrix containing feature vectors for each node (\ ``node_features``\ ).
 
@@ -415,11 +423,12 @@ We will use a dataset with multiple graphs, and will carry out graph classificat
 
    print(f"Bu veri kümesinde {len(dataset)} grafik var ")
 
-Output:
+.. admonition:: Çıktı
+   :class: dropdown, information
 
-.. code-block:: python
+    .. code-block:: python
 
-   Bu veri kümesinde 600 grafik var
+        Bu veri kümesinde 600 grafik var
 
 Data loaders - Veri yükleyiciler
 --------------------------------
@@ -574,21 +583,22 @@ Havuzlama işlevinde, ``data`` nesnesinin içindeki ``batch`` üyesini kullanır
    model = GNN(num_node_features, num_hidden_feats, num_classes).to(device)
    print(model)
 
-Output:
+.. admonition:: Çıktı
+   :class: dropdown, information
 
-.. code-block:: python
+    .. code-block:: python
 
-   GNN(
-     (gnn_layers): ModuleList(
-       (0): GCN(
-         (lin): Linear(in_features=3, out_features=128, bias=True)
-       )
-       (1): GATConv(128, 128, heads=1)
-     )
-     (lin): Linear(in_features=128, out_features=2, bias=True)
-     (relu): ReLU()
-     (log_softmax): LogSoftmax(dim=1)
-   )
+        GNN(
+            (gnn_layers): ModuleList(
+            (0): GCN(
+                (lin): Linear(in_features=3, out_features=128, bias=True)
+            )
+            (1): GATConv(128, 128, heads=1)
+            )
+            (lin): Linear(in_features=128, out_features=2, bias=True)
+            (relu): ReLU()
+            (log_softmax): LogSoftmax(dim=1)
+        )
 
 Train loop - Tren döngüsü
 =========================
@@ -612,15 +622,16 @@ Kullanacağımız tren döngüsü, birkaç temel fark dışında son örnekte ku
        if epoch % 2 == 0:
            print(f"Loss {epoch_loss}")
 
-Output:
+.. admonition:: Çıktı
+   :class: dropdown, information
 
-.. code-block:: python
+    .. code-block:: python
 
-   Loss 8.446746826171875
-   Loss 7.77716588973999
-   Loss 7.491060733795166
-   Loss 7.148349285125732
-   Loss 7.039545059204102
+        Loss 8.446746826171875
+        Loss 7.77716588973999
+        Loss 7.491060733795166
+        Loss 7.148349285125732
+        Loss 7.039545059204102
 
 Testing - Test yapmak
 ---------------------
@@ -641,8 +652,9 @@ Benzer şekilde, test için, test verilerini getirmek için ``test_loader``\ ı 
            total_samples +=len(batch.batch.unique())
        print(f"Accuracy {num_correct/total_samples*100}")
 
-Output:
+.. admonition:: Çıktı
+   :class: dropdown, information
 
-.. code-block:: python
+    .. code-block:: python
 
-   Accuracy 31.838565022421523
+        Accuracy 31.838565022421523

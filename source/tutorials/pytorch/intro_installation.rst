@@ -151,4 +151,4 @@ PyTorch'u Conda kullanarak TRUBA'ya kurduysanız, o zaman Conda'yı başlatmanı
 
 .. This assumes that Conda was installed in the default location, and that the environment on which PyTorch is installed is named ``pyt_env``.
 
-Bu, Conda'nın varsayılan konuma kurulduğunu ve PyTorch'un kurulu olduğu ortamın `` pyt_env '' olarak adlandırıldığını varsayar. 
+Bu, Conda'nın varsayılan konuma kurulduğunu ve PyTorch'un kurulu olduğu ortamın ``pyt_env`` olarak adlandırıldığını varsayar. 
