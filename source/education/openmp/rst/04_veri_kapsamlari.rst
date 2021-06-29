@@ -12,9 +12,10 @@ OpenMP bu duruma çare olarak aşağıda listelenen yapıları sunmaktadır.
 -  firstprivate
 -  lastprivate
 -  shared
+-  threadprivate
+-  copyin
 -  default
 -  reduction
--  copyin
 
 Aşağıda bu yapıların anlamları ve kullanım örnekleri yer almaktadır.
 
@@ -86,3 +87,59 @@ shared
 
 Aksi belirtilmedikçe OpenMP’deki çoğu direktif “shared” yani verilerin
 paylaşılmasını kullanmaktadır. Fakat programcının bu varsayımı
+değiştirmesi durumunda ``shared`` direktifi kullanılarak belirli
+değişkenler paylaşımlı hale getirilebilir.
+
+threadprivate
+-------------
+
+Private direktifine benzer olmakla beraber, aşağıda listelenen farklara
+sahiptir.
+
+-  Ana iş parçacığı yeni bir değişken ya da bir kopyaya değil değişkenin
+   kendisine sahip olur.
+-  Birden fazla paralel alanda kullanılması durumunda her thread için
+   önceki değerini korur. Aşağıdaki durumlar haricinde:
+
+   -  OpenMP’nin “dynamic thread adjustment” sisteminin açık olması.
+
+      -  ``omp_set_dynamic(0);`` şeklinde kodun içinde kapatılabilir.
+      -  ``export OMP_DYNAMIC=FALSE`` şeklinde kodun dışından
+         (terminalden) kapatılabilir.
+
+   -  İş parçacığı sayısının alanlar arasında farklılık göstermesi.
+
+copyin
+------
+
+Firstprivate’da olduğu gibi değişkenin ilk değeri tüm iş parçacıkları
+için kopyalanır. Daha sonra ``threadprivate`` gibi davranış gösterir.
+Yani doğru şartlar altında paralel alanlar arasında değerler korunur.
+
+default
+-------
+
+Blok içinde varsayılan veri kapsamını ayarlar. Yani üstte verilen
+kapsamlarda belirtilmemiş tüm değişkenler bu kapsama uyarlar.
+
+C/C++ için iki seçenekten biri kullanılabilir: ``shared`` veya ``none``.
+- ``shared`` olması durumunda ayrıca belirtilmemiş tüm değişkenler
+paylaşılır. - ``none`` olması durumunda sadece üstteki kapsamlarda
+belirtilmiş değişkenler blok içerisinde kullanılabilir.
+
+Bazı derleyiciler bunların dışında seçenekler de sunabilir fakat OpenMP
+şartnamesinde belirtilmediği için kullanmak kodun başka platformlarda
+kullanılabilirliğini düşürebilir.
+
+reduction
+---------
+
+``reduction(işlem:değişken)`` şeklinde kullanılır.
+
+Değişken tüm iş parçacıkları için ``private`` gibi çalışır. Alanın
+sonunda tüm değerler belirtilen işlem kullanılarak tek bir değere
+indirgenir.
+
+İşlem: - standart aritmetik operasyonlar olabilir ``(+,*,-,/)`` - binary
+operasyonlar olabilir (``<<,>>`` hariç) ``(&,|,^)`` - boolean
+operasyonlar olabilir ``(&&,||)``
