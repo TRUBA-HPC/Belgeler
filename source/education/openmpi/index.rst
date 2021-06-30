@@ -11,18 +11,18 @@ Bu dokümanda *MPI* arayüzünün en önemli fonksiyonları işlenirken, genel o
 
     Slurm-ile-MPI-kullanımı.rst
     Seri-ve-Paralel-Bölgeler.rst
+    İletişimciler-Gruplar.rst
     MPI_Send-ve-MPI_Recv.rst
     Engellemeyen-İletişim.rst
     Toplu-Islemler.rst
+    Özel-Veri-Yapıları.rst
 
 
 Yakında eklenecek eğitimler:
 
 * Paralel Paradigmalar ve Paralel Algoritmalar
-* Toplu İşlemler
-* Özel Veri Yapıları
 * Sanal Topolojiler
 * MPI-2 ve MPI-3
 * Performans Ölçme ve Eniyileme
 
-Materyal bu `eğitimden <https://pdc-support.github.io/introduction-to-mpi/>`_ yararlanarak EuroCC projesi için TRUBA üzerinde hazırlanmıştır.
+Bu eğitim materyali `başlangıç <https://pdc-support.github.io/introduction-to-mpi/>`_ ve `orta düzey <https://enccs.github.io/intermediate-mpi/>`_ eğitim materyalinden yararlanarak, EuroCC projesi için TRUBA üzerinde hazırlanmıştır.
