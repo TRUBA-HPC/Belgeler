@@ -1,15 +1,7 @@
-=====================================
-Hesaplamalı Akışkanlar Dinamiği (HAD)
-=====================================
-
-.. toctree::
-    :caption: İçerik
-    :maxdepth: 1
-    
-    about/index.rst
-    HPC/index.rst
-    SU2/index.rst
-    notes/index.rst
+=================
+C++ Programlaması
+=================
+...
 
 -------
 
@@ -18,4 +10,3 @@ Ticari-Aynı Lisansla Paylaş 4.0 Uluslararası Lisansı`_ ile lisanslanmıştı
 
 .. _Creative Commons Atıf-Gayri Ticari-Aynı Lisansla Paylaş 4.0 Uluslararası Lisansı: http://creativecommons.org/licenses/by-nc-sa/4.0/
 .. |CreativeCommonsLicense| image:: https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png
-

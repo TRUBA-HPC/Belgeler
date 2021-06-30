@@ -25,7 +25,7 @@ HAD simülasyonları yapılır.
    * Hesaplama sonuçlarının değerlendirilmesi (Evaluation of Computational Results)
    * Görüntüleme (Visualization)
 
-.. figure:: CFDSteps.png
+.. figure:: /assets/education-cfd/image/CFDSteps.png
    :align: center
    :figwidth: 600px
 
@@ -44,7 +44,7 @@ sıralanabilir.
 * Prandtl-Glauert Denklemi / Dalga Denklemi
 * Potansiyel Denklemi / Laplace Denklemi
 
-.. figure:: CFDEqns.png
+.. figure:: /assets/education-cfd/image/CFDEqns.png
    :align: center
    :figwidth: 600px
 

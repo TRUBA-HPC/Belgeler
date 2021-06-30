@@ -113,7 +113,7 @@ or edit the job script and submit & check the que and job output
 
 8. Sample job script:
 
-	* :download:`su2_job.sh<su2_job.sh>`
+	* :download:`su2_job.sh</assets/education-cfd/download/su2_job.sh>`
 
 .. code-block:: bash
 	
