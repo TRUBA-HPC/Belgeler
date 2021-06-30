@@ -56,3 +56,11 @@ kaynaklarının büyük veri analizinde kullanılması yaklaşımına Yüksek
 Başarımlı Veri Analizi (*High-Performance Data Analysis –  HPDA*) 
 ismi verilmekte ve Büyük Veri ile YBH alanlarının kesişimi olarak 
 görülmektedir.
+
+----------
+
+|CreativeCommonsLicense| Bu çalışma,  `Creative Commons Atıf-Gayri 
+Ticari-Aynı Lisansla Paylaş 4.0 Uluslararası Lisansı`_ ile lisanslanmıştır.
+
+.. _Creative Commons Atıf-Gayri Ticari-Aynı Lisansla Paylaş 4.0 Uluslararası Lisansı: http://creativecommons.org/licenses/by-nc-sa/4.0/
+.. |CreativeCommonsLicense| image:: https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png

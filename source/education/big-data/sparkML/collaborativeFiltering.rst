@@ -62,4 +62,11 @@ Scala ile örnek bir uygulama aşadağıda sunulmuştur.
  val movies = ratings.select(als.getItemCol).distinct().limit(3)
  val movieSubSetRecs = model.recommendForItemSubset(movies, 10)
 
+----------
+
+|CreativeCommonsLicense| Bu çalışma,  `Creative Commons Atıf-Gayri 
+Ticari-Aynı Lisansla Paylaş 4.0 Uluslararası Lisansı`_ ile lisanslanmıştır.
+ 
+.. _Creative Commons Atıf-Gayri Ticari-Aynı Lisansla Paylaş 4.0 Uluslararası Lisansı: http://creativecommons.org/licenses/by-nc-sa/4.0/
+.. |CreativeCommonsLicense| image:: https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png 
 .. _filtreleme: http://spark.apache.org/docs/latest/ml-collaborative-filtering.html

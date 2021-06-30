@@ -80,7 +80,7 @@ yazalım:
 
 .. code-block:: cpp
 
- public void map(LongWritable key, Text value, Context con) 
+ public void map(LongWritable key, Text value, Context con)
                     throws IOException, InterruptedException {          
     String line = value.toString();
     String[] words=line.split(",");
@@ -265,4 +265,11 @@ birlikte, bu uygulamaların (farklı dosya sistemleri, veri
 tabanları, veri toplama araçları gibi) başka ortamlardan veri alıp
 işleyecek şekilde kodlanmaları da mümkündür.
 
+----------
+
+|CreativeCommonsLicense| Bu çalışma,  `Creative Commons Atıf-Gayri 
+Ticari-Aynı Lisansla Paylaş 4.0 Uluslararası Lisansı`_ ile lisanslanmıştır.
+
+.. _Creative Commons Atıf-Gayri Ticari-Aynı Lisansla Paylaş 4.0 Uluslararası Lisansı: http://creativecommons.org/licenses/by-nc-sa/4.0/
+.. |CreativeCommonsLicense| image:: https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png
 .. _Apache Hadoop: https://hadoop.apache.org

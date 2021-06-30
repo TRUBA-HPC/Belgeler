@@ -25,6 +25,7 @@ modelleyen bir veri yapısıdır)
 .. toctree::
    :caption: İçerik
    :maxdepth: 1
+   :titlesonly:
 
    generalStatisticFunctions.rst
    dataSources.rst
@@ -36,17 +37,20 @@ modelleyen bir veri yapısıdır)
    densePatternMining.rst
    modelSelection.rst
 
+----------
 
+Bu Türkçe notların hazırlanmasında kaynak olarak Apache Spark `web 
+sitesindeki`_ bilgilerden faydalanılmıştır. Scala kodlama örnekleri
+aynı kaynaktan alınmıştır. 
 
+----------
 
-
-
-.. note::
-    Bu Türkçe notların hazırlanmasında kaynak olarak Apache Spark `web 
-    sitesindeki`_ bilgilerden faydalanılmıştır. Scala kodlama örnekleri
-    aynı kaynaktan alınmıştır. 
+|CreativeCommonsLicense| Bu çalışma,  `Creative Commons Atıf-Gayri 
+Ticari-Aynı Lisansla Paylaş 4.0 Uluslararası Lisansı`_ ile lisanslanmıştır.
 
 .. _Spark: https://spark.apache.org/docs/latest/
 .. _Spark 1.2: https://spark.apache.org/docs/1.2.2/ml-guide.html
 .. _MLlib: http://spark.apache.org/docs/latest/ml-guide.html
 .. _web sitesindeki: http://spark.apache.org/docs/latest/ml-guide.html
+.. _Creative Commons Atıf-Gayri Ticari-Aynı Lisansla Paylaş 4.0 Uluslararası Lisansı: http://creativecommons.org/licenses/by-nc-sa/4.0/
+.. |CreativeCommonsLicense| image:: https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png

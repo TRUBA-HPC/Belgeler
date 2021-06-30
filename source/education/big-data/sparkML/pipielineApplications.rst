@@ -57,3 +57,11 @@ ve pyspark.ml'deki DataFrame tabanlı API, tanımlanmış bu model aktarma
 işlevlerini kapsamaktadır.
 
 Örnekler için bu `bağlantıya <http://spark.apache.org/docs/latest/ml-pipeline.html#pipeline>`_ ulaşabilirsiniz.
+
+----------
+
+|CreativeCommonsLicense| Bu çalışma,  `Creative Commons Atıf-Gayri 
+Ticari-Aynı Lisansla Paylaş 4.0 Uluslararası Lisansı`_ ile lisanslanmıştır.
+
+.. _Creative Commons Atıf-Gayri Ticari-Aynı Lisansla Paylaş 4.0 Uluslararası Lisansı: http://creativecommons.org/licenses/by-nc-sa/4.0/
+.. |CreativeCommonsLicense| image:: https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png
