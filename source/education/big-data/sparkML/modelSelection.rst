@@ -24,9 +24,16 @@ gibi belirlenen Pipeline için de uygulanabilmektedir.
 
 ----------
 
+Bu Türkçe notlar Prof. Pınar KARAGÖZ tarafından kaynak olarak Apache
+Spark `web sitesindeki`_ bilgilerden faydalanılarak hazırlanmıştır.
+Scala kodlama örnekleri aynı kaynaktan alınmıştır. 
+
+----------
+
 |CreativeCommonsLicense| Bu çalışma,  `Creative Commons Atıf-Gayri 
 Ticari-Aynı Lisansla Paylaş 4.0 Uluslararası Lisansı`_ ile lisanslanmıştır.
 
+.. _modelin tahmin performansının: http://spark.apache.org/docs/latest/ml-tuning.html
+.. _web sitesindeki: http://spark.apache.org/docs/latest/ml-guide.html
 .. _Creative Commons Atıf-Gayri Ticari-Aynı Lisansla Paylaş 4.0 Uluslararası Lisansı: http://creativecommons.org/licenses/by-nc-sa/4.0/
 .. |CreativeCommonsLicense| image:: https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png
-.. _modelin tahmin performansının: http://spark.apache.org/docs/latest/ml-tuning.html

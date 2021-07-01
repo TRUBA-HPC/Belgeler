@@ -39,9 +39,9 @@ modelleyen bir veri yapısıdır)
 
 ----------
 
-Bu Türkçe notların hazırlanmasında kaynak olarak Apache Spark `web 
-sitesindeki`_ bilgilerden faydalanılmıştır. Scala kodlama örnekleri
-aynı kaynaktan alınmıştır. 
+Bu Türkçe notlar Prof. Pınar KARAGÖZ tarafından kaynak olarak Apache
+Spark `web sitesindeki`_ bilgilerden faydalanılarak hazırlanmıştır.
+Scala kodlama örnekleri aynı kaynaktan alınmıştır. 
 
 ----------
 
