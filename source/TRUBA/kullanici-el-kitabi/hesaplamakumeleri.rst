@@ -82,6 +82,8 @@ Hamsi sunucuları 144 adet INSPUR NF5180M5 sunuculardan oluşmaktadır. Her bir 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Palamut sunucuları 9 adet HP Proliant XL675d Gen10 Plus model sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet AMD EPYC 7742 2.24GHz işlemci ve toplam 128 adet işlemci çekirdeği ve 8 adet Nvidia Tesla A100 (80GB, NVLink ) GPU karti bulunmaktadır. Sunucular birbirlerine 4xHDR (200Gbps) Infiniband ağ kartları ile non-blocking yapıda bağlıdırlar.
 
+.. _partitions:
+
 ----------------------
 Kuyruklar (partitions)
 ----------------------
@@ -262,6 +264,8 @@ Her bir sunucuda 28 çekirdek ve 256GB bellek bulunmaktadır. Kuyrukta işlerin 
 
 komutu ile görülebilir.
 
+.. _barbun-node:
+
 *Barbun*
 ^^^^^^^^
 
@@ -274,6 +278,8 @@ Her bir sunucuda 40 çekirdek ve 384GB bellek bulunmaktadır. Kuyrukta işlerin 
    scontrol show partition=barbun
 
 komutu ile görülebilir.
+
+.. _barbuncuda-node:
 
 *Barbun-cuda*
 ^^^^^^^^^^
@@ -302,6 +308,8 @@ Her bir sunucuda 40 çekirdek ve 384GB bellek ayrıca 4'er adet Nvidia V100 16GB
    scontrol show partition=akya-cuda
 
 komutu ile görülebilir.
+
+.. _hamsi-node:
 
 *Hamsi*
 ^^^^^^
