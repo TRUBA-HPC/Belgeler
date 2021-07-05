@@ -1,9 +1,9 @@
 =================================
-LAMMPS Uygulaması Nasıl Kurulur?
+LAMMPS Kılavuzu
 =================================
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
 
     lammps_install_truba.rst
     lammps_truba.rst

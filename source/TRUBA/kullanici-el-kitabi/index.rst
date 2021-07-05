@@ -3,7 +3,7 @@ Kullanıcı El Kitabı
 ====================
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
 
     TRUBAmimarisi.rst
     kullanicihesaplari.rst
@@ -17,3 +17,6 @@ Kullanıcı El Kitabı
     grafikekran.rst
     TRUBAtesekkur.rst
     sss.rst
+    open-vpn/index.rst
+    kaynakyoneticisi-isdongusu/index.rst
+    kullanici-ara-yuzu/openondemand/index.rst

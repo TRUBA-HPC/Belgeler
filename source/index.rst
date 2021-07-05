@@ -9,9 +9,12 @@ TRUBA Kullanıcı Dökümanları
 
 .. toctree::
    :caption: Başlangıç
-   :maxdepth: 2
+   :maxdepth: 1
 
-   getting-started/index.rst
+   TRUBA/kullanici-el-kitabi/open-vpn/index.rst
+   TRUBA/kullanici-el-kitabi/kaynakyoneticisi-isdongusu/index.rst
+   TRUBA/kullanici-el-kitabi/kullanici-ara-yuzu/openondemand/index.rst
+
 
 .. toctree::
    :caption: Uygulama Kılavuzları
@@ -22,12 +25,20 @@ TRUBA Kullanıcı Dökümanları
    how-to-guides/deep-learning/index.rst
    how-to-guides/LAMMPS/index.rst
    how-to-guides/VASP/index.rst
+   how-to-guides/CodeSaturne/codesaturne.rst
 
 .. toctree::
    :caption: TRUBA hakkında
    :maxdepth: 1
 
-   TRUBA/index.rst
+   TRUBA/duyurular/index.rst
+   TRUBA/TRUBAgenel.rst
+   TRUBA/kullanici-el-kitabi/index.rst
+   TRUBA/openondemand/index.rst
+   TRUBA/sss.rst
+   TRUBA/truba-proje/index.rst
+   TRUBA/kullanici-el-kitabi/TRUBAtesekkur.rst
+   TRUBA/eurohpc-erisim/index.rst
    
 
 .. toctree::
@@ -42,7 +53,7 @@ TRUBA Kullanıcı Dökümanları
 
 .. warning::
 
- EuroCC@Türkiye projesi kapsamında sunulan tüm eğitim materyalleri, Creative Commons Atıf lisansı (CC-BY-4.0) altında sağlanır. Aşağıdakiler, `CC-BY-4.0 lisansının tam yasal metninin <https://creativecommons.org/licenses/by/4.0/legalcode.tr>`_ bir özetidir (ve onun yerine geçmez). Bunları yapmakta özgürsünüz:
+ EuroCC@Türkiye projesi kapsamında sunulan tüm materyaller, Creative Commons Atıf lisansı (CC-BY-4.0) altında sağlanır. Aşağıdakiler, `CC-BY-4.0 lisansının tam yasal metninin <https://creativecommons.org/licenses/by/4.0/legalcode.tr>`_ bir özetidir (ve onun yerine geçmez). Bunları yapmakta özgürsünüz:
 
  * **Paylaş** — eseri her ortam veya formatta kopyalayabilir ve yeniden dağıtabilirsiniz.
 
@@ -63,13 +74,6 @@ TRUBA Kullanıcı Dökümanları
  * Kamuya açık alanda veya geçerli bir istisna veya sınırlama tarafından kullanımınıza izin verilen yerlerde materyalin öğeleri için lisansa uymak zorunda değilsiniz.
 
  * Herhangi bir garanti verilmemektedir. Lisans, kullanım amacınız için gerekli tüm izinleri size vermeyebilir. Örneğin, tanınırlık, gizlilik veya manevi haklar gibi diğer haklar, materyali nasıl kullandığınızı sınırlayabilir.
-
-|CreativeCommonsLicense|_ Bu çalışma,  `Creative Commons Atıf-Gayri Ticari-Aynı Lisansla Paylaş 4.0 Uluslararası Lisansı`_ ile lisanslanmıştır.
-
-.. _Creative Commons Atıf-Gayri Ticari-Aynı Lisansla Paylaş 4.0 Uluslararası Lisansı: http://creativecommons.org/licenses/by-nc-sa/4.0/
-
-.. |CreativeCommonsLicense| image:: https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png
-.. _CreativeCommonsLicense: http://creativecommons.org/licenses/by-nc-sa/4.0/
 
 
    

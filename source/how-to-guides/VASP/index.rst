@@ -1,5 +1,5 @@
 =================================
-VASP Uygulaması Nasıl Kurulur?
+VASP Kılavuzu
 =================================
 
 .. toctree::

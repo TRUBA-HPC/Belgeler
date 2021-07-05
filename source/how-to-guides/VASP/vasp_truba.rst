@@ -1,5 +1,5 @@
 ==========================================
-TRUBA'da VASP Programı Nasıl Kullanılır?
+TRUBA'da VASP Kullanımı
 ==========================================
 
 Bir önceki adımda VASP programının kendi kullanıcınızın olduğu dizine nasıl kurulacağını anlattık. Bu bölümde bu uygulamanın yine kendi dizininizde çalıştırabilmeniz için örnek bir iş betiği oluşturulacaktır.

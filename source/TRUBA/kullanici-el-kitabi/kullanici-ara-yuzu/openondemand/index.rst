@@ -1,7 +1,7 @@
 
-================
-Open OnDemand
-================
+========================
+Open On Demand Arayüzü
+========================
 
 
 OpenOnDemand web tabanlı bir kullanıcı arayüzü servisidir. Bu arayüz, terminal tabanlı klasik kullanıcı arayüzü sunucusunun sağladığı tüm imkanlara ek olarak kullanıcılara pek çok ek özellik sunmaktadır. OpenOnDemand ile ilgili ayrıntılı bilgilere `Open OnDemand web sayfasından <https://osc.github.io/ood-documentation/latest/>`_ ulaşabilirsiniz. 
