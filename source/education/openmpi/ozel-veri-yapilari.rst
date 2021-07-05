@@ -115,9 +115,9 @@ Paketleme ve Çözme
 MPI yapıları aynı olmayan verileri birlikte yollayabilmek için paketleme ve çözme alt yapısı sağlamaktadır. Böylece birlikte yollamak istediğimiz farklı veri yapılarını her zaman yeni bir veri yapısı tanımlayarak yollamak zorunda kalmayız. Paketleme sonucu ortaya çıkan paketlenmiş arabellek ``MPI_PACKED`` türündedir ve MPI tarafından tanınan herhangi bir tür heterojen temel veri türü koleksiyonunu içerebilir.
 
 
-.. image:: assets/pack-unpack.png
-   :target: assets/pack-unpack.png
-   :alt: assets/pack-unpack.png
+.. image:: /assets/openmpi-education/images/pack-unpack.png
+   :target: /assets/openmpi-education/images/pack-unpack.png
+   :alt: /assets/openmpi-education/images/pack-unpack.png
 
 
 Yukarıdaki figürden de gösterildiği gibi farklı veri yapılarına ait olan değerler tek bir mesaja bitişik bir şekilde paketlenir ve alıcı da aynı şekilde çözülür.

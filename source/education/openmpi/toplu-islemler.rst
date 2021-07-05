@@ -39,9 +39,9 @@ Barrier
 **communicator:**  programlar arası iletişimi sağlayan obje
 
 
-.. image:: assets/barrier.png
-   :target: assets/barrier.png
-   :alt: assets/barrier.png
+.. image:: /assets/openmpi-education/images/barrier.png
+   :target: /assets/openmpi-education/images/barrier.png
+   :alt: /assets/openmpi-education/images/barrier.png
 
 
 Bu komut parametre olarak verilen MPI_Comm objesine dahil edilmiş bütün sıralar ``MPI_Barrier`` komutunda senkron olana kadar işlemini önce tamamlayan sıraları bekletir. Böylece bütün sıralar senkronize olmuş olur.
@@ -61,9 +61,9 @@ Broadcast
 ``MPI_Send``\ 'e çok benzer, ancak aynı veriler bir sıradan diğer tüm sıralara gönderilir. Bu işlev ancak tüm süreçler ``MPI_Bcast`` fonksiyonuna ulaştığında geri döner, yani bir bariyer teşkil etmektedir (\ ``MPI_Barrier``\ ).
 
 
-.. image:: assets/bcast.png
-   :target: assets/bcast.png
-   :alt: assets/bcast.png
+.. image:: /assets/openmpi-education/images/bcast.png
+   :target: /assets/openmpi-education/images/bcast.png
+   :alt: /assets/openmpi-education/images/bcast.png
 
 
 Scatter
@@ -84,9 +84,9 @@ Scatter
 Sıra kökündeki ``sendbuf``\ 'taki veriler parçalara bölünür ve her parça farklı bir sıraya gönderilir. Her yığın, ``sendtype`` türünden ``sendcount`` kadar eleman içerir. Yani ``sendtype`` ``MPI_Int`` ve ``sendcount`` 2 ise, her sıra 2 tamsayı alacaktır. Alınan veriler ``recvbuf``\ 'a yazılır. Mesaj sadece kök tarafından gönderilir. Bu nedenle ``sendbuf``\ 'a yalnızca kök tarafından ihtiyaç duyulur. Sonraki iki parametre, ``recvcount`` ve ``recvtype``\ , alma arabelleğini tanımlar. Genellikle ``recvtype`` ``sendtype`` ile aynıdır ve ``recvcount`` ``Nranks*sendcount``\ 'tur. Burada ``Nranks`` ``communicator`` 'a tanımlanmış sıra sayısını belirtir.
 
 
-.. image:: assets/scatter.png
-   :target: assets/scatter.png
-   :alt: assets/scatter.png
+.. image:: /assets/openmpi-education/images/scatter.png
+   :target: /assets/openmpi-education/images/scatter.png
+   :alt: /assets/openmpi-education/images/scatter.png
 
 
 Gather
@@ -107,9 +107,9 @@ Gather
 ``Gather`` operasyonu ``Scatter`` operasyonun tersi olarak düşünülebilir. Her sıra, ``sendbuf``\ 'taki verileri sıralama köküne gönderir. Kök, sıra numaralarına göre verileri ``recvbuffer``\ 'a toplar.
 
 
-.. image:: assets/gather.png
-   :target: assets/gather.png
-   :alt: assets/gather.png
+.. image:: /assets/openmpi-education/images/gather.png
+   :target: /assets/openmpi-education/images/gather.png
+   :alt: /assets/openmpi-education/images/gather.png
 
 
 Reduce
@@ -127,9 +127,9 @@ Reduce
        MPI_Comm communicator)
 
 
-.. image:: assets/reduce.png
-   :target: assets/reduce.png
-   :alt: assets/reduce.png
+.. image:: /assets/openmpi-education/images/reduce.png
+   :target: /assets/openmpi-education/images/reduce.png
+   :alt: /assets/openmpi-education/images/reduce.png
 
 
 ``MPI_Reduce`` program akışını durdurur (\ ``MPI_Barrier`` gibi) ve programa toplu senkronizasyon getirir. Çağrıdan sonra, kök sıra, communicator'a dahil olan bütün sıralardaki değerlerin bir işleme göre toplaşmış değerini elde eder.

@@ -9,13 +9,13 @@ Bu dokümanda *MPI* arayüzünün en önemli fonksiyonları işlenirken, genel o
 .. toctree::
     :maxdepth: 1
 
-    Slurm-ile-MPI-kullanımı.rst
-    Seri-ve-Paralel-Bölgeler.rst
-    İletişimciler-Gruplar.rst
-    MPI_Send-ve-MPI_Recv.rst
-    Engellemeyen-İletişim.rst
-    Toplu-Islemler.rst
-    Özel-Veri-Yapıları.rst
+    slurm-ile-mpi-kullanimi.rst
+    seri-ve-paralel-bolgeler.rst
+    iletisimciler-gruplar.rst
+    mpi-send-mpi-recv.rst
+    engellenmeyen-iletisim.rst
+    toplu-islemler.rst
+    ozel-veri-yapilari.rst
 
 
 Yakında eklenecek eğitimler:

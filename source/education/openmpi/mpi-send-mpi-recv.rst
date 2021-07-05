@@ -7,9 +7,9 @@ Bu bölümde başlıkta da belirttiğimiz gibi, bir programdan diğerine veri yo
 ``MPI_Send / MPI_Recv`` fonksiyonları programlar arası iletişim araçları olmakla birlikte, *MPI* kütüphanesinin barındırdığı diğer fonksiyonların basit yapı taşlarıdır. Bu fonksiyonlar iki program arasında iletişimi sağladığından dolayı noktadan noktaya iletişim olarak sınıflandırılır.
 
 
-.. image:: assets/mpi_ortam.png
-   :target: assets/mpi_ortam.png
-   :alt: assets/mpi_ortam.png
+.. image:: /assets/openmpi-education/images/mpi_ortam.png
+   :target: /assets/openmpi-education/images/mpi_ortam.png
+   :alt: /assets/openmpi-education/images/mpi_ortam.png
 
 *MPI* arayüzünde iletişim oldukça basittir. Program 0, program 1'e mesaj yollamak istediğinde, mesajda yollanacak veriyi bir tamponda birleştirir ve ``MPI_Send`` komutunu kullanarak yollar. Tampon oluşturulması verilerin birlikte gönderilmesini sağlar ve yollanan verinin gecikmesini minimuma indirger. Program 1 ise mesaj alacağını bilerek ``MPI_Recv`` komutunu kullanarak Program 0 dan mesaj bekler ve yollanan veriyi tek bir mesajda alır. Mesaj ``MPI_Send`` çağırılmış olsa bile alıcı program tarafından ``MPI_Recv`` çağırılmadan yollanmaz.
 

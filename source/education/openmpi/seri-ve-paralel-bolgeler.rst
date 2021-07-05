@@ -51,9 +51,9 @@ Amdahl Yasası ve Güçlü Ölçekleme
 Amdahl yasası paralel programlama ile elde edilebilecek teorik hızlanma limitini tanımlamaktadır: Sabit bir problem için hızlanmanın üst sınırı kodun seri kısmı tarafından belirlenir. Buna güçlü ölçekleme denir ve sonuçları aşağıdaki şekilden anlaşılabilir.
 
 
-.. image:: assets/amdahl.png
-   :target: assets/amdahl.png
-   :alt: assets/amdahl.png
+.. image:: /assets/openmpi-education/images/amdahl.png
+   :target: /assets/openmpi-education/images/amdahl.png
+   :alt: /assets/openmpi-education/images/amdahl.png
 
 
 Bir programın 20 saatte çalışmasını tamamladığını ve bu programın seri bölgesinin programın yüzde 5 ini kapsadığını kabul edersek, Amdahl yasasına göre programın hızlanması yukardaki şekilde gibi mavi çizgi ile gösterilebilir. Programın yüzde 5'i yani 1 saati seri olduğundan program hiçbir zaman 1 saatten daha fazla çalıştırılamaz ve, ne kadar işlemci kullanılırsa kullanılsın, elde edilebilecek hızlanma en fazla 20 olabilir.
@@ -73,9 +73,9 @@ Gustafson Yasası ve Zayıf Ölçekleme
 Gustafson yasası, programdaki paralel bölgenin kaynak miktarı ile doğrusal olarak ölçeklendiği ve seri bölgenin problemin boyutuna göre artmadığı yaklaşımlarına dayanmaktadır. 
 
 
-.. image:: assets/gustafson.png
-   :target: assets/gustafson.png
-   :alt: assets/gustafson.png
+.. image:: /assets/openmpi-education/images/gustafson.png
+   :target: /assets/openmpi-education/images/gustafson.png
+   :alt: /assets/openmpi-education/images/gustafson.png
 
 
 Yasaya göre işlemci saysı arttıkça ölçekli hızlanma linear olarak artar. Yukarıdaki figürde gösterildiği gibi ölçekli hızlanma eğimi 1'den küçük olmakla birlikte lineer bir ilişki göstermektedir.
