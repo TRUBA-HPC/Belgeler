@@ -146,17 +146,17 @@ Merkezi alandaki uygulama veya kütüphaneler genel olarak ortak bir sistematik 
 
 Altyapıdaki donanımlar farklı tarihlerde farklı ihalelerle alınmış olduğu için, altyapıda farklı işlemci üreticilerinden farklı işlemci mimarileri ve farklı işletim sistemleri yüklü olabilmektedir. Güncel donanım işlemci bilgisi (2018-02-22) aşağıdaki gibidir. Sunucu aileleri ile ilgili ayrıntılı bilgiye ``TRUBA Kaynakları`` sayfasından ulaşabilirsiniz.
 
-**Levrek sunucuları** --> Intel Xeon E5 2690 V1 (single, short, mid1,mid2,long kuyrukları) 
-
-**Levrekv2 sunucuları** --> Intel Xeon E5 2680 V3 (cuda ve levrekv2 kuyrugu) 
-
 **Sardalya sunucuları** --> Intel Xeon E5 2690 V4 (sardalya kuyruğu) 
 
 **Orkinos sunucusu** --> Intel Xeon E7 4850 V3 (smp kuyruğu) 
 
-**Barbun sunucuları** --> Intel Xeon Scalable GOLD 6148(barbun, barbun-cuda kuyrukları) 
+**Barbun sunucuları** --> Intel Xeon Scalable GOLD 6148 (barbun, barbun-cuda kuyrukları) 
 
-**Akya sunucuları** --> Intel Xeon Scalable GOLD 6148(akya-cuda kuyruğu) 
+**Akya sunucuları** --> Intel Xeon Scalable GOLD 6148 (akya-cuda kuyruğu) 
+
+**Hamsi sunucuları** --> Intel Xeon Scalable 2 GOLD 6528R (hamsi kuyruğu)
+
+**Palamut sunucuları** --> AMD EPYC 7742 (palamut-cuda kuyruğu)
 
 Farklı işlemci modellerinde, işlemcinin ve sunucunun performansını toptan etkileyen, farklı komut setleri bulunmaktadır. Herhangi bir uygulama derlenirken uygulamanın hangi işlemci ve hangi sunucu için derleneceğini bilmek ve buna uygun optimizasyon seçeneklerini kullanmak önem taşımaktadır.
 
