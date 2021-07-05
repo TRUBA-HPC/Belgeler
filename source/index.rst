@@ -35,4 +35,4 @@ TRUBA Kullanıcı Dökümanları
    education/big-data/index.rst
    education/cuda/index.rst
    education/openmpi/index.rst
-
+   education/CFD/index.rst
