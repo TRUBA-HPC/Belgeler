@@ -2,8 +2,8 @@
 Duyurular
 =========
 
+:ref:`Kullanıcı Hesapları <kullanici-hesaplari>`
 
-.. toctree::
-    :maxdepth: 1
+:ref:`TRUBA Hizmet Bedelleri <hizmet-bedelleri>`
 
-    TRUBAhizmetbedelleri.rst
+:ref:`EuroHPC Kaynaklarına Erişim <eurohpc-erisim>`

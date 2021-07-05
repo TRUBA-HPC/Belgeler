@@ -15,7 +15,9 @@ Proje konsorsiyumu, 2013 ve 2018 yılları arasında yürütülen Fortissimo ve 
 FF4EUROHPC Açık Çağrıları
 ----------------------------
 
-KOBİ'ler için toplamda iki açık çağrı sunulacaktır. İlk açık katılım çağrısı kapanmıştır. **İkinci açık çağrının Haziran 2021'de açılması ve Eylül sonunda ise kapanması planlanmaktadır.**
+KOBİ'ler için toplamda iki açık çağrı sunulacaktır. İlk açık katılım çağrısı kapanmıştır. **FF4EuroHPC 2. Çağrısı Yüksek Başarımlı Hesaplama (YBH), Veri Analitiği ve Yapay Zeka servislerini kullanarak yenilikçi çözümler üretmek isteyen KOBİ başvurularına açılmıştır. Son başvuru tarihi 29 Eylül 2021 olarak ilan edilmiştir.**
+
+`FF4EuroHPC 2. Çağrı hakkında ayrıntılı bilgiye ulaşmak için lütfen web sayfasını ziyaret ediniz. <https://www.ff4eurohpc.eu/calls>`_
 
 Çeşitli uygulama alanlarından Avrupa KOBİ'lerinden gelen problemleri ve zorlukları ele alan projeler aranmaktadır. Mühendislik, imalat veya Avrupa için hızlı ekonomik büyüme veya belirli ekonomik etki gösterebilecek sektörler tercih edilmektedir.
 

@@ -1,3 +1,5 @@
+.. _kullanici-hesaplari:
+
 ====================
 Kullanıcı Hesapları
 ====================
@@ -73,7 +75,7 @@ TRUBA Kullanıcı Politikası
 
   * TRUBA kaynakları bu politika metninde belirtilen ilkeler doğrultusunda kullanılabilir. 
   
-  * TRUBA kaynaklarını kullanarak elde edilmiş sonuçların doğrudan ya da dolaylı olarak kullanıldığı tüm makale, bildiri, tez (yüksek lisans, doktora) veya diğer (poster, vb) çalışmalarında, kullanıcının TRUBA oluşumuna teşekkür etmesi zorunludur. `Teşekkür örneklerine ulaşmak için tıklayınız <http://wiki.truba.gov.tr/index.php/Yap%C4%B1lan_%C3%87al%C4%B1%C5%9Fmalarda_TRUBA%27ya_T%C3%BCrk%C3%A7e_ve_%C4%B0ngilizce_Te%C5%9Fekk%C3%BCr_%C3%96rnekleri>`_ 
+  * TRUBA kaynaklarını kullanarak elde edilmiş sonuçların doğrudan ya da dolaylı olarak kullanıldığı tüm makale, bildiri, tez (yüksek lisans, doktora) veya diğer (poster, vb) çalışmalarında, kullanıcının TRUBA oluşumuna teşekkür etmesi zorunludur. Teşekkür örneklerine ulaşmak için  :ref:`tesekkur-truba` sayfasını ziyaret edebilirsiniz.
   
   * Kullanıcıların TRUBA'ya başvuru sırasında belirtilmiş uygulamalardan farklı bir iş çalıştırmaması beklenir. Böyle bir ihtiyaç durumunda kullanıcının ``grid-teknik@ulakbim.gov.tr`` adresine e-posta atarak yeni uygulamalar konusunda yeniden kullanıcı talebinde bulunması gerekmektedir. 
   
