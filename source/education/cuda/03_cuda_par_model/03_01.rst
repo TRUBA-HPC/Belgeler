@@ -1,0 +1,93 @@
+============================================
+CUDA Çekirdek ve SPMD Paralelleşmesi
+============================================
+
+
+Öğrenim Hedefleri
+-----------------
+
+*  Basit CUDA çekirdek işlemleri hakkında bilgi sahibi olmak
+
+   *  Çekirdek deklarasyonu
+   *  Yerleşik değişkenler (built-in variables)
+   *  İş parçacığı indisleri ile veri indisleri arasında ilişki kurmak
+
+
+Örnek: Vektör Toplama İşlemi
+-----------------------------
+CUDA Paralelleşme modeli ve çekirdek kullanımını daha yakından incelemek için vektör toplama örneğinin cihaz kodu üzerinden aşama aşama ilerleyelim.
+
+.. code-block:: C++
+
+   __global__ void sumVector(int *vec1, int* vec2, int* outVec, int size)
+    {
+        int index = threadIdx.x + blockIdx.x * blockDim.x;
+        if(index < size)
+        {
+            outVec[index] = vec1[index] + vec2[index];
+        }
+    }
+
+*  **__global__** etiketi cihaz ve host tarafından çalıştırılabilen fonksiyonları işaretlemek için kullanılır. CUDA çekirdekleri yazarken **__global__** etiketi gibi etiket(ler) kullanmamız gerekir. Bu etiketlerin neler olduğunu ve ne işe yaradıklarını bir sonraki bölümde görebilirsiniz.
+
+* **void sumVector(int *vec1, int* vec2, int* outVec, int size)** kısmından görebileceğiniz üzere çekirdek fonksiyonunun geri döndürdüğü bir değer yok. CUDA çekirdek fonksiyonlarının geri değer döndürmesini desteklemez. Bu yüzden CUDA çekirdeklerinizi yazarken *void* fonskiyonlar yazmalısınız. Bunun dışında parametreler toplanacak olan vektörler, sonuç vektörü ve vektörlerin büyüklüğü olarak sıralanabilir. Daha önceki bölümlerde CUDA bellek ayırma ve kopyalama işlemlerinden bahsetmiştik. Bu noktada gerekli ayırma ve kopyalama işlemlerinin yapıldığını varsayıyoruz. Yani çekirdek fonksiyonuna parametre olarak gelen adresler grafik işlem biriminin belleğinde bir adres olup toplanacak vektörlerin elemanları bu adrese kopyalanmıştır.
+
+*  Aynı işlemi yapan çok sayıda iş parçacığını kullanarak elde ettiğimiz paralelleşme modelimiz için hangi iş parçacığının hangi veri üzerinde çalışacağını belirlememiz gerekir. **int index = ..** kısmındaki hesaplama ile her bir iş parçacığı için **evrensel indis** bulunur ve toplama işleminin gerçekleştirileceği vektörlerin *index*. elemanı bu iş parçacığı tarafından gerçekleştirilir.
+
+*  İndis hesabından sonra görmüş olduğumuz **if(index<size)** kontrolü ise vektörlerin eleman sayısıdan fazla sayıda iş parçacığı bulunduğu koşulda yanlış/gereksiz bir toplama işlemi yapmamak için gereklidir.
+
+
+Cuda çekirdeğinin nasıl başlatıldığını görmek için şimdi de host tarafındaki kodu inceleyelim.
+
+.. code-block:: C++
+
+   .
+   .
+   .
+   sumVector<<<ceil(size/256),256>>>(d_input1,d_input2,d_output,inputLength); 
+   .
+   .
+   .
+
+Görmüş olduğunuz kod bloğunda bellek ayırma ve kopyalama işlemleri atlanmıştır. 
+
+
+Görüldüğü üzere bir CUDA çekirdeği başlatmak için normal bir C fonksiyonundan farklı olarak \<\<\<\>\>\> işaretleri arasına alınmış **konfigürasyon parametreleri** bulunmaktadır. Bu parametreler **şebeke (grid)** ve **blok** boyutlarını kontrol etmemizi sağlar. Yani iş parçağını içinde bulunduran blokların kaç boyutlu şekilde oluşturulduğu (bizim örneğimizde 1 boyutlu), kaç adet iş parçacığı içerdiği (256) ve bu blokların oluşturduğu şebekenin kaç boyutlu olduğu (bizim örneğimizde 1 boyutlu), kaç adet blok içerdiği (vektör uzunluğu / n) ayarlanabilir. Fark ettiğiniz üzere bu örnekte boyut anlamında bir bilgi girilmeden sadece kaç adet blok ve her blokta kaç adet iş parçacığı olacağı girilmiştir. Tek boyutlu blok ve şebeke yapılarında, boyut bilgisini özel olarak girmenize gerek yoktur. 
+
+Dikkat edilmesi gereken nokta **ceil(size/256)** adet blok oluşturuluyor olmasıdır. İşlemimizi gerçekleştirmeye yetecek kadar iş parçacığına sahip olmak amacıyla toplam kullanılacak iş parçacığı sayısı (her iş parçacığı 1 eleman toplayacağından vektörlerin kaç eleman içerdiği), her blokta **256** adet iş parçacığı bulunduğundan **256** ile bölünmektedir. Sonuç olarak **size/256** adet blok gereklidir. Ancak **256** sayısı **size** sayısını tam bölemediği durumlarda çıkan sayısının bir üst tam sayıya yuvarlanması sağlanmalıdır. Blok sayısı tam sayı olmak durumunda olduğundan, yukarı yuvarlama işlemi yapılmazsa virgülden sonrası atılacağından eksik sayıda blok oluşabilir. Bu durumda ise sonuç yanlış/eksik çıkacaktır. Bunu engellemek adına bir üst tam sayıya yuvarlanarak ihtiyacımız kadar veya daha fazla sayıda iş parçacığının vektör toplama işleminde çalışması sağlanır. Fazla kalan iş parçacıkları **çekirdek** kodundaki **if** ifadesi ile durdurulmaktadır.
+
+
+.. code-block:: C++
+
+   dim3 DimGrid((n-1)/256 + 1, 1, 1);
+   dim3 DimBlock(256, 1, 1);
+   sumVector<<<DimGrid,DimBlock>>>(d_input1,d_input2,d_output,inputLength);
+
+Yukarda görmüş olduğunuz örnek üstteki çekirdek başlatımı ile eşdeğerdir. Ancak bu örnekte 1 boyutlu bir çekirdek yarattığımızı daha net bir şekilde görebilirsiniz. Ayrıca **(n-1)/256 + 1** ifadesinin yukarı yuvarlamak ile aynı işleve sahip olduğunu da dikkat ediniz. Bir boyutlu şebeke ve blok yapısına sahip olduğumuzu **DimGrid** ve **DimBlock** değişkenlerinin **y** ve **z** eksenlerinde 1 adet elemana sahip olduğundan anlayabilirsiniz. Daha sönraki bölümlerde 2 boyutlu çekirdek oluşturmayı uygun bir örnek üzerinden inceleyceğiz.
+
+
+Özet: CUDA Çekirdek Başlatma 
+----------------------------
+
+Yukardaki örnek üzerinden gösterdiğimiz CUDA çekirdek başlatma işlemini kısaca özetleyelim.
+
+*  Host tarafından konfigüre edilen çekirdeğin başlamasıyla beraber aşağıdaki görselle modellenmiş bir yapı ortaya çıkar. (Bu yapının fiziksel bir karşılığı olmadığını sadece CUDA Çekirdek ve İş Parçacığı mantığının böyle kurgulandığını unutmayınız.)
+
+.. image:: /assets/cuda/03/01/01.png
+   :width: 600
+
+*  Görselde görmüş olduğunuz **şebeke** içerisindeki her **blok**, birden fazla sayıda iş parçacığı içermekte ve her **iş parçacığı** ise cihaz kodu olan **çekirdeği** çalıştırmaktadır.
+
+*  Her **iş parçacığı** **çekirdek** kodunda bulunan **evrensel indisiyle** çekirdekte gerçekleştirilen işleme katılıp katılmayacağına karar verir. Bu gerekenden az sayıda **iş parçası** oluşturmayı engellemek için kullandığımız **blok** sayısını yukarı yuvarlama tekniği nedeniyle gereklidir. Fazladan oluşan **iş parçacıkları** çekirdek kodunun devamını çalıştırmaz.
+
+
+Çeşitli Çekirdek Deklerasyonları
+--------------------------------
+
+*  **__global__** ile işaretlenmiş cuda çekirdekleri (fonksiyonları) **host** tarafından veya diğer **__global__** çekirdeklerden çağrılabilir (compute capability 3.5 ve üstü için geçerlidir) ve bu fonksiyonlar **cihaz** üzerinde çalışır. 
+
+*  **__device__** ile işaretlenmiş cuda fonksiyonları **cihaz** tarafından çağrılabilir ve bu fonksiyonlar **cihaz** üzerinde çalışır. **__device__** ile işaretli fonksiyonlar **void** dışında bir değer döndürebilir. 
+
+*  **__host__** ile işaretlenmiş cuda fonksiyonları **host** tarafından çağrılabilir ve bu fonksiyonlar **host** üzerinde çalışır. Bir fonksiyonu sadece **__host__** ile işaretlemek opsiyoneldir, herhangi başka bir etiket ile etiketlenmemiş fonksiyonlar derleyici tarafından **__host__** ile işaretlenmiş sayılır.
+
+*  **__device__** ve **__host_** birlikte kullanılabilir. Birlikte kullanıldıklarında derleyici **hostta** ve **cihazda** çalışacak iki farklı fonksiyon yaratır.
