@@ -32,7 +32,8 @@ TRUBA Kullanıcı Dökümanları
    :caption: Eğitim materyalleri
    :maxdepth: 1
    
-   education/big-data/index.rst
-   education/cuda/index.rst
+   education/openmp/index.rst
    education/openmpi/index.rst
    education/CFD/index.rst
+   education/big-data/index.rst
+   education/cuda/index.rst
