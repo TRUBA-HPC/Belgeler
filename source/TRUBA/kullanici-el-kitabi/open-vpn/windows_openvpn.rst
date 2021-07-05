@@ -5,9 +5,9 @@ Windows‘da OpenVPN Kurulumu
 Sisteminizde daha önceden OpenVPN kurulu ise, OpenVPN versiyonunun 2.4.0'dan yüksek olması gerekmektedir. 
 Daha eski OpenVPN sürümleri bu belgedeki yapılandırma adımları ile uyumlu değildir ve bağlantı kurmakta başarısız olacaktır.
 
-===================================
+-----------------------------------
 Windows'da OpenVPN Kurulum Adımları
-===================================
+-----------------------------------
 
 Sisteminizde daha önceden OpenVPN kurulu değilse OpenVPN kurulumu için aşağıdaki adımları izleyiniz.
 
@@ -36,9 +36,9 @@ OpenVPN ana sayfasına `openvpn.net <https://openvpn.net/>`_  web sayfasından k
 
   .. image:: /assets/openvpn-howto/images/winopenvpn6.JPG
 
-=================================================
+----------------------------------------------------------------------
 OpenVPN’in TRUBA Bağlantısı İçin Yapılandırılması
-=================================================
+----------------------------------------------------------------------
 
 OpenVPN kurulumu tamamlandıktan sonra, TRUBA altyapısına bağlanabilmeniz için OpenVPN sunucusunun yapılandırılması gerekmektedir. 
 
