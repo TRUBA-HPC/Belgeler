@@ -32,8 +32,11 @@ TRUBA Kullanıcı Dökümanları
    :caption: Eğitim materyalleri
    :maxdepth: 1
    
+   education/openmp/index.rst
+   education/openmpi/index.rst
+   education/CFD/index.rst
    education/big-data/index.rst
-
+   education/cuda/index.rst
 
 .. warning::
 
@@ -67,3 +70,4 @@ TRUBA Kullanıcı Dökümanları
 .. _CreativeCommonsLicense: http://creativecommons.org/licenses/by-nc-sa/4.0/
 
 
+   
