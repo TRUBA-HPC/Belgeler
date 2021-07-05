@@ -1,5 +1,5 @@
 ======================================
-Konteyner imajlarıyla nasıl çalışılır?
+Container kullanarak çalışma
 ======================================
 
 TRUBA kuyruklarında Singularity kullanarak container imajları çalıştırabilirsiniz.
@@ -7,13 +7,8 @@ TRUBA kuyruklarında Singularity kullanarak container imajları çalıştırabil
 .. note::
     `Singularity <https://sylabs.io/guides/3.7/user-guide/introduction.html#introduction-to-singularity>`_, karmaşık uygulamaların YBH kümelerinde taşınabilir ve tekrarlanabilir şekilde çalıştırılmasını sağlar. Singularity kullanarak `Sylabs Cloud Library <https://cloud.sylabs.io/library>`_'deki ve `Docker Hub <https://hub.docker.com/>`_'daki imajları çalıştırabilirsiniz.
 
-Başlamadan önce:
-
-* Singularity kullanıcı kılavuzunun `GPU ile ilgili kısmını <https://sylabs.io/guides/3.7/user-guide/gpu.html>`_ inceleyin.
-* levrek1 arayüz sunucusuna ssh ile bağlanın. ``hostname`` komutunun çıktısı ``levrek1.yonetim`` olmalıdır.
-
 ---------------------------------------
-sbatch ile kuyruğa nasıl iş gönderilir?
+sbatch kullanarak kuyruğa iş gönderme
 ---------------------------------------
 
 DockerHub'daki `tensorflow imajlarından <https://hub.docker.com/r/tensorflow/tensorflow>`_ uygun etiketli (gpu) birini seçin ve `singularity pull <https://sylabs.io/guides/3.7/user-guide/cli/singularity_pull.html>`_ kullanarak indirin:
@@ -30,7 +25,7 @@ DockerHub'daki `tensorflow imajlarından <https://hub.docker.com/r/tensorflow/te
     print(tf.__version__)
     print(tf.config.list_physical_devices('GPU'))
 
-Kuyruğa iş göndermek için bir `slurm betiği <https://slurm.schedmd.com/sbatch.html>`_ hazırlayın: **tensorflow-gpu.sh**
+Kuyruğa iş göndermek için bir `slurm betiği <https://slurm.schedmd.com/sbatch.html>`_ hazırlayın: **submit-tensorflow-job.sh**
 
 .. code-block:: bash
 
@@ -42,7 +37,7 @@ Kuyruğa iş göndermek için bir `slurm betiği <https://slurm.schedmd.com/sbat
     #SBATCH --gres=gpu:1      # Kac GPU istiyorsunuz? Maksimum sayiyi kontrol edin.
     #SBATCH -N 1              # Gorev kac node'da calisacak?
     #SBATCH -n 1              # Ayni gorevden kac adet calistirilacak?
-    #SBATCH -c 8              # Her bir gorev kac cekirdek kullanacak?
+    #SBATCH -c 10              # Her bir gorev kac cekirdek kullanacak?
     #SBATCH --time=0:01:00    # Sure siniri koyun.
 
     # NVIDIA GPU kullanmak icin --nv opsiyonunu kullanin.
@@ -51,11 +46,15 @@ Kuyruğa iş göndermek için bir `slurm betiği <https://slurm.schedmd.com/sbat
 .. note::
     Betikteki ``[USERNAME]`` yertutucusunu kullanıcı adınızla değiştirmeyi unutmayın.
 
+.. warning::
+    GPU kullanan işleri gönderirken toplam çekirdek sayısını işi gönderdiğiniz kümeye ve kullanacağınız GPU sayısına göre belirlemeniz gerekmektedir. İlgili bilgi :ref:`GPU Kılavuzu'nda <core-gpu-count>` bulunmaktadır.
+
+
 İşi kuyruğa gönderin:
 
 .. code-block:: bash
 
-    sbatch tensorflow-gpu.sh
+    sbatch submit-tensorflow-job.sh
 
 Kuyruğa gönderdiğiniz işleri kontrol edin:
 
@@ -70,7 +69,7 @@ Kuyruğa gönderdiğiniz işleri kontrol edin:
     cat print_gpu.out
 
 ---------------------------------------------
-salloc ile nasıl Jupyter Notebook kullanılır?
+Jupyter Notebook ile çalışma
 ---------------------------------------------
 
 Jupyter ve gpu etiketli tensorflow docker imajlarından birini indirin:
@@ -79,31 +78,14 @@ Jupyter ve gpu etiketli tensorflow docker imajlarından birini indirin:
 
     singularity pull docker://tensorflow/tensorflow:latest-gpu-jupyter
 
-`salloc <https://slurm.schedmd.com/salloc.html>`_ kullanarak üzerinde GPU bulunan kuyruklardan tahsis talep edin:
+`srun <https://slurm.schedmd.com/salloc.html>`_ kullanarak üzerinde GPU bulunan kuyruklardan interaktif çalışmak için tahsis talep edin:
 
 .. code-block:: bash
 
-    salloc -c 8 --gres=gpu:1 -p akya-cuda --time 1:00:00
+    srun -N 1 -n 1 -c 10 --gres=gpu:1 -p akya-cuda --time 1:00:00 --pty /bin/bash
 
 .. note::
-    ``--gres=gpu:1`` parametresindeki rakamı daha fazla gpu talep etmek için değiştirebilirsiniz.
-
-Talebinizin durumunu görüntüleyin.
-
-.. code-block:: bash
-
-    squeue
-
-.. note::
-    Terminal çıktısında ``[JOBID]``'yi not edin.
-
-Talebiniz karşılanınca terminalde mesaj göreceksiniz: ``salloc: Granted job allocation [JOBID]``. ``squeue`` komutunu kullandığınız zaman ST (state) R (running) olarak gözükür.
-
-Tahsis ettiğiniz kaynakta shell çalıştırın.
-
-.. code-block:: bash
-
-    srun --jobid=[JOBID] --pty /bin/bash
+    ``--gres=gpu:1`` parametresindeki rakamı daha fazla GPU talep etmek için değiştirebilirsiniz. Bu durumda çekirdek sayısını :ref:`GPU Kılavuzu'na <core-gpu-count>` göre güncellemeyi unutmayın.
 
 Jupyter'in çalıştığı makinenin ismini öğrenin: ``[HOSTNAME]``
 
