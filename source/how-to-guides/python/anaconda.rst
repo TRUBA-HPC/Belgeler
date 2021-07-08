@@ -50,6 +50,8 @@ Anaconda sanal ortamı kullanılan uygulamalar
 
     ../deep-learning/index.rst
 
+.. _jupyter-anaconda:
+
 =============================================================================
 OpenOnDemand arayüzünde Jupyter kullanmak için Anaconda yapılandırması
 =============================================================================

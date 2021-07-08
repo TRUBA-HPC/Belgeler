@@ -1,3 +1,4 @@
+.. _hesaplama-kumeleri:
 
 ==================
 Hesaplama Kümeleri

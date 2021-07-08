@@ -44,3 +44,6 @@ Bu komut dosyası, toplam 40 çekirdek için her biri 20 çekirdekli 2 sunucu ay
   
    sbatch vasp_run.slurm
 
+* :download:`VASP için örnek olarak verilen slurm dosyasını indirmek için tıklayınız... </assets/vasp-howto/config-files/vasp_run.slurm>`
+
+

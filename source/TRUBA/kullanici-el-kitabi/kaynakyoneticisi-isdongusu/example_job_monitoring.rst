@@ -19,7 +19,7 @@ hazırladığınız **Slurm Betik** dosyasını hazırladıktan sonra terminale 
 
    squeue -u hesap_isminiz
 
-.. image:: squeue.png   
+.. image:: /assets/kaynakyoneticisi-isdongusu/images/squeue.png   
    :width: 500
 
 Ekrandaki bilgiye göre kuyrukta iki tane hesabımızın olduğunu bunlardan **7043266** numaralı işimizin beklemede (pending),  **7043267** numaralı işin ise sistemde çalıştığını (Run) anlamaktayız.

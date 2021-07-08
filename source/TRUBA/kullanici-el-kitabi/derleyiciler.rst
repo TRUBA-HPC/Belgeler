@@ -1,3 +1,5 @@
+.. _derleyiciler:
+
 =============
 Derleyiciler
 =============
@@ -26,7 +28,7 @@ Bu listeye yeni derleyeciler eklenebileceği için, her derleme öncesinde ``mod
 Intel Derleyiciler
 ------------------
 
-Intel işlemcili sunucularda, işlemcilerin sağladığı ekstra performans özelliklerini (özellikle AVX2 ve AVX-512) verimli bir şekilde kullanabilmek için intel derleyicilerinin son versiyonlarının kullanılmasını önermekteyiz. Bu derleyicileri kullanmaya başlamadan önce kullanılacak versiyonla ilgili çevre değişkenler (PATH, LD_LD_LIBRARY_PATH vs..) ayarlanmalıdır. Çevre değişkenlerini ayarlamak için modül mekanizması kullanılabileceği gibi paketle birlikte gelen betikler de kullanılabilir.
+Intel işlemcili sunucularda, işlemcilerin sağladığı ekstra performans özelliklerini (özellikle AVX2 ve AVX-512) verimli bir şekilde kullanabilmek için intel derleyicilerinin son versiyonlarının kullanılmasını önermekteyiz. Bu derleyicileri kullanmaya başlamadan önce kullanılacak versiyonla ilgili çevre değişkenler (PATH, LD_LIBRARY_PATH vs..) ayarlanmalıdır. Çevre değişkenlerini ayarlamak için modül mekanizması kullanılabileceği gibi paketle birlikte gelen betikler de kullanılabilir.
 
 .. code-block::
 

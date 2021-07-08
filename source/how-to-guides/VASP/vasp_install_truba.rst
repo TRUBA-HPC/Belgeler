@@ -1,15 +1,13 @@
 ==========================
 TRUBA'da VASP Kurulumu
 ==========================
-Aşağıda VASP programının 5.4 versiyonunun TRUBA sisteminde derlenmesi için gerekli adımlar verilmiştir. Siz de aşağıdaki adımları takip 
-ederek VASP kurulumunu kendi sayfanızda kurabilirsiniz.
+Aşağıda VASP programının 5.4 versiyonunun TRUBA sisteminde derlenmesi için gerekli adımlar verilmiştir. Siz de aşağıdaki adımları takip ederek VASP kurulumunu kendi kullanıcı hesabınızda kurabilirsiniz.
 
-**1.** Öncelikle VASP programını derlemek için gerekli ortamı hazılanır. **derleme** adında bir klasör oluşrurulup 
-gerekli dosyalar buraya kopyalanır.
+**1.** Öncelikle VASP programını derlemek için gerekli ortamı hazılanır. **derleme** adında bir klasör oluşturulup gerekli dosyalar buraya kopyalanır.
  
 .. code-block:: bash
 
-  $>mkdir derleme
+   $>mkdir derleme
    $>cp vasp.5.lib.tar.gz derleme/
    $>cp vasp.5.4.tar.gz derleme/
    $>cd derleme
