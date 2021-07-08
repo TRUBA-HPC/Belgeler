@@ -25,6 +25,7 @@ TRUBA Kullanıcı Dökümanları
    how-to-guides/deep-learning/index.rst
    how-to-guides/LAMMPS/index.rst
    how-to-guides/VASP/index.rst
+   how-to-guides/QuantumEspresso/index.rst
    how-to-guides/CodeSaturne/codesaturne.rst
 
 .. toctree::
