@@ -1,3 +1,5 @@
+.. _code-saturne:
+
 =====================
 CodeSaturne Kılavuzu
 =====================

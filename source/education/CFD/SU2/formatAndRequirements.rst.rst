@@ -1,4 +1,4 @@
-.. |SU2| replace:: SU :superscript:`2`
+.. |SU2| replace:: SU2
 
 ************************************************
 2 - |SU2| çözüm ağı formatları ve gereksinimleri

@@ -1,4 +1,4 @@
-.. |SU2| replace:: SU :superscript:`2`
+.. |SU2| replace:: SU2
 
 ******************
 1 - |SU2| Kurulumu

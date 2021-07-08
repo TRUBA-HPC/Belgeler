@@ -12,6 +12,7 @@ Kullanıcı El Kitabı
     yazilimlar.rst
     moduller.rst
     kutuphaneler.rst
+    numerikkutuphaneler.rst
     derleyiciler.rst
     paralelprog.rst
     grafikekran.rst

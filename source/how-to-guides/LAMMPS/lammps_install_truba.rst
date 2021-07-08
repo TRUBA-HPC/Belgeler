@@ -10,7 +10,7 @@ Kurulumu ``barbun`` kuyruğu için optimize bir şekilde kurmak istiyorsanız ö
 
 .. code-block:: bash
 
-   srun -N 1 -A kullaniciadi -p short --ntasks-per-node=4 --time=01:00:00 --constraint=barbun --job-name "install" --pty bash -i
+   srun -N 1 -A kullaniciadi -p short --ntasks-per-node=4 --time=01:00:00 --constraint=barbun --job-name "lmp install" --pty bash -i
 
 .. note::
 
@@ -36,7 +36,7 @@ komutu ile listeleyebilirsiniz. Herhangi bir çakışma olmaması açısından �
 
 komutu ile kullanıcınızda tanımlı olan tüm modül dosyalarını kaldırmanız önerilmektedir.
 
-Barbun node'unda ``centos 7.3`` işletim sistemi yüklü bulunmaktadır. Aşağıdaki komutları kullanarak Intel Parallel Studio'nun güncel versiyonunu yükleyiniz:
+Barbun node'unda ``centos 7.3`` işletim sistemi yüklü bulunmaktadır. LAMMPS programını Intel derleyicileri, Intel MKL ve OpenMPI ile kurmak için aşağıdaki gibi uyumlu olan güncel modülleri yükleyebilirsiniz. 
 
 .. code-block:: bash
 

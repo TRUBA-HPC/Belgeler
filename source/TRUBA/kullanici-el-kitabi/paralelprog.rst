@@ -1,3 +1,5 @@
+.. _paralel-prog:
+
 ===================
 Paralel Programlama
 ===================
