@@ -1,5 +1,5 @@
-OpenMP Veri Kapsamları
-======================
+Veri Kapsamları
+===============
 
 OpenMP paylaşımlı hafıza üzerine dizayn edilmiş bir sistemdir.
 Dolayısıyla veriler genelde iş parçacıkları arasında paylaşılır. Fakat
@@ -62,6 +62,7 @@ değerlerinden alınmasıdır.
    {
        // x bu alandaki her iş parçacığı için 5 değerine sahiptir.
    }
+   // x hala private olduğu için üstteki blok içerisindeki hiçbir değişiklik buraya yansımaz.
 
 lastprivate
 -----------
@@ -143,3 +144,18 @@ indirgenir.
 İşlem: - standart aritmetik operasyonlar olabilir ``(+,*,-,/)`` - binary
 operasyonlar olabilir (``<<,>>`` hariç) ``(&,|,^)`` - boolean
 operasyonlar olabilir ``(&&,||)``
+
+Örnek:
+
+.. code:: cpp
+
+   // a dizisindeki sayıların toplamını hesaplar
+   // Her iş parçacığı lokal olarak dizinin bir kısmını topladıktan sonra
+   // bu lokal sonuçlar toplama işlemi ile tek bir sonuca indigenir
+   // N = |a| 
+   int toplam = 0;
+   #pragma omp parallel for shared(sum, a) reduction(+: sum)
+   for (int i = 0; i < N; i++)
+   {
+       toplam += a[i]
+   }

@@ -1,10 +1,13 @@
-# OpenMP Senkronizasyon
-
-
+# Senkronizasyon
 
 ## Master
 
 `#pragma omp master` şeklinde belirtilen bloklar sadece master (ana) iş parçacığı tarafından çalıştırılır. Diğer tüm iş parçacıkları bu alanı atlar.
+
+## Single
+
+`#pragma omp master` şeklinde belirtilen bloklar sadece tek bir iş parçacığı tarafından çalıştırılır. `Master`'ın aksine bu ana iş parçacığı olmak zorunda değildir.
+
 
 ## Critical
 
@@ -46,15 +49,13 @@ x = x binop expr;
 x = expr binop x;
 ```
 
-TODO: CAPTURE
-
 binop şu işlemlerden biri olabilir: `+, *, -, /, &, ^, |, <<, or >>`
 
 ## Ordered
 
 `#pragma omp for ordered` şeklinde belirtilen döngülerde `#pragma omp ordered` şeklinde kullanılabilir. Belirtilen blok döngünün paralel olmayan haliyle aynı sırada çalıştırılır.
 
-Örnek:
+Kullanım Şekli:
 
 ```cpp
 #pragma omp for ordered
@@ -67,6 +68,33 @@ for(int i=0; i<10;i++){
 	}
 	
 	// Sırası önemli olmayan kod
+
+}
+```
+
+Örnek:
+
+```cpp
+#include <iostream>
+
+#define NUM_THREADS 4
+
+int main(){
+
+	// Ordered kullanılmayan bir döngü
+	// Çıktının sıralaması ön görülemez
+    #pragma omp parallel for num_threads(NUM_THREADS)
+    for(int i=0; i<10; i++){
+        std::cout << "Döngü: " << i << std::endl;    
+    }
+
+	// Ordered kullanulan bir döngü
+	// Çıktı 0,1,...9 sırasında olması beklenilir
+    #pragma omp parallel for ordered num_threads(NUM_THREADS)
+    for(int i=0; i<10; i++){
+        #pragma omp ordered
+        std::cout << "Döngü: " << i << std::endl;    
+    }
 
 }
 ```

@@ -1,5 +1,5 @@
-OpenMP’ye Giriş
-===============
+Giriş
+=====
 
 İş Parçacığı (Thread) Tabanlı Paralel Programlama
 -------------------------------------------------

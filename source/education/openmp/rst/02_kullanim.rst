@@ -1,5 +1,5 @@
-OpenMP Kullanımı
-================
+Temel Kullanım
+==============
 
 -  OpenMP hem C/C++ hem Fortran derleyicileri ile kullanılabilir. Bu
    dökümentasyonda C++ ile kullanımını gözden geçireceğiz.

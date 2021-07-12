@@ -40,7 +40,7 @@ int main(){
 
 	// Rastgele sayıların dizilere konması
 	srand(time(NULL));
-	for(int i=0; i<N,i++){
+	for(int i=0; i<N; i++){
 		a[i] = rand();
 		b[i] = rand();
 	}
@@ -51,7 +51,7 @@ int main(){
 
 // Dizilerin paralel olarak çarpımı
 #pragma omp for
-	for(int i=0; i<N, i++){
+	for(int i=0; i<N; i++){
 		c[i] = a[i]*b[i];
 	}
 }
@@ -66,8 +66,7 @@ Aşağıda aynı örnek bu kısayol kullanılarak verilmiştir.
 #include <stdlib.h> // srand ve rand fonksiyonları
 #include <time.h> // time fonksiyonu
 
-#define N 1000
-
+#define N 500000
 
 int main(){
 
@@ -76,18 +75,68 @@ int main(){
 
 	// Rastgele sayıların dizilere konması
 	srand(time(NULL));
-	for(int i=0; i<N,i++){
+	for(int i=0; i<N; i++){
 		a[i] = rand();
 		b[i] = rand();
 	}
 
 // Paralel blok
 #pragma omp parallel for
-	for(int i=0; i<N, i++){
+	for(int i=0; i<N; i++){
 		c[i] = a[i]*b[i];
 	}
 }
 ```
+
+Matris çarpımı sıklıkla kullanılan ve çoğu zaman paralel programlama kullanılmadan istenilen hıza erişemeyen bir işlemdir. Aşağıda bu işlemi gösteren bir örnek verilmiştir. Matrisler C++ standard kütüphanesinin parçası olan `vector` veri yapısı kullanılarak temsil edilmişlerdir.
+
+```cpp
+
+#include <vector>
+#include <stdlib.h> // srand ve rand fonksiyonları
+#include <time.h> // time fonksiyonu
+
+// 2 boyutlu tam sayı tutan vector yapısını Matris adıyla kullanabilmek için
+#define Matris std::vector<std::vector<int>>
+
+#define N 500000
+
+int main(){
+
+Matris a(N);
+Matris b(N);
+Matris c(N);
+
+// Matrislerin boyutlarının NxN olarak ayarlanması ve a,b matrislerinin rastgele sayılar ile doldurulması
+srand(time(NULL));
+for(int i=0; i<N; i++){
+	vector<int> temp(N);
+	a[i] = temp;
+	b[i] = temp;
+	c[i] = temp;
+	
+	for(int j=0; j<N; j++){
+		a[i][j] = rand();
+		b[i][j] = rand();
+	}
+	
+}
+
+// Matrislerin parallel olarak çarpımı
+#pragma omp parallel for
+	for (int i=0; i<m; i++){
+		for (int j=0; j<n; j++){
+			 c[i][j]=0;
+			 for (int k=0; k<p; k++){
+					c[i][j] += b[i][k] * a[k][j];
+			 }
+		}
+	}
+}
+
+
+```
+
 
 Bazı önemli detaylar:
 - Yinelemeler (İngilizce: iteration) arasında herhangi bir sıralama olması beklenemez. Bir diğer değişle döngü beklenenden farklı bir sırada çalıştırılabilir.
@@ -124,3 +173,47 @@ return 0;
 
 `for` direktifinde olduğu gibi `parallel` ve `sections` beraber kullanılabilir (`#pragma omp parallel sections`).
 
+Aşağıdaki örnek `for` örneklerinde olduğu gibi iki dizinin çarpımını hesaplar. Fakat ek olarak bir iş parçacığı çarpımı hesaplarken bir diğeri aynı dizelerin toplamını hesaplamaktadır. 
+
+``` cpp
+#include <iostream>
+#include <stdlib.h>
+#include <time.h>
+
+#define N 500000
+
+int main(){
+
+	// Diziler 
+	int a[N],b[N],c[N],d[N];
+
+	// Rastgele sayıların dizilere konması
+	srand(time(NULL));
+	for(int i=0; i<N; i++){
+		a[i] = rand();
+		b[i] = rand();
+	}
+
+#pragma omp parallel sections
+	{
+		#pragma omp section 
+		{
+			std::cout << "Çarpma işlemi başlangıç" << std::endl;
+			for(int i=0; i<N; i++){
+				c[i] = a[i]*b[i];
+			}
+			std::cout << "Çarpma işlemi son" << std::endl;
+		}
+
+		#pragma omp section 
+		{
+			std::cout << "Toplama işlemi başlangıç" << std::endl;
+			for(int i=0; i<N; i++){
+				d[i] = a[i]+b[i];
+			}
+			std::cout << "Toplama işlemi son" << std::endl;
+		}
+	}
+
+}
+```
