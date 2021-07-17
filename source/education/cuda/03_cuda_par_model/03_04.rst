@@ -12,14 +12,14 @@
 --------------------------------------------------------------------
 Bu bölümde çok boyutlu CUDA çekirdeği kullanarak renkli bir resimin bulanıklaştırılmasını inceleyeceğiz. Bu örnek önceki bölümde incelediğimiz renkli resimi gri tonlamaya çevirme örneğinden algoritma açısından biraz daha karmaşık olsa da temel olarak aynı mantığa sahiptir.
 
-.. image:: /assets/cuda/03/01/01.png
+.. image:: /assets/cuda/03/04/01.png
    :width: 600
 
 Yukardaki görselde yapacağımız işlemin bir örneğini görebilirsiniz.
 
 Öncelikle her bir **iş parçacığı** sonuç resimindeki bir pikselin üretilmesinden sorumlu olacaktır. Her bir piksel için çevresindeki piksellerin RGB değerlerinin ortalaması alınarak RGB değeri belirlenecek ve böylece bulanıklaştırma işlemi tamamlanmış olacaktır. Bizim örneğimizde her bir piksel için her yönden (üst, alt, sağ ve sol) 4 piksel uzaklığındaki alanın ortalaması alınacaktır. Burada dikkat edilmesi gereken nokta resimin uçlarına yakın olan piksellerin 4 piksel uzaklığında başka bir piksel bulunmayabilir. Bu nedenle ortalaması alınacak alandaki piksellerin resimin dışına çıkmadığından emin olmalıyız. Aşağıda ortalama alma işlemi için örnek bir görsel bulunmaktadır.
 
-.. image:: /assets/cuda/03/01/01.png
+.. image:: /assets/cuda/03/04/02.png
    :width: 600
 
 

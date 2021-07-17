@@ -17,7 +17,7 @@ Blokların Hesaplama Kaynaklarına Dağıtılması
 
 **İş parçacığı bloklarının** hesaplama kaynaklarına nasıl dağtıldığına dair aşağıdaki görseli inceleyiniz.
 
-.. image:: /assets/cuda/03/01/01.png
+.. image:: /assets/cuda/03/05/01.png
    :width: 600
 
 CUDA destekli cihaz üzerinde bulunan hesaplama kaynaklarının farklı olması farklı şekilde dağıtım olmasına yol açacaktır. Örnek olarak yukardaki görselde soldaki cihazda daha az hesaplama kaynağı bulunduğundan işlem daha uzun sürmektedir. Burada dikkat etmemiz gereken bir nokta bloklar arası herhangi bir sıralama olmamasıdır.
@@ -27,23 +27,21 @@ Blokların Çalıştırılması
 
 **İş parçacıklarının** basitleştirilmiş Von-Neumann modelinde düşünülmesi gerektiğinden bahsetmiştik. Aşağıda bu modelin bir temsilini bulabilirsiniz.
 
-.. image:: /assets/cuda/03/01/01.png
+.. image:: /assets/cuda/03/05/02.png
    :width: 600
 
 Bu gözlemimizi daha da ilerletmemiz gerekirse, oluşan modelin aşağıdaki gibi olacağını söyleyebiliriz. Çünkü **iş parçacıklarını** kontrol eden *Kontrol Ünitesi* Grafik İşlem Birimlerine, SIMD(tek komut çoklu veri) yapısına uygun olacak şekilde birden fazla *İşlem Ünitesini* yönetir. 
 
-.. image:: /assets/cuda/03/01/01.png
+.. image:: /assets/cuda/03/05/03.png
    :width: 600
 
-.. image:: /assets/cuda/03/01/01.png
-    :width: 600
 
 CUDA destekli cihazlarda **streaming multiprocessors** (SM) 32 adet bloğa kadar ,hesaplama kaynaklarının sınırları içerisinde, **iş parçacıklarının** zamanlanmasından/yönetilmesinden sorumludur. Ayrıca SM **blok** ve **iş parçacığı** idlerini yönetmekle yükümlüdür.
 
 .. note::
     Volta SM 2048 **iş parçacığına** kadar desteklemektedir.
 
-.. image:: /assets/cuda/03/01/01.png
+.. image:: /assets/cuda/03/05/04.png
     :width: 600
 
 Warp
@@ -60,7 +58,7 @@ Bir **streaming multiprocessore** 3 adet **blok** atandığını düşünelim ve
 *   3 adet **blok** bulunduğundan, bu SM tarafından yönetilecek 8 * 3 = 24 adet **warp** bulunmaktadır.
 
 
-.. image:: /assets/cuda/03/01/01.png
+.. image:: /assets/cuda/03/05/05.png
     :width: 600
 
 Bu noktada önemli olacak bir gözlem ise bu **warpların**, çalıştırılırken L1 önbelleği (cache), register dosyası, ve paylaşımlı bellek (shared memory) paylaşıyor olmasıdır.

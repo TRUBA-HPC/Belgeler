@@ -16,7 +16,7 @@ CUDA Çekirdek ve Çok Boyutluluk
 ----------------------------------
 Aşağıda görmüş olduğunuz görsel küçük bir **çok boyutlu** CUDA çekirdeğinin yapısını göstermektedir. Bu örnekte çekirdek konfigürasyonu 2 boyutlu **şebeke** içinde bulunan **bloklar** ve her blok içerisine 3 boyutlu şekilde dizilmiş **iş parçacıkları** gösterilmiştir.
 
-.. image:: /assets/cuda/03/01/01.png
+.. image:: /assets/cuda/03/02/01.png
    :width: 600
 
 Görmüş olduğunuz gibi her bir **blok** içerisinde  (2 * 2 * 4 = 16 olacak şekilde) 16 adet **iş parçacığı** bulunmaktadır.
@@ -27,7 +27,7 @@ Görmüş olduğunuz gibi her bir **blok** içerisinde  (2 * 2 * 4 = 16 olacak �
 
 Aşağıda görmüş olduğunuz 62 piksel (boy) x 76 piksel (en) boyutlarındakı görseli 16x16 şeklinde konfigüre edilmiş **iş parçacığı blokları** kullanarak işleyeceğiz. 
 
-.. image:: /assets/cuda/03/01/01.png
+.. image:: /assets/cuda/03/02/02.png
    :width: 600
 
 62 piksellik uzunluk için bize en az 4 adet alt alta dizilmiş **blok** gerekmektedir. 4 adet bu şekilde konfigüre edilmiş **blok** bize 64 piksellik bir uzunluk sağlar bu yüzden resimde de gözüktüğü gibi 2 adet satır hesaplamaya katılmayacaktır. Ayrıca 76 piksel uzunluğu için bize en az 5 adet yan yana dizilmiş **blok** gerekmektedir. Bu şekilde konfigüre edilmiş 5 blok bize 80 piksellik bir uzunluk sağlar bu yüzden 4 adet sütun hesaplamaya katılmayacaktır.
@@ -36,7 +36,7 @@ Satır Bazlı Sıralama
 ~~~~~~~~~~~~~~~~~~~~~~~~
 C/C++ dillerinde oluşturduğumuz 2 boyutlu yapılar, bellek üzerinde lineer şekilde yerleştirilir ve bu yerleştirme işlemi yapılırken **Satır Bazlı Sıralama (Row Major Access)** kullanılır. 2 boyutlu yapılar lineerize edilirken satırların bölünmeden arka arkaya eklenerek tek boyutlu yapı oluşturmasına **satır bazlı sıralama** denir. Sütunların bölünmeden arka arkaya dizilmesine ise **sütun bazlı sıralama** denilmektedir. C/C++ dilleri 2 boyutlu yapıları lineerize ederken **satır bazlı sıralama** kullanır. Örnek için aşağıdaki görseli inceleyiniz.
 
-.. image:: /assets/cuda/03/01/01.png
+.. image:: /assets/cuda/03/02/03.png
    :width: 600
 
 Görüldüğü üzere 2 boyutlu yapıdaki satırlar bölünmeden arka arkaya eklenerek lineerize edilmiştir. Bu noktada **satır ve sütun indisleri** ile kaçıncı sırada bulunacağı hesaplanabilir. Örnek vermek gerekirse üçüncü satır ikinci eleman olan M\ :sub:`2,1`\, 2 boyutlu yapı lineerize edildikten sonra 10. sırada yer almaktadır (**indis** = 9). Bu **indisi** hesaplamak için **satır indisi** ile bir satırda kaç adet girdi olduğu çarpılıp üzerine **sütun indisi** eklenebilir. Örnek üzerinden ilerlersek  M\ :sub:`2,1`\  girdisinde **satır indisi** 2, **sütun indisi** 1 ve her satırda 4 adet girdi bulunmaktadır. Lineerize edildikten sonraki **indis** (2 * 4) + 1 = 9 şeklinde bulunabilir.
@@ -86,7 +86,7 @@ CUDA Host Kodu
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Blok içerisindeki program kontrol akışı düşünüldüğünde işlemiş olduğumuz örnekte 4 farklı bölge bulunmaktadır. Aşağıdaki resimde 1 ile işaretlenmiş bölgedeki **blokların** içindeki her **iş parçacığı** resimdeki bir piksele denk gelmektedir ve bu yüzden bu **bloklardaki** her bir **iş parçacığı** bir piksel işleyecektir. 2.bölgedeki **bloklar** ise 4 sütunda bulunan **iş parçacıklarına** resim üzerindeki herhangi bir piksel denk gelmemektedir. Bu **iş parçacıkları** hesaplama yapmayacaklardır. 3.bölgedeki **bloklardaki** 2 satırda bulunan **iş parçacıklarına** resim üzerinde herhangi bir piksel denk gelmemektedir. Bu **iş parçacıkları** hesaplama yapmayacaklardır. Son olarak 4.bölgedeki **bloklardaki** 4 sütun ve 2 satırda bulunan **iş parçacıklarına** resim üzerindeki herhangi bir piksel denk gelmemektedir. Bu yüzden bu **iş parçacıkları** hesaplama yapmayacaktır.
 
-.. image:: /assets/cuda/03/01/01.png
+.. image:: /assets/cuda/03/02/04.png
    :width: 600
 
-Görüldüğü üzere 4 farklı bölgedeki program kontrol akışı farklılaşmaktadır. 2. ve 3.bölgelerdeki fark şu anda çok belirgin olmasa da ilerleyen bölümlerde **Kontrol Akış Iraksaması** ve **Warp** kavramını yakından inceledğimizde 2. ve 3.bölgelerdeki performans farkı hakkında fikir sahibi olacağız.
+Görüldüğü üzere 4 farklı bölgedeki program kontrol akışı farklılaşmaktadır. 2. ve 3.bölgelerdeki fark şu anda çok belirgin olmasa da ilerleyen bölümlerde **Kontrol Akış Dağılması** ve **Warp** kavramını yakından inceledğimizde 2. ve 3.bölgelerdeki performans farkı hakkında fikir sahibi olacağız.
