@@ -14,9 +14,9 @@ Kontrol Dağılmasının (Control Divergence) Performansa Etkisi
 
 Kontrol Dağılması ve Performans 
 -------------------------------
-Çoğu paralel hesaplama için uç durumların değerlendirilmesi doğru bir sonuç elde etmek için gereklidir. Örnek olarak 4. modülde örnek olarak verilen tiled matrix çarpımını düşünebilirsiniz, bu gibi paralel hesaplamalar genellikle uç durumları kontrol etmek zorundadır. Bu noktada aklımıza kontrol dağılımının bu gibi uç durum kontrollerini ne kadar kritik kılacağı olacaktır. Çünkü bu gibi uç durumlar kontrol dağılmasına sebep olabilirler.
+Çoğu paralel hesaplama için uç durumların değerlendirilmesi doğru bir sonuç elde etmek için gereklidir. Örnek olarak 4. modülde örnek olarak verilen tiled matrix çarpımını düşünebilirsiniz, bu gibi paralel hesaplamalar genellikle uç durumları kontrol etmek zorundadır. Bu noktada aklımıza kontrol dağılımının bu gibi uç durum kontrollerini ne kadar kritik kılacağı gelecektir. Çünkü bu gibi uç durumlar kontrol dağılmasına sebep olabilirler.
 
-.. image:: /assets/cuda/02/02/01.jpg
+.. image:: /assets/cuda/05/02/01.png
    :width: 600
 
 .. note::
@@ -25,7 +25,7 @@ Kontrol Dağılması ve Performans
 Örnek: Tiled matrix çarpımı ve Kontrol Dağılması
 ------------------------------------------------
 
-.. image:: /assets/cuda/02/02/01.jpg
+.. image:: /assets/cuda/05/02/02.png
    :width: 600
 
 Yukardaki görselde gördüğünüz gibi, tipik bir bölmeli(tiled) matriks çarpım işlemi gerçekleştirirken iki tip bloklar oluşmaktadır. 1.Tip blokların (son blok hariç) bütün bölmeleri uç durumların dışında yani hesaplama bölgesinde bulunmaktadır. 2.Tip blokların ise bölmeleri bazı bölmeleri hep uç durumlarda bulunan yani hesaplama bölgesi dışında kalan bloklardır.

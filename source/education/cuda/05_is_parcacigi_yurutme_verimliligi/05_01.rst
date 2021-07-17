@@ -22,11 +22,11 @@ Her CUDA bloğu her biri 32 iş parçacığından oluşacak şekilde Warplara b�
 SM ve SIMD
 ----------
 
-.. image:: /assets/cuda/02/02/01.jpg
+.. image:: /assets/cuda/05/01/01.png
    :width: 600
 
 
-Tipik bir SM'in modellemesini aşağıdaki görselde görebilirsiniz. Görselden de gördüğünüz üzere, SM üzerinde birden fazla işlem birimi bulunmaktadır. Bu işlem birimleri iş parçacıklarının yapması gereken aritmatik veya mantıksal işlemi gerçekleştirmektedirler. Bu işlem birimlerinin paylaşımlı belleği ve kontrol ünitesini paylaştığını görebilirsiniz. Bu da bize şunu göstermektedir. Bu işlem birimleri belirli bir zamanda tek bir komut(instruction) çalıştırabilirler. Yani SM tarafından yürütülecek olan iş parçacıkları aynı işlemi gerçekleştirmek zorundadırlar. Bu işlemi farklı veri üzerinde gerçekleştirerek anlamlı bir hesaplamaya ulaşılabilir. Aynı toplama işlemini vektörlerin farklı elemanları üzerinde gerçekleştirilmesi örneğini hatırlayınız.
+Tipik bir SM'in modellemesini yukarıdaki görselde görebilirsiniz. Görselden de gördüğünüz üzere, SM üzerinde birden fazla işlem birimi bulunmaktadır. Bu işlem birimleri iş parçacıklarının yapması gereken aritmatik veya mantıksal işlemi gerçekleştirmektedirler. Bu işlem birimlerinin paylaşımlı belleği ve kontrol ünitesini paylaştığını görebilirsiniz. Bu da bize şunu göstermektedir. Bu işlem birimleri belirli bir zamanda tek bir komut(instruction) çalıştırabilirler. Yani SM tarafından yürütülecek olan iş parçacıkları aynı işlemi gerçekleştirmek zorundadırlar. Bu işlemi farklı veri üzerinde gerçekleştirerek anlamlı bir hesaplamaya ulaşılabilir. (Aynı toplama işlemini vektörlerin farklı elemanları üzerinde gerçekleştirilmesi örneğini hatırlayınız).
 
 
 Çok Boyutlu CUDA Bloklarının Warplara Bölünmesi
@@ -34,7 +34,7 @@ Tipik bir SM'in modellemesini aşağıdaki görselde görebilirsiniz. Görselden
 
 Üste de bahsettiğimiz gibi blok içerisinde bulunan bloklar 32 li gruplar halinde warplara bölünür. Çok boyutlu bloklarda warplara bölünme işlemini kısaca özetlemek gerekirse. Satır öncelikli (row-major) olarak bloklar lineerleştirilir. (Aşağıdaki görseli inceleyebilirsiniz.) 
 
-.. image:: /assets/cuda/02/02/01.jpg
+.. image:: /assets/cuda/05/01/02.png
    :width: 600
 
 Lineerize edilen bloklar warplara bölünür. Warp içerisindeki iş parçacıları sıralı olarak artmaktadırlar. Yani warp 0, iş parçacığı 0 ile başlamaktadır. Ancak warplar arasında yürütülme sırası bulunmaktadır. Yani warp 0'ın warp 1'den önce yürütüleceğine dair bir zorunluluk bulunmaz. Aynı şekilde warp içerisindeki iş parçacıklarının işlemi bitirme açısından bir sıra söz konusu değildir. Yani warp 0 içerisindeki iş parçacığı 0'ın iş parçacığı 1'den önce işlemini bitirmek gibi bir zorunluluğu bulunmamaktadır. Eğer aynı blok içerisindeki iş parçacıklarının yürütülmesi hakkında bir eşitlemede bulunmak istiyorsanız **__syncthreads()** kullanmanız gerekmektedir. Bu konudan ilerleyen bölümlerde de bahsedeceğiz.
