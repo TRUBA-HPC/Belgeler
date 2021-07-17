@@ -19,12 +19,12 @@ DRAM Temel Birimi
 Modern DRAM modüllerinin temel birimleri genellikle 16M bitlik kapasiteye sahiptirler. Her bir bit bir transistöre bağlı minik bir kapasitörde tutulan yük ile ifade edilir. Genelde bu transistör kapasitör ikilisinden oluşan birimler kare şeklinde (4096x4096) dizilir ve 16M bitlik kapasiteye ulaşılır. Bu veriye ulaşım ise önce satırın seçilmesi ile başlar. 4096 olası satır arasından bir satırı seçmek için 12 adet adres biti kullanmak gerekir (2^16 = 4096). İstenilen satır seçildiğinde o satırda bulunan bütün bitler algılayıcı devreler ile okunur ve bu okunan 4096 bit arasından hangi bit grubunun istendiği son bir adres seçimi ile belirlenir. Tipik bir DRAM temel birimini görebilirsiniz.
 
 
-.. image:: /assets/cuda/03/01/01.png
+.. image:: /assets/cuda/06/01/01.png
    :width: 600
 
 Basitleştirilmiş bir örnek üzerinden ilerlemek gerekirse:
 
-.. image:: /assets/cuda/03/01/01.png
+.. image:: /assets/cuda/06/01/02.png
    :width: 600
 
 8x2 boyutlarındaki bu basitleştirilmiş DRAM temel birimi (core array) üzerinden okuma işlemini inceleyelim. 
@@ -38,7 +38,7 @@ DRAM Hızı
 
 Fiziksel özellikleri nedeniyle DRAM modülleri oldukça yavaştır. Çünkü her bir bit küçük bir kapasitörde tutulur ve bu kapasitördeki bitin okunması için, küçük kapasitörde duran minik yükün bütün kapasitörlerin bağlı bulunduğu (diğer ucunun da algılayıcı devrelere bağlı olduğu) uzun bir yolu etkilemesi gerekir. Bu da oldukça uzun sürdüğünden bitin okunması oldukça yavaştır. Artan transistör sayısı ile bu durum giderek güçleşmektedir.
 
-.. image:: /assets/cuda/03/01/01.png
+.. image:: /assets/cuda/06/01/03.png
    :width: 600
 
 DRAM Bursting
@@ -48,7 +48,7 @@ Bu yavaşlıkla başa çıkabilmek ve bant genişliğini efektif kullanabilmek i
 
 Aşağıdaki görselde bursting kullanılan ve kullanılmayan bir okuma işleminin nasıl ilerlediğini görebilirsiniz.
 
-.. image:: /assets/cuda/03/01/01.png
+.. image:: /assets/cuda/06/01/04.png
    :width: 600
 
 Bu görselde gördüğünüz aynı satırda bulunan 2 sütunun arka arkaya okunuşudur. Üstteki çizelgede gördüğünüz gibi her bir veri için küçük kapasitörlerin büyük kapasitif değere sahip uzun yola etki etmesi beklenmektedir. Ancak bursting kullanıldığında bir kere satır okunduktan sonra, aynı satırdaki verilere ulaşım oldukça hızlıdır.
@@ -58,12 +58,12 @@ DRAM Bankaları
 
 Dram bankalarını modelleyen aşağıdaki görseli inceleyiniz.
 
-.. image:: /assets/cuda/03/01/01.png
+.. image:: /assets/cuda/06/01/05.png
    :width: 600
 
 Gördüğünüz gibi bankalar birden fazla temel birimin bir araya gelmesiyle oluşmaktadırlar. Bankaların kullanılmasının en önemli nedeni bant genişliğini daha da efektif şekilde kullanmamızı sağlamalarıdır. DRAM Bursting ile veri transferi sağlanılan aşağıdaki örneği inceleyeniz. Bu örnekte DRAM Burstingin bankalar ile kullanıldığında çok daha efektif bant genişliği kullanımı sağladığını görebilirsiniz.
 
-.. image:: /assets/cuda/03/01/01.png
+.. image:: /assets/cuda/06/01/06.png
    :width: 600
 
 DRAM Bursting, ile tek banka kullanıldığında gördüğünüz üzere belirli miktarda bir kazanım elde ediyor olsak da satırlar arası geçişlerde küçük kapasitördeki yükün büyük kapasitif değerli yola etki etme süresini beklemek durumundayız. Bu sırada bant genişliğini harcamış oluyoruz (veri aktarabilecekken aktarmıyoruz). Ancak birden fazla banka kullanıldığında ve veri ulaşımları sırasıyla farklı bankalar üzerinden ilerletildiğinde bir banka okuma süresi içindeyken diğer bankadan veri aktarımı sağlanabilmektedir ve bu da bant genişliğini daha da efektif kullanmamızı sağlar. Bu örnekte iki banka kullanılmıştır.
