@@ -26,7 +26,7 @@ Kontrol Dağılması ve Performans
 ------------------------------------------------
 
 .. image:: /assets/cuda/05/02/02.png
-   :width: 600
+   :width: 400
 
 Yukardaki görselde gördüğünüz gibi, tipik bir bölmeli(tiled) matriks çarpım işlemi gerçekleştirirken iki tip bloklar oluşmaktadır. 1.Tip blokların (son blok hariç) bütün bölmeleri uç durumların dışında yani hesaplama bölgesinde bulunmaktadır. 2.Tip blokların ise bölmeleri bazı bölmeleri hep uç durumlarda bulunan yani hesaplama bölgesi dışında kalan bloklardır.
 
