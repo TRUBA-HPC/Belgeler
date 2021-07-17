@@ -1,0 +1,69 @@
+=========================================
+CUDA Bellek Birleşimi (Memory coalescing)
+=========================================
+
+Öğrenim Hedefleri
+-----------------
+*  Bellek birleşiminin (Memory coalescing) bant genişliğini etkin şekilde kullanmak açısından önemi.
+
+   *  DRAM bursting ile ilişkisi
+   *  CUDA bellek erişimlerinin birleştirilmiş olup olmadığını kontrol etmek.
+   *  Bellek birleşimi sağlayabilmek için teknikler.
+
+
+DRAM Bursting
+-------------
+
+DRAM Burstingden bir önceki bölümde bahsetmiştik. Daha genel bir bakış açısı sağlamak gerekirse:
+
+.. image:: /assets/cuda/03/01/01.png
+   :width: 600
+
+DRAM Bursting sayesinde bölümlere ayrılmış olan bellekte herhangi bir alana erişildiğinde aynı bölümde yer alan diğer alanların da transferi sağlanabilmektedir. Yani yukardaki görselde sarı ile gösterilen bölümden herhangi bir alana erişim sağlanırsa (örnek olarak 2. alan) sarı alandaki diğer bölümlerin de transferi sağlanacaktır. Yukarda görmüş olduğunuz örnekte 16 baytlık bir bellek 4 baytlık **burst alanlarına** ayırlmış durumdadır. Gerçek sistemlerde bu **burst alanları** 128 byte veya daha fazla olabilir.
+
+Bellek Birleşimi (Memory Coalescing) ve CUDA
+--------------------------------------------
+
+CUDA hesaplama modeli ile **bellek birleşimine** bakışımızı anlatan aşağıdaki görseli inceleyiniz.
+
+.. image:: /assets/cuda/03/01/01.png
+   :width: 600
+
+Bir **warp** içerisindeki bütün **iş parçacıklarının** yaptığı bellek okuma işlemleri aynı **burst alanına** denk geliyorsa bu **warp** tek bir bellek erişimi ile gerekli bütün veriye ulaşacağından **bellek birleşimine (memory coalescing)** sahiptir.
+
+Bellek birleşimine sahip olmayan bellek erişim modeli örneği için aşağıdaki görseli inceleyiniz.
+
+.. image:: /assets/cuda/03/01/01.png
+   :width: 600
+
+Görüldüğü üere **warp** içerisindeki **iş parçacıklarının** ulaşmaya çalıştıkları veri aynı **burst alanına** denk gelmediğinden birden fazla bellek erişimi yapılmak zorundadır. Bu da bellek erişiminin tamamiyle birleştirilmediği anlamına gelir.
+
+
+2 Boyutlu Matriks ve Bellek Erişim Modeli
+-----------------------------------------
+
+Yukardaki görselde 2 boyutlu bir c matriksinin lineerize edilmiş ve **burst alanlarına** ayrılmış halini görmektesiniz. Bu alanlaşmayı aklımızda bulundurakak matriks-matriks çarpımında bellek erişim modelini inceleyelim.
+
+4.modülde incelediğimiz basit matriks-matriks çarpımını simgeleyen aşağıdaki görseli inceleyiniz. Matriks A için sıralı **iş parçacıkları** sıralı satırlara erişirken, Matriks B için sıral **iş parçacıkları** sıralı sutünlara ulaşmaktadır.
+
+.. image:: /assets/cuda/03/01/01.png
+   :width: 600
+
+
+Matriks B için yapılan bellek erişimleri birleşiktir. Bunu görmek için aşağıdaki görseli inceleyelim.
+
+.. image:: /assets/cuda/03/01/01.png
+   :width: 600
+
+Görüldüğü üzere ilk iterasyonda **warp** içindeki **iş parçacıkları** (T0, T1, T2, T3) aynı **burst alanında** (sarı alan) bulunan veriye erişmektedir. İkinci iterasyonda aynı şekilde kırmızı alan ile devam edilmektedir.
+
+Ancak Matriks A için yapılan bellek erişimleri birleşik(coalesced) değildir. Daha yakından incelemek için aşağıdaki görseli inceleyelim.
+
+.. image:: /assets/cuda/03/01/01.png
+   :width: 600
+
+Görüldüğü üzere ilk iterasyonda aynı **warp** içindeki **iş parçacıkları** (T0, T1, T2, T3) farklı **burst alanlarından** veriye erişmektedir. İkinci iterasyonda da aynı şekilde farklı **burst alanlarındaki** veriye erişim devam etmektedir. Bu nedenle bu bellek erişimi birleşik değildir.
+
+
+
+ 
