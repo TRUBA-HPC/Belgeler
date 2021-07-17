@@ -1,5 +1,5 @@
 ===================================================
-Kendi Bilgisayarıma LAMMPS'i Nasıl Yüklerim?
+Yerel Bilgisayara LAMMPS Kurulumu
 ===================================================
 
 --------------------------

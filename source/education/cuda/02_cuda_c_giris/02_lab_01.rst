@@ -22,7 +22,7 @@ Sayfanın aşağısında görmekte olduğunuz kod, sisteminizde bulunan CUDA uyu
 *   Sabit ve paylaşımlı bellek boyutları
 *   Warp boyutu
 
-Bu noktada kodun içeriğindense üzerinde çalıştığınız sistemi tanımaya önem gösterin. Ayrıca bu etkinlik için amacımız kodu 
+Bu noktada kodun içeriğindense üzerinde çalıştığınız sistemi tanımaya önem gösterin. 
 
 
 .. code-block:: C++
@@ -89,4 +89,4 @@ Bu noktada kodun içeriğindense üzerinde çalıştığınız sistemi tanımaya
 
     .. code-block:: C++
 
-        TODO
+        Üzerinde çalıştığınız sisteme bağlı olarak değişik çıktılar alabilirsiniz.

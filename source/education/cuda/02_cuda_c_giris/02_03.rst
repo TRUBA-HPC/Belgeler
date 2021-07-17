@@ -76,11 +76,12 @@ Bloklar hakkında başka bir önemli nokta ise farklı bloklar içerisinde bulun
    
    | Yukarıdaki görselde 3 boyutlu bir veriyi temsil etmek için kullanılmış 3 boyutlu blok yapısı gösterilmektedir.
 
+Ayrıca iş parçacığı blokları **şebeke (grid)** adı verilen bir yapı içerisinde gruplaşır. İş parçacığı ile blok arasındaki ilişki, blok ile **şebeke** arasında bulunur. 
 
 CUDA Çekirdeği
 ^^^^^^^^^^^^^^
 
 CUDA **Çekirdeğinin** cihaz üzerinde çalışan kod parçası olduğundan bahsetmiştik ve CUDA paralel modelindeki iş parçağı hiyerarşisine değindik. Blok sayısı ve blok içerisindeki iş parçacığı sayısının ne olduğundan bahsettik. Bu noktada bir CUDA **çekirdeğinin** nasıl çağrıldığından da bahsetmek gerekmektedir.
 
-1 boyutlu blok yapısı kullanan bir CUDA programı için **çekirdek** çağırma işleminde önemli iki adet parametre bulunmaktadır. Kullanılacak blok sayısı ve her blok içerisindeki iş parçacığı sayısı. Sözdizimi olarak **çekirdekAdı<<<blokSayısı, threadSayısı>>>(parametreler)**. Örnek olarak daha önceki bölümlerde kullandığımız vektör toplama kodunu buraya  :ref:`tıklayarak <cuda-vector-addition>` inceleyebilirsiniz.
+1 boyutlu blok yapısı kullanan bir CUDA programı için **çekirdek** çağırma işleminde önemli iki adet parametre bulunmaktadır. Kullanılacak blok sayısı ve her blok içerisindeki iş parçacığı sayısı. Sözdizimi olarak **çekirdekAdı<<<blokSayısı, işParçacığıSayısı>>>(parametreler)**. Örnek olarak daha önceki bölümlerde kullandığımız vektör toplama kodunu buraya  :ref:`tıklayarak <cuda-vector-addition>` inceleyebilirsiniz.
 
