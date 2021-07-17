@@ -41,8 +41,8 @@ CUDA destekli cihazlarda **streaming multiprocessors** (SM) 32 adet bloğa kadar
 .. note::
     Volta SM 2048 **iş parçacığına** kadar desteklemektedir.
 
-.. image:: /assets/cuda/03/05/04.png
-    :width: 600
+.. image:: /assets/cuda/03/05/05.png
+    :width: 300
 
 Warp
 ----
@@ -58,8 +58,8 @@ Bir **streaming multiprocessore** 3 adet **blok** atandığını düşünelim ve
 *   3 adet **blok** bulunduğundan, bu SM tarafından yönetilecek 8 * 3 = 24 adet **warp** bulunmaktadır.
 
 
-.. image:: /assets/cuda/03/05/05.png
-    :width: 600
+.. image:: /assets/cuda/03/05/04.png
+    :width: 300
 
 Bu noktada önemli olacak bir gözlem ise bu **warpların**, çalıştırılırken L1 önbelleği (cache), register dosyası, ve paylaşımlı bellek (shared memory) paylaşıyor olmasıdır.
 
