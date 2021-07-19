@@ -30,8 +30,8 @@ Basitleştirilmiş bir örnek üzerinden ilerlemek gerekirse:
 8x2 boyutlarındaki bu basitleştirilmiş DRAM temel birimi (core array) üzerinden okuma işlemini inceleyelim. 
 
 * 3 bitlik seçim adresinin ilk ikisi satır seçimi için kullanılır
-* Seçilen satırda bulunan bitler algılayıcı devreler tarafından algılanır ve çıktıya doğru yönlendirilir.
-* Seçim adresinin son biti ile istenilen bit grubu seçilir. (ilk iki bit veya sonraki iki bit)
+* Seçilen satırda bulunan bitler algılayıcı devreler tarafından algılanır ve çıktıya doğru yönlendirilir
+* Seçim adresinin son biti ile istenilen bit grubu seçilir (ilk iki bit veya sonraki iki bit)
 
 DRAM Hızı
 ^^^^^^^^^
@@ -44,28 +44,26 @@ Fiziksel özellikleri nedeniyle DRAM modülleri oldukça yavaştır. Çünkü he
 DRAM Bursting
 ^^^^^^^^^^^^^
 
-Bu yavaşlıkla başa çıkabilmek ve bant genişliğini efektif kullanabilmek için **DRAM Bursting** kullanılmaktadır. DRAM Bursting, bir satır içerisindeki seçilen grupların tek tek okunması yerine (Önceki basitleştirilmiş 8x2 örneğinde 3. aşamada hangi 2 bitlik kısımın seçileceği belirlendikten sonra seçilmeyen 2 bitlik kısımı okumak için aynı işlem tekrarlanmak zorundadır), tek seferde okunduktan sonra okunan verinin gruplar hainde bir bufferda tutularak hızlıca okunabilmesidir. Yani aynı satırdaki farklı sütunların okunması için bir kere uzun bekleme süresi beklenir ardından okunan satırın farklı sütunlarına hızlıca ulaşılabilir.
+Bu yavaşlıkla başa çıkabilmek ve bant genişliğini efektif kullanabilmek için **DRAM Bursting** kullanılmaktadır. **DRAM Bursting**, bir satır içerisindeki seçilen grupların tek tek okunması yerine (Önceki basitleştirilmiş 8x2 örneğinde 3. aşamada hangi 2 bitlik kısımın seçileceği belirlendikten sonra seçilmeyen 2 bitlik kısımı okumak için aynı işlem tekrarlanmak zorundadır), tek seferde okunduktan sonra okunan verinin gruplar hainde bir bufferda tutularak hızlıca okunabilmesidir. Yani aynı satırdaki farklı sütunların okunması için bir kere uzun bekleme süresi beklenir ardından okunan satırın farklı sütunlarına hızlıca ulaşılabilir.
 
 Aşağıdaki görselde bursting kullanılan ve kullanılmayan bir okuma işleminin nasıl ilerlediğini görebilirsiniz.
 
 .. image:: /assets/cuda/06/01/04.png
    :width: 600
 
-Bu görselde aynı satırda bulunan 2 sütunun arka arkaya okunuşu gösterilmiştir. Bursting kullanılmadığında üstteki çizelgede gördüğünüz gibi her bir veri için küçük kapasitörlerin büyük kapasitif değere sahip uzun yola etki etmesi beklenmektedir. Ancak bursting kullanıldığında bir kere satır okunduktan sonra, aynı satırdaki verilere ulaşım oldukça hızlıdır.
+Bu görselde aynı satırda bulunan 2 sütunun arka arkaya iletilişi gösterilmiştir. Bursting kullanılmadığında üstteki çizelgede gördüğünüz gibi her bir veri için küçük kapasitörlerin büyük kapasitif değere sahip uzun yola etki etmesi beklenmektedir. Ancak bursting kullanıldığında bir kere satır okunduktan sonra, aynı satırdaki verilere ulaşım oldukça hızlıdır.
 
 DRAM Bankaları
 ^^^^^^^^^^^^^^
 
-Dram bankalarını modelleyen aşağıdaki görseli inceleyiniz.
+**DRAM bankalarını** modelleyen aşağıdaki görseli inceleyiniz.
 
 .. image:: /assets/cuda/06/01/05.png
    :width: 600
 
-Gördüğünüz gibi bankalar birden fazla temel birimin bir araya gelmesiyle oluşmaktadırlar. Bankaların kullanılmasının en önemli nedeni bant genişliğini daha da efektif şekilde kullanmamızı sağlamalarıdır. DRAM Bursting ile veri transferi sağlanılan aşağıdaki örneği inceleyeniz. Bu örnekte DRAM Burstingin bankalar ile kullanıldığında çok daha efektif bant genişliği kullanımı sağladığını görebilirsiniz.
+Gördüğünüz gibi bankalar birden fazla temel birimin bir araya gelmesiyle oluşmaktadırlar. Bankaların kullanılmasının en önemli nedeni bant genişliğini daha da efektif şekilde kullanmamızı sağlamalarıdır. **DRAM Bursting** ile veri transferi sağlanılan aşağıdaki örneği inceleyeniz. Bu örnekte **DRAM Burstingin** bankalar ile kullanıldığında çok daha efektif bant genişliği kullanımı sağladığını görebilirsiniz.
 
 .. image:: /assets/cuda/06/01/06.png
    :width: 600
 
-DRAM Bursting, ile tek banka kullanıldığında gördüğünüz üzere belirli miktarda bir kazanım elde ediyor olsak da satırlar arası geçişlerde küçük kapasitördeki yükün büyük kapasitif değerli yola etki etme süresini beklemek durumundayız. Bu sırada bant genişliğini harcamış oluyoruz (veri aktarabilecekken aktarmıyoruz). Ancak birden fazla banka kullanıldığında ve veri ulaşımları sırasıyla farklı bankalar üzerinden ilerletildiğinde bir banka okuma süresi içindeyken diğer bankadan veri aktarımı sağlanabilmektedir ve bu da bant genişliğini daha da efektif kullanmamızı sağlar. Bu örnekte iki banka kullanılmıştır.
-
-
+**DRAM Bursting**, ile tek banka kullanıldığında gördüğünüz üzere belirli miktarda bir kazanım elde ediyor olsak da satırlar arası geçişlerde küçük kapasitördeki yükün büyük kapasitif değerli yola etki etme süresini beklemek durumundayız. Bu sırada bant genişliğini harcamış oluyoruz (veri aktarabilecekken aktarmıyoruz). Ancak birden fazla banka kullanıldığında ve veri ulaşımları sırasıyla farklı bankalar üzerinden ilerletildiğinde bir banka okuma süresi içindeyken diğer bankadan veri aktarımı sağlanabilmektedir ve bu da bant genişliğini daha da efektif kullanmamızı sağlar. Bu örnekte iki banka kullanılmıştır.
