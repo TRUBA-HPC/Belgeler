@@ -4,19 +4,19 @@ DRAM Performansı
 
 Öğrenim Hedefleri
 -----------------
-*  Bellek erisim performansının büyük ölçekte paralel hesaplamaların performansını birinci dereceden etkileyen bir faktör olduğunu öğrenmek.
+*  Bellek erisim performansının büyük ölçekte paralel (massively parallel) hesaplamaların performansını birinci dereceden etkileyen bir faktör olduğunu öğrenmek.
 
    *  DRAM burst, bankalar ve kanallar
 
 DRAM Performansı
 ----------------
 
-Yapılan hesaplamalarda büyük miktarlada veri olabildiğince performanslı olarak işlenmek istenmektedir. Bu hesaplama performansının oldukça önemli bir etkeni ise bellek erişim performansıdır. Hesaplamanın performanslı bir şekilde tamamlanması için verinin işlem ünitesine taşınması ve işlenmesi gerekir. Genellikle işlem ünitesindeki işleme hızı bellekten işlem ünitesine taşınma hızından fazladır. Bunun bir nedeni de modern sistemlerde kullandığımız DRAM modüllerinin fiziksel yapısına dayanmaktadır. 
+Yapılan hesaplamalarda büyük miktarlada veri olabildiğince performanslı olarak işlenmek istenmektedir. Bu hesaplama performansının oldukça önemli bir etkeni ise bellek erişim performansıdır. Hesaplamanın yürütülebilmesi için verinin işlem ünitesine taşınması ve işlenmesi gerekir. Genellikle işlem ünitesindeki işleme hızı, bellekten işlem ünitesine taşınma hızından fazladır. Bunun bir nedeni de modern sistemlerde kullandığımız DRAM modüllerinin fiziksel yapısına dayanmaktadır. 
 
 DRAM Temel Birimi
 ^^^^^^^^^^^^^^^^^
 
-Modern DRAM modüllerinin temel birimleri genellikle 16M bitlik kapasiteye sahiptirler. Her bir bit bir transistöre bağlı minik bir kapasitörde tutulan yük ile ifade edilir. Genelde bu transistör kapasitör ikilisinden oluşan birimler kare şeklinde (4096x4096) dizilir ve 16M bitlik kapasiteye ulaşılır. Bu veriye ulaşım ise önce satırın seçilmesi ile başlar. 4096 olası satır arasından bir satırı seçmek için 12 adet adres biti kullanmak gerekir (2^16 = 4096). İstenilen satır seçildiğinde o satırda bulunan bütün bitler algılayıcı devreler ile okunur ve bu okunan 4096 bit arasından hangi bit grubunun istendiği son bir adres seçimi ile belirlenir. Tipik bir DRAM temel birimini görebilirsiniz.
+Modern DRAM modüllerinin temel birimleri genellikle 16M bitlik kapasiteye sahiptir. Her bir bit bir transistöre bağlı minik bir kapasitörde tutulan yük ile ifade edilir. Genelde bu transistör kapasitör ikilisinden oluşan birimler kare şeklinde (4096x4096) dizilir ve 16M bitlik kapasiteye ulaşılır. Bu veriye ulaşım ise önce satırın seçilmesi ile başlar. 4096 olası satır arasından bir satırı seçmek için 12 adet adres biti kullanmak gerekir (2^16 = 4096). İstenilen satır seçildiğinde o satırda bulunan bütün bitler algılayıcı devreler ile okunur ve bu okunan 4096 bit arasından hangi bit grubunun istendiği son bir adres seçimi ile belirlenir. Tipik bir DRAM temel birimini aşağıda görebilirsiniz.
 
 
 .. image:: /assets/cuda/06/01/01.png
@@ -44,14 +44,14 @@ Fiziksel özellikleri nedeniyle DRAM modülleri oldukça yavaştır. Çünkü he
 DRAM Bursting
 ^^^^^^^^^^^^^
 
-Bu yavaşlıkla başa çıkabilmek ve bant genişliğini efektif kullanabilmek için **DRAM Bursting** kullanılmaktadır. DRAM Bursting, bir satır içerisindeki seçilen grupların tek tek okunması yerine (Önceki basitleştirilmiş 8x2 örneğinde 3. aşamada hangi 2 bitlik kısımın seçileceği belirlendikten sonra seçilmeyen 2 bitlik kısımı okumak için aynı işlem tekrarlanmak zorundadır), birlikte okunduktan sonra bir bufferda tutarak hızlıca okunabilmesidir. Yani aynı satırdaki farklı sütunların okunması için bir kere uzun bekleme süresi beklenir ardından okunan satırın farklı sütunlarına hızlıca ulaşılabilir.
+Bu yavaşlıkla başa çıkabilmek ve bant genişliğini efektif kullanabilmek için **DRAM Bursting** kullanılmaktadır. DRAM Bursting, bir satır içerisindeki seçilen grupların tek tek okunması yerine (Önceki basitleştirilmiş 8x2 örneğinde 3. aşamada hangi 2 bitlik kısımın seçileceği belirlendikten sonra seçilmeyen 2 bitlik kısımı okumak için aynı işlem tekrarlanmak zorundadır), tek seferde okunduktan sonra okunan verinin gruplar hainde bir bufferda tutularak hızlıca okunabilmesidir. Yani aynı satırdaki farklı sütunların okunması için bir kere uzun bekleme süresi beklenir ardından okunan satırın farklı sütunlarına hızlıca ulaşılabilir.
 
 Aşağıdaki görselde bursting kullanılan ve kullanılmayan bir okuma işleminin nasıl ilerlediğini görebilirsiniz.
 
 .. image:: /assets/cuda/06/01/04.png
    :width: 600
 
-Bu görselde gördüğünüz aynı satırda bulunan 2 sütunun arka arkaya okunuşudur. Üstteki çizelgede gördüğünüz gibi her bir veri için küçük kapasitörlerin büyük kapasitif değere sahip uzun yola etki etmesi beklenmektedir. Ancak bursting kullanıldığında bir kere satır okunduktan sonra, aynı satırdaki verilere ulaşım oldukça hızlıdır.
+Bu görselde aynı satırda bulunan 2 sütunun arka arkaya okunuşu gösterilmiştir. Bursting kullanılmadığında üstteki çizelgede gördüğünüz gibi her bir veri için küçük kapasitörlerin büyük kapasitif değere sahip uzun yola etki etmesi beklenmektedir. Ancak bursting kullanıldığında bir kere satır okunduktan sonra, aynı satırdaki verilere ulaşım oldukça hızlıdır.
 
 DRAM Bankaları
 ^^^^^^^^^^^^^^
