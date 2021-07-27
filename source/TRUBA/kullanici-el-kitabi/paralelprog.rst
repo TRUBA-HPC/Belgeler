@@ -66,24 +66,24 @@ Derleme GCC derleyicileri ile yapılacak ise ayrıca herhangi bir module yüklem
     source /truba/sw/centos7.9/comp/intel/oneapi-2021.2/setvars.sh
 
 -----------------------------------------------------
- Multithread/multitask uygulamaların çalıştırılması
+ Multithread/multitask Uygulamaların Çalıştırılması
 -----------------------------------------------------
 
 OpenMP ya da pthread tarzı sadece node içi paralelleştirme kullanan uygulamaları ``sbatch`` ya da ``srun`` ile çalıştırırken dikkat edilmesi gereken bazı husular bulunmaktadır.
 
 **Sbatch ile çalışırken:**
 
-**-N 1 :** en fazla 1 node kullanılmalı
+**-N 1:** en fazla 1 node kullanılmalı
 
-**-n 5 (ya da -c 5) :** iş tanımı için en az - en fazla 5 çekirdek ayrılır. Sbatch herhangi bir görev çalıştırmadığı için -n parametresi de sorun oluşturmayacaktır. Ancak doğru olan -c 'yi kullanmaktır.
+**-n 5 (ya da -c 5):** iş tanımı için en az - en fazla 5 çekirdek ayrılır. Sbatch herhangi bir görev çalıştırmadığı için -n parametresi de sorun oluşturmayacaktır. Ancak doğru olan -c 'yi kullanmaktır.
 
-**export OMP_NUM_THREADS=5 :** uygulama kendisi için 5 çekirdeğe kadar izin verildiğinden haberdar edilir. Bazı uygulamalar izin verilen çekirdek sayısını otomatik olarak farkedebilir. Ancak genel olarak bunu yazmaya ihtiyaç vardır.
+**export OMP_NUM_THREADS=5:** uygulama kendisi için 5 çekirdeğe kadar izin verildiğinden haberdar edilir. Bazı uygulamalar izin verilen çekirdek sayısını otomatik olarak farkedebilir. Ancak genel olarak bunu yazmaya ihtiyaç vardır.
 
 **srun ile çalışırken:**
 
-**-N 1 :** en fazla 1 node kullanılmalıdır.
+**-N 1:** en fazla 1 node kullanılmalıdır.
 
-**-n 1 :** 1 task/görev başlatılacaktır.
+**-n 1:** 1 task/görev başlatılacaktır.
 
 **-c 5:** görev başına 5 çekirdeğe izin verilecektir.
 
@@ -91,13 +91,13 @@ Uygulama kaç çekirdek kullanabilecegini otomatik algılayabilmeli ya da, ``exp
 
 .. note::
 
-   -n değeri 1 den fazla olursa, örneğin 2, komutun iki kopyası birbirinden bağımsız olarak çalıştırılacaktır. 
+   -n değeri 1'den fazla olursa, örneğin 2, komutun iki kopyası birbirinden bağımsız olarak çalıştırılacaktır. 
 
 --------------------------------------------------
- Hibrid (MPI+OpenMP) uygulamaların çalıştırılması
+ Hibrid (MPI+OpenMP) Uygulamaların Çalıştırılması
 --------------------------------------------------
 
-Genel olarak tersi olsa da, iyi tasarlanmış hibrid uygulamaların (örnegin Intel MKL ile birlikte gelen xhpl) performansı MPI uygulamalardan daha iyi olabilmektedir. Bunun başlıca sebebi, nodelar arası gerçekleşen iletişim ihtiyaçlarının önemli ölçüde azalması, node içerisindeki tasklar arası haberleşmenin, network ya da Infiniband katmanına göre çok daha hızlı olan ortak bellek üzerinde gerçekleşmesidir.
+Genel olarak tersi olsa da iyi tasarlanmış hibrid uygulamaların (örnegin Intel MKL ile birlikte gelen xhpl) performansı MPI uygulamalardan daha iyi olabilmektedir. Bunun başlıca sebebi, nodelar arası gerçekleşen iletişim ihtiyaçlarının önemli ölçüde azalması, node içerisindeki tasklar arası haberleşmenin, network ya da Infiniband katmanına göre çok daha hızlı olan ortak bellek üzerinde gerçekleşmesidir.
 
 xhpl'in *hibrid, mpi ve multitask* versiyonları için hazırlanmış olan slurm betiklerini ``/truba/sw/script`` dizini altında bulabilirsiniz.
 
@@ -106,11 +106,11 @@ Hibrid bir iş çalıştırırken; *node sayısı, çalıştırılacak görev sa
 
 **Sbatch ile çalışırken:**
 
-**-N 4 :** -n tane taskın başlatılacağı node sayısı
+**-N 4:** -n tane taskın başlatılacağı node sayısı
 
-**-n 16 :** başlatılacak görev sayısı, node başına eşit sayıda görev düşmesi performansa olumlu etki yapacaktır. O nedenle -N'in katları şeklinde olması önemlidir.
+**-n 16:** başlatılacak görev sayısı, node başına eşit sayıda görev düşmesi performansa olumlu etki yapacaktır. O nedenle -N'in katları şeklinde olması önemlidir.
 
-**-c 4 :** görev başına kullanılacak çekirdek sayısı. Burada, node başına düşen görev sayısı x gorev başına düşen çekirdek sayısının, ilgili node'un çekirdek sayısını aşmaması gerekir.
+**-c 4:** görev başına kullanılacak çekirdek sayısı. Burada, node başına düşen görev sayısı x gorev başına düşen çekirdek sayısının, ilgili node'un çekirdek sayısını aşmaması gerekir.
 
 Bu yapılandırma ile her biri 4 çekirdeğe kadar kaynak kullanabilen toplamda 16 görev (16x4 =64 çekirdek) 4 node üzerinde çalıştırılacaktır.
 

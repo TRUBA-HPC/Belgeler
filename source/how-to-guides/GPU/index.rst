@@ -1,3 +1,5 @@
+.. _gpu-kilavuzu:
+
 ===============
 GPU Kılavuzu
 ===============
@@ -5,7 +7,7 @@ GPU Kılavuzu
 Bu belge TRUBA altyapısında GPU kaynaklarının kullanımını kolaylaştırmak için oluşturulmuştur.
 
 ----------------------
-GPU kaynağı talep etme
+GPU Kaynağı Talep Etme
 ----------------------
 
 TRUBA altyapısındaki GPU kaynaklarını SLURM kaynak yöneticisi ile kullanılabilir. GPU kaynağı bulunan kümelerde ``–-gres=gpu:n`` tanımı ile bu kaynaklar talep edilir.
@@ -32,7 +34,7 @@ TRUBA altyapısındaki GPU kaynaklarını SLURM kaynak yöneticisi ile kullanıl
     # Çalıştırılacak iş
 
 .. note::
-    Betikteki ``[USERNAME]`` yertutucusunu kullanıcı adınızla değiştirmeyi unutmayın.
+    Betikteki ``[USERNAME]`` yer tutucusunu kullanıcı adınızla değiştirmeyi unutmayın.
 
 ``srun`` ile iş çalıştırmak için örnek:
 
@@ -50,7 +52,7 @@ TRUBA altyapısındaki GPU kaynaklarını SLURM kaynak yöneticisi ile kullanıl
     * barbun-cuda kümesi için 20*[GPU_SAYISI]
 
 --------------------------------
-GPU kullanılan uygulamalar
+GPU Kullanılan Uygulamalar
 --------------------------------
 
 .. toctree::

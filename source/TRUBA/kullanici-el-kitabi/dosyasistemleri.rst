@@ -7,7 +7,7 @@ Hesaplama kümelerindeki sunucuların kendi üzerlerindeki yerel disklerden bağ
 
 Kullanım amacına göre dosya sistemleri farklı boyutlarda, ve farklı özellikteki donanımlarla hazırlanırlar. Örneğin, kullanıcı ev dizinleri performans dosya sistemine göre boyut olarak daha büyük olmasına rağmen, hız bakımından performans dosya sistemi daha başarılıdır. 
 
-Ev dizinleri ve Ortak yazılımlar
+Ev Dizinleri ve Ortak Yazılımlar
 ---------------------------------
 
 Kullanıcı ev dizinleri ve TRUBA tarafından sağlanan yazılımların (derleyici, uygulama ve kütüphaneler) kaydedildiği alan için “kullanıcı ev dizini” terimi kullanılmaktadır. Kullanıcı ev dizinleri için iki farklı dosya sistemi kullanılmaktadır. Kullanıcı dizinleri /truba/home  dosya sistemi altında bulunmaktadır. 
@@ -22,7 +22,7 @@ Kullanıcı ev dizinleri standart olarak sadece dizinin sahibi tarafından eriş
 
 Kümelerde kullanılan ortak yazılımlar /truba/sw dizininde tutulurlar. Bu dizine tüm kullanıcıların read-only erişimleri vardır. Bu dizindeki yazılımlar genel olarak ücretsiz lisanslı yazılımlardır ve tüm TRUBA kullanıcılarının -*yazılımın lisans haklarına uyulması şartı ile* kullanımına açıktır. 
 
-Scratch dizini (/truba_scratch)
+Scratch Dizini (/truba_scratch)
 ---------------------------------
 
 Tüm hesaplama kümelerinde hesaplama performans alanı okarak ``/truba_scratch`` dosya sistemi kullanılmaktadır. Kullanıcıların işlerini bu dosya sisteminde çalıştırması amaçlanmıştır. Bu dosya sistemindeki dosyalar da düzenli olarak kullanıcı tarafından silinmelidir. Dosya sisteminde, 30 gün boyunca hiç erişilmemiş dosyalar düzenli olarak sistem yöneticisi tarafından silinebilmektedir. 

@@ -14,7 +14,7 @@ belirtilmediği takdirde OpenMP tarafından otomatik olarak seçilir.
 Static
 ------
 
-``schedule(static,<parça boyutu>)`` şeklinde kullanılabilir. İş
+``schedule (static,<parça boyutu>)`` şeklinde kullanılabilir. İş
 verildiği sıraya göre parça boyutunda parçalara bölünür.
 
 Örnek:
@@ -55,7 +55,7 @@ verildiği sıraya göre parça boyutunda parçalara bölünür.
 Dynamic
 -------
 
-``schedule(dynamic,<parça boyutu>)`` şeklinde kullanılabilir. Görevler
+``schedule (dynamic,<parça boyutu>)`` şeklinde kullanılabilir. Görevler
 yine parça boyutuna göre bölünecektir. Fakat ``static`` stratejinin
 aksine bu parçalar boşta olan iş parçacıklarından birine verilecektir.
 Yani görevlerini hızlı bitiren iş parçacıklarına, daha fazla görev
@@ -79,7 +79,7 @@ olduğu durumlarda bu strateji daha etkili olacaktır.
 Guided
 ------
 
-``schedule(guided,<parça boyutu>)`` şeklinde kullanılabilir. Çalışma
+``schedule (guided,<parça boyutu>)`` şeklinde kullanılabilir. Çalışma
 şekli ``dynamic`` ile benzerlik gösterir. Fakat parça boyutu sabit
 değildir. Programcı tarafından belirtilen parça boyutu, minimum parça
 boyutu olarak kullanılır (son parça daha küçük olabilir). Parça boyutu
@@ -103,14 +103,14 @@ başta büyük parça boyutu ile başlar ve zamanla düşer.
 Auto
 ----
 
-``schedule(auto)`` şeklinde kullanılabilir. Üstteki stratejilerden
+``schedule (auto)`` şeklinde kullanılabilir. Üstteki stratejilerden
 birininin derleyici ya da program tarafından seçilip kullanılmasına
 sebep olur.
 
 Runtime
 -------
 
-``schedule(runtime)`` şeklinde kullanılabilir. Kodun içinde
+``schedule (runtime)`` şeklinde kullanılabilir. Kodun içinde
 ``omp_set_schedule(<strateji>);`` şeklinde ya da kodun dışında
 ``export OMP_SCHEDULE=<strateji>`` şeklinde tanımlanan stratejiyi
 kullanır.

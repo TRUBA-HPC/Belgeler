@@ -15,10 +15,10 @@ C++ “pragma”
 -  Biz bu direktifi derleyiciye OpenMP özelliklerini kullanmasını
    belirtmek için ``#pragma omp ...`` şeklinde kullanacağız.
 
-C++ OpenMP kodu derlemek
+C++ OpenMP Kodu Derlemek
 ------------------------
 
--  OpenMP standartı gcc,clang,msvc gibi popüler bir çok C/C++
+-  OpenMP standartı gcc, clang, msvc gibi popüler bir çok C/C++
    derleyicisi tarafından desteklenir.
 
    -  Derleyiceler arasında OpenMP açısından bazı farklar olması

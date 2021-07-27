@@ -10,7 +10,7 @@ TRUBA Sistemini Kimler Kullanabilir?
 
 Hesaplama kümesi üzerinde çalışabilir uygulamalara sahip Türkiye'deki tüm üniversite, araştırma kurumu ve enstitülerdeki araştırmacılar, öğretim üyeleri, öğrenciler TRUBA kaynaklarını kullanmak üzere TRUBA kullanıcısı olabilir. 
 
-Ticari kullanıcılar ve endüstriyel işbirlikli akademik projeler TRUBA oluşumu tarafından değerlendirilerek kabul edilir. 
+Ticari kullanıcılar ve endüstriyel iş birlikli akademik projeler TRUBA oluşumu tarafından değerlendirilerek kabul edilir. 
 
 Altyapının kullanılması için çalışabilir uygulamaların (açık kaynak kodlu ve/veya lisanslı) aşağıdaki özelliklerden en az birini içermesi beklenmektedir: 
 
@@ -29,7 +29,7 @@ Yukarıdaki ve başvuru sayfasındaki kullanım şartlarını sağlayan ve Linux
 
 Ön onaydan geçen araştırmacının kimlik bilgileri, e-Devlet ve YÖKSİS üzerinden onaylanmaktadır. Bu nedenle, araştırmacının herhangi bir kimlik bilgisini e-posta ve/veya başka yöntemlerle göndermesine gerek bulunmamaktadır. 
 
-Kullanıcının kimlik doğrulamasının e-Devlet ve YÖKSİS üzerinden yapılmasının ardından, kullanıcının sistem üzerindeki kullanıcı hesabı (user account), ve kümeye iş gönderebilmesi için kaynak yöneticisi hesabı (bank account) kısa süre içerisinde açılarak, kullanıcıya e-posta ile kullanıcı adı ve şifresi hakkında geri bildirim yapılacaktır. TRUBA hesabı açılan araştırmacı, kullanıcı hesabı başvuru sayfasındaki kullanım politikasını kabul eder, ve bu şartlara göre çalışmalarını yürütür. 
+Kullanıcının kimlik doğrulamasının e-Devlet ve YÖKSİS üzerinden yapılmasının ardından, kullanıcının sistem üzerindeki kullanıcı hesabı (user account), ve kümeye iş gönderebilmesi için kaynak yöneticisi hesabı (bank account) kısa süre içerisinde açılarak, kullanıcıya e-posta ile kullanıcı adı ve şifresi hakkında geri bildirim yapılacaktır. TRUBA hesabı açılan araştırmacı, kullanıcı hesabı başvuru sayfasındaki kullanım politikasını kabul eder ve bu şartlara göre çalışmalarını yürütür. 
 
 .. note::
 
@@ -57,7 +57,7 @@ Tüm standart kullanıcı hesaplarının ev dizini kotaları 1 TB'dır. Yine zam
 
 Ev dizinlerinde oluşturulan dosya ve dizinlerin grupları, dosyayı oluşturan kullanıcının ki ile aynı olur, proje dizinlerinde oluşturulan dosya ve dizinlerin grupları ilgili projenin grubu ile aynı olur. Kullanıcılar varsayılan olarak kendi kullanıcı adı ile aynı grupta bulunurlar. Herhangi bir proje dolayısı ile birden fazla gruba dahil olan kullanıcılar dosya ya da dizinlerinin gruplarını dahil oldukları gruplardan herhangi birine ``chown, chgrp`` gibi komutlar yardımıyla değiştirebilirler.
 
-Ayrıca herhangi bir projeye dahil olan kullanıcı, kendi ev dizininde projesi ile ilgili çalışırken oluşturdurduğu ve daha sonra oluşturacağı dosya veya dizinlerin gruplarının kendi kişisel grubu yerine otomatik olarak proje grubu olması sağlayabilir. 
+Ayrıca herhangi bir projeye dahil olan kullanıcı, kendi ev dizininde projesi ile ilgili çalışırken oluşturduğu ve daha sonra oluşturacağı dosya veya dizinlerin gruplarının kendi kişisel grubu yerine otomatik olarak proje grubu olması sağlayabilir. 
 
 .. note::
 
@@ -71,7 +71,7 @@ Ayrıca herhangi bir projeye dahil olan kullanıcı, kendi ev dizininde projesi 
 
 Bu aşamadan sonra test dizini içerisinde oluşturulacak dosya ve dizinlerin grubu ``grid-teknik`` olacaktır. 
 
-TRUBA tarafından standard kullanıcılara verilen hizmet best-effort niteliğindedir (https://en.wikipedia.org/wiki/Best-effort_delivery). Bu nedenle kullanıcılara hizmetin devamlılığı, kalitesi, verilerin saklanması ve korunması, ve diğer TRUBA hizmetleri konusunda TRUBA'nın herhangi bir sorumluluğu yoktur, herhangi bir güvence ya da garanti sunmaz. 
+TRUBA tarafından standart kullanıcılara verilen hizmet best-effort niteliğindedir (https://en.wikipedia.org/wiki/Best-effort_delivery). Bu nedenle kullanıcılara hizmetin devamlılığı, kalitesi, verilerin saklanması ve korunması, ve diğer TRUBA hizmetleri konusunda TRUBA'nın herhangi bir sorumluluğu yoktur, herhangi bir güvence ya da garanti sunmaz. 
 
 Güncel olarak tüm kullanıcı hesaplarının TRUBA'daki tüm kuyruklara iş gönderme yetkisi vardır. Sadece yeni nesil kaynaklardan **hamsi** kümesine doktora öğrencileri, akademisyenler, proje hesapları iş gönderebilirler. Ayrıca yeni nesil A100 GPU'ların bulunduğu **palamut** kümesi kullanımı sadece Yapay Zeka çalışmalarına ayrılmış olup, bu alanda çalışma yapan araştırmacılar tarafından kullanılabilmektedir. 
 
@@ -80,7 +80,7 @@ Konu ile ilgili her türlü soru ve sorununuzu grid-teknik@ulakbim.gov.tr adresi
 Ayrıcalıklı Kullanım / ARDEB Projeleri
 ---------------------------------------
 
-Standart kullanıcı hesaplarına tanınan hesaplama kaynaklarının yeterli olmadığı ya da, zaman kısıtlı projelerin yürütülmekte olduğu durumlarda, cüzi bir hizmet bedeli karşılığında kuyruk önceliği olan, ayrıcalıklı hizmet almak mümkündür. Talep edilen kaynak miktarı için verilecek hizmet bedeli, ilgili donanımın talep edilen kullanım süresinde harcayacağı elektrik enerjisi miktarı ve altyapı bakım-onarım maliyetleri göz önüne alınarak hesaplanmaktadır.
+Standart kullanıcı hesaplarına tanınan hesaplama kaynaklarının yeterli olmadığı ya da zaman kısıtlı projelerin yürütülmekte olduğu durumlarda, cüzi bir hizmet bedeli karşılığında kuyruk önceliği olan, ayrıcalıklı hizmet almak mümkündür. Talep edilen kaynak miktarı için verilecek hizmet bedeli, ilgili donanımın talep edilen kullanım süresinde harcayacağı elektrik enerjisi miktarı ve altyapı bakım-onarım maliyetleri göz önüne alınarak hesaplanmaktadır.
 
 ARDEB'e proje başvurusunda bulunacak kullanıcılar proje başvurusu sırasında, yeni hesaplama donanımı alımı için fon talebinde bulunabilecekleri gibi, uygulamalarının TRUBA üzerinde çalışması mümkünse, hesaplarını TRUBA'da yürütmeyi tercih edebilirler.
 
@@ -93,9 +93,9 @@ TRUBA Sertifika İşlemleri
 Yeni Sertifika Başvurusu
 ------------------------
 
-Yeni sertifika başvurusu sadece ve sadece Avrupa Araştırma Altyapıları'nda yer alan kaynaklara iş göndermek, ilgili AB projelerinde yetkilendirme servisleri için kullanılmaya başlanmıştır. Bu nedenle sadece ilgili alanlarda ihtiyaç duyanlar portal.truba.gov.tr üzerinden sertifika başvurusunda bulunabilir veya ca@grid.org.tr adresinden yardım isteyebilirler. 
+Yeni sertifika başvurusu sadece ve sadece Avrupa Araştırma Altyapıları'nda yer alan kaynaklara iş göndermek, ilgili AB projelerinde yetkilendirme servisleri için kullanılmaya başlanmıştır. Bu nedenle sadece ilgili alanlarda ihtiyaç duyanlar https://portal.truba.gov.tr/ üzerinden sertifika başvurusunda bulunabilir veya ca@grid.org.tr adresinden yardım isteyebilirler. 
 
-https://portal.truba.gov.tr sayfasındaki Sertifika menüsünden yeni kullanıcı sertifikası başvurusunda bulunulabilinir. TRUBA sertifika otoritesi (CA) tarafından hazırlanıp imzalanarak size eposta ile gonderilecektir. 
+https://portal.truba.gov.tr sayfasındaki Sertifika menüsünden yeni kullanıcı sertifikası başvurusunda bulunulabilinir. TRUBA sertifika otoritesi (CA) tarafından hazırlanıp imzalanarak size eposta ile gönderilecektir. 
 
 *Sertifikamı Nerede Kullanabilirim?*
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -124,7 +124,7 @@ TRUBA Kullanıcı Politikası
   
   * Kullanıcıların TRUBA'ya başvuru sırasında belirtilmiş uygulamalardan farklı bir iş çalıştırmaması beklenir. Böyle bir ihtiyaç durumunda kullanıcının ``grid-teknik@ulakbim.gov.tr`` adresine e-posta atarak yeni uygulamalar konusunda yeniden kullanıcı talebinde bulunması gerekmektedir. 
   
-  * Arayüz makinası veya portal kullanıcı hesabı şifresinin güvenli bir şekilde saklanmasından kullanıcı sorumludur. 
+  * Arayüz makinesi veya portal kullanıcı hesabı şifresinin güvenli bir şekilde saklanmasından kullanıcı sorumludur. 
   
   * Kullanıcılar tarafından TRUBA kullanıcı sertifikası güvenliğinin sağlanması gerekmektedir. 
   
@@ -132,13 +132,13 @@ TRUBA Kullanıcı Politikası
   
   * TRUBA kaynakları yasadışı herhangi bir amaçla, altyapının yönetimini ve güvenliğini tehdit edecek biçimde kullanılamaz. 
   
-  * Sistemde bir güvenlik açığı gören yada böyle bir durumdan şüphelenen bir kullanıcının ivedilikle ``grid-teknik@ulakbim.gov.tr`` e-posta adresini kullanarak ya da 0 312 298 93 63 numaralı telefon numarasını arayarak altyapı işletenlerini uyarması gerekmektedir. 
+  * Sistemde bir güvenlik açığı gören ya da böyle bir durumdan şüphelenen bir kullanıcının ivedilikle ``grid-teknik@ulakbim.gov.tr`` e-posta adresini kullanarak ya da 0 312 298 93 63 numaralı telefon numarasını arayarak altyapı işletenlerini uyarması gerekmektedir. 
     
   * Kayıtlı kullanıcı bilgisi, TRUBA tarafından sadece yönetsel, operasyonel, kaynakların kullanımında kimlik doğrulama ve yetkilendirme amaçlı kullanılabilir. Bu amaçlar dışında mevcut kimlik bilgilerinin gizli tutulması esastır. 
   
-  * TRUBA altyapısı uygulama geliştirme amaçlı kullanılamaz. Kullanıcılar ancak geliştirilmiş uygulamalarını (arayüz makinasında ya da kendi makinalarında derlenmiş çalıştırılabilir iş ve veri dosyalarını) TRUBA altyapısına aktarabilirler. 
+  * TRUBA altyapısı uygulama geliştirme amaçlı kullanılamaz. Kullanıcılar ancak geliştirilmiş uygulamalarını (arayüz makinesinde ya da kendi makinelerinde derlenmiş çalıştırılabilir iş ve veri dosyalarını) TRUBA altyapısına aktarabilirler. 
   
-  * Kullanıcı arayüz makinasından konsol aracılığıyla gridi kullanan kullanıcılar programlarını arayüz makinasında derleyip derlenmiş çalıştırılabilir dosyalarını küme bilgisayara ya da Grid'e göndermek durumundadırlar. 
+  * Kullanıcı arayüz makinesinden konsol aracılığıyla gridi kullanan kullanıcılar programlarını arayüz makinesinde derleyip derlenmiş çalıştırılabilir dosyalarını küme bilgisayara ya da Grid'e göndermek durumundadırlar. 
   
   * TRUBA kullanıcılarının yürütmekte oldukları çalışma ve projeler yıllık olarak değerlendirilecektir.
   

@@ -1,7 +1,9 @@
-.. |SU2| replace:: SU :superscript:`2`
+.. _su2-kilavuzu:
+
+.. |SU2| replace:: SU2
 
 ===============================================================
-|SU2| CFD Çözücünün TRUBA Üzerinde Derlenmesi ve Çalıştırılması
+|SU2| Kılavuzu
 ===============================================================
 
 1. Download |SU2| 7.1.1 from Github to the SU2 directory:

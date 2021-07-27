@@ -3,7 +3,7 @@
 ******************
 3 - Teori Kılavuzu
 ******************
-3.1 - |SU2| nedir ve hangi akışlarda kullanılabilir?
+3.1 - |SU2| Nedir ve Hangi Akışlarda Kullanılabilir?
 ====================================================
 |SU2| Stanford Üniversitesinde ortaya çıkmış, Sabit kanat hava aracı 
 üreticileri ile birlikte açık kaynak olarak geliştirilmesi ivmelendirilmiş bir
@@ -75,7 +75,7 @@ sıcaklığın birbirine termodinamik olarak bağlıdır ve bir hal denklemi ile
 edilebilir. |SU2| ideal gaz denklemlerini varsayılan olarak kullanır. Ayrıca 
 farklı gerçek gaz modelleri de kullanılmaktadır.
 
-3.3 - Genel HAD mimarisi
+3.3 - Genel HAD Mimarisi
 ========================
 Sıkıştırılabilir akışlar için genel HAD yazılımları şu alt birimlerden oluşur:
 
@@ -93,7 +93,7 @@ Sıkıştırılabilir akışlar için genel HAD yazılımları şu alt birimlerd
   daha yeni tarihli olarak \mathrm{SU^{2}} çözücüsüne eklenmektedir. 
   Sıkıştırılamaz akışlarda kaynak terimi her zaman bulunmaktadır.
 
-3.4 - Akı (İng. *Flux*) hesaplayıcıları
+3.4 - Akı (İng. *Flux*) Hesaplayıcıları
 =======================================
 Akı hesaplamaları sonlu hacim tabanlı HAD çözücüleri için en önemli kısımlardan
 birisidir. Öncelikle, sıkıştırılabilir akışlarda yerel şok dalgalarından 
@@ -105,7 +105,7 @@ kullanılması gerekmektedir.
 |SU2| çözücüsü sıkıştırılabilir akışlar için iki ana aileye ait çözücüleri 
 kullanmaktadır.
 
-3.4.1 - Merkezi (*Central*) çözücüler
+3.4.1 - Merkezi (*Central*) Çözücüler
 -------------------------------------
 Merkezi çözücüler, aslında gradyen temelli çözücülerdir. Dolayısı ile hesaplama
 yükü göreli olarak azdır. İkinci derecede çözücülerde şok gibi yüksek 
@@ -136,7 +136,7 @@ derece ve 4. derece yayınım parametreleri ile son derece gürbüz ve probleme
 uyarlanması kolaydır. LF metodu ise daha basit bir şema olup hesaplama yükü son
 derece düşüktür.
 
-3.4.2 - *Upwind* çözücüler
+3.4.2 - *Upwind* Çözücüler
 --------------------------
 Upwinding terimi akışın geldiği yöne göre çözüm yönteminin yöneliminin 
 belirlenmesi anlamına gelmektedir. Akılar, akışın geldiği yönden daha çok bilgi
@@ -171,7 +171,7 @@ Aşağıdaki Upwind şemalar |SU2| içerisinde seçilebilmektedir:
   maliyetli olanıdır. Yaklaşık Riemann problemi çözücüsü içeren olan bu akı 
   hesaplama yöntemi diğer çözücülere kıyasla daha az gürbüz olabilirler.
 
-3.5 - *RANS* modelleri
+3.5 - *RANS* Modelleri
 ======================
 Türbülanslı akışların modellenebilmesi için Navier-Stokes denklemlerini 
 çözmeniz gerekir. Bu sebeple iki değişiklik şarttır. Birincisi ağdalı akışlar

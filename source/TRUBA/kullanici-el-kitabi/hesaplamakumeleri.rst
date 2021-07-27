@@ -10,7 +10,7 @@ TRUBA hesaplama kümeleri, her yıl geliştirilerek güncellenmektedir. Yapılan
 TRUBA Kaynakları
 ----------------
 
-2003 yılında faaliyete geçen TÜBİTAK ULAKBİM Yüksek Başarımlı ve Grid Hesaplama Merkezi'nde bulunan kaynaklar TRUBA'ya dahildir. Günümüzde TRUBA >25.000 işlemci çekirdeği, 216 adet GPU ve toplamda 7.5PByte yapılandırılmış yüksek performanslı Lustre dosya sistemi ile araştırmacılarımıza hizmet vermektedir. 
+2003 yılında faaliyete geçen TÜBİTAK ULAKBİM Yüksek Başarımlı ve Grid Hesaplama Merkezi'nde bulunan kaynaklar TRUBA'ya dahildir. Günümüzde TRUBA > 25.000 işlemci çekirdeği, 216 adet GPU ve toplamda 7.5PByte yapılandırılmış yüksek performanslı Lustre dosya sistemi ile araştırmacılarımıza hizmet vermektedir. 
 
 +----+------+------------------------------------------+----------------------------------+----------------------+---------------------------+-----------------------+--------------------------+
 |Yıl | Adet | CPU/GPU                                  | İşlemci Modeli                   | SPECfp_rate_base2006 | Teorik Gflops             | Bellek                | Tanımı                   |
@@ -45,7 +45,7 @@ TRUBA Kaynakları
 +----+------+------------------------------------------+----------------------------------+----------------------+---------------------------+-----------------------+--------------------------+
 |2018| 24   | 20 çekirdek x 2CPU & 2xNvidia P100 GPU   | Xeon 6148 2.40GHz                | 1400                 | 2048Gflops & 9400Gflops   | 384 GB & 2x16 GB HBM2 | Barbun-Cuda Kümesi       |
 +----+------+------------------------------------------+----------------------------------+----------------------+---------------------------+-----------------------+--------------------------+
-|2018| 24   | 20 çekirdek x 2CPU & 4xNvidia V100 GPU   | Xeon 6148 2.40GHz                | 1400                 | 2048Gflops & 4x7800Gflops   | 384 GB & 2x16 GB HBM | Akya-Cuda Kümesi        |
+|2018| 24   | 20 çekirdek x 2CPU & 4xNvidia V100 GPU   | Xeon 6148 2.40GHz                | 1400                 | 2048Gflops & 4x7800Gflops | 384 GB & 2x16 GB HBM  | Akya-Cuda Kümesi         |
 +----+------+------------------------------------------+----------------------------------+----------------------+---------------------------+-----------------------+--------------------------+
 |2021| 144  | 28 çekirdek x 2 CPU                      | Xeon 6258R 2.70GHz               | -                    | 3.234 Tflops              | 192 GB                | Hamsi Kümesi             |
 +----+------+------------------------------------------+----------------------------------+----------------------+---------------------------+-----------------------+--------------------------+
@@ -55,7 +55,7 @@ TRUBA Kaynakları
 ----------------------
 Güncel Sunucu Aileleri
 ----------------------
-Güncel olarak kullanımda olan hesaplama kaynaları aşağıdaki gibidir. 
+Güncel olarak kullanımda olan hesaplama kaynakları aşağıdaki gibidir. 
 
 *Orkinos*
 ^^^^^^^^^
@@ -73,7 +73,7 @@ Barbun sunucuları 120 adet Dell R640, Barbun-cuda sunucuları R740 model sunucu
 
 *Akya-cuda*
 ^^^^^^^^^^^
-Akya sunucuları 24 adet Supermicro 1029GQ-TRT model sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet Intel Xeon Scalable Gold 6148 işlemci ve toplam 40 adet işlemci çekirdeği ve 4 adet Nvidia Tesla V100 (32GB, NVLink ) GPU karti bulunmaktadır. Sunucular birbirlerine EDR (100Gbps) Infiniband ağ kartları ile non-blocking yapıda bağlıdırlar.
+Akya sunucuları 24 adet Supermicro 1029GQ-TRT model sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet Intel Xeon Scalable Gold 6148 işlemci ve toplam 40 adet işlemci çekirdeği ve 4 adet Nvidia Tesla V100 (32GB, NVLink ) GPU kartı bulunmaktadır. Sunucular birbirlerine EDR (100Gbps) Infiniband ağ kartları ile non-blocking yapıda bağlıdırlar.
 
 *Hamsi (Yeni Küme)*
 ^^^^^^^^^^^^^^^^^^^^
@@ -81,7 +81,7 @@ Hamsi sunucuları 144 adet INSPUR NF5180M5 sunuculardan oluşmaktadır. Her bir 
 
 *Palamut-cuda (Yeni Küme)*
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-Palamut sunucuları 9 adet HP Proliant XL675d Gen10 Plus model sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet AMD EPYC 7742 2.24GHz işlemci ve toplam 128 adet işlemci çekirdeği ve 8 adet Nvidia Tesla A100 (80GB, NVLink ) GPU karti bulunmaktadır. Sunucular birbirlerine 4xHDR (200Gbps) Infiniband ağ kartları ile non-blocking yapıda bağlıdırlar.
+Palamut sunucuları 9 adet HP Proliant XL675d Gen10 Plus model sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet AMD EPYC 7742 2.24GHz işlemci ve toplam 128 adet işlemci çekirdeği ve 8 adet Nvidia Tesla A100 (80GB, NVLink ) GPU kartı bulunmaktadır. Sunucular birbirlerine 4xHDR (200Gbps) Infiniband ağ kartları ile non-blocking yapıda bağlıdırlar.
 
 .. _partitions:
 
@@ -101,7 +101,7 @@ Kuyrukların kullanım durumuna, paylaşılan, dolu ya da boş olan node ve çek
 
 Tüm kuyrukların varsayılan çalışma süresi 2 dakikadır. Betik dosyasında zaman bilgisi girilmeyen işler 2 dakika sonunda otomatik olarak sonlandırılmaktadır. Slurm betik dosyasında `#SBATCH --time <https://slurm.schedmd.com/sbatch.html>`_ komutu ile hesaplama için öngörülen zaman bilgisi girilen işler, belirtilen zaman sonunda otomatik olarak sonlandırılmaktadır. 
 
-Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarına bağlı olarak bellek sınırlamaları mevcuttur. Eğer betik dosyalarında (ya da srun komutunda) herhangi bir bellek değeri girilmemişse, ilgili iş için, ``çekirdek sayısı x DefMemPerCore`` kadar bellek ayrılır. Betik dosyalarında (ya da srun komutunda) işler için ``--mem-per-core`` ya da ``--mem`` parametreleri ile daha fazla bellek talebinde bulunulabilir, ancak talep edilen bellek miktarı hiç bir koşulda *maxMemPerCore* degerini geçemez. *MaxMemPerCore* ve *DefMemPerCore* değerleri her sunucu ailesi için farklıdır. Tüm sunucular için bu verilere aşağıdaki tablodan erişilebilir. 
+Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarına bağlı olarak bellek sınırlamaları mevcuttur. Eğer betik dosyalarında (ya da srun komutunda) herhangi bir bellek değeri girilmemişse, ilgili iş için, ``çekirdek sayısı x DefMemPerCore`` kadar bellek ayrılır. Betik dosyalarında (ya da srun komutunda) işler için ``--mem-per-core`` ya da ``--mem`` parametreleri ile daha fazla bellek talebinde bulunulabilir, ancak talep edilen bellek miktarı hiçbir koşulda *maxMemPerCore* degerini geçemez. *MaxMemPerCore* ve *DefMemPerCore* değerleri her sunucu ailesi için farklıdır. Tüm sunucular için bu verilere aşağıdaki tablodan erişilebilir. 
 
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
 |partitions   |   nodes      | #nodes  |  max run time | priority | min core | defMemPerCore  | maxMemPerCore |
@@ -130,7 +130,7 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
 |  barbun     |  barbun      |   119   |  15-00:00:00  |  2800    |    4     |    8500MB      |    9500MB     |
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-| interactive |  levrekv2    |    14   |  15-00:00:00  |  3000    |    1     |    8000MB      |    9000MB    |
+| interactive |  levrekv2    |    14   |  15-00:00:00  |  3000    |    1     |    8000MB      |    9000MB     |
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
 | barbun-cuda |  barbun-cuda |    24   |  15-00:00:00  |  2800    |   20     |    8500MB      |    9500MB     |
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
@@ -138,7 +138,7 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
 |  akya-ai    |  akya-cuda   |    4    |  15-00:00:00  |  2800    |   20     |    8500MB      |    9500MB     |
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  hamsi      |   hamsi      |   144   |  03-00:00:00  |  2800    |   28     |    3400MB      |    3400MB    |
+|  hamsi      |   hamsi      |   144   |  03-00:00:00  |  2800    |   28     |    3400MB      |    3400MB     |
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
 | palamut-cuda|  palamut     |    9    |  03-00:00:00  |  2800    |   16     |    7500MB      |    8000MB     |
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
@@ -155,8 +155,17 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
 
 Short, mid1, mid2 ve long kuyruklarını diğer kuyrukları kapsayacak üst kuyruklar olarak düşünülmelidir. Bu kuyruklara gönderilen işler sardalya ya da barbun sunucularının herhangi birinde çalışmaya başlayabilirler. Bu kuyruklara gönderilecek işlerin belli bir sunucu ailesi üzerinde çalışması isteniyorsa, betik dosyalarına aşağıdaki tanımlar yazılmalıdır: 
 
-  * barbunlar için #SBATCH --constraint=barbun 
-  * sardalyalar için #SBATCH --constraint=sardalya 
+* barbunlar için 
+
+.. code-block::
+
+   #SBATCH --constraint=barbun 
+
+* sardalyalar için 
+
+.. code-block::
+
+   #SBATCH --constraint=sardalya 
 
 .. note::
 
@@ -169,9 +178,9 @@ Short, mid1, mid2 ve long kuyruklarını diğer kuyrukları kapsayacak üst kuyr
 *Single*
 ^^^^^^^^^
 
-Bu kuyruğa tek çekirdeklik (genelde seri) işler gönderilir. Toplam çekirdek sayısı 1 den fazla ise, iş başka bir kuyruğa gönderilmiş olsa bile, otomatik olarak bu kuyruğa yönlendirilir. 
+Bu kuyruğa tek çekirdeklik (genelde seri) işler gönderilir. Toplam çekirdek sayısı 1'den fazla ise, iş başka bir kuyruğa gönderilmiş olsa bile, otomatik olarak bu kuyruğa yönlendirilir. 
 
-Bu kuyruktaki herhangi bir işin çalışma süresi en fazla 15 gündür. 15 Gün içinde tamamlanmamış işler sistem tarafından otomatik olarak sonlandırılmaktadır. 
+Bu kuyruktaki herhangi bir işin çalışma süresi en fazla 15 gündür. 15 gün içinde tamamlanmamış işler sistem tarafından otomatik olarak sonlandırılmaktadır. 
 
 Bu kuyruk ile ilgili ayrıntılı bilgi
 
@@ -241,7 +250,7 @@ Interaktif işler çalıştırmak için kullanılır. İnteraktif işler ``Ondem
 *Smp*
 ^^^^^
 
-*Smp* kuyruğunda sadece *orkinos1* sunucusu bulunmaktadır. Kuyruk rezervasyon yönetimi ile çalıştırılmaktadır. Bu kuyruğu kullanmak isteyen kullanıcıların e-posta ile başvuruda bulunarak sistemi ne kadar süre ile kullanacaklarını, ne kadar kaynağa (işlemci/bellek) ihtiyaç duyduklarını bildirmeleri, ve ihtiyaçlarına göre bir rezervasyon yaptırmaları gerekmektedir.
+*Smp* kuyruğunda sadece *orkinos1* sunucusu bulunmaktadır. Kuyruk rezervasyon yönetimi ile çalıştırılmaktadır. Bu kuyruğu kullanmak isteyen kullanıcıların e-posta ile başvuruda bulunarak sistemi ne kadar süre ile kullanacaklarını, ne kadar kaynağa (işlemci/bellek) ihtiyaç duyduklarını bildirmeleri ve ihtiyaçlarına göre bir rezervasyon yaptırmaları gerekmektedir.
 
 Bu kuyruk ile ilgili ayrıntılı bilgi
 
@@ -300,7 +309,7 @@ komutu ile görülebilir.
 *Akya-cuda*
 ^^^^^^^^^^
 
-Her bir sunucuda 40 çekirdek ve 384GB bellek ayrıca 4'er adet Nvidia V100 16GB GPU (NVLink) kartı bulunmaktadır. Kuyrukta işlerin en fazla çalışma süresi 15 gündür. Sistemin verimli kullanılabilmesi için gönderilecek işler en az 40 çekirdek ve 4 GPU talep etmelidir. Ayrica sistemlerde scratch olarak kullanilmak uzere 1.4TB NVME disk /tmp dizinine baglanmistir. Yuksek I/O gerekiren islerin /tmp dizininde calıştırılması gerekmektedir.
+Her bir sunucuda 40 çekirdek ve 384GB bellek ayrıca 4'er adet Nvidia V100 16GB GPU (NVLink) kartı bulunmaktadır. Kuyrukta işlerin en fazla çalışma süresi 15 gündür. Sistemin verimli kullanılabilmesi için gönderilecek işler en az 40 çekirdek ve 4 GPU talep etmelidir. Ayrıca sistemlerde scratch olarak kullanılmak üzere 1.4TB NVME disk /tmp dizinine bağlanmıştır. Yüksek I/O gerektiren işlerin /tmp dizininde çalıştırılması gerekmektedir.
 
 İşlerde bellek sınırlaması kullanılmaktadır. Gönderilen işlerin sunucuların bellek sınırlamalarına uygun olarak gönderilmesi gerekmektedir. Bu kuyruk ile ilgili ayrıntılı bilgi
 
@@ -328,7 +337,7 @@ komutu ile görülebilir.
 *Palamut-cuda*
 ^^^^^^^^^^^^^^
 
-Her bir sunucuda 128 çekirdek ve 1TB bellek ayrıca 8'er adet Nvidia A100 80GB GPU (NVLink) kartı bulunmaktadır. Kuyrukta işlerin en fazla çalışma süresi 3 gündür. Sistemin verimli kullanılabilmesi için gönderilecek işler en az 16 çekirdek ve 1 GPU talep etmelidir. Ayrica sistemlerde scratch olarak kullanilmak uzere 12TB NVME disk /localscratch dizinine baglanmistir. Yuksek I/O gerekiren islerin /localscratch dizininde calıştırılması gerekmektedir.
+Her bir sunucuda 128 çekirdek ve 1TB bellek ayrıca 8'er adet Nvidia A100 80GB GPU (NVLink) kartı bulunmaktadır. Kuyrukta işlerin en fazla çalışma süresi 3 gündür. Sistemin verimli kullanılabilmesi için gönderilecek işler en az 16 çekirdek ve 1 GPU talep etmelidir. Ayrıca sistemlerde scratch olarak kullanılmak üzere 12TB NVME disk /localscratch dizinine bağlanmıştır. Yüksek I/O gerektiren işlerin /localscratch dizininde çalıştırılması gerekmektedir.
 
 İşlerde bellek sınırlaması kullanılmaktadır. Gönderilen işlerin sunucuların bellek sınırlamalarına uygun olarak gönderilmesi gerekmektedir. Bu kuyruk ile ilgili ayrıntılı bilgi
 

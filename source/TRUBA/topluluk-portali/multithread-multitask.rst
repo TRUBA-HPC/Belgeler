@@ -7,7 +7,7 @@ Multithread/multitask Uygulamaların Çalıştırılması
 
 OpenMP yad pthread tarzı sadece node içi paralelleştirme kullanan uygulamaları sbatch yada srun ile çalıştırırken dikkat edilmesi gereken bazı husular bulunmaktadır.
 
-Sbatch ile çalışırken:
+sbatch ile Çalışırken:
 -----------------------
 
 **-N 1 :** en fazla 1 node kullanılmalı
@@ -18,7 +18,7 @@ Sbatch ile çalışırken:
 
 `SLURM Betik Özellikleri hakkında ayrıntılı bilgiye ulaşmak için tıklayınız <slurm-betik>`_.
 
-srun ile çalışırken:
+srun ile Çalışırken:
 -------------------------
 
 **-N 1 :** en fazla 1 node kullanılmalıdır.

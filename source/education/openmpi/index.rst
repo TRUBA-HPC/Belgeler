@@ -25,4 +25,6 @@ Yakında eklenecek eğitimler:
 * MPI-2 ve MPI-3
 * Performans Ölçme ve Eniyileme
 
+----
+
 Bu eğitim materyali `başlangıç <https://pdc-support.github.io/introduction-to-mpi/>`_ ve `orta düzey <https://enccs.github.io/intermediate-mpi/>`_ eğitim materyalinden yararlanarak, EuroCC projesi için TRUBA üzerinde hazırlanmıştır.

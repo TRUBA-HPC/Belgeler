@@ -5,7 +5,7 @@ Kullanıcı El Kitabı
 .. toctree::
     :maxdepth: 1
 
-    TRUBAmimarisi.rst
+    ../TRUBAmimarisi.rst
     kullanicihesaplari.rst
     hesaplamakumeleri.rst
     dosyasistemleri.rst
@@ -17,7 +17,9 @@ Kullanıcı El Kitabı
     paralelprog.rst
     grafikekran.rst
     TRUBAtesekkur.rst
-    sss.rst
+    ../sss.rst
     open-vpn/index.rst
     kaynakyoneticisi-isdongusu/index.rst
     kullanici-ara-yuzu/openondemand/index.rst
+    ../topluluk-portali/index.rst
+    TRUBAseminerleri.rst

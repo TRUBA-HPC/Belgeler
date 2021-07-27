@@ -26,7 +26,10 @@ TRUBA Kullanıcı Dökümanları
    how-to-guides/LAMMPS/index.rst
    how-to-guides/VASP/index.rst
    how-to-guides/QuantumEspresso/index.rst
+   how-to-guides/Gaussian/index.rst
+   education/CFD/notes/HowtoRun_SU2_TRUBA.rst
    how-to-guides/CodeSaturne/codesaturne.rst
+   how-to-guides/MATLAB/index.rst
 
 .. toctree::
    :caption: TRUBA hakkında
@@ -34,11 +37,13 @@ TRUBA Kullanıcı Dökümanları
 
    TRUBA/duyurular/index.rst
    TRUBA/TRUBAgenel.rst
+   TRUBA/TRUBAmimarisi.rst
    TRUBA/kullanici-el-kitabi/index.rst
    TRUBA/openondemand/index.rst
    TRUBA/sss.rst
-   TRUBA/truba-proje/index.rst
+   TRUBA/TRUBA-proje/index.rst
    TRUBA/kullanici-el-kitabi/TRUBAtesekkur.rst
+   TRUBA/topluluk-portali/index.rst
    TRUBA/eurohpc-erisim/index.rst
    
 
@@ -51,6 +56,12 @@ TRUBA Kullanıcı Dökümanları
    education/CFD/index.rst
    education/big-data/index.rst
    education/cuda/index.rst
+
+.. toctree::
+   :caption: Etkinlikler
+   :maxdepth: 1
+   
+   etkinlikler/index.rst
 
 .. warning::
 

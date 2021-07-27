@@ -1,7 +1,7 @@
 .. |SU2| replace:: SU2
 
 ************************************************
-2 - |SU2| çözüm ağı formatları ve gereksinimleri
+2 - |SU2| Çözüm Ağı Formatları ve Gereksinimleri
 ************************************************
 |SU2| ile HAD çözümleri almak için belirli formatlarda ve belirli koşulları 
 sağlayan çözüm ağları belirli formatlarda verilmelidir. Bu ağların Teknik 
