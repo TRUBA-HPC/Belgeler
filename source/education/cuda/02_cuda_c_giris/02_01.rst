@@ -1,0 +1,60 @@
+====================
+CUDA C Giriş
+====================
+
+Öğrenim Hedefleri
+-----------------
+* GPU hesaplama için ana yolları ve kaynakları öğrenmek.
+
+GPU Hesaplamada Kullanılan Yöntemler
+------------------------------------
+
+Kütüphaneler
+^^^^^^^^^^^^
+* GPU Hesaplamada kütüphane kullanımı, genelde kullanımı oldukça kolay olan ve iyi performans veren bir seçenek olarak yer almakta. **Örnek** : Thrust
+
+.. note::
+    Thrust kütüphanesi kullanılarak vektör toplama işlemi örneği için :ref:`tıklayınız <thrust-vector-addition>`.
+
+Derleyici Direktifleri (Compiler Directives)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+* Derleyici direktifleri kolay kullanım sunmaları ve taşınabilir kod oluşturmaları açısından tercih edilen başka bir yöntemdir. **Örnek** : OpenACC
+
+.. note::
+    OpenACC kullanılarak vektör toplama işlemi örneği için :ref:`tıklayınız <openacc-vector-addition>`.
+
+Programlama Dilleri
+^^^^^^^^^^^^^^^^^^^
+* Programlama dilleri sunduğu performans ve esneklik açısından GPU programlamada tercih edilen bir başka yöntemdir. **Örnek** : CUDA C/C++
+
+.. note::
+    CUDA kullanılarak vektör toplama işlemi örneği için :ref:`tıklayınız <cuda-vector-addition>`.
+
+
+CUDA
+----
+
+CUDA C/C++, FORTRAN ve Python gibi çeşitli programlama dilleri ile kullanılabilen NVIDIA firmasi tarafından 2007 yılında dağıtımına başlanan GPU programlama için kullanılan bir uygulama programlama arayüzüdür. 
+
+Bu dokümantasyon serisinde göreceğiniz CUDA kodlarında C/C++ kullanılmış olup, örnekler TRUBA üzerinde çalıştırılmıştır. 
+
+İlerleyen bölümlerde genel bir CUDA programında sıklıkla kullandığımız fonksiyonlardan ve program akışından bahsediyor olacağız ancak kullanacağımız terimler ve genel anlamda CUDA hakkında biraz daha bilgi sahibi olmak için CUDA programlarının derlenmesini gösteren aşağıdaki görseli inceleyelim.
+
+.. image:: /assets/cuda/02/01/01.jpg
+   :width: 400
+
+Görüldüğü üzere CUDA C programı NVIDIA nvcc derleyicisi ile derlenmesiyle iki farklı işlemden geçer.
+
+* İlki host kodu olarak geçen ve işlemci üzerinde çalıştırılan kısımdır ve bu kısım klasik bir C++ derleyicisi ile derlenir. (**Örnek** : g++). Bu derleyicinin değiştirilmesi mümkündür. 
+* İkincisi ise cihaz (device) kodu olarak geçen ve grafik işlem ünitesi üzerinde çalıştırılan kısımdır. 
+
+.. note::
+    Basit bir CUDA kodunun nvcc ile derlenmesi için
+    
+    .. code-block:: C++
+
+        nvcc -o program main.cu
+
+    kullanılabilir. Daha detaylı olarak derleme işlemlerini ilerleyen bölümlerde inceleyceğiz.
+
+         

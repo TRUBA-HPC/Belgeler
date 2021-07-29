@@ -1,3 +1,5 @@
+.. _code-saturne:
+
 =====================
 CodeSaturne Kılavuzu
 =====================
@@ -92,7 +94,7 @@ Opsiyonel ön koşullar:
 
    .. container:: center
 
-      .. image:: codeSaturne1.PNG
+      .. image:: /assets/codesaturne/images/codeSaturne1.png
          :alt: image
 
 -  Kullanıcının alttaki iki satırı terminal ekranındaki haliyle
@@ -100,7 +102,7 @@ Opsiyonel ön koşullar:
 
    .. container:: center
 
-      .. image:: codeSaturne2.PNG
+      .. image:: /assets/codesaturne/images/codeSaturne2.png
          :alt: image
 
 -  Bu işlemi her seferinde tekrarlamamak adına bu satırlar .bashrc
@@ -137,7 +139,7 @@ Seri İş
 
 .. container:: center
 
-   .. image:: şema.PNG
+   .. image:: /assets/codesaturne/images/sema.png
       :alt: image
 
 -  :math:`CodeSaturne` 3 temel elemandan oluşur.
@@ -211,7 +213,7 @@ Seri İş
 
    .. container:: center
 
-      .. image:: structure.PNG
+      .. image:: /assets/codesaturne/images/structure.png
          :alt: image
 
 -  İşin çalıştırılabilmesi için **DATA** klasörünün içinde
@@ -414,7 +416,7 @@ Kullanıcı-Tanımlı Fonksiyonlar
 
    .. container:: center
 
-      .. image:: mesh.PNG
+      .. image:: /assets/codesaturne/images/mesh.png
          :alt: image
 
    Kullanılan :math:`CodeSaturne` versiyonuna bağlı olarak sınırlar
@@ -427,17 +429,17 @@ Kullanıcı-Tanımlı Fonksiyonlar
 
    .. container:: center
 
-      .. image:: calc.PNG
+      .. image:: /assets/codesaturne/images/calc.png
          :alt: image
 
    .. container:: center
 
-      .. image:: turb.PNG
+      .. image:: /assets/codesaturne/images/turb.png
          :alt: image
 
    .. container:: center
 
-      .. image:: thermal.PNG
+      .. image:: /assets/codesaturne/images/thermal.png
          :alt: image
 
 -  Hesaplama özellikleri bölümünden akışa etki eden kuvvetler ve tür
@@ -445,12 +447,12 @@ Kullanıcı-Tanımlı Fonksiyonlar
 
    .. container:: center
 
-      .. image:: body force.PNG
+      .. image:: /assets/codesaturne/images/bodyforce.png
          :alt: image
 
    .. container:: center
 
-      .. image:: species.PNG
+      .. image:: /assets/codesaturne/images/species.png
          :alt: image
 
 -  Akışkan özellikleri bölümünden akışkanın cinsine ve ortam koşullarına
@@ -458,7 +460,7 @@ Kullanıcı-Tanımlı Fonksiyonlar
 
    .. container:: center
 
-      .. image:: fluid properties.PNG
+      .. image:: /assets/codesaturne/images/fluidproperties.png
          :alt: image
 
 -  "Volume zones" kısmında hız, sıcaklık veya türbülans gibi koşullar
@@ -466,7 +468,7 @@ Kullanıcı-Tanımlı Fonksiyonlar
 
    .. container:: center
 
-      .. image:: initalization.PNG
+      .. image:: /assets/codesaturne/images/initalization.png
          :alt: image
 
 -  "Boundary conditions" bölümünde daha önce belirlenmiş sınırlar için
@@ -477,7 +479,7 @@ Kullanıcı-Tanımlı Fonksiyonlar
 
    .. container:: center
 
-      .. image:: time.PNG
+      .. image:: /assets/codesaturne/images/time.png
          :alt: image
 
 -  "Numerical parameters" kısmında nümerik parametreler ve çeşitli
@@ -486,12 +488,12 @@ Kullanıcı-Tanımlı Fonksiyonlar
 
    .. container:: center
 
-      .. image:: numerical.PNG
+      .. image:: /assets/codesaturne/images/numerical.png
          :alt: image
 
    .. container:: center
 
-      .. image:: equation.PNG
+      .. image:: /assets/codesaturne/images/equation.png
          :alt: image
 
 -  "Postprocessing" bölümünde çözümün sonuç dosyalarına yazılması ile
@@ -499,7 +501,7 @@ Kullanıcı-Tanımlı Fonksiyonlar
 
    .. container:: center
 
-      .. image:: post.PNG
+      .. image:: /assets/codesaturne/images/post.png
          :alt: image
 
 -  "Run computation" kısmından işlemci sayısı seçimi yapılır ve "save"
@@ -508,7 +510,7 @@ Kullanıcı-Tanımlı Fonksiyonlar
 
    .. container:: center
 
-      .. image:: run.PNG
+      .. image:: /assets/codesaturne/images/run.png
          :alt: image
 
 -  :math:`CodeSaturne` bu arayüz üzerinden çalıştırılabileceği gibi
