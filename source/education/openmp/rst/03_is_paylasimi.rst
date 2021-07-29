@@ -248,7 +248,7 @@ diğeri aynı dizelerin toplamını hesaplamaktadır.
    }
 
 İş Parçacığı Sayısı
-===================
+-------------------
 
 OpenMP iş parçacığı sayısını değiştirmemiz için birkaç farklı method
 sunmaktadır.

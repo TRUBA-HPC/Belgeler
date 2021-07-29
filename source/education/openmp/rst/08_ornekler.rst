@@ -109,3 +109,38 @@ Bu kod üzerinde farklı iş dağıtımı modelleri denenebilir.
 
        std::cout << "Zaman: " << time  << std::endl;
        std::cout << "Sonuç: " << avg  << std::endl;
+
+İş dağıtımı ayrıca ``runtime`` seçeneği kullanılarak komutlar aracılığı
+ile de değiştirilebilir.
+
+.. code:: cpp
+
+   #include <iostream>
+   #include <omp.h>
+
+   void  ortalama_reduction(int N) {
+
+       double toplam = 0;
+
+       double start = omp_get_wtime();
+
+       #pragma omp parallel for reduction(+:toplam) schedule(runtime)
+       for (int i = 0; i < N; i++) {
+           toplam += i;
+       }
+
+       double time = omp_get_wtime() - start;
+       double avg = toplam / N;
+
+       std::cout << "Zaman: " << time  << std::endl;
+       std::cout << "Sonuç: " << avg  << std::endl;
+
+   int main(){
+       ortalama_reduction(1000000);    
+   }
+
+.. code:: bash
+
+   g++ main.cpp -fopenmp -o test
+   export OMP_SCHEDULE="DYNAMIC,1000"
+   ./test

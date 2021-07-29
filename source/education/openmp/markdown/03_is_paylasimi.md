@@ -218,7 +218,7 @@ int main(){
 }
 ```
 
-# İş Parçacığı Sayısı
+## İş Parçacığı Sayısı
 
 OpenMP iş parçacığı sayısını değiştirmemiz için birkaç farklı method sunmaktadır. 
 
