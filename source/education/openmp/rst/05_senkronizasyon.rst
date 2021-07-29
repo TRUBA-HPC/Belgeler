@@ -68,6 +68,35 @@ formlarından birine uymalıdır.
 
 binop şu işlemlerden biri olabilir: ``+, *, -, /, &, ^, |, <<, or >>``
 
+Örnek (1’den N’e kadar sayıların ortalamasını alan bir fonksiyon) :
+
+.. code:: cpp
+
+   void ortalama(int N) {
+       double toplam = 0;
+
+       double start = omp_get_wtime();
+       omp_set_num_threads(16);
+       #pragma omp parallel
+       {
+           double avg;
+           int id = omp_get_thread_num();
+           int nthreads = omp_get_num_threads();
+        
+           // Her thre
+           for (int i = id; i < N; i+=nthreads) {
+               lokal_toplam += i;
+           }
+           #pragma omp atomic
+           toplam += lokal_toplam;
+       }
+       double time = omp_get_wtime() - start;
+       double avg = toplam / N;
+
+       std::cout << "Zaman: " << time  << std::endl;
+       std::cout << "Sonuç: " << avg  << std::endl;
+   }
+
 Ordered
 -------
 

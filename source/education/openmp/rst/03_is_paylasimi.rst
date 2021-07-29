@@ -246,3 +246,19 @@ diğeri aynı dizelerin toplamını hesaplamaktadır.
        }
 
    }
+
+İş Parçacığı Sayısı
+===================
+
+OpenMP iş parçacığı sayısını değiştirmemiz için birkaç farklı method
+sunmaktadır.
+
+-  Programın dışından ``export OMP_NUM_THREADS=4`` şeklinde.
+-  Programın içinde ``omp_set_num_threads(4);`` şeklinde.
+-  Direktiflere eklenerek ``#pragma omp parallel num_threads(4)``
+   şeklinde.
+
+OpenMP iş parçacıkları donanım tarafından limitli değildir, dolayısıyla
+iş parçacığı sayısı sistemin çekirdek sayısından fazla olabilir. Fakat
+böyle durumlarda performans kaybı yaşanabilir. Dolayısıyla bu değerin
+kullanılan sisteme göre ayarlanması önerilir.

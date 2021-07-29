@@ -16,10 +16,8 @@ Bu doküman C++ diline ağırlık verilerek hazırlanmıştır ve dolayısıyla 
    rst/04_veri_kapsamlari
    rst/05_senkronizasyon
    rst/06_is_dagitimi
-
-Eksik Fakat Yakında Eklenilecek Konular:
-* Task yapıları
-* 
+   rst/07_task
+   rst/08_ornekler
 
 
 Bu döküman `bu eğitim <https://hpc.llnl.gov/training/tutorials/openmp-tutorial>`_ referans alınarak EuroCC projesi için TRUBA üzerinde hazırlanmıştır.
