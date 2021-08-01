@@ -126,7 +126,9 @@ kapsamlarda belirtilmemiş tüm değişkenler bu kapsama uyarlar.
 C/C++ için iki seçenekten biri kullanılabilir: ``shared`` veya ``none``.
 - ``shared`` olması durumunda ayrıca belirtilmemiş tüm değişkenler
 paylaşılır. - ``none`` olması durumunda sadece üstteki kapsamlarda
-belirtilmiş değişkenler blok içerisinde kullanılabilir.
+belirtilmiş değişkenler blok içerisinde kullanılabilir. - Task bölümünde
+göreceğimiz gibi, ``task`` direktifi kullanıldığında ``firstprivate``
+kapsamı da kullanılabilir.
 
 Bazı derleyiciler bunların dışında seçenekler de sunabilir fakat OpenMP
 şartnamesinde belirtilmediği için kullanmak kodun başka platformlarda

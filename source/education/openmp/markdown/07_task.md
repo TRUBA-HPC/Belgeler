@@ -215,43 +215,8 @@ int main(){
 ```
 
 
-## Taskyield
 
-Senkronizasyon kısmında `critical` kod bloklarını anlatmıştık. 
-Taskler için `taskyield` direktifi kullanılarak daha verimli kritik alanlar yaratılabilir.
-
-```cpp
-#include <omp.h>
-
-// Kilidin yaratılması
-omp_lock_t kilit; 
-omp_init_lock(&kilit);
-
-
-void kritik_islem(){
-	//...
-}
-
-void normal_islem(){
-	//...
-}
-
-int main(){
-	for(int i=0; i<100; i++) {
-		#pragma omp task
-		{
-			normal_islem();
-
-			while(!omp_test_lock(&kilit)){
-				#pragma omp taskyield
-			}
-			kritik_islem();
-			omp_unset_lock(&kilit);
-		}
-	}
-	
-}
-```
+Bu durumda kilit kapalı olduğu durumda bekleyen iş parçacıkları yerine başka görevler çalıştırılabilir.
 
 ## Priority
 
@@ -292,3 +257,94 @@ Asıl fark iç içe birden fazla task direktifi olunca ortaya çıkar. Aşağıd
 	bar();  // Anında çalıştırılır
 }
 ```
+
+## Taskyield
+
+Senkronizasyon kısmında `critical` kod bloklarını anlatmıştık. 
+Taskler için `taskyield` direktifi kullanılarak daha verimli kritik alanlar yaratılabilir.
+
+```cpp
+#include <omp.h>
+
+// Kilidin yaratılması
+omp_lock_t kilit; 
+omp_init_lock(&kilit);
+
+
+void kritik_islem(){
+	//...
+}
+
+void normal_islem(){
+	//...
+}
+
+int main(){
+	for(int i=0; i<100; i++) {
+		#pragma omp task
+		{
+			normal_islem();
+
+			while(!omp_test_lock(&kilit)){
+				#pragma omp taskyield
+			}
+			kritik_islem();
+			omp_unset_lock(&kilit);
+		}
+	}
+	
+}
+```
+
+
+## Taskgroup
+
+Sadece `task` ve `taskwait` kullandığımız takdirde `taskwait` kısmında geldiğimizde tanımladığımız görevlerin bitmesinin beklenmesi gerekir.
+
+```cpp
+#pragma omp task
+arkaplan_isi();
+
+# pragma omp task
+normal_is();
+
+# pragma omp task
+normal_is();
+
+# pragma omp taskwait // Hem arkaplan hem normal işler bitmeli
+```
+
+```cpp
+#pragma omp task
+arkaplan_isi();
+
+# pragma omp taskgroup
+{
+
+# pragma omp task
+normal_is();
+
+# pragma omp task
+normal_is();
+
+} // taskgroup bittiğinde içerdeki görevlerin bitmesi beklenir.
+// Fakat arkaplan işi dışarıda olduğundan o beklenmez.
+```
+
+## Taskloop
+
+Bir `for` döngüsünün yinelemelerini OpenMP task'leri kullanılarak çalıştırılması için kullanılır.
+
+Örnek kullanım:
+
+```cpp
+int i,j;
+#pragma omp taskloop private(j)
+for(i=0; i<10000; i++)
+	for(j=0; j<i; j++)
+		// Bir operasyon
+```
+
+Taskloop ayrıca bir taskgroup şeklinde de davranış gösterir. `nogroup` terimi eklenerek bu durum önlenebilir.
+
+`grainsize(500)` belirtilerek her görevin en az 500 yineleme çalıştırması sağlanabilir.

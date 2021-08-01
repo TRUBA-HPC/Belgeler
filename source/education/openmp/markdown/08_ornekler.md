@@ -131,6 +131,7 @@ void  ortalama_reduction(int N) {
 
     std::cout << "Zaman: " << time  << std::endl;
     std::cout << "Sonuç: " << avg  << std::endl;
+}
 
 int main(){
     ortalama_reduction(1000000);    

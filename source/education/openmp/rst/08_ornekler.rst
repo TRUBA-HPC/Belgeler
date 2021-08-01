@@ -111,7 +111,8 @@ Bu kod üzerinde farklı iş dağıtımı modelleri denenebilir.
        std::cout << "Sonuç: " << avg  << std::endl;
 
 İş dağıtımı ayrıca ``runtime`` seçeneği kullanılarak komutlar aracılığı
-ile de değiştirilebilir.
+ile de (çok daha kolay bir şekilde) değiştirilebilir. Ayrıca kodun
+içinden ``omp_set_schedule(dynamic,1000)`` şeklinde değiştirilebilir.
 
 .. code:: cpp
 

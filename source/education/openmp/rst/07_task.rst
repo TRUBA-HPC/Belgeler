@@ -14,6 +14,68 @@ ayırması da mümkündür. Bir diğer deyişle, görevin ne zaman yerine
 getirileceği öngörülemez. Bu sebepten ötürü birçok durumda ``taskwait``
 ve ``barrier`` senkronizasyon yapılarından birinin kullanımı gereklidir.
 
+Ağaç veri yapısı üzerinde gezen bir örnek:
+
+.. code:: cpp
+
+   struct Node {
+       Node *right;
+       Node *left;
+   };
+
+   void islem_yap(Node * node){
+       // Her düğüm'de (node) yapılacak bir işlem
+       // ...
+   }
+
+   void gez(Node * root){
+       if (p->left){
+   #pragma omp task
+           gez(p->left);
+       }
+
+       if (p->right){
+   #pragma omp task
+           gez(p->right);
+       }
+
+       islem_yap(p);
+   }
+
+``taskwait`` direktifine ulaşan bir görev kendisinin tüm kardeş
+görevleri (bir diğer deyişle, kendisiyle birlikte yaratılmış tüm
+görevler) bitmeden ilerlemez. Bu direktifi kullanarak ağacı gezme
+eyleminin “postorder” yani önce yapraklardan başlayıp köke doğru
+ilerleyecek şekilde olması sağlanabilir.
+
+.. code:: cpp
+
+   struct Node {
+       Node *right;
+       Node *left;
+   };
+
+   void islem_yap(Node * node){
+       // Her düğüm'de (node) yapılacak bir işlem
+       // ...
+   }
+
+   void gez(Node * root){
+       if (p->left){
+   #pragma omp task
+           gez(p->left);
+       }
+
+       if (p->right){
+   #pragma omp task
+           gez(p->right);
+       }
+
+   #pragma omp taskwait
+
+       islem_yap(p);
+   }
+
 Fibonacci sayılarının hesaplanmasını gösteren bir örnek:
 
 .. code:: cpp
@@ -34,10 +96,10 @@ Fibonacci sayılarının hesaplanmasını gösteren bir örnek:
      } else if (n == 2 || n == 3) {
        return 1;
      } else {
-       #pragma omp task shared(i) firstprivate(n)
+       #pragma omp task shared(i) 
        i=fib(n-1);
 
-       #pragma omp task shared(j) firstprivate(n)
+       #pragma omp task shared(j) 
        j=fib(n-2);
 
        #pragma omp taskwait
@@ -64,5 +126,262 @@ Fibonacci sayılarının hesaplanmasını gösteren bir örnek:
      }
    }
 
-Taskwait ve Barrier
--------------------
+``sections`` ve ``for`` direktiflerinin aksine varsayılan veri kapsamı
+``firstprivate``\ ’dır. Dolaysıyla üstteki kodda ``n`` değişkeni
+firstprivate olarak kullanılmıştır.
+
+``taskwait`` direktifi sayesinde ``return i+j;`` satırı çalışmadan önce
+i ve j değerlerinin hesaplanmış olduğundan emin oluyoruz.
+
+Untied
+------
+
+Normal şartlar altında oluşturulan her görev tek bir iş parçacığına
+atanır ve o görev tamamlanana kadar iş parçacığı sadece bu görev
+üzerinde çalışır. Bu her zaman istediğimiz davranış olmayabilir.
+``untied`` terimini kullanarak bu sistemi değiştirebiliriz.
+
+Örnek üzerinde inceleyelim. Aşağıda bir ``for`` döngüsü aracılığı ile
+çok sayıda görev yaratılması gösterilmiştir.
+
+.. code:: cpp
+
+   void foo(){
+       // Herhangi bir görev kodu
+       // ...
+   }
+
+   int main(){
+       int N = 100000;
+   #pragma omp parallel
+       {
+   #pragma omp single
+           {
+               for(int i=0; i<N; i++){
+                   #pragma omp task
+                   foo();
+               }
+           }
+       }
+
+   }
+
+Bu durumda bir iş parçacığı görevleri yaratırken diğerleri onları
+çalıştırır. Fakat eğer yaratılan görev sayısı çok fazla olursa bu görev
+yaratan iş parçacığı, görevleri çalıştırmaya başlayabilir. Eğer görev
+yaratan iş parçacığının üstlendiği bu görev çok uzun sürerse görev
+yaratımı durabilir ve iş parçacıkları boş kalabilir. Eğer görev
+yaratımını ``untied`` olarak tanımlarsak, görev yaratımını boşta kalan
+herhangi bir iş parçacığı devralabilir.
+
+.. code:: cpp
+
+   void foo(){
+       // Herhangi bir görev kodu
+       // ...
+   }
+
+   int main(){
+       int N = 100000;
+   #pragma omp parallel
+       {
+   #pragma omp single
+           {
+   #pragma omp task untied
+               for(int i=0; i<N; i++){
+                   #pragma omp task
+                   foo();
+               }
+           }
+       }
+
+   }
+
+Mergeable
+---------
+
+Eğer yaratmak istediğimiz görevin veri kapsamı, görevin yaratıldığı alan
+ile aynı ise ``mergeable`` terimi kullanılabilir. Bu durumda OpenMP
+“merged task” yaratmayı tercih edebilir ve bizim bakış açımızdan sanki
+task direktifi hiç orada değilmiş gibi olur.
+
+Örnek:
+
+.. code:: cpp
+
+   #include <iostream>
+
+   int main(){
+       int x = 2;
+   #pragma omp task shared(x) mergeable
+       x++;
+   #pragma omp taskwait
+       std::cout << x << std::endl; // Sonuç 3 olacaktır
+   }
+
+Eğer bu örnekde x değişkeni ``shared`` olarak belirtilmemiş olsaydı,
+görevin yaratıldığı alan ve görevin kendisinin veri kapsamları farklı
+olacaktı. Dolayısıyla sonucun kaç çıkacağından tam olarak emin
+olamayacaktık.
+
+.. code:: cpp
+
+   #include <iostream>
+
+   int main(){
+       int x = 2;
+   #pragma omp task shared(x) mergeable
+       x++;
+   #pragma omp taskwait
+       std::cout << x << std::endl; // Sonuç eğer "merged task" yaratılmışsa 3, aksi takdirde 2
+   }
+
+Bu durumda kilit kapalı olduğu durumda bekleyen iş parçacıkları yerine
+başka görevler çalıştırılabilir.
+
+Priority
+--------
+
+``#pragma omp task priority(4)`` şeklinde kullanılır. Negatif olmayan
+bir tam sayı değeri alabilir. Bu şekilde yüksek sayılar verdiğimiz
+görevlerin daha önemli olduğunu ve daha öncelikli çalıştırılamaları
+gerektiğini belirtilmemiş oluyoruz.
+
+If
+--
+
+``#pragma omp task if(koşul)`` şeklinde kullanılır.
+
+Koşul doğru olduğu takdirde normal bir task direktifi şeklinde çalışır.
+Koşul yanlış olduğunda görev anında sanki task direktifi yokmuş gibi
+çalıştırılır.
+
+Final
+-----
+
+``#pragma omp task final(koşul)``
+
+``if(!koşul)`` ile benzer bir anlama gelir. (Yani ``if(0)`` ve
+``final(1)`` benzer şekilde çalışır)
+
+Asıl fark iç içe birden fazla task direktifi olunca ortaya çıkar.
+Aşağıdaki örneklerde bu fark gösterilmiştir.
+
+.. code:: cpp
+
+   #pragma omp task if(0)
+   {
+       foo(); // Anında çalıştırılır
+
+       #pragma omp task
+       bar();  // Normal task direktifi gibi çalışır
+   }
+
+.. code:: cpp
+
+   #pragma omp task final(1)
+   {
+       foo(); // Anında çalıştırılır
+
+       #pragma omp task
+       bar();  // Anında çalıştırılır
+   }
+
+Taskyield
+---------
+
+Senkronizasyon kısmında ``critical`` kod bloklarını anlatmıştık. Taskler
+için ``taskyield`` direktifi kullanılarak daha verimli kritik alanlar
+yaratılabilir.
+
+.. code:: cpp
+
+   #include <omp.h>
+
+   // Kilidin yaratılması
+   omp_lock_t kilit; 
+   omp_init_lock(&kilit);
+
+
+   void kritik_islem(){
+       //...
+   }
+
+   void normal_islem(){
+       //...
+   }
+
+   int main(){
+       for(int i=0; i<100; i++) {
+           #pragma omp task
+           {
+               normal_islem();
+
+               while(!omp_test_lock(&kilit)){
+                   #pragma omp taskyield
+               }
+               kritik_islem();
+               omp_unset_lock(&kilit);
+           }
+       }
+       
+   }
+
+Taskgroup
+---------
+
+Sadece ``task`` ve ``taskwait`` kullandığımız takdirde ``taskwait``
+kısmında geldiğimizde tanımladığımız görevlerin bitmesinin beklenmesi
+gerekir.
+
+.. code:: cpp
+
+   #pragma omp task
+   arkaplan_isi();
+
+   # pragma omp task
+   normal_is();
+
+   # pragma omp task
+   normal_is();
+
+   # pragma omp taskwait // Hem arkaplan hem normal işler bitmeli
+
+.. code:: cpp
+
+   #pragma omp task
+   arkaplan_isi();
+
+   # pragma omp taskgroup
+   {
+
+   # pragma omp task
+   normal_is();
+
+   # pragma omp task
+   normal_is();
+
+   } // taskgroup bittiğinde içerdeki görevlerin bitmesi beklenir.
+   // Fakat arkaplan işi dışarıda olduğundan o beklenmez.
+
+Taskloop
+--------
+
+Bir ``for`` döngüsünün yinelemelerini OpenMP task’leri kullanılarak
+çalıştırılması için kullanılır.
+
+Örnek kullanım:
+
+.. code:: cpp
+
+   int i,j;
+   #pragma omp taskloop private(j)
+   for(i=0; i<10000; i++)
+       for(j=0; j<i; j++)
+           // Bir operasyon
+
+Taskloop ayrıca bir taskgroup şeklinde de davranış gösterir. ``nogroup``
+terimi eklenerek bu durum önlenebilir.
+
+``grainsize(500)`` belirtilerek her görevin en az 500 yineleme
+çalıştırması sağlanabilir.

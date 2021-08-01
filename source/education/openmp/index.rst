@@ -21,4 +21,8 @@ Bu doküman C++ diline ağırlık verilerek hazırlanmıştır ve dolayısıyla 
    rst/09_hata_ayiklama
 
 
-Bu döküman `bu eğitim <https://hpc.llnl.gov/training/tutorials/openmp-tutorial>`_ referans alınarak EuroCC projesi için TRUBA üzerinde hazırlanmıştır.
+Bu döküman aşağıda listelenen materyaller referans alınarak EuroCC projesi için TRUBA üzerinde hazırlanmıştır.
+
+* https://hpc.llnl.gov/training/tutorials/openmp-tutorial
+* https://www.openmp.org/wp-content/uploads/OpenMP4.0.0_Examples.pdf
+* https://www.openmp.org/wp-content/uploads/openmp-examples-4.5.0.pdf
