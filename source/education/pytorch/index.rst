@@ -9,5 +9,7 @@ PyTorch
     tensors.rst
     log_reg.rst
     dnn.rst
+    cnn.rst
     dist.rst
     gnn.rst
+    cpp.rst
