@@ -109,7 +109,7 @@ void  ortalama_reduction(int N, std::string method) {
 
 ```
 
-İş dağıtımı ayrıca `runtime` seçeneği kullanılarak komutlar aracılığı ile de değiştirilebilir.
+İş dağıtımı ayrıca `runtime` seçeneği kullanılarak komutlar aracılığı ile de (çok daha kolay bir şekilde) değiştirilebilir. Ayrıca kodun içinden `omp_set_schedule(dynamic,1000)` şeklinde değiştirilebilir.
 
 ``` cpp
 #include <iostream>

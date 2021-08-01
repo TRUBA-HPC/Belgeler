@@ -24,6 +24,8 @@
 
 
 - C++ kodunu OpenMP özellikleri ile birlikte compile etmek için komuta `-fopenmp` eklemek yeterlidir.
+	- Farklı derleyecilerde bu terim değişiklik gösterebilir. Örneğin Intel'in `icc` derleyicisinde `-openmp` şeklindedir.
+
 - Örnek (C++14, OpenMP ve 3.seviye optimizasyon):
 
 ``` bash

@@ -127,3 +127,27 @@ int main(){
 
 }
 ```
+
+## Lock
+
+OpenMP ayrıca daha basit kilit yapıları sunar. Bunların kullanımı aşağıda gösterilmiştir.
+
+```cpp
+#include <omp.h>
+
+// Kilidin yaratılması
+omp_lock_t kilit; 
+omp_init_lock(&kilit);
+
+int main(){
+
+#pragma omp parallel for
+for(int i=0; i<100; i++){
+	// Aynı anda birden fazla iş parçacığı
+	omp_set_lock(&kilit);
+	// Aynı anda sadece tek bir iş parçacığı
+	omp_unset_lock(&kilit);
+	// Aynı anda birden fazla iş parçacığı
+}
+}
+```
