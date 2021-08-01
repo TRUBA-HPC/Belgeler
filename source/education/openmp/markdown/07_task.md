@@ -180,6 +180,41 @@ int main(){
 }
 ```
 
+## Mergeable
+
+Eğer yaratmak istediğimiz görevin veri kapsamı, görevin yaratıldığı alan ile aynı ise `mergeable` terimi kullanılabilir.
+Bu durumda OpenMP "merged task" yaratmayı tercih edebilir ve bizim bakış açımızdan sanki task direktifi hiç orada değilmiş gibi olur. 
+
+Örnek:
+
+``` cpp
+#include <iostream>
+
+int main(){
+	int x = 2;
+#pragma omp task shared(x) mergeable
+	x++;
+#pragma omp taskwait
+	std::cout << x << std::endl; // Sonuç 3 olacaktır
+}
+```
+
+Eğer bu örnekde x değişkeni `shared` olarak belirtilmemiş olsaydı, görevin yaratıldığı alan ve görevin kendisinin veri kapsamları farklı olacaktı.
+Dolayısıyla sonucun kaç çıkacağından tam olarak emin olamayacaktık.
+
+``` cpp
+#include <iostream>
+
+int main(){
+	int x = 2;
+#pragma omp task shared(x) mergeable
+	x++;
+#pragma omp taskwait
+	std::cout << x << std::endl; // Sonuç eğer "merged task" yaratılmışsa 3, aksi takdirde 2
+}
+```
+
+
 ## Taskyield
 
 Senkronizasyon kısmında `critical` kod bloklarını anlatmıştık. 
@@ -218,4 +253,42 @@ int main(){
 }
 ```
 
+## Priority
 
+`#pragma omp task priority(4)` şeklinde kullanılır. Negatif olmayan bir tam sayı değeri alabilir.
+Bu şekilde yüksek sayılar verdiğimiz görevlerin daha önemli olduğunu ve daha öncelikli çalıştırılamaları gerektiğini belirtilmemiş oluyoruz.
+
+## If
+
+`#pragma omp task if(koşul)` şeklinde kullanılır.
+
+Koşul doğru olduğu takdirde normal bir task direktifi şeklinde çalışır.
+Koşul yanlış olduğunda görev anında sanki task direktifi yokmuş gibi çalıştırılır.
+
+## Final
+
+`#pragma omp task final(koşul)`
+
+`if(!koşul)` ile benzer bir anlama gelir. (Yani `if(0)` ve `final(1)` benzer şekilde çalışır)
+
+Asıl fark iç içe birden fazla task direktifi olunca ortaya çıkar. Aşağıdaki örneklerde bu fark gösterilmiştir.
+
+```cpp
+#pragma omp task if(0)
+{
+	foo(); // Anında çalıştırılır
+
+	#pragma omp task
+	bar();  // Normal task direktifi gibi çalışır
+}
+```
+
+```cpp
+#pragma omp task final(1)
+{
+	foo(); // Anında çalıştırılır
+
+	#pragma omp task
+	bar();  // Anında çalıştırılır
+}
+```
