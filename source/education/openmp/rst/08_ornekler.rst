@@ -135,6 +135,7 @@ içinden ``omp_set_schedule(dynamic,1000)`` şeklinde değiştirilebilir.
 
        std::cout << "Zaman: " << time  << std::endl;
        std::cout << "Sonuç: " << avg  << std::endl;
+   }
 
    int main(){
        ortalama_reduction(1000000);    

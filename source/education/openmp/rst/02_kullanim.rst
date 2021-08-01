@@ -51,3 +51,84 @@ C++ OpenMP kodu derlemek
 .. code:: bash
 
    g++ main.cpp -o main -fopenmp -O3 -std=c++14
+
+Truba üzerinde Slurm ile OpenMP kodu çalıştırmak
+------------------------------------------------
+
+Aşağıda örnek bir slurm dosyası verilmiştir.
+
+.. code:: bash
+
+   #!/bin/bash
+
+   # Truba hesap adı
+   #SBATCH --account=<hesap adı>
+
+   # Programın adı
+   #SBATCH --job-name=openmp_test
+
+   # Kullanılacak bölümün adı
+   #SBATCH --partition=short
+
+   # Programın süreceği maximum süre (Gün-Saat:Dakika:Saniye formatında)
+   # Bu örnekte 1 dakika olarak ayarlanmış
+   #SBATCH --time=0-00:01:00
+
+   # Çıktı ve hataların yazılacağı dosyaları belirle
+   #SBATCH --output=output.txt
+   #SBATCH --error=error.txt
+
+   #Daha önceden yüklenmiş olabilecek modülleri çıkar
+   module purge
+
+   #Kullandığımız gcc versiyonunu yükle
+   module load centos7.3/comp/gcc/9.2
+
+   #Kodu derle
+   g++ test.cpp -O3 -fopenmp -o openmp_test
+
+   # Thread sayısını belirleyici kod
+   # Bu dosyayı sbatch ile çalıştırırken -c <iş parçacığı sayısı> belirtilerek
+   # iş parçacağı sayısı değiştirilebilir
+   if [-n "$SLURM_CPUS_PER_TASK"];
+   then
+           omp_threads=$SLURM_CPUS_PER_TASK
+   else
+           omp_threads=1
+   fi
+
+   # Kodu önceden belirlenen sayıda iş parçacığı ile çalıştır
+   OMP_NUM_THREADS=$omp_threads ./openmp_test
+
+Bu dosya ``openmp_example.slurm`` adıyla kaydedildikten sonra
+``sbatch -c <iş parçacağı sayısı> openmp_example.slurm`` şeklinde
+çalıştırılabilir. Programın çıktıları ``output.txt`` adlı bir dosyaya
+yazılacaktır.
+
+OpenMP CUDA ve MPI gibi başka sistemlerle birlikte kullanılabilir. Bu
+durumlarda bu diğer sistemlerin dökümentasyonlarındaki slurm örneklerine
+de bakılması önerilir.
+
+OpenMP ile kodu zamanlamak
+--------------------------
+
+OpenMP kodun çalışmasının ne kadar zaman sürdüğünü ölçmek için
+kullanılabilecek bazı fonksiyonlar sunar. Bunların kullanımı aşağıdaki
+örnekte göstererilmiştir.
+
+.. code:: cpp
+
+   #include <iostream>
+   #include <omp.h>
+
+   int main(){
+
+       double start,end,time;
+       
+       start = omp_get_wtime();
+       // Ölçmek istenilen kod
+       end = omp_get_wtime();
+       time = end - start;
+
+       std::cout << "Süre: " << time << " saniye" << std::endl;
+   }
