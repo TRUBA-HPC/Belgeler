@@ -36,10 +36,18 @@ CUDA
 .. toctree::
    :maxdepth: 4
    :titlesonly:
-   :caption: Bellek ve Veri Lokalleşmesi
+   :caption: İş Parçacığı Yürütme Verimliliği
 
    04_bellek_veri_locality/04_01.rst
    04_bellek_veri_locality/04_02.rst
    04_bellek_veri_locality/04_03.rst
    04_bellek_veri_locality/04_lab_01.rst
-   04_bellek_veri_locality/04_lab_02.rst   
+   04_bellek_veri_locality/04_lab_02.rst
+
+.. toctree::
+   :maxdepth: 4
+   :titlesonly:
+   :caption: Bellek ve Veri Lokalleşmesi
+
+   05_is_parcacigi_yurutme_verimliligi/05_01.rst
+   05_is_parcacigi_yurutme_verimliligi/05_02.rst
