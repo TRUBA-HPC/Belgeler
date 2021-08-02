@@ -32,3 +32,14 @@ CUDA
    03_cuda_par_model/03_03.rst
    03_cuda_par_model/03_04.rst
    03_cuda_par_model/03_05.rst   
+
+.. toctree::
+   :maxdepth: 4
+   :titlesonly:
+   :caption: Bellek ve Veri Lokalleşmesi
+
+   04_bellek_veri_locality/04_01.rst
+   04_bellek_veri_locality/04_02.rst
+   04_bellek_veri_locality/04_03.rst
+   04_bellek_veri_locality/04_lab_01.rst
+   04_bellek_veri_locality/04_lab_02.rst   
