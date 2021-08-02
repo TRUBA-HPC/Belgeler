@@ -51,3 +51,11 @@ CUDA
 
    05_is_parcacigi_yurutme_verimliligi/05_01.rst
    05_is_parcacigi_yurutme_verimliligi/05_02.rst
+
+.. toctree::
+   :maxdepth: 4
+   :titlesonly:
+   :caption: Bellek Erişim Performansı
+
+   06_bellek_erisim_performans/06_01.rst
+   06_bellek_erisim_performans/06_02.rst
