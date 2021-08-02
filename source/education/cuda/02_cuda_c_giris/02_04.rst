@@ -142,7 +142,7 @@ CUDA-GDB hakkında daha detaylı bilgi için : http://docs.nvidia.com/cuda/cuda-
 Performans Profilleyiciler
 --------------------------
 
-CUDA programlarında performans ölcümleri ve darboğaz tespitlerini yapmak için kullanabileceğimiz çeşitli performans profilleyiciler bulunmaktadır.
+CUDA programlarında performans ölçümleri ve darboğaz tespitlerini yapmak için kullanabileceğimiz çeşitli performans profilleyiciler bulunmaktadır.
 
 NVPROF
 ^^^^^^
@@ -152,7 +152,7 @@ PROF derleyicisinin bir uzantısı olarak geliştirilmiş **nvprof**, komut sat�
 *   Her CUDA **çekirdeğinin** (kernel) sonuçlanması için geçen süre
 *   Bellek transfer süreleri 
 
-gibi öğeler **nvprof** tarafından toplanır. CUDA programlarımızda yapacağımız optimazyonların belirlenmesi açısından **nvprof** oldukça önemli bir araçtır.
+gibi öğeler **nvprof** tarafından toplanır. CUDA programlarımızda yapacağımız optimizasyonların belirlenmesi açısından **nvprof** oldukça önemli bir araçtır.
 
 **nvprof** kullanmak için kodu baştan derlemeniz gerekmemektedir.
 
@@ -176,9 +176,9 @@ NVTX
 
 Gördüğümüz performans profilleyicileri sadece CUDA uygulama programlama arayüzüne ait fonksiyonları profillerler. Eğer host tarafında oluşmakta olan diğer durumlar hakkında bilgi sahibi olmak isterseniz, **nvtx** eklentisi kullanılabilir.
 
-**nvtx alanlarıyla** işaretleyerek host kodundaki yapılan işlemlerin performansı hakkında (CUDA UPA'sı dışındaki fonskiyon çağırmaları) detaylı bilgiye sahip olabiliriz.
+**nvtx alanlarıyla** işaretleyerek host kodundaki yapılan işlemlerin performansı hakkında (CUDA UPA'sı dışındaki fonksiyon çağırmaları) detaylı bilgiye sahip olabiliriz.
 
-**nvtx**'i kullanarıken host kodunda incelemek istediğiniz kod bloğunun başını **nvtxRangePushA("alan_adı")** sonunu ise **nvtxRangePop()** ile işaretlemeniz gerekir. İç içe geçmiş alanlar kullanabilirsiniz. **nvtx** kullanmak için 
+**nvtx**'i kullanarak host kodunda incelemek istediğiniz kod bloğunun başını **nvtxRangePushA("alan_adı")** sonunu ise **nvtxRangePop()** ile işaretlemeniz gerekir. İç içe geçmiş alanlar kullanabilirsiniz. **nvtx** kullanmak için 
 
 .. code-block:: C++
 
@@ -217,8 +217,8 @@ Nsight
 CUDA programlarınızı geliştirirken önerilen geliştirme sürecini 4 aşamada inceleyebiliriz.
 
 *   **Ölçüm:** performans profilleri kullanılarak programın parça parça performansı incelenir.
-*   **Paralelleştirme:** önceki aşamada belirlenmiş olan dar boğaz CUDA kullanılarak paralelleştirilir.
-*   **Optimize etme:** paralelleştirilen kısımın optimazyonu sağlanır ve gerekli ölçümler profilleyiciler ile yapılır.
+*   **Paralelleştirme:** önceki aşamada belirlenmiş olan darboğaz CUDA kullanılarak paralelleştirilir.
+*   **Optimize etme:** paralelleştirilen kısmın optimizasyonu sağlanır ve gerekli ölçümler profilleyiciler ile yapılır.
 *   **Dağıtım:** programın dağıtımı sağlanır.
 
 Bu süreç bir döngü içerisinde ilerler. Aşağıdaki görsel sürecin kısa bir özeti olarak incelenebilir.

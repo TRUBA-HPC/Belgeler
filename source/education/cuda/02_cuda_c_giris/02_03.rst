@@ -18,7 +18,7 @@ Veri Paralelleşmesi
 .. image:: /assets/cuda/02/02/01.jpg
    :width: 600
 
-Bir önceki bölümde veri paralelleşmesinden bahsetmiştik. Bu bölümde veri paralelleşmesinin CUDA iş parçacıkları ile nasıl kullanabileceğimizden bahsedeceğiz. A ve B vektörlerini toplarken A[0] + B[0] işlemini bir iş parçacığına yaptırırken A[1] + B[1] işlemini başka bir iş parçacığına yaptırarak veri paralelleşmesini kullanabiliriz. İş parçacıklarını doğru bir şekilde kullanbilmemiz için CUDA Hesaplama Modelini (CUDA Execution Model) yakından incelemeliyiz.  
+Bir önceki bölümde veri paralelleşmesinden bahsetmiştik. Bu bölümde veri paralelleşmesinin CUDA iş parçacıkları ile nasıl kullanabileceğimizden bahsedeceğiz. A ve B vektörlerini toplarken A[0] + B[0] işlemini bir iş parçacığına yaptırırken A[1] + B[1] işlemini başka bir iş parçacığına yaptırarak veri paralelleşmesini kullanabiliriz. İş parçacıklarını doğru bir şekilde kullanabilmemiz için CUDA Hesaplama Modelini (CUDA Execution Model) yakından incelemeliyiz.  
 
 CUDA Hesaplama Modeli
 ---------------------
@@ -50,11 +50,11 @@ CUDA İş Parçacıkları bloklar halinde gruplanırlar. Aşağıdaki görselde 
 .. image:: /assets/cuda/02/03/03.png
    :width: 600
 
-Blokları birbirinden ayırabilmek adına her blok için özel olmak üzere **blockIdx.x** değeri bulunmaktadır. Bu değer 0. blok (görselde en soldaki blok) için 0, 1.blok için 1 olacak şekilde ilerler. Bunun dışında bloklar çeşitli boyutlarda yapılandırılabilirler. Daha anlaşışabilir olması açısından şimdilik lineer blok yapısına sahip sistemleri inceleyelim. Tek boyutlu blok yapılarında **blockDim.x** değeri blok içerisinde kaç adet iş parçacığı bulunduğunu belirtmektedir.
+Blokları birbirinden ayırabilmek adına her blok için özel olmak üzere **blockIdx.x** değeri bulunmaktadır. Bu değer 0. blok (görselde en soldaki blok) için 0, 1.blok için 1 olacak şekilde ilerler. Bunun dışında bloklar çeşitli boyutlarda yapılandırılabilirler. Daha anlaşılabilir olması açısından şimdilik lineer blok yapısına sahip sistemleri inceleyelim. Tek boyutlu blok yapılarında **blockDim.x** değeri blok içerisinde kaç adet iş parçacığı bulunduğunu belirtmektedir.
 
 **threadIdx.x** değerleri her blok için, 0 dan bloktaki iş parçacığı sayısına kadar ilerler. Blok indisi ve içerdiği iş parçacığı bilgisi kullanılarak her bir iş parçacığının **evrensel indisi** bulunabilir. Örnek vermek gerekirse 0.blok içindeki 0.iş parçacığının **evrensel indisi** 0 iken 255. iş parçağının **evrensel indisi** 255 olarak belirlenir. Bir sonraki blok olan blok 1 deki 0.iş parçacığının **evrensel indisi** 256 olarak bulunacaktır. 
 
-**Evrensel indis** ile üzerinde çalışılacak veri, iş parçacıkları arasında kolaylıkla paylaşılabilir. Örnek vermek gerekirse görselde gördüğümüz gibi bir konfigürasyon kullanıldığında (n blok, her blokta 255 iş parçacığı), vektör toplama işleminde toplanan vektörlerin 0. elemanları **evrensel indisi** 0 olan iş parçacığı (0.blok 0.iş parçacığı) tarafından toplanırken, vektörlerin 256 elemanı **evrensel indisi** 256 olan iş parçacığı tarafından toplanır (1.blok 0.iş parçacığı).
+**Evrensel indis** ile üzerinde çalışılacak veri, iş parçacıkları arasında kolaylıkla paylaşılabilir. Örnek vermek gerekirse görselde gördüğünüz gibi bir konfigürasyon kullanıldığında (n blok, her blokta 255 iş parçacığı), vektör toplama işleminde toplanan vektörlerin 0. elemanları **evrensel indisi** 0 olan iş parçacığı (0.blok 0.iş parçacığı) tarafından toplanırken, vektörlerin 256 elemanı **evrensel indisi** 256 olan iş parçacığı tarafından toplanır (1.blok 0.iş parçacığı).
 
 *  Bir blok içerisindeki iş parçacıkları, birbirleriyle:
 
@@ -81,7 +81,7 @@ Ayrıca iş parçacığı blokları **şebeke (grid)** adı verilen bir yapı i�
 CUDA Çekirdeği
 ^^^^^^^^^^^^^^
 
-CUDA **Çekirdeğinin** cihaz üzerinde çalışan kod parçası olduğundan bahsetmiştik ve CUDA paralel modelindeki iş parçağı hiyerarşisine değindik. Blok sayısı ve blok içerisindeki iş parçacığı sayısının ne olduğundan bahsettik. Bu noktada bir CUDA **çekirdeğinin** nasıl çağrıldığından da bahsetmek gerekmektedir.
+CUDA **Çekirdeğinin** cihaz üzerinde çalışan kod parçası olduğundan bahsetmiştik ve CUDA paralel modelindeki iş parçacığı hiyerarşisine değindik. Blok sayısı ve blok içerisindeki iş parçacığı sayısının ne olduğundan bahsettik. Bu noktada bir CUDA **çekirdeğinin** nasıl çağrıldığından da bahsetmek gerekmektedir.
 
 1 boyutlu blok yapısı kullanan bir CUDA programı için **çekirdek** çağırma işleminde önemli iki adet parametre bulunmaktadır. Kullanılacak blok sayısı ve her blok içerisindeki iş parçacığı sayısı. Sözdizimi olarak **çekirdekAdı<<<blokSayısı, işParçacığıSayısı>>>(parametreler)**. Örnek olarak daha önceki bölümlerde kullandığımız vektör toplama kodunu buraya  :ref:`tıklayarak <cuda-vector-addition>` inceleyebilirsiniz.
 

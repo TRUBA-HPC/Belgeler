@@ -55,6 +55,6 @@ Görüldüğü üzere CUDA C programı NVIDIA nvcc derleyicisi ile derlenmesiyle
 
         nvcc -o program main.cu
 
-    kullanılabilir. Daha detaylı olarak derleme işlemlerini ilerleyen bölümlerde inceleyceğiz.
+    kullanılabilir. Daha detaylı olarak derleme işlemlerini ilerleyen bölümlerde inceleyeceğiz.
 
          

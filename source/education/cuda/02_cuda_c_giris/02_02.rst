@@ -17,7 +17,7 @@ Veri Paralelleşmesi
 .. image:: /assets/cuda/02/02/01.jpg
    :width: 600
 
-Yukarıdaki görselde veri paralelleşmesi, vektör toplama işleminde gösterilmektedir. Vektörün farklı elemanları sırayla toplanmak yerine her eleman aynı anda toplanarak paralel bir hesaplama sağlanabilir. Burada önemli olan işlemin birbirinden bağımsız olabilmesidir. Örnek üzerinden ilerlemek gerekirse, C[0] için A[0] ve B[0] elemanları toplanırken C[1] elemanı için A[1] ve B[1] elemanlarının toplanmasına engel teşgil eden bir durum yoktur. Yani bu iki işlem aynı anda gerçekleştirilebilir. Böylelikle veri seviyesinde paralelleşme elde edilir.
+Yukarıdaki görselde veri paralelleşmesi, vektör toplama işleminde gösterilmektedir. Vektörün farklı elemanları sırayla toplanmak yerine her eleman aynı anda toplanarak paralel bir hesaplama sağlanabilir. Burada önemli olan işlemin birbirinden bağımsız olabilmesidir. Örnek üzerinden ilerlemek gerekirse, C[0] için A[0] ve B[0] elemanları toplanırken C[1] elemanı için A[1] ve B[1] elemanlarının toplanmasına engel teşkil eden bir durum yoktur. Yani bu iki işlem aynı anda gerçekleştirilebilir. Böylelikle veri seviyesinde paralelleşme elde edilir.
 
 CUDA Vektör Toplama Host Kodu 
 -----------------------------
@@ -50,7 +50,7 @@ CUDA Vektör Toplama Host Kodu
         //BOLUM-3
     }
 
-BOLUM-1 kısmında öncelikle bellek ayırma işlemi ve toplanacak verilerin cihaz (GPU) 'a aktarımı sağlanmaktadır. Ardından BOLUM-2 kısmında vektör toplama işlemi yapan çekirdek (kernel) çağrılıp toplama işlemi sağlanmaktadır. BOLUM-3 ise cihaz üzerinde yapılan hesaplamanın sonucunu host'a kopyalama işlemini ve ardından kullanılan belleğin temizlenme işlemini içermektedir.
+BOLUM-1 kısmında öncelikle bellek ayırma işlemi ve toplanacak verilerin cihaza (GPU) aktarımı sağlanmaktadır. Ardından BOLUM-2 kısmında vektör toplama işlemi yapan çekirdek (kernel) çağrılıp toplama işlemi sağlanmaktadır. BOLUM-3 ise cihaz üzerinde yapılan hesaplamanın sonucunu host'a kopyalama işlemini ve ardından kullanılan belleğin temizleme işlemini içermektedir.
 
 Genel bir CUDA programındaki akışı aşağıdaki görselle açıklanabilir.
 
@@ -73,7 +73,7 @@ CUDA Bellek Yapısı
    *  Host tarafında çalışan kod bu evrensel belleğe ve iş parçacıklarının kendi belleklerine veri yazma ve veri okuma işlemlerini gerçekleştirebilir.
    *  Cihaz tarafında çalışan kod ise evrensel bellek alanında yazma ve okuma işlemleri gerçekleştirebilir.
 
-İlerleyen bölümlerde CUDA bellek yapısının çok daha detaylı olarak inceleyeceğiz. Bellek yönetim fonskiyonlarından bahsetmeden önce bu iki ana noktayı bilmemiz yeterlidir.
+İlerleyen bölümlerde CUDA bellek yapısının çok daha detaylı olarak inceleyeceğiz. Bellek yönetim fonksiyonlarından bahsetmeden önce bu iki ana noktayı bilmemiz yeterlidir.
 
 CUDA Bellek Yönetim Fonksiyonları
 ---------------------------------
@@ -88,7 +88,7 @@ cudaMalloc() fonksiyonu C malloc() fonksiyonu ile benzer şekilde, bellekte veri
    *  Ayrılan bellek bölgesinin adresinin yazılacağı değişken
    *  Ayrılacak alanın büyüklüğü
 
-Bu noktada malloc() fonskiyonundan farklı olarak cudaMalloc() ayırdığı bellek bölgesinin adresini parametre olarak kabul etmesinin sebebi her cuda fonksiyonunun hata kodu döndürüyor olmasıdır. Bu hata koduna bakılarak, çalıştırılmış işlemin başarıyla tamamlanıp tamamlanmadığı anlaşılabilir. Hata içeriği hakkında bilgi sahibi olmak açısından hata kodlarını kontrol etmek kritik bir öneme sahiptir. 
+Bu noktada malloc() fonksiyonundan farklı olarak cudaMalloc() ayırdığı bellek bölgesinin adresini parametre olarak kabul etmesinin sebebi her cuda fonksiyonunun hata kodu döndürüyor olmasıdır. Bu hata koduna bakılarak, çalıştırılmış işlemin başarıyla tamamlanıp tamamlanmadığı anlaşılabilir. Hata içeriği hakkında bilgi sahibi olmak açısından hata kodlarını kontrol etmek kritik bir öneme sahiptir. 
 
 
 cudaFree()
@@ -99,7 +99,7 @@ cudaFree() fonksiyonu, C free() fonksiyonu ile benzer şekilde parametre olarak 
 cudaMemcpy()
 ^^^^^^^^^^^^
 
-Üzerinde hesaplama yapacağımız veriyi ana bellekten, grafik işlem biriminin belleğine aktarmamız gerekir. Bunu yapmak için öncelikle veri boyutu kadar yer ayırmamız (allocation) ve ardından veriyi kopyalamamız gerekir. Veri boyutu kadar yer açmak için cudaMalloc() kullanabileceğimizi görmüştük. Veriyi kopyalamak için ise cudaMemcpy() fonksiyonu kullanılaiblir.
+Üzerinde hesaplama yapacağımız veriyi ana bellekten, grafik işlem biriminin belleğine aktarmamız gerekir. Bunu yapmak için öncelikle veri boyutu kadar yer ayırmamız (allocation) ve ardından veriyi kopyalamamız gerekir. Veri boyutu kadar yer açmak için cudaMalloc() kullanabileceğimizi görmüştük. Veriyi kopyalamak için ise cudaMemcpy() fonksiyonu kullanılabilir.
 
 *  cudaMemcpy() dört adet parametre kabul etmektedir: 
 
@@ -108,14 +108,14 @@ cudaMemcpy()
    *  Kaç bayt veri kopyalanacağı
    *  Verinin hangi yönde kopyalanacağı (host -> cihaz veya cihaz -> host)
 
-cudaMemcpy() fonksiyonunun kabul ettiği parametreleri incelediğimizde de görüldüğü üzere iki adet adres parametresi almaktadır. Olası bir karışıklığı önlemek adına bir örnek üzerinden ilerlemek gerekirse host üzerinde bulunan bir verinin cihaza kopyalanması için cudaMemcpy() fonskiyonunun ilk parametresi cihaz bellek alanından bir adres, ikincisinin ise host bellek alanından bir adres olması gereklidir. 
+cudaMemcpy() fonksiyonunun kabul ettiği parametreleri incelediğimizde de görüldüğü üzere iki adet adres parametresi almaktadır. Olası bir karışıklığı önlemek adına bir örnek üzerinden ilerlemek gerekirse host üzerinde bulunan bir verinin cihaza kopyalanması için cudaMemcpy() fonksiyonunun ilk parametresi cihaz bellek alanından bir adres, ikincisinin ise host bellek alanından bir adres olması gereklidir. 
 
 Burada dikkat edilmesi gereken en önemli durum ise bu kopyalama işleminin hosta göre **senkron** şekilde ilerlemesidir, yani iki adet cudaMemcpy() fonksiyonu çağrıldığında ilki bittikten sonra ikinci kopyalama işlemi başlar. İlerideki bölümlerde nasıl **asenkron** veri kopyalama işlemi yapılacağını ve bunun ne gibi bir katkı sağlayacağını da göreceğiz.
 
 CUDA Vektör Toplama Host Kodu-2
 -------------------------------
 
-CUDA bellek fonskiyonları ile ilgili şuana kadar öğrendiklerimizle birkaç bölüm yukarıda program akışını göstermek için kullandığımız örneği daha yakından inceleyebiliriz.
+CUDA bellek fonksiyonlarından ile ilgili şu ana kadar öğrendiklerimizle birkaç bölüm yukarıda program akışını göstermek için kullandığımız örneği daha yakından inceleyebiliriz.
 
 .. code-block:: C++
 
@@ -149,7 +149,7 @@ CUDA bellek fonskiyonları ile ilgili şuana kadar öğrendiklerimizle birkaç b
 
 *  Toplama işlemi bittikten ve sonuç vektörü cihaz belleği üzerinde hazır olduktan sonra, sonuç hosta geri kopyalanmıştır. Burada kopyalamanın yönü **cudaMemcpyDeviceToHost** olarak verilmiştir.(BOLUM-3)
 
-*  Cihaz belleği üzerindeki ayrılmış alanlar işlem bittiğinde cudaFree() fonskiyonu ile serbest bırakılmıştır. (BOLUM-3)
+*  Cihaz belleği üzerindeki ayrılmış alanlar işlem bittiğinde cudaFree() fonksiyon ile serbest bırakılmıştır. (BOLUM-3)
 
 CUDA Birleşik Bellek (Unified Memory)
 -------------------------------------
@@ -181,7 +181,7 @@ Vektör toplama işlemi için birleşik bellek kullanan bir örneği inceleyelim
    //BOLUM-3
 
 
-Görülüdüğü üzere birleşik bellek kullanımı ile birden fazla bellek alanı ile ilgilenmek yerine tek bir bellek alanı oluşturup onun üzerinden ilerleyerek işlemlerimizi gerçekleştirebiliyoruz. Burada dikkatimizi çekecek önemli bir kısım sonuç vektörünün ana belleğe geri kopyalama işlemini yapmıyor oluşumuzdur. Birleşik bellek kullanımı ile bu gereksinim otomatik olarak sağlanır.
+Görüldüğü üzere birleşik bellek kullanımı ile birden fazla bellek alanı ile ilgilenmek yerine tek bir bellek alanı oluşturup onun üzerinden ilerleyerek işlemlerimizi gerçekleştirebiliyoruz. Burada dikkatimizi çekecek önemli bir kısım sonuç vektörünün ana belleğe geri kopyalama işlemini yapmıyor oluşumuzdur. Birleşik bellek kullanımı ile bu gereksinim otomatik olarak sağlanır.
 
 Ayrıca birleşik bellek modeli **asenkron** işlemleri de desteklemektedir. Birleşik bellek modelini daha detaylı olarak ilerleyen bölümlerde inceleyeceğiz, ancak özetlemek gerekirse
 
