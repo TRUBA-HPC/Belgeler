@@ -1,0 +1,83 @@
+========================
+İş Parçacığı Zamanlaması
+========================
+
+
+Öğrenim Hedefleri
+-----------------
+
+*  CUDA çekirdeklerinin hesaplama kaynaklarını nasıl kullandığını anlamak
+
+   *  İş parçacığı bloklarının hesaplama kaynaklarına atanması
+   *  Hesaplama kaynaklarının sınırları ve kapasitelerini anlamak
+   *  Ek yük (overhead) olmadan iş parçacığı zamanlaması
+
+Blokların Hesaplama Kaynaklarına Dağıtılması
+--------------------------------------------
+
+**İş parçacığı bloklarının** hesaplama kaynaklarına nasıl dağtıldığına dair aşağıdaki görseli inceleyiniz.
+
+.. image:: /assets/cuda/03/05/01.png
+   :width: 600
+
+CUDA destekli cihaz üzerinde bulunan hesaplama kaynaklarının farklı olması farklı şekilde dağıtım olmasına yol açacaktır. Örnek olarak yukardaki görselde soldaki cihazda daha az hesaplama kaynağı bulunduğundan işlem daha uzun sürmektedir. Burada dikkat etmemiz gereken bir nokta bloklar arası herhangi bir sıralama olmamasıdır.
+
+Blokların Çalıştırılması
+------------------------
+
+**İş parçacıklarının** basitleştirilmiş Von-Neumann modelinde düşünülmesi gerektiğinden bahsetmiştik. Aşağıda bu modelin bir temsilini bulabilirsiniz.
+
+.. image:: /assets/cuda/03/05/02.png
+   :width: 600
+
+Bu gözlemimizi daha da ilerletmemiz gerekirse, oluşan modelin aşağıdaki gibi olacağını söyleyebiliriz. Çünkü **iş parçacıklarını** kontrol eden *Kontrol Ünitesi* Grafik İşlem Birimlerine, SIMD(tek komut çoklu veri) yapısına uygun olacak şekilde birden fazla *İşlem Ünitesini* yönetir. 
+
+.. image:: /assets/cuda/03/05/03.png
+   :width: 600
+
+
+CUDA destekli cihazlarda **streaming multiprocessors** (SM) 32 adet bloğa kadar ,hesaplama kaynaklarının sınırları içerisinde, **iş parçacıklarının** zamanlanmasından/yönetilmesinden sorumludur. Ayrıca SM **blok** ve **iş parçacığı** idlerini yönetmekle yükümlüdür.
+
+.. note::
+    Volta SM 2048 **iş parçacığına** kadar desteklemektedir.
+
+.. image:: /assets/cuda/03/05/05.png
+    :width: 300
+
+Warp
+----
+
+Genel bir kural olmasa da şu andaki CUDA desteli cihazlarda 32 **iş parçacığının** oluşturduğu kümeye **warp** adı verilmektedir. Bir warp içindeki **iş parçacıkları** SIMD (tek komut çoklu veri) şeklinde çalışırlar. **Streaming multiprocessorler** zamanlama (scheduling) işlemlerini **warp** seviyesinde gerçekleştirirler.
+
+Örnek: Warp
+^^^^^^^^^^^
+
+Bir **streaming multiprocessore** 3 adet **blok** atandığını düşünelim ve her **blok** 256 adet **iş parçacığı** içeriyor olsun. Bu durumda SM içerisinde kaç adet warp bulunduğunu hesaplayalım.
+
+*   32 **iş parçacığı** kümesine **warp** adı verildiğini hatırlayalım. Her **blokta** 256/32 = 8 adet **warp** bulunmaktadır.
+*   3 adet **blok** bulunduğundan, bu SM tarafından yönetilecek 8 * 3 = 24 adet **warp** bulunmaktadır.
+
+
+.. image:: /assets/cuda/03/05/04.png
+    :width: 300
+
+Bu noktada önemli olacak bir gözlem ise bu **warpların**, çalıştırılırken L1 önbelleği (cache), register dosyası, ve paylaşımlı bellek (shared memory) paylaşıyor olmasıdır.
+
+SM İş Parçacığı Zamanlaması
+---------------------------
+
+**Streaming multiprocessor** ek yük yaratmadan iş parçacıklarını zamanlar/planlar. 
+
+*   Bunu yaparken **warp** tarafından çalıştırılacak olan sıradaki komutun gerektirdiği bütün kaynaklar hazır ise bu **warpı** uygun olarak işaretler.
+*   Uygun **warplar** arasından önceliklendirilmiş zamanlama/planlama politikası (prioritized scheduling policy) kullanılarak çalıştırılacak **warp** seçilir.
+*   Seçilmiş **warpta** bulunan bütün **iş parçacıkları** aynı komutu çalıştırır.
+
+
+Blok Boyutları Hakkında
+-----------------------
+
+Bir matris çarpım işlemini düşünelim. Bu işlem için birden fazla **blok** kullandığımızı düşünelim. Bu noktada **blokların** boyutlarının donanımsal anlamda nasıl bir fark oluşturduğunu inceleyelim.
+
+*   4X4 = 16 **iş parçacığı** içeren bir **blok** yapısı oluşturulduğunda, SM 2048 **iş parçacığına** kadar desteklediğinden, bir SM'e 128 adet blok düşmektedir ancak maksimum 32 adet blok desteklendiğinden SM başına 512 **iş parçacığı** düşmektedir.
+*   8X8 = 64 **iş parçacığı** içeren bir **blok** yapısı oluşturulduğunda, SM 2048 **iş parçacığına** kadar desteklediğinden, bir SM'e 32 adet blok düşmektedir ve maksimum 32 adet blok desteklendiğinden SM tam kapasitesinde kullanılışmış olur.
+*   30X30 = 900 **iş parçacığı** içeren bir **blok** yapısı oluşturulduğunda, SM 2048 **iş parçacığına** kadar desteklediğinden, bir SM'e 2 adet blok düşmektedir ancak SM başına 2048 **iş parçacığı** düşebilecekken 1800 **iş parçacığı** düşmektedir. Yani SM kapasitesinin 1800/2048 kısmı kullanılmaktadır.
