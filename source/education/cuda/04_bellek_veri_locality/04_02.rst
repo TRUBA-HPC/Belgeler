@@ -15,22 +15,22 @@ Basit Matriks Çarpımı Evrensel Bellek Erişim Modeli
 
 Bir önceki bölümde incelediğimiz basit matriks çarpımının evrensel belleğe erişim modelini aşağıdaki görsel üzerinden inceleyelim.
 
-.. image:: /assets/cuda/04/02/01.png
-   :width: 600
+.. image:: /assets/cuda/04/02/01.PNG
+   :width: 500
 
 Basit matriks çarpım işleminde matriks elemanlarına birden fazla iş parçacığı ulaşmaktakdır. Bu durumda evrensel bellekte aynı veriye farklı iş parçacıkları oluşmaktadır. Bu da bellek erişimi açısından performansı kısıtlayıcı bir etkendir.
 
 Bölmeli (Tiled) Bellek Erişimi
 -------------------------------
 
-.. image:: /assets/cuda/04/02/02.png
-   :width: 600
+.. image:: /assets/cuda/04/02/02.PNG
+   :width: 500
 
 
 Evrensel bellek üzerinde birden fazla kere ulaşılan **bölmeler (tile)** çip üzerinde bulunan belleğe (on-chip memory) taşınarak bellek erişimlerinin performansı arttırılmak amaçlanmaktadır. Evrensel bellekleri **bölmelere** ayrılır ve sadece gerekli **bölme** çip üzerindeki belleğe taşınır.
 
-.. image:: /assets/cuda/04/02/03.png
-   :width: 600
+.. image:: /assets/cuda/04/02/03.PNG
+   :width: 500
 
 İlk **bölme** ile ilgili işlemler bitince ikinci **bölme** işlenmeye başlar.
 
@@ -38,8 +38,8 @@ Evrensel bellek üzerinde birden fazla kere ulaşılan **bölmeler (tile)** çip
 
 Aşağıdaki görselde iş parçacıklarının bellek erişimlerinin yakın zamanlarda olduğu durum olan **bölmeli** bellek erişimi için daha uygun olan senaryo ve iş parçacıklarının bellek erişimlerinin birbirlerinden uzak olduğu **bölmeli** bellek erişimi için daha az uygun olan senaryo gösterilmiştir.
 
-.. image:: /assets/cuda/04/02/03.png
-   :width: 600
+.. image:: /assets/cuda/04/02/04.PNG
+   :width: 500
 
 İş parçacıklarının benzer zamanlarda yaptığı bellek erişimleri aynı **bölmede** bulunduğu durumda **bölmeli** bellek erişimi kullanarak performans artışı sağlanmış olur. Aynı **bölme** içerisindeki veriye çeşitli iş parçacıklarının yakın zamanlarda erişimi performans artışını arttırır.
 
