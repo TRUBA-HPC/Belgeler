@@ -151,4 +151,4 @@ Aşamalar
 
     .. code-block:: C++
 
-        Üzerinde çalıştığınız sisteme bağlı olarak değişik çıktılar alabilirsiniz.
+        
