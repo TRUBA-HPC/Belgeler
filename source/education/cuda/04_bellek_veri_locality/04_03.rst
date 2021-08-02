@@ -1,0 +1,58 @@
+=====================================
+Bölmeli (Tiled) Matriks Çarpım İşlemi 
+=====================================
+
+Öğrenim Hedefleri
+-----------------
+
+*  Paralel Bölmeli (tiled) matriks çarpım algoritmasını anlamak.
+ 
+   *  Bölmeyi yüklemek
+   *  Fazlı hesaplama
+   *  Bariyer Senkronizasyonu
+
+
+Matriks-Matriks Çarpımında Veri Erişim Modeli
+----------------------------------------------------
+
+Genel bir matriks-matriks çarpım işlemindeki bellek erişim modeli aşağıdaki görselde modellenmiştir.
+
+.. image:: /assets/cuda/03/01/01.png
+   :width: 600
+
+Her bir iş parçacığının sonuç matriksinde bir adet değeri hesapladığı bir konfigürasyonda her biri iş parçacığı M matriksinin bir satırına ve N matriksinin bir sütununa erişmek durumundadır bu satır ve sütun yukarıdaki görselde en içte bulunan ince alanla gösterilmiştir. Her bir blok ise resimde gösterilen kalın alana sahip olmak durumundadır. Çünkü blok içerisindeki her iş parçacığı bir satır ve sütun kullanacaktır. 
+
+Bölmeli (Tiled) Matriks-Matriks Çarpımı
+----------------------------------------
+
+Yukardaki görselde gözüken M matriksindeki satırlar bütünü (görseldeki dış çizgiler arasında kalan kalın alan) ve N matriksindeki sütunlar bütünü (görselde dış çizgiler arasında kalan kalın alan) evrensel bellekte bulunmakatadır. Bu satır ve sütunların bölmelere ayrılarak fazlar halinde hesaplanmasına bölmeli (tiled) matriks-matriks çarpımı denir. 
+
+.. image:: /assets/cuda/03/01/01.png
+   :width: 600
+
+Blok boyutlarında bölmelere ayrılmış yukardaki örneği inceleyniz. Önceki görselde gözüken kalın alanın tamamını evrensel bellekte bulundurmaktansa bölmeler halinde paylaşımlı belleğe yüklenir ve ardından hesaplama fazlar halinde ilerler. 
+
+Bölmelerin Yüklenmesi
+---------------------
+
+Matriksler içerisindeki gerekli alanları bölmeler halinde alıp fazlar halinde işlememiz için önce bu ayrılan bölmeler paylaşımlı belleğe yüklememiz gerekir. Her bir iş parçacığının bir sonuç üreteceği bir konfigürasyonda bu hesaplama işlemini yaptığımız için her bir iş parçacığının M matriksinden bir değeri ve N matriksinden bir değeri paylaşımlı belleğe kopyalamsı yeterlidir.
+
+Özet: Bölmeli Matriks-Matriks Çarpımı
+-------------------------------------
+
+*   Bölmeler paylaşımlı belleğe yüklenir
+*   Bütün elemanların paylaşımlı belleğe yüklenme işleminin bittiğinden emin olmak için bariyer senkronizasyonu kullanılırç 
+*   Gerekli çarpım ve toplama işlemleri gerçekleştirilir 
+*   Bir sonraki faza geçiş öncesi bütün iş parçacıklarının işleminin sona erdiğinden emin olmak için bariyer senkronizasyonu kullanılır
+
+Bariyer Senkronizasyonu
+------------------------
+
+
+.. code-block:: C++
+
+    __syncthreads();
+
+Bir blok içerisindeki bütün iş parçacıklarını senkronizasyonu için kullanılır. **__syncthreads()** ifadesine ulaşmış bir iş parçacığı aynı blok içerisindeki diğer iş parçacıkları da program akışında **__syncthreads()** ifadesine ulaşmadan o noktadan ileriye gidemez. Yani bütün iş parçacıklarının işlemini bitirmesini beklemiş olur. 
+
+**__syncthreads()** bölmeli işlemlerde fazlar arası koordinasyonu sağlamak için sıklıkla kullanılmaktadır. Faz başlamadan önce bütün verinin paylaşımlı belleğe kopyalandığından emin olmak için veya faz içerisindeki bütün hesaplamaların sıradaki faza geçmeden önce tamamlandığından emin olmak için kullanılabilir.
