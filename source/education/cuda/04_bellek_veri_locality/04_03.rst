@@ -17,7 +17,7 @@ Matriks-Matriks Çarpımında Veri Erişim Modeli
 
 Genel bir matriks-matriks çarpım işlemindeki bellek erişim modeli aşağıdaki görselde modellenmiştir.
 
-.. image:: /assets/cuda/03/01/01.png
+.. image:: /assets/cuda/04/03/01.png
    :width: 600
 
 Her bir iş parçacığının sonuç matriksinde bir adet değeri hesapladığı bir konfigürasyonda her biri iş parçacığı M matriksinin bir satırına ve N matriksinin bir sütununa erişmek durumundadır bu satır ve sütun yukarıdaki görselde en içte bulunan ince alanla gösterilmiştir. Her bir blok ise resimde gösterilen kalın alana sahip olmak durumundadır. Çünkü blok içerisindeki her iş parçacığı bir satır ve sütun kullanacaktır. 
@@ -27,7 +27,7 @@ Bölmeli (Tiled) Matriks-Matriks Çarpımı
 
 Yukardaki görselde gözüken M matriksindeki satırlar bütünü (görseldeki dış çizgiler arasında kalan kalın alan) ve N matriksindeki sütunlar bütünü (görselde dış çizgiler arasında kalan kalın alan) evrensel bellekte bulunmakatadır. Bu satır ve sütunların bölmelere ayrılarak fazlar halinde hesaplanmasına bölmeli (tiled) matriks-matriks çarpımı denir. 
 
-.. image:: /assets/cuda/03/01/01.png
+.. image:: /assets/cuda/04/03/02.png
    :width: 600
 
 Blok boyutlarında bölmelere ayrılmış yukardaki örneği inceleyniz. Önceki görselde gözüken kalın alanın tamamını evrensel bellekte bulundurmaktansa bölmeler halinde paylaşımlı belleğe yüklenir ve ardından hesaplama fazlar halinde ilerler. 

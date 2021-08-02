@@ -16,7 +16,7 @@ Bellek ve Veri Lokalizasyonu
 -----------------------------------------
 Bir önceki bölümde incelediğimiz resim bulanıklaştırma çekirdeğini bellek erişimi açısından inceleyelim. Bu çekirdekteki bellek erişimi açısından en kritik satırı gösteren aşağıdaki görseli inceleyelim.
 
-.. image:: /assets/cuda/03/01/01.png
+.. image:: /assets/cuda/04/01/01.png
    :width: 600
 
 .. code-block:: C++
@@ -32,7 +32,7 @@ Basit Matris-Matris Çarpımı
 
 En basit haliyle matris-matris çarpımı yapmak için bir matrisin her satırı ile diğer matrisin her sütunu arasında iç çarpım gerçekleşmektedir. Bu işlemi daha iyi anlayabilmek için aşağıdaki görseli inceleyiniz.
 
-.. image:: /assets/cuda/03/01/01.png
+.. image:: /assets/cuda/04/01/02.png
    :width: 600
 
 Temel olarak şu ana kadar incelediğimiz çok boyutlu CUDA çekirdekleri ile benzer yapıya sahip olan bu örneği inceleyiniz.
@@ -59,12 +59,12 @@ Temel olarak şu ana kadar incelediğimiz çok boyutlu CUDA çekirdekleri ile be
 
 Gördüğünüz üzere gerekli satır ve sütun indisleri hesaplandıktan sonra her bir iş parçacığı sonuç matrisindeki bir eleman için hesaplamayı gerçekleştiriyor. Bu noktada 4x4 boyutlarında bir matrisi düşünelim ve blok ve şebeke (grid) yapısını aşağıdaki görselde gösterildiği gibi konfigüre edelim.
 
-.. image:: /assets/cuda/03/01/01.png
+.. image:: /assets/cuda/04/01/03.png
    :width: 600
 
 Bu noktada her bir sonuç için gerek duyulan veriyi gösteren aşağıdaki görseli inceleyeniz.
 
-.. image:: /assets/cuda/03/01/01.png
+.. image:: /assets/cuda/04/01/04.png
    :width: 600
 
 Gördüğünüz üzere her bir satır birden fazla sayıda kullanılmakta. Örnek vermek gerekirse yukardaki görselde gösterilen M matrisinin ilk satırındaki değerler sonuç matrisinin ilk satırının her elemanı için gereklidir. Bu gibi birden fazla kullanımın bulunduğu durumları tespit edip uygun CUDA bellek yapılarını kullanarak performansımızda yüksek artışlar sağlayabiliriz.
@@ -74,7 +74,7 @@ CUDA Değişken Tanımlama
 
 Aşağıdaki görselde çeşitli değişken tanımlarını ve bu tanımların hangi CUDA bellek tipine karşılık geldiğini görebilirsiniz.
 
-.. image:: /assets/cuda/03/01/01.png
+.. image:: /assets/cuda/04/01/05.png
    :width: 600
 
 * **_devıce_** etiketinin **_shared_** veya **_constant_** ile kullanımı opsiyoneldir.
