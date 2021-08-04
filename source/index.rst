@@ -48,7 +48,7 @@ TRUBA Kullanıcı Dökümanları
    
    education/openmp/index.rst
    education/openmpi/index.rst
-   education/CFD/index.rst
+   education/cfd/cfdIndex.rst
    education/big-data/index.rst
    education/cuda/index.rst
 

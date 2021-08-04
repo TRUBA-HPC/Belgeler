@@ -1,0 +1,37 @@
+===========
+SU2 Klavuzu
+===========
+
+********
+Hakkında
+********
+Bu yardım dokümanları, eksiksiz bir SU2 kullanıcı veya teori kılavuzu olmayı
+amaçlamamaktadır. Burada temel amacımız, özellikle havacılık ve itki 
+problemlerinde kullanılmak üzere TÜBİTAK ULAKBİM makinalarında hesaplamalı 
+yapmayı amaçlayan araştırmacılar için şu bilgileri sağlamayı amaçlamaktadır:
+
+#. ULAKBİM sunucularında çalışmadan önce kişisel bilgisayarlarda ve iş 
+   istasyonlarında ön çalışmaların hazırlanabilmesi için basit bir kurulum 
+   kılavuzu.
+#. Ön işlemleme ihtiyaçları ve SU2 çözüm ağı formatı özeti
+#. Teori kılavuzu
+#. Temel HAD çözümleri için girdi dosyalarının hazırlanması
+#. Çalıştırma ve art işlemleme için gerekli faaliyetler.
+
+.. toctree::
+    :caption: İçerik
+    :maxdepth: 1
+    :titlesonly:
+ 
+    installation.rst
+    formatAndRequirements.rst
+    theory.rst
+    configuration.rst
+
+----------
+
+|CreativeCommonsLicense| Bu çalışma,  `Creative Commons Atıf-Gayri 
+Ticari-Aynı Lisansla Paylaş 4.0 Uluslararası Lisansı`_ ile lisanslanmıştır.
+    
+.. _Creative Commons Atıf-Gayri Ticari-Aynı Lisansla Paylaş 4.0 Uluslararası Lisansı: http://creativecommons.org/licenses/by-nc-sa/4.0/
+.. |CreativeCommonsLicense| image:: https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png
