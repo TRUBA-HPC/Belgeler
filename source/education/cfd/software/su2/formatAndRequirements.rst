@@ -159,11 +159,3 @@ CGNS ağları kullanmak için SU2 CGNS desteği ile kurulmuş olması gerekmekte
 
 Bunun ardından, analiz konfigürasyon dosyasında ``MESH_FORMAT=CGNS`` ifadesi
 kullanarak CGNS formatındaki ağları kullanabilirsiniz.
-
-----------
-
-|CreativeCommonsLicense| Bu çalışma,  `Creative Commons Atıf-Gayri 
-Ticari-Aynı Lisansla Paylaş 4.0 Uluslararası Lisansı`_ ile lisanslanmıştır.
-    
-.. _Creative Commons Atıf-Gayri Ticari-Aynı Lisansla Paylaş 4.0 Uluslararası Lisansı: http://creativecommons.org/licenses/by-nc-sa/4.0/
-.. |CreativeCommonsLicense| image:: https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png

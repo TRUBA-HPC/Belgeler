@@ -136,11 +136,3 @@ or edit the job script and submit & check the que and job output
 ----------
 
 **EuroCC@Turkey Yaz HAD Okulu** (Dr. Nilay SEZER UZOL, Ağustos 2021) ve **METU AEE 544** (Dr. Nilay SEZER UZOL, Haziran 2021.) ders notlarından hazırlanmıştır.
-
-----------
-
-|CreativeCommonsLicense| Bu çalışma,  `Creative Commons Atıf-Gayri 
-Ticari-Aynı Lisansla Paylaş 4.0 Uluslararası Lisansı`_ ile lisanslanmıştır.
-		   
-.. _Creative Commons Atıf-Gayri Ticari-Aynı Lisansla Paylaş 4.0 Uluslararası Lisansı: http://creativecommons.org/licenses/by-nc-sa/4.0/
-.. |CreativeCommonsLicense| image:: https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png
