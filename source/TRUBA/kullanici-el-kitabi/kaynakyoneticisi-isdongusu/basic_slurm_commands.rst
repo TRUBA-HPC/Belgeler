@@ -29,7 +29,7 @@ Aşağıda sık kullanılan bazı komutların temel fonksiyonları hakkında gen
 
 **scancel:** Kuyrukta sırada bekleyen ya da o anda çalışmakta olan işleri iptal etmek için kullanılır.
 
-**sacct:**  Beklemede, çalışmakta yada daha önce çalışmış ve sonlanmış olan işler yada tek bir iş hakkında ayrıntılı rapor ve bilgi alınmasına imkan verir. Pek çok parametre içerir. Örneğin belli tarihler arasında başlamış ve bitmiş işlerin listesi, çalışma süresi, kullandığı bellek miktarı, üzerinde çalıştığı sunucuların adresleri vb. ayıntılar ile ilgili bilgi alınması mümkündür.
+**sacct:**  Beklemede, çalışmakta yada daha önce çalışmış ve sonlanmış olan işler yada tek bir iş hakkında ayrıntılı rapor ve bilgi alınmasına imkan verir. Pek çok parametre içerir. Örneğin belli tarihler arasında başlamış ve bitmiş işlerin listesi, çalışma süresi, kullandığı bellek miktarı, üzerinde çalıştığı sunucuların adresleri vb. ayrıntılar ile ilgili bilgi alınması mümkündür.
 
 **sstat:** Çalışmakta olan işin kullandığı, kullanmakta olduğu sistem kaynakları hakkında bilgi verir. **--format=**   ile verilecek bilgi türleri seçilebilir. 
 

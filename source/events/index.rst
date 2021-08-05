@@ -2,7 +2,7 @@
 Seminerler ve Eğitimler
 ==========================
 
-EuroCC@Türkiye projesi kapsamında düzenlenen seminerler, çalıştaylar, yaz/kış okulu etkinlikleri ile ilgili bilgilere `Indico etkinlik sayfası üzerinden <https://indico.truba.gov.tr>`_ ulaşabilirsiniz.
+EuroCC@Türkiye projesi kapsamında düzenlenen seminerler, çalıştaylar, yaz/kış okulu etkinlikleri ile ilgili güncel bilgilere `Indico etkinlik sayfası üzerinden <https://indico.truba.gov.tr>`_ ulaşabilirsiniz.
 
 
 * **Seminerler**

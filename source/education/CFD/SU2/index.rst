@@ -9,7 +9,7 @@ Hakkında
 ********
 Bu yardım dokümanları, eksiksiz bir |SU2| kullanıcı veya teori kılavuzu olmayı
 amaçlamamaktadır. Burada temel amacımız, özellikle havacılık ve itki 
-problemlerinde kullanılmak üzere TÜBİTAK ULAKBİM makinalarında hesaplamalı 
+problemlerinde kullanılmak üzere TÜBİTAK ULAKBİM makinelerinde hesaplamalı 
 yapmayı amaçlayan araştırmacılar için şu bilgileri sağlamayı amaçlamaktadır:
 
 #. ULAKBİM sunucularında çalışmadan önce kişisel bilgisayarlarda ve iş 

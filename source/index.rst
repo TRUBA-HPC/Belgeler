@@ -61,7 +61,7 @@ TRUBA Kullanıcı Dökümanları
    :caption: Etkinlikler
    :maxdepth: 1
    
-   etkinlikler/index.rst
+   events/index.rst
 
 .. warning::
 
