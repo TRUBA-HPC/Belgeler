@@ -22,7 +22,7 @@ yapmayı amaçlayan araştırmacılar için şu bilgileri sağlamayı amaçlamak
 
 .. toctree::
     :caption: İçerik
-    :maxdepth: 2
+    :maxdepth: 1
     :titlesonly:
  
     installation.rst

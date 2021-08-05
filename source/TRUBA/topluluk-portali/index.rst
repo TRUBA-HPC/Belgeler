@@ -4,6 +4,8 @@ TRUBA Topluluk Portalı
 
 * :ref:`TRUBAtanitim`
 
+* :ref:`TRUBAseminer`
+
 * :ref:`yazilimlar`
 
 * :ref:`derleyiciler`

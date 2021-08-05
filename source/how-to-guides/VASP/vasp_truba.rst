@@ -3,8 +3,8 @@ TRUBA'da VASP Kullanımı
 ==========================================
 
 Bir önceki adımda VASP programının kendi kullanıcınızın olduğu dizine nasıl kurulacağını anlattık. Bu bölümde bu uygulamanın yine kendi dizininizde çalıştırabilmeniz için örnek bir iş betiği oluşturulacaktır.
-vasp_run.slurm olarak isimlendirilen iş betiği dosyasının içine istediğiniz bir editör kullanarak girip gerekli değişiklikleri kolayca yapabilirsiniz. İş betikleri oluşturulurken iki önemli husus vardır. Programı hangi modulleri kullanarak derlediyseniz, o modüllerin isimleri iş betiği dosyanızda olması gerekmektedir. Hangi modülleri kullanacağınızla ilgili olarak kuracağınız programın kurulum dosyalarını dikkatlice okumanız gerekmektedir.
-İş betiği ile ilgili ayrıntılara bu sayfaya tıklayarak ulaşabilirsiniz.
+vasp_run.slurm olarak isimlendirilen iş betiği dosyasının içine istediğiniz bir editör kullanarak girip gerekli değişiklikleri kolayca yapabilirsiniz. İş betikleri oluşturulurken iki önemli husus vardır. Programı hangi modülleri kullanarak derlediyseniz, o modüllerin isimleri iş betiği dosyanızda olması gerekmektedir. Hangi modülleri kullanacağınızla ilgili olarak kuracağınız programın kurulum dosyalarını dikkatlice okumanız gerekmektedir.
+İş betiği ile ilgili ayrıntılara :ref:`kaynakyoneticisi` sayfasından ulaşabilirsiniz.
 
 ------------------
 vasp_run.slurm
@@ -38,7 +38,7 @@ vasp_run.slurm
   
   exit
 
-Bu komut dosyası, toplam 40 çekirdek için her biri 20 çekirdekli 2 sunucu ayırır. İşlerinizin büyüklüğüne göre bu sayıları değiştirebilirsiniz. VASP programının hangi versiyonunda derlediğinize bağlı olarak kaynak dosyalarının isimleri değişecektir. Programı çalıştırmak için gerekli satırları düzenledikten sonra aşağıdaki komutu terminalize yazarak işinizi TRUBA sistemine gönderebilirsiniz..
+Bu komut dosyası, toplam 40 çekirdek için her biri 20 çekirdekli 2 sunucu ayırır. İşlerinizin büyüklüğüne göre bu sayıları değiştirebilirsiniz. VASP programının hangi versiyonunda derlediğinize bağlı olarak kaynak dosyalarının isimleri değişecektir. Programı çalıştırmak için gerekli satırları düzenledikten sonra aşağıdaki komutu terminalinize yazarak işinizi TRUBA sistemine gönderebilirsiniz.
 
 .. code-block:: bash
   

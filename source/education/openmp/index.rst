@@ -24,4 +24,6 @@ Yakında Eklenilecek Eğitimler:
 * Hata Ayıklama
 * Performans Analizi
 
+-----
+
 Bu döküman `bu eğitim <https://hpc.llnl.gov/training/tutorials/openmp-tutorial>`_ referans alınarak EuroCC projesi için TRUBA üzerinde hazırlanmıştır.

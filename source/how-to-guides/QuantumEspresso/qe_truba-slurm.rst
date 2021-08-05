@@ -2,9 +2,9 @@
 TRUBA'da Quantum Espresso Kullanımı
 ==========================================
 
--------------------------------------------
-Barbun Node'u için Örnek Slurm Dosyası
--------------------------------------------
+------------------------------------------------------
+Barbun Hesaplama Kümesi için Örnek Slurm Dosyası
+------------------------------------------------------
 
 
 .. code-block:: bash
@@ -41,9 +41,9 @@ Barbun Node'u için Örnek Slurm Dosyası
 * :download:`İlgili Slurm dosyasını indirmek için tıklayınız... </assets/qe-howto/config-files/qe-barbun_impi-intel18.slurm>`
 
 
--------------------------------------------
-Hamsi Node'u için Örnek Slurm Dosyası
--------------------------------------------
+------------------------------------------------------
+Hamsi Hesaplama Kümesi için Örnek Slurm Dosyası
+------------------------------------------------------
 
 .. code-block:: bash
 

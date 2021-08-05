@@ -5,10 +5,10 @@ Modüller
 ==========
 
 --------------------------------------
-Modül dosyaları ve çevre değişkenleri
+Modül Dosyaları ve Çevre Değişkenleri
 --------------------------------------
 
-Herhangi bir uygulamayı çalıştırabilmek için sistemin, o uygulamanın dosyalarının, o uygulamayı derlerken kullanılan kütüphanelerin nerede olduğunu bilmesi gerekir. Bu bildirim ``LD_LIBRARY_PATH``, ``PATH`` ve diğer bazı çevre değişkenlerin ayarlanması ile yapılır. Bu değişkenlerin ayarlanması ile yapılmış olan değişikliği geri almak için ya logout olup tekrar login olmak ya da, bu değişkenlerin içerisinden, ilgili kısımın geri çıkarılması gerekmektedir. Bu işlem zor olmamakla birlikte, kullanılacak her uygulama için, her bağlantıda yapılması kullanıcılar üzerinde bir iş yükü oluşturmaktadır. Örnegin ortak uygulama alanında kurulu Espresso 5.0.2 uygulamasını çalıştırmak için LD_LIBRARY_PATH ve PATH değişkenlerine aşağıdaki gibi değerlerinin atanması gerekmektedir.
+Herhangi bir uygulamayı çalıştırabilmek için sistemin, o uygulamanın dosyalarının, o uygulamayı derlerken kullanılan kütüphanelerin nerede olduğunu bilmesi gerekir. Bu bildirim ``LD_LIBRARY_PATH``, ``PATH`` ve diğer bazı çevre değişkenlerin ayarlanması ile yapılır. Bu değişkenlerin ayarlanması ile yapılmış olan değişikliği geri almak için ya logout olup tekrar login olmak ya da bu değişkenlerin içerisinden, ilgili kısmın geri çıkarılması gerekmektedir. Bu işlem zor olmamakla birlikte, kullanılacak her uygulama için, her bağlantıda yapılması kullanıcılar üzerinde bir iş yükü oluşturmaktadır. Örnegin ortak uygulama alanında kurulu Espresso 5.0.2 uygulamasını çalıştırmak için LD_LIBRARY_PATH ve PATH değişkenlerine aşağıdaki gibi değerlerinin atanması gerekmektedir.
 
 .. code-block::
 
@@ -140,7 +140,7 @@ Merkezi alandaki uygulama veya kütüphaneler genel olarak ortak bir sistematik 
 
 **openmpi-1.8.8** --> derleme sırasında kullanılan ``mpi`` kütüphanesi ve versiyonu. Openmp/thread için ``mp``, eğer herhangi bir paralelleştirme kullanılmamışsa ``serial`` ifadeleri gelebilir.
 
-**gcc-4.8.5** --> derleme sırasında kullanılan derleyici. Eğer ``intel`` derleyiciler kullanılmışsa ``PS2013, PS2016`` vs gelebilir. Eğer herhangi bir matematik kütüphanesi derleme sırasında kullanılmışsa, bu alandan önce ``acml, mkl`` gibi ifadeler gelebilir. ``ACML`` sadece ``AMD`` işemciler ve ``gcc`` derleyici kullanılan uygulamalarda/kütüphanelerde, ``mkl`` ise intel derleyicilerle derlenen uygulamalarda/kütüphanelerde kullanılmaktadır.
+**gcc-4.8.5** --> derleme sırasında kullanılan derleyici. Eğer ``intel`` derleyiciler kullanılmışsa ``PS2013, PS2016`` vs gelebilir. Eğer herhangi bir matematik kütüphanesi derleme sırasında kullanılmışsa, bu alandan önce ``acml, mkl`` gibi ifadeler gelebilir. ``ACML`` sadece ``AMD`` işlemciler ve ``gcc`` derleyici kullanılan uygulamalarda/kütüphanelerde, ``mkl`` ise intel derleyicilerle derlenen uygulamalarda/kütüphanelerde kullanılmaktadır.
 
 **E5V3-E5V4** --> Derlemenin hangi işlemci modeli için yapıldığını gösteren etikettir.
 

@@ -1,3 +1,5 @@
+.. _derin-ogrenme-kilavuzu:
+
 ======================
 Derin Öğrenme Kılavuzu
 ======================

@@ -2,7 +2,7 @@
 HAD ve YBH notları
 ==================
 
-Bu klasörde, HAD ve YBH ile ilgili bazı notlar bulunmaktadır.
+Bu sayfada HAD ve YBH ile ilgili bazı notlar bulunmaktadır.
 
 .. toctree::
     :caption: İçerik

@@ -1,5 +1,5 @@
 ===============================
-Ev dizinine Anaconda kurulumu
+Ev Dizinine Anaconda Kurulumu
 ===============================
 
 Miniconda indirin:
@@ -42,7 +42,7 @@ Bu adımdan sonra kullanacağınız kütüphalenerin kurulumunu conda sanal orta
     Sanal ortam kullanarak belirli bir Python sürümü için bir Python kurulumu ve bir dizi ek paket içeren bağımsız bir dizin ağacı yaratabilirsiniz. Bu sayede farklı uygulamalarınız için farklı sanal ortamlar yaratarak çakışan gereksinimlerin oluşmasını önlersiniz.
 
 ---------------------------------------------
-Anaconda sanal ortamı kullanılan uygulamalar
+Anaconda Sanal Ortamı Kullanılan Uygulamalar
 ---------------------------------------------
 
 .. toctree::
@@ -53,10 +53,10 @@ Anaconda sanal ortamı kullanılan uygulamalar
 .. _jupyter-anaconda:
 
 =============================================================================
-OpenOnDemand arayüzünde Jupyter kullanmak için Anaconda yapılandırması
+Open OnDemand Arayüzünde Jupyter Kullanmak için Anaconda Yapılandırması
 =============================================================================
 
-OpenOnDemand arayüzünde Jupyter kullanmak için hesaplama sunucularında Anaconda yüklemesini merkezi dosya sisteminde kurulu olan python modülü ile gerçekleştirebilirsiniz:
+Open OnDemand arayüzünde Jupyter kullanmak için hesaplama sunucularında Anaconda yüklemesini merkezi dosya sisteminde kurulu olan python modülü ile gerçekleştirebilirsiniz:
 
 .. code-block:: bash
     
@@ -89,4 +89,4 @@ Logout olup login olduktan sonra ayarların doğruluğunu test edin:
 
     jupyter notebook
 
-Jupyter notebook logout olup login olduktan sonra çalışıyorsa OpenOnDemand arayüzünde Jupyter kullanabilirsiniz. ``ctrl+c`` kullanarak notebook'u kapatın.
+Jupyter notebook logout olup login olduktan sonra çalışıyorsa Open OnDemand arayüzünde Jupyter kullanabilirsiniz. ``ctrl+c`` kullanarak notebook'u kapatın.

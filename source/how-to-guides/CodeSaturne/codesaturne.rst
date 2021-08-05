@@ -113,7 +113,7 @@ Opsiyonel ön koşullar:
    <**exportLD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"**
    komutunun .bashrc dosyasına eklenmesi gerekebilir.
 
--  Paralel iş göndeirimi için .bashrc dosyasına "mpi" için bir satır
+-  Paralel iş gönderimi için .bashrc dosyasına "mpi" için bir satır
    eklenmesi ve .bashrc dosyasının kaynak gösterilmesi, "source"
    lanması, gerekebilir. Örnek olarak şu komutlar kullanılabilir;
 
@@ -153,10 +153,10 @@ Seri İş
    -  **Preprocessor** modülü mesh veya çözüm ağının kullanılmasından
       sorumludur.
 
--  :math:`CodeSaturne` ile bir iş, veya "case", oluşturmak için
+-  :math:`CodeSaturne` ile bir iş veya "case" oluşturmak için
    terminalden **<code_saturne create>** komutunun verilmesi yeterlidir.
    Komutun devamında **-s** eklenip iş ismi, **-c** eklenip
-   çalıştıralacak "case" ismi girilebilir. Örneğin, "DENEME" adında bir
+   çalıştırılacak "case" ismi girilebilir. Örneğin, "DENEME" adında bir
    iş klasörü ve çalıştırılacak bir "CASE1" dosyası oluşturmak için
    aşağıdaki komut kullanılabilir: **<code_saturne create -s DENEME -c
    CASE1>**
@@ -192,17 +192,16 @@ Seri İş
    otomatik olarak bir **mesh_input.csm** dosyası oluşturulur ve çözüm
    esnasında kullanılır. Kullanılan çözüm ağı çözüm işleminden önce
    "mesh import" veya "preprocess" işlemleri ile kontrol edilir. Bu
-   işlem kullanıcı tarafından da yapılabilir. Örenğin, <**cs_preprocess
+   işlem kullanıcı tarafından da yapılabilir. Örneğin, <**cs_preprocess
    "mesh dosyası adresi"**> komutu kullanılabilir. Bu komut çalışmıyor
    ise "preprocess" modülünün yerinin gösterilmesi gerekmektedir.
-   .bashrc dosyasına <**export PATH=/klasörün
-   adresi/Code_Saturne/6.3.0/code_saturne-6.3.0/arch/Linux_x86_64/libexec/code_saturne:$PATH**>
+   .bashrc dosyasına <**export PATH=/klasorun-adresi/Code_Saturne/6.3.0/code_saturne-6.3.0/arch/Linux_x86_64/libexec/code_saturne:$PATH**>
    satırının kopyalanması yeterlidir. Adres ve versiyon değişiklikleri
-   kullanıcı tarafından göz önünde bulundurulup düzeltilmelidir. Arından
+   kullanıcı tarafından göz önünde bulundurulup düzeltilmelidir. Ardından
    .bashrc dosyası kaynak gösterilir.
 
 -  **CASE1** içinde **DATA**, **RESU** ve **SRC** klasörleri
-   oluşturulur. **RESU** ve **SRC** dosylaları en başta boştur. İş
+   oluşturulur. **RESU** ve **SRC** dosyaları en başta boştur. İş
    çalıştırıldıktan sonra **RESU** klasörü içinde **<YYYYAAGG-ssdd>**
    isminde bir sonuç klasörü bulunabilir. Çözüm ağı, çözüm ve çalıştırma
    ile ilgili .log dosyaları bu adrestedir. :math:`Paraview` vb.
@@ -232,7 +231,7 @@ Seri İş
    **DATA** klasörüne kopyalanıp istenilen düzenlemeler yapılabilir. Bu
    dosya ile yapılan değişiklikler kullanıcı arayüzü (GUI) ile
    yapılanlara göre daha önceliklidir. Genellikle kullanıcı arayüzü ile
-   tanımlanamyan parametrelerin **cs_user_scripts.py** benzeri kullanıcı
+   tanımlanmayan parametrelerin **cs_user_scripts.py** benzeri kullanıcı
    tanımlı dosyalar üzerinden tanımlanması önerilir.
 
 -  Grafiksel kullanıcı arayüzüne (GUI) ek olarak kullanılabilecek
@@ -271,7 +270,7 @@ Seri İş
       -  **DATA** klasöründen **RESU/<çalıştırma ismi>** klasörüne
          belgeler kopyalanır.
 
-      -  Kullanıcı kaynakalrı **SRC** klasöründen **RESU/<çalıştırma
+      -  Kullanıcı kaynakları **SRC** klasöründen **RESU/<çalıştırma
          ismi>** klasörüne kopyalanır ve derlenir.
 
    -  **Initialize**
@@ -295,7 +294,7 @@ Seri İş
 Kullanıcı-Tanımlı Fonksiyonlar
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Genellikle GUI(grafiksel kullanıcı arayüzü) kullanılarak tanımlanan
+-  Genellikle GUI (grafiksel kullanıcı arayüzü) kullanılarak tanımlanan
    ve setup.xml dosyasına yazılan ayarlara ek olarak,
    :math:`CodeSaturne` kullanıcıların daha gelişmiş ayarlar ve modeller
    tanımlamasına "kullanıcı-tanımlı fonksiyonlar" ile olanak tanır. Bu
@@ -322,7 +321,7 @@ Kullanıcı-Tanımlı Fonksiyonlar
    bazıları da zaman adımları sonrasında çağrılırlar. Örneğin hesaplama
    ayarları sırasında şu fonksiyonlar çağrılır.
 
-   -  :math:`cs\_user\_model` : Kullanıcının tercih ettiği türleri,
+   -  :math:`cs\_user\_model`: Kullanıcının tercih ettiği türleri,
       varyansları ve fiziksel modelleri tanımlamak için kullanılır.
       Diğer bütün fonksiyonlardan önce çağrılır, sistem ayarları ve
       çözüm ağı tanımları hariç. Eşdeğer Fortran fonksiyonu :
@@ -331,7 +330,7 @@ Kullanıcı-Tanımlı Fonksiyonlar
    -  :math:`cs\_user\_zones`: Hesaplamanın çözüm ağındaki hangi
       alanlarda yapılacağını ayarlamak için kullanılır.
 
-   -  :math:`cs\_user\_parameters` : Genel veya değişken bazlı
+   -  :math:`cs\_user\_parameters`: Genel veya değişken bazlı
       parametrelerin tanımlanmasında, örneğin referans fiziksel
       modellerde ve nümerik ayarlamalarda kullanılır. Eşdeğer Fortran
       fonksiyonu : :math:`usppmo`
@@ -340,47 +339,47 @@ Kullanıcı-Tanımlı Fonksiyonlar
       : Postprocessing adımı için sonuç formatlarını değiştirmek için
       kullanılır.
 
-   -  :math:`cs\_user\_combustion` : Seçilen yanma modeline (gaz,
+   -  :math:`cs\_user\_combustion`: Seçilen yanma modeline (gaz,
       tozlaştırılmış kömür veya ağır yakıt) özel hesaplama seçeneklerini
       ayarlar.
 
-   -  :math:`cs\_atmospheric\_model.f90` : Atmosferik model ayarları ve
+   -  :math:`cs\_atmospheric\_model.f90`: Atmosferik model ayarları ve
       yer özellikleri için çeşitli kullanıcı fonksiyonları içerir.
 
-   -  :math:`cs\_user\_lagr\_model` : "Lagrangian" modeli için fiziksel,
+   -  :math:`cs\_user\_lagr\_model`: "Lagrangian" modeli için fiziksel,
       nümerik ve postprocessing seçeneklerini tanımlar.
 
    Zaman adımlarından önce aşağıdaki fonksiyonlar çağrılır,
 
-   -  :math:`cs\_user\_mesh\_modify` : Çeşitli çözüm ağı
+   -  :math:`cs\_user\_mesh\_modify`: Çeşitli çözüm ağı
       modifikasyonları için "preprocessing" aşamsında çağrılır.
 
-   -  :math:`cs\_user\_initialization` : Değişkenlerin ve özelliklerin
+   -  :math:`cs\_user\_initialization`: Değişkenlerin ve özelliklerin
       ilk değerlerini atamak için kullanılır.
 
    Zaman adımları sırasında aşağıdaki fonksiyonlar çağrılır,
 
-   -  :math:`cs\_user\_physical\_properties` : Yoğunluk ve viskozite
-      gibi akış özellikllerinin tanımlanması için çağrılır.
+   -  :math:`cs\_user\_physical\_properties`: Yoğunluk ve viskozite
+      gibi akış özelliklerinin tanımlanması için çağrılır.
 
-   -  :math:`cs\_user\_boundary\_conditions` : Karışık sınır
+   -  :math:`cs\_user\_boundary\_conditions`: Karışık sınır
       koşullarının belirlenmesi için kullanılır. Basit olanlar GUI ile
       tanımlanabilir.
 
-   -  :math:`cs\_user\_source\_terms` : Kompleks kaynak terimleri için
+   -  :math:`cs\_user\_source\_terms`: Kompleks kaynak terimleri için
       kullanılır.
 
-   -  :math:`cs\_user\_extra\_operations` : Değişken akış özelliklerinin
+   -  :math:`cs\_user\_extra\_operations`: Değişken akış özelliklerinin
       tanımlanması için kullanılır. Her zaman adımında gerekli alanların
       güncellenmesi için çağrılır.
 
-   -  :math:`cs\_user\_lagr\_boundary\_conditions` : Sınır koşullarının
+   -  :math:`cs\_user\_lagr\_boundary\_conditions`: Sınır koşullarının
       tanımlanması, değiştirilmesi ve Lagrangian molekülleri için hacim
       enjeksiyonları için kullanılır.
 
    Zaman adımları sırasında aşağıdaki fonksiyonlar çağrılır,
 
-   -  :math:`cs\_user\_extra\_operations\_finalize` : Zaman adımlarından
+   -  :math:`cs\_user\_extra\_operations\_finalize`: Zaman adımlarından
       sonra sadece hesaplamanın sonunda yapılması gereken operasyonlar
       için çağrılır, spesifik postprocessing sonuçları gibi.
 
@@ -540,7 +539,7 @@ adım seri iş oluşturma ile benzerlik gösterdiğinden daha detaylı anlatım
 için `2.1 <#seri>`__ incelenebilir.
 
 -  :math:`CodeSaturne` ile paralel bir iş, veya "case", oluşturmak için
-   terminalden **<code_saturne create>** komutunun verilmesi yeterlidir. Komutun devamında **-s** eklenip iş ismi, **-c** eklenip çalıştıralacak "case" ismi girilebilir. Örneğin, "DENEME_paralel_4" adında bir iş klasörü ve çalıştırılacak bir "CASE1" dosyası oluşturmak için aşağıdaki komut kullanılabilir: 
+   terminalden **<code_saturne create>** komutunun verilmesi yeterlidir. Komutun devamında **-s** eklenip iş ismi, **-c** eklenip çalıştırılacak "case" ismi girilebilir. Örneğin, "DENEME_paralel_4" adında bir iş klasörü ve çalıştırılacak bir "CASE1" dosyası oluşturmak için aşağıdaki komut kullanılabilir: 
 
 .. code-block::
 
@@ -568,14 +567,14 @@ için `2.1 <#seri>`__ incelenebilir.
 
    -  STAR-CCM+ için .ccm
 
--  Çözüm ağı dosyası kullanıcı arayüzü ile seçilebileceği gibi <**cs_preprocess "mesh adı"**> komutuyla da çağrılabilir. Bu durumda otomatik olarak bir **mesh_input.csm** dosyası oluşturulur ve çözüm esnasında kullanılır. Kullanılan çözüm ağı çözüm işleminden önce "mesh import" veya "preprocess" işlemleri ile kontrol edilir. Bu işlem kullanıcı tarafından da yapılabilir. Örenğin, <**cs_preprocess "mesh dosyası adresi"**> komutu kullanılabilir. Bu komut çalışmıyor ise "preprocess" modülünün yerinin gösterilmesi gerekmektedir. ".bashrc" dosyasına 
+-  Çözüm ağı dosyası kullanıcı arayüzü ile seçilebileceği gibi <**cs_preprocess "mesh adı"**> komutuyla da çağrılabilir. Bu durumda otomatik olarak bir **mesh_input.csm** dosyası oluşturulur ve çözüm esnasında kullanılır. Kullanılan çözüm ağı çözüm işleminden önce "mesh import" veya "preprocess" işlemleri ile kontrol edilir. Bu işlem kullanıcı tarafından da yapılabilir. Örneğin, <**cs_preprocess "mesh dosyası adresi"**> komutu kullanılabilir. Bu komut çalışmıyor ise "preprocess" modülünün yerinin gösterilmesi gerekmektedir. ".bashrc" dosyasına 
 
 .. code-block::  
   export PATH=/klasörünadresi/Code_Saturne/6.3.0/code_saturne-6.3.0/arch/Linux_x86_64/libexec/code_saturne:$PATH
 
 satırının kopyalanması yeterlidir. Adres ve versiyon değişiklikleri kullanıcı tarafından göz önünde bulundurulup düzeltilmelidir. Ardından ".bashrc" dosyası kaynak gösterilir.
 
--  **CASE1** içinde **DATA**, **RESU** ve **SRC** klasörleri oluşturulur. **RESU** ve **SRC** dosylaları en başta boştur. İş çalıştırıldıktan sonra **RESU** klasörü içinde **<YYYYAAGG-ssdd>** isminde bir sonuç klasörü bulunabilir. Çözüm ağı, çözüm ve çalıştırma ile ilgili .log dosyaları bu adrestedir. *Paraview* vb. programlar ile çözüm sonrası işlemler yapılabilmesi için **DENEME/CASE1/RESU/postprocessing** dosyası içindeki **results_fluid_domain** dosyası kullanılabilir. Tipik bir iş dosyasının yapısı aşağıda verilmiştir.
+-  **CASE1** içinde **DATA**, **RESU** ve **SRC** klasörleri oluşturulur. **RESU** ve **SRC** dosyaları en başta boştur. İş çalıştırıldıktan sonra **RESU** klasörü içinde **<YYYYAAGG-ssdd>** isminde bir sonuç klasörü bulunabilir. Çözüm ağı, çözüm ve çalıştırma ile ilgili .log dosyaları bu adrestedir. *Paraview* vb. programlar ile çözüm sonrası işlemler yapılabilmesi için **DENEME/CASE1/RESU/postprocessing** dosyası içindeki **results_fluid_domain** dosyası kullanılabilir. Tipik bir iş dosyasının yapısı aşağıda verilmiştir.
 
 -  İşin çalıştırılabilmesi için **DATA** klasörünün içinde **code_saturne**, **run.cfg** ve **setup.xml** bulunur.
 
@@ -583,7 +582,7 @@ satırının kopyalanması yeterlidir. Adres ve versiyon değişiklikleri kullan
 
 -  *CodeSaturne GUI* kullanılarak istenilen mesh dosyası, akış parametreleri, sınır koşulları ve çözüm parametreleri seçildikten ve kaydedildikten sonra bu bilgiler **setup.xml** dosyasının içine yazılır.
 
--  *CodeSaturne GUI* kullanılmadan, veya daha gelişmiş ayarlar için, **share/code_saturne/user_sources** içindeki **REFERENCE** klasöründen **cs_user_scripts.py** dosyası iş dosyası içindeki **DATA** klasörüne kopyalanıp istenilen düzenlemeler yapılabilir. Bu dosya ile yapılan değişiklikler kullanıcı arayüzü (GUI) ile yapılanlara göre daha önceliklidir. Genellikle kullanıcı arayüzü ile tanımlanamyan parametrelerin **cs_user_scripts.py** benzeri kullanıcı tanımlı dosyalar üzerinden tanımlanması önerilir.
+-  *CodeSaturne GUI* kullanılmadan veya daha gelişmiş ayarlar için, **share/code_saturne/user_sources** içindeki **REFERENCE** klasöründen **cs_user_scripts.py** dosyası iş dosyası içindeki **DATA** klasörüne kopyalanıp istenilen düzenlemeler yapılabilir. Bu dosya ile yapılan değişiklikler kullanıcı arayüzü (GUI) ile yapılanlara göre daha önceliklidir. Genellikle kullanıcı arayüzü ile tanımlanmayan parametrelerin **cs_user_scripts.py** benzeri kullanıcı tanımlı dosyalar üzerinden tanımlanması önerilir.
 
 -  Grafiksel kullanıcı arayüzüne (GUI) ek olarak kullanılabilecek kullanıcı tarafından tanımlanan fonksiyonların bir kısmı şu şekildedir;
 

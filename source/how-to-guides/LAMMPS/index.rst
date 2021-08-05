@@ -4,7 +4,7 @@
 LAMMPS Kılavuzu
 =================================
 
-LAMMPS (Large-scale Atomic/Molecular Massively Parallel Simulator), Sandia Ulusal Laboratuvarı'ndaki araştımacılar tarafından geliştirilen ve malzeme modellemeye odaklanan bir klasik moleküler dinamik kodudur. Bu belge, TRUBA altyapısında LAMMPS programının kullanımı hakkında bilgi vermek için oluşturulmuştur.
+LAMMPS (Large-scale Atomic/Molecular Massively Parallel Simulator), Sandia Ulusal Laboratuvarı'ndaki araştırmacılar tarafından geliştirilen ve malzeme modellemeye odaklanan bir klasik moleküler dinamik kodudur. Bu belge, TRUBA altyapısında LAMMPS programının kullanımı hakkında bilgi vermek için oluşturulmuştur.
 
 
 .. toctree::

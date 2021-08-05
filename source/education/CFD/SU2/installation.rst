@@ -23,7 +23,7 @@ için |SU2| sitesinde çözümler mevcuttur. Linux sürümü olarak herhangi bir
 varsayımda bulunulmamıştır. İş istasyonunuzda mevcut kuruluma göre paket 
 yöneticileri ile gerekli ön kurulumların yapılacağı varsayılmıştır.
 
-1.2 - Kurulum hangi özellikleri kapsamalıdır?
+1.2 - Kurulum Hangi Özellikleri Kapsamalıdır?
 =============================================
 |SU2| kurulumunun yüksek başarımlı sunucularda koşulacağı düşünülerek aşağıdaki
 özellikler ile koşulması tavsiye edilir.
@@ -113,7 +113,7 @@ bulunabilir.
 .. _burada: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html
 .. _indirme portalında: https://su2code.github.io/download.html
 
-1.4 - Kurulum işlemi
+1.4 - Kurulum İşlemi
 ====================
 ULAKBİM sunucularında |SU2| sürümleri kurulu olarak bulunmaktadır. Kendi iş 
 istasyonunuzda derlemek isterseniz, asgari ihtiyaç olarak C/C++ derleyicisi 

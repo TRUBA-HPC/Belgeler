@@ -1,5 +1,5 @@
 ===============================
-Sanal ortam kullanarak çalışma
+Sanal Ortam Kullanarak Çalışma
 ===============================
 
 TRUBA altyapısında Anaconda kullanarak yarattığınız sanal ortama CUDA yükleyebilirsiniz.
@@ -8,7 +8,7 @@ TRUBA altyapısında Anaconda kullanarak yarattığınız sanal ortama CUDA yük
     Sanal ortam kullanarak belirli bir Python sürümü için bir Python kurulumu ve bir dizi ek paket içeren bağımsız bir dizin ağacı yaratabilirsiniz. Bu sayede farklı uygulamalarınız için farklı sanal ortamlar yaratarak çakışan gereksinimlerin oluşmasını önlersiniz.
 
 --------------------------
-Kütüphanelerin kurulumu
+Kütüphanelerin Kurulumu
 --------------------------
 
 .. warning::
@@ -62,7 +62,7 @@ PyTorch için:
         conda activate dl-env
 
 ----------------------------------------------
-sbatch kullanarak kuyruğa iş gönderme
+sbatch Kullanarak Kuyruğa İş Gönderme
 ----------------------------------------------
 
 Örnek kod hazırlayın: **print_gpu.py**

@@ -65,8 +65,8 @@ değiştirilir ve bu  dosya makefile adı ile kaydedilir. Make komutu ile derlem
    ...
    ... 
 
-**6.** Makefile.include dosyasında gerekli değişikler yapıldıktan sonra dermeyeye geçilebilr. Derleme oldukça uzun sürecektir. 
-Derleme sırasında birden fazla çekirdek kullanmak make komutuna eklenecek  **-j 8** parametresi ile sağlanabilir. 
+**6.** Makefile.include dosyasında gerekli değişikler yapıldıktan sonra derlemeye geçilebilr. Derleme oldukça uzun sürecektir. 
+Derleme sırasında birden fazla çekirdek kullanmak ``make`` komutuna eklenecek **-j 8** parametresi ile sağlanabilir. 
 
 .. code-block:: bash 
    
@@ -82,7 +82,7 @@ dizinler silinerek yeniden oluşturulmalıdır.
   $> mkdir bin build
 
 ============================================
-VASP 5.4 'ın CUDA destekli olarak derlenmesi  
+VASP 5.4 'ın CUDA Destekli Olarak Derlenmesi  
 ============================================
 
 Vasp5.4.4 yukarıdaki yönergelere göre derlendikten sonra, **makefike.include** dosyasının **CUDA** kısmında **CUDA_ROOT** ile başlayan satır
@@ -93,9 +93,9 @@ aşağıdaki gibi değiştirilir.
     CUDA_ROOT  = /truba/sw/centos7.3/lib/cuda/9.0
 
 Sistemde CUDA kütüphanesinin farklı versiyonları mevcuttur. Mevcut versiyonlar /truba/sw/centos7.3/lib/cuda dizini altında bulunmaktadır. 
-Ayrıca kullanıcı kendi ev dizinine yükleyeceği daha güncel bir CUDA versiyonunu'da **makefile.include** dizininde tanımlayarak kullanabilir.
+Ayrıca kullanıcı kendi ev dizinine yükleyeceği daha güncel bir CUDA versiyonunu da **makefile.include** dizininde tanımlayarak kullanabilir.
 Bu değişiklik yapıldıktan sonra: Aşağıda verilen komut ile derleme  gerçekleştirilir. Uygulamayı derlerken kullanılmış olan tüm kütüphaneler,
-uygulamayı çalıştırıken de betik dosyası içerisinde aynı şekilde kullanılmalıdır.     
+uygulamayı çalıştırırken de betik dosyası içerisinde aynı şekilde kullanılmalıdır.     
 
 
 .. code-block:: bash

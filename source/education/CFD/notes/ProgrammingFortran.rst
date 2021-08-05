@@ -2,7 +2,7 @@
 Fortran Programlaması
 =====================
 
-Fortran not 1
+Fortran Not 1
 =============
 .. code-block:: bash
 	
@@ -12,14 +12,14 @@ Fortran not 1
 
 
 
-Sample Fortran Codes
-====================
+Örnek Fortran Kodları
+=========================
 
 * **Algebraic Equations / ODEs** 
 	* :download:`freefall.f90</assets/education-cfd/download/freefall.f90>`
 
 
-Fortran kodlarını derlemek
+Fortran Kodlarını Derlemek
 ==========================
 .. code-block:: bash
    
