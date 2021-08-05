@@ -4,6 +4,8 @@ Bu depo [TRUBA Belge Sunucusu](http://docs.truba.gov.tr)'nda kullanılan belgele
 
 ## Belgelere katkıda bulunma
 
+Belgelere katkıda bulunmadan önce lütfen TRUBA ekibiyle iletişime geçiniz: ncc@ulakbim.gov.tr
+
 Belgelere katkıda bulunmak için bu depoyu çatalladıktan sonra yeni dalda çalışmanız gerekmektedir:
 
 ![](https://raw.githubusercontent.com/TRUBA-HPC/Belgeler/main/fork.png)
@@ -41,3 +43,17 @@ Derlenen dosyaları ``build`` klasöründe bulabilirsiniz.
 ```
 git clone -b [BRANCH_NAME] https://github.com/TRUBA-HPC/Belgeler.git truba-belgeler
 ```
+
+## Belgeleme sistemi hakkında genel bilgi
+
+[TRUBA Kullanıcı Dökümanları'nda](https://docs.truba.gov.tr) bulunan başlıklar [dört ana kategoride](https://documentation.divio.com/) toplanmıştır:
+- Referans materyalleri (TRUBA Hakkında)
+- Nasıl yapılır kılavuzları (Uygulama Kılavuzları)
+- Detaylı açıklamalar (Eğitim Materyalleri)
+- Öğretici başlangıç materyalleri
+
+Başlıklar altında bulunan belgelere katkıda bulunmadan önce [kullanılan belgeleme sistemini](https://www.youtube.com/watch?v=t4vKPhjcMZg) inceleyerek kategorilerin özelliklerine göre içerik üretmek tutarlılığın bozulmasını engellemek için önemlidir.
+
+## Lisans hakkında bilgi
+
+EuroCC@Türkiye projesi kapsamında sunulan tüm materyaller, [Creative Commons Atıf lisansı (CC-BY-NC-SA-4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/) altında sağlanır. 
