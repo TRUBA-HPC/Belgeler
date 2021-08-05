@@ -1,11 +1,7 @@
 ******************
 3 - Teori Kılavuzu
 ******************
-<<<<<<< HEAD:source/education/CFD/SU2/theory.rst
-3.1 - |SU2| Nedir ve Hangi Akışlarda Kullanılabilir?
-=======
 3.1 - SU2 nedir ve hangi akışlarda kullanılabilir?
->>>>>>> arassaygin-ODTU-updates-3-8-21:source/education/cfd/software/su2/theory.rst
 ====================================================
 SU2 Stanford Üniversitesinde ortaya çıkmış, Sabit kanat hava aracı 
 üreticileri ile birlikte açık kaynak olarak geliştirilmesi ivmelendirilmiş bir

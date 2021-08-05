@@ -1,9 +1,5 @@
 ************************************************
-<<<<<<< HEAD:source/education/cfd/software/su2/formatAndRequirements.rst
-2 - |SU2| Çözüm Ağı Formatları ve Gereksinimleri
-=======
 2 - SU2 çözüm ağı formatları ve gereksinimleri
->>>>>>> arassaygin-ODTU-updates-3-8-21:source/education/CFD/SU2/formatAndRequirements.rst.rst
 ************************************************
 SU2 ile HAD çözümleri almak için belirli formatlarda ve belirli koşulları 
 sağlayan çözüm ağları belirli formatlarda verilmelidir. Bu ağların Teknik 
