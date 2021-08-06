@@ -569,8 +569,9 @@ için `2.1 <#seri>`__ incelenebilir.
 
 -  Çözüm ağı dosyası kullanıcı arayüzü ile seçilebileceği gibi <**cs_preprocess "mesh adı"**> komutuyla da çağrılabilir. Bu durumda otomatik olarak bir **mesh_input.csm** dosyası oluşturulur ve çözüm esnasında kullanılır. Kullanılan çözüm ağı çözüm işleminden önce "mesh import" veya "preprocess" işlemleri ile kontrol edilir. Bu işlem kullanıcı tarafından da yapılabilir. Örneğin, <**cs_preprocess "mesh dosyası adresi"**> komutu kullanılabilir. Bu komut çalışmıyor ise "preprocess" modülünün yerinin gösterilmesi gerekmektedir. ".bashrc" dosyasına 
 
-.. code-block::  
-  export PATH=/klasörünadresi/Code_Saturne/6.3.0/code_saturne-6.3.0/arch/Linux_x86_64/libexec/code_saturne:$PATH
+.. code-block::
+
+  export PATH=/klasorun_adresi/Code_Saturne/6.3.0/code_saturne-6.3.0/arch/Linux_x86_64/libexec/code_saturne:$PATH
 
 satırının kopyalanması yeterlidir. Adres ve versiyon değişiklikleri kullanıcı tarafından göz önünde bulundurulup düzeltilmelidir. Ardından ".bashrc" dosyası kaynak gösterilir.
 
@@ -623,6 +624,7 @@ Bu kısımda 4 çekirdek kullanarak paralel iş göndermenin nasıl yapılacağ�
 -  Ardından **CASE1** klasörü içinde
 
 .. code-block::
+
    code_saturne gui
   
 komutu çalıştırılır.

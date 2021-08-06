@@ -37,8 +37,8 @@ TRUBA Kullanıcı Dökümanları
 
    TRUBA/TRUBAgenel.rst
    TRUBA/TRUBAmimarisi.rst
+   TRUBA/kullanici-el-kitabi/kullanici-ara-yuzu/openondemand/index.rst
    TRUBA/kullanici-el-kitabi/index.rst
-   TRUBA/openondemand/index.rst
    TRUBA/sss.rst
    TRUBA/TRUBA-proje/index.rst
    TRUBA/kullanici-el-kitabi/TRUBAtesekkur.rst

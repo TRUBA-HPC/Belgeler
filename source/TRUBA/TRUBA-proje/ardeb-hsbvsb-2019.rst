@@ -53,6 +53,7 @@ Bu kapsamda 2011 yılından itibaren TÜBİTAK ARDEB ile yapılan işbirliği il
 | Depolama-Lustre-2019 |    0,02 TL                | 2600 TB tüm hesaplama sunucuları tarafından |
 |                      |                           | görünen performans disk alanı               |
 +----------------------+---------------------------+---------------------------------------------+
+
 .. [#note3] Saatlik 1 TB veri servis birimin KDV hariç bedelidir. 
 
 .. note:: 

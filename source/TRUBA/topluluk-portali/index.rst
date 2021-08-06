@@ -2,38 +2,24 @@
 TRUBA Topluluk Portalı
 =========================
 
-* :ref:`TRUBAtanitim`
+.. toctree::
+    :maxdepth: 1
 
-* :ref:`TRUBAseminer`
-
-* :ref:`yazilimlar`
-
-* :ref:`derleyiciler`
-
-* :ref:`paralel-prog`
-
-* :ref:`numerik-kutuphaneler`
-
-* :ref:`uyg-kilavuz`
-
-* :ref:`grafik-ekran`
-
-* :ref:`kaynakyoneticisi`
-
-* :ref:`sbatch-srun`
-
-* :ref:`multithread-multitask`
-
-* :ref:`hibrid-mpi-openmp`
-
-* :ref:`open-office`
-
-* :ref:`Proje Kapsamında Ayrıcalıklı Kullanım <hizmet-bedelleri>`
-
-* :ref:`sertifika-islemleri`
-
-* :ref:`open-vpn`
-
-* :ref:`cern-lhc`
-
-* :ref:`tesekkur-truba`
+    TRUBAtanitim
+    /TRUBA/kullanici-el-kitabi/TRUBAseminerleri
+    /TRUBA/kullanici-el-kitabi/yazilimlar
+    /TRUBA/kullanici-el-kitabi/derleyiciler
+    /TRUBA/kullanici-el-kitabi/paralelprog
+    /TRUBA/kullanici-el-kitabi/numerikkutuphaneler
+    uygulamadestek
+    /TRUBA/kullanici-el-kitabi/grafikekran
+    /TRUBA/kullanici-el-kitabi/kaynakyoneticisi-isdongusu/index
+    sbatch-srun
+    multithread-multitask
+    hibrid_mpi-openmp
+    openoffice
+    /TRUBA/TRUBA-proje/index
+    sertifika-islemleri
+    /TRUBA/kullanici-el-kitabi/open-vpn/index
+    cern-lhc-deney
+    /TRUBA/kullanici-el-kitabi/TRUBAtesekkur
