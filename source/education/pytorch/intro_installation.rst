@@ -25,7 +25,7 @@ Bu bağlantıda aşağıdaki seçenekler bulunabilir:
 
 .. The first five columns are for the user to select the installation configuration, and the final column shows the command to be called to install the package. In this example above, we are installing PyTorch on a Linux system with no GPU support. We are using Conda and we want to install the Python interface. To do so, we open a terminal and execute the following command
 
-İlk beş sütun, kullanıcının kurulum yapılandırmasını seçmesi içindir ve son sütun, paketi kurmak için çağrılacak komutu gösterir. Yukarıdaki örnekte, PyTorch'u GPU desteği olmayan bir Linux sistemine kuruyoruz. Conda kullanıyoruz ve Python arayüzünü kurmak istiyoruz. Bunu yapmak için bir terminal açıyoruz ve aşağıdaki komutu uyguluyoruz 
+Şekildeki ilk beş satır, kullanıcının kurulum yapılandırmasını seçmesi içindir ve son satır, paketi kurmak için çağrılacak komutu gösterir. Yukarıdaki örnekte PyTorch, GPU desteği olmayan bir Linux sistemine kurulacaktır. Biz bu örnekte Conda kullanıyoruz ve Python arayüzü ile kuracağız. Bunu yapmak için bir terminal açalım ve aşağıdaki komutu uygulayalım. 
 
 .. code-block:: bash
 
@@ -38,7 +38,7 @@ TRUBA kurulumu
 
 .. We recommend installing PyTorch on TRUBA through the Conda virtual environment interface. It allows creating very customizable and easily modifiable Python environments.
 
-PyTorch'u Conda sanal ortam arayüzü aracılığıyla TRUBA'ya kurmanızı öneririz. Çok özelleştirilebilir ve kolayca değiştirilebilir Python ortamları oluşturmaya izin verir. 
+PyTorch'u Conda sanal ortam arayüzü aracılığıyla TRUBA'ya kurmanızı öneririz. Conda özelleştirilebilir ve kolayca değiştirilebilir Python ortamları oluşturmanıza izin verir. 
 
 .. Installing Conda
 
@@ -49,7 +49,7 @@ Conda'yı yükleme
 .. #. On the following webpage: `https://www.anaconda.com/products/individual <https://www.anaconda.com/products/individual>`_ go to the bottom of the page to the "Anaconda Installers" section and copy the link for the "64-Bit (x86) Installer".
 
 
-#. Aşağıdaki web sayfasında: `https://www.anaconda.com/products/individual <https://www.anaconda.com/products/individual>`_ "Anaconda Installers" bölümüne sayfanın en altına git ve "64-Bit (x86) Installer" bağlantısını kopyalayın. 
+#. Aşağıdaki web sayfasında: `https://www.anaconda.com/products/individual <https://www.anaconda.com/products/individual>`_ "Anaconda Installers" bölümündeki sayfanın en altına gidin ve "64-Bit (x86) Installer" bağlantısını kopyalayın. 
 
 #. TRUBA'da, yukarıda kopyalanan bağlantıyı kullanarak ``wget`` komutunu kullanarak yükleyici komut dosyasını indirin. 
 
@@ -57,13 +57,13 @@ Conda'yı yükleme
    .. code-block:: bash
 
        wget https://repo.anaconda.com/archive/Anaconda3-<your_version>
-#. Komut dosyası başarıyla indirildikten sonra, ``bash`` komutunu kullanarak onu çalıştırın: 
+#. Komut dosyasını başarıyla indirdikten sonra, ``bash`` komutunu kullanarak onu çalıştırın: 
 
    .. code-block:: bash
 
        bash Anaconda3-<your_version>
 #. Kurulumu tamamlamak için komut dizisindeki talimatları izleyin. 
-#. Sen almak etkisine kurulum için kesmek ve tekrar bağlanma gerekecektir. 
+#. Kurulumu sonlandırmak için bağlantıyı kesmek ve tekrar bağlanmak gerekecektir. 
 
 
 .. #. On TRUBA, download the installer script using the ``wget`` command using the link copied above
@@ -78,9 +78,9 @@ PyTorch'u Kurmak
 ^^^^^^^^^^^^^^^^^^
 
 
-#. (isteğe bağlı) yeni bir Conda ortamı oluşturun 
+#. (İsteğe bağlı) yeni bir Conda ortamı oluşturun 
 
-   #. Ortamı oluşturmak için aşağıdaki komutu yürütün 
+   #. Ortamı oluşturmak için aşağıdaki komutu çalıştırın. 
 
       .. code-block:: bash
 
@@ -91,7 +91,7 @@ PyTorch'u Kurmak
       .. code-block:: bash
 
           conda activate pyt_env
-#. Web sitesinden, PyTorch'u Conda kullanarak kurmak için uygun komutu kullanın. Bu öğreticiyi yazarken, CPU sürümünü yükleme komutu buydu: 
+#. Web sitesinden, PyTorch'u Conda kullanarak kurmak için uygun komutu kullanın. Biz bu öğreticiyi dokümanı hazırlarken yazarken, CPU sürümünü yükleme komutu şu şekildeydi: 
 
 
    .. code-block:: bash
@@ -124,7 +124,7 @@ PyTorch'u Kurmak
 
 .. Using PyTorch
 
-PyTorch'u kullanma 
+PyTorch'u Kullanmak
 ^^^^^^^^^^^^^^^^^^
 
 .. If you installed PyTorch on TRUBA using Conda, then you must initialize Conda and load the environment on which PyTorch is installed at the beginning of your SLURM scripts. For example, this SLURM script will run the python script ``pyt_example.py`` that uses PyTorch:
@@ -147,7 +147,6 @@ PyTorch'u Conda kullanarak TRUBA'ya kurduysanız, o zaman Conda'yı başlatmanı
    conda activate pyt_env
 
    python pyt_example.py
-
 
 .. This assumes that Conda was installed in the default location, and that the environment on which PyTorch is installed is named ``pyt_env``.
 

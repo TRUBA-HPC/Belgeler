@@ -5,7 +5,7 @@ Tensörler
 
 .. The main building block of PyTorch is its tensors. They can represent anything from scaler values to n-dimensional arrays. In addition to including over 100 tensor operations, PyTorch provides the ability to calculate gradients for tensors after applying arbitrarily many mathematical operations on them. This tutorial will cover the basics of tensors as well as gradient calculations on tensors.
 
-PyTorch'un ana yapı taşı tensörleridir. Ölçekleyici değerlerinden n boyutlu dizilere kadar her şeyi temsil edebilirler. 100'den fazla tensör işleminin dahil edilmesine ek olarak, PyTorch tensörler için gradyanları rastgele birçok matematiksel işlemi uyguladıktan sonra hesaplama yeteneği sağlar. Bu eğitim, tensörlerin temellerini ve tensörler üzerindeki gradyan hesaplamalarını kapsayacaktır. 
+PyTorch'un ana yapı taşı tensörlerdir. Ölçekleyici değerlerinden ``n`` boyutlu dizilere kadar her şeyi temsil edebilirler. 100'den fazla tensör işleminin dahil edilmesine ek olarak, PyTorch tensörler için gradyanları rastgele birçok matematiksel işlemi uyguladıktan sonra hesaplama yeteneği sağlar. Bu eğitim, tensörlerin temellerini ve tensörler üzerindeki gradyan hesaplamalarını kapsayacaktır. 
 
 .. Creating tensors
 
@@ -14,7 +14,7 @@ Tensörler oluşturma
 
 .. From existing data
 
-Mevcut verilerden 
+Mevcut veriden Tensör oluşturma 
 ^^^^^^^^^^^^^^^^^^
 
 .. One can create Python nested arrays and use them to create tensors. You can specify the data type of the numbers in the tensor using the ``dtype`` attribute or let PyTorch automatically infer them.
