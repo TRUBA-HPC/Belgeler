@@ -2,9 +2,9 @@
 TRUBA'da Quantum Espresso Kurulumu
 ========================================
 
---------------------------
-Barbun Node'unda Kurulum
---------------------------
+-------------------------------------
+Barbun Hesaplama Kümesi'nde Kurulum
+-------------------------------------
 
 Quantum Espresso programını derlemek için bir klasör oluşturup ilgili klasöre gidiniz. Kullanmak istediğiniz versiyon için kurulum dosyalarını `QE GitHub sayfasından <https://github.com/QEF/q-e/releases>`_ edinebilirsiniz ve bulunduğunuz dizine ``wget`` komutu ile indirebilirsiniz. Aşağıdaki komut bloğunda QE6.7 versiyonu için olan link belirtilmiştir.
 
@@ -21,7 +21,7 @@ Sıkıştırılmış arşiv dosyalarını açınız ve kurulum dosyalarının ol
     tar -xzvf qe-6.7.0.tar.gz
     cd q-e-qe-6.7.0
 
-Kurulumu ``barbun`` kuyruğu için optimize bir şekilde kurmak istiyorsanız öncelikle ``srun`` komutu ile ``barbun`` kuyruğundaki 1 tane makineden 4 tane CPU'yu (barbun kümesindeki cpu kullanımı için bakınız: :ref:`barbun-node`) kendi kullanıcınız için interaktif olarak ayırabilirsiniz. Aşağıdaki komutu yazdığınızda bekleme listesine gireceksiniz. Sıranız geldiğinde doğrudan ilgili node'a bağlanacaksınız. 
+Kurulumu ``barbun`` kuyruğu için optimize bir şekilde kurmak istiyorsanız öncelikle ``srun`` komutu ile ``barbun`` kuyruğundaki 1 tane makineden 4 tane CPU'yu (Barbun kümesindeki CPU kullanımı için bakınız: :ref:`barbun-node`) kendi kullanıcınız için interaktif olarak ayırabilirsiniz. Aşağıdaki komutu yazdığınızda bekleme listesine gireceksiniz. Sıranız geldiğinde doğrudan ilgili node'a bağlanacaksınız. 
 
 .. code-block:: bash
 
@@ -54,7 +54,7 @@ komutu ile listeleyebilirsiniz. Herhangi bir çakışma olmaması açısından �
 komutu ile kullanıcınızda tanımlı olan tüm modül dosyalarını kaldırmanız önerilmektedir.
 
 
-Intel derleyicileri, Intel MKL ve Intel MPI ile Kurulum
+Intel Derleyicileri, Intel MKL ve Intel MPI ile Kurulum
 -----------------------------------------------------------
 
 Quantum Espresso programını Intel derleyicileri, Intel MKL ve Intel MPI ile kurmak için Intel Parallel Studio modülünü aşağıdaki komut ile yükleyebilirsiniz. 
@@ -69,13 +69,13 @@ Kullanacağınız hesaplama kümesinin (bakınız :ref:`hesaplama-kumeleri`) Int
    
    ``-xHost`` ile derlediğiniz program derleme sırasında kullandığınız işlemciden farklı işlemcilerde daha yavaş çalışabilir veya hiç çalışmayabilir
 
-Intel derleyicilerinin kullanılmasını sağlamak için gerekli shell parametrelerini aşağıdaki örnek derleme komutunda gösterildiği gibi satıriçi de girebilirsiniz. Kurulumu gerçekleştireceğiniz klasörü de ``--prefix`` parametresi ile belirtebilirsiniz. 
+Intel derleyicilerinin kullanılmasını sağlamak için gerekli shell parametrelerini aşağıdaki örnek derleme komutunda gösterildiği gibi satır içi de girebilirsiniz. Kurulumu gerçekleştireceğiniz klasörü de ``--prefix`` parametresi ile belirtebilirsiniz. 
 
 .. code-block:: bash
    
    FLAGS="-xHost"; CFLAGS=$FLAGS CXXFLAGS=$FLAGS MPIF90=mpiifort CC=mpiicc CXX=mpiicpc ./configure --prefix=/truba/home/username/espresso/q-e-qe-6.7.0 --enable-shared=no
 
-Configure adımından sonra ``make.inc`` dosyasını ``vim`` veya ``nano`` ile açarak kütüphanelerle ilgili kontoller yapılmalıdır. Yukarıda belirtilen kurulum konfigürasyonu için örnek ``make.inc`` dosyasına aşağıdaki link aracılığıyla ulaşabilirsiniz.
+Configure adımından sonra ``make.inc`` dosyasını ``vim`` veya ``nano`` ile açarak kütüphanelerle ilgili kontroller yapılmalıdır. Yukarıda belirtilen kurulum konfigürasyonu için örnek ``make.inc`` dosyasına aşağıdaki link aracılığıyla ulaşabilirsiniz.
 
 * :download:`make.inc dosyasının bir kopyasını indirmek için tıklayınız.... </assets/qe-howto/config-files/make.inc-barbun-impi-intel18>`
 
@@ -101,7 +101,7 @@ Yukarıdaki kurulum adımları tamamlandığında bulunduğunuz ``q-e-qe-6.7.0``
       mv bin bin-barbun-impi-intel18
 
 
-Intel derleyicileri, Intel MKL ve Open MPI ile Kurulum
+Intel Derleyicileri, Intel MKL ve Open MPI ile Kurulum
 ----------------------------------------------------------
 
 Quantum Espresso programını Intel derleyicileri, Intel MKL ve OpenMPI ile kurmak için Intel Parallel Studio ve uyumlu OpenMPI modülünü aşağıdaki komutlar ile yükleyebilirsiniz. Herhangi bir çakışma olmaması açısından öncelikle tanımlı olan tüm modül dosyalarını kaldırmanız önerilmektedir.
@@ -116,15 +116,15 @@ Kullanacağınız hesaplama kümesinin (bakınız :ref:`hesaplama-kumeleri`) Int
 
 .. warning::
    
-   ``-xHost`` ile derlediğiniz program derleme sırasında kullandığınız işlemciden farklı işlemcilerde daha yavaş çalışabilir veya hiç çalışmayabilir
+   ``-xHost`` ile derlediğiniz program derleme sırasında kullandığınız işlemciden farklı işlemcilerde daha yavaş çalışabilir veya hiç çalışmayabilir.
 
-Intel derleyicilerinin kullanılmasını sağlamak için gerekli shell parametrelerini aşağıdaki örnek derleme komutunda gösterildiği gibi satıriçi de girebilirsiniz. Kurulumu gerçekleştireceğiniz klasörü de ``--prefix`` parametresi ile belirtebilirsiniz. 
+Intel derleyicilerinin kullanılmasını sağlamak için gerekli shell parametrelerini aşağıdaki örnek derleme komutunda gösterildiği gibi satır içi de girebilirsiniz. Kurulumu gerçekleştireceğiniz klasörü de ``--prefix`` parametresi ile belirtebilirsiniz. 
 
 .. code-block:: bash
    
    FLAGS="-xHost"; CFLAGS=$FLAGS CXXFLAGS=$FLAGS MPIF90=mpif90 CC=mpicc CXX=mpic++ ./configure --prefix=/truba/home/username/espresso/q-e-qe-6.7.0 --enable-shared=no
 
-Configure adımından sonra ``make.inc`` dosyasını ``vim`` veya ``nano`` ile açarak kütüphanelerle ilgili kontoller yapılmalıdır. Yukarıda belirtilen kurulum konfigürasyonu için örnek ``make.inc`` dosyasına aşağıdaki link aracılığıyla ulaşabilirsiniz.
+Configure adımından sonra ``make.inc`` dosyasını ``vim`` veya ``nano`` ile açarak kütüphanelerle ilgili kontroller yapılmalıdır. Yukarıda belirtilen kurulum konfigürasyonu için örnek ``make.inc`` dosyasına aşağıdaki link aracılığıyla ulaşabilirsiniz.
 
 * :download:`Intel ve OpenMPI kurulumuna dair oluşan, düzenlenen make.inc dosyasının bir kopyasını indirmek için tıklayınız.... </assets/qe-howto/config-files/make.inc-barbun-openmpi-4.0.1-intel18>`
 
@@ -150,9 +150,9 @@ Yukarıdaki kurulum adımları tamamlandığında bulunduğunuz ``q-e-qe-6.7.0``
       mv bin bin-barbun-openmpi4-intel18
 
 
---------------------------
-Hamsi Node'unda Kurulum
---------------------------
+-------------------------------------
+Hamsi Hesaplama Kümesi'nde Kurulum
+-------------------------------------
 
 Quantum Espresso programını derlemek için bir klasör oluşturup ilgili klasöre gidiniz. Kullanmak istediğiniz versiyon için kurulum dosyalarını `QE GitHub sayfasından <https://github.com/QEF/q-e/releases>`_ edinebilirsiniz ve bulunduğunuz dizine ``wget`` komutu ile indirebilirsiniz. Aşağıdaki komut bloğunda QE6.7 versiyonu için ola link belirtilmiştir.
 
@@ -169,7 +169,7 @@ Sıkıştırılmış arşiv dosyalarını açınız ve kurulum dosyalarının ol
     tar -xzvf qe-6.7.0.tar.gz
     cd q-e-qe-6.7.0
 
-Kurulumu ``hamsi`` kuyruğu için optimize bir şekilde kurmak istiyorsanız öncelikle ``srun`` komutu ile ``hamsi`` kuyruğundaki 1 tane makineden 28 tane CPU'yu (hamsi kümesindeki cpu kullanımı için bakınız: :ref:`hamsi-node`) kendi kullanıcınız için interaktif olarak ayırabilirsiniz. Aşağıdaki komutu yazdığınızda bekleme listesine gireceksiniz. Sıranız geldiğinde doğrudan ilgili node'a bağlanacaksınız. 
+Kurulumu ``hamsi`` kuyruğu için optimize bir şekilde kurmak istiyorsanız öncelikle ``srun`` komutu ile ``hamsi`` kuyruğundaki 1 tane makineden 28 tane CPU'yu (Hamsi kümesindeki CPU kullanımı için bakınız: :ref:`hamsi-node`) kendi kullanıcınız için interaktif olarak ayırabilirsiniz. Aşağıdaki komutu yazdığınızda bekleme listesine gireceksiniz. Sıranız geldiğinde doğrudan ilgili node'a bağlanacaksınız. 
 
 .. code-block:: bash
 
@@ -194,7 +194,7 @@ komutu ile ulaşabilirsiniz. Hamsi node'unda ``centos 7.9`` işletim sistemi yü
 komutu ile listeleyebilirsiniz.
 
 
-Intel derleyicileri, Intel MKL ve Intel MPI ile Kurulum
+Intel Derleyicileri, Intel MKL ve Intel MPI ile Kurulum
 -----------------------------------------------------------
 
 Quantum Espresso programını Intel derleyicileri, Intel MKL ve Intel MPI ile kurmak için Intel OneAPI modülünü aşağıdaki komutlar ile yükleyebilirsiniz. Herhangi bir çakışma olmaması açısından öncelikle tanımlı olan tüm modül dosyalarını kaldırmanız önerilmektedir.
@@ -210,13 +210,13 @@ Kullanacağınız hesaplama kümesinin (bakınız :ref:`hesaplama-kumeleri`) Int
    
    ``-xHost`` ile derlediğiniz program derleme sırasında kullandığınız işlemciden farklı işlemcilerde daha yavaş çalışabilir veya hiç çalışmayabilir.
 
-Intel derleyicilerinin kullanılmasını sağlamak için gerekli shell parametrelerini aşağıdaki örnek derleme komutunda gösterildiği gibi satıriçi de girebilirsiniz. Kurulumu gerçekleştireceğiniz klasörü de ``--prefix`` parametresi ile belirtebilirsiniz. 
+Intel derleyicilerinin kullanılmasını sağlamak için gerekli shell parametrelerini aşağıdaki örnek derleme komutunda gösterildiği gibi satır içi de girebilirsiniz. Kurulumu gerçekleştireceğiniz klasörü de ``--prefix`` parametresi ile belirtebilirsiniz. 
 
 .. code-block:: bash
    
    FLAGS="-xHost"; CFLAGS=$FLAGS CXXFLAGS=$FLAGS MPIF90=mpiifort CC=mpiicc CXX=mpiicpc ./configure --prefix=/truba/home/username/espresso/q-e-qe-6.7.0 --enable-shared=no
 
-Configure adımından sonra ``make.inc`` dosyasını ``vim`` veya ``nano`` ile açarak kütüphanelerle ilgili kontoller yapılmalıdır. Yukarıda belirtilen kurulum konfigürasyonu için örnek ``make.inc`` dosyasına aşağıdaki link aracılığıyla ulaşabilirsiniz.
+Configure adımından sonra ``make.inc`` dosyasını ``vim`` veya ``nano`` ile açarak kütüphanelerle ilgili kontroller yapılmalıdır. Yukarıda belirtilen kurulum konfigürasyonu için örnek ``make.inc`` dosyasına aşağıdaki link aracılığıyla ulaşabilirsiniz.
 
 * :download:`hamsi node'unda Intel OneAPI ile kurulum için oluşan/düzenlenen make.inc dosyasının bir kopyasını indirmek için tıklayınız... </assets/qe-howto/config-files/make.inc-hamsi-impi-inteloneapi>`
 
@@ -242,7 +242,7 @@ Yukarıdaki kurulum adımları tamamlandığında bulunduğunuz ``q-e-qe-6.7.0``
       mv bin bin-hamsi-impi-oneapi
 
 
-Intel derleyicileri, Intel MKL ve Open MPI ile Kurulum
+Intel Derleyicileri, Intel MKL ve Open MPI ile Kurulum
 ----------------------------------------------------------
 
 Quantum Espresso programını Intel derleyicileri, Intel MKL ve OpenMPI ile kurmak için Intel OneAPI modülünü ve uyumlu olan OpenMPI modülünü aşağıdaki komutlar ile yükleyebilirsiniz. Herhangi bir çakışma olmaması açısından öncelikle tanımlı olan tüm modül dosyalarını kaldırmanız önerilmektedir.
@@ -259,13 +259,13 @@ Kullanacağınız hesaplama kümesinin (bakınız :ref:`hesaplama-kumeleri`) Int
    
    ``-xHost`` ile derlediğiniz program derleme sırasında kullandığınız işlemciden farklı işlemcilerde daha yavaş çalışabilir veya hiç çalışmayabilir.
 
-Intel derleyicilerinin kullanılmasını sağlamak için gerekli shell parametrelerini aşağıdaki örnek derleme komutunda gösterildiği gibi satıriçi de girebilirsiniz. Kurulumu gerçekleştireceğiniz klasörü de ``--prefix`` parametresi ile belirtebilirsiniz. 
+Intel derleyicilerinin kullanılmasını sağlamak için gerekli shell parametrelerini aşağıdaki örnek derleme komutunda gösterildiği gibi satır içi de girebilirsiniz. Kurulumu gerçekleştireceğiniz klasörü de ``--prefix`` parametresi ile belirtebilirsiniz. 
 
 .. code-block:: bash
    
    FLAGS="-xHost"; CFLAGS=$FLAGS CXXFLAGS=$FLAGS MPIF90=mpif90 CC=mpicc CXX=mpic++ ./configure --prefix=/truba/home/username/espresso/q-e-qe-6.7.0 --enable-shared=no
 
-Configure adımından sonra ``make.inc`` dosyasını ``vim`` veya ``nano`` ile açarak kütüphanelerle ilgili kontoller yapılmalıdır. 
+Configure adımından sonra ``make.inc`` dosyasını ``vim`` veya ``nano`` ile açarak kütüphanelerle ilgili kontroller yapılmalıdır. 
 
 Gerekli kontrolleri yaptıktan sonra ``make all`` ve ``make install`` komutları ile Quantum Espresso'yu derleyiniz:
 

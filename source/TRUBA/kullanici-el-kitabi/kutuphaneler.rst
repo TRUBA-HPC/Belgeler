@@ -1,5 +1,5 @@
 ==================================
-Mevcut uygulamalar ve kütüphaneler
+Mevcut Uygulamalar ve Kütüphaneler
 ==================================
 
 TRUBA altyapısını kullanan araştırmacılarımızın kullanımına sunulmuş, farklı işletim sistemleri ve farklı işlemci mimarileri için derlenmiş, lisansı ücretsiz (açık kaynak kodlu) uygulamalar merkezi yazılım alanına (/truba/sw) yüklenmiş bulunmaktadır. Hiyerarşik olarak uygulamalar ``app``, kütüphaneler ``lib`` ve derleyiciler ``comp`` dizinine yerleştirilmiştir.
@@ -9,7 +9,7 @@ Quantum Espresso, NAMD, LAMMPS, Amber vb. gibi sık kullanılan açık kaynak  k
 .. note::
    TRUBA sisteminde ortak alanda bulunan yazılımlar tüm kullanıcılar düşünülerek hazırlandığı için genel opsiyonları ile derlenmiştir. İşlemci mimarisi için geçerli olan optimizasyonların haricinde, sunucu ailelerinde herhangi bir optimizasyon yapılmamıştır. Bu nedenle uygulamalar kullanıcıların bekledikleri performansları veremeyebilirler, ya da yapmak istedikleri hesaplama türünü gerçekleştiremiyor olabilirler. Bu ve benzeri durumlar için, kullanıcıların kullanmak istedikleri uygulamaları kendi ev dizinlerinde kendilerinin derlemelerini, ihtiyaç duydukları optimizasyonu gerçekleştirmelerini öneriyoruz.
 
-Lisansı ücretli olan yazılımlar, küme üzerinde çalışmasına izin verecek lisans edinildikten sonra kullanıcı tarafından kendi ev dizininde derlenmeli ve oraya yüklenmelidir. Bu tür yazılımların lisansları, kullanımları, kurulumları vb konularda her türlü sorumluluk kullanıcının kendisine aittir. Eğer yüklenecek lisanslı yazılım ``floating`` ya da benzeri bir lisanslama modeli ile lisans doğrulama servisine (flexlm vs) ihtiyaç duyuyorsa, ilgili servis kullanıcının kendi kurumu tarafından sağlanmalı ve buradaki hesaplama sunucularının bu servise erişmesine izin verilmelidir.
+Lisansı ücretli olan yazılımlar, küme üzerinde çalışmasına izin verecek lisans edinildikten sonra kullanıcı tarafından kendi ev dizininde derlenmeli ve oraya yüklenmelidir. Bu tür yazılımların lisansları, kullanımları, kurulumları vb. konularda her türlü sorumluluk kullanıcının kendisine aittir. Eğer yüklenecek lisanslı yazılım ``floating`` ya da benzeri bir lisanslama modeli ile lisans doğrulama servisine (flexlm vs) ihtiyaç duyuyorsa, ilgili servis kullanıcının kendi kurumu tarafından sağlanmalı ve buradaki hesaplama sunucularının bu servise erişmesine izin verilmelidir.
 
 +-------------------+-----------+-----------+------------+
 | Küme üzerinde sıklıkla kullanılan uygulamalar 	 |

@@ -1,5 +1,5 @@
 ======================================
-Container kullanarak çalışma
+Container Kullanarak Çalışma
 ======================================
 
 TRUBA kuyruklarında Singularity kullanarak container imajları çalıştırabilirsiniz.
@@ -8,7 +8,7 @@ TRUBA kuyruklarında Singularity kullanarak container imajları çalıştırabil
     `Singularity <https://sylabs.io/guides/3.7/user-guide/introduction.html#introduction-to-singularity>`_, karmaşık uygulamaların YBH kümelerinde taşınabilir ve tekrarlanabilir şekilde çalıştırılmasını sağlar. Singularity kullanarak `Sylabs Cloud Library <https://cloud.sylabs.io/library>`_'deki ve `Docker Hub <https://hub.docker.com/>`_'daki imajları çalıştırabilirsiniz.
 
 ---------------------------------------
-sbatch kullanarak kuyruğa iş gönderme
+sbatch Kullanarak Kuyruğa İş Gönderme
 ---------------------------------------
 
 DockerHub'daki `tensorflow imajlarından <https://hub.docker.com/r/tensorflow/tensorflow>`_ uygun etiketli (gpu) birini seçin ve `singularity pull <https://sylabs.io/guides/3.7/user-guide/cli/singularity_pull.html>`_ kullanarak indirin:
@@ -31,14 +31,14 @@ Kuyruğa iş göndermek için bir `slurm betiği <https://slurm.schedmd.com/sbat
 
     #!/bin/bash
     #SBATCH -p akya-cuda        # Kuyruk adi: Uzerinde GPU olan kuyruk olmasina dikkat edin.
-    #SBATCH -A [USERNAME]     # Kullanici adi
-    #SBATCH -J print_gpu      # Gonderilen isin ismi
-    #SBATCH -o print_gpu.out  # Ciktinin yazilacagi dosya adi
-    #SBATCH --gres=gpu:1      # Kac GPU istiyorsunuz? Maksimum sayiyi kontrol edin.
-    #SBATCH -N 1              # Gorev kac node'da calisacak?
-    #SBATCH -n 1              # Ayni gorevden kac adet calistirilacak?
-    #SBATCH -c 10              # Her bir gorev kac cekirdek kullanacak?
-    #SBATCH --time=0:01:00    # Sure siniri koyun.
+    #SBATCH -A [USERNAME]       # Kullanici adi
+    #SBATCH -J print_gpu        # Gonderilen isin ismi
+    #SBATCH -o print_gpu.out    # Ciktinin yazilacagi dosya adi
+    #SBATCH --gres=gpu:1        # Her bir sunucuda kac GPU istiyorsunuz? Kumeleri kontrol edin.
+    #SBATCH -N 1                # Gorev kac node'da calisacak?
+    #SBATCH -n 1                # Ayni gorevden kac adet calistirilacak?
+    #SBATCH --cpus-per-task 10  # Her bir gorev kac cekirdek kullanacak? Kumeleri kontrol edin.
+    #SBATCH --time=0:01:00      # Sure siniri koyun.
 
     # NVIDIA GPU kullanmak icin --nv opsiyonunu kullanin.
     singularity run --nv tensorflow_latest-gpu.sif python print_gpu.py
@@ -69,7 +69,7 @@ Kuyruğa gönderdiğiniz işleri kontrol edin:
     cat print_gpu.out
 
 ---------------------------------------------
-Jupyter Notebook ile çalışma
+Jupyter Notebook ile Çalışma
 ---------------------------------------------
 
 Jupyter ve gpu etiketli tensorflow docker imajlarından birini indirin:

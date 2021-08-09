@@ -2,18 +2,16 @@
 İşlerin Kuyruk Sisteminde İzlenmesi
 ==========================================
 
-Bir önceki bölümde temel slurm komutlarının özellikleri genel olarak anlatıldı. Bu bölümde komutların terminal
-üzerinde işlerimizi nasıl yönetebileceğimizi örnekler üzerinden gösterelim.
+Bir önceki bölümde (:ref:`basic_slurm_commands`) temel slurm komutlarının özellikleri genel olarak anlatıldı. Bu bölümde komutları kullanarak terminal üzerinde işlerinizi nasıl yönetebileceğiniz örnekler üzerinden gösterilmektedir.
 
-1. İşleri kuyruk sistemine göndermek için **sbatch** komutunu kullanılır. Kullanacağız uygulama için gerekli dosyalarla beraber 
-hazırladığınız **Slurm Betik** dosyasını hazırladıktan sonra terminale aşağıdaki komut satırı yazılır.
+1. İşleri kuyruk sistemine göndermek için **sbatch** komutu kullanılır. Kullanacağız uygulama için gerekli girdi dosyalarıyla beraber hazırladığınız **SLURM Betik** dosyasını hazırladıktan sonra terminale aşağıdaki komut satırı yazılır.
 
 .. code-block:: bash
 
-  sbatch slurm_betiğinin_adı
+  sbatch slurm_betiginin_adi
 
 
-2. Kuyruğa gönderdiğiniz işlerinizi sistemde durumlarını görmek için aşağıdaki komut satırını terminale yazdıktan sonra ekranda işlerinizle ilgili ayrıntıları görebilirsiniz.
+2. Kuyruğa gönderdiğiniz işlerinizin sistemde durumlarını görmek için aşağıdaki komut satırını terminale yazdıktan sonra ekranda işlerinizle ilgili ayrıntıları görebilirsiniz.
 
 .. code-block:: bash
 
@@ -22,15 +20,15 @@ hazırladığınız **Slurm Betik** dosyasını hazırladıktan sonra terminale 
 .. image:: /assets/kaynakyoneticisi-isdongusu/images/squeue.png   
    :width: 500
 
-Ekrandaki bilgiye göre kuyrukta iki tane hesabımızın olduğunu bunlardan **7043266** numaralı işimizin beklemede (pending),  **7043267** numaralı işin ise sistemde çalıştığını (Run) anlamaktayız.
-Dolayısıyla sisteme verdiğimiz işlerin ID numaraları ilk sütunda yazmaktadır. Bu numaralar kullanılarak işlerimizi öldürebiliriz.
-3. Sistemde işlerin öldürülmesi için 
+Ekrandaki bilgiye göre kuyrukta iki tane hesabımızın olduğunu bunlardan **7043266** numaralı işimizin beklemede (pending),  **7043267** numaralı işin ise sistemde çalıştığını (Run) anlamaktayız. Dolayısıyla sisteme verdiğimiz işlerin ID numaraları ilk sütunda yazmaktadır. Bu numaralar kullanılarak işlerimizi sonlandırabiliriz.
+
+3. Sistemde işlerin sonlandırılması için 
 
 .. code-block:: bash
 
    scancel JOBID
 
-Dolayısıyla **7043266** id numaralı işi öldürmek için terminale aşağıdaki komut satırı yazılmalıdır. 
+Dolayısıyla **7043266** id numaralı işi sonlandırmak için terminale aşağıdaki komut satırı yazılmalıdır. 
 
 .. code-block:: bash
 

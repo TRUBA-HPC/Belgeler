@@ -2,9 +2,7 @@
 Örnek SLURM Betik Dosyaları
 ==========================================
 
-Her kullanıcının  kullandığı uygulamanın yeri, özellikleri, versiyonu, ihtiyaç duyduğu kaynak türü ve miktarı, derlendiği ortam ve kütüphanelere göre, kullanılabilecek betik dosyaları farklılıklar gösterebilir.
-TRUBA ekibi tarafından, tüm kullanıcıların kullanımı için standart özelliklerle derlenen uygulamaların pek çoğu için örnek betik dosyaları hazırlanarak, kullanıcıların kullanımına sunulmuştur. Örnek betik dosyaların **/truba/sw/scripts** dizininden ulaşılabilir.
-Kullanıcıların burdaki betik dosyalarını kullanabilmeleri için, onları scratch'deki kendi dizinlerine kopyalamaları ve betik dosyalarında verilmiş tanımları kendi hesaplarının özelliklerine göre  değiştirmesi gerekmektedir.
+Her kullanıcının  kullandığı uygulamanın yeri, özellikleri, versiyonu, ihtiyaç duyduğu kaynak türü ve miktarı, derlendiği ortam ve kütüphanelere göre, kullanılabilecek betik dosyaları farklılıklar gösterebilir. TRUBA ekibi tarafından, tüm kullanıcıların kullanımı için standart özelliklerle derlenen uygulamaların pek çoğu için örnek betik dosyaları hazırlanarak, kullanıcıların kullanımına sunulmuştur. Örnek betik dosyalarına ``/truba/sw/scripts`` dizininden ulaşılabilir. Kullanıcıların buradaki betik dosyalarını kullanabilmeleri için, onları scratch'deki kendi dizinlerine kopyalamaları ve betik dosyalarında verilmiş tanımları kendi hesaplarının özelliklerine göre  değiştirmesi gerekmektedir.
 
 
 İlgili dizinde uygulamanın test amaçlı çalıştırılan örnek input dosyaları bulunduğu için,

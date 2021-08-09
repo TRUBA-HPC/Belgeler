@@ -19,13 +19,21 @@ CUDA
    02_cuda_c_giris/02_02.rst
    02_cuda_c_giris/02_03.rst
    02_cuda_c_giris/02_04.rst
-   02_cuda_c_giris/02_06.rst   
    02_cuda_c_giris/02_lab_01.rst
 
 .. toctree::
    :maxdepth: 2
    :titlesonly:
-   :caption: CUDA C Giriş
+   :caption: CUDA Paralel Programlama
 
    03_cuda_par_model/03_01.rst
+
+.. toctree::
+   :maxdepth: 2
+   :titlesonly:
+   :caption: Örnekler
+
+   examples/02/vector-addition-cuda.rst
+   examples/02/vector-addition-openacc.rst
+   examples/02/vector-addition-thrust.rst
 

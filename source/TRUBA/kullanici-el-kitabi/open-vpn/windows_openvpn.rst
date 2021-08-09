@@ -24,17 +24,18 @@ OpenVPN ana sayfasına `openvpn.net <https://openvpn.net/>`_  web sayfasından k
 
 .. image:: /assets/openvpn-howto/images/winopenvpn3.png
 
-4. Karşınıza çıkan pencereden Install Now’ı seçiniz. Seçtikten sonra “Aşağıdaki programın bu bilgisayara yazılım yüklemesine izin vermek istiyor musunuz?” sorusuna evet i seçerek devam ediniz. 
+4. Karşınıza çıkan pencereden Install Now’ı seçiniz. Seçtikten sonra “Aşağıdaki programın bu bilgisayara yazılım yüklemesine izin vermek istiyor musunuz?” sorusuna Evet cevabını seçerek devam ediniz. 
 
 .. image:: /assets/openvpn-howto/images/winopenvpn4.JPG
 
-5. Karşınıza Installing OpenVPN penceresi çıkacaktır ve kurulum tamamlanana kadar bekleyiniz. 
+5. Karşınıza ``Installing OpenVPN`` penceresi çıkacaktır. Kurulum tamamlanana kadar bekleyiniz. 
 
 .. image:: /assets/openvpn-howto/images/winopenvpn5.JPG
 
-6.	Bu adımdan sonra pencerenize “OpenVPN Installing Completed” yazısı geldiğinde close’u tıklayınız. Masaüstünüzde OpenVPN GUI ikonu belirecektir. Bu ikonu çift tıkladığınızda OpenVPN çalışmaya başlar 
+6.	Bu adımdan sonra pencerenize ``OpenVPN Installing Completed`` yazısı geldiğinde Close’u tıklayınız. Masaüstünüzde OpenVPN GUI ikonu belirecektir. Bu ikonu çift tıkladığınızda OpenVPN çalışmaya başlayacaktır. 
 
   .. image:: /assets/openvpn-howto/images/winopenvpn6.JPG
+    :width: 100
 
 ----------------------------------------------------------------------
 OpenVPN’in TRUBA Bağlantısı İçin Yapılandırılması
@@ -44,16 +45,20 @@ OpenVPN kurulumu tamamlandıktan sonra, TRUBA altyapısına bağlanabilmeniz iç
 
 1. Yapılandırma dosyası için bağlantı aşağıda verilmiştir. Bağlantıya sağ tıklayarak “bağlantıyı farklı kaydediniz” i seçiniz. 
 
-`Yapılandırma dosyası <http://wiki.truba.gov.tr/TRUBA-VPN/TRUBA-genel.ovpn>`_  
+* :download:`OpenVPN genel yapılandırma dosyası </assets/openvpn-TRUBA/config-files/TRUBA-genel.ovpn>`
 
-NOT: Kaydedilen dosya adının .ovpn uzantısı ile bitmesi önemlidir. Bazı sistemlerde ve web tarayıcılarda dosya adı .txt uzantılı olabilmektedir. Bu durumda .txt uzantısını .ovpn ile değiştiriniz. 
+.. note::
+
+  NOT: Kaydedilen dosya adının ``.ovpn`` uzantısı ile bitmesi önemlidir. Bazı sistemlerde ve web tarayıcılarda dosya adı ``.txt`` uzantılı olabilmektedir. Bu durumda ``.txt`` uzantısını ``.ovpn`` ile değiştiriniz. 
 
 2. Masaüstünüzdeki OpenVPN GUI ikonunu çift tıkladığınızda, bilgisayarınızda sağ en alt köşede saat göstergesinin yanında OpenVPN simgesi belirecektir. 
 
 .. image:: /assets/openvpn-howto/images/winopenvpn7.png
+  :width: 200
 
 3. Simgeyi sağ tıklayınız ve import file’ı seçiniz. Konum'u seçmeniz gerekmektedir. Konum için indirdiğiniz TRUBA-genel.ovpn dosyasını yerini bulup seçiniz. Pencerenizde “File imported succesfully” belirecektir. 
 
  .. image:: /assets/openvpn-howto/images/winopenvpn8.png
+    :width: 200
 
-4. Bağlantı kurduğunuzda OpenVPN sunucusu sizden kullanıcı adınızı ve parolanızı isteyecektir. Kullanıcı adı ve parolanız ara yüz makinesine bağlantı için kullandığınız kullanıcı ve parola ile aynıdır. Bu aşamadan sonra artık TRUBA sistemine bağlanabilirsiniz. 
+4. Bağlantı kurduğunuzda OpenVPN sunucusu sizden kullanıcı adınızı ve parolanızı isteyecektir. Kullanıcı adı ve parolanız arayüz makinesine bağlantı için kullandığınız kullanıcı adı ve parola ile aynıdır. Bu aşamadan sonra artık TRUBA sistemine bağlanabilirsiniz. 

@@ -10,7 +10,7 @@ Bu web servisini kullanarak, kullanıcılar
 - Interactive kuyruğunda etkileşimli ve görsel işler çalıştırabilir
 - Interactive kuyruğunda web tabanlı VNC ile masaüstü bağlantısı kurabilir ve herhangi bir uygulama çalıştırabilir
 - Tüm kuyruklara iş gönderebilir ve işlerin durumunu takip edebilir (işler varsayılan olarak ~/ondemand/data/sys/myjobs/projects/default/ dizininden gönderilmektedir. Değiştirilemez.)
-- Portaldan daha once gönderilmiş işleri kuyruğa tekrar (yeni iş olarak) gönderebilir
+- Portaldan daha önce gönderilmiş işleri kuyruğa tekrar (yeni iş olarak) gönderebilir
 - Var olan bir dizinden yeni bir iş oluşturabilir (ilgili dizin tüm içeriği ile otomatik olarak varsayılan iş dizinine kopyalanır). 
 
 .. note::
@@ -20,7 +20,7 @@ Bu web servisini kullanarak, kullanıcılar
 *Interactive Apps* kısmına süreç içerisinde örnek interaktif uygulamalar eklenecektir. 
 
 ---------------------------------------------
- Disk ve hesaplama zamanı kota bilgileri
+ Disk ve Hesaplama Zamanı Kota Bilgileri
 ---------------------------------------------
 
 Open OnDemand servisine login olunduğunda, disk kotasının %80'ini kullanmış veya hesaplama zamanı kotasından 10.000 çekirdek-saatten az kalmış kullanıcılar otomatik olarak bilgilendirilmektedir.

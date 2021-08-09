@@ -1,3 +1,5 @@
+.. _python-kilavuzu:
+
 ===============
 Python Kılavuzu
 ===============

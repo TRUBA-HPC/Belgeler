@@ -4,7 +4,7 @@
 Girdi olarak veri üzerinde gözetimli öğrenme ile model oluşturarak veri
 etiketi ya da hedef öznitelik değeri tahmini makine öğrenme çalışmalarının
 başında gelmektedir. Bu amaçla Spark MLlib’de çeşitli metotlar sunulmaktadır.
-Karar destek makinası (*SVM*), Karar Ağacı (decision tree), çok katmanlı 
+Karar destek makinesi (*SVM*), Karar Ağacı (decision tree), çok katmanlı 
 perseptron sınıflandırıcı (*MLP*) gibi fonksiyonlar bunlara örnek olarak 
 olarak verilebilir. 
 
