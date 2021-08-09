@@ -5,21 +5,21 @@ Tensörler
 
 .. The main building block of PyTorch is its tensors. They can represent anything from scaler values to n-dimensional arrays. In addition to including over 100 tensor operations, PyTorch provides the ability to calculate gradients for tensors after applying arbitrarily many mathematical operations on them. This tutorial will cover the basics of tensors as well as gradient calculations on tensors.
 
-PyTorch'un ana yapı taşı tensörlerdir. Ölçekleyici değerlerinden ``n`` boyutlu dizilere kadar her şeyi temsil edebilirler. 100'den fazla tensör işleminin dahil edilmesine ek olarak, PyTorch tensörler için gradyanları rastgele birçok matematiksel işlemi uyguladıktan sonra hesaplama yeteneği sağlar. Bu eğitim, tensörlerin temellerini ve tensörler üzerindeki gradyan hesaplamalarını kapsayacaktır. 
+PyTorch'un ana yapı taşı Tensörlerdir. Basit katsayılardan ``n`` boyutlu dizilere kadar her şeyi temsil edebilirler. PyTorch ile Tensörler üzerinde 100'den fazla işlem yapılabilir, aynı zamanda türevler rastgele birçok matematiksel işlemi uyguladıktan sonra hesaplanabilir. Dokümanın bu kısım, tensörlerin temellerini ve tensörler üzerindeki türev hesaplamalarını kapsayacaktır. 
 
 .. Creating tensors
 
-Tensörler oluşturma
+Tensör oluşturma
 --------------------
 
 .. From existing data
 
-Mevcut veriden Tensör oluşturma 
+Mevcut Veriden Tensör Oluşturma 
 ^^^^^^^^^^^^^^^^^^
 
 .. One can create Python nested arrays and use them to create tensors. You can specify the data type of the numbers in the tensor using the ``dtype`` attribute or let PyTorch automatically infer them.
 
-Python iç içe diziler oluşturabilir ve bunları tensörler oluşturmak için kullanabilir. ``dtype`` özelliğini kullanarak tensördeki sayıların veri türünü belirtebilir veya PyTorch'un bunları otomatik olarak çıkarmasına izin verebilirsiniz. 
+Python iç içe diziler oluşturabilir ve bunları tensör oluşturmak için kullanabilir. ``dtype`` özelliğini kullanarak tensördeki sayıların veri türünü belirtebilir veya PyTorch'un bunları otomatik olarak çıkarmasına izin verebilirsiniz. 
 
 
 .. code-block:: python
@@ -62,7 +62,7 @@ Sabit değerler kullanma
 
 .. Tensors can be created by specifying the required tensor shape. In this case, the tensor will be populated with constant values which can be random or user-specified. The shape is specified as multiple arguments, a tuple, or a list. The following are some examples:
 
-Tensörler, gerekli tensör şekli belirtilerek oluşturulabilir. Bu durumda tensör, rastgele veya kullanıcı tanımlı olabilen sabit değerlerle doldurulacaktır. Şekil, birden çok bağımsız değişken, bir demet veya bir liste olarak belirtilir. Aşağıda bazı örnekler verilmiştir: 
+Bir tensör, gerekli tensör şekli belirtilerek oluşturulabilir. Bu durumda veri yapısı, rastgele veya kullanıcı tarafından tanımlanabilen sabit bir değerle doldurulabilir. Tensörün şekli, birden çok bağımsız değişken, bir demet, veya bir liste olarak belirtilir. Aşağıda bazı örnekler verilmiştir: 
 
 .. code-block:: python
 
@@ -125,7 +125,7 @@ Diğer tensörleri kullanma
 
 .. One can create tensors that are like existing tensors. This allows using the other tensor's attributes including its values, shape, and data types.
 
-Mevcut tensörler gibi tensörler yaratılabilir. Bu, değerleri, şekli ve veri türleri dahil olmak üzere diğer tensör niteliklerinin kullanılmasına izin verir. 
+Mevcut tensörlerden de yeni tensörler yaratılabilir. Bu işlem, değerleri, şekli ve veri türleri dahil olmak üzere diğer tensör özelliklerinin kullanılmasına izin verir. 
 
 .. code-block:: python
 
@@ -168,7 +168,7 @@ Mevcut tensörler gibi tensörler yaratılabilir. Bu, değerleri, şekli ve veri
 
 .. Tensor manipulation
 
-Tensör manipülasyonu 
+Tensör Manipülasyonu 
 --------------------
 
 .. Accessing tensors (slicing)
@@ -178,7 +178,7 @@ Tensörlere erişme (dilimleme)
 
 .. A tensor can be accessed and sliced easily with numpy-like syntax.
 
-Bir tensöre, numpy benzeri sözdizimi ile kolayca erişilebilir ve dilimlenebilir. 
+Bir tensöre ya da dilimlerine, numpy benzeri indeksleme ile kolayca erişilebilir. 
 
 .. code-block:: python
 
@@ -225,7 +225,9 @@ Tensörleri yeniden şekillendirmek
 
 .. Tensors can be reshaped easily using the ``reshape`` and ``reshape_as`` functions. Important: these functions will return a new tensor, but the new tensor might use the same data as the original tensor. You can use the ``clone`` function to make sure the data of the original tensor is copied to the new one.
 
-Tensörler, ``reshape`` ve ``reshape_as`` işlevleri kullanılarak kolayca yeniden şekillendirilebilir. Önemli: bu işlevler yeni bir tensör döndürür, ancak yeni tensör orijinal tensörle aynı verileri kullanabilir. Orijinal tensörün verilerinin yenisine kopyalandığından emin olmak için 'klon' işlevini kullanabilirsiniz. 
+Tensörler, ``reshape`` ve ``reshape_as`` işlevleri kullanılarak kolayca yeniden şekillendirilebilir. 
+
+*Önemli*: ``reshape(_as)`` işlemleri yeni bir tensör döndürür, ancak yeni tensör orijinal tensörle aynı verileri kullanır. Orijinal tensörün verilerinin yenisine kopyalandığından emin olmak için ``clone`` işlevini kullanabilirsiniz. 
 
 .. code-block:: python
 
@@ -233,21 +235,22 @@ Tensörler, ``reshape`` ve ``reshape_as`` işlevleri kullanılarak kolayca yenid
 
    all_ones = torch.zeros(2,4)
 
-   diff_shape = all_ones.reshape((2,4)) # Şekli bir demet ile belirtin 
+   diff_shape = all_ones.reshape((2,4)) # Şekli bir liste ile belirtin 
 
    diff_shape_1 = all_ones.reshape((1,2,4))
 
-   diff_shape_2 = all_ones.reshape(-1, 2) # Putting -1 at a dimension tells PyTorch to infer the value automatically
-                     # Bir boyuta -1 koymak, PyTorch'a değeri otomatik olarak çıkarmasını söyler
+   diff_shape_2 = all_ones.reshape(-1, 2)  # Bir boyuta -1 koymak, PyTorch'a geri kalan değerlere bakarak 
+                                           # boyutu otomatik olarak çıkarmasını söyler
+
 
    rand_t = torch.empty((2, 2, 2)) 
    diff_shape_3 = all_ones.reshape_as(rand_t) #Başka bir tensörün şekliyle
-                                             # eşleşmeyi kullanabilirsiniz 
+                                              #eşleşmeyi kullanabilirsiniz 
 
 
    new_tensor = all_ones.clone().detach().reshape((2,4)) 
-                                       #Başka bir tensörün şekliyle
-                                       # eşleşmeyi kullanabilirsiniz 
+                                       #Başka bir tensörün şekliyle eşleşmeyi kullanabilirsiniz.
+                                       #clone ile verinin kopyalanmasını sağlayabiliriz.
 
    print("Şekil: (2,3)")
    print(all_ones)
@@ -306,7 +309,7 @@ Tensörleri birleştirme
 
 .. Tensors can be joined together on any axis. The concatenated tensor is returned as a new tensor.
 
-Tensörler herhangi bir eksende birleştirilebilir. Birleştirilmiş tensör, yeni bir tensör olarak döndürülür. 
+Tensörler herhangi bir eksende (boyut üzerinden) birleştirilebilir. Birleştirilmiş tensör, yeni bir tensör olarak döndürülür. 
 
 .. code-block:: python
 
@@ -330,7 +333,7 @@ Tensörler herhangi bir eksende birleştirilebilir. Birleştirilmiş tensör, ye
 
       Yatay birleştirme
       tensor([[1., 1., 1., 0., 0., 0.],
-            [1., 1., 1., 0., 0., 0.]])
+              [1., 1., 1., 0., 0., 0.]])
 
       Dikey birleştirme
       tensor([[1., 1., 1.],
@@ -345,7 +348,7 @@ Matematiksel işlemler
 
 .. There are many mathematical operations that can be done on tensors. A full list can be found `here <https://pytorch.org/docs/stable/torch.html#math-operations>`_.
 
-Tensörler üzerinde yapılabilecek birçok matematiksel işlem vardır. Tam bir liste şu şekilde `bulunabilir <https://pytorch.org/docs/stable/torch.html#math-operations>`_ 
+Tensörler üzerinde yapılabilecek birçok matematiksel işlem vardır. Tam bir listeye bu `linkten <https://pytorch.org/docs/stable/torch.html#math-operations>`_ erişebilirsiniz.
 
 .. code-block:: python
 
@@ -405,15 +408,16 @@ Tensörler üzerinde yapılabilecek birçok matematiksel işlem vardır. Tam bir
 GPU üzerindeki tensörler 
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Tensors can be moved to the GPU from the CPU and back easily. They can also be created directly on the GPU. Operations cannot happen between tensors on different devices.
+PyTorch'daki diğer veri yapıları gibi tensörler de GPU ve CPU arasında transfer edilebilir. doğrudan CPU ve GPU'da yaratılabilirler. 
+Farklı cihazlar (CPU ya da GPU) üzerinde bulunan tensörler üzerinde matematiksel işlemler gerçekleştirilemez. 
+
+.. Tensors can be moved to the GPU from the CPU and back easily. They can also be created directly on the GPU. Operations cannot happen between tensors on different devices.
 
 .. code-block:: python
 
    import torch
 
-   gpu_0_also = torch.device('cuda:0') # 
    gpu_0 = torch.device('cuda') #
-   gpu_1 = torch.device('cuda:1')
    cpu_device = torch.device('cpu')
 
    t1 = torch.tensor([1,2,3], device=gpu_0)
@@ -447,31 +451,31 @@ Tensors can be moved to the GPU from the CPU and back easily. They can also be c
 
 .. In-place and out-of-place operations
 
-Yerinde ve yerinde olmayan operasyonlar 
+Veri üzerinde olan ve olmayan operasyonlar 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. Generally, all functions are out-of-place meaning that a call to an operation will not modify the operands and will return a new data structure. However, functions that end with the ``_`` character are in-place. For example, ``t3 = t1.mul(t2)`` will element-wise multiply the tensors ``t1`` and ``t2`` and store the result in ``t3``. However, ``t1.mul_(t2)`` will element-wise multiply ``t1`` and ``t2`` them and store the result in ``t1``.
 
-Genel olarak, tüm işlevler yerinde değildir, yani bir işleme yapılan bir çağrının işlenenleri değiştirmeyeceği ve yeni bir veri yapısı döndüreceği anlamına gelir. Bununla birlikte, ``_`` karakteriyle biten işlevler yerindedir. Örneğin, ``t3 = t1.mul (t2)``, eleman bazında ``t1`` ve ``t2`` tensörlerini çarpacak ve sonucu ``t3`` içinde saklayacaktır. Ancak, ``t1.mul_(t2)``, ``t1`` ve ``t2`` yi eleman bazında çarpacak ve sonucu ``t1`` de saklayacaktır. 
+Genel olarak, operasyonlar veri üzerinde yapılmaz. Bu, bir işlemin işlenenleri değiştirmeyeceği ve yeni bir veri yapısı kullanacağı ve döndüreceği anlamına gelir. Bununla birlikte, ``_`` karakteriyle biten işlevler veri üzerinde çalışır. Örneğin, ``t3 = t1.mul (t2)``, eleman bazında ``t1`` ve ``t2`` tensörlerini çarpacak ve sonucu ``t3`` içinde saklayacaktır. Ancak, ``t1.mul_(t2)``, ``t1`` ve ``t2`` yi eleman bazında çarpacak ve sonucu ``t1`` de saklayacaktır. 
 
 .. Gradient calculation
 
-Gradyan hesaplama 
+Türev Hesaplama
 --------------------
 
 .. One of the most important features of PyTorch is its ``torch.autograd`` package. It enables gradients of tensors and scalers alike to be calculated with ease. This is very useful for building machine learning pipelines as it drives the process of back-propagation.
 
-PyTorch'un en önemli özelliklerinden biri, ``torch.autograd`` paketidir. Tensörlerin ve ölçekleyicilerin gradyanlarının kolaylıkla hesaplanmasını sağlar. Bu, geri yayılma sürecini yönlendirdiği için makine öğrenimi ardışık düzenleri oluşturmak için çok kullanışlıdır. 
+PyTorch'un en önemli özelliklerinden biri, ``torch.autograd`` paketidir. Tensörlerin ve ölçekleyicilerin türevlerinin kolaylıkla hesaplanmasını sağlar. Bu, geri yayılma (*ing.,* back-propagation) sürecini yönlendirdiği için makine öğrenimi süreçlerindeki ardışık düzenleri oluşturmak için çok kullanışlıdır. 
 
 
 .. Requiring gradient
 
-Gradyan gerektiriyor 
+Türev hesabı için gerekenler 
 ^^^^^^^^^^^^^^^^^^^^
 
 .. For a tensor's gradient to be calculatable, we must specify that we require the tensor for a specific tensor, either at creation time or by calling a function.
 
-Bir tensör gradyanının hesaplanabilir olması için, tensöre belirli bir tensöre ihtiyaç duyduğumuzu, yaratma sırasında veya bir fonksiyon çağırarak belirtmemiz gerekir. 
+Bir tensörün türevinin hesaplanabilir olması için, tensöre tanımlı bir türeve ihtiyaç duyduğumuzu tensör yaratma işlemi sırasında, ya da daha sonra bir fonksiyon çağırarak belirtmemiz gerekir. 
 
 .. code-block:: python
 
@@ -485,7 +489,7 @@ Bir tensör gradyanının hesaplanabilir olması için, tensöre belirli bir ten
 
    t1.requires_grad_(True)
    print(f"t1 \n{t1}")
-   print("t1'de manuel olarak etkinleştirilen gradyan hesaplaması \n")
+   print("t1'de manuel olarak etkinleştirilen türev hesaplaması \n")
    t1.requires_grad_(False)
    print(f"t1 \n{t1}")
    print("Manuel olarak devre dışı bıraktı ")
@@ -504,7 +508,7 @@ Bir tensör gradyanının hesaplanabilir olması için, tensöre belirli bir ten
 
       t1
       tensor([0., 0., 0.], requires_grad=True)
-      t1'de manuel olarak etkinleştirilen gradyan hesaplaması
+      t1'de manuel olarak etkinleştirilen türev hesaplaması
 
       t1
       tensor([0., 0., 0.])
@@ -512,12 +516,12 @@ Bir tensör gradyanının hesaplanabilir olması için, tensöre belirli bir ten
 
 .. Calculating gradient
 
-Gradyan hesaplanıyor 
+Türevleri hesaplama
 ^^^^^^^^^^^^^^^^^^^^
 
 .. When a tensor ``t`` has the option ``requires_grad`` set to ``True``\ , we can calculate the gradient of any other tensor ``other`` with respect to ``t``. We do so by calling the ``backward()`` function on ``other``.
 
-Bir tensör ``t``, ``required_grad`` seçeneğini ``True`` olarak ayarladığında, ``other`` tensörünün ``t`` ye göre gradyanını hesaplayabiliriz. Bunu, ``other`` üzerinde ``backward ()`` işlevini çağırarak yapıyoruz. 
+Bir ``t1`` tensörünün ``requires_grad`` seçeneğini ``True`` olarak ayarlandığında, başka bir ``t2`` tensörünün ``t1`` e göre türevini hesaplayabiliriz. Bunu, ``t2`` üzerinde ``backward ()`` işlevini çağırarak yapabiliriz. 
 
 .. code-block:: python
 
@@ -529,7 +533,7 @@ Bir tensör ``t``, ``required_grad`` seçeneğini ``True`` olarak ayarladığın
    t2.backward()
 
    print(f"t1 = {t1}")
-   print(f"t1'e göre t2'nin gradyanı  = {t1.grad}")
+   print(f"t1'e göre t2'nin türevi  = {t1.grad}")
 
 .. Output:
 
@@ -543,12 +547,12 @@ Bir tensör ``t``, ``required_grad`` seçeneğini ``True`` olarak ayarladığın
 
 .. Deeper functions
 
-Daha derin işlevler 
+Daha derin işlemler 
 ^^^^^^^^^^^^^^^^^^^
 
 .. Gradients of tensors are calculated using the chain rule which means that they are calculated for arbitrarily deep functions. They can also be calculated for any of the intermediary steps of the function. However, if we want to calculate more than a single gradient, we must add the option ``retain_graph`` to the ``backward()`` function.
 
-Tensörlerin gradyanları zincir kuralı kullanılarak hesaplanır, bu da onların keyfi derinlikteki fonksiyonlar için hesaplandığı anlamına gelir. İşlevin herhangi bir ara adımı için de hesaplanabilirler. Bununla birlikte, tek bir gradyandan daha fazlasını hesaplamak istiyorsak, ``backward()`` fonksiyonuna ``retain_graph`` seçeneğini eklemeliyiz. 
+Tensörlerin türevleri zincir kuralı kullanılarak hesaplanır, bu da onların istenilen derinlikteki fonksiyonlar için hesaplanabileceği anlamına gelir. Bu türevler işlemin herhangi bir ara adımı için de hesaplanabilirler. Bununla birlikte, tek bir türevden daha fazlası hesaplanacaksa, ``backward()`` fonksiyonuna ``retain_graph`` seçeneği eklenmelidir. 
 
 .. code-block:: python
 
@@ -564,8 +568,8 @@ Tensörlerin gradyanları zincir kuralı kullanılarak hesaplanır, bu da onlar�
 
    print(f"t1 = {t1}, t2 = {t2}, t3 = {t3}, t4 = {t4}")
 
-   t2.backward(retain_graph=True) # gradyanı tekrar hesaplayabilmek
-                                  #  için "retain_graph = True" belirtiriz 
+   t2.backward(retain_graph=True) # türevi tekrar hesaplayabilmek
+                                  # için "retain_graph = True" belirtiriz 
    print(f"t1'ye göre t2'nin gradyanı  = {t1.grad}")
    # dt2/dt1 = 2 * t1
    t1.grad.data.zero_() # bu degradeyi 0'a sıfırlayacak 
@@ -594,7 +598,7 @@ Tensörlerin gradyanları zincir kuralı kullanılarak hesaplanır, bu da onlar�
 
 .. Updating tensors using gradients
 
-Degradeleri kullanarak tensörleri güncelleme 
+Degradeleri kullanarak tensörleri güncelleme (What is a degrade???)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. Generally, in machine learning pipelines, the gradient of a tensor is used to update that tensor's value. When updating the tensor using its gradient, we must make sure that the update procedure is not *tracked* by the ``autograd`` package. In other words, we need to mark the update operation as not part of the forward propagation of pipeline. We do so using the ``torch.no_grad()`` function which halts all gradient tracking.
