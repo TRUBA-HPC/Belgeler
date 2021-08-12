@@ -91,7 +91,7 @@ PyTorch'u Kurmak
       .. code-block:: bash
 
           conda activate pyt_env
-#. Web sitesinden, PyTorch'u Conda kullanarak kurmak için uygun komutu kullanın. Biz bu öğreticiyi dokümanı hazırlarken yazarken, CPU sürümünü yükleme komutu şu şekildeydi: 
+#. Web sitesinden, PyTorch'u Conda kullanarak kurmak için uygun komutu kullanın. Biz bu öğretici dokümanı hazırlarken yazarken, CPU sürümünü yükleme komutu şu şekildeydi: 
 
 
    .. code-block:: bash

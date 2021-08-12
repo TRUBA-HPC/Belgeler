@@ -1,37 +1,33 @@
 
 ======================================================
-Convolutional neural networks - Evrişimli sinir ağları
+Evrişimli sinir ağları (Convolutional neural networks)
 ======================================================
 
-We will create a convolutional neural network that we will use to carry out classification on image data. Convolutional neural networks are great for working with data that has more than one dimension, for example, 2D images. In this example we use convolutional layers and pooling layers to processes images in a manner that respects their dimensionality. 
+.. We will create a convolutional neural network that we will use to carry out classification on image data. Convolutional neural networks are great for working with data that has more than one dimension, for example, 2D images. In this example we use convolutional layers and pooling layers to processes images in a manner that respects their dimensionality. 
 
 Görüntü verileri üzerinde sınıflandırma yapmak için kullanacağımız evrişimsel bir sinir ağı oluşturacağız. Evrişimli sinir ağları, örneğin 2B görüntüler gibi birden fazla boyutu olan verilerle çalışmak için mükemmeldir. Bu örnekte, görüntüleri boyutsallıklarına saygı gösterecek şekilde işlemek için evrişimli katmanları ve havuz katmanlarını kullanıyoruz.
 
-Dataset - veri kümesi
+Veri kümesi
 =====================
 
-We will use CIFAR10 image dataset containing 60000 images of 10 different objects. The dataset is provided in the ``torchvision`` library. The dataset contains `PIL images <https://pillow.readthedocs.io/en/stable/reference/Image.html>`_ which we cannot use directly with PyTorch layers. So, we use the ``ToTensor()`` transformation to convert the images into tensors. This will convert each pixel in the image into a tensor of three numbers in the range [0,1] representing the RGB values of that pixel. We also apply a second transform, ``Normalize()`` to make shift the values to the range [-0.5, 0.5].
+.. We will use CIFAR10 image dataset containing 60000 images of 10 different objects. The dataset is provided in the ``torchvision`` library. The dataset contains `PIL images <https://pillow.readthedocs.io/en/stable/reference/Image.html>`_ which we cannot use directly with PyTorch layers. So, we use the ``ToTensor()`` transformation to convert the images into tensors. This will convert each pixel in the image into a tensor of three numbers in the range [0,1] representing the RGB values of that pixel. We also apply a second transform, ``Normalize()`` to make shift the values to the range [-0.5, 0.5].
 
-10 farklı nesnenin 60000 görüntüsünü içeren CIFAR10 görüntü veri setini kullanacağız. Veri seti, torchvision kitaplığında sağlanır. Veri kümesi, doğrudan PyTorch katmanlarıyla kullanamadığımız PIL görüntülerini içerir. Bu nedenle, görüntüleri tensörlere dönüştürmek için ToTensor() dönüşümünü kullanıyoruz. Bu, görüntüdeki her pikseli, o pikselin RGB değerlerini temsil eden [0,1] aralığında üç sayıdan oluşan bir tensöre dönüştürecektir. Ayrıca değerleri [-0.5, 0.5] aralığına kaydırmak için Normalize() adlı ikinci bir dönüşüm uygularız.
+10 farklı nesnenin 60000 görüntüsünü içeren CIFAR10 görüntü veri kümesini kullanacağız. Veri setini, torchvision kitaplığından indireceğiz. Veri kümesi, doğrudan PyTorch katmanlarıyla kullanamadığımız PIL görüntülerini içerir. Bu nedenle, görüntüleri tensörlere dönüştürmek için ``ToTensor()`` dönüşümünü kullanıyoruz. Bu, görüntüdeki her pikseli, o pikselin RGB değerlerini temsil eden [0,1] aralığında üç sayıdan oluşan bir tensöre dönüştürecektir. Ayrıca değerleri [-0.5, 0.5] aralığına kaydırmak için ``Normalize()`` adlı ikinci bir dönüşüm uygulayacağız.
 
 .. code-block:: python
 
    import torchvision
    import torchvision.transforms as transforms
-   # data will be loaded without transofmration. It will be image objects
-   # veriler dönüştürülmeden yüklenecektir. Görüntü nesneleri olacak 
+   
+   # veriler dönüştürülmeden yüklenecek. Görüntü nesneleri şeklinde olacak. 
    train_dataset = torchvision.datasets.CIFAR10(root='./data', train=True,
                                            download=True)
 
    first_element = train_dataset[0]
    image, label = first_element
-   print("Data without transformation")
+   print("Verinin değişimden önceki şekli")
    print(type(image), image)
 
-   # Create a single transformation that will apply two transforms:
-   # 1. ToTensor(): transform every pixel in each image to a tensor
-   #                of three numbers for the RGB values.
-   # 2. Normalize(): shift the values from the range [0,1] to [-0.5, 0.5]
    # İki dönüşümü uygulayacak tek bir dönüşüm oluşturun:
    # 1. ToTensor(): Her görüntüdeki her pikseli RGB değerleri için üç 
    #                sayıdan oluşan bir tensöre dönüştürün.
@@ -40,7 +36,6 @@ We will use CIFAR10 image dataset containing 60000 images of 10 different object
        [transforms.ToTensor(),
         transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
 
-   # data is loaded and transforms are applied
    # veriler yüklenir ve dönüşümler uygulanır 
    train_dataset = torchvision.datasets.CIFAR10(root='./data', train=True,
                                            download=True, transform=transform)
@@ -51,13 +46,11 @@ We will use CIFAR10 image dataset containing 60000 images of 10 different object
    first_element = train_dataset[0]
    image, label = first_element
    print(type(image), image.shape)
-   print("Each image is 32x32 pixels, and each pixel has three values")
    print("Her görüntü 32x32 pikseldir ve her pikselin üç değeri vardır")
 
    import matplotlib.pyplot as plt
    import numpy as np
 
-   # This function will show the image using its tensor reprsentation
    # Bu işlev, tensör temsilini kullanarak görüntüyü gösterecektir. 
    def imshow(img):
        img = img / 2 + 0.5  # unnormalize
@@ -65,7 +58,6 @@ We will use CIFAR10 image dataset containing 60000 images of 10 different object
        plt.imshow(np.transpose(npimg, (1, 2, 0)))
        plt.show()
 
-   print("The first image is an image of a frog!")
    print("İlk görüntü bir kurbağa görüntüsü!")
    imshow(image)
 
@@ -75,12 +67,9 @@ We will use CIFAR10 image dataset containing 60000 images of 10 different object
 
    .. code-block:: bash
 
-      Files already downloaded and verified
-      Data without transformation
+      Verinin değişimden önceki şekli
       <class 'PIL.Image.Image'> <PIL.Image.Image image mode=RGB size=32x32 at 0x29F41017130>
-      Files already downloaded and verified
       <class 'torch.Tensor'> torch.Size([3, 32, 32])
-      Each image is 32x32 pixels, and each pixel has three values
       Her görüntü 32x32 pikseldir ve her pikselin üç değeri vardır
 
 
@@ -89,22 +78,20 @@ We will use CIFAR10 image dataset containing 60000 images of 10 different object
    :alt: res/frog.png
 
 
-Dataloaders - Veri yükleyiciler
+Veri yükleyiciler (Dataloaders)
 -------------------------------
 
-We create data loaders for the datasets that we will use during the training and testing loops to fetch data.
+.. We create data loaders for the datasets that we will use during the training and testing loops to fetch data.
 
-Verileri getirmek için eğitim ve test döngüleri sırasında kullanacağımız veri kümeleri için veri yükleyicileri oluşturuyoruz.
+Eğitim ve test döngüleri sırasında kullanacağımız veri kümelerini taşıyabilmek için veri yükleyicileri oluşturuyoruz.
 
 .. code-block:: python
 
    import torch
 
-   # each batch will consist of 4 images
    # her parti 4 görüntüden oluşacaktır 
    batch_size = 4
 
-   # the data loader will shuffle the samples
    # veri yükleyici örnekleri karıştıracak 
    train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=batch_size,
                                              shuffle=True)
@@ -123,19 +110,19 @@ Verileri getirmek için eğitim ve test döngüleri sırasında kullanacağımı
 
       torch.Size([4, 3, 32, 32])
 
-Convolutional neural network model - Evrişimli sinir ağı modeli
+Evrişimli sinir ağı modeli
 ===============================================================
 
-Our model is going to take the image data tensors and process them through convolutional layers and pooling layers. Afterwards, we will take the data through linear layers to finally acquire scores for the classes we would like to predict from. First we will demonstrate the convolutional layer as well as the pooling layer, then, we will build the complete neural network model by inheriting from the ``torch.nn.Module`` class.
+.. Our model is going to take the image data tensors and process them through convolutional layers and pooling layers. Afterwards, we will take the data through linear layers to finally acquire scores for the classes we would like to predict from. First we will demonstrate the convolutional layer as well as the pooling layer, then, we will build the complete neural network model by inheriting from the ``torch.nn.Module`` class.
 
-Modelimiz, görüntü veri tensörlerini alacak ve bunları evrişim katmanları ve havuz katmanları aracılığıyla işleyecektir. Daha sonra, tahmin etmek istediğimiz sınıflar için nihayet puanları elde etmek için verileri doğrusal katmanlardan alacağız. Önce evrişim katmanını ve havuzlama katmanını göstereceğiz, ardından ``torch.nn.Module`` sınıfından miras alarak tam sinir ağı modelini oluşturacağız.
+Modelimiz, görüntü veri tensörlerini alacak ve bunları evrişim katmanları ve havuz katmanları aracılığıyla işleyecektir. Daha sonra, tahmin etmek istediğimiz sınıflar için verileri doğrusal katmanlardan alacağız ve son puanları elde edeceğiz. Bu bölümde, önce evrişim katmanını ve havuzlama katmanını göstereceğiz, ardından ``torch.nn.Module`` sınıfından miras alarak tam sinir ağı modelini oluşturacağız.
 
-Convolutional layers - Evrişimsel katmanlar
+Evrişimsel katmanlar
 -------------------------------------------
 
-Convolutional layers take multi-dimensional data and use a convolution to produce a multi-dimensional output. The example below demonstrates the first convolutional layer we will use in our model. However, in the example below, we use an input image of the dimensions 9x9 instead of 32x32 for clarity. The layer trains a 5x5 filter that will go over each group of 5x5 pixels in the image and transform them into a single pixel in the output. In addition, the filter will use the three colours (channels) of each pixel in the input and produce 6 output channels for each pixel in the output.
+.. Convolutional layers take multi-dimensional data and use a convolution to produce a multi-dimensional output. The example below demonstrates the first convolutional layer we will use in our model. However, in the example below, we use an input image of the dimensions 9x9 instead of 32x32 for clarity. The layer trains a 5x5 filter that will go over each group of 5x5 pixels in the image and transform them into a single pixel in the output. In addition, the filter will use the three colours (channels) of each pixel in the input and produce 6 output channels for each pixel in the output.
 
-Evrişimsel katmanlar çok boyutlu verileri alır ve çok boyutlu bir çıktı üretmek için bir evrişim kullanır. Aşağıdaki örnek, modelimizde kullanacağımız ilk evrişimsel katmanı göstermektedir. Ancak, aşağıdaki örnekte, netlik için 32x32 yerine 9x9 boyutlarında bir giriş görüntüsü kullanıyoruz. Katman, görüntüdeki her 5x5 piksel grubunun üzerinden geçecek ve bunları çıktıda tek bir piksele dönüştürecek 5x5'lik bir filtre eğitir. Ayrıca filtre, girişteki her pikselin üç rengini (kanalını) kullanacak ve çıktıdaki her piksel için 6 çıkış kanalı üretecektir.
+Evrişimsel katmanlar çok boyutlu verileri alır ve çok boyutlu bir çıktı üretmek için bir evrişim kullanır. Aşağıdaki örnek, modelimizde kullanacağımız ilk evrişimsel katmanı göstermektedir. Ancak, aşağıdaki örnekte, netlik için 32x32 yerine 9x9 boyutlarında bir giriş görüntüsü kullanıyoruz. Katman, görüntüdeki her 5x5 piksel grubunun üzerinden geçerek ve bunları çıktıda tek bir piksele dönüştürerek 5x5'lik bir filtre eğitir. Ayrıca filtre, girişteki her pikselin üç rengini (kanalını) kullanacak ve çıktıdaki her piksel için 6 çıkış kanalı üretecektir.
 
 
 .. image:: res/conv.png
@@ -143,7 +130,7 @@ Evrişimsel katmanlar çok boyutlu verileri alır ve çok boyutlu bir çıktı �
    :alt: res/conv.png
 
 
-Below is a demonstration of what the convolutional layer does to an input. We pass a batch of four images to the layer and receive a transformed output:
+.. Belows is a demonstration of what the convolutional layer does to an input. We pass a batch of four images to the layer and receive a transformed output:
 
 Aşağıda, evrişim katmanının bir girdiye ne yaptığının bir gösterimi verilmiştir. Katmana dört görüntüden oluşan bir toplu iş gönderiyoruz ve dönüştürülmüş bir çıktı alıyoruz:
 
@@ -152,19 +139,14 @@ Aşağıda, evrişim katmanının bir girdiye ne yaptığının bir gösterimi v
    import torch.nn as nn
 
    conv1 = nn.Conv2d(in_channels=3, out_channels=6, kernel_size=5)
-   # input_channels = number of channels in each input pixel
-   # output_channels = number of channels in each output pixel
-   # kernel_size = the width and height of the filter
    # input_channels = her giriş pikselindeki kanal sayısı
    # output_channels = her çıkış pikselindeki kanal sayısı
    # kernel_size = filtrenin genişliği ve yüksekliği
 
    dataiter = iter(train_loader)
    images, labels = dataiter.next()
-   print(f"Before layer, shape: {images.shape}")
    print(f"katmandan önce, şekil: {images.shape}")
    output = conv1(images)
-   print(f"After layer, shape: {output.shape}")
    print(f"katmandan sonra, şekil: {output.shape}")
 
 .. admonition:: Çıktı
@@ -173,15 +155,13 @@ Aşağıda, evrişim katmanının bir girdiye ne yaptığının bir gösterimi v
 
    .. code-block:: python
 
-      Before layer, shape: torch.Size([4, 3, 32, 32])
       katmandan önce, şekil: torch.Size([4, 3, 32, 32])
-      After layer, shape: torch.Size([4, 6, 28, 28])
       katmandan sonra, şekil: torch.Size([4, 6, 28, 28])
 
-Pooling layers - Havuz katmanları
+Havuz katmanları (Pooling layers)
 ---------------------------------
 
-After running convolution layers, we can use pooling layers to compress the output into a smaller representation. In our model, we use a max-pool that will take the output of the previous layer and compress it using the maximum function. Below is an example of a pooling layer. 
+.. After running convolution layers, we can use pooling layers to compress the output into a smaller representation. In our model, we use a max-pool that will take the output of the previous layer and compress it using the maximum function. Below is an example of a pooling layer. 
 
 Evrişim katmanlarını çalıştırdıktan sonra, çıktıyı daha küçük bir temsile sıkıştırmak için havuz katmanlarını kullanabiliriz. Modelimizde, bir önceki katmanın çıktısını alacak ve maksimum fonksiyonunu kullanarak sıkıştıracak bir max-pool kullanıyoruz. Aşağıda bir havuzlama katmanı örneği verilmiştir.
 
@@ -190,22 +170,18 @@ Evrişim katmanlarını çalıştırdıktan sonra, çıktıyı daha küçük bir
    :target: res/pool.png
    :alt: res/pool.png
 
-Below, we demonstrate a max-pool layer that will take the output of the previous convolutional layer and apply pooling. The layer will take grids of 2x2 and find their maximum value. The pooling layer has a stride of 2 so the filter will move 2 locations at a time. This pooling procedure happens for all the channels of the input.
+.. Below, we demonstrate a max-pool layer that will take the output of the previous convolutional layer and apply pooling. The layer will take grids of 2x2 and find their maximum value. The pooling layer has a stride of 2 so the filter will move 2 locations at a time. This pooling procedure happens for all the channels of the input.
 
 Aşağıda, önceki evrişim katmanının çıktısını alacak ve havuzlama uygulayacak bir maksimum havuz katmanı gösteriyoruz. Katman 2x2'lik ızgaralar alacak ve maksimum değerlerini bulacaktır. Havuzlama katmanının adımı 2'dir, bu nedenle filtre bir seferde 2 konum hareket edecektir. Bu havuzlama prosedürü, girişin tüm kanalları için gerçekleşir.
 
 .. code-block:: python
 
    pool = nn.MaxPool2d(kernel_size=2,stride=2)
-   # kernel_size = the width and height of the filter
-   # stride = distance between filtering operations
    # kernel_size = filtrenin genişliği ve yüksekliği 
    # stride = filtreleme işlemleri arasındaki mesafe 
 
-   print(f"before layer, shape: {output.shape}")
    print(f"katmandan önce, şekil: {output.shape}")
    output = pool(output)
-   print(f"after layer, shape: {output.shape}")
    print(f"katmandan sonra, şekil: {output.shape}")
 
 .. admonition:: Çıktı
@@ -219,10 +195,10 @@ Aşağıda, önceki evrişim katmanının çıktısını alacak ve havuzlama uyg
       after layer, shape: torch.Size([4, 6, 14, 14])
       katmandan sonra, şekil: torch.Size([4, 6, 14, 14])
 
-Complete model - Tam model
+Tam model
 --------------------------
 
-We create our model by inheriting from the the ``torch.nn.Module`` class. We define two convolutional layers and a single pooling function that we will use after each convolutional layer. We also define three linear layers that will take the output of convolution and gradually transform it until there are only 10 outputs which is the number of classes to predict.
+.. We create our model by inheriting from the the ``torch.nn.Module`` class. We define two convolutional layers and a single pooling function that we will use after each convolutional layer. We also define three linear layers that will take the output of convolution and gradually transform it until there are only 10 outputs which is the number of classes to predict.
 
 ``torch.nn.Module`` sınıfından miras alarak modelimizi oluşturuyoruz. Her evrişim katmanından sonra kullanacağımız iki evrişim katmanı ve tek bir havuz işlevi tanımlıyoruz. Ayrıca, evrişimin çıktısını alacak ve tahmin edilecek sınıf sayısı olan sadece 10 çıktı olana kadar kademeli olarak dönüştürecek üç doğrusal katman tanımlıyoruz.
 
@@ -233,28 +209,21 @@ We create our model by inheriting from the the ``torch.nn.Module`` class. We def
    class CNN(nn.Module):
        def __init__(self):
            super(CNN, self).__init__()
-           # first convolution uses a filter of dimensions 5x5, takes 3 input channels
-           # per pixel, and produces 6 output channels
            # ilk evrişim 5x5 boyutlarında bir filtre kullanır, piksel başına 3 giriş 
            # kanalı alır ve 6 çıkış kanalı üretir 
            self.conv1 = nn.Conv2d(3, 6, 5)
-           # We use max-pool with a grid of 2x2 and stride of 2
-           # Since the pool doesn't get trained, we only need one instance of it
-           # 2x2 ızgaralı ve 2 adımlı max-pool kullanıyoruz Havuz eğitilmediğinden, 
+           # 2x2 ızgaralı ve 2 adımlı max-pool kullanıyoruz. Havuz eğitilmediğinden, 
            # yalnızca bir örneğine ihtiyacımız var 
            self.pool1and2 = nn.MaxPool2d(2, 2)
-           # The second convolution uses a filter of dimensions 5x5, but takes 6 input channels
-           # and produces 16 output channels per location
-           # 2x2 maks. soğuk havuzlu Havuza vurulmuş, yalnızca bir kişiye tutulmuş var 
+           # İkinci evrişim 5x5 boyutlarında bir filtre kullanır, ancak 6 giriş kanalı alır
+           # ve konum başına 16 çıkış kanalı üretir
            self.conv2 = nn.Conv2d(6, 16, 5)
 
-           # This linear layer will take the output of conv2 after applying self.pool1and2
-           # on it, which means that the input to it will have 16*5*5 values
            # Bu doğrusal katman, üzerine self.pool1and2 uygulandıktan sonra conv2'nin çıktısını 
            # alacaktır, bu da girdinin 16*5*5 değerine sahip olacağı anlamına gelir. 
            self.fc1 = nn.Linear(16 * 5 * 5, 120)
            self.fc2 = nn.Linear(120, 84)
-           # The final linear layer must produce 10 outputs since there are 10 classes to predict
+         
            # Son doğrusal katman, tahmin edilecek 10 sınıf olduğundan 10 çıktı üretmelidir. 
            self.fc3 = nn.Linear(84, 10)
 
@@ -266,15 +235,12 @@ We create our model by inheriting from the the ``torch.nn.Module`` class. We def
            output = self.conv2(output) # [batch_size, 16, 10, 10]
            output = self.pool1and2(output) # [batch_size, 16, 5, 5]
            output = F.relu(output) # [batch_size, 16, 5, 5]
-           # We must make the output into a single row per input
-           # to feed it into the linear layer
            # Doğrusal katmana beslemek için çıktıyı girdi başına tek bir satır haline getirmeliyiz. 
            output = output.reshape(-1, 16 * 5 * 5) # [batch_size, 16*5*5]
            output = F.relu(self.fc1(output))
            output = F.relu(self.fc2(output))
-           # We will not use an activation after the last layer since
-           # the loss function will apply the sigmoid activation automatically
-           # Doğrusal katmana beslemek için çıkışa tek bir satıra getirmeliyiz. 
+           # Son katmandan sonra bir aktivasyon kullanmayacağız çünkü
+           # kayıp işlevi sigmoid aktivasyonunu otomatik olarak uygulayacaktır
            output = self.fc3(output)
            return output
 
@@ -298,10 +264,10 @@ We create our model by inheriting from the the ``torch.nn.Module`` class. We def
       (fc3): Linear(in_features=84, out_features=10, bias=True)
       )
 
-Optimizer and loss - Optimize edici ve kayıp
+Optimize edici ve kayıp
 ============================================
 
-We define the optimizer and loss functions that will be used for training the model.
+.. We define the optimizer and loss functions that will be used for training the model.
 
 Modeli eğitmek için kullanılacak optimize edici ve kayıp fonksiyonlarını tanımlıyoruz.
 
@@ -314,30 +280,27 @@ Modeli eğitmek için kullanılacak optimize edici ve kayıp fonksiyonlarını t
 Training loop - Eğitim döngüsü
 ==============================
 
-Training the model will use the train loader, which is going to generate batches of images of size ``batch_size=4`` . For each training epochs, all the training batches will be used for training the model. For each batch, a forward propagation through the system will be carried out, then a backward propagation to optimize it. Before processing the data, we move it to the device.
+.. Training the model will use the train loader, which is going to generate batches of images of size ``batch_size=4`` . For each training epochs, all the training batches will be used for training the model. For each batch, a forward propagation through the system will be carried out, then a backward propagation to optimize it. Before processing the data, we move it to the device.
 
-Modeli eğitmek, toplu ``batch_size=4`` görüntü yığınları oluşturacak olan tren yükleyiciyi kullanacaktır. Her eğitim dönemi için, modelin eğitimi için tüm eğitim grupları kullanılacaktır. Her parti için, sistem boyunca ileriye doğru bir yayılım, ardından onu optimize etmek için geriye doğru bir yayılım gerçekleştirilecektir. Verileri işlemeden önce cihaza taşıyoruz.
+Modeli eğitmek, toplu ``batch_size=4`` görüntü yığınları oluşturacak olan eğitim seti yükleyiciyi kullanacaktır. Her eğitim dönemi için, modelin eğitimi için tüm eğitim grupları kullanılacaktır. Her parti için, sistem boyunca ileriye doğru bir yayılım, ardından onu optimize etmek için geriye doğru bir yayılım gerçekleştirilecektir. Verileri işlemeden önce cihaza taşıyoruz.
 
 .. code-block:: python
 
    num_epochs = 5
-   # Number of batches in the train_loader
+
    # Train_loader'daki parti sayısı 
    n_total_steps = len(train_loader)
    for epoch in range(num_epochs):
-       # Each batch consists of a tensor of images, and a tensor containing the
-       # labels of these images
+
        # Her toplu iş, bir görüntü tensörü ve bu görüntünün etiketlerini içeren 
        # bir tensörden oluşur. 
        for i, (images, labels) in enumerate(train_loader):
            images = images.to(device)
            labels = labels.to(device)
 
-           # The input tensor is of shape: [batch_size, 3, 32, 32]
-           # Giriş tensörü şu şekildedir: 
+           # Giriş tensörü şu şekildedir: [batch_size, 3, 32, 32]
            outputs = model(images)
-           # the output tensore is of shape [batch_size, 10]
-           # Giriş tensörüdür: 
+
            loss = criterion(outputs, labels)
 
            optimizer.zero_grad()
@@ -383,12 +346,12 @@ Modeli eğitmek, toplu ``batch_size=4`` görüntü yığınları oluşturacak ol
       Epoch [5/5], Step [10000/12500], Loss: 1.8884
       Epoch [5/5], Step [12000/12500], Loss: 0.8248
 
-Evaluation - Değerlendirme
+Değerlendirme (Evaluation)
 ==========================
 
 Finally, we evaluate the trained model using the test data. We use the test loader which will generate batches of test data. We calculate the accuracy of each of the ten classes, as well as the overall accuracy of the system. We surround the evaluation code with the ``torch.no_grad()`` function so that the calculation used in evaluation does not generate a computation graph, which is more compute and memory efficient.
 
-Son olarak, test verilerini kullanarak eğitilen modeli değerlendiririz. Test verisi yığınları oluşturacak test yükleyicisini kullanıyoruz. On sınıfın her birinin doğruluğunu ve ayrıca sistemin genel doğruluğunu hesaplıyoruz. Değerlendirmede kullanılan hesaplamanın, hesaplama ve bellek açısından daha verimli olan bir hesaplama grafiği oluşturmaması için değerlendirme kodunu torch.no_grad() işleviyle çevreliyoruz.
+Son olarak, test verilerini kullanarak eğitilen modeli değerlendiririz. Test verisi yığınları oluşturacak test yükleyicisini kullanıyoruz. On sınıfın her birinin doğruluğunu ve ayrıca sistemin genel doğruluğunu hesaplıyoruz. Değerlendirmede kullanılan hesaplamanın, hesaplama ve bellek açısından daha verimli olması için, yani hesaplama grafiği oluşturmaması için değerlendirme kodunu torch.no_grad() işlemiyle çevreliyoruz.
 
 .. code-block:: python
 
@@ -403,7 +366,7 @@ Son olarak, test verilerini kullanarak eğitilen modeli değerlendiririz. Test v
            images = images.to(device)
            labels = labels.to(device)
            outputs = model(images)
-           # max returns (value ,index)
+
            _, predicted = torch.max(outputs, 1)
            n_samples += labels.size(0)
            n_correct += (predicted == labels).sum().item()
@@ -416,26 +379,26 @@ Son olarak, test verilerini kullanarak eğitilen modeli değerlendiririz. Test v
                n_class_samples[label] += 1
 
        acc = 100.0 * n_correct / n_samples
-       print(f'Accuracy of the network: {acc} %')
+       print(f'Ağın doğruluğu: {acc} %')
 
        for i in range(10):
            acc = 100.0 * n_class_correct[i] / n_class_samples[i]
-           print(f'Accuracy of {classes[i]}: {acc} %')
+           print(f'{classes[i]} doğruluğu: {acc} %')
 
 .. admonition:: Çıktı
    :class: dropdown, information
 
    .. code-block::
    
-      Accuracy of the network: 49.98 %
-      Accuracy of plane: 32.0 %
-      Accuracy of car: 71.6 %
-      Accuracy of bird: 30.8 %
-      Accuracy of cat: 27.1 %
-      Accuracy of deer: 37.4 %
-      Accuracy of dog: 45.0 %
-      Accuracy of frog: 71.9 %
-      Accuracy of horse: 55.9 %
-      Accuracy of ship: 65.4 %
-      Accuracy of truck: 62.7 %
+      Ağın doğruluğu: 49.98 %
+      plane doğruluğu: 32.0 %
+      car doğruluğu: 71.6 %
+      bird doğruluğu: 30.8 %
+      cat doğruluğu: 27.1 %
+      deer doğruluğu: 37.4 %
+      dog doğruluğu: 45.0 %
+      frog doğruluğu: 71.9 %
+      horse doğruluğu: 55.9 %
+      ship doğruluğu: 65.4 %
+      struck doğruluğu: 62.7 %
    
