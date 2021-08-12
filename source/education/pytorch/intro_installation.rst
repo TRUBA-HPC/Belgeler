@@ -23,13 +23,13 @@ Bu bağlantıda aşağıdaki seçenekler bulunabilir:
    :alt: res/installation_options.png
 
 
-.. The first five columns are for the user to select the installation configuration, and the final column shows the command to be called to install the package. In this example above, we are installing PyTorch on a Linux system with no GPU support. We are using Conda and we want to install the Python interface. To do so, we open a terminal and execute the following command
+.. The first five columns are for the user to select the installation configuration, and the final column shows the command to be called to install the package. In this example above, we are installing PyTorch on a Linux system with GPU support. We are using pip and we want to install the Python interface. To do so, we open a terminal and execute the following command
 
-Şekildeki ilk beş satır, kullanıcının kurulum yapılandırmasını seçmesi içindir ve son satır, paketi kurmak için çağrılacak komutu gösterir. Yukarıdaki örnekte PyTorch, GPU desteği olmayan bir Linux sistemine kurulacaktır. Biz bu örnekte Conda kullanıyoruz ve Python arayüzü ile kuracağız. Bunu yapmak için bir terminal açalım ve aşağıdaki komutu uygulayalım. 
+Şekildeki ilk beş satır, kullanıcının kurulum yapılandırmasını seçmesi içindir ve son satır, paketi kurmak için çağrılacak komutu gösterir. Yukarıdaki örnekte PyTorch, GPU var olmayan bir Linux sistemine kurulacaktır. Biz bu örnekte pip kullanıyoruz ve Python arayüzü ile kuracağız. Bunu yapmak için bir terminal açalım ve aşağıdaki komutu uygulayalım. 
 
 .. code-block:: bash
 
-   conda install pytorch torchvision torchaudio cpuonly -c pytorch
+   pip3 install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
 
 .. TRUBA installation
 
@@ -96,7 +96,7 @@ PyTorch'u Kurmak
 
    .. code-block:: bash
 
-       conda install pytorch torchvision torchaudio cpuonly -c pytorch
+       pip3 install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
 
 .. #. (optional) create a new Conda environment
 
@@ -136,6 +136,7 @@ PyTorch'u Conda kullanarak TRUBA'ya kurduysanız, o zaman Conda'yı başlatmanı
    #!/bin/bash
    #SBATCH --account=<account>
    #SBATCH --job-name=pyt_ex
+   #SBATCH --partition=debug
    #SBATCH --ntasks=1
    #SBATCH --time=1-00:00:00
 
