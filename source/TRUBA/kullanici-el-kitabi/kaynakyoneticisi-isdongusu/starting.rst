@@ -112,10 +112,10 @@ Eğer iş kuyrukta 15 gün ya da daha fazla bekleyecek olursa, işin **AGE_prior
 
 **partition_factor değeri**, öncelik değeri en yüksek olan kuyruğun değeri tavan kabul edilerek, işin gönderildiği kuyruğun değerinin bu tavan değere bölünmesi ile hesaplanır.
 
-..code-block:: bash
+.. code-block:: bash
 
-  partition_factor = priority_value_of_partition_of_job/max_priortity_value_of_partitions
-  Partition_priority = PriorityWeightPartition*partition_factor
+   partition_factor = priority_value_of_partition_of_job/max_priortity_value_of_partitions
+   Partition_priority = PriorityWeightPartition*partition_factor
 
 Kuyrukların öncelik değerleri **scontrol show partition** komutu ile görülebilir.  
 
