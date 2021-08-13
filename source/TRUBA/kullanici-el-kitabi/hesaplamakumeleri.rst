@@ -292,7 +292,7 @@ komutu ile görülebilir.
 .. _barbuncuda-node:
 
 *Barbun-cuda*
-^^^^^^^^^^
+^^^^^^^^^^^^^
 
 Her bir sunucuda 40 çekirdek ve 384GB bellek ayrıca 2'şer adet Nvidia P100 16GB GPU kartı bulunmaktadır. Kuyrukta işlerin en fazla çalışma süresi 15 gündür. Sistemin verimli kullanılabilmesi için gönderilecek işler en az 20 çekirdek ve 1 GPU talep etmelidir.
 
@@ -307,7 +307,7 @@ Her bir sunucuda 40 çekirdek ve 384GB bellek ayrıca 2'şer adet Nvidia P100 16
 komutu ile görülebilir.
 
 *Akya-cuda*
-^^^^^^^^^^
+^^^^^^^^^^^
 
 Her bir sunucuda 40 çekirdek ve 384GB bellek ayrıca 4'er adet Nvidia V100 16GB GPU (NVLink) kartı bulunmaktadır. Kuyrukta işlerin en fazla çalışma süresi 15 gündür. Sistemin verimli kullanılabilmesi için gönderilecek işler en az 40 çekirdek ve 4 GPU talep etmelidir. Ayrıca sistemlerde scratch olarak kullanılmak üzere 1.4TB NVME disk /tmp dizinine bağlanmıştır. Yüksek I/O gerektiren işlerin /tmp dizininde çalıştırılması gerekmektedir.
 
@@ -322,7 +322,7 @@ komutu ile görülebilir.
 .. _hamsi-node:
 
 *Hamsi*
-^^^^^^
+^^^^^^^
 
 Her bir sunucuda 56 çekirdek ve 192GB bellek bulunmaktadır. Kuyrukta işlerin en fazla çalışma süresi 3 gündür. Sistemin verimli kullanılabilmesi için gönderilecek işler en az 28 çekirdek talep etmelidir. Kuyruğa gönderilebilecek işlerin minimum çekirdek sayısı 28'dir.
 

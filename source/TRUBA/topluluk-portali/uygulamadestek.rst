@@ -21,8 +21,6 @@ Uygulama Kılavuzları
 
 * :ref:`gaussian-kilavuzu`
 
-* :ref:`SU2 Kılavuzu <su2-kilavuzu>`
-
 * :ref:`code-saturne`
 
 * :ref:`matlab-kilavuzu`

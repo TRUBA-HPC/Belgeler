@@ -1,4 +1,4 @@
-.. _ardeb-hsbvsb-2021:
+.. _ardeb-hsbvsb-2020:
 
 ====================================================================================================
 TRUBA Hizmetlerinden Proje Kapsamında Faydalanacak Akademik İstekliler için HSB ve VSB Hizmeti 2020
@@ -55,6 +55,7 @@ Bu kapsamda 2011 yılından itibaren TÜBİTAK ARDEB ile yapılan işbirliği il
 | Depolama-Lustre-2019 |    0,02 TL                | 8400 TB tüm hesaplama sunucuları tarafından |
 |                      |                           | görünen performans disk alanı               |
 +----------------------+---------------------------+---------------------------------------------+
+
 .. [#note3] Saatlik 1 TB veri servis birimin KDV hariç bedelidir. 
 
 .. note:: 

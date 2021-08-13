@@ -134,7 +134,7 @@ kullanılabilirliğini düşürebilir.
 reduction
 ---------
 
-``reduction (işlem:değişken)`` şeklinde kullanılır.
+``reduction(işlem:değişken)`` şeklinde kullanılır.
 
 Değişken tüm iş parçacıkları için ``private`` gibi çalışır. Alanın
 sonunda tüm değerler belirtilen işlem kullanılarak tek bir değere
