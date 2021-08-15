@@ -406,7 +406,7 @@ Dataset - veri kümesi
 
         Bu veri kümesinde 600 çizge var
 
-Veri yükleyiciler (Data loaders)
+Veri yükleyiciler (Dataloaders)
 --------------------------------
 
 .. Since this dataset is large, we will use the DataLoader mechanism provided by PyG. It behaves similarly to the PyTorch DataLoader class, but it is specifically modified for the ``torch_geometric.data.Dataset`` class, and handles partitioning datasets with multiple graphs. We will create a data loader for the training data, and one for the testing data. The ``batch_size`` parameter determines how many samples per batch to load.

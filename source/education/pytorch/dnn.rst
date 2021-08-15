@@ -1,5 +1,5 @@
 =========================================
-Deep neural networks - Derin sinir ağları 
+Derin sinir ağları (Deep neural networks) 
 =========================================
 
 .. We will create a deep neural network consisting of multiple neural network layers. We will train it to do image classification on the famous MNIST digit dataset. This example shows how PyTorch datasets can be used along with DataLoader objects to process a dataset in mini-batches.
@@ -148,7 +148,7 @@ Modelimiz için bir Adam optimizer tanımlıyoruz, ona öğrenme oranını ve mo
             weight_decay: 0
         )
 
-Veri yükleyiciler (Data loaders)
+Veri yükleyiciler (Dataloaders)
 ================================
 
 .. Since the dataset is large, we will use a ``DataLoader`` object that will handle splitting the data into batches of samples. These mini-batches will be smaller and more manageable than the full dataset by the GPU memory.

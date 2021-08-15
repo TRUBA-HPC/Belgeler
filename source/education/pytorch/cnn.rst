@@ -277,7 +277,7 @@ Modeli eğitmek için kullanılacak optimize edici ve kayıp fonksiyonlarını t
    criterion = nn.CrossEntropyLoss()
    optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)
 
-Training loop - Eğitim döngüsü
+Eğitim döngüsü
 ==============================
 
 .. Training the model will use the train loader, which is going to generate batches of images of size ``batch_size=4`` . For each training epochs, all the training batches will be used for training the model. For each batch, a forward propagation through the system will be carried out, then a backward propagation to optimize it. Before processing the data, we move it to the device.
@@ -346,7 +346,7 @@ Modeli eğitmek, toplu ``batch_size=4`` görüntü yığınları oluşturacak ol
       Epoch [5/5], Step [10000/12500], Loss: 1.8884
       Epoch [5/5], Step [12000/12500], Loss: 0.8248
 
-Değerlendirme (Evaluation)
+Değerlendirme
 ==========================
 
 Finally, we evaluate the trained model using the test data. We use the test loader which will generate batches of test data. We calculate the accuracy of each of the ten classes, as well as the overall accuracy of the system. We surround the evaluation code with the ``torch.no_grad()`` function so that the calculation used in evaluation does not generate a computation graph, which is more compute and memory efficient.

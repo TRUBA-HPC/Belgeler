@@ -1,6 +1,6 @@
 
 =====================================================
-Logistic regression model - Lojistik regresyon modeli 
+Lojistik regresyon modeli (Logistic regression model) 
 =====================================================
 
 .. In this tutorial, we will create a logistic regression model using PyTorch tensors. The model will perform a multi-label classification task. We will introduce an optimizer, a loss function, a linear neural network layer, and construct the training loop and the testing operation.
@@ -11,7 +11,7 @@ Bu derste, PyTorch tensörlerini kullanarak bir lojistik regresyon modeli oluşt
 
 Kodun tamamını sayfanın sonunda bulabilirsiniz.
 
-Dataset - veri kümesi
+Veri kümesi
 =====================
 
 Veri kümesini tanımlama
@@ -102,7 +102,7 @@ Veri kümeleri şu anda ``numpy.ndarray`` türündedir. PyTorch modelimiz ile ku
       Şekil değiştirmeden önce etiketlerin şekli torch.Size([398])
       Şekil değiştirmeden sonra etiketlerin şekli torch.Size([398, 1])
 
-Creating Model - Model Oluşturma
+Model Oluşturma
 ================================
 
 .. We can create machine learning models using PyTorch by creating a class that inherits from the ``torch.nn.Module`` class. Inside this class, we specify all the inner layers in our model (CNN, FFNN, etc.), and the process of forward propagation through the model. PyTorch will handle backpropagation automatically.
