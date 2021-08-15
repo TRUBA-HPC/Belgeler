@@ -1,0 +1,217 @@
+=============================
+CUDA Bellek İşlemleri
+=============================
+
+
+Öğrenim Hedefleri
+-----------------
+
+*  Basit CUDA host (CPU) fonksiyonları hakkında bilgi sahibi olmak.
+
+   *  Cihaz(GPU) bellek ayırma işlemi
+   *  Host-Cihaz veri kopyalama işlemi
+
+
+Veri Paralelleşmesi
+-------------------
+.. image:: /assets/cuda/02/02/01.jpg
+   :width: 600
+
+Yukarıdaki görselde veri paralelleşmesi, vektör toplama işleminde gösterilmektedir. Vektörün farklı elemanları sırayla toplanmak yerine her eleman aynı anda toplanarak paralel bir hesaplama sağlanabilir. Burada önemli olan işlemin birbirinden bağımsız olabilmesidir. Örnek üzerinden ilerlemek gerekirse, C[0] için A[0] ve B[0] elemanları toplanırken C[1] elemanı için A[1] ve B[1] elemanlarının toplanmasına engel teşgil eden bir durum yoktur. Yani bu iki işlem aynı anda gerçekleştirilebilir. Böylelikle veri seviyesinde paralelleşme elde edilir.
+
+CUDA Vektör Toplama Host Kodu 
+-----------------------------
+Önceki bölümde paralelleşme yapısından bahsettiğimiz vektör toplama örneğinin host kodunu yakından inceleyelim. Kodun tamamına ulaşmak için :ref:`tıklayınız <cuda-vector-addition>`.
+
+.. code-block:: C++
+
+    void addVector()
+    {
+        //BOLUM-1
+        cudaMalloc(&d_input1, inputLength * sizeof(int));
+        cudaMalloc(&d_input2, inputLength * sizeof(int));
+        cudaMalloc(&d_output, inputLength * sizeof(int));
+
+        cudaMemcpy(d_input1, input1,inputLength * sizeof(int), cudaMemcpyHostToDevice); 
+                
+        cudaMemcpy(d_input2, input2,inputLength *  sizeof(int), cudaMemcpyHostToDevice);
+        //BOLUM-1
+
+        //BOLUM-2
+        sumVector<<<32,512>>>(d_input1,d_input2,d_output,inputLength); 
+        cudaDeviceSynchronize();
+        //BOLUM-2
+
+        //BOLUM-3
+        cudaMemcpy(output, d_output, inputLength * sizeof(int), cudaMemcpyDeviceToHost); 
+        cudaFree(d_input1);
+        cudaFree(d_input2);
+        cudaFree(d_output);
+        //BOLUM-3
+    }
+
+BOLUM-1 kısmında öncelikle bellek ayırma işlemi ve toplanacak verilerin cihaz (GPU) 'a aktarımı sağlanmaktadır. Ardından BOLUM-2 kısmında vektör toplama işlemi yapan çekirdek (kernel) çağrılıp toplama işlemi sağlanmaktadır. BOLUM-3 ise cihaz üzerinde yapılan hesaplamanın sonucunu host'a kopyalama işlemini ve ardından kullanılan belleğin temizlenme işlemini içermektedir.
+
+Genel bir CUDA programındaki akışı aşağıdaki görselle açıklanabilir.
+
+.. image:: /assets/cuda/02/02/02.jpg
+   :width: 500
+
+* Hesaplamada kullanılacak veri için yeterli bellek miktarı GPU belleği üzerinde ayrılır ve hesaplamada kullanılacak veri GPU belleğine kopyalanır.
+* GPU çekirdeği (kernel) ile gerekli hesaplama işlemini gerçekleştirir.
+* GPU belleğinde bulunan sonuç hosta kopyalanır ve GPU'da bu hesaplama için kullanılmış bellek temizlenir. 
+
+
+CUDA Bellek Yapısı 
+------------------
+
+.. image:: /assets/cuda/02/02/03.jpg
+   :width: 600
+
+*  En basit haliyle CUDA bellek yapısını inceleyelim. Cihaz üzerinde bulunan evrensel(global) bellek ve her ayrı iş parçacığının(thread) kendi bellekleri turuncu ile gösterilmiştir. 
+
+   *  Host tarafında çalışan kod bu evrensel belleğe ve iş parçacıklarının kendi belleklerine veri yazma ve veri okuma işlemlerini gerçekleştirebilir.
+   *  Cihaz tarafında çalışan kod ise evrensel bellek alanında yazma ve okuma işlemleri gerçekleştirebilir.
+
+İlerleyen bölümlerde CUDA bellek yapısının çok daha detaylı olarak inceleyeceğiz. Bellek yönetim fonskiyonlarından bahsetmeden önce bu iki ana noktayı bilmemiz yeterlidir.
+
+CUDA Bellek Yönetim Fonksiyonları
+---------------------------------
+
+cudaMalloc()
+^^^^^^^^^^^^
+
+cudaMalloc() fonksiyonu C malloc() fonksiyonu ile benzer şekilde, bellekte veri için yer açmamıza olanak sağlar. cudaMalloc() kullanılarak GPU üzerindeki **evrensel bellekte** yer ayırma işlemini gerçekleştirilir. 
+
+*  cudaMalloc() iki adet parametre kabul etmektedir: 
+
+   *  Ayrılan bellek bölgesinin adresinin yazılacağı değişken
+   *  Ayrılacak alanın büyüklüğü
+
+Bu noktada malloc() fonskiyonundan farklı olarak cudaMalloc() ayırdığı bellek bölgesinin adresini parametre olarak kabul etmesinin sebebi her cuda fonksiyonunun hata kodu döndürüyor olmasıdır. Bu hata koduna bakılarak, çalıştırılmış işlemin başarıyla tamamlanıp tamamlanmadığı anlaşılabilir. Hata içeriği hakkında bilgi sahibi olmak açısından hata kodlarını kontrol etmek kritik bir öneme sahiptir. 
+
+
+cudaFree()
+^^^^^^^^^^
+
+cudaFree() fonksiyonu, C free() fonksiyonu ile benzer şekilde parametre olarak kabul ettiği alandaki veriyi temizlemek için kullanılır. cudaFree() parametre olarak aldığı adresi GPU evrensel belleğinden silerek serbest bırakır.
+
+cudaMemcpy()
+^^^^^^^^^^^^
+
+Üzerinde hesaplama yapacağımız veriyi ana bellekten, grafik işlem biriminin belleğine aktarmamız gerekir. Bunu yapmak için öncelikle veri boyutu kadar yer ayırmamız (allocation) ve ardından veriyi kopyalamamız gerekir. Veri boyutu kadar yer açmak için cudaMalloc() kullanabileceğimizi görmüştük. Veriyi kopyalamak için ise cudaMemcpy() fonksiyonu kullanılaiblir.
+
+*  cudaMemcpy() dört adet parametre kabul etmektedir: 
+
+   *  Kopyalanacak verinin nereye kopyalanacağı (adres)
+   *  Kopyalanacak verinin nereden kopyalanacağı (adres)
+   *  Kaç bayt veri kopyalanacağı
+   *  Verinin hangi yönde kopyalanacağı (host -> cihaz veya cihaz -> host)
+
+cudaMemcpy() fonksiyonunun kabul ettiği parametreleri incelediğimizde de görüldüğü üzere iki adet adres parametresi almaktadır. Olası bir karışıklığı önlemek adına bir örnek üzerinden ilerlemek gerekirse host üzerinde bulunan bir verinin cihaza kopyalanması için cudaMemcpy() fonskiyonunun ilk parametresi cihaz bellek alanından bir adres, ikincisinin ise host bellek alanından bir adres olması gereklidir. 
+
+Burada dikkat edilmesi gereken en önemli durum ise bu kopyalama işleminin hosta göre **senkron** şekilde ilerlemesidir, yani iki adet cudaMemcpy() fonksiyonu çağrıldığında ilki bittikten sonra ikinci kopyalama işlemi başlar. İlerideki bölümlerde nasıl **asenkron** veri kopyalama işlemi yapılacağını ve bunun ne gibi bir katkı sağlayacağını da göreceğiz.
+
+CUDA Vektör Toplama Host Kodu-2
+-------------------------------
+
+CUDA bellek fonskiyonları ile ilgili şuana kadar öğrendiklerimizle birkaç bölüm yukarıda program akışını göstermek için kullandığımız örneği daha yakından inceleyebiliriz.
+
+.. code-block:: C++
+
+    void addVector()
+    {
+        //BOLUM-1
+        cudaMalloc(&d_input1, inputLength * sizeof(int));
+        cudaMalloc(&d_input2, inputLength * sizeof(int));
+        cudaMalloc(&d_output, inputLength * sizeof(int));
+
+        cudaMemcpy(d_input1, input1,inputLength * sizeof(int), cudaMemcpyHostToDevice); 
+                
+        cudaMemcpy(d_input2, input2,inputLength *  sizeof(int), cudaMemcpyHostToDevice);
+        //BOLUM-1
+
+        //BOLUM-2
+        ...
+        //BOLUM-2
+
+        //BOLUM-3
+        cudaMemcpy(output, d_output, inputLength * sizeof(int), cudaMemcpyDeviceToHost); 
+        cudaFree(d_input1);
+        cudaFree(d_input2);
+        cudaFree(d_output);
+        //BOLUM-3
+    }
+
+*  Vektör toplama işleminin gerçekleşeceği iki vektör için cihaz üzerindeki evrensel bellekte yeterli miktarda yer açılmıştır (cudaMalloc), ayrıca toplama işleminin sonucunda oluşacak vektör için de aynı boyutta bir yer ayırma işlemi yapılmıştır. (BOLUM-1)
+
+*  Ayrılan yere cudaMemcpy() ile toplama işleminde kullanılacak iki vektör kopyalanmıştır. Burada kopyalamanın yönü **cudaMemcpyHostToDevice** olarak verilmiştir. Çünkü toplama işlemi yapacağımız vektörler programın başında ana bellekte bulunmaktadır. (BOLUM-2)
+
+*  Toplama işlemi bittikten ve sonuç vektörü cihaz belleği üzerinde hazır olduktan sonra, sonuç hosta geri kopyalanmıştır. Burada kopyalamanın yönü **cudaMemcpyDeviceToHost** olarak verilmiştir.(BOLUM-3)
+
+*  Cihaz belleği üzerindeki ayrılmış alanlar işlem bittiğinde cudaFree() fonskiyonu ile serbest bırakılmıştır. (BOLUM-3)
+
+CUDA Birleşik Bellek (Unified Memory)
+-------------------------------------
+
+Önceki örnekte de gördüğünüz üzere ana bellek ve cihaz belleğini birbirinden bağımsız olarak yönetmek programlayıcının sorumluluğundadır. Bu durum karışık bellek işlemlerinde zorluk oluşturabilmektedir. Bu karmaşıklığı ortadan kaldırmak için birleşik bellek kullanılabilir.
+
+Birleşik bellek modeli ile birlikte programlayıcı iki ayrı bellek alanını idare etmek yerine tek bir bellek alanı ile ilgilenebilir ve gerekli veri geçişleri otomatik sağlanır. Birleşik bellek sistemi hem yazılımsal hem de donanımsal desteğe (Pascal ve sonraki mimarilerde) sahiptir. *Pascal mimarisi* öncesi grafik işlem birimlerinde birleşik bellek performansı, *pascal* sonrası mimarilere göre daha düşüktür. Bunun nedeni *Pascal mimarisi* öncesi grafik işlem birimlerinde "Sayfa Taşıma Motoru" (Page Migration Engine) bulunmadığından gerekli veri taşıma işlemi sırasında bütün veri sayfaları taşınmaktadır. *Pascal* ve sonraki mimarilerde ise sayfa hatası (page fault) mekanizması bulunduğundan sadece gerekli sayfaların taşınması mümkündür.
+
+
+Vektör toplama işlemi için birleşik bellek kullanan bir örneği inceleyelim.
+
+.. code-block:: C++
+
+   //BOLUM-1
+   float *input1, *input2, *output
+   cudaMallocManaged(&input1, n * sizeof(float));
+   cudaMallocManaged(&input2, n * sizeof(float));
+   cudaMallocManaged(&output, n * sizeof(float));
+   //BOLUM-1
+
+   //BOLUM-2
+   ...   
+   //BOLUM-2
+
+   //BOLUM-3
+   cudaFree(A);
+   cudaFree(B);
+   cudaFree(C);
+   //BOLUM-3
+
+
+Görülüdüğü üzere birleşik bellek kullanımı ile birden fazla bellek alanı ile ilgilenmek yerine tek bir bellek alanı oluşturup onun üzerinden ilerleyerek işlemlerimizi gerçekleştirebiliyoruz. Burada dikkatimizi çekecek önemli bir kısım sonuç vektörünün ana belleğe geri kopyalama işlemini yapmıyor oluşumuzdur. Birleşik bellek kullanımı ile bu gereksinim otomatik olarak sağlanır.
+
+Ayrıca birleşik bellek modeli **asenkron** işlemleri de desteklemektedir. Birleşik bellek modelini daha detaylı olarak ilerleyen bölümlerde inceleyeceğiz, ancak özetlemek gerekirse
+
+*  Birleşik bellek modeli ile oldukça basit bir şekilde grafik işlem birimi üzerinde yaptığımız hesaplamalarda bellek işlemlerini yönetebiliriz. 
+*  Kullandığımız grafik işlem biriminin mimarisi birleşik bellek performansında önemli bir etkiye sahiptir. 
+
+Hata Kontrolü
+-------------
+
+Daha önceki bölümlerde cuda fonksiyonlarının hata kodu döndürdüğünden bahsetmiştik. Bu noktada kodumuzla ilgili sorunları anlayabilmemiz açısından bu hata kodlarını kontrol etmek oldukça önemlidir. Örnek bir hata kontrolü kodunu inceleyelim.
+
+.. code-block:: C
+
+   cudaError_t err = cudaMalloc((void **) &d_input1, size);
+
+   if (err != cudaSuccess)  
+   {
+      printf(“%s in %s at line %d\n”,   cudaGetErrorString(err), __FILE__,__LINE__);
+      exit(EXIT_FAILURE);
+   }
+
+Genellikle bir makro hazırlanılarak her CUDA fonksiyonu hata kontrolünden geçirilir.
+
+.. code-block:: C++
+
+
+   #define cudaCheckError() {                                             
+         cudaError_t e=cudaGetLastError();
+         if(e!=cudaSuccess) {
+               printf("Cuda failure %s:%d: '%s'\n",__FILE__,__LINE__,cudaGetErrorString(e));
+               exit(EXIT_FAILURE);
+         }
+      }
