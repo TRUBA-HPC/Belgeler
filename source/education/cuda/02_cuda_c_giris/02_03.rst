@@ -73,35 +73,43 @@ belirlenir. Bir sonraki blok olan blok 1 deki 1. iş parçacığının **evrense
 
 **Evrensel indis** ile üzerinde çalışılacak veri, iş parçacıkları arasında kolaylıkla paylaşılabilir. 
 Örnek vermek gerekirse görselde gördüğünüz gibi bir konfigürasyon kullanıldığında (*n* blok, her blokta 256 iş parçacığı), vektör toplama işleminde toplanan vektörlerin 
-0. elemanları **evrensel indisi** 0 olan iş parçacığı (0.blok 0.iş parçacığı) tarafından toplanırken, vektörlerin 256 elemanı **evrensel indisi** 256 olan 
-1. iş parçacığı tarafından toplanır (1.blok 0.iş parçacığı).
+1. elemanları **evrensel indisi** 0 olan iş parçacığı (1. blok 1. iş parçacığı) tarafından toplanırken, vektörlerin 257. elemanı **evrensel indisi** 256 olan 
+iş parçacığı tarafından toplanır (2. blok 1. iş parçacığı).
 
 *  Bir blok içerisindeki iş parçacıkları, birbirleriyle:
 
-   *  Paylaşımlı Bellek
-   *  Atomik İşlemler
-   *  Bariyerle Senkronizasyon
+   *  *Paylaşımlı Bellek*,
+   *  *Atomik İşlemler*,
+   *  *Bariyerle Senkronizasyon*
 
 gibi konseptler aracılığıyla ortaklaşa çalışırlar. Bu konseptleri ilerleyen bölümlerde detaylıca inceleyeceğiz.
 
-Bloklar hakkında başka bir önemli nokta ise farklı bloklar içerisinde bulunan iş parçacıkları birbirleriyle etkileşim içerisine geçmezler. 
-
+Bloklar hakkında başka bir önemli nokta ise farklı bloklar içerisinde bulunan iş parçacıkları birbirleriyle etkileşim içerisinde olmamasıdır. 
+Dolayısıyla birbirleri ile sadece evrensel hafıza üzerinden haberleşebilirler ve aynı senkronizasyon direktiflerinin içerisinde yer almazlar. 
 
 .. note::
    
-   **blockDim.x** ve **threadIdx.x** gibi değerlerin ne işe yaradığını inceledik. Ancak blok yapısı 1 boyutlu olmak zorunda değildir. 2 veya 3 boyutlu blok yapıları da bulunmaktadır. Gerçek hayat uygulamalarında çoğunlukla 2 veya 3 boyutlu veri içermektedir. Bu verilerin çok daha kolay bir şekilde kullanılması için CUDA **blockDim** **threadId** yapıları 3 boyutlu olarak yapılandırılmıştır. Çok boyutlu blok veya iş parçacığı kullanılan uygulamalarda **blockdim.y**, **blockDim.z** gibi değerler **evrensel indis** hesaplamasında kullanılabilir. Çok boyutlu blok yapısı içeren örnekler ileriki bölümlerde bulunacaktır.  
+   **blockDim.x** ve **threadIdx.x** gibi değerlerin ne işe yaradığını inceledik. Ancak blok yapısı tek boyutlu olmak zorunda değildir. 
+   2 veya 3 boyutlu blok yapıları da bulunmaktadır. Gerçek hayat uygulamalarında çoğunlukla 2 veya 3 boyutlu veri içermektedir. 
+   Bu verilerin çok daha kolay bir şekilde kullanılması için CUDA **blockDim** **threadId** yapıları 3 boyutlu olarak yapılandırılmıştır. 
+   Çok boyutlu blok veya iş parçacığı kullanılan uygulamalarda **blockdim.y**, **blockDim.z** gibi değerler **evrensel indis** hesaplamasında kullanılabilir. 
+   Çok boyutlu blok yapısı içeren örnekler sonraki bölümlerde bulunabilir.  
    
    .. image:: /assets/cuda/02/03/04.png
       :width: 400
    
    | Yukarıdaki görselde 3 boyutlu bir veriyi temsil etmek için kullanılmış 3 boyutlu blok yapısı gösterilmektedir.
 
-Ayrıca iş parçacığı blokları **şebeke (grid)** adı verilen bir yapı içerisinde gruplaşır. İş parçacığı ile blok arasındaki ilişki, blok ile **şebeke** arasında bulunur. 
+Ayrıca iş parçacığı blokları **şebeke** (ing., grid) adı verilen bir yapı içerisinde gruplaşır. İş parçacığı ile blok arasındaki ilişki, blok ile **şebeke** arasında bulunur. 
 
 CUDA Çekirdeği
 ^^^^^^^^^^^^^^
 
-CUDA **Çekirdeğinin** cihaz üzerinde çalışan kod parçası olduğundan bahsetmiştik ve CUDA paralel modelindeki iş parçacığı hiyerarşisine değindik. Blok sayısı ve blok içerisindeki iş parçacığı sayısının ne olduğundan bahsettik. Bu noktada bir CUDA **çekirdeğinin** nasıl çağrıldığından da bahsetmek gerekmektedir.
+CUDA **çekirdeğinin** cihaz üzerinde çalışan kod parçası olduğundan bahsetmiştik ve CUDA paralel modelindeki iş parçacığı hiyerarşisine değindik. 
+Blok sayısı ve blok içerisindeki iş parçacığı sayısının ne olduğundan bahsettik. Bu noktada bir CUDA **çekirdeğinin** nasıl çağrıldığından da bahsetmek gerekmektedir.
 
-1 boyutlu blok yapısı kullanan bir CUDA programı için **çekirdek** çağırma işleminde önemli iki adet parametre bulunmaktadır. Kullanılacak blok sayısı ve her blok içerisindeki iş parçacığı sayısı. Sözdizimi olarak **çekirdekAdı<<<blokSayısı, işParçacığıSayısı>>>(parametreler)**. Örnek olarak daha önceki bölümlerde kullandığımız vektör toplama kodunu buraya  :ref:`tıklayarak <cuda-vector-addition>` inceleyebilirsiniz.
+Tek boyutlu blok yapısı kullanan bir CUDA programı için **çekirdek** çağırma işleminde önemli iki adet parametre bulunmaktadır. 
+Kullanılacak blok sayısı ve her blok içerisindeki iş parçacığı sayısı. 
+Sözdizimi olarak **çekirdekAdı<<<blokSayısı, işParçacığıSayısı>>>(parametreler)**. 
+Örnek olarak daha önceki bölümlerde kullandığımız vektör toplama kodunu buraya  :ref:`tıklayarak <cuda-vector-addition>` inceleyebilirsiniz.
 
