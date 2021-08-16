@@ -139,7 +139,7 @@ Mevcut GNN katmanlarını kullanarak bir model oluşturma
 
 .. PyG comes with an extensive collection of existing GNN layers. We can use these layers to construct our own models. In the following example, we create a neural network model using some famous GNNs to carry out the task of node classification - classifying nodes (vertices) in the graph. Our model will take a graph, along with a feature vector for every node, and will classify these nodes into one of 7 possible classes. 
 
-PyG, mevcut GNN katmanlarının kapsamlı bir koleksiyonuyla birlikte gelir. Bu katmanları kendi modellerimizi oluşturmak için kullanabiliriz. Aşağıdaki örnekte, düğüm sınıflandırma - çizgedeki düğümleri (köşeler) sınıflandırma görevini yerine getirmek için bazı ünlü GNN'leri kullanarak bir sinir ağı modeli oluşturuyoruz. Modelimiz, her düğüm için bir özellik vektörü ile birlikte bir çizge alacak ve bu düğümleri 7 olası sınıftan birine sınıflandıracaktır.
+PyG, mevcut GNN katmanlarının kapsamlı bir koleksiyonuyla birlikte gelir. Bu katmanları kendi modellerimizi oluşturmak için kullanabiliriz. Aşağıdaki örnekte, düğüm sınıflandırma - çizgedeki düğümleri (köşeler) sınıflandırma görevini yerine getirmek için bazı bilinen GNN'leri kullanarak bir sinir ağı modeli oluşturuyoruz. Modelimiz, her düğüm için bir özellik vektörü ile birlikte bir çizge alacak ve bu düğümleri 7 olası sınıftan birine sınıflandıracaktır.
 
 Veri kümesi
 ---------------------
@@ -150,7 +150,7 @@ Veri kümesi
 
 .. The object ``dataset`` contains a list of all the graphs inside the dataset. In our case, the ``Cora`` dataset contains a single graph.
 
-PyG'nin sağladığı veri kümelerinden birini kullanacağız. Sınıflandırma görevlerini değerlendirmek için kullanılan ünlü Cora veri setini kullanıyoruz.
+PyG'nin sağladığı veri kümelerinden birini kullanacağız. Sınıflandırma görevlerini değerlendirmek için bu tür eğitimlerde sıklıkla kullanılan Cora veri setini kullanıyoruz.
 
 Bu veri kümesini yüklerken, ``root`` parametresinde veri kümesini indirmek istediğimiz konumu belirtiyoruz. Bu durumda da ``name`` parametresinde istediğimiz veri setinin adını belirtmemiz gerekiyor. Tüm veri kümeleri bu parametreyi gerektirmez. Veri kümelerinin gereksinimlerini PyG'nin `belgelerinde <https://pytorch-geometric.readthedocs.io/en/latest/notes/introduction.html>`_ kontrol edebilirsiniz.
 

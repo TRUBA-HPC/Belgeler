@@ -4,7 +4,10 @@ Derin sinir ağları (Deep neural networks)
 
 .. We will create a deep neural network consisting of multiple neural network layers. We will train it to do image classification on the famous MNIST digit dataset. This example shows how PyTorch datasets can be used along with DataLoader objects to process a dataset in mini-batches.
 
-Çoklu sinir ağı katmanlarından oluşan derin bir sinir ağı oluşturacağız. Ünlü MNIST basamak veri setinde görüntü sınıflandırması yapmak için onu eğiteceğiz. Bu örnekte, ek olarak, bir veri kümesini mini partiler halinde işlemek için DataLoader nesneleriyle birlikte PyTorch veri kümelerinin nasıl kullanılabileceğini gösterceğiz.
+Bu bölümde çoklu sinir ağı katmanlarından oluşan derin bir sinir ağı oluşturacağız yığınlar
+ve bu tür eğitimler için sıklıkla kullanılan MNIST basamak veri setinde görüntü 
+sınıflandırması yapmak için onu eğiteceğiz. Bu örnekte, ek olarak, bir veri kümesini mini partiler 
+halinde işlemek için DataLoader nesneleriyle birlikte PyTorch veri kümelerinin nasıl kullanılabileceğini gösterceğiz.
 
 Cihazı belirtme
 ===================================
@@ -24,9 +27,12 @@ Veri kümesi
 
 .. In each of these datasets, an element corresponds to a sample. Each sample is a tuple, made up of the features of the sample and its class label. 
 
-PyTorch ile birlikte gelen ``torchvision`` paketinden veri setini indirerek başlıyoruz. Veri kümesi görüntü verilerinden oluşmakta, dolayısıyla bu görüntüleri ``ToTensor()`` işlemine, veri kümelerinin yapıcısına bir ``transformer`` argümanı olarak ileterek, tensörlere dönüştürüyoruz.
+PyTorch ile birlikte gelen ``torchvision`` paketinden veri setini indirerek başlıyoruz. 
+Veri kümesi görüntü verilerinden oluşmakta, dolayısıyla bu görüntüleri ``ToTensor()`` işlemine, 
+veri kümelerinin yapıcısına bir ``transformer`` argümanı olarak ileterek, tensörlere dönüştürüyoruz.
 
-Bu veri kümelerinin her birinde, bir öğe bir örneğe karşılık gelir. Her örnek, örneğin özelliklerinden ve sınıf etiketinden oluşan bir gruptur.
+Bu veri kümelerinin her birinde, bir öğe bir örneğe karşılık gelir. Her örnek, örneğin özelliklerinden ve 
+sınıf etiketinden oluşan bir gruptur.
 
 .. code-block:: python
 
@@ -65,11 +71,16 @@ Model Oluşturma
 
 .. We create the mode and send the model to the GPU.
 
-``Torch.nn.Module`` sınıfından miras alan bir sınıf yaratarak derin sinir ağımızı oluşturuyoruz. ``__init__`` fonksiyonunda modele gerekli sinir ağı katmanlarını ekliyoruz ve kullanacağımız aktivasyon fonksiyonunu ekliyoruz. Daha sonra ileriye doğru yayılma sürecini ``forward`` fonksiyonunda tanımlayacağız.
+``Torch.nn.Module`` sınıfından miras alan bir sınıf yaratarak derin sinir ağımızı oluşturuyoruz. ``__init__`` 
+fonksiyonunda modele gerekli sinir ağı katmanlarını ve kullanacağımız aktivasyon fonksiyonunu ekliyoruz. 
+Daha sonra ileriye doğru yayılma sürecini ``forward`` fonksiyonu ile tanımlayacağız.
 
-Modelimiz değişken sayıda gizli katman içerecektir. Bu katmanları bir ``torch.nn.ModuleList`` nesnesinde saklamalıyız, böylece daha sonra optimizer nesnesi kullanılarak güncellenebilirler. Ayrıca ileriye doğru yayılma sırasında kullanacağımız doğrusal olmayan aktivasyon fonksiyonunu da saklıyoruz.
+Modelimiz değişken sayıda gizli katman içerecektir. Bu katmanları bir ``torch.nn.ModuleList`` nesnesinde saklamalıyız, 
+böylece daha sonra bir optimizer nesnesi kullanılarak güncellenebilirler. Ayrıca ileriye doğru yayılma sırasında 
+kullanacağımız doğrusal olmayan aktivasyon fonksiyonunu da saklıyoruz.
 
-İleri yayılım sırasında, sonuncusu hariç tüm katmanlardan sonra ReLU doğrusal olmayan aktivasyon fonksiyonunu uygularız. Bunun nedeni, kullanacağımız kaybın yani çapraz entropi kaybının softmax aktivasyonunu uygulayacak olmasıdır.
+İleri yayılım sırasında, sonuncusu hariç tüm katmanlardan sonra ReLU doğrusal olmayan aktivasyon fonksiyonunu uygulamamız 
+gerekiyor. Bunun nedeni, kullanacağımız kaybın yani çapraz entropi kaybının softmax aktivasyonunu uygulayacak olmasıdır.
 
 Son olarak, modu oluşturup modeli GPU'ya gönderiyoruz.
 
@@ -125,7 +136,8 @@ Optimize edici ve kayıp
 
 .. We define an Adam optimizer for our model and we give it the learning rate and pass to it the model parameters. The optimizer will update these parameters according to its strategy. We also define the loss function as the cross-entropy loss.
 
-Modelimiz için bir Adam optimizer tanımlıyoruz, ona öğrenme oranını ve model parametrelerini iletiyoruz. Optimize edici, bu parametreleri stratejisine göre güncelleyecektir. Kayıp fonksiyonunu ayrıca çapraz entropi kaybı olarak tanımlıyoruz.
+Modelimiz için bir Adam optimizer tanımlıyoruz, ona öğrenme oranını ve model parametrelerini iletiyoruz. Optimize edici, 
+bu parametreleri stratejisine göre güncelleyecektir. Kayıp fonksiyonunu ayrıca çapraz entropi kaybı olarak tanımlıyoruz.
 
 .. code-block:: python
 
@@ -155,9 +167,11 @@ Veri yükleyiciler (Dataloaders)
 
 .. We pass the datasets to the ``DataLoader`` constructor and specify the batch size (number of samples at each mini-batch.) We also specify that we want to shuffle the samples. 
 
-Veri kümesi büyük olduğundan, verileri numune yığınlarına bölecek bir ``DataLoader`` nesnesi kullanacağız. Bu mini yığınlar, GPU belleğinin tam veri kümesinden daha küçük ve daha yönetilebilir olacaktır.
+Veri kümesi büyük olduğundan, verileri örnek yığınlarına bölecek bir ``DataLoader`` nesnesi kullanacağız. 
+Bu mini yığınlar, GPU belleğinin tam veri kümesinden daha küçük ve daha yönetilebilir olacaktır.
 
-Veri kümelerini ``DataLoader`` yapıcısına iletiyoruz ve parti boyutunu (her mini partideki numune sayısı) belirliyoruz. Ayrıca numuneleri karıştırmak istediğimizi de belirtiyoruz.
+Veri kümelerini ``DataLoader`` yapıcısına iletiyoruz ve parti boyutunu (her mini yığındaki numune sayısı) 
+belirliyoruz. Ayrıca örnekleri karıştırmak istediğimizi de belirtiyoruz.
 
 .. code-block:: python
 
@@ -175,7 +189,10 @@ Eğitim döngüsü
 
 .. We create the training loop that will run for a certain number of epochs. Inside the training loop, we make another loop where the ``train_loader`` will supply us all the sample batches inside it in a shuffled order. In other words, at every epoch, we will process all the mini-batches inside ``train_loader``.
 
-Belirli sayıda çağ boyunca çalışacak eğitim döngüsünü oluşturuyoruz. Eğitim döngüsünün içinde, ``train_loader``\ ın içindeki tüm numune gruplarını karışık bir sırayla bize sağlayacağı başka bir döngü yapıyoruz. Başka bir deyişle, her adımda, tüm mini partileri ``train_loader`` içinde işleyeceğiz.
+Belirli sayıda devir (epoch) boyunca çalışacak bir eğitim döngüsü oluşturuyoruz. 
+Bu eğitim döngüsünün içinde, ``train_loader``\ ın içindeki tüm örnek gruplarını karışık bir 
+sırayla bize sağlayacağı başka bir döngü yapıyoruz. Başka bir deyişle, her adımda, tüm mini 
+yığınları ``train_loader`` içerisinde işleyeceğiz.
 
 .. code-block:: python
 
@@ -229,7 +246,10 @@ Belirli sayıda çağ boyunca çalışacak eğitim döngüsünü oluşturuyoruz.
 Değerlendirme
 ==========================
 
-Son olarak, modelin doğruluğunu değerlendiririz. Test verilerini mini partiler halinde işlemek için ``test_loader`` kullanıyoruz. Hesaplamalarımızın gradyan hesaplaması için kullanılmasını önlemek için değerlendirme kodunu ``torch.no_grad()`` kod bloğu ile çevreliyoruz. Bu ayrıca, ileriye doğru yayılma sırasında oluşturulan hesaplama grafiğinin kaydedilmesi gerekmediğinden, bellek tüketimimizi de azaltacaktır.
+Son olarak, modelin doğruluğunu değerlendireceğiz. Test verilerini mini yığınlar halinde işlemek için ``test_loader`` objesini 
+kullanıyoruz. Hesaplamalarımızın gradyan hesaplaması için kullanılmasını önlemek için değerlendirme kodunu ``torch.no_grad()`` 
+kod bloğu ile çevreliyoruz. Bu ayrıca, ileriye doğru yayılma sırasında oluşturulan hesaplama grafiğinin 
+kaydedilmesini engellediğinden, bellek tüketimimizi de azaltacaktır.
 
 .. code-block:: python
 

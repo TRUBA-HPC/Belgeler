@@ -4,14 +4,24 @@ Dağıtılmış, çok düğümlü ve çok GPU'lu eğitim
 
 .. PyTorch enables training models using multiple GPUs on a single device, and multiple GPUs on multiple devices. In this example, we will explore data-parallelism which is when a model is copied to multiple GPUs, and each GPU trains the model on a portion of the training samples. The gradients of the model are synchronized between all the participating GPUs and averaged during the backward pass of training, which keeps the model identical on all the GPUs. In this example, we will use two nodes with three GPUs on each node to carry out classification on the MNIST digit dataset. 
 
-PyTorch, tek bir aygıtta birden çok GPU ve birden çok aygıtta birden çok GPU kullanan eğitim modellerine olanak tanır. Bu örnekte, bir modelin birden fazla GPU'ya kopyalanması ve her bir GPU'nun modeli, eğitim örneklerinin bir kısmı üzerinde, eğitmesi işlemlerinin nasıl gerçekleştirildiğini keşfedeceğiz. Modelin gradyanları, katılan tüm GPU'lar arasında senkronize edilir ve eğitimin geriye doğru geçişi sırasında ortalaması alınır, bu da modeli tüm GPU'larda aynı tutar. Bu örnekte, MNIST basamaklı veri kümesinde sınıflandırma yapmak için her bir düğümde üç GPU bulunan iki düğüm kullanacağız.
+PyTorch, tek ve birden çok cihazda birden çok GPU kullanan eğitim modellerine olanak tanır. 
+Bu örnekte, bir modelin birden fazla GPU'ya kopyalanması ve her bir GPU'nun modeli, eğitim örneklerinin bir kısmı üzerinde, 
+eğitmesi işlemlerinin nasıl gerçekleştirildiğini keşfedeceğiz. Modelin gradyanları, katılan tüm GPU'lar arasında senkronize 
+edilecek ve eğitimin geriye doğru geçişi sırasında ortalaması alınacaktır. 
+Bu da modeli tüm GPU'larda aynı tutar. Bu örnekte, MNIST basamaklı veri kümesinde sınıflandırma yapmak için her 
+bir düğümde üç GPU bulunan iki düğüm kullanacağız.
 
 Yürütme modeli
 ================================
 
 .. In every node that will take part in the training, we will execute an instance of the training script. And in each training script, a single process will be forked for each GPU that will participate in training on the node running the script. For example, if two nodes are going to take part in training, and three GPUs were used in each node, then we will execute two scripts, one on each node, and each script will fork three training processes, and each process will use a single GPU on its node. In total, there will be six processes carrying out the training, and two parent processes on each node. The six processes running the training on the GPUs will be part of the same communication group running MPI, gloo, or NCCL backends. The following figure demonstrates this scenario.
 
-Eğitimde yer alacak her düğümde, eğitim komut dosyasının bir örneğini yürüteceğiz. Ve her eğitim komut dosyasında, komut dosyasını çalıştıran düğümde eğitime katılacak her GPU için tek bir işlem çatallanacak. Örneğin, eğitimde iki düğüm yer alacaksa ve her düğümde üç GPU kullanılmışsa, her düğümde bir tane olmak üzere iki komut dosyası çalıştıracağız ve her komut dosyası üç eğitim sürecini çatallayacak ve her işlem bir tane GPU kullanacak. Toplamda, eğitimi gerçekleştiren altı süreç ve her düğümde iki ana süreç olacaktır. GPU'larda eğitimi çalıştıran altı süreç, MPI, gloo veya NCCL arka uçlarını çalıştıran aynı iletişim grubunun parçası olacaktır. Aşağıdaki şekil bu senaryoyu göstermektedir.
+Eğitimde yer alacak her düğümde, eğitim komut dosyasının bir örneğini yürüteceğiz. Her eğitim komut dosyasında, komut 
+dosyasını çalıştıran düğümde eğitime katılacak her GPU için tek bir işlem çatallanacak. Örneğin, eğitimde iki 
+düğüm yer alacaksa ve her düğümde üç GPU kullanılmışsa, her düğümde bir tane olmak üzere iki komut dosyası çalıştıracağız 
+ve her komut dosyası üç eğitim sürecini çatallayacak ve her işlem bir tane GPU kullanacaktır. Toplamda, eğitimi gerçekleştiren 
+altı süreç ve her düğümde iki ana süreç olacaktır. GPU'larda eğitimi çalıştıran altı süreç, MPI, gloo veya NCCL arka uçlarını 
+çalıştıran aynı iletişim grubunun parçası olacaktır. Aşağıdaki şekil bu senaryoyu göstermektedir.
 
 
 .. image:: res/dist.png
@@ -59,11 +69,20 @@ Derin Sinir Ağı örneğinde kullanılan sinir ağı modelini kullanacağız:
 
 .. For each GPU on the device, we fork a process to run the function ``train_process_on_gpu`` which we define later on. This function is responsible for training using a single GPU. We fork processes using the ``torch.multiprocessing.spawn`` function as it is specialized for forking processes for training on PyTorch. Each parent process will fork as many ``train_process_on_gpu`` processes as there are GPUs on its node.
 
-Her düğümde çalıştırılacak komut dosyası, eğitimde kullanılan veri kümesini düğümüne indirecek ve eğitime katılan düğüm sayısını belirlemek için bazı ortam değişkenlerini okuyacaktır. En önemlisi, eğitimi gerçekleştirecek alt süreçleri çatallayacak ve düğümündeki her GPU için bir işlem başlatacaktır.
+Her düğümde çalıştırılacak komut dosyası, eğitimde kullanılan veri kümesini düğümüne indirecek ve 
+eğitime katılan düğüm sayısını belirlemek için bazı ortam değişkenlerini okuyacaktır. En önemlisi, 
+eğitimi gerçekleştirecek alt süreçleri çatallayacak (fork) ve düğümündeki her GPU için bir işlem başlatacaktır.
 
-Bu örnekte, eğitim işini yürütmek için SLURM'un kullanıldığını varsayıyoruz. Paralel bir işi yürütmek için SLURM kullanıldığında, işin meta verilerinin bir kısmı ortam değişkenleri olarak saklanır. ``"SLURM_NPROCS"`` ortam değişkenini kullanarak eğitim işinde yer alan görevlerin sayısını okuyabiliriz. Bu değer, bu iş adımını çalıştırırken kullanılan SLURM parametresi ``-n/--ntasks`` değerine eşit olacaktır. Ayrıca, ``"SLURM_PROCID"`` ortam değişkenini kullanarak tüm katılan görevler arasındaki *geçerli* görevin sayısını okuyacağız. Yukarıdaki değişkenlerin her ikisi de SLURM tarafından otomatik olarak ayarlanır.
+Bu örnekte, eğitim işini yürütmek için SLURM'un kullanıldığını varsayıyoruz. Paralel bir işi yürütmek için 
+SLURM kullanıldığında, işin meta verilerinin bir kısmı ortam değişkenleri olarak saklanır. 
+``"SLURM_NPROCS"`` ortam değişkenini kullanarak eğitim işinde yer alan görevlerin sayısını okuyabiliriz. 
+Bu değer, bu iş adımını çalıştırırken kullanılan SLURM parametresi ``-n/--ntasks`` değerine eşit olacaktır. 
+Ayrıca, ``"SLURM_PROCID"`` ortam değişkenini kullanarak tüm katılan görevler arasındaki *geçerli* görevlerin 
+sayısını okuyacağız. Yukarıdaki değişkenlerin her ikisi de SLURM tarafından otomatik olarak ayarlanmaktadır.
 
-Cihaz üzerindeki her bir GPU için daha sonra tanımlayacağımız ``train_process_on_gpu`` fonksiyonunu çalıştırmak için bir işlem çatallıyoruz. Bu işlem, tek bir GPU kullanarak eğitim yapacaktır. ``torch.multiprocessing.spawn`` işlemini kullanarak süreçleri çatallıyoruz. Her ana işlem, düğümünde GPU sayısı kadar çok ``train_process_on_gpu`` işlemini çatallayacaktır.
+Cihaz üzerindeki her bir GPU için daha sonra tanımlayacağımız ``train_process_on_gpu`` fonksiyonunu çalıştırmak 
+için bir işlem çatallıyoruz. Bu işlem, tek bir GPU kullanarak eğitim yapacaktır. Bu aşamada çatallama için ``torch.multiprocessing.spawn`` 
+işlemi kullanılacaktır. Her ana işlem, GPU sayısı kadar çok ``train_process_on_gpu`` işlemi çatallayacaktır.
 
 .. code-block:: python
 
@@ -88,7 +107,9 @@ Alt süreç - GPU'da eğitim fonksiyonu
 
 .. The train function is responsible for the entirety of training, and it will be executing on all the nodes, with one instance for every GPU. The function must establish the communication group, load the dataset, create the data samplers, and execute the training loop. One of the nodes will need to run testing.
 
-Train işlemi, eğitimin tamamından sorumludur ve her GPU için bir örnekle tüm düğümlerde yürütülecektir. İşlem, iletişim grubunu oluşturmalı, veri kümesini yüklemeli, veri örnekleyicileri oluşturmalı ve eğitim döngüsünü yürütmelidir. Bu durumda düğümlerden birinin test yapması gerekir.
+Train fonksiyonu, eğitimin tamamından sorumludur ve her GPU için bir örnekle tüm düğümlerde yürütülecektir. 
+İşlem, iletişim grubunu oluşturmalı, veri kümesini yüklemeli, veri örnekleyicileri oluşturmalı ve eğitim döngüsünü yürütmelidir. 
+Bu durumda düğümlerden birinin test yapması gerekir.
 
 İletişim grupları oluşturma
 ---------------------------------------------------------------
@@ -99,7 +120,11 @@ Train işlemi, eğitimin tamamından sorumludur ve her GPU için bir örnekle t�
 
 İşlem çatallandığında, ilk argümanı aynı ana süreç tarafından tüm çatallı süreçler arasındaki indeksi olacaktır. Bu sayıyı bu işlemin kullanacağı GPU'nun kimliği olarak kullanabiliriz. Kalan argümanlar, ``spawn`` işlevindeki süreçleri çatallarken kullanılan ``args`` adlı parametreden iletilir.
 
-Bu fonksiyonda yaptığımız ilk şey, bu işlemin eğitim çalıştıran *tüm* süreçler arasındaki sırasını hesaplamamızdır. Daha sonra ``init_process_group`` fonksiyonunu kullanarak eğitim için kullanılacak iletişim grubunu oluşturuyoruz ve iletişim arka ucu olarak ``gloo``\ yu kullanıyoruz. Unutulmamalıyız ki, iletişim grubunun oluşturulabilmesi için ana düğümün IP adresi ve iletişim için bir bağlantı noktası belirtilmelidir. İşi çalıştırmak için kullanılanları SLURM betiğinde belirteceğiz ve betiği bu eğitimin sonunda göstereceğiz.
+Bu fonksiyonda yaptığımız ilk şey, bu işlemin eğitimi çalıştıran *tüm* süreçler arasındaki sırasını hesaplamaktır. 
+Daha sonra ``init_process_group`` fonksiyonunu kullanarak eğitim için kullanılacak iletişim grubunu oluşturuyoruz ve 
+iletişim arka ucu olarak ``gloo``\ yu kullanıyoruz. Unutulmamalıyız ki, iletişim grubunun oluşturulabilmesi için ana 
+düğümün IP adresi ve iletişim için bir bağlantı noktası belirtilmelidir. İşi çalıştırmak için kullanılanları SLURM 
+betiğinde belirteceğiz ve betiği bu eğitimin sonunda göstereceğiz.
 
 .. code-block:: python
 
@@ -115,7 +140,11 @@ Veri kümesi ve veri örnekleyici
 
 .. All the processes participating in the training procedure will have copies of the same model. However, each of them will be training using a different set of samples. We establish this distributed sampling using the ``DistributedDataSampler`` object. This object takes a dataset that will be used by multiple processes and establishes a sampling pattern in such a way that every process will receive a different set of samples to train with. After creating the sampler and telling it how many processes are going to be used, and the rank of the current process, we pass the sampler to the data loader which we will use to get the training batches during the training phase.
 
-Eğitim prosedürüne katılan tüm süreçlerde aynı modelin kopyaları olacaktır. Ancak, her biri farklı bir örnek seti kullanarak eğitim işlemini gerçekleştirecektir. Bu dağıtılmış örneklemeyi ``DistributedDataSampler`` nesnesini kullanarak oluşturuyoruz. Bu nesne, birden fazla işlem tarafından kullanılacak bir veri kümesini alır ve her işlemin eğitmek için farklı bir örnek kümesi alacağı şekilde bir örnekleme modeli oluşturur. Sampler'ı oluşturup kaç işlemin kullanılacağını ve mevcut işlemin sırasını söyledikten sonra, eğitim aşamasında eğitim partilerini almak için kullanacağımız sampler'ı data loader'a aktarıyoruz.
+Eğitim prosedürüne katılan tüm süreçlerde aynı modelin kopyaları olacaktır. Ancak, her biri farklı bir örnek seti kullanarak 
+eğitim işlemini gerçekleştirecektir. Bu dağıtılmış örneklemeyi ``DistributedDataSampler`` nesnesini kullanarak oluşturuyoruz. 
+u nesne, birden fazla işlem tarafından kullanılacak bir veri kümesini alır ve her işlemin eğitmek için farklı bir örnek kümesi 
+alacağı şekilde bir örnekleme modeli oluşturur. Sampler'ı oluşturup kaç işlemin kullanılacağını ve mevcut işlemin sırasını 
+söyledikten sonra, eğitim aşamasında eğitim partilerini almak için kullanacağımız sampler'ı data loader'a aktarıyoruz.
 
 .. code-block:: python
 
@@ -139,7 +168,11 @@ Dağıtılmış model
 
 .. We create an identical neural network model on all the processes, but we wrap it with a ``DistributedDataParallel`` object, and we use that object for training. We also inform it of which GPU on the current device it is going to use for training. This wrapped model will synchronize the trainable parameters of the models on all the GPUs participating in training. More specifically, it will synchronize the backward pass, and will guarantee that all copies of the model have the same gradients at the end of a backward pass by averaging all the sets of gradients.
 
-Tüm süreçlerde özdeş bir sinir ağı modeli oluşturuyoruz, ancak bunu bir ``DistributedDataParallel`` nesnesi ile sarıyoruz ve o nesneyi eğitim için kullanıyoruz. Ayrıca mevcut cihazda hangi GPU'nun eğitim için kullanacağını da bildiriyoruz. Bu sarılmış model, eğitime katılan tüm GPU'lardaki modellerin eğitilebilir parametrelerini senkronize edecektir. Daha spesifik olarak, geriye doğru geçişi senkronize edecek ve tüm gradyan kümelerinin ortalamasını alarak, geriye doğru geçişin sonunda modelin tüm kopyalarının aynı gradyanlara sahip olmasını garanti edecektir.
+Dağıtık bir eğitim için tüm süreçlerde özdeş bir sinir ağı modeli oluşturuyoruz, ancak bunu bir ``DistributedDataParallel`` 
+nesnesi ile sarıyoruz ve o nesneyi eğitim için kullanıyoruz. Ayrıca mevcut cihazda hangi GPU'nun eğitim için kullanılacağını 
+da bildiriyoruz. Bu sarılmış model, eğitime katılan tüm GPU'lardaki modellerin eğitilebilir parametrelerini senkronize edecektir. 
+Daha spesifik olarak, geriye doğru geçişi senkronize edecek ve tüm gradyan kümelerinin ortalamasını alarak, geriye doğru geçişin 
+sonunda modelin tüm kopyalarının aynı gradyanlara sahip olmasını garanti edecektir.
 
 .. code-block:: python
 
@@ -154,7 +187,12 @@ Eğitim döngüsü
 
 .. The train loop used for distributed training looks identical to the one used for single-node, single-GPU training. We will use the ``DataLoader`` to fetch training samples, we will pass them to the training model, we will calculate a loss, do a backward pass through the model, and update the gradients. All of the communcationa and synchronization is done automatically by the ``DistributedDataParallel`` model. In fact, it only needs to synchronize at the backwards pass through the model. At that point, the gradients from all the participating processes are synchronized and averaged such that all the processes will have the same set of gradients at the end of the backwards pass. 
 
-Dağıtılmış eğitim için kullanılan eğitim döngüsü, tek düğümlü, tek GPU eğitimi için kullanılanla aynı görünüyor. Eğitim örneklerini getirmek için ``DataLoader``\ 'ı kullanacağız, onları eğitim modeline geçireceğiz, bir kayıp hesaplayacağız, modelden geriye doğru bir geçiş yapacağız ve gradyanları güncelleyeceğiz. Tüm iletişim ve senkronizasyon ``DistributedDataParallel`` modeli tarafından otomatik olarak yapılır. Aslında, sadece modelden geriye doğru geçişte senkronize olması gerekiyor. Bu noktada, tüm katılan süreçlerden gelen gradyanlar senkronize edilir ve geriye doğru geçişin sonunda tüm süreçlerin aynı gradyan kümesine sahip olacağı şekilde ortalaması alınır.
+Dağıtılmış eğitim için kullanılan eğitim döngüsü, tek düğümlü, tek GPU eğitimi için kullanılanla aynı görünmektedir. 
+Bu döngüde sırasıyla eğitim örneklerini getirmek için ``DataLoader``\ 'ı kullanacağız, onları eğitim modeline geçireceğiz, bir kayıp hesaplayacağız, 
+modelden geriye doğru bir geçiş yapacağız ve gradyanları güncelleyeceğiz. Tüm iletişim ve senkronizasyon ``DistributedDataParallel`` 
+objesi tarafından otomatik olarak yapılır. Aslında, sadece modelden geriye doğru geçişte senkronizsyon gereklidir. Bu noktada, 
+tüm katılan süreçlerden gelen gradyanlar senkronize edilir ve geriye doğru geçişin sonunda tüm süreçlerin aynı gradyan kümesine 
+sahip olacağı şekilde ortalaması alınır.
 
 .. code-block:: python
 
@@ -183,7 +221,8 @@ Modeli test etmek
 
 .. We only carry out testing on a single node since it is not a time-sensitive operation. It is done in exactly the same way as testing is done in a single-node, single-GPU example. Only difference is that we specify that only the process with rank == 0 executes testing.
 
-Zamana duyarlı bir işlem olmadığı için yalnızca tek bir düğüm üzerinde test yapıyoruz. Tek düğümlü, tek GPU örneğinde yapılan testle tamamen aynı şekilde yapılır. Tek fark, yalnızca rank == 0 olan işlemin testi yürüteceğini belirtmemizdir.
+Zamana duyarlı bir işlem olmadığı için yalnızca tek bir düğüm üzerinde test yapıyoruz. Bu test, tek düğümlü, tek GPU örneğinde 
+yapılan testle tamamen aynı şekilde yapılır. Tek fark, yalnızca rank == 0 olan işlemin testi yürüteceğini belirtmemizdir.
 
 .. code-block:: python
 
@@ -215,7 +254,11 @@ SLURM komut dosyası
 
 Son olarak, çoklu GPU, çok düğümlü işi yürütmek için TRUBA'da kullandığımız SLURM betiğini göstereceğiz.
 
-Komut dosyasında, kullanmak istediğimiz düğüm sayısını ve eğitimde yer alan görev sayısını belirtiyoruz. Ayrıca komut dosyası içerisinde iletişim grubundaki ana işlemin IP adresi olan ``"MASTER_ADDR"`` ve ``"MASTER_PORT"`` olmak üzere iki ortam değişkeni belirledik, bunlar iletişim grubunun iletişim kuracağı bağlantı noktasıdır. Lütfen kullanmadan önce bağlantı noktasının boş olduğundan emin olun. Son olarak, ``srun`` komutunu ve ayırdığımız düğümleri kullanarak eğitim komut dosyasını çalıştırıyoruz. Bunun için PyTorch'un kurulu olduğu bir conda ortamı kullanıyoruz.
+Komut dosyasında, kullanmak istediğimiz düğüm sayısını ve eğitimde yer alan görev sayısını belirtiyoruz. 
+Ayrıca komut dosyası içerisinde iletişim grubundaki ana işlemin IP adresi olan ``"MASTER_ADDR"`` ve ``"MASTER_PORT"`` 
+olmak üzere iki ortam değişkeni belirledik, bunlar iletişim grubunun iletişim kuracağı bağlantı noktası olarak kullanılacaktır. 
+Lütfen kullanmadan önce bağlantı noktasının boş olduğundan emin olun. Son olarak, ``srun`` komutunu ve ayırdığımız 
+düğümleri kullanarak eğitim komut dosyasını çalıştırıyoruz. Bunun için PyTorch'un kurulu olduğu bir conda ortamı kullanıyoruz.
 
 .. code-block:: bash
 

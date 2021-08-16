@@ -21,7 +21,7 @@ Veri kümesini tanımlama
 
 .. Note: to install ``sklearn``\ , run the following command:
 
-Eğitim için gerçek dünya veri setini kullanacağız. Bu veri setini ``sklearn`` kütüphanesinden alıyoruz. Daha sonra eğitim ve test setlerine ayırıyoruz ve eğitim ve test setlerinin değerlerini normalleştiriyoruz.
+Eğitim için gerçek bir veri setini kullanacağız. Bu veri setini ``sklearn`` kütüphanesinden alıyoruz. Daha sonra eğitim ve test setlerine ayırıyoruz ve eğitim ve test setlerinin değerlerini normalleştiriyoruz.
 
 Not: ``sklearn``\ 'i kurmak için aşağıdaki komutu çalıştırın:
 
@@ -189,7 +189,11 @@ Eğitim döngüsü ve değerlendirme adımı
 
 .. Also, every 25 epochs, we will evaluate the model using the testing set.
 
-Modelin eğitimini gerçekleştirmek için eğitim döngüsünü tanımlarız. Program, belirli sayıda adım (dönem) için çalışacak ve her adımda sistem üzerinden ileriye doğru bir yayılım gerçekleştirecek, sistem kaybını hesaplayacak, kaybı, eğitilebilir parametrelerin gradyanlarını hesaplamak için kullanacak ve optimize edici kullanılarak eğitilebilir parametreleri güncelleyecektir.
+Modelin eğitimini gerçekleştirmek için eğitim döngüsünü tamımlamamız gerek. 
+Bu sayede program, belirli sayıda adım (dönem) için çalışacak ve her adımda sistem üzerinden 
+ileriye doğru bir yayılım gerçekleştirecek, sistem kaybını hesaplayacak, kaybı, eğitilebilir 
+parametrelerin gradyanlarını hesaplamak için kullanacak ve optimize edici kullanılarak eğitilebilir 
+parametreleri güncelleyecektir.
 
 Ayrıca her 25 adımda bir, test setini kullanarak, modeli değerlendireceğiz.
 

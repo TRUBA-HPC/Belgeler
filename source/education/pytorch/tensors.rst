@@ -572,17 +572,17 @@ Tensörlerin türevleri zincir kuralı kullanılarak hesaplanır, bu da onların
                                   # için "retain_graph = True" belirtiriz 
    print(f"t1'ye göre t2'nin gradyanı  = {t1.grad}")
    # dt2/dt1 = 2 * t1
-   t1.grad.data.zero_() # bu degradeyi 0'a sıfırlayacak 
+   t1.grad.data.zero_() # bu türevi 0'a eşitleyecek 
 
    t3.backward(retain_graph=True)
    print(f"t1'e göre t3'ün gradyanı  = {t1.grad}")
    # dt3/dt1 = dt3/dt2 * dt2/dt1 = 2 * 2 * t1
-   t1.grad.data.zero_() # bu degradeyi 0'a sıfırlayacak
+   t1.grad.data.zero_() # bu türevi 0'a eşitleyecek
 
    t4.backward()
    print(f"t1'e göre t4 gradyanı  = {t1.grad}")
    # dt4/dt1 = dt4/dt3 * dt3/dt2 * dt2/dt1 = 4 * t3^3 * 2 * 2 * t1
-   t1.grad.data.zero_() # bu degradeyi 0'a sıfırlayacak
+   t1.grad.data.zero_() # bu türevi 0'a eşitleyecek
 
 .. Output:
 
@@ -598,12 +598,12 @@ Tensörlerin türevleri zincir kuralı kullanılarak hesaplanır, bu da onların
 
 .. Updating tensors using gradients
 
-Degradeleri kullanarak tensörleri güncelleme (What is a degrade???)
+*no_grad* kullanarak tensörleri güncelleme
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. Generally, in machine learning pipelines, the gradient of a tensor is used to update that tensor's value. When updating the tensor using its gradient, we must make sure that the update procedure is not *tracked* by the ``autograd`` package. In other words, we need to mark the update operation as not part of the forward propagation of pipeline. We do so using the ``torch.no_grad()`` function which halts all gradient tracking.
 
-Genel olarak, makine öğrenimi ardışık düzenlerinde, bir tensörün gradyanı, bu tensörün değerini güncellemek için kullanılır. Tensörü gradyanını kullanarak güncellerken, güncelleme prosedürünün ``autograd`` paketi tarafından *izlenmediğinden* emin olmalıyız. Başka bir deyişle, güncelleme işlemini boru hattının ileriye doğru yayılmasının bir parçası olarak işaretlememeliyiz. Bunu, tüm gradyan izlemeyi durduran ``torch.no_grad()`` işlevini kullanarak yapıyoruz. 
+Genel olarak, makine öğrenimi ardışık düzenlerinde, bir tensörün gradyanı, bu tensörün değerini güncellemek için kullanılır. Tensörü gradyanını kullanarak güncellerken, güncelleme prosedürünün ``autograd`` paketi tarafından *izlenmediğinden* emin olmalıyız. Başka bir deyişle, güncelleme işlemini sürecin ileriye doğru yayılmasının bir parçası olarak işaretlememeliyiz. Bunu, tüm gradyan izlemeyi durduran ``torch.no_grad()`` işlevini kullanarak yapıyoruz. 
 
 .. code-block:: python
 

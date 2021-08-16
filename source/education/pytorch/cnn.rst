@@ -5,14 +5,21 @@ Evrişimli sinir ağları (Convolutional neural networks)
 
 .. We will create a convolutional neural network that we will use to carry out classification on image data. Convolutional neural networks are great for working with data that has more than one dimension, for example, 2D images. In this example we use convolutional layers and pooling layers to processes images in a manner that respects their dimensionality. 
 
-Görüntü verileri üzerinde sınıflandırma yapmak için kullanacağımız evrişimsel bir sinir ağı oluşturacağız. Evrişimli sinir ağları, örneğin 2B görüntüler gibi birden fazla boyutu olan verilerle çalışmak için mükemmeldir. Bu örnekte, görüntüleri boyutsallıklarına saygı gösterecek şekilde işlemek için evrişimli katmanları ve havuz katmanlarını kullanıyoruz.
+Bu bölümde görüntü verileri üzerinde sınıflandırma yapmak için kullanacağımız evrişimsel bir sinir ağı oluşturacağız. 
+Evrişimli sinir ağları, örneğin iki boyutlu görüntüler gibi birden fazla boyutu olan verilerle çalışmak için mükemmeldir. 
+Bu örnekte, görüntüleri boyutsallıklarına saygı gösterecek şekilde işlemek için evrişimli katmanları ve 
+havuz katmanlarını kullanıyoruz.
 
 Veri kümesi
 =====================
 
 .. We will use CIFAR10 image dataset containing 60000 images of 10 different objects. The dataset is provided in the ``torchvision`` library. The dataset contains `PIL images <https://pillow.readthedocs.io/en/stable/reference/Image.html>`_ which we cannot use directly with PyTorch layers. So, we use the ``ToTensor()`` transformation to convert the images into tensors. This will convert each pixel in the image into a tensor of three numbers in the range [0,1] representing the RGB values of that pixel. We also apply a second transform, ``Normalize()`` to make shift the values to the range [-0.5, 0.5].
 
-10 farklı nesnenin 60000 görüntüsünü içeren CIFAR10 görüntü veri kümesini kullanacağız. Veri setini, torchvision kitaplığından indireceğiz. Veri kümesi, doğrudan PyTorch katmanlarıyla kullanamadığımız PIL görüntülerini içerir. Bu nedenle, görüntüleri tensörlere dönüştürmek için ``ToTensor()`` dönüşümünü kullanıyoruz. Bu, görüntüdeki her pikseli, o pikselin RGB değerlerini temsil eden [0,1] aralığında üç sayıdan oluşan bir tensöre dönüştürecektir. Ayrıca değerleri [-0.5, 0.5] aralığına kaydırmak için ``Normalize()`` adlı ikinci bir dönüşüm uygulayacağız.
+10 farklı nesnenin 60000 görüntüsünü içeren CIFAR10 görüntü veri kümesini kullanacağız. 
+Veri setini, torchvision kitaplığından indireceğiz. Veri kümesi, doğrudan PyTorch katmanlarıyla kullanamadığımız 
+PIL görüntülerini içerir. Bu nedenle, görüntüleri tensörlere dönüştürmek için ``ToTensor()`` dönüşümünü kullanıyoruz. 
+Bu, görüntüdeki her pikseli, o pikselin RGB değerlerini temsil eden [0,1] aralığında üç sayıdan oluşan bir tensöre dönüştürecektir. 
+Ayrıca değerleri [-0.5, 0.5] aralığına kaydırmak için ``Normalize()`` adlı ikinci bir dönüşüm uygulayacağız.
 
 .. code-block:: python
 
@@ -115,14 +122,21 @@ Evrişimli sinir ağı modeli
 
 .. Our model is going to take the image data tensors and process them through convolutional layers and pooling layers. Afterwards, we will take the data through linear layers to finally acquire scores for the classes we would like to predict from. First we will demonstrate the convolutional layer as well as the pooling layer, then, we will build the complete neural network model by inheriting from the ``torch.nn.Module`` class.
 
-Modelimiz, görüntü veri tensörlerini alacak ve bunları evrişim katmanları ve havuz katmanları aracılığıyla işleyecektir. Daha sonra, tahmin etmek istediğimiz sınıflar için verileri doğrusal katmanlardan alacağız ve son puanları elde edeceğiz. Bu bölümde, önce evrişim katmanını ve havuzlama katmanını göstereceğiz, ardından ``torch.nn.Module`` sınıfından miras alarak tam sinir ağı modelini oluşturacağız.
+Modelimiz, görüntü veri tensörlerini alacak ve bunları evrişim katmanları ve havuz katmanları aracılığıyla işleyecektir. 
+Daha sonra, tahmin etmek istediğimiz sınıflar için verileri doğrusal katmanlardan alacağız ve son skorları elde edeceğiz. 
+Bu bölümde, önce evrişim katmanını ve havuzlama katmanını göstereceğiz, ardından ``torch.nn.Module`` sınıfından miras alarak 
+tam sinir ağı modelini oluşturacağız.
 
 Evrişimsel katmanlar
 -------------------------------------------
 
 .. Convolutional layers take multi-dimensional data and use a convolution to produce a multi-dimensional output. The example below demonstrates the first convolutional layer we will use in our model. However, in the example below, we use an input image of the dimensions 9x9 instead of 32x32 for clarity. The layer trains a 5x5 filter that will go over each group of 5x5 pixels in the image and transform them into a single pixel in the output. In addition, the filter will use the three colours (channels) of each pixel in the input and produce 6 output channels for each pixel in the output.
 
-Evrişimsel katmanlar çok boyutlu verileri alır ve çok boyutlu bir çıktı üretmek için bir evrişim kullanır. Aşağıdaki örnek, modelimizde kullanacağımız ilk evrişimsel katmanı göstermektedir. Ancak, aşağıdaki örnekte, netlik için 32x32 yerine 9x9 boyutlarında bir giriş görüntüsü kullanıyoruz. Katman, görüntüdeki her 5x5 piksel grubunun üzerinden geçerek ve bunları çıktıda tek bir piksele dönüştürerek 5x5'lik bir filtre eğitir. Ayrıca filtre, girişteki her pikselin üç rengini (kanalını) kullanacak ve çıktıdaki her piksel için 6 çıkış kanalı üretecektir.
+Evrişimsel katmanlar çok boyutlu verileri alır ve çok boyutlu bir çıktı üretmek için bir evrişim kullanır. 
+Aşağıdaki örnek, modelimizde kullanacağımız ilk evrişimsel katmanı göstermektedir. Ancak, aşağıdaki örnekte, 
+netlik için 32x32 yerine 9x9 boyutlarında bir giriş görüntüsü kullanıyoruz. Katman, görüntüdeki her 5x5 piksel 
+grubunun üzerinden geçerek ve bunları çıktıda tek bir piksele dönüştürerek 5x5'lik bir filtre eğitir. Ayrıca filtre, 
+girişteki her pikselin üç rengini (kanalını) kullanacak ve çıktıdaki her piksel için 6 çıkış kanalı üretecektir.
 
 
 .. image:: res/conv.png
@@ -132,7 +146,8 @@ Evrişimsel katmanlar çok boyutlu verileri alır ve çok boyutlu bir çıktı �
 
 .. Belows is a demonstration of what the convolutional layer does to an input. We pass a batch of four images to the layer and receive a transformed output:
 
-Aşağıda, evrişim katmanının bir girdiye ne yaptığının bir gösterimi verilmiştir. Katmana dört görüntüden oluşan bir toplu iş gönderiyoruz ve dönüştürülmüş bir çıktı alıyoruz:
+Aşağıda, evrişim katmanının bir girdiye ne yaptığının bir gösterimi verilmiştir. Katmana dört görüntüden oluşan bir toplu 
+iş gönderiyoruz ve dönüştürülmüş bir çıktı alıyoruz:
 
 .. code-block:: python
 
@@ -163,8 +178,9 @@ Havuz katmanları (Pooling layers)
 
 .. After running convolution layers, we can use pooling layers to compress the output into a smaller representation. In our model, we use a max-pool that will take the output of the previous layer and compress it using the maximum function. Below is an example of a pooling layer. 
 
-Evrişim katmanlarını çalıştırdıktan sonra, çıktıyı daha küçük bir temsile sıkıştırmak için havuz katmanlarını kullanabiliriz. Modelimizde, bir önceki katmanın çıktısını alacak ve maksimum fonksiyonunu kullanarak sıkıştıracak bir max-pool kullanıyoruz. Aşağıda bir havuzlama katmanı örneği verilmiştir.
-
+Evrişim katmanlarını çalıştırdıktan sonra, çıktıyı daha küçük bir temsile sıkıştırmak için havuz katmanlarını kullanabiliriz.
+Modelimizde, bir önceki katmanın çıktısını alacak ve maksimum fonksiyonunu kullanarak sıkıştıracak bir max-pool kullanıyoruz. 
+Aşağıda bir havuzlama katmanı örneği verilmiştir.
 
 .. image:: res/pool.png
    :target: res/pool.png
@@ -172,7 +188,9 @@ Evrişim katmanlarını çalıştırdıktan sonra, çıktıyı daha küçük bir
 
 .. Below, we demonstrate a max-pool layer that will take the output of the previous convolutional layer and apply pooling. The layer will take grids of 2x2 and find their maximum value. The pooling layer has a stride of 2 so the filter will move 2 locations at a time. This pooling procedure happens for all the channels of the input.
 
-Aşağıda, önceki evrişim katmanının çıktısını alacak ve havuzlama uygulayacak bir maksimum havuz katmanı gösteriyoruz. Katman 2x2'lik ızgaralar alacak ve maksimum değerlerini bulacaktır. Havuzlama katmanının adımı 2'dir, bu nedenle filtre bir seferde 2 konum hareket edecektir. Bu havuzlama prosedürü, girişin tüm kanalları için gerçekleşir.
+Aşağıda, önceki evrişim katmanının çıktısını alacak ve havuzlama uygulayacak bir maksimum havuz katmanı gösteriyoruz. 
+Katman 2x2'lik ızgaralar alacak ve maksimum değerlerini bulacaktır. Havuzlama katmanının adımı 2'dir, bu nedenle filtre 
+bir seferde 2 konum hareket edecektir. Bu havuzlama prosedürü, girişin tüm kanalları için gerçekleşir.
 
 .. code-block:: python
 
@@ -190,9 +208,7 @@ Aşağıda, önceki evrişim katmanının çıktısını alacak ve havuzlama uyg
 
    .. code-block:: python
 
-      before layer, shape: torch.Size([4, 6, 28, 28])
       katmandan önce, şekil: torch.Size([4, 6, 28, 28])
-      after layer, shape: torch.Size([4, 6, 14, 14])
       katmandan sonra, şekil: torch.Size([4, 6, 14, 14])
 
 Tam model
@@ -200,7 +216,9 @@ Tam model
 
 .. We create our model by inheriting from the the ``torch.nn.Module`` class. We define two convolutional layers and a single pooling function that we will use after each convolutional layer. We also define three linear layers that will take the output of convolution and gradually transform it until there are only 10 outputs which is the number of classes to predict.
 
-``torch.nn.Module`` sınıfından miras alarak modelimizi oluşturuyoruz. Her evrişim katmanından sonra kullanacağımız iki evrişim katmanı ve tek bir havuz işlevi tanımlıyoruz. Ayrıca, evrişimin çıktısını alacak ve tahmin edilecek sınıf sayısı olan sadece 10 çıktı olana kadar kademeli olarak dönüştürecek üç doğrusal katman tanımlıyoruz.
+``torch.nn.Module`` sınıfından miras alarak modelimizi oluşturuyoruz. Her evrişim katmanından sonra kullanacağımız iki 
+evrişim katmanı ve tek bir havuz işlevi tanımlıyoruz. Ayrıca, evrişimin çıktısını alacak ve tahmin edilecek sınıf sayısı 
+olan sadece 10 çıktı olana kadar kademeli olarak dönüştürecek üç doğrusal katman tanımlıyoruz.
 
 .. code-block:: python
 
@@ -282,7 +300,10 @@ Eğitim döngüsü
 
 .. Training the model will use the train loader, which is going to generate batches of images of size ``batch_size=4`` . For each training epochs, all the training batches will be used for training the model. For each batch, a forward propagation through the system will be carried out, then a backward propagation to optimize it. Before processing the data, we move it to the device.
 
-Modeli eğitmek, toplu ``batch_size=4`` görüntü yığınları oluşturacak olan eğitim seti yükleyiciyi kullanacaktır. Her eğitim dönemi için, modelin eğitimi için tüm eğitim grupları kullanılacaktır. Her parti için, sistem boyunca ileriye doğru bir yayılım, ardından onu optimize etmek için geriye doğru bir yayılım gerçekleştirilecektir. Verileri işlemeden önce cihaza taşıyoruz.
+Modeli eğitmek, ``batch_size=4`` değeri ile görüntü yığınları oluşturacak olan eğitim seti yükleyiciyi kullanacaktır. 
+Her eğitim dönemi için, modelin eğitiminde tüm eğitim grupları kullanılacaktır. Her parti için, sistem boyunca ileriye 
+doğru bir yayılım, ardından onu optimize etmek için geriye doğru bir yayılım gerçekleştirilecektir. Verileri işlemeden 
+önce cihaza taşıyoruz.
 
 .. code-block:: python
 
@@ -349,9 +370,10 @@ Modeli eğitmek, toplu ``batch_size=4`` görüntü yığınları oluşturacak ol
 Değerlendirme
 ==========================
 
-Finally, we evaluate the trained model using the test data. We use the test loader which will generate batches of test data. We calculate the accuracy of each of the ten classes, as well as the overall accuracy of the system. We surround the evaluation code with the ``torch.no_grad()`` function so that the calculation used in evaluation does not generate a computation graph, which is more compute and memory efficient.
-
-Son olarak, test verilerini kullanarak eğitilen modeli değerlendiririz. Test verisi yığınları oluşturacak test yükleyicisini kullanıyoruz. On sınıfın her birinin doğruluğunu ve ayrıca sistemin genel doğruluğunu hesaplıyoruz. Değerlendirmede kullanılan hesaplamanın, hesaplama ve bellek açısından daha verimli olması için, yani hesaplama grafiği oluşturmaması için değerlendirme kodunu torch.no_grad() işlemiyle çevreliyoruz.
+Son olarak, test verilerini kullanarak eğitilen modeli değerlendireceğiz. 
+Test verisi yığınları oluşturacak test yükleyicisini kullanıyoruz. On sınıfın her birinin doğruluğunu ve ayrıca 
+sistemin genel doğruluğunu hesaplıyoruz. Değerlendirmede kullanılan hesaplamanın, hesaplama ve bellek açısından daha 
+verimli olması için, yani hesaplama grafiği oluşturmaması için değerlendirme kodunu ``torch.no_grad()`` işlemiyle çevreliyoruz.
 
 .. code-block:: python
 
