@@ -15,7 +15,7 @@ CUDA Bellek İşlemleri
 Veri Paralelleşmesi
 -------------------
 .. image:: /assets/cuda/02/02/01.jpg
-   :width: 500
+   :width: 600
    :align: center
 
 Yukarıdaki görselde veri paralelleşmesi, vektör toplama işlemi üzerinde gösterilmektedir. 

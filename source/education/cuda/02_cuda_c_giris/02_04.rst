@@ -196,7 +196,7 @@ Ayrıca **-lnvToolsExt** kütüphanesi ile bağlama (ing., linking) işlemi yapm
 **NVTX** hakkında daha detaylı bilgi için: http://devblogs.nvidia.com/parallelforall/cuda-pro-tip-generate-custom-application-profile-timelines-nvtx/
 
 .. image:: /assets/cuda/02/04/02.png
-   :width: 600
+   :width: 500
    :align: center
 
 **NVTX** eklentisi ile genişletilmiş görseli yukarıda görebilirsiniz. Burada *sum* adlı alan **nvtx** eklentisi ile profillenebilmiştir.
