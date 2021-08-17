@@ -1,5 +1,5 @@
 ============================================
-CUDA Çekirdek ve Çok Boyutluluk
+CUDA Çekirdekleri ve Çok Boyutluluk
 ============================================
 
 Öğrenim Hedefleri
