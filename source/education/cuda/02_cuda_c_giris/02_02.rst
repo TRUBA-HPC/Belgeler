@@ -15,7 +15,8 @@ CUDA Bellek İşlemleri
 Veri Paralelleşmesi
 -------------------
 .. image:: /assets/cuda/02/02/01.jpg
-   :width: 600
+   :width: 500
+   :align: center
 
 Yukarıdaki görselde veri paralelleşmesi, vektör toplama işlemi üzerinde gösterilmektedir. 
 Vektörün farklı elemanlarını sırayla toplamak yerine bütün elemanlar aynı anda toplanarak paralel 
@@ -63,7 +64,8 @@ BOLUM-3 ise cihaz üzerinde yapılan hesaplamanın sonucunu sunucu tarafına (CP
 Genel bir CUDA programındaki akış aşağıdaki görselle açıklanabilir.
 
 .. image:: /assets/cuda/02/02/02.jpg
-   :width: 500
+   :width: 350
+   :align: center
 
 * Hesaplamada kullanılacak veri için yeterli bellek miktarı GPU belleği üzerinde ayrılır ve hesaplamada kullanılacak veri GPU belleğine kopyalanır.
 * GPU çekirdeği (kernel) ile gerekli hesaplama işlemini gerçekleştirir.
@@ -73,7 +75,8 @@ CUDA Bellek Yapısı
 ------------------
 
 .. image:: /assets/cuda/02/02/03.jpg
-   :width: 600
+   :width: 500
+   :align: center
 
 *  En basit haliyle CUDA bellek yapısını inceleyelim. Cihaz üzerinde bulunan evrensel (global) bellek ve her ayrı iş parçacığının (thread) kendi bellekleri turuncu ile gösterilmiştir. 
 

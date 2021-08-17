@@ -2,31 +2,32 @@
 Örnek: Resimi Renkliden Gri Tonlamaya Çevirme İşlemi
 ====================================================
 
-
 Öğrenim Hedefleri
 -----------------
 
-*  Çok boyutlu CUDA çekirdekleri hakkında, pratik bir örnek üzerinden daha detaylı şekilde bilgi sahibi olmak
+*  Çok boyutlu CUDA yapıları hakkında, pratik bir örnek üzerinden daha detaylı şekilde bilgi sahibi olmak
 
-
-
-Örnek: Çok Boyutlu CUDA Çekirdeği Kullanarak Renklerden Gri Tonlamaya Çevirme
+Örnek: Çok Boyutlu CUDA Yapıları Kullanarak Renklerden Gri Tonlamaya Çevirme
 -----------------------------------------------------------------------------
-Bu bölümde çok boyutlu CUDA çekirdeği kullanarak renkli bir resimin gri tonlamaya çevrilmesini inceleyeceğiz.
+Bu bölümde çok boyutlu CUDA şebeke ve blokları kullanarak renkli bir resimin gri tonlamaya çevrilmesini inceleyeceğiz.
 
 Özet: RGB
 ^^^^^^^^^
-Resimde bulunan her bir pikselin RGB değeri bulunmaktadır. Bu RGB değeri o pikseldeki kırmızı yeşil ve mavinin yoğunluğunu belirtir. Bir piksel için 3 değer bulundurulur ve genellikle her bir değer için 8 bitlik değişkenler kullanılır bu da 256 yoğunluk seviyesi bulunmasına neden olur. Kırmızı, yeşil ve mavi yoğunluklarını belirten bu değerlerin lineer interpolasyonu ile piksel rengi ortaya çıkar.
+Resimde bulunan her bir pikselin RGB değeri bulunmaktadır. Bu RGB değeri o pikseldeki kırmızı yeşil ve mavinin yoğunluğunu belirtir. 
+Bir piksel için 3 değer bulundurulur ve genellikle her bir değer için 8 bitlik değişkenler kullanılır bu da 256 yoğunluk seviyesi bulunmasına neden olur. 
+Kırmızı, yeşil ve mavi yoğunluklarını belirten bu değerlerin lineer interpolasyonu ile piksel rengi ortaya çıkar.
 
-Çoğu pratik uygulamada renklerdense piksellerde bulunan ışık yoğunluğuna ihtiyaç duyarız. Bu yüzden renkleri gri tonlamaya çevirmek yaygın bir uygulamadır. Bu gri tona çevirme işleminin bir örneğini aşağıda görebilirsiniz. 
+Çoğu pratik uygulamada renklerdense piksellerde bulunan ışık yoğunluğuna ihtiyaç duyarız. Bu yüzden renkleri gri tonlamaya çevirmek yaygın bir uygulamadır. 
+Bu gri tona çevirme işleminin bir örneğini aşağıda görebilirsiniz. 
 
 .. image:: /assets/cuda/03/03/01.png
    :width: 600
 
 Basit çeviri işlemi için bu örnekte R (kırmızı) değerlerini 0.21 ile, G (yeşil) değerlerini 0.71 ile ve B (mavi) değerleri 0.07 ile çarpılarak renkli resimden gri tonlamaya geçişi sağlayacağız.
 
-
-Bu noktada dikkat etmemiz gereken nokta resimdeki piksellerin 2 boyutlu bir yapı oluşuturuyor olması ve bir önceki bölümde de gördüğümüz üzere 2 boyutlu yapıları lineerize ederek kullanacak olmamız. Ancak bu örnekte bir önceki bölümdeki daha basit örnekten farklı olarak her bir piksel için yan yana üç adet değer bulunuyor olmasıdır. İlerleyen bölümde çekirdek kodunu incelediğimizde bu işlemi daha açıklayıcı bir şekilde göreceğiz.
+Bu noktada dikkat etmemiz gereken nokta resimdeki piksellerin 2 boyutlu bir yapı oluşuturuyor olması ve bir önceki bölümde de gördüğümüz üzere 2 boyutlu yapıları 
+lineerize ederek kullanacak olmamız. Ancak bu örnekte bir önceki bölümdeki daha basit örnekten farklı olarak her bir piksel için yan yana üç adet değer bulunuyor olmasıdır. 
+İlerleyen bölümde çekirdek kodunu incelediğimizde bu işlemi daha açıklayıcı bir şekilde göreceğiz.
 
 CUDA Çekirdek Kodu
 ^^^^^^^^^^^^^^^^^^
@@ -37,17 +38,19 @@ CUDA Çekirdek Kodu
    #define CHANNELS 3 // R,G ve B olmak üzere 3 adet kanal bulunmakta
    // pikseldeki RGB değerleri unsigned char değişkenleri ile ifade edilmektedir. [0, 255] 
    __global__ void colorConvert(unsigned char * grayImage, 
-   unsigned char * rgbImage, int width, int height) {
-
-    int x = threadIdx.x + blockIdx.x * blockDim.x; 
-    int y = threadIdx.y + blockIdx.y * blockDim.y;
-    if (x < width && y < height) {
-
-    }
+   unsigned char * rgbImage, int width, int height) 
+   {
+      int x = threadIdx.x + blockIdx.x * blockDim.x; 
+      int y = threadIdx.y + blockIdx.y * blockDim.y;
+      if (x < width && y < height) {
+         ...
+      }
+   }
 
 Burada dikkat etmemiz gereken nokta, ilk 3 unsigned charın ilk pikselin sırasıyla R, G ve B değerlerini ifade ediyor olmasıdır. 2.pikselin ilk değerinin indisi ise 3 olacaktır.
 
-**int x = ...** ile hesaplanan **x indisi** sütun için hesaplanırken, **int y = ...** ile hesaplanan **y indisi** satır için hesaplanmaktadır. Her **iş parçacığı** kendi hesapladığı **x ve y indislerini** resimin genişlik ve yüksekliği ile karşılaştırarak hesaplamaya katılıp katılmayacağına karar verir. 
+**int x = ...** ile hesaplanan **x indisi** sütun için hesaplanırken, **int y = ...** ile hesaplanan **y indisi** satır için hesaplanmaktadır. 
+Her **iş parçacığı** kendi hesapladığı **x ve y indislerini** resimin genişlik ve yüksekliği ile karşılaştırarak hesaplamaya katılıp katılmayacağına karar verir. 
 
 Çekirdek kodunun tamanı üzerinden gerekli hesaplama kısmını da inceleyelim.
 
@@ -55,21 +58,22 @@ Burada dikkat etmemiz gereken nokta, ilk 3 unsigned charın ilk pikselin sıras�
 
    #define CHANNELS 3 // R,G ve B olmak üzere 3 adet kanal bulunmakta
    // pikseldeki RGB değerleri unsigned char değişkenleri ile ifade edilmektedir. [0, 255] 
-   __global__ void colorConvert(unsigned char * grayImage, 
-   unsigned char * rgbImage, int width, int height) {
-
-    int x = threadIdx.x + blockIdx.x * blockDim.x; 
-    int y = threadIdx.y + blockIdx.y * blockDim.y;
-    if (x < width && y < height) {
-        //  sonucta her bir piksel icin bir deger olusturulacak ve bu degerler arka arkaya yazılacak 
-        //  daha once gordugumuz 1D indis hesaplaması
-        int grayOffset = y*width + x;
-        //  iki piksele ait rgb degerleri arasında CHANNELS kadar eleman olacagından ilgili pikselin 
-        //  r degerinin indisi hesaplanıyor
-        int rgbOffset = grayOffset*CHANNELS;
-        unsigned char r = rgbImage[rgbOffset]; // R (kırmızı) degeri
-        unsigned char g = rgbImage[rgbOffset + 1]; // G (yesil) degeri
-        unsigned char b = rgbImage[rgbOffset + 2]; // B (mavi) degeri
-        //  Daha once bahsettigimiz katsayilari iceren vektor ile iç çarpim islemi gerceklesiyor
-        grayImage[grayOffset] = 0.21f*r + 0.71f*g + 0.07f*b;
-    }
+   __global__ void colorConvert( unsigned char * grayImage, 
+                                 unsigned char * rgbImage, int width, int height) 
+   {
+      int x = threadIdx.x + blockIdx.x * blockDim.x; 
+      int y = threadIdx.y + blockIdx.y * blockDim.y;
+      if (x < width && y < height) {
+         //  sonucta her bir piksel icin bir deger olusturulacak ve bu degerler arka arkaya yazılacak 
+         //  daha once gordugumuz 1D indis hesaplaması
+         int grayOffset = y*width + x;
+         //  iki piksele ait rgb degerleri arasında CHANNELS kadar eleman olacagından ilgili pikselin 
+         //  r degerinin indisi hesaplanıyor
+         int rgbOffset = grayOffset*CHANNELS;
+         unsigned char r = rgbImage[rgbOffset]; // R (kırmızı) degeri
+         unsigned char g = rgbImage[rgbOffset + 1]; // G (yesil) degeri
+         unsigned char b = rgbImage[rgbOffset + 2]; // B (mavi) degeri
+         //  Daha once bahsettigimiz katsayilari iceren vektor ile iç çarpim islemi gerceklesiyor
+         grayImage[grayOffset] = 0.21f*r + 0.71f*g + 0.07f*b;
+      }
+   } 

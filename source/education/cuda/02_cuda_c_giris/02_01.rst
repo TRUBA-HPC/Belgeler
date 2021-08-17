@@ -45,6 +45,7 @@ programlarının derlenmesini gösteren aşağıdaki görseli inceleyelim.
 
 .. image:: /assets/cuda/02/01/01.jpg
    :width: 400
+   :align: center
 
 Görüldüğü üzere CUDA C programı, NVIDIA nvcc derleyicisi ile derlenmesi esnasında iki farklı işlemden geçer.
 
