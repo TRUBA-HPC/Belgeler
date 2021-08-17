@@ -20,16 +20,12 @@ Aşamalar
 
 .. code-block:: C++
 
-    #include <gputk.h> //Header dosyasini bu dosya ile ayni konuma yerlestirip include "./gputk.h" ile derleyebilirsiniz.
-
-    #define gpuTKCheck(stmt) 
-    do {
-        cudaError_t err = stmt;
-        if (err != cudaSuccess) {
-            gpuTKLog(ERROR, "Failed to run stmt ", #stmt);
-            return -1;
-        }
-    } while (0)
+    #include <cstdlib>
+    #include <iostream>
+    #include <fstream>
+    #include <vector>
+    #include <ios>
+    #include <sstream>
 
     #define TILE_WIDTH 16
 
@@ -64,8 +60,25 @@ Aşamalar
             C[Row * numCColumns + Col] = Pvalue;
     }
 
+    std::vector<float> readFile(const std::string &fileName) {
+        std::fstream fs;
+        fs.open(fileName, std::ios::in);
+        std::vector<float> floatVec;
+        std::string strFloat;
+        float fNum;
+        while (getline(fs, strFloat))
+        {
+            std::stringstream  linestream(strFloat);
+            while (linestream >> fNum)
+        {
+                floatVec.push_back(fNum);
+        }
+        }
+
+        return floatVec;
+    }
+
     int main(int argc, char** argv) {
-        gpuTKArg_t args;
         float* hostA; // The A matrix
         float* hostB; // The B matrix
         float* hostC; // The output C matrix
@@ -76,84 +89,136 @@ Aşamalar
         int numAColumns; // number of columns in the matrix A
         int numBRows; // number of rows in the matrix B
         int numBColumns; // number of columns in the matrix B
-        int numCRows; // number of rows in the matrix C (you have to set this)
-        int numCColumns; // number of columns in the matrix C (you have to set
-        // this)
+        int numCRows;
+        int numCColumns;
 
-        args = gpuTKArg_read(argc, argv);
 
-        gpuTKTime_start(Generic, "Importing data and creating memory on host");
-        hostA = (float*)gpuTKImport(gpuTKArg_getInputFile(args, 0), &numARows,
-            &numAColumns);
-        hostB = (float*)gpuTKImport(gpuTKArg_getInputFile(args, 1), &numBRows,
-            &numBColumns);
-        //@@ Set numCRows and numCColumns
+        cudaEvent_t start, stop;
+        cudaEventCreate(&start);
+        cudaEventCreate(&stop);
+
+
+        numARows = atoi(argv[1]);
+        numAColumns = atoi(argv[1]);
+
+        numBRows = atoi(argv[2]);
+        numBColumns = atoi(argv[2]);
+
+        cudaEventRecord(start);
+        std::cout << "Importing data and creating memory on host \n";
+        hostA = (float*)&readFile(std::string(argv[3]))[0];
+        hostB = (float*)&readFile(std::string(argv[4]))[0];
+        //@@ Allocate the hostC matrix
+        hostC = (float*)malloc(numARows * numBColumns * sizeof(float));
+        cudaEventRecord(stop);
+
+        cudaEventSynchronize(stop);
+        float milliseconds = 0;
+        cudaEventElapsedTime(&milliseconds, start, stop);
+        std::cout << "It took: " << milliseconds << " ms\n"; //TODO time
+
+
         numCRows = numARows;
         numCColumns = numBColumns;
-        //@@ Allocate the hostC matrix
 
-        hostC = (float*)malloc(sizeof(float) * numCRows * numCColumns);
-        gpuTKTime_stop(Generic, "Importing data and creating memory on host");
+        std::cout << "The dimensions of A are " << numARows << " x " << numAColumns << "\n";
+        std::cout << "The dimensions of B are " << numBRows << " x " << numBColumns << "\n";
+        std::cout << "The dimensions of C are " << numCRows << " x " << numCColumns << "\n";
 
-        gpuTKLog(TRACE, "The dimensions of A are ", numARows, " x ", numAColumns);
-        gpuTKLog(TRACE, "The dimensions of B are ", numBRows, " x ", numBColumns);
+        cudaEventRecord(start);
+        std::cout << "Allocationg GPU memory\n";
 
-        gpuTKTime_start(GPU, "Allocating GPU memory.");
         //@@ Allocate GPU memory here
-        cudaMalloc(&deviceA, sizeof(float) * numARows * numAColumns);
-        cudaMalloc(&deviceB, sizeof(float) * numBRows * numBColumns);
-        cudaMalloc(&deviceC, sizeof(float) * numCRows * numCColumns);
+        (cudaMalloc((void**)&deviceA,
+            numARows * numAColumns * sizeof(float)));
+        (cudaMalloc((void**)&deviceB,
+            numBRows * numBColumns * sizeof(float)));
+        (cudaMalloc((void**)&deviceC,
+            numARows * numBColumns * sizeof(float)));
+        cudaEventRecord(stop);
+        cudaEventSynchronize(stop);
+        milliseconds = 0;
+        cudaEventElapsedTime(&milliseconds, start, stop);
+        std::cout << "It took: " << milliseconds << " ms\n"; //TODO time
 
-        gpuTKTime_stop(GPU, "Allocating GPU memory.");
 
-        gpuTKTime_start(GPU, "Copying input memory to the GPU.");
+
+        cudaEventRecord(start);
+        std::cout << "Copying input memory to the GPU.\n";
+
         //@@ Copy memory to the GPU here
-        cudaMemcpy(deviceA, hostA, sizeof(float) * numARows * numAColumns,
-            cudaMemcpyHostToDevice);
-        cudaMemcpy(deviceB, hostB, sizeof(float) * numBRows * numBColumns,
-            cudaMemcpyHostToDevice);
+        (cudaMemcpy(deviceA, hostA,
+            numARows * numAColumns * sizeof(float),
 
-        gpuTKTime_stop(GPU, "Copying input memory to the GPU.");
+            cudaMemcpyHostToDevice));
+        (cudaMemcpy(deviceB, hostB,
+            numBRows * numBColumns * sizeof(float),
+            cudaMemcpyHostToDevice));
+        cudaEventRecord(stop);
+        cudaEventSynchronize(stop);
+        milliseconds = 0;
+        cudaEventElapsedTime(&milliseconds, start, stop);
+        std::cout << "It took: " << milliseconds << " ms\n"; //TODO time
 
-        //@@ Initialize the grid and block dimensions here
-        dim3 dimGrid((numCColumns - 1) / TILE_WIDTH + 1,
+            //@@ Initialize the grid and block dimensions here
+        dim3 dimGrids((numCColumns - 1) / TILE_WIDTH + 1,
             (numCRows - 1) / TILE_WIDTH + 1, 1);
-        dim3 dimBlock(TILE_WIDTH, TILE_WIDTH, 1);
+        dim3 dimBlocks(TILE_WIDTH, TILE_WIDTH, 1);
 
-        gpuTKTime_start(Compute, "Performing CUDA computation");
+
+
+
+        cudaEventRecord(start);
+        std::cout << "Performing CUDA computation\n";
         //@@ Launch the GPU Kernel here
-        matrixMultiply << <dimGrid, dimBlock >> > (
+        (cudaMemset(deviceC, 0, numARows * numBColumns * sizeof(float)));
+        matrixMultiply << <dimGrids, dimBlocks >> > (
             deviceA, deviceB, deviceC, numARows, numAColumns, numBRows,
             numBColumns, numCRows, numCColumns);
-
         cudaDeviceSynchronize();
-        gpuTKTime_stop(Compute, "Performing CUDA computation");
+        cudaEventRecord(stop);
+        cudaEventSynchronize(stop);
+        milliseconds = 0;
+        cudaEventElapsedTime(&milliseconds, start, stop);
+        std::cout << "It took: " << milliseconds << " ms\n"; 
 
-        gpuTKTime_start(Copy, "Copying output memory to the CPU");
+
+
         //@@ Copy the GPU memory back to the CPU here
-        cudaMemcpy(hostC, deviceC, sizeof(float) * numCRows * numCColumns,
-            cudaMemcpyDeviceToHost);
+        cudaEventRecord(start);
+        std::cout << "Copying output memory to the CPU\n";
+        (cudaMemcpy(hostC, deviceC,
+            numARows * numBColumns * sizeof(float),
+            cudaMemcpyDeviceToHost));
+        cudaEventRecord(stop);
+        cudaEventSynchronize(stop);
+        milliseconds = 0;
+        cudaEventElapsedTime(&milliseconds, start, stop);
+        std::cout << "It took: " << milliseconds << " ms\n";
 
-        gpuTKTime_stop(Copy, "Copying output memory to the CPU");
-
-        gpuTKTime_start(GPU, "Freeing GPU Memory");
+        cudaEventRecord(start);
+        std::cout << "Freeing GPU Memory\n";
         //@@ Free the GPU memory here
         cudaFree(deviceA);
         cudaFree(deviceB);
         cudaFree(deviceC);
+        cudaEventRecord(stop);
+        cudaEventSynchronize(stop);
+        milliseconds = 0;
+        cudaEventElapsedTime(&milliseconds, start, stop);
+        std::cout << "It took: " << milliseconds << " ms\n";
 
-        gpuTKTime_stop(GPU, "Freeing GPU Memory");
+        for (int i = 0; i < numCRows * numCColumns; i++) {
+            std::cout << hostC[i] << " ";
+        }
+        std::cout << "\n";
 
-        gpuTKSolution(args, hostC, numCRows, numCColumns);
-
-        free(hostA);
-        free(hostB);
-
-        free(hostC);
-
+        
         return 0;
     }
 
+
+    
 
 
 .. admonition:: Çıktı
