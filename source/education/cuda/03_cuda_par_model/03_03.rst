@@ -22,6 +22,7 @@ Bu gri tona çevirme işleminin bir örneğini aşağıda görebilirsiniz.
 
 .. image:: /assets/cuda/03/03/01.png
    :width: 600
+   :align: center
 
 Basit çeviri işlemi için bu örnekte R (kırmızı) değerlerini 0.21 ile, G (yeşil) değerlerini 0.71 ile ve B (mavi) değerleri 0.07 ile çarpılarak renkli resimden gri tonlamaya geçişi sağlayacağız.
 

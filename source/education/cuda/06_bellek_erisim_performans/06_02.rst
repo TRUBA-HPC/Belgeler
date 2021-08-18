@@ -80,7 +80,3 @@ Ancak matriks **A** için yapılan bellek erişimleri **birleşik** (ing., coale
 
 Görüldüğü üzere ilk iterasyonda aynı **warp** içindeki **iş parçacıkları** (T0, T1, T2, T3) farklı **burst alanlarından** veriye erişmektedir. 
 İkinci iterasyonda da aynı şekilde farklı **burst alanlarındaki** veriye erişim devam etmektedir. Bu nedenle bu bellek erişimi birleşik değildir.
-
-
-
- 
