@@ -54,7 +54,10 @@ TRUBA Kullanıcı Dökümanları
    education/openmpi/index.rst
    education/cfd/index.rst
    education/big-data/index.rst
+<<<<<<< HEAD
    education/pytorch/index.rst
+
+=======
    education/cuda/index.rst
 
 .. toctree::
@@ -67,3 +70,6 @@ TRUBA Kullanıcı Dökümanları
 
  EuroCC@Türkiye projesi kapsamında sunulan tüm materyaller, `Creative Commons Atıf lisansı (CC BY-NC-SA 4.0) <https://creativecommons.org/licenses/by-nc-sa/4.0/deed.tr>`_ altında sağlanır.
 
+
+   
+>>>>>>> main
