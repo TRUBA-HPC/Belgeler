@@ -56,6 +56,7 @@ TRUBA Kullanıcı Dökümanları
    education/big-data/index.rst
    education/pytorch/index.rst
    education/cuda/index.rst
+   education/keras/index.rst
 
 .. toctree::
    :caption: Etkinlikler
