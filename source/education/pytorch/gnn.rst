@@ -379,9 +379,9 @@ Başka bir deyişle, :math:`k` katmanından mesaj geçtikten sonra bir :math:`i`
 Aşağıdaki şekil, parametre olarak grafiğin bağlantı bilgilerini (\ ``edge_index``\ ) ve ayrıca her düğüm için özellik vektörlerini içeren bir matrisi (\ ``node_features``\ ) alan ``propagate()`` fonksiyonuna yapılan bir çağrıyı gösterir.
 
 
-.. image:: res/mp.png
-   :target: res/mp.png
-   :alt: res/mp.png
+.. image:: /assets/pytorch-education/mp.png
+   :target: /assets/pytorch-education/mp.png
+   :alt: /assets/pytorch-education/mp.png
 
 
 Dataset - veri kümesi

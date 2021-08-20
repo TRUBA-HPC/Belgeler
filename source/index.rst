@@ -11,11 +11,12 @@ TRUBA Kullanıcı Dökümanları
    :caption: Başlangıç
    :maxdepth: 1
 
-   quick-start/duyurular/index.rst
+   quick-start/duyurular.rst
    TRUBA/kullanici-el-kitabi/open-vpn/index.rst
    TRUBA/kullanici-el-kitabi/kullanici-ara-yuzu/openondemand/index.rst
    TRUBA/kullanici-el-kitabi/index.rst
    TRUBA/sss.rst
+   quick-start/TRUBAseminerleri.rst
 
 
 .. toctree::

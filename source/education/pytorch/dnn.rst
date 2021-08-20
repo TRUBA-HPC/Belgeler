@@ -56,7 +56,7 @@ sınıf etiketinden oluşan bir gruptur.
 .. admonition:: Çıktı
    :class: dropdown, information
 
-        .. code-block:: python
+        .. code-block:: text
 
             Eğitim örneğindeki 0. örnek, torch.Size([1, 28, 28]) boyutunda özellik tensörünü içerir ve sınıfı 5'dir.
 
@@ -273,6 +273,6 @@ kaydedilmesini engellediğinden, bellek tüketimimizi de azaltacaktır.
 .. admonition:: Çıktı
    :class: dropdown, information
 
-    .. code-block:: python
+    .. code-block:: text
 
         10000 test örneğinde ağın doğruluğu : 96.23 %

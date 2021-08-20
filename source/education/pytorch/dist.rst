@@ -24,9 +24,9 @@ altı süreç ve her düğümde iki ana süreç olacaktır. GPU'larda eğitimi �
 çalıştıran aynı iletişim grubunun parçası olacaktır. Aşağıdaki şekil bu senaryoyu göstermektedir.
 
 
-.. image:: res/dist.png
-   :target: res/dist.png
-   :alt: res/dist.png
+.. image:: /assets/pytorch-education/dist.png
+   :target: /assets/pytorch-education/dist.png
+   :alt: /assets/pytorch-education/dist.png
 
 
 Sinir ağı modeli (Neural network model)
@@ -149,7 +149,7 @@ söyledikten sonra, eğitim aşamasında eğitim partilerini almak için kullana
 .. code-block:: python
 
    def train_process_on_gpu(gpu_id_in_node, world_size, id_in_group, gpus_per_device):
-       ....
+       # ....
        from torch.utils.data.distributed import DistributedSampler
        train_dataset = MNIST(root='../data', train = True, download = True, 
            transform=transforms.ToTensor())
@@ -161,7 +161,7 @@ söyledikten sonra, eğitim aşamasında eğitim partilerini almak için kullana
        dataloader = DataLoader(train_dataset, batch_size=128, sampler=data_sampler)
        num_features = 28*28
        num_classes = len(train_dataset.classes)
-       ....
+       # ....
 
 Dağıtılmış model
 ------------------------------------
@@ -177,10 +177,10 @@ sonunda modelin tüm kopyalarının aynı gradyanlara sahip olmasını garanti e
 .. code-block:: python
 
    def train_process_on_gpu(gpu_id_in_node, world_size, id_in_group, gpus_per_device):
-       ....
+       # ....
        model = DeepNeuralNetwork(4, num_features, 128, num_classes=num_classes).to(gpu_id_in_node)
        parallel_model = DistributedDataParallel(model, device_ids=[gpu_id_in_node])
-       ....
+       # ....
 
 Eğitim döngüsü
 =========================
@@ -197,7 +197,7 @@ sahip olacağı şekilde ortalaması alınır.
 .. code-block:: python
 
    def train_process_on_gpu(gpu_id_in_node, world_size, id_in_group, gpus_per_device):
-       ....
+       # ....
        optimizer = torch.optim.Adam(parallel_model.parameters(), lr=0.001)
        criterion = torch.nn.CrossEntropyLoss()
        epochs = 2
@@ -227,7 +227,7 @@ yapılan testle tamamen aynı şekilde yapılır. Tek fark, yalnızca rank == 0 
 .. code-block:: python
 
    def train_process_on_gpu(gpu_id_in_node, world_size, id_in_group, gpus_per_device):
-       ....
+       # ....
        if rank == 0:
            test_dataset = MNIST(root='../data', train = False, download = True, 
                transform=transforms.ToTensor())
@@ -284,8 +284,7 @@ düğümleri kullanarak eğitim komut dosyasını çalıştırıyoruz. Bunun iç
    hostname
    source /truba/home/<account>/anaconda3/bin/activate
    conda init
-   # PyTorch'un kurulu olduğu conda ortamının adı 
-   conda activate <conda_env>
+   conda activate <conda_env> # PyTorch'un kurulu olduğu conda ortamının adı
 
    export MASTER_PORT=12900 # portun boş olduğundan emin olun
    export MASTER_ADDR=$(srun --ntasks=1 hostname 2>&1 | tail -n1)

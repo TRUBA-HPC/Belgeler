@@ -18,9 +18,9 @@ PyTorch, Windows, Linux ve macOS için mevcuttur. Conda ve pip gibi paket yönet
 
 Bu bağlantıda aşağıdaki seçenekler bulunabilir: 
 
-.. image:: res/installation_options.png
-   :target: res/installation_options.png
-   :alt: res/installation_options.png
+.. image:: /assets/pytorch-education/installation_options.png
+   :target: /assets/pytorch-education/installation_options.png
+   :alt: /assets/pytorch-education/installation_options.png
 
 
 .. The first five columns are for the user to select the installation configuration, and the final column shows the command to be called to install the package. In this example above, we are installing PyTorch on a Linux system with GPU support. We are using pip and we want to install the Python interface. To do so, we open a terminal and execute the following command

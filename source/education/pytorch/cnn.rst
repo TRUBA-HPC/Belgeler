@@ -80,9 +80,9 @@ Ayrıca değerleri [-0.5, 0.5] aralığına kaydırmak için ``Normalize()`` adl
       Her görüntü 32x32 pikseldir ve her pikselin üç değeri vardır
 
 
-.. image:: res/frog.png
-   :target: res/frog.png
-   :alt: res/frog.png
+.. image:: /assets/pytorch-education/frog.png
+   :target: /assets/pytorch-education/frog.png
+   :alt: /assets/pytorch-education/frog.png
 
 
 Veri yükleyiciler (Dataloaders)
@@ -139,9 +139,9 @@ grubunun üzerinden geçerek ve bunları çıktıda tek bir piksele dönüştür
 girişteki her pikselin üç rengini (kanalını) kullanacak ve çıktıdaki her piksel için 6 çıkış kanalı üretecektir.
 
 
-.. image:: res/conv.png
-   :target: res/conv.png
-   :alt: res/conv.png
+.. image:: /assets/pytorch-education/conv.png
+   :target: /assets/pytorch-education/conv.png
+   :alt: /assets/pytorch-education/conv.png
 
 
 .. Belows is a demonstration of what the convolutional layer does to an input. We pass a batch of four images to the layer and receive a transformed output:
@@ -182,9 +182,9 @@ Evrişim katmanlarını çalıştırdıktan sonra, çıktıyı daha küçük bir
 Modelimizde, bir önceki katmanın çıktısını alacak ve maksimum fonksiyonunu kullanarak sıkıştıracak bir max-pool kullanıyoruz. 
 Aşağıda bir havuzlama katmanı örneği verilmiştir.
 
-.. image:: res/pool.png
-   :target: res/pool.png
-   :alt: res/pool.png
+.. image:: /assets/pytorch-education/pool.png
+   :target: /assets/pytorch-education/pool.png
+   :alt: /assets/pytorch-education/pool.png
 
 .. Below, we demonstrate a max-pool layer that will take the output of the previous convolutional layer and apply pooling. The layer will take grids of 2x2 and find their maximum value. The pooling layer has a stride of 2 so the filter will move 2 locations at a time. This pooling procedure happens for all the channels of the input.
 

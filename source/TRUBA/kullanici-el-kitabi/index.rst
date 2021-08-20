@@ -22,4 +22,3 @@ Kullanıcı El Kitabı
     kaynakyoneticisi-isdongusu/index.rst
     kullanici-ara-yuzu/openondemand/index.rst
     ../topluluk-portali/index.rst
-    TRUBAseminerleri.rst

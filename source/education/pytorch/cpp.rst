@@ -273,12 +273,14 @@ Eğitim ve test setleri için veri seti nesneleri oluşturarak ana programımız
    }
 
 .. When we load the datasets, we specify two transformations to be applied on them. The first, ``Normalize``\ , will shift the range of values form [0,1] to [-1,1]. The second, ``Stack``\ , will stack the tensors of an entire mini-batch into a single tensor.
+
 Veri setlerini yüklediğimizde üzerlerine uygulanacak iki dönüşümü belirtiyoruz. Birincisi, ``Normalize``\ , değer aralığını [0,1] biçiminden [-1,1]'e kaydırır. İkincisi, ``Stack``\ , tüm bir mini grubun tensörlerini tek bir tensörde toplayacaktır.
 
 Veri kümesi yükleyici
 --------------------------------------
 
 .. Then, we create for each dataset a loader object that we will use to fetch mini-batches during training. Unlike python, we cannot pass named parameters to function calls. So, to give the dataset loaders options like the batch size and the number of parallel workers, we must create a ``DataLoaderOptions`` object and pass it to the DataSetLoader creator functions.
+
 Ardından, her bir veri kümesi için eğitim sırasında mini yığınları getirmek için kullanacağımız bir yükleyici nesnesi oluştururuz. Python'dan farklı olarak, işlev çağrılarına adlandırılmış parametreleri iletemeyiz. Bu nedenle, veri kümesi yükleyicilerine toplu iş boyutu ve paralel çalışan işlem sayısı gibi seçenekler vermek için bir ``DataLoaderOptions`` nesnesi oluşturmalı ve bunu DataSetLoader oluşturucu fonksiyonlarına iletmeliyiz.
 
 .. code-block:: cpp
@@ -297,6 +299,7 @@ Cihazı belirtme
 -----------------------------------
 
 .. Similar to the Python interface, we will create a ``Device`` object that we will use to specify where we wish the tensors and model to be. This can be the CPU or it can be a GPU.
+
 Python arayüzüne benzer şekilde, tensörlerin ve modelin nerede olmasını istediğimizi belirtmek için kullanacağımız bir ``Device`` nesnesi oluşturacağız. Bu obje CPU veya GPU için olabilir.
 
 .. code-block:: cpp
@@ -315,6 +318,7 @@ Modül oluşturma
 ---------------------------------
 
 .. We will create the module and move it to the device we created. 
+
 Modülü oluşturup oluşturduğumuz cihaza taşıyacağız.
 
 .. code-block:: cpp
