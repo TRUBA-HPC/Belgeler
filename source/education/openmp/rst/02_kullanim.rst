@@ -67,27 +67,29 @@ Aşağıda örnek bir slurm dosyası verilmiştir.
    # Programın adı
    #SBATCH --job-name=openmp_test
 
-   # Kullanılacak bölümün adı
+   # Kullanılacak iş kuyruğu
+   # https://docs.truba.gov.tr/TRUBA/kullanici-el-kitabi/hesaplamakumeleri.html
    #SBATCH --partition=short
 
    # Programın süreceği maximum süre (Gün-Saat:Dakika:Saniye formatında)
    # Bu örnekte 1 dakika olarak ayarlanmış
+   # Eğer program bu süreyi aşarsa, sistem tarafından durdurulur
    #SBATCH --time=0-00:01:00
 
-   # Çıktı ve hataların yazılacağı dosyaları belirle
+   # Çıktı ve hataların yazılacağı dosyaların belirlenmesi
    #SBATCH --output=output.txt
    #SBATCH --error=error.txt
 
-   #Daha önceden yüklenmiş olabilecek modülleri çıkar
+   #Daha önceden yüklenmiş olabilecek modüllerin çıkarılması
    module purge
 
-   #Kullandığımız gcc versiyonunu yükle
+   #Kullandığımız gcc versiyonunun yüklenmesi
    module load centos7.3/comp/gcc/9.2
 
-   #Kodu derle
+   #Kodun derlenmesi
    g++ test.cpp -O3 -fopenmp -o openmp_test
 
-   # Thread sayısını belirleyici kod
+   # Thread sayısını belirleyen bir kod
    # Bu dosyayı sbatch ile çalıştırırken -c <iş parçacığı sayısı> belirtilerek
    # iş parçacağı sayısı değiştirilebilir
    if [-n "$SLURM_CPUS_PER_TASK"];
@@ -97,7 +99,7 @@ Aşağıda örnek bir slurm dosyası verilmiştir.
            omp_threads=1
    fi
 
-   # Kodu önceden belirlenen sayıda iş parçacığı ile çalıştır
+   # Kodun belirlenen sayıda iş parçacığı ile çalıştırılması
    OMP_NUM_THREADS=$omp_threads ./openmp_test
 
 Bu dosya ``openmp_example.slurm`` adıyla kaydedildikten sonra
