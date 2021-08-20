@@ -2,15 +2,15 @@ Temel Kullanım
 ==============
 
 -  OpenMP hem C/C++ hem Fortran derleyicileri ile kullanılabilir. Bu
-   dökümentasyonda C++ ile kullanımını gözden geçireceğiz.
--  Bu bölümün amacı hali hazırda var olan kodumuzu OMP direktifleri
-   aracılığı ile en az eforu göstererek hızlandırmak.
+   dokümenda C++ ile kullanımını gözden geçireceğiz.
+-  Bu bölümün amacı halihazırda var olan kodumuzu OMP direktifleri
+   aracılığı ile en az eforu göstererek hızlandırmaktır.
 
 C++ “pragma”
 ------------
 
 -  C++’da ``pragma`` direktifi derleyiciye kodun kendisinin dışında
-   ekstra bilgi vermek için kullanılan bir standartdır.
+   ekstra bilgi vermek için kullanılan bir standarttır.
 -  ``#pragma ...`` şeklinde kullanılır.
 -  Biz bu direktifi derleyiciye OpenMP özelliklerini kullanmasını
    belirtmek için ``#pragma omp ...`` şeklinde kullanacağız.
@@ -18,29 +18,29 @@ C++ “pragma”
 C++ OpenMP kodu derlemek
 ------------------------
 
--  OpenMP standartı gcc,clang,msvc gibi popüler bir çok C/C++
+-  OpenMP standartı ``gcc``, ``clang``, ``msvc`` gibi popüler bir çok C/C++
    derleyicisi tarafından desteklenir.
 
    -  Derleyiceler arasında OpenMP açısından bazı farklar olması
       doğaldır.
 
--  Bu dokümentasyon Truba’da yüklü olan ``gcc`` (C++ için ``g++`` olarak
-   çağırılır.) derleyecisini kullanacaktır.
+-  Bu doküman TRUBA’da yüklü olan ``gcc`` (C++ için ``g++`` olarak
+   çağırılır.) derleyecisini kullanmaktadır.
 
--  Trubaya giriş yaptığımızda yüklü ``gcc`` versiyonunun 4.8 olduğunu
+-  TRUBA'ya giriş yaptığımızda yüklü ``gcc`` versiyonunun 4.8 olduğunu
    görüyoruz. (Haziran,2021 itibariyle)
 -  Bu bazı örnekler için yeterli olmakla birlikte yeni C++ ve OpenMP
    özelliklerini desteklememekte. Dolayısıyla yeni bir versiyonun modül
    sistemiyle yüklenmesi önerilir.
--  ``module avail gcc`` komutu kullanılarak çevre modülü (İngilizce:
+-  ``module avail`` komutu kullanılarak çevre modülü (ing.,
    environment module) sistemi kullanılarak yüklenebilecek ``gcc``
    versiyonları görüntülenebilir.
--  Daha sonra ``module load <gcc versiyonu>`` şekline bu modüller
+-  Daha sonra ``module load <seçilen modül>`` şekline bu modüller
    yüklenebilir.
 -  Örneğin: ``module load centos7.3/comp/gcc/9.2`` kullanılarak
-   ``gcc 9.2`` yüklenilebilir.
+   ``gcc 9.2`` yüklenebilir.
 
--  C++ kodunu OpenMP özellikleri ile birlikte compile etmek için komuta
+-  C++ kodunu OpenMP özellikleri ile birlikte derlemek için derleme komutuna
    ``-fopenmp`` eklemek yeterlidir.
 
    -  Farklı derleyecilerde bu terim değişiklik gösterebilir. Örneğin
@@ -106,15 +106,15 @@ Bu dosya ``openmp_example.slurm`` adıyla kaydedildikten sonra
 yazılacaktır.
 
 OpenMP CUDA ve MPI gibi başka sistemlerle birlikte kullanılabilir. Bu
-durumlarda bu diğer sistemlerin dökümentasyonlarındaki slurm örneklerine
+durumlarda bu diğer sistemlerin dokümanlarındaki slurm örneklerine
 de bakılması önerilir.
 
-OpenMP ile kodu zamanlamak
---------------------------
+OpenMP ile kodun süresini ölçmek
+--------------------------------
 
 OpenMP kodun çalışmasının ne kadar zaman sürdüğünü ölçmek için
 kullanılabilecek bazı fonksiyonlar sunar. Bunların kullanımı aşağıdaki
-örnekte göstererilmiştir.
+örnekte göstererilmiştir. 
 
 .. code:: cpp
 
@@ -132,3 +132,5 @@ kullanılabilecek bazı fonksiyonlar sunar. Bunların kullanımı aşağıdaki
 
        std::cout << "Süre: " << time << " saniye" << std::endl;
    }
+
+Alternatif olarak ``chrono`` adlı C++ standart kütüphanesi de zamanlama için kullanılabilir.

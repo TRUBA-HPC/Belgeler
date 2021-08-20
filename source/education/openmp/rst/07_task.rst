@@ -264,7 +264,7 @@ Final
 ``if(!koşul)`` ile benzer bir anlama gelir. (Yani ``if(0)`` ve
 ``final(1)`` benzer şekilde çalışır)
 
-Asıl fark iç içe birden fazla task direktifi olunca ortaya çıkar.
+Asıl fark iç içe birden fazla task direktifi kullanılınca ortaya çıkar.
 Aşağıdaki örneklerde bu fark gösterilmiştir.
 
 .. code:: cpp
@@ -274,7 +274,7 @@ Aşağıdaki örneklerde bu fark gösterilmiştir.
        foo(); // Anında çalıştırılır
 
        #pragma omp task
-       bar();  // Normal task direktifi gibi çalışır
+       bar();  // Normal bir task direktifi gibi çalışır
    }
 
 .. code:: cpp
@@ -290,9 +290,8 @@ Aşağıdaki örneklerde bu fark gösterilmiştir.
 Taskyield
 ---------
 
-Senkronizasyon kısmında ``critical`` kod bloklarını anlatmıştık. Taskler
-için ``taskyield`` direktifi kullanılarak daha verimli kritik alanlar
-yaratılabilir.
+Taskler için ``taskyield`` direktifi kullanılarak verimli kritik alanlar
+yaratılabilir. 
 
 .. code:: cpp
 
@@ -367,7 +366,7 @@ gerekir.
 Taskloop
 --------
 
-Bir ``for`` döngüsünün yinelemelerini OpenMP task’leri kullanılarak
+Bir ``for`` döngüsünün yinelemelerini OpenMP görev yapıları kullanılarak
 çalıştırılması için kullanılır.
 
 Örnek kullanım:

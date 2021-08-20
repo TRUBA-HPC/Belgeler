@@ -150,20 +150,22 @@ parçası olan ``vector`` veri yapısı kullanılarak temsil edilmişlerdir.
        }
    }
 
-Bazı önemli detaylar: - Yinelemeler (İngilizce: iteration) arasında
-herhangi bir sıralama olması beklenemez. Bir diğer değişle döngü
-beklenenden farklı bir sırada çalıştırılabilir. - An itibariyle OpenMP
-şartnamesine göre sadece “canonical loop form” yani ``for(...;...;...)``
+Bazı önemli detaylar: 
+- Paralel bir çalışmada, seri çalışmada olduğu gibi yinelemelerin 
+(ing., iteration) verilen sırayı takip etmesi beklenemez.Bir diğer değişle döngü
+beklenenden farklı bir sırada çalıştırılabilir. 
+- An itibariyle OpenMP standardına göre sadece “canonical loop form” yani ``for(...;...;...)``
 şeklindeki looplar desteklenmekte. Yani C++11 ile birlikle gelen
-``for(... : ...)`` şeklindeki looplar bu direktif ile kullanılamaz. -
-OpenMP 5 ile birlikte ``loop`` adında benzer bir direktif eklenmiştir.
+``for(... : ...)`` şeklindeki looplar bu direktif ile kullanılamaz. 
+- OpenMP 5 ile birlikte ``loop`` adında benzer bir direktif eklenmiştir.
 An itibariyle Truba’da yüklü olan derleyeciler OpenMP 5’i desteklemediği
-için bu direktif dökümantasyona dahil edilmemiştir. - Yukarıda verilen
-örneklerde iş parçacıkları veriyi (bu durumda a,b,c dizilerini)
+için bu direktif dokümana dahil edilmemiştir. 
+- Yukarıda verilen örneklerde iş parçacıkları veriyi (bu durumda ``a``, ``b``, ``c`` dizilerini)
 paylaşmaktadır. Yani bütün threadler aynı dizilere erişmekte ve
 değiştirmektedir. Bu veri kapsamları bölümünde daha detaylı
-açıklanacaktır. - Genelde döngünün yenileme sayısı iş parçacığı
-sayısından fazla olacağından dolayı bir iş dağıtımı gerekli olacaktır.
+açıklanacaktır. 
+- Genelde döngünün yenileme sayısı iş parçacığı
+sayısından fazla olacağından, bir iş dağıtımı yöntemi gereklidir.
 Bu durumda varsayılan davranış derleyiciler arasında değişiklik
 göstermektedir ve iş dağıtımı bölümünde daha detaylı açıklanacaktır.
 
@@ -175,7 +177,7 @@ yer alan aynı kodu çalıştırmaktadır. Eğer bu iş parçacıklarının fark
 görevleri yerine getirmelerini istersek ``sections`` direktifini
 kullanabiliriz.
 
-Genel kullanım aşğıdaki örnekte gösterilmiştir.
+Bu direktif için genel kullanım aşğıdaki örnekte gösterilmiştir.
 
 .. code:: cpp
 
@@ -198,7 +200,8 @@ Genel kullanım aşğıdaki örnekte gösterilmiştir.
    }
 
 ``for`` direktifinde olduğu gibi ``parallel`` ve ``sections`` beraber
-kullanılabilir (``#pragma omp parallel sections``).
+kullanılabilir (``#pragma omp parallel sections``). Bu tür bir kullanımda her bir ``section`` 
+bir iş parçacığına atanır.
 
 Aşağıdaki örnek ``for`` örneklerinde olduğu gibi iki dizinin çarpımını
 hesaplar. Fakat ek olarak bir iş parçacığı çarpımı hesaplarken bir
@@ -253,12 +256,12 @@ diğeri aynı dizelerin toplamını hesaplamaktadır.
 OpenMP iş parçacığı sayısını değiştirmemiz için birkaç farklı method
 sunmaktadır.
 
--  Programın dışından ``export OMP_NUM_THREADS=4`` şeklinde.
--  Programın içinde ``omp_set_num_threads(4);`` şeklinde.
+-  Programın çalıştırılırken ``OMP_NUM_THREADS=4 <program>`` şeklinde.
+-  Programın içerisinde ``omp_set_num_threads(4);`` şeklinde.
 -  Direktiflere eklenerek ``#pragma omp parallel num_threads(4)``
    şeklinde.
 
 OpenMP iş parçacıkları donanım tarafından limitli değildir, dolayısıyla
 iş parçacığı sayısı sistemin çekirdek sayısından fazla olabilir. Fakat
 böyle durumlarda performans kaybı yaşanabilir. Dolayısıyla bu değerin
-kullanılan sisteme göre ayarlanması önerilir.
+kullanılan sisteme göre ayarlanması çoğu durumda gereklidir.
