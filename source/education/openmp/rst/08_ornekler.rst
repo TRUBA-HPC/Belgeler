@@ -144,5 +144,4 @@ içinden ``omp_set_schedule(dynamic,1000)`` şeklinde değiştirilebilir.
 .. code:: bash
 
    g++ main.cpp -fopenmp -o test
-   export OMP_SCHEDULE="DYNAMIC,1000"
-   ./test
+   OMP_SCHEDULE="DYNAMIC,1000" ./test
