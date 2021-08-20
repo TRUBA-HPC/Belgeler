@@ -11,11 +11,12 @@ TRUBA Kullanıcı Dökümanları
    :caption: Başlangıç
    :maxdepth: 1
 
-   quick-start/duyurular/index.rst
+   quick-start/duyurular.rst
    TRUBA/kullanici-el-kitabi/open-vpn/index.rst
    TRUBA/kullanici-el-kitabi/kullanici-ara-yuzu/openondemand/index.rst
    TRUBA/kullanici-el-kitabi/index.rst
    TRUBA/sss.rst
+   quick-start/TRUBAseminerleri.rst
 
 
 .. toctree::
@@ -54,7 +55,9 @@ TRUBA Kullanıcı Dökümanları
    education/openmpi/index.rst
    education/cfd/index.rst
    education/big-data/index.rst
+   education/pytorch/index.rst
    education/cuda/index.rst
+   education/keras/index.rst
 
 .. toctree::
    :caption: Etkinlikler
@@ -66,5 +69,3 @@ TRUBA Kullanıcı Dökümanları
 
  EuroCC@Türkiye projesi kapsamında sunulan tüm materyaller, `Creative Commons Atıf lisansı (CC BY-NC-SA 4.0) <https://creativecommons.org/licenses/by-nc-sa/4.0/deed.tr>`_ altında sağlanır.
 
-
-   
