@@ -24,10 +24,10 @@ C++ OpenMP Kodu Derlemek
    -  Derleyiceler arasında OpenMP açısından bazı farklar olması
       doğaldır.
 
--  Bu dokümentasyon Truba’da yüklü olan ``gcc`` (C++ için ``g++`` olarak
+-  Bu dokümantasyon TRUBA’da yüklü olan ``gcc`` (C++ için ``g++`` olarak
    çağırılır.) derleyecisini kullanacaktır.
 
--  Trubaya giriş yaptığımızda yüklü ``gcc`` versiyonunun 4.8 olduğunu
+-  TRUBA’ya giriş yaptığımızda yüklü ``gcc`` versiyonunun 4.8 olduğunu
    görüyoruz. (Haziran,2021 itibariyle)
 
 -  Bu bazı örnekler için yeterli olmakla birlikte yeni C++ ve OpenMP

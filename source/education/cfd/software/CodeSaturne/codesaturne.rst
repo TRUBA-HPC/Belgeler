@@ -109,25 +109,18 @@ Opsiyonel ön koşullar:
    dosyası içine kopyalanıp bu .bashrc dosyası kaynak gösterilebilir.
    Nasıl yapılacağı iki adım sonra gösterilmiştir.
 
--  Bazı kullanıcılarda
-   <**exportLD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"**
+-  Bazı kullanıcılarda ``exportLD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"``
    komutunun .bashrc dosyasına eklenmesi gerekebilir.
 
--  Paralel iş gönderimi için .bashrc dosyasına "mpi" için bir satır
-   eklenmesi ve .bashrc dosyasının kaynak gösterilmesi, "source"
-   lanması, gerekebilir. Örnek olarak şu komutlar kullanılabilir;
+-  Paralel iş gönderimi için .bashrc dosyasına "mpi" için bir satır eklenmesi ve .bashrc dosyasının kaynak gösterilmesi, "source" lanması, gerekebilir. Örnek olarak şu komutlar kullanılabilir;
 
-   -  .bashrc dosyasını nano veya emacs gibi bir metin düzenleyicisi ile
-      açılır, örneğin <**nano .bashrc**>.
+-  .bashrc dosyasını nano veya emacs gibi bir metin düzenleyicisi ile açılır, örneğin ``nano .bashrc``.
 
-   -  <**export
-      LD_LIBRARY_PATH="/truba/sw/centos7.3/app/codeSaturne/openmpi/gcc-9.2.0/4.0.2/lib:$LD_LIBRARY_PATH**>
-      satırı bu dosyanın içine yazılır. "openmpi" adresinin doğru
-      olmasına dikkat edilmelidir.
+-  ``export LD_LIBRARY_PATH="/truba/sw/centos7.3/app/codeSaturne/openmpi/gcc-9.2.0/4.0.2/lib:$LD_LIBRARY_PATH``  satırı bu dosyanın içine yazılır. "openmpi" adresinin doğru olmasına dikkat edilmelidir.
 
-   -  Dosya bu haliyle kaydedilir ve çıkılır.
+-  Dosya bu haliyle kaydedilir ve çıkılır.
 
-   -  <**source .bashrc**> komutu ile bu dosya kaynak olarak gösterilir.
+-  <**source .bashrc**> komutu ile bu dosya kaynak olarak gösterilir.
 
 Çalıştırma
 ==========
@@ -188,17 +181,14 @@ Seri İş
    -  STAR-CCM+ için .ccm
 
 -  Çözüm ağı dosyası kullanıcı arayüzü ile seçilebileceği gibi
-   <**cs_preprocess "mesh adı"**> komutuyla da çağrılabilir. Bu durumda
-   otomatik olarak bir **mesh_input.csm** dosyası oluşturulur ve çözüm
+   ``cs_preprocess "mesh adı"`` komutuyla da çağrılabilir. Bu durumda
+   otomatik olarak bir ``mesh_input.csm`` dosyası oluşturulur ve çözüm
    esnasında kullanılır. Kullanılan çözüm ağı çözüm işleminden önce
    "mesh import" veya "preprocess" işlemleri ile kontrol edilir. Bu
    işlem kullanıcı tarafından da yapılabilir. Örneğin, <**cs_preprocess
    "mesh dosyası adresi"**> komutu kullanılabilir. Bu komut çalışmıyor
    ise "preprocess" modülünün yerinin gösterilmesi gerekmektedir.
-   .bashrc dosyasına <**export PATH=/klasorun-adresi/Code_Saturne/6.3.0/code_saturne-6.3.0/arch/Linux_x86_64/libexec/code_saturne:$PATH**>
-   satırının kopyalanması yeterlidir. Adres ve versiyon değişiklikleri
-   kullanıcı tarafından göz önünde bulundurulup düzeltilmelidir. Ardından
-   .bashrc dosyası kaynak gösterilir.
+   .bashrc dosyasına ``export PATH=/klasorun-adresi/Code_Saturne/6.3.0/code_saturne-6.3.0/arch/Linux_x86_64/libexec/code_saturne:$PATH`` satırının kopyalanması yeterlidir. Adres ve versiyon değişiklikleri kullanıcı tarafından göz önünde bulundurulup düzeltilmelidir. Ardından ``.bashrc`` dosyası kaynak gösterilir.
 
 -  **CASE1** içinde **DATA**, **RESU** ve **SRC** klasörleri
    oluşturulur. **RESU** ve **SRC** dosyaları en başta boştur. İş
@@ -282,7 +272,7 @@ Seri İş
    -  **Compute**
 
       -  run_solver mini-betikleri çalıştırılır, ortam değişkenleri
-         ayarlanır, seri yada paralel(MPI) çalışma komutları verilir.
+         ayarlanır, seri   paralel(MPI) çalışma komutları verilir.
 
    -  **Finalize**
 
@@ -307,9 +297,7 @@ Kullanıcı-Tanımlı Fonksiyonlar
    kalan daha özel ayarların kullanıcı-tanımlı fonksiyonlara bırakılması
    önerilir.
 
--  Bahsedilen fonksiyonlar **/klasör adresi/
-   Code_Saturne/6.3.0/code_saturne-6.3.0/arch/Linux_x86_64/share/code_saturne/user_sources**
-   adresindeki **REFERENCE** klasöründe bulunabilir. Aynı adreste
+-  Bahsedilen fonksiyonlar ``/klasoradresi/Code_Saturne/6.3.0/code_saturne-6.3.0/arch/Linux_x86_64/share/code_saturne/user_sources`` adresindeki **REFERENCE** klasöründe bulunabilir. Aynı adreste
    **EXAMPLES** klasöründe bu fonksiyonlarla ilgili örnekler
    bulunmaktadır.
 
@@ -520,7 +508,7 @@ TRUBA sunucusunda :math:`CodeSaturne GUI` (Grafiksel Kullanıcı Arayüzü)
 kullanılamadığından komutların terminalden girilmesi gerekmektedir.
 Yukarıda anlatıldığı gibi kullanıcı tanımlı dosyalar üzerinden bütün
 ayarların yapılması ve kodun çalıştırılması mümkündür. Kullanım
-rahatlığı açısından TRUBA sunucuna bağlanmadan kullanıcı arayüzü
+rahatlığı açısından TRUBA sunucusuna bağlanmadan kullanıcı arayüzü
 vasıtasıyla iş klasörünün oluşturulması istenilen seçimlerin yapılıp
 **setup.xml** içine kaydedilmesi önerilir. Oluşturulan iş klasörü bir
 dosya aktarım programı, örneğin Filezilla, yardımı ile TRUBA sunucusuna

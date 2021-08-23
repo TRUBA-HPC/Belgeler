@@ -108,7 +108,7 @@ beklenenden farklı bir sırada çalıştırılabilir. - An itibariyle OpenMP
 şeklindeki looplar desteklenmekte. Yani C++11 ile birlikle gelen
 ``for(... : ...)`` şeklindeki looplar bu direktif ile kullanılamaz. -
 OpenMP 5 ile birlikte ``loop`` adında benzer bir direktif eklenmiştir.
-An itibariyle Truba’da yüklü olan derleyeciler OpenMP 5’i desteklemediği
+An itibariyle TRUBA’da yüklü olan derleyeciler OpenMP 5’i desteklemediği
 için bu direktif dökümantasyona dahil edilmemiştir. - Yukarıda verilen
 örneklerde iş parçacıkları veriyi (bu durumda a,b,c dizilerini)
 paylaşmaktadır. Yani bütün threadler aynı dizilere erişmekte ve

@@ -6,9 +6,9 @@ Bir önceki adımda VASP programının kendi kullanıcınızın olduğu dizine n
 vasp_run.slurm olarak isimlendirilen iş betiği dosyasının içine istediğiniz bir editör kullanarak girip gerekli değişiklikleri kolayca yapabilirsiniz. İş betikleri oluşturulurken iki önemli husus vardır. Programı hangi modülleri kullanarak derlediyseniz, o modüllerin isimleri iş betiği dosyanızda olması gerekmektedir. Hangi modülleri kullanacağınızla ilgili olarak kuracağınız programın kurulum dosyalarını dikkatlice okumanız gerekmektedir.
 İş betiği ile ilgili ayrıntılara :ref:`kaynakyoneticisi` sayfasından ulaşabilirsiniz.
 
-------------------
-vasp_run.slurm
-------------------
+--------------------------------
+VASP SLURM Dosyası Örneği
+--------------------------------
 
 .. code-block:: bash
 

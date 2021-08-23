@@ -49,8 +49,7 @@ kütüphanelerin versiyonları terminal üzerinden ``kütüphane adı -
 
 -  GSMPI (paralel hesaplama için)
 
--  HDF5 (büyük ölçekli paralel girdi ve çıktı dosyaları için) (CMake
-   versiyon 3.1 gerektirir)
+-  HDF5 (büyük ölçekli paralel girdi ve çıktı dosyaları için) (CMake versiyon 3.1 gerektirir)
 
 -  OpenCascade CE (çözüm ağı oluşturulması ve optimize edilmesi için)
 
@@ -62,9 +61,7 @@ kütüphanelerin versiyonları terminal üzerinden ``kütüphane adı -
 
 -  Triangle (2 boyutlu çözüm ağlarının oluşturulması için)
 
--  VTK (en az versiyon 5.8) (alan sonuç dosyalarını VTK formatına
-   dönüştürmek için, sadece çözüm ağı dosyaları için önerilir, zorunlu
-   değil)
+-  VTK (en az versiyon 5.8) (alan sonuç dosyalarını VTK formatına dönüştürmek için, sadece çözüm ağı dosyaları için önerilir, zorunlu değil)
 
 .. _indirme:
 
@@ -73,8 +70,8 @@ kütüphanelerin versiyonları terminal üzerinden ``kütüphane adı -
 
 Nektar++ içindeki otomatik kurucu vasıtasıyla kolaylıkla kurulabilir.
 Bunun için öncelikle sıkıştırılmış tar.gz dosyasının Nektar++ web
-sitesindeki **Downloads/Source Codes** kısmından uygun Nektar++
-versiyonu seçilerek indirilmesi gerekmektedir. İndirilen tar.gz dosyası
+sitesindeki ``Downloads/Source Codes`` kısmından uygun Nektar++
+versiyonu seçilerek indirilmesi gerekmektedir. İndirilen ``tar.gz`` dosyası
 istenilen klasöre koyulduktan sonra;
 
 -  https://www.nektar.info/downloads/ adresinden istenilen versiyonun
@@ -82,15 +79,15 @@ istenilen klasöre koyulduktan sonra;
 
 -  Tercihen "Nektar++" isminde ayrı bir klasör açılır.
 
--  İndirlen tar.gz dosyası açılan klasöre taşınır ve buraya çıkartılır.
-   Örneğin, 5.0.2 versiyonu için şu komut kullanılır: <**tar -zxvf
-   nektar++-5.0.2.tar.gz**>
+-  İndirilen tar.gz dosyası açılan klasöre taşınır ve buraya çıkartılır.
+   Örneğin, 5.0.2 versiyonu için şu komut kullanılır: ``tar -zxvf
+   nektar++-5.0.2.tar.gz``
 
--  Açılan klasörün içinde "build" isimli yeni bir klasör açılır.
+-  Açılan klasörün içinde ``build`` isimli yeni bir klasör açılır.
 
--  "build" klasörüne gidilir ve bu adreste terminal çalıştırılır.
+-  ``build`` klasörüne gidilir ve bu adreste terminal çalıştırılır.
    Kurulum sırasında karışıklık yaşanmaması adına yükleme işleminin bu
-   şekilde ayrı bir "build" klasöründen yapılması önerilir.
+   şekilde ayrı bir ``build`` klasöründen yapılması önerilir.
 
 -  Bu adreste açılan terminalden ``cmake``, veya daha gelişmiş bir
    kurulum için ``ccmake ../`` komutları girilir.

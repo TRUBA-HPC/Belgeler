@@ -1,10 +1,12 @@
+===========
 Çalıştırma
 ===========
 
 .. _is_gonderimi:
 
+--------------
 İş Gönderimi
-------------
+--------------
 
 Çözüm Ağı Oluşturma
 ~~~~~~~~~~~~~~~~~~~
@@ -35,8 +37,12 @@ etkileşimde bulunmasına gerek duymaz. Bu aşamalar şöyle sıralanabilir:
 -  Optimize edilmiş yüksek mertebeli çözüm ağlarının yüzey geometrisi
    üzerinde oluşturulması
 
-Bu aşamalar daha geniş biçimde açıklanacaktır. Bütün temel fikirlerin
-altında, NekMesh çözüm ağı oluşturucusunun son çözüm ağını yüksek kalite
+Bu aşamalar daha geniş biçimde açıklanacaktır. 
+
+CAD Etkileşimleri
+^^^^^^^^^^^^^^^^^^^
+
+Bütün temel fikirlerin altında, NekMesh çözüm ağı oluşturucusunun son çözüm ağını yüksek kalite
 ve mertebede oluşturması ve altında yatan geometriye olabildiğince iyi
 şekilde adapte etmesi yatar. Bu bağlamda, sistemin CAD çıktı
 dosyalarından geometrik bilgileri kolay ve doğru bir biçimde
@@ -45,8 +51,12 @@ yazılımlardan biri olan OpenCascade bulunur. Bu yazılım oldukça kapsamlı
 ve büyük boyutlu olduğundan dolayı Nektar++, süreyi ve karmaşıklığı
 azaltmak adına sadece gerekli rutinleri ve modülleri ayrıca
 yükleyebilir. Bu sayede çoğu işlem OpenCascade ile yapılacağından daha
-kısa sürede yapılabilir. Yüksek mertebeli çözüm ağlarının
-oluşturulmasındaki temel sıkıntılardan biri de uyumlu geniş veya büyük
+kısa sürede yapılabilir. 
+
+Otomatik Çözüm Ağı Sınıflandırılması
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Yüksek mertebeli çözüm ağlarının oluşturulmasındaki temel sıkıntılardan biri de uyumlu geniş veya büyük
 elemanlı doğrusal çözüm ağı elemanlarının oluşturulmasıdır. Kullanıcının
 bu elemanları tüm çözüm alanı için tanımlanması oldukça zordur. NekMesh
 bu sorunu büyük ve küçük elemanlar arasında seviyeli ve pürüzsüz bir
@@ -57,7 +67,12 @@ doğru çözüm ağı oluşturulmasına yardımcı olurlar. Geometrik eğimlerin
 farklı yüzeylerin çözüm ağı boyutlandırma parametresi haline geldiği
 durumlarda ise, daha komplike ve ileri seviyedeki durumlar, uyumlu
 olmayan (non-conforming) altıgen yüzeyli çözüm ağlarının kullanılması
-uygun olacaktır. Klasik ve geleneksel olarak ticari uygulama
+uygun olacaktır. 
+
+Doğrusal Çözüm Ağı Oluşturulması
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Klasik ve geleneksel olarak ticari uygulama
 paketlerinde de bulunan çözüm ağı oluşturma mekanizmalarının aksine,
 Nektar++ uygulaması daha alışılmamış ve eski bir yöntem olan 0 boyuttan
 3 boyuta doğru giden, aşağıdan yukarıya doğru düşünülebilecek bir
@@ -73,7 +88,12 @@ sağlam ve kararlı bir algoritma için, 2 boyuttaki çözüm ağları Triangle
 kütüphanesi ile ve 3 boyutlu olanlar TetGen kütüphanesi ile oluşturulur.
 Bunların ikisi de Delaunay bazlı çözüm ağı oluşturucularıdır. Diğer ek
 modüller ve kütüphaneler gibi bunlar da Nektar++ ile otomatik olarak
-indirilir ve kurulurlar. Yüksek mertebeli boğum-düğüm noktalarının
+indirilir ve kurulurlar. 
+
+Yüksek Mertebeli Yüzey Oluşturucular
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Yüksek mertebeli boğum-düğüm noktalarının
 eklenmesi ve çözüm ağlarının kıvrılıp bükülmeleri çözüm ağlarının
 oluşturulmasını zorlaştıran etkenlerdendir. Herhangi bir çözüm ağı
 oluşturma yönteminin bu sorunu çözdüğü %100 olarak kanıtlanamasa da,
@@ -87,7 +107,12 @@ etkilenir ve düşer. Bunun için NekMesh boğum noktalarının optimizasyonu
 için CAD yüzey parametrelerini kullanır ve üçgenel yüzeylerin mümkün
 olan en düşük eğrilik ve yamulma ile oluşturulduğundan emin olur. Bu
 Newton-tipi optimizasyon ve minimizasyon aşamaları için Gauss-Seidel
-matris çözme yöntemi kullanılır. Kıvrık veya bükük elemanlar geçersiz
+matris çözme yöntemi kullanılır. 
+
+Çözüm Ağı Düzeltmeleri
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Kıvrık veya bükük elemanlar geçersiz
 elemanlara yol açabilir, özellikle Euler tipi yani dörtyüzlü çözüm
 ağlarında bu durum görülür. Nektar++ içinde bu durumları çözmek için üç
 farklı yöntem kullanır. İlk olarak geçersiz yüzeylerdeki eğimli
@@ -98,12 +123,19 @@ noktaları deforme edilebilir ancak bu durum hesaplama süresini uzatır ve
 çok verimli bir yöntem değildir. Fakat, doğrusal elastik çözücülerde
 kullanılabilir. Son ve en yararlı yöntem ise Değişken Optimizasyon
 modülünü eğimli ara noktalar ve alanlar için kullanmaktır. Daha fazla
-bilgi Nektar++ sitesindeki kullanıcı rehberinin 4.4.15 kısmından
-öğrenilebilir.
+bilgi `Nektar++ sitesindeki kullanıcı rehberinden <https://www.nektar.info/community/documentation/>`_ öğrenilebilir.
 
-Çözüm ağı oluşturma aşağıdaki komutla gerçekleştirilebilir. <**NekMesh
-session.mcf mesh.xml**> Buradaki "session.mcf" çözüm ağı dosyasının
-adını temsil etmektedir. Aşağıdaki figür `2 <#mesh_sema>`__, 2 boyutlu
+Manuel Olarak Çözüm Ağı Oluşturma
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Çözüm ağı oluşturma aşağıdaki komutla gerçekleştirilebilir. 
+
+.. code-block::
+
+   NekMesh session.mcf mesh.xml
+
+Buradaki "session.mcf" çözüm ağı dosyasının
+adını temsil etmektedir. Aşağıdaki `şema <#mesh_sema>`__, 2 boyutlu
 bir NACA kanadının çözüm ağı dosyasını örnekler.
 
 .. figure:: /assets/Nektar-howto/images/mesh_sema.PNG
@@ -111,21 +143,10 @@ bir NACA kanadının çözüm ağı dosyasını örnekler.
 
    Çözüm Ağı Yapısı
 
-Tüm durumlar için çözüm ağı iki parçalı bilgiye ve dört parametreye
-ihtiyaç duyar. İlk olarak CAD dosyasını belirlemek ister. Yukarıdaki
-örnekte bu 4 basamaklı bir sayıdır, NACA oluşturucusundan dolayı. Diğer
-durumlarda STEP veya GEO formatında dosyalara ihtiyaç duyar. Sonrasında
-oluşturulacak çözüm ağının tipi seçilir. Üç boyut için veya , iki boyut
-için veya seçilir. seçildiği takdirde sadece dörtyüzlü çözüm ağı
-elemanları kullanılır. Sınır tabakası için ise tek katmanlı prizma
+Tüm durumlar için çözüm ağı iki parçalı bilgiye ve dört parametreye ihtiyaç duyar. İlk olarak CAD dosyasını belirlemek ister. Yukarıdaki örnekte bu 4 basamaklı bir sayıdır, NACA oluşturucusundan dolayı. Diğer durumlarda STEP veya GEO formatında dosyalara ihtiyaç duyar. Sonrasında oluşturulacak çözüm ağının tipi seçilir. Üç boyut için ``EULER`` veya ``BndLayer``, iki boyut için ``2D`` veya ``2DBndLayer`` seçilir. ``EULER`` seçildiği takdirde sadece dörtyüzlü çözüm ağı elemanları kullanılır. Sınır tabakası için ise tek katmanlı prizma
 tabakaları yerleştirilir. Otomatik çözüm ağı oluşturma sistemi pürüzsüz
 bir geçiş ve düzgün bir şeklide küçültülmüş çözüm ağı için üç
-parametreye ihtiyaç duyar. en küçük elemanın boyutunu, ise en büyük
-elemanın boyutunu belirlemek için kullanılır. ise hassasiyeti belirten
-eğrilik parametresidir ve 0 ile 1 arasında değerler alır, eğri yüzeyler
-üzerindeki elemanların boyutlarını kontrol eder. ise çözüm ağının
-oluşturulduğu polinom derecesini belirler. Sınır tabakaları için ek
-birkaç parametre daha gerekebilir.
+parametreye ihtiyaç duyar. ``MinDelta`` en küçük elemanın boyutunu, ``MaxDelta`` ise en büyük elemanın boyutunu belirlemek için kullanılır. ``EPS`` ise hassasiyeti belirten eğrilik parametresidir ve 0 ile 1 arasında değerler alır, eğri yüzeyler üzerindeki elemanların boyutlarını kontrol eder. ``Order`` ise çözüm ağının oluşturulduğu polinom derecesini belirler. Sınır tabakaları için ek birkaç parametre daha gerekebilir.
 
 .. figure:: /assets/Nektar-howto/images/boundarylayer.PNG
    :name: mesh_boundary_layer
@@ -136,21 +157,21 @@ Gmsh tarafından kullanılan GEO formatı bir kullanıcı arayüzüne (GUI)
 ihtiyaç duymaksızın çözüm ağı oluşturma operasyonlarının yürütülmesine
 olanak tanır. Basit halde en temel fonksiyonlar şöyle listelenebilir:
 
--  yorumlar için
+-  ``\\`` yorumlar için
 
--  noktalar için
+-  ``Point`` noktalar için
 
--  doğrular için
+-  ``Line`` doğrular için
 
--  noktalar arası eğriler için
+-  ``Spline`` noktalar arası eğriler için
 
--  Bezier eğrileri için
+-  ``BSpline`` Bezier eğrileri için
 
--  Çembersel yaylar ve elipsler için
+-  ``Ellipse`` Çembersel yaylar ve elipsler için
 
--  Çembersel yaylar ve çemberler için
+-  ``LineLoop`` Çembersel yaylar ve çemberler için
 
--  Doğru döngüleri için
+-  ``PlaneSurface`` Doğru döngüleri için
 
 -  Düzlem yüzeyleri için
 
@@ -162,8 +183,12 @@ olanak tanır. Basit halde en temel fonksiyonlar şöyle listelenebilir:
 üç temel basamak vardır. Öncelikle çözüm ağı oluşturulur, ardından
 genişleme tabanları ayarlanır. Başlangıç koşullarının konfigürasyonu,
 sınır koşulları ve gerekli parametreler bu adımların ardından
-tanımlanır. Bu bölümde bu adımların üzerinde durulacaktır. Ön işlemlerin
-ilki Nektar++ ile uyumlu bir formatta çözüm ağı hazırlamaktır. Bu çözüm
+tanımlanır. Bu bölümde bu adımların üzerinde durulacaktır. 
+
+Çözüm Ağı Formatını Dönüştürme
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Ön işlemlerin ilki Nektar++ ile uyumlu bir formatta çözüm ağı hazırlamaktır. Bu çözüm
 ağının etrafında oluşturulacağı geometri öncelikle açık kaynak çözüm ağı
 oluşturucularından Gmesh ile oluşturulabilir. Fakat, çözüm ağı çıktı
 formatı Nektar++ ile uyumlu olmadığından başka bir formata
@@ -179,21 +204,15 @@ oluşturacağı Nektar++ ile uyumlu olan ".xml" dosyasının adı. Örnek komut
 
 Yukarıdaki komutta bulunan "NEK" kısaltması Nektar++ kodunun
 çalıştırılacak olan "executable" dosyalarının bulunduğu adresi temsil
-eder. 2 boyuttaki simülasyonlar için çözüm ağının etiketi altındaki 6
-alt bölüm ile tanımlanması gerekmektedir. etiketi köşe noktalarının
-uzaydaki koordinatlarını içerir. bu köşeleri bağlayan doğruları kapsar.
-ise çözüm ağı elemanlarını tanımlar. ise eğriler üzerinde kontrol
-noktalarını tanımlamak için kullanılır. Eğer eğri kenarlar veya yüzeyler
-yoksa bu etiket göz ardı edilebilir. çözümün alt alanlarını ve denklem
-setlerinin çözüleceği yerleri tanımlar. Sınır koşulları için de kompozit
-alanlar kullanılabilir. Son etiket olan ise tüm çözüm alanının ve
-kompozit alanlarının bütünlüğünü sağlar. Aşağıdaki görsel geometri
-tanımlarının özetini içerir.
+eder. 2 boyuttaki simülasyonlar için çözüm ağının ``GEOMETRY`` etiketi altındaki 6 alt bölüm ile tanımlanması gerekmektedir. ``VERTEX`` etiketi köşe noktalarının uzaydaki koordinatlarını içerir. ``EDGE`` bu köşeleri bağlayan doğruları kapsar. ``ELEMENT`` ise çözüm ağı elemanlarını tanımlar.``CURVED`` ise eğriler üzerinde kontrol noktalarını tanımlamak için kullanılır. Eğer eğri kenarlar veya yüzeyler yoksa bu etiket göz ardı edilebilir. ``COMPOSITE`` çözümün alt alanlarını ve denklem setlerinin çözüleceği yerleri tanımlar. Sınır koşulları için de kompozit alanlar kullanılabilir. Son etiket olan ``DOMAIN`` ise tüm çözüm alanının ve kompozit alanlarının bütünlüğünü sağlar. Aşağıdaki görsel geometri tanımlarının özetini içerir.
 
 .. figure:: /assets/Nektar-howto/images/geometry.PNG
    :name: geometri
 
    Geometri tanımları
+
+Genişleme Tabanları
+^^^^^^^^^^^^^^^^^^^^
 
 Kompozit veya alt alanların kullanımı için genişleme tabanları
 tanımlanabilir. Örneği yukarıdaki şekil `32 <#expansions>`__ içinde
@@ -205,6 +224,9 @@ bulunabilir. Burada tek kompozit ve 3 temel denklem (NUMMODES) için
 
    Genişleme tabanları tanımı
 
+Çözüm Parametrelerinin Tanımlanması
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Bu noktada çözümde baz alınacak değerler tanımlanır. Örnek olarak
 aşağıdaki şekil incelenebilir. Bu şekilde çözücünün kullanırken ihtiyaç
 duyacağı sabitler ve parametreler problem tanımlamasına uygun bir
@@ -215,11 +237,14 @@ duyacağı sabitler ve parametreler problem tanımlamasına uygun bir
 
    Çözüm parametreleri
 
+Çözücü Ayarları
+^^^^^^^^^^^^^^^^^^
+
 Problemin çözücü ile nasıl çözüleceğini belirlemek için bazı ayarlar
 tanımlanır. Örneğin, bir akış problemi durumunda bunlar akışkan
 viskozitesi, ısı iletimi ve Navier Stokes içindeki denklem tipleri
 olabilir. Sıkıştırılabilir akışlarda genelde süreksiz projeksiyon
-metotları, örneğin discontinuos Galerkin (DG), kullanıldığı için
+metotları, örneğin discontinuos Galerkin (DG), kullanıldığı için ``Projection``
 kısmının "DisContinuous" olarak ayarlanması gerekmektedir. Taşınım,
 difüzyon, problem, zaman integrasyonu ve viskozite tipleri aşağıdaki
 düzende seçilir.
@@ -227,7 +252,8 @@ düzende seçilir.
 .. figure:: /assets/Nektar-howto/images/solver.PNG
    :name: çözücü
 
-   Çözücü ayarları
+Değişkenler
+~~~~~~~~~~~~~
 
 Çözüm değişkenleri tanımlanır. 2 boyut için örnek şu şekildedir. Farklı
 problemler ve çözücüler için aşağıdaki değişkenler ve başlıklar
@@ -237,18 +263,20 @@ bunları tanımlaması önem arz etmektedir.
 .. figure:: /assets/Nektar-howto/images/variables.PNG
    :name: değişkenler
 
-   Değişkenler
 
 Sınır koşullarının değişkenlerden ziyade akılara uygulandığı
-hatırlanmalıdır. Sınır bölgeleri içinde tanımlanır. 2 boyut için örnek
+hatırlanmalıdır. 
+
+Sınır Koşulları
+~~~~~~~~~~~~~~~~~
+
+Sınır bölgeleri ``BOUNDARY REGIONS`` içinde tanımlanır. 2 boyut için örnek
 şu şekildedir.
 
 .. figure:: /assets/Nektar-howto/images/boundaryregions.PNG
    :name: sınır_bölge
 
-   Sınır bölgeleri
-
-Ardından içinde sınr koşulları tanımlanır. Hangi sınır için
+Ardından ``BOUNDARY CONDITIONS`` içinde sınr koşulları tanımlanır. Hangi sınır için
 tanımlandıkları bir önceki bölüm olan sınır bölgeleri kısmında ifade
 edilmiştir.
 
@@ -264,7 +292,6 @@ Başlangıç koşulları şu şekilde tanımlanabilir.
 .. figure:: /assets/Nektar-howto/images/functions.PNG
    :name: başlangıç_koşul
 
-   Başlangıç koşulları
 
 Çözücüyü Çalıştırma ve Sonuç Görüntüleme
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -274,7 +301,7 @@ Duruma uygun çözücünün seçilerek komuta yazılması ve ardından da ilgili
 
 .. code-block::
 
-   <**NEK/ÇözücüAdı dosyaadı.xml**>
+   NEK/ÇözücüAdı dosyaadı.xml
 
 Yukarıdaki komutta bulunan "NEK" kısaltması Nektar++ kodunun
 çalıştırılacak olan "executable" dosyalarının bulunduğu adresi temsil
@@ -282,7 +309,7 @@ eder. TRUBA sunucusunda bu adres şu şekildedir:
 
 .. code-block::
 
-   <**/truba/sw/centos7.3/app/nektar++/5.0.2-gcc-9.2/nektar-v5.0.2/build/dist/bin/**>
+   /truba/sw/centos7.3/app/nektar++/5.0.2-gcc-9.2/nektar-v5.0.2/build/dist/bin/
 
 Çözüm işlemi sırasında belirli adımlarda ".chk" dosyaları basılır.
 Ayrıca çözüm sonunda bu dosyaların hepsindeki bilgiyi içeren bir son
@@ -294,7 +321,7 @@ gerekli olan altyapı Nektar++ içinde **FieldConvert** ismiyle mevcuttur.
 
 .. code-block::
 
-   <**NEK/FieldConvert eskidosya.xml eskidosya.fld yenidosya.vtu**>
+   NEK/FieldConvert eskidosya.xml eskidosya.fld yenidosya.vtu
 
 Oluşturulan ".vtu" uzantılı dosya bahsi geçen yazılımlar tarafından
 okunur ve çözüm sonuçları incelenebilir.
@@ -324,7 +351,7 @@ Problem Tanımı
 Akış ve hesaplama alanı [-10 20] x [-10 10] olarak seçilmiştir ve çözüm
 ağı 639 dörtyüzlü elemandan oluşmaktadır. Sınır koşulları
 "kaydırmazlık", "yüzeydeki eş sıcaklık" ve "uzak alan" sınır koşulları
-olarak uygulanmıştır. Aşağıdaki şekil `12 <#problem>`__ çözüm ağını
+olarak uygulanmıştır. `Aşağıdaki şekil <#problem>`__ çözüm ağını
 gösterir ve buradan da düzensiz bir çözüm ağı kullanıldığı görülebilir.
 Çözüm ağı katı cismin etrafında daha sık bir şekilde örülmüşken
 uzaklaştıkça seyrekleşmeye başlar. Bu, cismin etrafındaki sınır
@@ -348,13 +375,16 @@ modellenebilir. Bu aşamadan sonra çözüm parametreleri tanımlanacak,
 çözücü koşturulacak ve sonuçların görüntülenmesi yapılacaktır.
 
 Ön İşlemler ve Çözüm Ağı Oluşturma
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Nektar++ üzerinde problemi tanımlamak için üç temel basamak vardır.
 Öncelikle çözüm ağı oluşturulur, ardından genişleme tabanları ayarlanır.
 Başlangıç koşullarının konfigürasyonu, sınır koşulları ve gerekli
 parametreler bu adımların ardından tanımlanır. Bu bölümde ve sıradaki
 bölümlerde bu adımların üzerinde durulacaktır.
+
+Çözüm Ağı Oluşturma
+^^^^^^^^^^^^^^^^^^^^
 
 Ön işlemlerin ilki Nektar++ ile uyumlu bir formatta çözüm ağı
 hazırlamaktır. Bu çözüm ağının etrafında oluşturulacağı geometri
@@ -378,19 +408,15 @@ eder. TRUBA sunucusunda bu adres şu şekildedir:
 
    /truba/sw/centos7.3/app/nektar++/5.0.2-gcc-9.2/nektar-v5.0.2/build/dist/bin/
 
-Bu örnekte verilen dosya .xml formatında olduğundan herhangi bir
-dönüşüme gerek yoktur. 2 boyuttaki simülasyonlar için çözüm ağının
-etiketi altındaki 6 alt bölüm ile tanımlanması gerekmektedir. etiketi
-köşe noktalarının uzaydaki koordinatlarını içerir. bu köşeleri bağlayan
-doğruları kapsar. ise çözüm ağı elemanlarını tanımlar. ise eğriler
-üzerinde kontrol noktalarını tanımlamak için kullanılır. Eğer eğri
-kenarlar veya yüzeyler yoksa bu etiket göz ardı edilebilir. çözümün alt
-alanlarını ve denklem setlerinin çözüleceği yerleri tanımlar. Sınır
-koşulları için de kompozit alanlar kullanılabilir. Son etiket olan ise
-tüm çözüm alanının ve kompozit alanlarının bütünlüğünü sağlar. Aşağıdaki
-şekiller bu geometri tanımlarının iç yüzlerini örnekler ve genel
-yapıları hakkında fikir vermeyi amaçlar. Fotoğrafta ilk 10-20 satır
-alındığından bu bilgiler dosyaların tamamını kapsamamaktadır.
+Bu örnekte verilen dosya .xml formatında olduğundan herhangi bir dönüşüme gerek yoktur. 2 boyuttaki
+simülasyonlar için çözüm ağının ``GEOMETRY`` etiketi altındaki 6 alt bölüm ile tanımlanması gerekmektedir.
+``VERTEX`` etiketi köşe noktalarının uzaydaki koordinatlarını içerir. ``EDGE`` bu köşeleri bağlayan doğruları
+kapsar. ``ELEMENT`` ise çözüm ağı elemanlarını tanımlar. ``CURVED`` ise eğriler üzerinde kontrol noktalarını
+tanımlamak için kullanılır. Eğer eğri kenarlar veya yüzeyler yoksa bu etiket göz ardı edilebilir. ``COMPOSITE``
+çözümün alt alanlarını ve denklem setlerinin çözüleceği yerleri tanımlar. Sınır koşulları için de kompozit alanlar
+kullanılabilir. Son etiket olan ``DOMAIN`` ise tüm çözüm alanının ve kompozit alanlarının bütünlüğünü sağlar.
+Aşağıdaki figürler bu geometri tanımlarının iç yüzlerini örnekler ve genel yapıları hakkında fikir vermeyi amaçlar.
+Ekran görüntüsünde ilk 10-20 satır alındığından bu bilgiler dosyaların tamamını kapsamamaktadır.
 
 .. figure:: /assets/Nektar-howto/images/vertex_ornek.PNG
    :name: köşe
@@ -417,15 +443,20 @@ alındığından bu bilgiler dosyaların tamamını kapsamamaktadır.
 
    Kompozit alan tanımlama örnekleri
 
+Genişleme Tabanları
+^^^^^^^^^^^^^^^^^^^^
+
 Kompozit veya alt alanların kullanımı için genişleme tabanları
-tanımlanabilir. Örneği aşağıdaki şekil
-`29 <#alan_ve_genişleme>`__\ içinde bulunabilir. Burada tek kompozit ve
+tanımlanabilir. Örneği `aşağıdaki şekil <#alan_ve_genişleme>`__ içinde bulunabilir. Burada tek kompozit ve
 3 temel denklem (NUMMODES) için örnekleme yapılmıştır.
 
 .. figure:: /assets/Nektar-howto/images/domain_and_expansions_örnek.PNG
    :name: alan_ve_genişleme
 
    Alan ve genişleme tabanları tanımlama örnekleri
+
+Çözüm Parametrelerinin Tanımlanması
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Bu noktada çözümde baz alınacak değerler tanımlanır. Örnek olarak
 aşağıdaki şekil incelenebilir.
@@ -442,10 +473,13 @@ Problemin çözücü ile nasıl çözüleceğini belirlemek için bazı ayarlar
 tanımlanır. Akış problemi örneğinde bunlar akışkan viskozitesi, ısı
 iletimi ve Navier Stokes içindeki denklem tipleri olabilir.
 Sıkıştırılabilir akışlarda genelde süreksiz projeksiyon metotları,
-örneğin discontinuos Galerkin (DG), kullanıldığı için kısmının
+örneğin discontinuos Galerkin (DG), kullanıldığı için ``Projection`` kısmının
 "DisContinuous" olarak ayarlanması gerekmektedir. Taşınım, difüzyon,
 problem, zaman integrasyonu ve viskozite tipleri aşağıdaki düzende
 seçilir.
+
+Değişkenler & Sınır Bölgeleri
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Çözüm değişkenleri tanımlanır ve sınır bölgeleri şu şekilde
 tanımlanabilir.
@@ -455,7 +489,10 @@ tanımlanabilir.
 
    Çözücü ayarları örneği
 
-Ardından içinde sınır koşulları tanımlanır. Hangi sınır için
+Sınır Koşulları
+^^^^^^^^^^^^^^^^
+
+Ardından ``BOUNDARY CONDITIONS`` içinde sınır koşulları tanımlanır. Hangi sınır için
 tanımlandıkları bir önceki bölüm olan sınır bölgeleri kısmında ifade
 edilmiştir.
 
@@ -475,7 +512,8 @@ Başlangıç koşulları şu şekilde tanımlanabilir.
 
 Son olarak, çözümdeki dalgalanmaları azaltmak ve akış süreksizliklerini
 temsil edebilmek adına yapay viskozite temeline dayanan bir şok yakalama
-tekniği kullanılır. Bunun için bölümünde kısmı düzenlenmelidir.
+tekniği kullanılır. Bunun için ``SOLVER_INFO`` bölümünde
+``ShockCaptureType`` kısmı düzenlenmelidir.
 
 .. _çözücüyü-çalıştırma-ve-sonuç-görüntüleme-1:
 
@@ -539,11 +577,11 @@ Paralel Örnek İş Hazırlama
 İşlemlerin cihazdaki başka çekirdekleri kullanarak daha hızlı bir
 şekilde tamamlanmasına olanak sağlayan paralel çalıştırma Nektar++
 tarafından desteklenmektedir. Bu özelliğin kullanılması için Nektar++
-derlenirken seçeneği "ON" olarak ayarlanmalıdır. Ardından komut verme
+derlenirken ``NEKTAR_USE_MPI`` seçeneği "ON" olarak ayarlanmalıdır. Ardından komut verme
 kısmında işlemci sayısı seçilerek daha önce belirtilen işlemler
 tekrarlanabilir. Kılavuz tutarlılığı açısından bu işlemler bu bölümde de
-tekrarlanmıştır. Kullanılacak dosyalar `2.2 <#seri_örnek>`__ kısmı ile,
-problem tanımı da `2.2.1 <#seri_örnek_problem>`__ kısmı ile aynıdır.
+tekrarlanmıştır. Kullanılacak dosyalar :ref:`seri_örnek` kısmı ile,
+problem tanımı da :ref:`seri_örnek_problem` kısmı ile aynıdır.
 
 .. _ön-işlemler-ve-çözüm-ağı-oluşturma-1:
 
@@ -555,6 +593,9 @@ Nektar++ üzerinde problemi tanımlamak için üç temel basamak vardır.
 Başlangıç koşullarının konfigürasyonu, sınır koşulları ve gerekli
 parametreler bu adımların ardından tanımlanır. Bu bölümde ve sıradaki
 bölümlerde bu adımların üzerinde durulacaktır.
+
+Çözüm Ağı Oluşturma
+^^^^^^^^^^^^^^^^^^^^
 
 Ön işlemlerin ilki Nektar++ ile uyumlu bir formatta çözüm ağı
 hazırlamaktır. Bu çözüm ağının etrafında oluşturulacağı geometri
@@ -578,19 +619,8 @@ eder. TRUBA sunucusunda bu adres şu şekildedir:
 
    /truba/sw/centos7.3/app/nektar++/5.0.2-gcc-9.2/nektar-v5.0.2/build/dist/bin/
 
-Verilen dosya .xml olduğu için bu örnekte herhangi bir dönüşüm yapmaya
-gerek yoktur. 2 boyuttaki simülasyonlar için çözüm ağının etiketi
-altındaki 6 alt bölüm ile tanımlanması gerekmektedir. etiketi köşe
-noktalarının uzaydaki koordinatlarını içerir. bu köşeleri bağlayan
-doğruları kapsar. ise çözüm ağı elemanlarını tanımlar. ise eğriler
-üzerinde kontrol noktalarını tanımlamak için kullanılır. Eğer eğri
-kenarlar veya yüzeyler yoksa bu etiket göz ardı edilebilir. çözümün alt
-alanlarını ve denklem setlerinin çözüleceği yerleri tanımlar. Sınır
-koşulları için de kompozit alanlar kullanılabilir. Son etiket olan ise
-tüm çözüm alanının ve kompozit alanlarının bütünlüğünü sağlar. Aşağıdaki
-şekiller bu geometri tanımlarının iç yüzlerini örnekler ve genel
-yapıları hakkında fikir vermeyi amaçlar. Fotoğrafta ilk 10-20 satır
-alındığından bu bilgiler dosyaların tamamını kapsamamaktadır.
+Verilen dosya .xml olduğu için bu örnekte herhangi bir dönüşüm yapmaya gerek yoktur. 2 boyuttaki
+simülasyonlar için çözüm ağının GEOMETRY etiketi altındaki 6 alt bölüm ile tanımlanması gerekmektedir. ``VERTEX`` etiketi köşe noktalarının uzaydaki koordinatlarını içerir. ``EDGE`` bu köşeleri bağlayan doğruları kapsar. ``ELEMENT`` ise çözüm ağı elemanlarını tanımlar. ``CURVED`` ise eğriler üzerinde kontrol noktalarını tanımlamak için kullanılır. Eğer eğri kenarlar veya yüzeyler yoksa bu etiket göz ardı edilebilir. ``COMPOSITE`` çözümün alt alanlarını ve denklem setlerinin çözüleceği yerleri tanımlar. Sınır koşulları için de kompozit alanlar kullanılabilir. Son etiket olan ``DOMAIN`` ise tüm çözüm alanının ve kompozit alanlarının bütünlüğünü sağlar. Aşağıdaki figürler bu geometri tanımlarının iç yüzlerini örnekler ve genel yapıları hakkında fikir vermeyi amaçlar. Ekran görüntüsünde ilk 10-20 satır alındığından bu bilgiler dosyaların tamamını kapsamamaktadır.
 
 .. figure:: /assets/Nektar-howto/images/vertex_ornek.PNG
    :name: köşe
@@ -617,14 +647,18 @@ alındığından bu bilgiler dosyaların tamamını kapsamamaktadır.
 
    Kompozit alan tanımlama örnekleri
 
-Kompozit veya alt alanların kullanımı için genişleme tabanları
-tanımlanabilir. Örneği aşağıdaki şekil `29 <#alan_ve_genişleme>`__\ içinde bulunabilir. Burada tek kompozit ve
-3 temel denklem (NUMMODES) için örnekleme yapılmıştır.
+Genişleme Tabanları
+^^^^^^^^^^^^^^^^^^^^
+
+Kompozit veya alt alanların kullanımı için genişleme tabanları tanımlanabilir. Örneği `aşağıdaki şekil <#alan_ve_genişleme>`__ içinde bulunabilir. Burada tek kompozit ve 3 temel denklem (NUMMODES) için örnekleme yapılmıştır.
 
 .. figure:: /assets/Nektar-howto/images/domain_and_expansions_ornek.PNG
    :name: alan_ve_genişleme
 
    Alan ve genişleme tabanları tanımlama örnekleri
+
+Çözüm Parametrelerinin Tanımlanması
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Bu noktada çözümde baz alınacak değerler tanımlanır. Örnek olarak
 aşağıdaki şekil incelenebilir.
@@ -644,8 +678,12 @@ aşağıdaki şekil incelenebilir.
 üç temel basamak vardır. Öncelikle çözüm ağı oluşturulur, ardından
 genişleme tabanları ayarlanır. Başlangıç koşullarının konfigürasyonu,
 sınır koşulları ve gerekli parametreler bu adımların ardından
-tanımlanır. Bu bölümde bu adımların üzerinde durulacaktır. Ön işlemlerin
-ilki Nektar++ ile uyumlu bir formatta çözüm ağı hazırlamaktır. Bu çözüm
+tanımlanır. Bu bölümde bu adımların üzerinde durulacaktır. 
+
+Çözüm Ağı Formatını Dönüştürme
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Ön işlemlerin ilki Nektar++ ile uyumlu bir formatta çözüm ağı hazırlamaktır. Bu çözüm
 ağının etrafında oluşturulacağı geometri öncelikle açık kaynak çözüm ağı
 oluşturucularından Gmesh ile oluşturulabilir. Fakat, çözüm ağı çıktı
 formatı Nektar++ ile uyumlu olmadığından başka bir formata
@@ -659,26 +697,18 @@ oluşturacağı Nektar++ ile uyumlu olan ".xml" dosyasının adı. Örnek komut
 
    NEK/eskidosya_mesh.msh yenidosya_mesh.xml
 
-Yukarıdaki komutta bulunan "NEK" kısaltması Nektar++ kodunun
-çalıştırılacak olan "executable" dosyalarının bulunduğu adresi temsil
-eder. 2 boyuttaki simülasyonlar için çözüm ağının etiketi altındaki 6
-alt bölüm ile tanımlanması gerekmektedir. etiketi köşe noktalarının
-uzaydaki koordinatlarını içerir. bu köşeleri bağlayan doğruları kapsar.
-ise çözüm ağı elemanlarını tanımlar. ise eğriler üzerinde kontrol
-noktalarını tanımlamak için kullanılır. Eğer eğri kenarlar veya yüzeyler
-yoksa bu etiket gözardı edilebilir. çözümün alt alanlarını ve denklem
-setlerinin çözüleceği yerleri tanımlar. Sınır koşulları için de kompozit
-alanlar kullanılabilir. Son etiket olan ise tüm çözüm alanının ve
-kompozit alanlarının bütünlüğünü sağlar. Aşağıdaki görsel geometri
-tanımlarının özetini içerir.
+Yukarıdaki komutta bulunan "NEK" kısaltması Nektar++ kodunun çalıştırılacak olan "executable" dosyalarının bulunduğu adresi temsil eder. 2 boyuttaki simülasyonlar için çözüm ağının ``GEOMETRY`` etiketi altındaki 6 alt bölüm ile tanımlanması gerekmektedir. ``VERTEX`` etiketi köşe noktalarının uzaydaki koordinatlarını içerir. ``EDGE`` bu köşeleri bağlayan doğruları kapsar. ``ELEMENT`` ise çözüm ağı elemanlarını tanımlar. ``CURVED`` ise eğriler üzerinde kontrol noktalarını tanımlamak için kullanılır. Eğer eğri kenarlar veya yüzeyler yoksa bu etiket gözardı edilebilir. ``COMPOSITE`` çözümün alt alanlarını ve denklem setlerinin çözüleceği yerleri tanımlar. Sınır koşulları için de kompozit alanlar kullanılabilir. Son etiket olan ``DOMAIN`` ise tüm çözüm alanının ve kompozit alanlarının bütünlüğünü sağlar. Aşağıdaki görsel geometri tanımlarının özetini içerir.
 
 .. figure:: /assets/Nektar-howto/images/geometry.PNG
    :name: geometri
 
    Geometri tanımları
 
+Genişleme Tabanları
+^^^^^^^^^^^^^^^^^^^^^
+
 Kompozit veya alt alanların kullanımı için genişleme tabanları
-tanımlanabilir. Örneği yukarıdaki şekil `32 <#expansions>`__ içinde
+tanımlanabilir. Örneği `yukarıdaki şekil <#expansions>`__ içinde
 bulunabilir. Burada tek kompozit ve 3 temel denklem (NUMMODES) için
 örnekleme yapılmıştır.
 
@@ -686,6 +716,9 @@ bulunabilir. Burada tek kompozit ve 3 temel denklem (NUMMODES) için
    :name: expansions
 
    Genişleme tabanları tanımı
+
+Çözüm Parametrelerinin Tanımlanması
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Bu noktada çözümde baz alınacak değerler tanımlanır. Örnek olarak
 aşağıdaki şekil incelenebilir. Bu şekilde çözücünün kullanırken ihtiyaç
@@ -697,11 +730,14 @@ duyacağı sabitler ve parametreler problem tanımlamasına uygun bir
 
    Çözüm parametreleri
 
+Çözücü Ayarları
+^^^^^^^^^^^^^^^^
+
 Problemin çözücü ile nasıl çözüleceğini belirlemek için bazı ayarlar
 tanımlanır. Örneğin, bir akış problemi durumunda bunlar akışkan
 viskozitesi, ısı iletimi ve Navier Stokes içindeki denklem tipleri
 olabilir. Sıkıştırılabilir akışlarda genelde süreksiz projeksiyon
-metodları, örneğin discontinuos Galerkin (DG), kullanıldığı için
+metodları, örneğin discontinuos Galerkin (DG), kullanıldığı için ``Projection``
 kısmının "DisContinuous" olarak ayarlanması gerekmektedir. Taşınım,
 difüzyon, problem, zaman integrasyonu ve viskozite tipleri aşağıdaki
 düzende seçilir.
@@ -710,6 +746,9 @@ düzende seçilir.
    :name: çözücü
 
    Çözücü ayarları
+
+Değişkenler
+^^^^^^^^^^^^
 
 Çözüm değişkenleri tanımlanır. 2 boyut için örnek şu şekildedir. Farklı
 problemler ve çözücüler için aşağıdaki değişkenler ve başlıklar
@@ -721,8 +760,12 @@ bunları tanımlaması önem arz etmektedir.
 
    Değişkenler
 
-Sınır koşullarının değişkenlerden ziyade akılara uygulandığı
-hatırlanmalıdır. Sınır bölgeleri içinde tanımlanır. 2 boyut için örnek
+Sınır koşullarının değişkenlerden ziyade akılara uygulandığı hatırlanmalıdır. 
+
+Sınır Koşulları
+^^^^^^^^^^^^^^^^
+
+Sınır bölgeleri ``BOUNDARY REGIONS`` içinde tanımlanır. 2 boyut için örnek
 şu şekildedir.
 
 .. figure:: /assets/Nektar-howto/images/boundaryregions.PNG
@@ -730,7 +773,7 @@ hatırlanmalıdır. Sınır bölgeleri içinde tanımlanır. 2 boyut için örne
 
    Sınır bölgeleri
 
-Ardından içinde sınır koşulları tanımlanır. Hangi sınır için
+Ardından ``BOUNDARY CONDITIONS`` içinde sınır koşulları tanımlanır. Hangi sınır için
 tanımlandıkları bir önceki bölüm olan sınır bölgeleri kısmında ifade
 edilmiştir.
 
@@ -814,8 +857,9 @@ beklenmektedir.
 TRUBA sunucusunda GUI (Grafiksel Kullanıcı Arayüzü) kullanılamadığından
 komutların terminalden girilmesi gerekmektedir. Çoğu adım seri iş
 oluşturma ile benzerlik gösterdiğinden daha detaylı anlatım için
-:ref:`is_gonderimi` ve :ref:`seri_örnek` bölümleri incelenebilir. TRUBA
-sunucusunda GUI (Grafiksel Kullanıcı Arayüzü) kullanılamadığından
+:ref:`is_gonderimi` ve :ref:`seri_örnek` bölümleri incelenebilir. 
+
+TRUBA sunucusunda GUI (Grafiksel Kullanıcı Arayüzü) kullanılamadığından
 komutların terminalden girilmesi gerekmektedir. Kullanım rahatlığı
 açısından TRUBA sunucuna bağlanmadan kullanıcı arayüzü vasıtasıyla iş
 klasörünün oluşturulması ve istenilen seçimlerin yapılıp
