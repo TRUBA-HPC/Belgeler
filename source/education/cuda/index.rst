@@ -3,37 +3,11 @@ CUDA
 ==========
 
 .. toctree::
-   :maxdepth: 1
-   :titlesonly:
-   :caption: Giriş
-
-   01_giris/01_01
-
-
-.. toctree::
    :maxdepth: 2
-   :titlesonly:
-   :caption: CUDA C Giriş
 
-   02_cuda_c_giris/02_01.rst
-   02_cuda_c_giris/02_02.rst
-   02_cuda_c_giris/02_03.rst
-   02_cuda_c_giris/02_04.rst
-   02_cuda_c_giris/02_lab_01.rst
-
-.. toctree::
-   :maxdepth: 2
-   :titlesonly:
-   :caption: CUDA Paralel Programlama
-
-   03_cuda_par_model/03_01.rst
-
-.. toctree::
-   :maxdepth: 2
-   :titlesonly:
-   :caption: Örnekler
-
-   examples/02/vector-addition-cuda.rst
-   examples/02/vector-addition-openacc.rst
-   examples/02/vector-addition-thrust.rst
-
+   01_giris/index
+   02_cuda_c_giris/index
+   03_cuda_par_model/index
+   04_bellek_veri_locality/index
+   05_is_parcacigi_yurutme_verimliligi/index
+   06_bellek_erisim_performans/index
