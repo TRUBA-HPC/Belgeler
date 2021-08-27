@@ -1,0 +1,60 @@
+=============================================================
+Kontrol Dağılmasının Performansa Etkisi
+=============================================================
+
+Öğrenim Hedefleri
+-----------------
+
+*  Kontrol dağılmasının performans üzerine etkisini analiz edebilme
+
+   *  Uç durumların kontrolü,
+   *  Kontrol dağılmasının veriye bağlı olması.
+
+
+Kontrol Dağılması ve Performans 
+-------------------------------
+Çoğu paralel hesaplama için uç durumların değerlendirilmesi doğru bir sonuç elde etmek için gereklidir. 
+Örnek olarak 4. modüldeki bölmeli matrix çarpımını düşünebilirsiniz. 
+Bu gibi paralel hesaplamalarda genellikle uç durumları kontrol edilmek zorundadır. 
+Bu noktada aklımıza **kontrol dağılımının** bu gibi uç durum kontrollerini ne kadar kritik kılacağı gelecektir. 
+Çünkü bu gibi uç durumlar **kontrol dağılmasına** sebep olabilir.
+
+.. image:: /assets/cuda/05/02/01.png
+   :width: 450
+   :align: center
+
+.. note::
+    Yukardaki örnek kodda da gördüğünüz gibi yaptığımız uç durum kontrolleri **kontrol dağılmasına** neden olabilir.
+
+Örnek: Bölmeli matrix çarpımı ve Kontrol Dağılması
+------------------------------------------------
+
+.. image:: /assets/cuda/05/02/02.png
+   :width: 400
+   :align: center
+
+Yukardaki görselde gördüğünüz gibi, tipik bir bölmeli (tiled) matriks çarpım işlemi gerçekleştirirken iki tip bloklar oluşmaktadır. 1. tip blokların 
+(son blok hariç) bütün bölmeleri uç durumların dışında yani hesaplama bölgesinde bulunmaktadır. 2. tip blokların ise bölmeleri bazı bölmeleri hep 
+uç durumlarda bulunan yani hesaplama bölgesi dışında kalan bloklardır.
+
+100x100 boyutlarındaki bir matriksi düşünelim ve bölmeli (tiled) çarpım işlemi için 16x16 bölme (tile) boyutları belirlemiş olalım. 
+Bir iş parçacığı bloğu bir bölmeyi işleyecek boyutta olsun. Yani her blokta 16x16 = 256 adet iş parçacığı, 256/32 = 8 warp olacak şekilde 
+bir konfigürasyon kullanılsın. Matriksin bir kenarı 100 olduğundan 7 adet bölme gerekmektedir. Dolayısıyla, toplamda 7x7 = 49 adet bölme bu hesaplama için kullanılacaktır.
+
+Bu 49 bölmeden 6*7 = 42 tanesi tip 1 bloklar tarafından hesaplanacaktır (yukardaki görseli inceleyiniz). 
+Bir blokta 8 adet warp bulunduğunu hesaplamıştık, bu durumda tip 1 bloklarında toplam 8 * 42 = 336 warp görev alacaktır. 
+Bir bloğun 7 fazdan geçmesi gerekmektedir. Çünkü 7 adet bölme bulunmaktadır. Bu da 336 * 7 = 2352 warp-faz bulunduğunu gösterir. 
+Her warpın son fazında **kontrol dağılması** yaşanacağından 336 warp-faz **kontrol dağılmasına** uğramaktadır.
+
+Geriye kalan 7 adet tip 2 blokta ise 8 * 7 = 56 warp görev alacaktır ve dolayısıyla, 56 * 7 = 392 warp-faz işlem gerçekleşecektir. 
+Her bölmedeki 2 warp hesaplama alanına denk gelecek ve geriye kalan 6 warp hesaplama alanı dışında kalacaktır. 
+Toplamda ise 7 * 2 = 14 warp-faz **kontrol dağılmasına** uğrayacaktır. 
+
+Bu örnekte **kontrol dağılmasından** dolayı tip 1 bloklardan gelen 336 ve tip 2 bloklardan gelen 14 warp-faz ile 350/2944 (yaklaşık %12) 
+den az performans kaybı yaşanması beklenir.
+
+Notlar
+------
+
+*   Görüldüğü üzere bu hesap veriye bağlıdır farklı veri seti ile farklı oranda **kontrol dağılımı** yaşanabilir.
+*   Veri büyüdükçe uç durumların kontrolünden oluşan **kontrol dağılmasının** performansa etkisi azalır. Bu durumda doğru sonuca ulaşmak için uç durum kontrollerinden çekinmemek gerekir.
