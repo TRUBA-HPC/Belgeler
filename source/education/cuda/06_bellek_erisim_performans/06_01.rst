@@ -1,0 +1,97 @@
+====================
+DRAM Performansı
+====================
+
+Öğrenim Hedefleri
+-----------------
+*  Bellek erisim performansının paralel hesaplamaların performansını birinci dereceden etkileyen bir faktör olduğunu öğrenmek.
+
+   *  DRAM çalışma mekanizması, bankalar ve kanallar
+
+DRAM Performansı
+----------------
+
+Yapılan hesaplamalarda genellikle büyük miktarlada veri olabildiğince performanslı olarak işlenmek istenmektedir. 
+Bu hesaplama performansının oldukça önemli bir etkeni ise bellek erişim performansıdır. 
+Hesaplamanın yürütülebilmesi için verinin işlem ünitesine taşınması ve işlenmesi gerekir. 
+Genellikle işlem ünitesindeki işleme hızı, bellekten işlem ünitesine taşınma hızından fazladır. 
+Bunun bir nedeni de modern sistemlerde kullandığımız DRAM modüllerinin fiziksel yapısına dayanmaktadır. 
+
+DRAM Temel Birimi
+^^^^^^^^^^^^^^^^^
+
+Modern DRAM modüllerinin temel birimleri genellikle 16M bitlik kapasiteye sahiptir. 
+Her bir bit bir transistöre bağlı minik bir kapasitörde tutulan yük ile ifade edilir. 
+Genelde bu transistör-kapasitör ikilisinden oluşan birimler kare şeklinde (4096x4096) dizilir ve 16M bitlik kapasiteye ulaşılır. 
+DRAM içerisindeki veriye ulaşım önce satırın seçilmesi ile başlar. 4096 olası satır arasından bir satırı seçmek için 12 adet adres biti kullanmak gerekir (2^16 = 4096). 
+İstenilen satır seçildiğinde o satırda bulunan bütün bitler algılayıcı devreler ile okunur ve bu okunan 4096 bit arasından hangi bit grubunun istendiği son bir 
+adres seçimi ile belirlenir. Tipik bir DRAM temel birimini aşağıda görebilirsiniz.
+
+.. image:: /assets/cuda/06/01/01.png
+   :width: 400
+   :align: center
+
+Basitleştirilmiş bir örnek üzerinden ilerlemek gerekirse:
+
+.. image:: /assets/cuda/06/01/02.png
+   :width: 400
+   :align: center
+
+8x2 boyutlarındaki bu basitleştirilmiş DRAM temel birimi (ing., core array) üzerinden okuma işlemini inceleyelim. 
+
+* 3 bitlik seçim adresinin ilk ikisi satır seçimi için kullanılır
+* Seçilen satırda bulunan bitler algılayıcı devreler tarafından algılanır ve çıktıya doğru yönlendirilir
+* Seçim adresinin son biti ile istenilen bit grubu seçilir (ilk iki bit veya sonraki iki bit)
+
+DRAM Hızı
+^^^^^^^^^
+Fiziksel özellikleri nedeniyle DRAM modülleri oldukça yavaştır. Çünkü her bir bit küçük bir kapasitörde tutulur ve bu kapasitördeki bitin okunması için, 
+küçük kapasitörde duran minik yükün bütün kapasitörlerin bağlı bulunduğu (diğer ucunun da algılayıcı devrelere bağlı olduğu) uzun bir yolu etkilemesi gerekir. 
+Bu da oldukça uzun sürdüğünden bitin okunması oldukça yavaştır. Artan transistör sayısı ile bu durum giderek güçleşmektedir.
+
+.. image:: /assets/cuda/06/01/03.png
+   :width: 500
+   :align: center
+
+DRAM Bursting
+^^^^^^^^^^^^^
+
+Bu yavaşlıkla başa çıkabilmek ve bant genişliğini efektif kullanabilmek için **DRAM bursting** kullanılmaktadır. Bir önceki basitleştirilmiş 8x2 örneğinde 3. 
+aşamada hangi 2 bitlik kısımın seçileceği belirlendikten sonra seçilmeyen 2 bitlik kısımı okumak için aynı işlem tekrarlanmak zorundadır.  **DRAM bursting**, 
+basitçe bir satır içerisindeki seçilen grupların tek tek okunması yerine tek seferde okunduktan sonra okunan verinin gruplar halinde bir arabellekte tutularak hızlıca 
+okunabilmesidir. Bu sayede aynı satırdaki farklı sütunların okunması için bir kere uzun süre beklenir, ardından okunan satırın farklı sütunlarına hızlıca ulaşılabilir.
+
+Aşağıdaki görselde bursting kullanılan ve kullanılmayan bir okuma işleminin nasıl ilerlediğini görebilirsiniz.
+
+.. image:: /assets/cuda/06/01/04.png
+   :width: 600
+   :align: center
+
+Bu görselde aynı satırda bulunan 2 sütunun arka arkaya iletimi gösterilmiştir. 
+Bursting kullanılmadığında üstteki çizelgede gördüğünüz gibi her bir veri için küçük kapasitörlerin b
+üyük kapasitif değere sahip uzun yola etki etmesi beklenmektedir. Ancak bursting kullanıldığında bir kere satır okunduktan sonra, 
+aynı satırdaki verilere ulaşım oldukça hızlıdır.
+
+DRAM Bankaları
+^^^^^^^^^^^^^^
+
+**DRAM bankalarını** modelleyen aşağıdaki görseli inceleyiniz.
+
+.. image:: /assets/cuda/06/01/05.png
+   :width: 550
+   :align: center
+
+Gördüğünüz gibi bankalar birden fazla temel birimin bir araya gelmesiyle oluşmaktadırlar. 
+Bankaların kullanılmasının en önemli nedeni bant genişliğini daha da efektif şekilde kullanmamızı sağlamalarıdır. 
+**DRAM Bursting** ile veri transferi sağlanılan aşağıdaki örneği inceleyiniz. 
+Bu örnekte, **DRAM Burstingin** bankalar ile kullanıldığında çok daha efektif bant genişliği kullanımı sağladığını görebilirsiniz.
+
+.. image:: /assets/cuda/06/01/06.png
+   :width: 550
+   :align: center
+
+**DRAM Bursting** ile tek banka kullanıldığında gördüğünüz üzere belirli miktarda bir kazanım elde ediyor olsak da satırlar arası geçişlerde 
+küçük kapasitördeki yükün büyük kapasitif değerli yola etki etme süresini beklemek durumundayız. Bu sırada bant genişliğini harcamış oluyoruz 
+(veri aktarabilecekken aktarmıyoruz). Ancak birden fazla banka kullanıldığında ve veri ulaşımları sırasıyla farklı bankalar 
+üzerinden ilerletildiğinde bir banka okuma süresi içindeyken diğer bankadan veri aktarımı sağlanabilmektedir 
+ve bu da bant genişliğini daha da efektif kullanmamızı sağlar. Bu örnekte iki banka kullanılmıştır.

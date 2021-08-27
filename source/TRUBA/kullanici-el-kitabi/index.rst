@@ -21,6 +21,4 @@ Kullanıcı El Kitabı
     open-vpn/index.rst
     kaynakyoneticisi-isdongusu/index.rst
     kullanici-ara-yuzu/openondemand/index.rst
-    kullanici-ara-yuzu/ssh-ile-baglanti/index.rst
     ../topluluk-portali/index.rst
-    TRUBAseminerleri.rst
