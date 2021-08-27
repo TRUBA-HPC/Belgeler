@@ -1,21 +1,24 @@
-OpenMP İş Dağıtımı
-==================
+İş Dağıtımı
+===========
 
 Programcı tarafından tanımlanmış işlerin iş parçacıkları arasında
-dağıtılması için OpenMP çeşitli değişik stratejiler kullanabilir.
+dağıtılması için OpenMP çeşitli stratejiler kullanabilir.
 
 Bu strateji programcı tarafından belirtilmezse, kullanılan strateji
-makineden makineye değişiklik gösterebilir. Bu sebeple eğer programın
+makineden makineye değişiklik gösterebilir. Bu sebeple, eğer programın
 doğruluğu ya da performansı açısından önemliyse belirtilmesi önerilir.
 
 Çoğu stratejide bir parça boyutu belirtilebilir. Bu opsiyonel olup,
 belirtilmediği takdirde OpenMP tarafından otomatik olarak seçilir.
 
+Bu kısımda döngüler içerisindeki yinelemelerin iş parçacıklarına 
+istenen şekilde dağıtımı için kullanılabilecek direktifler incelenmiştir. 
+
 Static
 ------
 
-``schedule(static,<parça boyutu>)`` şeklinde kullanılabilir. İş
-verildiği sıraya göre parça boyutunda parçalara bölünür.
+``schedule(static,<parça boyutu>)`` şeklinde kullanılabilir. Yinelemeler
+verildikleri sıraya göre parça boyutunda parçalara bölünür.
 
 Örnek:
 
@@ -34,23 +37,23 @@ verildiği sıraya göre parça boyutunda parçalara bölünür.
 ::
 
    schedule(static):
-   ****************
-                   ****************
-                                   ****************
-                                                   ****************
+   ▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣
+                   ▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣
+                                   ▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣
+                                                   ▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣
 
    schedule(static, 4):   
-   ****            ****            ****            ****            
-       ****            ****            ****            ****        
-           ****            ****            ****            ****    
-               ****            ****            ****            ****
+   ▣▣▣▣            ▣▣▣▣            ▣▣▣▣            ▣▣▣▣            
+       ▣▣▣▣            ▣▣▣▣            ▣▣▣▣            ▣▣▣▣        
+           ▣▣▣▣            ▣▣▣▣            ▣▣▣▣            ▣▣▣▣    
+               ▣▣▣▣            ▣▣▣▣            ▣▣▣▣            ▣▣▣▣
 
 
    schedule(static, 8):
-   ********                        ********
-           ********                        ********
-                   ********                        ********
-                           ********                        ********
+   ▣▣▣▣▣▣▣▣                        ▣▣▣▣▣▣▣▣
+           ▣▣▣▣▣▣▣▣                        ▣▣▣▣▣▣▣▣
+                   ▣▣▣▣▣▣▣▣                        ▣▣▣▣▣▣▣▣
+                           ▣▣▣▣▣▣▣▣                        ▣▣▣▣▣▣▣▣
 
 Dynamic
 -------
@@ -65,16 +68,16 @@ olduğu durumlarda bu strateji daha etkili olacaktır.
 ::
 
    schedule(dynamic):     
-   *   ** **  * * *  *      *  *    **   *  *  * *       *  *   *  
-     *       *     *    * *     * *   *    *        * *   *    *   
-    *       *    *     * *   *   *     *  *       *  *  *  *  *   *
-      *  *     *    * *    *  *    *    *    ** *  *   *     *   * 
+   ▣   ▣▣ ▣▣  ▣ ▣ ▣  ▣      ▣  ▣    ▣▣   ▣  ▣  ▣ ▣       ▣  ▣   ▣  
+     ▣       ▣     ▣    ▣ ▣     ▣ ▣   ▣    ▣        ▣ ▣   ▣    ▣   
+    ▣       ▣    ▣     ▣ ▣   ▣   ▣     ▣  ▣       ▣  ▣  ▣  ▣  ▣   ▣
+      ▣  ▣     ▣    ▣ ▣    ▣  ▣    ▣    ▣    ▣▣ ▣  ▣   ▣     ▣   ▣ 
 
    schedule(dynamic, 8):  
-                   ********                                ********
-                           ********        ********                
-   ********                        ********        ********        
-           ********  
+                   ▣▣▣▣▣▣▣▣                                ▣▣▣▣▣▣▣▣
+                           ▣▣▣▣▣▣▣▣        ▣▣▣▣▣▣▣▣                
+   ▣▣▣▣▣▣▣▣                        ▣▣▣▣▣▣▣▣        ▣▣▣▣▣▣▣▣        
+           ▣▣▣▣▣▣▣▣  
 
 Guided
 ------
@@ -89,16 +92,16 @@ başta büyük parça boyutu ile başlar ve zamanla düşer.
 ::
 
    schedule(guided):      
-                               *********                        *  
-                   ************                     *******  ***   
-                                        *******                   *
-   ****************                            *****       **    * 
+                               ▣▣▣▣▣▣▣▣▣                        ▣  
+                   ▣▣▣▣▣▣▣▣▣▣▣▣                     ▣▣▣▣▣▣▣  ▣▣▣   
+                                        ▣▣▣▣▣▣▣                   ▣
+   ▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣                            ▣▣▣▣▣       ▣▣    ▣ 
 
    schedule(guided, 4):
-                                        *******
-                   ************                     ****    ****
-                               *********
-   ****************                            *****    ****    ***
+                                        ▣▣▣▣▣▣▣
+                   ▣▣▣▣▣▣▣▣▣▣▣▣                     ▣▣▣▣    ▣▣▣▣
+                               ▣▣▣▣▣▣▣▣▣
+   ▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣                            ▣▣▣▣▣    ▣▣▣▣    ▣▣▣
 
 Auto
 ----
@@ -112,5 +115,5 @@ Runtime
 
 ``schedule(runtime)`` şeklinde kullanılabilir. Kodun içinde
 ``omp_set_schedule(<strateji>);`` şeklinde ya da kodun dışında
-``export OMP_SCHEDULE=<strateji>`` şeklinde tanımlanan stratejiyi
-kullanır.
+``OMP_SCHEDULE=<strateji> <program>`` şeklinde tanımlanan strateji
+kullanılır.
