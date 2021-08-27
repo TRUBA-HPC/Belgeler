@@ -26,8 +26,14 @@ Aşağıdaki linklerde farklı işletim sistemleri için OpenVPN dosyalarının 
 
    Linklere tıklayarak bilgisayarınızda kullandığınız işletim sistemine uygun dosyayı tıklayarak bilgisayarınıza indirip kaydettikten sonra dosyanın uzantısını kontrol ediniz. Kaydedilen dosya adının **.ovpn** ile bitmesi önemlidir. Bazı sistemlerde ve web tarayıcılarda dosya adının sonuna **.txt** uzantısı eklenebilmektedir. 
 
-Sonraki bölümlerde bu farklı işletim sistemlerinde OpenVpn kurulumları ayrıntılı bir şekilde verilecektir. OpenVPN için gerekli kurulumları yaptıktan kullanıcı arayüzüne aşağıda verilen adreslerden herhangi birine **SSH** protokolü ile ulaşabilirsiniz.
+Sonraki bölümlerde bu farklı işletim sistemlerinde OpenVPN kurulumları ayrıntılı bir şekilde verilecektir. OpenVPN için gerekli kurulumları yaptıktan sonra kullanıcı arayüzüne aşağıda verilen adreslerden herhangi birine **SSH** protokolü ile ulaşabilirsiniz. :ref:`Windows işletim sistemi için SSH ile bağlantı sağlama kılavuzlarına ulaşmak için tıklayınız... <ssh-baglanti>`
 
-* levrek1 için **levrek1.yonetim** ya da ``172.16.7.1``
-* sardalya1 için **sardalya1.yonetim** ya da ``172.16.10.1``
-* barbun1 için **barbun1.yonetim** ya da ``172.16.11.1``
+.. note::
+   
+   ULAKNET ağı dışından (örneğin üniversite kampüsü dışından) bağlantı sağlıyorsanız:
+
+   * levrek1 için **levrek1.yonetim** ya da ``172.16.7.1``
+   * sardalya1 için **sardalya1.yonetim** ya da ``172.16.10.1``
+   * barbun1 için **barbun1.yonetim** ya da ``172.16.11.1``
+
+   **Eğer ULAKNET ağı içinden sunuculara bağlantı sağlamak istiyorsanız OpenVPN bağlantısına gerek yoktur.** 

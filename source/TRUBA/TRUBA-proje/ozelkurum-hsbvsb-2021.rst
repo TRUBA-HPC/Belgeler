@@ -52,6 +52,7 @@ Bu kapsamda proje önerisinde hesaplama ve veri depolama isteği bulunan kurumla
 | Depolama-Lustre-2019 |    0,21 TL                | 8400 TB tüm hesaplama sunucuları tarafından |
 |                      |                           | görünen performans disk alanı               |
 +----------------------+---------------------------+---------------------------------------------+
+
 .. [#note4] Saatlik 1 TB veri servis birimin KDV hariç bedelidir. 
 
 .. note:: 

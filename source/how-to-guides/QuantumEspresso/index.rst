@@ -10,6 +10,6 @@ Quantum Espresso Kılavuzu
 .. toctree::
     :maxdepth: 1
 
-    qe_install_truba.rst
-    qe_truba-slurm.rst
+    QE_install_TRUBA.rst
+    QE_TRUBA-slurm.rst
   

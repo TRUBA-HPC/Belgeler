@@ -5,14 +5,14 @@ Multithread/multitask Uygulamaların Çalıştırılması
 ==========================================================
 
 
-OpenMP yad pthread tarzı sadece node içi paralelleştirme kullanan uygulamaları sbatch yada srun ile çalıştırırken dikkat edilmesi gereken bazı husular bulunmaktadır.
+OpenMP yad pthread tarzı sadece node içi paralelleştirme kullanan uygulamaları sbatch ya da srun ile çalıştırırken dikkat edilmesi gereken bazı husular bulunmaktadır.
 
 sbatch ile Çalışırken:
 -----------------------
 
 **-N 1 :** en fazla 1 node kullanılmalı
 
-**-n 5 (yada -c 5) :** iş tanımı için en az - en fazla 5 çekirdek ayrılır.. Sbatch herhangi bir görev çalıştırmadığı için -n paramerresi de sorun oluşturmayacaktır. Ancak doğru olan -c 'yi kullanmaktır...
+**-n 5 (ya da -c 5) :** iş tanımı için en az - en fazla 5 çekirdek ayrılır.. Sbatch herhangi bir görev çalıştırmadığı için -n paramerresi de sorun oluşturmayacaktır. Ancak doğru olan -c 'yi kullanmaktır...
 
 **export OMP_NUM_THREADS=5 :** uygulama kendisi için 5 çekirdeğe kadar izin verildiğinden haberdar edilir. Bazı uygulamalar izin verilen çekirdek sayısını otomatik olarak farkedebilir. Ancak genel olarak bunu yazmaya ihtiyaç vardır.
 

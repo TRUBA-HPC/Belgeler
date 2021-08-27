@@ -102,7 +102,7 @@ Kurulumu ``hamsi`` kuyruğu için optimize bir şekilde kurmak istiyorsanız ön
 
 .. code-block:: bash
 
-   srun -N 1 -A kullaniciadi -p hamsi --ntasks-per-node=28 --time=01:00:00 --constraint=barbun --job-name "install" --pty bash -i
+   srun -N 1 -A kullaniciadi -p hamsi --ntasks-per-node=28 --time=01:00:00 --job-name "install" --pty bash -i
 
 .. note::
 
@@ -159,7 +159,7 @@ Kurulum yapmak istediğiniz klasörün altında LAMMPS için derleme ortamını 
 
    
 
-Bulunduğunuz klasör lammps_stable/build-oneapi21-impi olmalı. C/C++ ve Fortran90 derleyicilerin tanımlamalarını yapınız:
+Bulunduğunuz klasör lammps_stable/build-oneapi21-impi olmalı. Intel C/C++ ve Fortran derleyicilerin tanımlamalarını yapınız:
 
 .. code-block:: bash
 
