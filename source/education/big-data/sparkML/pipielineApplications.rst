@@ -3,7 +3,7 @@
 **************************************
 
 MLlib, birden çok algoritmayı tek bir işlem hattında veya iş akışında 
-birleştirmeyi kolaylaştırmak için makine öğrenimi algoritmaları için 
+birleştirmeyi kolaylaştırmak için makine öğrenme algoritmaları için 
 uygulama işleme arayüzlerini (API) standartlaştırır. Veri hattı kavramı
 çoğunlukla scikit-learn projesinden ilham alınarak oluşturulan Pipeline
 API altındaki temel yapılar şunlardır.
