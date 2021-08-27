@@ -5,10 +5,10 @@ Spark ile Makine Öğrenmesi
 *Apache* Açık Kaynak Yazılım Kuruluşu’nın projelerinden biri olan `Spark`_, 
 büyük veri işlemek üzere geliştirilmiş bir analiz motorudur. *SQL* ve yapısal 
 veri işleme (*Spark SQL*), makine öğrenmesi (*MLlib*), çizge işleme (*GraphX*)
-için de araçlar sunmaktadır. *Java*, *Scala*, *Python* ve *R* dilleri ile 
-kullanılabilen API’ler sunmaktadır. 
+için de araçlar ve *Java*, *Scala*, *Python* ve *R* dilleri ile kullanılabilen
+API’ler sunmaktadır.
 
-`Spark 1.2`_ sürümünden itibaren makine öğrenmesi için kütüphane sunmaktadır.
+`Spark 1.2`_ sürümünden itibaren makine öğrenmesi için kütüphane bulunmaktadır.
 Ancak Spark 2.0’dan itibaren Spark `MLlib`_ ile makine öğrenmesi paketini 
 yenileyerek *DataFrame* (Veri Çerçevesi) tabanlı bir yapıya geçmiştir.
 (DataFrame veriyi bir tablo - ya da eşit uzunlukta vektörler kümesi - olarak 
