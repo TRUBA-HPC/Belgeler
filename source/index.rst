@@ -13,6 +13,7 @@ TRUBA Kullanıcı Dökümanları
 
    quick-start/duyurular.rst
    TRUBA/kullanici-el-kitabi/open-vpn/index.rst
+   TRUBA/kullanici-el-kitabi/kullanici-ara-yuzu/ssh-ile-baglanti/index.rst
    TRUBA/kullanici-el-kitabi/kullanici-ara-yuzu/openondemand/index.rst
    TRUBA/kullanici-el-kitabi/index.rst
    TRUBA/sss.rst
@@ -30,6 +31,7 @@ TRUBA Kullanıcı Dökümanları
    how-to-guides/VASP/index.rst
    how-to-guides/QuantumEspresso/index.rst
    how-to-guides/Gaussian/index.rst
+   how-to-guides/CASTEP/index.rst
    how-to-guides/MATLAB/index.rst
 
 .. toctree::

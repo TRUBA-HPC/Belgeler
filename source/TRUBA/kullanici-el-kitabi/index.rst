@@ -6,6 +6,7 @@ Kullanıcı El Kitabı
     :maxdepth: 1
 
     ../TRUBAmimarisi.rst
+    kullanici-portali/index.rst
     kullanicihesaplari.rst
     hesaplamakumeleri.rst
     dosyasistemleri.rst

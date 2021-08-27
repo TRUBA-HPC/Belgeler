@@ -16,7 +16,8 @@ CUDA Araç Kiti
 NVCC Derleyici
 --------------
 
-CUDA derleme işlemleri için nvcc derleyicisi kullandığımızdan bahsetmiştik ve basit bir .cu dosyasını nasıl derlediğimizi belirtmiştik. Bu bölümde nvcc derleyicisinin nasıl kullanıldığını örneklerle inceleyeceğiz.
+CUDA derleme işlemleri için *nvc* derleyicisi kullandığımızdan bahsetmiştik ve basit bir *.cu* dosyasını nasıl derlediğimizi belirtmiştik. 
+Bu bölümde *nvcc* derleyicisinin nasıl kullanıldığını örneklerle inceleyeceğiz.
 
 Merhaba Dünya!
 ^^^^^^^^^^^^^^
@@ -35,13 +36,15 @@ Merhaba Dünya!
         return 0;
     }
 
-Yukarıdaki kod örneğini compile etmek için .cu uzantılı bir dosyaya alıp 
+Yukarıdaki kod örneğini compile etmek için *.cu* uzantılı bir dosyaya alıp 
 
 .. code-block:: C++
 
     nvcc main.cu
 
-komutuyla derleyebilirsiniz. Bu noktada dikkat edilmesi gereken nokta nvcc derleyicisi .cu uzantıları dışındaki dosyaları derlemeyeceğidir. Eğer .cu dışında uzantılı bir dosyayı derleme işlemi gerçekleştirmek isterseniz -x cu derleyici direktifini kullanabilirsiniz.
+komutuyla derleyebilirsiniz. 
+Bu noktada dikkat edilmesi gereken nokta nvcc derleyicisi *.cu* uzantıları dışındaki dosyaları derlemeyeceğidir. 
+Eğer *.cu* dışında uzantılı bir dosyayı derleme işlemi gerçekleştirmek isterseniz *-x cu* derleyici direktifini kullanabilirsiniz.
 
 **Örnek:**
 
@@ -60,7 +63,6 @@ CUDA kodlarındaki hata ayıklama işlemlerinde kullanabileceğimiz çeşitli ha
    *  CUDA - GDB
    *  CUDA MEMCHECK
 
-
 *  Üçüncü parti çözümler:
 
    *  arm Forge
@@ -69,9 +71,11 @@ CUDA kodlarındaki hata ayıklama işlemlerinde kullanabileceğimiz çeşitli ha
 Derleyici Direktifleri
 ----------------------
 
-Hata ayıklama işlemini gerçekleştirmek için öncelikle derleyici direktiflerinden bahsetmemiz gerekiyor. CUDA derleme sürecince iki adet derleyici kullanıldığını hatırlayalım. Bir derleyici host kodunu derlerken, nvcc derleyicisi cihaz kodunu derliyor. 
+Hata ayıklama işlemini gerçekleştirmek için öncelikle derleyici direktiflerinden bahsetmemiz gerekiyor. 
+CUDA derleme sürecince iki adet derleyici kullanıldığını hatırlayalım. 
+Bir derleyici CPU/sunucu kodunu derlerken, *nvcc* derleyicisi cihaz kodunu derliyor. 
 
-* Eğer host kodunu derleyecek olan derleyiciye yollanmak istenen derleyici direktifleri varsa **-Xcompiler** direktifi oldukça kullanışlı olacaktır. Çünkü **-Xcompiler** sonrasında girilen direktifler doğrudan host kodunu derleyen derleyiciye aktarılır.
+* Eğer CPU kodunu derleyecek olan derleyiciye yollanmak istenen derleyici direktifleri varsa **-Xcompiler** direktifi oldukça kullanışlı olacaktır. Çünkü **-Xcompiler** sonrasında girilen direktifler doğrudan CPU kodunu derleyen derleyiciye aktarılır.
 
 **Örnek**
 
@@ -83,7 +87,7 @@ Hata ayıklama işlemini gerçekleştirmek için öncelikle derleyici direktifle
     
     -fopenmp direktifi OpenMP kodlarını derlemek için kullanılır.
 
-* **-g** direktifi host kodunun hata ayıklama sembollerinin oluşturulan programa eklenmesini sağlar.
+* **-g** direktifi CPU kodunun hata ayıklama sembollerinin oluşturulan programa eklenmesini sağlar.
 * **-G** direktifi cihaz kodunun hata ayıklama sembollerinin oluşturulan programa eklenmesini sağlar.
 * **-lineinfo** direktifi ise satır bilgisinin oluşturulan programa eklenmesini sağlar. Böylece hata ayıklarken, hatanın oluştuğu satırı da anlayabiliriz.
 
@@ -101,11 +105,11 @@ CUDA - MEMCHECK, CUDA kodlarında oluşan bellek tabanlı hataları algılamak i
 
 *  CUDA - MEMCHECK şu hataları algılayabilir:
 
-   *  Bellek Sızıntıları (Memory leaks)
-   *  Bellek Hataları (Sınır dışı bellek erişimi (OOB), Hizasız bellek erişimi (Misalligned access) vb.)
-   *  Yarışma Durumu (Race condition)
+   *  Bellek Sızıntıları (ing., memory leaks)
+   *  Bellek Hataları (sınır dışı bellek erişimi (OOB), hizasız bellek erişimi (ing., misalligned access) vb.)
+   *  Yarışma Durumu (ing., race condition)
    *  Yanlış Bariyerler
-   *  Başlatılmamış Bellek Kullanımı (Uninitialized memory)
+   *  Başlatılmamış Bellek Kullanımı (ing., uninitialized memory)
 
 
 CUDA - MEMCHECK kullanırken satır bilgisini eklemek işimizi oldukça kolaylaştıracaktır. Satır bilgisinin eklendiğinden emin olmak için aşağıdaki direktifler kullanılabilir.
@@ -119,9 +123,8 @@ CUDA - MEMCHECK ile ilgili daha detaylı bilgi için :  http://docs.nvidia.com/c
 CUDA - GDB
 ----------
 
-GNU Hata Ayıklayıcısının bir eklentisi olan **CUDA - GDB**, cihaz ve host kodunda hata ayıklama işlemleri için kullanılabilmektedir. CUDA-GDB Linux ve Macintosh sistemlerde çalışmaktadır. Windows sistemler için Nsight hata ayıklaycısını kullanabilirsiniz.
-
-
+GNU Hata Ayıklayıcısının bir eklentisi olan **CUDA - GDB**, GPU ve CPU kodunda hata ayıklama işlemleri için kullanılabilmektedir. 
+CUDA-GDB Linux ve Macintosh sistemlerde çalışmaktadır. Windows sistemler için *Nsight* hata ayıklaycısını kullanabilirsiniz.
 
 *  Bazı kullanışlı **CUDA-GDB** komutları : 
 
@@ -136,13 +139,12 @@ GNU Hata Ayıklayıcısının bir eklentisi olan **CUDA - GDB**, cihaz ve host k
    *  **d** : Bütün duraksama noktalarını siler.
    *  **set cuda memcheck on** : CUDA - MEMCHECK'i başlatır.
 
-
 CUDA-GDB hakkında daha detaylı bilgi için : http://docs.nvidia.com/cuda/cuda-gdb
 
 Performans Profilleyiciler
 --------------------------
 
-CUDA programlarında performans ölcümleri ve darboğaz tespitlerini yapmak için kullanabileceğimiz çeşitli performans profilleyiciler bulunmaktadır.
+CUDA programlarında performans ölçümleri ve darboğaz tespitlerini yapmak için kullanabileceğimiz çeşitli performans profilleme araçları bulunmaktadır.
 
 NVPROF
 ^^^^^^
@@ -152,7 +154,7 @@ PROF derleyicisinin bir uzantısı olarak geliştirilmiş **nvprof**, komut sat�
 *   Her CUDA **çekirdeğinin** (kernel) sonuçlanması için geçen süre
 *   Bellek transfer süreleri 
 
-gibi öğeler **nvprof** tarafından toplanır. CUDA programlarımızda yapacağımız optimazyonların belirlenmesi açısından **nvprof** oldukça önemli bir araçtır.
+gibi öğeler **nvprof** tarafından toplanır. CUDA programlarımızda yapacağımız optimizasyonların belirlenmesi açısından **nvprof** oldukça önemli ve kullanımı basit bir araçtır.
 
 **nvprof** kullanmak için kodu baştan derlemeniz gerekmemektedir.
 
@@ -162,41 +164,48 @@ gibi öğeler **nvprof** tarafından toplanır. CUDA programlarımızda yapacağ
 
     nvprof ./program.out
 
-
 NVVP
 ^^^^
 
-**NVVP** bir CUDA programı hakkında kullanıcı arayüzü ile performans bilgilerini gösterir. Program hakkındaki performans bilgileri bir zaman çizgisi üzerinde gösterilir. **nvprof** gibi bellek işlemlerinde de kullanışlı bilgiler sağlar.
+**NVVP** bir CUDA programı hakkında kullanıcı arayüzü ile performans bilgilerini gösterir. 
+Program hakkındaki performans bilgileri bir zaman çizgisi üzerinde gösterilir.
+**nvprof** gibi bellek işlemlerinde de kullanışlı bilgiler sağlar.
 
 .. image:: /assets/cuda/02/04/01.png
    :width: 600
+   :align: center
 
 NVTX
 ^^^^
 
-Gördüğümüz performans profilleyicileri sadece CUDA uygulama programlama arayüzüne ait fonksiyonları profillerler. Eğer host tarafında oluşmakta olan diğer durumlar hakkında bilgi sahibi olmak isterseniz, **nvtx** eklentisi kullanılabilir.
+Gördüğümüz performans profilleyicileri sadece CUDA uygulama programlama arayüzüne ait fonksiyonları profillerler. 
+Eğer CPU tarafında oluşmakta olan diğer durumlar hakkında bilgi sahibi olmak isterseniz, **nvtx** eklentisi kullanılabilir.
 
-**nvtx alanlarıyla** işaretleyerek host kodundaki yapılan işlemlerin performansı hakkında (CUDA UPA'sı dışındaki fonskiyon çağırmaları) detaylı bilgiye sahip olabiliriz.
+CPU kodundaki yapılan işlemlerin (CUDA UPA'sı dışındaki fonksiyon çağrıları) performansını onları **nvtx alanlarıyla** işaretleyerek detaylı bir şekilde analiz edebiliriz.
 
-**nvtx**'i kullanarıken host kodunda incelemek istediğiniz kod bloğunun başını **nvtxRangePushA("alan_adı")** sonunu ise **nvtxRangePop()** ile işaretlemeniz gerekir. İç içe geçmiş alanlar kullanabilirsiniz. **nvtx** kullanmak için 
+**nvtx**'i kullanarak CPU kodunda incelemek istediğiniz kod bloğunun başını **nvtxRangePushA("alan_adı")**, sonunu ise **nvtxRangePop()** ile işaretlemeniz gerekir. 
+İç içe geçmiş alanlar kullanabilirsiniz. **nvtx** kullanmak için 
 
 .. code-block:: C++
 
     #include <nvToolsExt.h>
 
-başlık (header) dosyasını eklemeniz gerekmektedir. Ayrıca **-lnvToolsExt** kütüphanesi ile bağlama (linking) işlemi yapmayı unutmayınız.
+başlık (header) dosyasını eklemeniz gerekmektedir. 
+Ayrıca **-lnvToolsExt** kütüphanesi ile bağlama (ing., linking) işlemi yapmayı unutmayınız.
 
 **NVTX** hakkında daha detaylı bilgi için: http://devblogs.nvidia.com/parallelforall/cuda-pro-tip-generate-custom-application-profile-timelines-nvtx/
 
 .. image:: /assets/cuda/02/04/02.png
-   :width: 600
+   :width: 500
+   :align: center
 
-**NVTX** eklentisi ile genişletilmiş görseli yukarıda görebilirsiniz. Burada sum adlı alan **nvtx** eklentisi ile profillenebilmiştir.
+**NVTX** eklentisi ile genişletilmiş görseli yukarıda görebilirsiniz. Burada *sum* adlı alan **nvtx** eklentisi ile profillenebilmiştir.
 
 Nsight
 ------
 
-**Nsight**, CUDA araçlarının bir arada bulunduğu bir tümleşik geliştirme ortamıdır (integrated development environment). CUDA kodu geliştirmek için komut satırı araçlarını tercih etmiyorsanız, **NSIGHT** ile geliştirme yapabilirsiniz.
+**Nsight**, CUDA araçlarının bir arada bulunduğu bir tümleşik geliştirme ortamıdır (ing., integrated development environment). 
+CUDA kodu geliştirmek için komut satırı araçlarını tercih etmiyorsanız, **NSIGHT** ile geliştirme yapabilirsiniz.
 
 *  **Nsight :** 
 
@@ -206,7 +215,7 @@ Nsight
    *  Görsel hata ayıklayıcı
         *   Windows : Nsight VSE CUDA hata ayıklayıcısı
         *   Linux/Macintosh : kullanıcı arayüzü ile donatılmış cuda-gdb
-   *  Performans Profilleyici
+   *  Performans profilleme aracı
         *   Windows : Nsight VSE 
         *   Linux/Macintosh : NVVP
 
@@ -217,11 +226,12 @@ Nsight
 CUDA programlarınızı geliştirirken önerilen geliştirme sürecini 4 aşamada inceleyebiliriz.
 
 *   **Ölçüm:** performans profilleri kullanılarak programın parça parça performansı incelenir.
-*   **Paralelleştirme:** önceki aşamada belirlenmiş olan dar boğaz CUDA kullanılarak paralelleştirilir.
-*   **Optimize etme:** paralelleştirilen kısımın optimazyonu sağlanır ve gerekli ölçümler profilleyiciler ile yapılır.
+*   **Paralelleştirme:** önceki aşamada belirlenmiş olan darboğaz CUDA kullanılarak paralelleştirilir.
+*   **Optimize etme:** paralelleştirilen kısmın optimizasyonu sağlanır ve gerekli ölçümler profilleyiciler ile yapılır.
 *   **Dağıtım:** programın dağıtımı sağlanır.
 
 Bu süreç bir döngü içerisinde ilerler. Aşağıdaki görsel sürecin kısa bir özeti olarak incelenebilir.
 
 .. image:: /assets/cuda/02/04/03.png
-   :width: 600
+   :width: 400
+   :align: center

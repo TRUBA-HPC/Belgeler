@@ -6,7 +6,7 @@ TRUBA Topluluk Portalı
     :maxdepth: 1
 
     TRUBAtanitim
-    /TRUBA/kullanici-el-kitabi/TRUBAseminerleri
+    /quick-start/TRUBAseminerleri
     /TRUBA/kullanici-el-kitabi/yazilimlar
     /TRUBA/kullanici-el-kitabi/derleyiciler
     /TRUBA/kullanici-el-kitabi/paralelprog

@@ -64,7 +64,7 @@ Not: ``sklearn``\ 'i kurmak için aşağıdaki komutu çalıştırın:
       398 eğitim örneği ve 171 test örneği var
 
 Veri setini Tensorlere Geçirme ve GPU'ya taşıma
----------------------------------------
+----------------------------------------------------
 
 .. The datasets are currently of type ``numpy.ndarray``. We will convert them to Torch tensors so that we can use them with our PyTorch model. We will then send them to the GPU so that we can run our model on the GPU. Notice that we change the shape of the labels sets from a rank-1 tensor (array of elements) to a rank-2 tensor (an array of arrays, each of length 1.) This is useful when we are calculating the loss later.
 
