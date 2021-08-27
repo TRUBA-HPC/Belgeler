@@ -4,9 +4,10 @@ Windows'da MobaXterm Kurulumu
 
 MobaXterm Windows işletim sistemi için kullanılan bir yazılımdır. MobaXterm ile aynı arayüzde hem SSH bağlantısı hem de dosya transferi yapılabilir.
 
-------------------------------
+--------------------------------------
 Windows'da MobaXterm Kurulum Adımları
-------------------------------
+--------------------------------------
+
 1. Yazılımı indirmek için https://mobaxterm.mobatek.net sayfasına girin. 
 
 .. image:: /assets/MobaXterm-howto/M1.png

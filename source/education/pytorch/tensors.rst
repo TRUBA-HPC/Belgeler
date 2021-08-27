@@ -15,7 +15,7 @@ Tensör oluşturma
 .. From existing data
 
 Mevcut Veriden Tensör Oluşturma 
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. One can create Python nested arrays and use them to create tensors. You can specify the data type of the numbers in the tensor using the ``dtype`` attribute or let PyTorch automatically infer them.
 
@@ -452,7 +452,7 @@ Farklı cihazlar (CPU ya da GPU) üzerinde bulunan tensörler üzerinde matemati
 .. In-place and out-of-place operations
 
 Veri üzerinde olan ve olmayan operasyonlar 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. Generally, all functions are out-of-place meaning that a call to an operation will not modify the operands and will return a new data structure. However, functions that end with the ``_`` character are in-place. For example, ``t3 = t1.mul(t2)`` will element-wise multiply the tensors ``t1`` and ``t2`` and store the result in ``t3``. However, ``t1.mul_(t2)`` will element-wise multiply ``t1`` and ``t2`` them and store the result in ``t1``.
 
@@ -471,7 +471,7 @@ PyTorch'un en önemli özelliklerinden biri, ``torch.autograd`` paketidir. Tens�
 .. Requiring gradient
 
 Türev hesabı için gerekenler 
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. For a tensor's gradient to be calculatable, we must specify that we require the tensor for a specific tensor, either at creation time or by calling a function.
 

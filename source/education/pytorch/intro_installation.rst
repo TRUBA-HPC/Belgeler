@@ -1,5 +1,3 @@
-
-=============================
 .. Installation
 
 Kurulum 
@@ -125,7 +123,7 @@ PyTorch'u Kurmak
 .. Using PyTorch
 
 PyTorch'u Kullanmak
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 .. If you installed PyTorch on TRUBA using Conda, then you must initialize Conda and load the environment on which PyTorch is installed at the beginning of your SLURM scripts. For example, this SLURM script will run the python script ``pyt_example.py`` that uses PyTorch:
 
