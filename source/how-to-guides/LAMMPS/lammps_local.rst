@@ -1,5 +1,5 @@
 ===================================================
-Kendi Bilgisayarıma LAMMPS'i Nasıl Yüklerim?
+Yerel Bilgisayara LAMMPS Kurulumu
 ===================================================
 
 --------------------------
@@ -32,7 +32,7 @@ LAMMPS’ın kaynak kodunun indirilmesi için iki yöntem mevcuttur. Detaylara
 
 adreslerinden ulaşabilirsiniz.
 
-* https://lammps.sandia.gov/download.html sayfasından LAMMPS Stable seçeneğini seçin, ve “Download now” tuşuna basın. Bilgisayarınıza indirdiğiniz dosyayı:
+* https://lammps.sandia.gov/download.html sayfasından ``LAMMPS Stable`` seçeneğini seçiniz ve “Download now” tuşuna basın. Bilgisayarınıza indirdiğiniz dosyayı:
 
 .. code-block:: bash
 
@@ -53,7 +53,7 @@ ile lammps-stable klasörüne LAMMPS’i klonlayabilirsiniz.
 
 LAMMPS’ın derlenmesi için iki yöntem mevcuttur. Burada CMAKE yöntemini kullanacağız. Detaylara `<https://lammps.sandia.gov/doc/Build_cmake.html>`_ adresinden ulaşabilirsiniz.
 
-* LAMMPS kodunu açtığınız klasörün içine gidin (örneğin ``cd lammps-stable``), burada build klasörü oluşturun, ve içine gidin:
+* LAMMPS kodunu açtığınız klasörün içine gidiniz (örneğin ``cd lammps-stable``). Burada build klasörü oluşturunuz ve içine gidiniz:
 
 .. code-block:: bash
 
@@ -74,7 +74,7 @@ LAMMPS’ın derlenmesi için iki yöntem mevcuttur. Burada CMAKE yöntemini kul
 
   -- Enabled packages: BODY;CLASS2;DIPOLE;MANYBODY;USER-MEAMC;USER-REAXC
 
-* Aşağıdaki komut ile LAMMPS’ı derleyebilirsiniz (sondaki noktaya dikkat ediniz,  ve build klasörünün içinde olduğunuzdan emin olunuz):
+* Aşağıdaki komut ile LAMMPS’ı derleyebilirsiniz (sondaki noktaya dikkat ediniz ve build klasörünün içinde olduğunuzdan emin olunuz):
 
 .. code-block:: bash
 
