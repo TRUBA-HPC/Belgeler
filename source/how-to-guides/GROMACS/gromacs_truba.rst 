@@ -1,0 +1,44 @@
+==========================================
+TRUBA'da GROMACS Programı Nasıl Kullanılır?
+==========================================
+
+
+#!/bin/bash
+#SBATCH -p mid1
+#SBATCH -C barbun
+#SBATCH -A accountname
+#SBATCH -J gromacs-test
+#SBATCH -N 1
+#SBATCH -n 20
+#SBATCH --time=03:00:00
+#SBATCH --output=slurm-%j.out
+#SBATCH --error=slurm-%j.err
+
+
+module load centos7.3/comp/cmake/3.18.0
+module load centos7.3/comp/gcc/7
+module load centos7.3/lib/openmpi/4.0.1-gcc-7.0.1
+
+
+# Automatic selection of ntomp argument based on "-c" (-c, --cpus-per-task=<ncpu
+s>) argument to sbatch
+
+if [ -n "$SLURM_CPUS_PER_TASK" ]; then
+    ntomp="$SLURM_CPUS_PER_TASK"
+else
+    ntomp="1"
+fi
+
+
+export OMP_NUM_THREADS=$ntomp
+
+
+echo "SLURM_NODELIST $SLURM_NODELIST"
+echo "NUMBER OF CORES $SLURM_NTASKS"
+
+
+GROMACS_DIR=/truba/home/kullanıcıadı/gromacs/gromacs-2021.2/bin
+
+mpirun  $GROMACS_DIR/gmx_mpi  mdrun  $ntmpi -ntomp $ntomp -v -s çalıştıracağınız_dosyanın_adı
+
+exit
