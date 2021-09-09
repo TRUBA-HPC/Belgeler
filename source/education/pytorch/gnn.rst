@@ -60,12 +60,19 @@ Veri - çizge veri yapısı
 PyG tanımları, çizge veri kümelerini tanımlamak için ``torch_geometric.data.Data`` sınıfını kullanır. Bu türdeki her nesne bir çizgeyi temsil eder. Bir ``Data`` nesnesi birçok veri üyesi içerebilir. İşte içerebileceği bazı önemli veri üyeleri:
 
 .. ``edge_index``\ : Graph connectivity information Torch tensor in the COO format. It's of the dimension [2, number_of_edges]. Each column represents an edge.
+
 *  ``edge_index``\ : COO formatında çige bağlantı bilgisini tutan Torch tensörü. Bu, [2, number_of_edges] boyutunda olacak. Her sütun bir bağlantıyı temsil eder. 
+
 .. ``x``\ : the feature vectors of all the nodes in the graph. It's a tensor of shape [num_nodes, num_node_features]
+
 *  ``x``\ : çizgedeki tüm düğümlerin özellik vektörleri. [num_nodes, num_node_features] şeklinde bir tensör
+
 .. ``edge_attr``\ : Edge feature matrix with shape [num_edges, num_edge_features]
+
 *  ``edge_attr``\ : [num_edges, num_edge_features] şeklinde bağlantı özelliklerinin saklandığı matris
+
 .. ``y``\ : labels to train against (may have arbitrary shape), e.g., node-level targets of shape [num_nodes, \*] or graph-level targets of shape [1, \* ] 
+
 *  ``y``\ : eğitmek için etiketler (isteğe bağlı şekle sahip olabilir), ör. düğüm düzeyindeki şekil [num_nodes, \*] hedefleri veya şekili [1, \* ] olacak şekilde çizge düzeyindeki hedefler
 
 .. The above attributes are not all required to create a ``Data`` object. In addition, we can extend the object with our own attributes if needed, e.g., edge weights.
@@ -100,6 +107,7 @@ Aşağıdaki örnekte, dört düğümü ve üç bağlantısı olan yönsüz bir 
         çizgenin 4 düğümü ve 6 bağlantısı vardır
 
 .. Data objects have many useful utility functions. Here are some examples:
+
 Veri objelerinin birçok faydalı yardımcı fonksiyonu vardır:
 
 .. code-block:: python
@@ -371,11 +379,15 @@ Başka bir deyişle, :math:`k` katmanından mesaj geçtikten sonra bir :math:`i`
   #. ``MessagePassing.message(...)`` : Bu fonksiyon, yukarıdaki formüldeki :math:`\phi` fonksiyonunu temsil eder. ``propagate()`` fonksiyonuna iletilen tüm parametreleri alır ve isteğe bağlı olarak, grafiğin bağlantılarının kaynağına ve hedefine eşlenen özellik vektörlerinden de geçirelebilir. Detaylandırmak gerekirse, ``propagate()`` fonksiyonuna köşe özellikleri, çizgedeki her düğüm için bir satır, içeren bir matristen geçilmişse, örnek olarak ``node_feats => tensor([num_nodes, num_feats])`` matrisi,  ve ``message()`` fonksiyonuna yapılan çağrı ``node_feats_i`` parametresini içeriyorsa, o zaman ``node_feats_i``, ``[sayı_edgeleri, sayı_feats]`` boyutunda bir matris olur ve ``node_feats_i[a]`` ve ``node_feats[edge_index[1][a]`` eşdeğer olur. Başka bir deyişle, bu a bağlantısının hedef düğümüne ait ``node_feats`` satırıdır. Öte yandan, yapılan çağrıya, bir ``node_feats_j`` parametresi iletilirse, o zaman ``node_feats`` matrisinin eşlemelerini içerecek, ancak bağlantıların kaynaklarına dayalı olacaktır. Programcı, mesajları oluşturmak için ``propagate()`` fonksiyonuna iletilen diğer parametrelerin yanı sıra bu fonksiyonları kullanabilir. Bu fonksiyon, her bağlantı için bir satır içeren bir matris, msj, döndürmelidir, burada ``msgs[a]`` satırı, bağlantı a'nın hedef düğümüne gönderilen bir mesaj, yani ``edge_index[1][a]`` düğümüne gönderilen bir mesaj olacaktır. 
   #. ``MessagePassing.aggregate(msgs, ...)``: bu fonksiyon, ``message()`` fonksiyonu tarafından döndürülen tüm mesajları alacak ve yukarıdaki formüldeki :math:`\square` fonksiyonunu uygulayacaktır. Yani, mesajları her köşe için tek bir vektörde toplar (toplar, maksimumlarını bulur veya ortalamalarını bulur) ve düğüm başına bir son vektör içeren matrisi döndürür.
   #. ``MessagePassing.update(aggr_out, ...)``\ : Bu fonksiyon, ``propagate()`` öğesine iletilen tüm parametrelerin yanı sıra her bir köşe için ileti toplaşmasının sonucunu içeren ``propagate()`` öğesinin döndürdüğü matrisi alır ve yukarıdaki formülasyondaki :math:`\gamma` dönüşümü ve yayılma sürecinin son çıktısını döndürür.
+
 ..  #. ``MessagePassing.message(...)``: This function represents the :math:`\phi` function in the formulation above. It will take as parameters all the parameters that are passed to ``propagate()``, and optionally, it can also be passed *feature vectors mapped to the source and destination of the edges of the graph.* To elaborate, if the ``propagate()`` function was passed a matrix containing feature vertices, say a matrix ``node_feats: tensor([num_nodes, num_feats])\``, with a row for each node in the graph, and the call to the ``message()`` function contained a parameter ``node_feats_i``, then ``node_feats_i`` would be a matrix of size ``[num_edges, num_feats]`` with ``node_feats_i[a]`` being ``node_feats[edge_index[1][a]`` , i.e., the row of ``node_feats`` pertaining to the target node of edge ``a`` . On the other hand, if it is passed a parameter ``node_feats_j``, then it will contain mappings of the ``node_feats`` matrix but based on the sources of edges. The programmer can use these functions, as well as any other parameters passed to the ``propagate()`` function to generate messages. This function must return a matrix ``msgs`` with a row for each edge, where row ``msgs[a]`` will be a message sent to the target node of edge ``a`` , i.e., a message sent to node ``edge_index[1][a]`` (and vice versa for the opposite flow.) 
+
 ..  #. ``MessagePassing.aggregate(msgs, ...)``: this function will take all the messages returned by the ``message()`` function, and apply the :math:`\square` function in the formulation above. i.e., it will aggregate them (sum them up, find their max, or find their mean) into a single vector for each vertex and return the matrix containing one final vector per node. 
+
 ..  #. ``MessagePassing.update(aggr_out, ...)``\ : This function will take the matrix that ``aggregate()`` returns that contains the result of message aggregation for each vertex, as well as any parameters that were passed to ``propagate()``\ , and apply the :math:`\gamma` transformation in the formulation above and return the final output of the propagation process.
 
 .. The following figure demonstrates an example of a call to the ``propagate()`` function that takes as parameters the connectivity information of the graph (\ ``edge_index``\ ) as well as a matrix containing feature vectors for each node (\ ``node_features``\ ).
+
 Aşağıdaki şekil, parametre olarak grafiğin bağlantı bilgilerini (\ ``edge_index``\ ) ve ayrıca her düğüm için özellik vektörlerini içeren bir matrisi (\ ``node_features``\ ) alan ``propagate()`` fonksiyonuna yapılan bir çağrıyı gösterir.
 
 

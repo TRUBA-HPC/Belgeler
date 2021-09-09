@@ -114,8 +114,3 @@ Not: Eğer sisteminize ilk defa OpenVPN kuruyorsanız, Windows Güvenlik Duvarı
 Bu noktada OpenVPN bağlantınız kurulmuş olacaktır. Bağlantı başarılı bir şekilde kurulduğunda aşağıdaki gibi bir bildirim gelecektir. Atanan IP kısmı aşağıdaki resim ile farklılık gösterebilir ve her bağlantınızda değişebilir, bu bir problem değildir.
 
 .. image:: /assets/openvpn-howto/images/openvpn-system-tray-client-successful-connection.png
-
-
-
-
-:ref:`Kullanıcı Ara Yüzüne Erişim <kullanici-arayuzu>`
