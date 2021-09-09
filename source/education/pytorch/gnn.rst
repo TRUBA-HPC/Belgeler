@@ -357,6 +357,7 @@ Konvolüsyonları düzensiz verilere (örneğin çizgeler) genelleştirmeye *mes
 :math:`\square` permütasyon değişmez bir fonksiyon olduğunda (işlenenlerin sırası önemli değildir), toplam, maksimum veya ortalama gibi fonksiyonlar *toplaşma* fonksiyonu olarak adlandırılır. :math:`\gamma` ve  :math:`\phi` türevlenebilir fonksiyonlardır. (örneğin doğrusal sinir ağı katmanları.)
 
 .. In other words, to calculate the feature vector of a node :math:`i` after message passing layer :math:`k`, we do the following steps:
+
 Başka bir deyişle, :math:`k` katmanından mesaj geçtikten sonra bir :math:`i` düğümünün özellik vektörünü hesaplamak için aşağıdaki adımları yaparız:
 
 .. #. For every incoming neighbor :math:`j` of node :math:`i`, we apply the function :math:`\phi` to generate a "message" from these neighbors. The function :math:`\phi` uses the feature vectors of :math:`i`, :math:`j`, and optionally the feature vector of the edge :math:`(i,j)`.
@@ -368,12 +369,16 @@ Başka bir deyişle, :math:`k` katmanından mesaj geçtikten sonra bir :math:`i`
 #. Son olarak, :math:`\gamma` dönüşümünü mesajların toplu gösterimi ve düğümün kendisinin gömülmesi için uygularız. Nihai çıktı, düğümün yeni özellik vektörü olacaktır.
 
 .. The ``torch_geometric.nn.MessagePassing`` is an interface that allows classes that inherit it to implement the procedure described above with ease. The following functions provide this functionality:
+
 ``Torch_geometric.nn.MessagePassing``\ , kendisini miras alan sınıfların yukarıda açıklanan prosedürü kolaylıkla uygulamasına izin veren bir arayüzdür. Aşağıdaki fonksiyonlar bu özelliği sağlar:
 
 
 .. ``MessagePassing(aggr="add", flow="source_to_target", node_dim=-2)``\ : The ``aggr`` parameter defines the aggregation schema(:math:`\square`) (\ ``"add"``\ , ``"sum"``\ , or ``"max"``\ ), and ``flow`` describes the flow of messages - whether they are from an edge's source to target or vice versa. 
+
 *  ``MessagePassing(aggr="add", flow="source_to_target", node_dim=-2)``\ : ``aggr`` parametresi, toplaşma şemasını(:math:`\square`) (\ ``"add"``\ , ``"sum"`` veya ``"max"``\ ) tanımlar ve ``flow``\ , mesaj akışının bir uç kaynağın kaynağından hedefe mi yoksa tam tersi mi olduğunu belirler.
+
 .. ``MessagePassing.propagate(edge_index, **kwargs)``: this function will carry out the message passing procedure. It takes the edge connectivity information (``edge_index``), as well as any other data  (e.g. node feature vectors ``x``, edge feature vectors ``edge_attr``, etc.) that is needed for constructing messages and updating embeddings, and returns a matrix containing a vector for each node in the input graph. ``propogate()`` will call the following three functions:
+
 *  ``MessagePassing.propagate(edge_index, **kwargs)``: bu fonksiyon mesaj geçirme prosedürünü gerçekleştirecektir. İletileri oluşturmak ve yerleştirmeleri güncellemek için gerekli olan uç bağlantı bilgilerini (``edge_index``) ve diğer tüm verileri (ör. düğüm özellik vektörleri ``x``, bağlantı özellik vektörleri ``edge_attr``, vb.) alır ve her biri için bir vektör içeren bir matris döndürür. ``propogate()`` aşağıdaki üç işlevi çağırır:
 
   #. ``MessagePassing.message(...)`` : Bu fonksiyon, yukarıdaki formüldeki :math:`\phi` fonksiyonunu temsil eder. ``propagate()`` fonksiyonuna iletilen tüm parametreleri alır ve isteğe bağlı olarak, grafiğin bağlantılarının kaynağına ve hedefine eşlenen özellik vektörlerinden de geçirelebilir. Detaylandırmak gerekirse, ``propagate()`` fonksiyonuna köşe özellikleri, çizgedeki her düğüm için bir satır, içeren bir matristen geçilmişse, örnek olarak ``node_feats => tensor([num_nodes, num_feats])`` matrisi,  ve ``message()`` fonksiyonuna yapılan çağrı ``node_feats_i`` parametresini içeriyorsa, o zaman ``node_feats_i``, ``[sayı_edgeleri, sayı_feats]`` boyutunda bir matris olur ve ``node_feats_i[a]`` ve ``node_feats[edge_index[1][a]`` eşdeğer olur. Başka bir deyişle, bu a bağlantısının hedef düğümüne ait ``node_feats`` satırıdır. Öte yandan, yapılan çağrıya, bir ``node_feats_j`` parametresi iletilirse, o zaman ``node_feats`` matrisinin eşlemelerini içerecek, ancak bağlantıların kaynaklarına dayalı olacaktır. Programcı, mesajları oluşturmak için ``propagate()`` fonksiyonuna iletilen diğer parametrelerin yanı sıra bu fonksiyonları kullanabilir. Bu fonksiyon, her bağlantı için bir satır içeren bir matris, msj, döndürmelidir, burada ``msgs[a]`` satırı, bağlantı a'nın hedef düğümüne gönderilen bir mesaj, yani ``edge_index[1][a]`` düğümüne gönderilen bir mesaj olacaktır. 
