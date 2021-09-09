@@ -6,6 +6,7 @@ Kullanıcı El Kitabı
     :maxdepth: 1
 
     ../TRUBAmimarisi.rst
+    kullanici-portali/index.rst
     kullanicihesaplari.rst
     hesaplamakumeleri.rst
     dosyasistemleri.rst
@@ -21,6 +22,4 @@ Kullanıcı El Kitabı
     open-vpn/index.rst
     kaynakyoneticisi-isdongusu/index.rst
     kullanici-ara-yuzu/openondemand/index.rst
-    kullanici-ara-yuzu/ssh-ile-baglanti/index.rst
     ../topluluk-portali/index.rst
-    TRUBAseminerleri.rst

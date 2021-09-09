@@ -3,11 +3,13 @@ TRUBA'da Gaussian Programının Kurulumu
 ======================================
 
 Aşağıda Gaussian programının **g16** versiyonunun TRUBA altyapısında derlenmesi için gerekli adımlar verilmiştir. Siz de aşağıdaki adımları takip 
-ederek kurulumunu kendi ev dizininizde yapabilirsiniz. **g09** versiyonu aynı adımlar izlenerek kurulabilir. 
-**Uygulanacak adımlar:**
+ederek kurulumunu kendi ev dizininizde yapabilirsiniz. **g09** versiyonu aynı adımlar izlenerek kurulabilir.
 
-**1.**
-Gaussian'ın binary olarak dağıtılan bir paket program olduğu için, sadece arşiv paketini açmak kurulum için yeterlidir, herhangi bir derlemeye gerek bulunmamaktadır. Öncelikle kaynak kodunu kendi ev dizininize alınız. Kaynak kodu sıkıştırılmış dosya formatında (*.tar veya *.tar.gz vb.) olduğu için açmak için aşağıdaki komutlardan dosya formatınıza uygun olanı kullanınız.
+--------------------
+Uygulanacak adımlar:
+--------------------
+
+**1.** Gaussian'ın binary olarak dağıtılan bir paket program olduğu için, sadece arşiv paketini açmak kurulum için yeterlidir, herhangi bir derlemeye gerek bulunmamaktadır. Öncelikle kaynak kodunu kendi ev dizininize alınız. Kaynak kodu sıkıştırılmış dosya formatında (\*.tar veya \*.tar.gz vb.) olduğu için açmak için aşağıdaki komutlardan dosya formatınıza uygun olanı kullanınız.
 
 .. code-block:: bash
 

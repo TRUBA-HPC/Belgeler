@@ -12,13 +12,15 @@ CUDA Paralelleşmesi ve İş Parçacıkları
    *  Paralel hesaplamayı başlatmak.
    *  İş parçacığı ve veri indislerinin eşleştirilmesi.
 
-
 Veri Paralelleşmesi
 -------------------
 .. image:: /assets/cuda/02/02/01.jpg
    :width: 600
+   :align: center
 
-Bir önceki bölümde veri paralelleşmesinden bahsetmiştik. Bu bölümde veri paralelleşmesinin CUDA iş parçacıkları ile nasıl kullanabileceğimizden bahsedeceğiz. A ve B vektörlerini toplarken A[0] + B[0] işlemini bir iş parçacığına yaptırırken A[1] + B[1] işlemini başka bir iş parçacığına yaptırarak veri paralelleşmesini kullanabiliriz. İş parçacıklarını doğru bir şekilde kullanbilmemiz için CUDA Hesaplama Modelini (CUDA Execution Model) yakından incelemeliyiz.  
+Bir önceki bölümde veri paralelleşmesinden bahsetmiştik. Bu bölümde veri paralelleşmesinin CUDA iş parçacıkları ile nasıl kullanabileceğimizden bahsedeceğiz.
+
+**A** ve **B** vektörlerini toplarken  **A** [0] + **B** [0] işlemini bir iş parçacığına yaptırırken A [1] + B [1] işlemini başka bir iş parçacığına yaptırarak veri paralelleşmesini kullanabiliriz. İş parçacıklarını doğru bir şekilde kullanabilmemiz için CUDA Hesaplama Modelini (ing., CUDA Execution Model) yakından incelemeliyiz.
 
 CUDA Hesaplama Modeli
 ---------------------
@@ -26,62 +28,92 @@ CUDA Hesaplama Modeli
 
 .. image:: /assets/cuda/02/03/01.png
    :width: 600
+   :align: center
 
-Gördüğünüz üzere işlemci üzerinde çalışan sıralı kod kısımları arasında grafik işlem birimi üzerinde üzerinde paralel olarak çalışan kod parçacıkları bulunmaktadır. Grafik işlem biriminin çalışma mantığını **SPMD** olarak adlandırabiliriz (Tek Program Çoklu Veri), (**S** ingle **P** rogram **M** ultiple **D** ata). Çünkü grafik işlem biriminde aynı işlem çok sayıda veri üzerinde yapılır ve paralelleşme bu şekilde sağlanır. Görselde modellemesi yapılan CUDA yapılarını yakından inceleyelim.
+Gördüğünüz üzere işlemci üzerinde çalışan sıralı kod kısımları arasında grafik işlem birimi üzerinde üzerinde paralel olarak çalışan kod parçacıkları bulunmaktadır. 
+Grafik işlem biriminin çalışma mantığını **SPMD** olarak adlandırabiliriz (Tek Program Çoklu Veri), (**S** ingle **P** rogram **M** ultiple **D** ata). 
+Çünkü grafik işlem biriminde aynı işlem çok sayıda veri üzerinde yapılır ve paralelleşme bu şekilde sağlanır. Görselde modellemesi yapılan CUDA yapılarını yakından inceleyelim.
 
 İş Parçacıkları
 ^^^^^^^^^^^^^^^
 
-İş parçacıkları klasik Von-Neumann işlemci modelinin soyutlanmış hali olarak düşünülebilir. Yani bir CUDA iş parçacığı bellekten veri okuma-yazma ve aritmetiksel mantıksal işlemler yapabilme kapasitesine sahip birimlerdir.
+İş parçacıkları klasik Von-Neumann işlemci modelinin soyutlanmış hali olarak düşünülebilir. 
+Yani bir CUDA iş parçacığı bellekten veri okuma-yazma ve aritmetiksel mantıksal işlemler yapabilme kapasitesine sahip birimlerdir.
 
-CUDA iş parçacıkları **örgü** halinde çalışarak CUDA **çekirdek** lerini (kernel) çalıştırırlar. CUDA **çekirdekleri**  cihaz üzerinde çalışan programlardır. Yani grafik işlem birimi üzerinde çalışan programlara **çekirdek** adı verilir. Aynı **Örgü** içinde çalışan iş parçacıkları aynı **çekirdek** kodunu çalıştırırlar ancak üzerlerinde çalıştıkları veri birbirinden farklıdır (Tek Program Çoklu Veri yapısı). Her iş parçacığının indisi bulunmaktadır ve bu indisi kullanarak iş parçacıkları arasında verinin nasıl dağıtılacağını ayarlayabiliriz. 
+CUDA iş parçacıkları **örgü** halinde çalışarak CUDA **çekirdeklerini** (ing., kernel) çalıştırırlar. CUDA çekirdekleri cihaz üzerinde çalışan programlardır. 
+Özetle grafik işlem birimi üzerinde çalışan programlara **çekirdek** adı verilir. 
+Aynı **örgü** içinde çalışan iş parçacıkları aynı **çekirdek** kodunu çalıştırırlar ancak üzerlerinde çalıştıkları veri birbirinden farklıdır 
+(bkz: biraz önce bahsedilen *Tek Program Çoklu Veri* yapısı). CUDA ekosisteminde (ve başlatılan her çekirdek kodunda) her iş parçacığının indisi bulunmaktadır 
+ve bu indisleri kullanarak iş parçacıkları arasında verinin nasıl dağıtılacağını ayarlayabiliriz. 
 
 .. image:: /assets/cuda/02/03/02.png
-   :width: 600
+   :width: 500
+   :align: center
 
-Yukarıda görmüş olduğunuz görselde 255 adet iş parçacığı gösterilmektedir. Alt kısımda hesaplanan i değeri ile sonuç vektörünün hangi elemanının hangi iş parçacığı tarafından hesaplanacağı belirlenmektedir. İ değerine yakından bakarsak **threadIdx.x** kısmını görebiliriz. **threadIdx.x** her iş parçacığının kendi indisini belirtir. İ değerinin hesaplanmasında kullanılan diğer iki değerin ne anlama geldiğini **İş Parçacığı Blokları** ile öğreneceğiz.
-
+Yukarıda görmüş olduğunuz görselde 256 adet iş parçacığı gösterilmektedir. 
+Alt kısımda hesaplanan *i* değeri ile sonuç vektörünün hangi elemanının hangi iş parçacığı tarafından hesaplanacağı belirlenmektedir. 
+Bu *i* değerine yakından bakarsak **threadIdx.x** kısmını görebiliriz. **threadIdx.x** her iş parçacığının kendi indisini belirtir. 
+Bu değerin hesaplanmasında kullanılan diğer iki değerin ne anlama geldiğini **İş Parçacığı Blokları** ile öğreneceğiz.
 
 İş Parçacığı Blokları (Thread Blocks)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-CUDA İş Parçacıkları bloklar halinde gruplanırlar. Aşağıdaki görselde n adet CUDA iş Parçacığı Bloğu görülmektedir. Ayrıca her blokta 255 adet iş parçığı olacak şekilde bir konfigürasyon yapılmıştır. 
+CUDA İş Parçacıkları bloklar halinde gruplanırlar. Aşağıdaki görselde *n* adet CUDA İş Parçacığı Bloğu görülmektedir. 
+Bu örnekte, her blokta 256 adet iş parçığı olacak şekilde bir konfigürasyon yapılmıştır. 
 
 .. image:: /assets/cuda/02/03/03.png
    :width: 600
+   :align: center
 
-Blokları birbirinden ayırabilmek adına her blok için özel olmak üzere **blockIdx.x** değeri bulunmaktadır. Bu değer 0. blok (görselde en soldaki blok) için 0, 1.blok için 1 olacak şekilde ilerler. Bunun dışında bloklar çeşitli boyutlarda yapılandırılabilirler. Daha anlaşışabilir olması açısından şimdilik lineer blok yapısına sahip sistemleri inceleyelim. Tek boyutlu blok yapılarında **blockDim.x** değeri blok içerisinde kaç adet iş parçacığı bulunduğunu belirtmektedir.
+Blokları birbirinden ayırabilmek adına her blok için özel olmak üzere **blockIdx.x** değeri bulunmaktadır. 
+Bu değer 1. blok (görselde en soldaki blok) için 0, 2.blok için 1 olacak şekilde ilerler. 
+Bunun dışında bloklar çeşitli boyutlarda yapılandırılabilirler. Daha anlaşılabilir olması açısından şimdilik lineer blok yapısına sahip sistemleri inceleyeceğiz. 
+Tek boyutlu blok yapılarında **blockDim.x** değeri blok içerisinde kaç adet iş parçacığı bulunduğunu belirtmektedir.
 
-**threadIdx.x** değerleri her blok için, 0 dan bloktaki iş parçacığı sayısına kadar ilerler. Blok indisi ve içerdiği iş parçacığı bilgisi kullanılarak her bir iş parçacığının **evrensel indisi** bulunabilir. Örnek vermek gerekirse 0.blok içindeki 0.iş parçacığının **evrensel indisi** 0 iken 255. iş parçağının **evrensel indisi** 255 olarak belirlenir. Bir sonraki blok olan blok 1 deki 0.iş parçacığının **evrensel indisi** 256 olarak bulunacaktır. 
+**threadIdx.x** değerleri her blok için, 0'dan bloktaki iş parçacığı sayısına kadar ilerler. Blok indisi ve içerdiği iş parçacığı bilgisi kullanılarak her 
+bir iş parçacığının **evrensel indisi** bulunabilir. Örnek vermek gerekirse 1. blok içindeki 1. iş parçacığının **evrensel indisi** 0 iken 256. iş parçağının **evrensel indisi** 255 olarak 
+belirlenir. Bir sonraki blok olan blok 1 deki 1. iş parçacığının **evrensel indisi** 256 olarak bulunacaktır. 
 
-**Evrensel indis** ile üzerinde çalışılacak veri, iş parçacıkları arasında kolaylıkla paylaşılabilir. Örnek vermek gerekirse görselde gördüğümüz gibi bir konfigürasyon kullanıldığında (n blok, her blokta 255 iş parçacığı), vektör toplama işleminde toplanan vektörlerin 0. elemanları **evrensel indisi** 0 olan iş parçacığı (0.blok 0.iş parçacığı) tarafından toplanırken, vektörlerin 256 elemanı **evrensel indisi** 256 olan iş parçacığı tarafından toplanır (1.blok 0.iş parçacığı).
+**Evrensel indis** ile üzerinde çalışılacak veri, iş parçacıkları arasında kolaylıkla paylaşılabilir. 
+Örnek vermek gerekirse görselde gördüğünüz gibi bir konfigürasyon kullanıldığında (*n* blok, her blokta 256 iş parçacığı), vektör toplama işleminde toplanan vektörlerin 
+1. elemanları **evrensel indisi** 0 olan iş parçacığı (1. blok 1. iş parçacığı) tarafından toplanırken, vektörlerin 257. elemanı **evrensel indisi** 256 olan 
+iş parçacığı tarafından toplanır (2. blok 1. iş parçacığı).
 
 *  Bir blok içerisindeki iş parçacıkları, birbirleriyle:
 
-   *  Paylaşımlı Bellek
-   *  Atomik İşlemler
-   *  Bariyerle Senkronizasyon
+   *  *Paylaşımlı Bellek*,
+   *  *Atomik İşlemler*,
+   *  *Bariyerle Senkronizasyon*
 
 gibi konseptler aracılığıyla ortaklaşa çalışırlar. Bu konseptleri ilerleyen bölümlerde detaylıca inceleyeceğiz.
 
-Bloklar hakkında başka bir önemli nokta ise farklı bloklar içerisinde bulunan iş parçacıkları birbirleriyle etkileşim içerisine geçmezler. 
-
+Bloklar hakkında başka bir önemli nokta ise farklı bloklar içerisinde bulunan iş parçacıkları birbirleriyle etkileşim içerisinde olmamasıdır. 
+Dolayısıyla birbirleri ile sadece evrensel hafıza üzerinden haberleşebilirler ve aynı senkronizasyon direktiflerinin içerisinde yer almazlar. 
 
 .. note::
    
-   **blockDim.x** ve **threadIdx.x** gibi değerlerin ne işe yaradığını inceledik. Ancak blok yapısı 1 boyutlu olmak zorunda değildir. 2 veya 3 boyutlu blok yapıları da bulunmaktadır. Gerçek hayat uygulamalarında çoğunlukla 2 veya 3 boyutlu veri içermektedir. Bu verilerin çok daha kolay bir şekilde kullanılması için CUDA **blockDim** **threadId** yapıları 3 boyutlu olarak yapılandırılmıştır. Çok boyutlu blok veya iş parçacığı kullanılan uygulamalarda **blockdim.y**, **blockDim.z** gibi değerler **evrensel indis** hesaplamasında kullanılabilir. Çok boyutlu blok yapısı içeren örnekler ileriki bölümlerde bulunacaktır.  
+   **blockDim.x** ve **threadIdx.x** gibi değerlerin ne işe yaradığını inceledik. Ancak blok yapısı tek boyutlu olmak zorunda değildir. 
+   2 veya 3 boyutlu blok yapıları da bulunmaktadır. Gerçek hayat uygulamalarında çoğunlukla 2 veya 3 boyutlu veri içermektedir. 
+   Bu verilerin çok daha kolay bir şekilde kullanılması için CUDA **blockDim** **threadId** yapıları 3 boyutlu olarak yapılandırılmıştır. 
+   Çok boyutlu blok veya iş parçacığı kullanılan uygulamalarda **blockdim.y**, **blockDim.z** gibi değerler **evrensel indis** hesaplamasında kullanılabilir. 
+   Çok boyutlu blok yapısı içeren örnekler sonraki bölümlerde bulunabilir.  
    
    .. image:: /assets/cuda/02/03/04.png
       :width: 400
+      :align: center
    
    | Yukarıdaki görselde 3 boyutlu bir veriyi temsil etmek için kullanılmış 3 boyutlu blok yapısı gösterilmektedir.
 
-Ayrıca iş parçacığı blokları **şebeke (grid)** adı verilen bir yapı içerisinde gruplaşır. İş parçacığı ile blok arasındaki ilişki, blok ile **şebeke** arasında bulunur. 
+Ayrıca iş parçacığı blokları **şebeke** (ing., grid) adı verilen bir yapı içerisinde gruplaşır. İş parçacığı ile blok arasındaki ilişki, blok ile **şebeke** arasında bulunur. 
 
 CUDA Çekirdeği
 ^^^^^^^^^^^^^^
 
-CUDA **Çekirdeğinin** cihaz üzerinde çalışan kod parçası olduğundan bahsetmiştik ve CUDA paralel modelindeki iş parçağı hiyerarşisine değindik. Blok sayısı ve blok içerisindeki iş parçacığı sayısının ne olduğundan bahsettik. Bu noktada bir CUDA **çekirdeğinin** nasıl çağrıldığından da bahsetmek gerekmektedir.
+CUDA **çekirdeğinin** cihaz üzerinde çalışan kod parçası olduğundan bahsetmiştik ve CUDA paralel modelindeki iş parçacığı hiyerarşisine değindik. 
+Blok sayısı ve blok içerisindeki iş parçacığı sayısının ne olduğundan bahsettik. Bu noktada bir CUDA **çekirdeğinin** nasıl çağrıldığından da bahsetmek gerekmektedir.
 
-1 boyutlu blok yapısı kullanan bir CUDA programı için **çekirdek** çağırma işleminde önemli iki adet parametre bulunmaktadır. Kullanılacak blok sayısı ve her blok içerisindeki iş parçacığı sayısı. Sözdizimi olarak **çekirdekAdı<<<blokSayısı, işParçacığıSayısı>>>(parametreler)**. Örnek olarak daha önceki bölümlerde kullandığımız vektör toplama kodunu buraya  :ref:`tıklayarak <cuda-vector-addition>` inceleyebilirsiniz.
+Tek boyutlu blok yapısı kullanan bir CUDA programı için **çekirdek** çağırma işleminde önemli iki adet parametre bulunmaktadır. 
+Kullanılacak blok sayısı ve her blok içerisindeki iş parçacığı sayısı. 
+Sözdizimi olarak **çekirdekAdı<<<blokSayısı, işParçacığıSayısı>>>(parametreler)**. 
+Örnek olarak daha önceki bölümlerde kullandığımız vektör toplama kodunu buraya  :ref:`tıklayarak <cuda-vector-addition>` inceleyebilirsiniz.
 

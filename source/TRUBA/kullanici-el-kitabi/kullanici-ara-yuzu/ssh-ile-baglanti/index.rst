@@ -9,3 +9,4 @@ SSH ile Bağlantı
 
     putty.rst
     winscp.rst
+    MobaXterm.rst
