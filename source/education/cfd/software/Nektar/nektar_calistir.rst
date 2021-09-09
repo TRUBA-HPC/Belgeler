@@ -250,7 +250,7 @@ difüzyon, problem, zaman integrasyonu ve viskozite tipleri aşağıdaki
 düzende seçilir.
 
 .. figure:: /assets/Nektar-howto/images/solver.PNG
-   :name: çözücü
+   :name: cozucu
 
 Değişkenler
 ~~~~~~~~~~~~~
@@ -261,7 +261,7 @@ farklılık gösterebilir. Kullanıcının duruma uygun değişkenler seçmesi v
 bunları tanımlaması önem arz etmektedir.
 
 .. figure:: /assets/Nektar-howto/images/variables.PNG
-   :name: değişkenler
+   :name: degiskenler
 
 
 Sınır koşullarının değişkenlerden ziyade akılara uygulandığı
@@ -274,14 +274,14 @@ Sınır bölgeleri ``BOUNDARY REGIONS`` içinde tanımlanır. 2 boyut için örn
 şu şekildedir.
 
 .. figure:: /assets/Nektar-howto/images/boundaryregions.PNG
-   :name: sınır_bölge
+   :name: sinir_bolge
 
 Ardından ``BOUNDARY CONDITIONS`` içinde sınr koşulları tanımlanır. Hangi sınır için
 tanımlandıkları bir önceki bölüm olan sınır bölgeleri kısmında ifade
 edilmiştir.
 
 .. figure:: /assets/Nektar-howto/images/boundaryconditions.PNG
-   :name: sınır_koşul
+   :name: sinir_kosul
 
    Sınır koşulları
 
@@ -290,7 +290,7 @@ Sürekli projeksiyon sıkıştırılamaz akış çözücüsünde desteklenmediğ
 Başlangıç koşulları şu şekilde tanımlanabilir.
 
 .. figure:: /assets/Nektar-howto/images/functions.PNG
-   :name: başlangıç_koşul
+   :name: baslangic_kosul
 
 
 Çözücüyü Çalıştırma ve Sonuç Görüntüleme
@@ -326,7 +326,7 @@ gerekli olan altyapı Nektar++ içinde **FieldConvert** ismiyle mevcuttur.
 Oluşturulan ".vtu" uzantılı dosya bahsi geçen yazılımlar tarafından
 okunur ve çözüm sonuçları incelenebilir.
 
-.. _seri_örnek:
+.. _seri_ornek:
 
 Seri Örnek İş Hazırlama
 -----------------------
@@ -343,7 +343,7 @@ simüle etmektir. Akış parametreleri :math:`M_{infty}=0.2`,
 :math:`P_{\infty}=101325 Pa` ve yoğunluk :math:`\rho = 1.225 kg/m^3`
 olarak bilinmektedir.
 
-.. _seri_örnek_problem:
+.. _seri_ornek_problem:
 
 Problem Tanımı
 ~~~~~~~~~~~~~~
@@ -419,22 +419,22 @@ Aşağıdaki figürler bu geometri tanımlarının iç yüzlerini örnekler ve g
 Ekran görüntüsünde ilk 10-20 satır alındığından bu bilgiler dosyaların tamamını kapsamamaktadır.
 
 .. figure:: /assets/Nektar-howto/images/vertex_ornek.PNG
-   :name: köşe
+   :name: kose1
 
    Köşe tanımlama örnekleri
 
 .. figure:: /assets/Nektar-howto/images/edge_ornek.PNG
-   :name: kenar
+   :name: kenar1
 
    Kenar tanımlama örnekleri
 
 .. figure:: /assets/Nektar-howto/images/element_ornek.PNG
-   :name: eleman
+   :name: eleman1
 
    Eleman tanımlama örnekleri
 
 .. figure:: /assets/Nektar-howto/images/curved_ornek.PNG
-   :name: eğri
+   :name: egri1
 
    Eğri tanımlama örnekleri
 
@@ -447,11 +447,11 @@ Genişleme Tabanları
 ^^^^^^^^^^^^^^^^^^^^
 
 Kompozit veya alt alanların kullanımı için genişleme tabanları
-tanımlanabilir. Örneği `aşağıdaki şekil <#alan_ve_genişleme>`__ içinde bulunabilir. Burada tek kompozit ve
+tanımlanabilir. Örneği `aşağıdaki şekil <#alan_ve_genisleme1>`__ içinde bulunabilir. Burada tek kompozit ve
 3 temel denklem (NUMMODES) için örnekleme yapılmıştır.
 
 .. figure:: /assets/Nektar-howto/images/domain_and_expansions_örnek.PNG
-   :name: alan_ve_genişleme
+   :name: alan_ve_genişleme1
 
    Alan ve genişleme tabanları tanımlama örnekleri
 
@@ -462,7 +462,7 @@ Bu noktada çözümde baz alınacak değerler tanımlanır. Örnek olarak
 aşağıdaki şekil incelenebilir.
 
 .. figure:: /assets/Nektar-howto/images/parameters_ornek.PNG
-   :name: parametre_örnek
+   :name: parametre_ornek
 
    Çözüm parametreleri örneği
 
@@ -485,7 +485,7 @@ Değişkenler & Sınır Bölgeleri
 tanımlanabilir.
 
 .. figure:: /assets/Nektar-howto/images/solver_and_boundary_info.PNG
-   :name: çözücü
+   :name: cozucu
 
    Çözücü ayarları örneği
 
@@ -497,7 +497,7 @@ tanımlandıkları bir önceki bölüm olan sınır bölgeleri kısmında ifade
 edilmiştir.
 
 .. figure:: /assets/Nektar-howto/images/boundaryconditions_ornek.PNG
-   :name: sınır_koşul
+   :name: sinir_koşul
 
    Sınır koşulları örneği
 
@@ -506,7 +506,7 @@ Sürekli projeksiyon sıkıştırılamaz akış çözücüsünde desteklenmediğ
 Başlangıç koşulları şu şekilde tanımlanabilir.
 
 .. figure:: /assets/Nektar-howto/images/functions_ornek.PNG
-   :name: başlangıç_koşul
+   :name: baslangic_kosul
 
    Başlangıç koşulları örneği
 
@@ -515,7 +515,7 @@ temsil edebilmek adına yapay viskozite temeline dayanan bir şok yakalama
 tekniği kullanılır. Bunun için ``SOLVER_INFO`` bölümünde
 ``ShockCaptureType`` kısmı düzenlenmelidir.
 
-.. _çözücüyü-çalıştırma-ve-sonuç-görüntüleme-1:
+.. _cozucuyu-calistirma-ve-sonuc-goruntuleme-1:
 
 Çözücüyü Çalıştırma ve Sonuç Görüntüleme
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -561,7 +561,7 @@ okunur ve çözüm sonuçları incelenebilir. Çözüm sonucunda basınç deği�
 için aşağıdaki şekile benzer bir sonuç beklenmektedir.
 
 .. figure:: /assets/Nektar-howto/images/pressure.PNG
-   :name: basıç_sonuç
+   :name: basinc_sonuc
 
    Basınç dağılımı
 
@@ -580,10 +580,10 @@ tarafından desteklenmektedir. Bu özelliğin kullanılması için Nektar++
 derlenirken ``NEKTAR_USE_MPI`` seçeneği "ON" olarak ayarlanmalıdır. Ardından komut verme
 kısmında işlemci sayısı seçilerek daha önce belirtilen işlemler
 tekrarlanabilir. Kılavuz tutarlılığı açısından bu işlemler bu bölümde de
-tekrarlanmıştır. Kullanılacak dosyalar :ref:`seri_örnek` kısmı ile,
-problem tanımı da :ref:`seri_örnek_problem` kısmı ile aynıdır.
+tekrarlanmıştır. Kullanılacak dosyalar :ref:`seri_ornek` kısmı ile,
+problem tanımı da :ref:`seri_ornek_problem` kısmı ile aynıdır.
 
-.. _ön-işlemler-ve-çözüm-ağı-oluşturma-1:
+.. _on-islemler-ve-cozum-agi-olusturma-1:
 
 Ön İşlemler ve Çözüm Ağı Oluşturma
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -623,22 +623,22 @@ Verilen dosya .xml olduğu için bu örnekte herhangi bir dönüşüm yapmaya ge
 simülasyonlar için çözüm ağının GEOMETRY etiketi altındaki 6 alt bölüm ile tanımlanması gerekmektedir. ``VERTEX`` etiketi köşe noktalarının uzaydaki koordinatlarını içerir. ``EDGE`` bu köşeleri bağlayan doğruları kapsar. ``ELEMENT`` ise çözüm ağı elemanlarını tanımlar. ``CURVED`` ise eğriler üzerinde kontrol noktalarını tanımlamak için kullanılır. Eğer eğri kenarlar veya yüzeyler yoksa bu etiket göz ardı edilebilir. ``COMPOSITE`` çözümün alt alanlarını ve denklem setlerinin çözüleceği yerleri tanımlar. Sınır koşulları için de kompozit alanlar kullanılabilir. Son etiket olan ``DOMAIN`` ise tüm çözüm alanının ve kompozit alanlarının bütünlüğünü sağlar. Aşağıdaki figürler bu geometri tanımlarının iç yüzlerini örnekler ve genel yapıları hakkında fikir vermeyi amaçlar. Ekran görüntüsünde ilk 10-20 satır alındığından bu bilgiler dosyaların tamamını kapsamamaktadır.
 
 .. figure:: /assets/Nektar-howto/images/vertex_ornek.PNG
-   :name: köşe
+   :name: kose2
 
    Köşe tanımlama örnekleri
 
 .. figure:: /assets/Nektar-howto/images/edge_ornek.PNG
-   :name: kenar
+   :name: kenar2
 
    Kenar tanımlama örnekleri
 
 .. figure:: /assets/Nektar-howto/images/element_ornek.PNG
-   :name: eleman
+   :name: eleman2
 
    Eleman tanımlama örnekleri
 
 .. figure:: /assets/Nektar-howto/images/curved_ornek.PNG
-   :name: eğri
+   :name: egri2
 
    Eğri tanımlama örnekleri
 
@@ -650,10 +650,10 @@ simülasyonlar için çözüm ağının GEOMETRY etiketi altındaki 6 alt bölü
 Genişleme Tabanları
 ^^^^^^^^^^^^^^^^^^^^
 
-Kompozit veya alt alanların kullanımı için genişleme tabanları tanımlanabilir. Örneği `aşağıdaki şekil <#alan_ve_genişleme>`__ içinde bulunabilir. Burada tek kompozit ve 3 temel denklem (NUMMODES) için örnekleme yapılmıştır.
+Kompozit veya alt alanların kullanımı için genişleme tabanları tanımlanabilir. Örneği `aşağıdaki şekil <#alan_ve_genisleme2>`__ içinde bulunabilir. Burada tek kompozit ve 3 temel denklem (NUMMODES) için örnekleme yapılmıştır.
 
 .. figure:: /assets/Nektar-howto/images/domain_and_expansions_ornek.PNG
-   :name: alan_ve_genişleme
+   :name: alan_ve_genisleme2
 
    Alan ve genişleme tabanları tanımlama örnekleri
 
@@ -664,7 +664,7 @@ Bu noktada çözümde baz alınacak değerler tanımlanır. Örnek olarak
 aşağıdaki şekil incelenebilir.
 
 .. figure:: /assets/Nektar-howto/images/parameters_ornek.PNG
-   :name: parametre_örnek
+   :name: parametre_ornek
 
    Çözüm parametreleri örneği
 
@@ -743,7 +743,7 @@ difüzyon, problem, zaman integrasyonu ve viskozite tipleri aşağıdaki
 düzende seçilir.
 
 .. figure:: /assets/Nektar-howto/images/solver.PNG
-   :name: çözücü
+   :name: cozucu
 
    Çözücü ayarları
 
@@ -756,7 +756,7 @@ farklılık gösterebilir. Kullanıcının duruma uygun değişkenler seçmesi v
 bunları tanımlaması önem arz etmektedir.
 
 .. figure:: /assets/Nektar-howto/images/variables.PNG
-   :name: değişkenler
+   :name: degiskenler
 
    Değişkenler
 
@@ -769,7 +769,7 @@ Sınır bölgeleri ``BOUNDARY REGIONS`` içinde tanımlanır. 2 boyut için örn
 şu şekildedir.
 
 .. figure:: /assets/Nektar-howto/images/boundaryregions.PNG
-   :name: sınır_bölge
+   :name: sinir_bolge
 
    Sınır bölgeleri
 
@@ -778,7 +778,7 @@ tanımlandıkları bir önceki bölüm olan sınır bölgeleri kısmında ifade
 edilmiştir.
 
 .. figure:: /assets/Nektar-howto/images/boundaryconditions.PNG
-   :name: sınır_koşul
+   :name: sinir_kosul
 
    Sınır koşulları
 
@@ -787,11 +787,11 @@ Sürekli projeksiyon sıkıştırılamaz akış çözücüsünde desteklenmediğ
 Başlangıç koşulları şu şekilde tanımlanabilir.
 
 .. figure:: /assets/Nektar-howto/images/functions.PNG
-   :name: başlangıç_koşul
+   :name: baslangic_kosul
 
    Başlangıç koşulları
 
-.. _çözücüyü-çalıştırma-ve-sonuç-görüntüleme-2:
+.. _cozucuyu-calistirma-ve-sonuc-goruntuleme-2:
 
 Çözücüyü Çalıştırma ve Sonuç Görüntüleme
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -844,7 +844,7 @@ okunur ve çözüm sonuçları incelenebilir. Çözüm sonucunda basınç deği�
 için aşağıdaki şekile benzer bir sonuç beklenmektedir.
 
 .. figure:: /assets/Nektar-howto/images/pressure.PNG
-   :name: basıç_sonuç
+   :name: cozucu-basinc_sonuc
 
    Basınç dağılımı
 
@@ -857,7 +857,7 @@ beklenmektedir.
 TRUBA sunucusunda GUI (Grafiksel Kullanıcı Arayüzü) kullanılamadığından
 komutların terminalden girilmesi gerekmektedir. Çoğu adım seri iş
 oluşturma ile benzerlik gösterdiğinden daha detaylı anlatım için
-:ref:`is_gonderimi` ve :ref:`seri_örnek` bölümleri incelenebilir. 
+:ref:`is_gonderimi` ve :ref:`seri_ornek` bölümleri incelenebilir. 
 
 TRUBA sunucusunda GUI (Grafiksel Kullanıcı Arayüzü) kullanılamadığından
 komutların terminalden girilmesi gerekmektedir. Kullanım rahatlığı
