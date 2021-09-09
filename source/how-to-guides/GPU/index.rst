@@ -31,7 +31,7 @@ TRUBA altyapısındaki GPU kaynakları SLURM kaynak yöneticisi ile kullanılabi
     #SBATCH --time=1:00:00      # Sure siniri koyun.
 
     # Modüller
-    # Çalıştırılacak iş
+    # Çalıştırılacak komutlar
 
 .. note::
     Betikteki ``[USERNAME]`` yer tutucusunu kullanıcı adınızla değiştirmeyi unutmayın.
@@ -40,7 +40,13 @@ TRUBA altyapısındaki GPU kaynakları SLURM kaynak yöneticisi ile kullanılabi
 
 .. code-block:: bash
     
-    srun -n 1 -N 1 -c 10 --gres=gpu:1 -p akya-cuda --time 1:00:00 # çalıştırılacak iş
+    srun -n 1 -N 1 -c 10 --gres=gpu:1 -p akya-cuda --time 1:00:00 # çalıştırılacak komutu buraya ekleyin.
+
+``srun`` kullanarak 1 saat interaktif çalışmak için örnek:
+
+.. code-block:: bash
+    
+    srun -n 1 -N 1 -c 10 --gres=gpu:1 -p akya-cuda --time 1:00:00 --pty /bin/bash
 
 .. _core-gpu-count:
 

@@ -55,7 +55,7 @@ Aynı prosedür üzerinde çalışmak için birden çok düğüm (ve düğüm ba
 
 Aşağıda gösterilen mpi.slurm betiği, MPI görevlerini yürütmek için birden çok düğümü nasıl kullanabileceğimizi gösterir:
 
-.. code-block:: c
+.. code-block:: bash
 
    #!/bin/bash
 
@@ -123,7 +123,7 @@ Aşağıda gösterilen ``mpi_example.slurm`` betiği, MPI programlarının TRUBA
 
 Bu iş ``short`` bölümüne eklenecek ve 20 dakika içinde bitecektir. ``mpi.c`` dosyası ``/truba/home/my_account/`` konumunda bulunur. İşlerin çıktıları ``/truba/home/my_account/output.txt`` dosyasına ve hatalar ``/truba/home/my_account/error.txt`` dosyasına yazdırılacaktır.
 
-.. code-block:: c
+.. code-block:: bash
 
    #!/bin/bash
 

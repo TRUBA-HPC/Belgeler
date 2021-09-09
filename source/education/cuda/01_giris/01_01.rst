@@ -15,19 +15,13 @@ Heterojen hesaplama birden fazla hesaplama ünitesi kullanarak (bu üniteler bir
 
 İşlemciler (CPU) : Gecikme Süresi Hedefli Cihazlar
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-* İşlemcilerin başlıca özelliklerinden ilki aritmetik ve mantıksal işlemleri gerçekleştiren Aritmetik Mantık Biriminin 
-maksimum performans elde edilecek şekilde düzenlenmiş olmasıdır. İşlemcilerde güçlü Aritmetik Mantık Birimi, 
-aritmetik ve mantık işlemlerinin düşük gecikme süreleri ile işlenmesini sağlar.
-* İşlemcilerin bir diğer özelliği ise büyük önbelleğe sahip olmalarıdır. Önbellek, uzun süren bellek işlemlerinin gecikme 
-süresinde etkisini azaltmak için oldukça önemlidir.
-* İşlemcilerde kullanılan ve kontrol sinyallerini üreten kontrol ünitesi de oldukça gelişmiştir. 
-Dallanma öngörüsü (ing., branch prediction) ve Veri Yönlendirme (ing., data forwarding) yöntemleriyle dallanma ve veri 
-gecikmelerini azaltmak için kullanılan başlıca yöntemlerdendir. 
+* İşlemcilerin başlıca özelliklerinden ilki aritmetik ve mantıksal işlemleri gerçekleştiren Aritmetik Mantık Biriminin maksimum performans elde edilecek şekilde düzenlenmiş olmasıdır. İşlemcilerde güçlü Aritmetik Mantık Birimi, aritmetik ve mantık işlemlerinin düşük gecikme süreleri ile işlenmesini sağlar.
+* İşlemcilerin bir diğer özelliği ise büyük önbelleğe sahip olmalarıdır. Önbellek, uzun süren bellek işlemlerinin gecikme süresinde etkisini azaltmak için oldukça önemlidir.
+* İşlemcilerde kullanılan ve kontrol sinyallerini üreten kontrol ünitesi de oldukça gelişmiştir. Dallanma öngörüsü (ing., branch prediction) ve Veri Yönlendirme (ing., data forwarding) yöntemleriyle dallanma ve veri gecikmelerini azaltmak için kullanılan başlıca yöntemlerdendir. 
 
 Grafik İşlem Ünitesi (GPU) : Üretilen İş Hedefli Cihazlar
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-* Grafik işlem ünitelerindeki önbellek genellikle küçüktür. Küçük boyutlu depolama üniteleri fiziksel nedenlerden dolayı 
-daha hızlıdır ve küçük önbellek boyutları, grafik işlem ünitelerinde bellek ile ilgili işlerde üretilen iş oranının artmasını sağlar.
+* Grafik işlem ünitelerindeki önbellek genellikle küçüktür. Küçük boyutlu depolama üniteleri fiziksel nedenlerden dolayı daha hızlıdır ve küçük önbellek boyutları, grafik işlem ünitelerinde bellek ile ilgili işlerde üretilen iş oranının artmasını sağlar.
 * Kontrol sinyallerini üreten kontrol ünitesi işlemcilere göre oldukça basittir. Dallanma öngörüsü veya veri yönlendirme içermezler.
 * Aritmetik Mantık Birimleri enerji açısından maksimum verimli olacak şekilde tasarlanır. İşlemcilerin aksine işlemler uzun süren gecikme süreleri ile sonuçlanabilir ancak pipeline kullanımı sonucu yüksek iş/zaman oranına ulaşılabilir.
 * Grafik işlem üniteleri tasarımları gereği yüksek sayılarda iş parçacığı içerirler.

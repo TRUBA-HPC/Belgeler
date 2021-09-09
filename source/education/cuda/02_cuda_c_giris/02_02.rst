@@ -26,7 +26,7 @@ elemanlarının toplanmasına engel teşkil eden bir durum yoktur. Yani bu iki i
 Böylelikle veri seviyesinde paralelleşme elde edilir.
 
 CUDA Vektör Toplama CPU Kodu: 1
------------------------------
+-------------------------------
 Önceki bölümde paralelleşme yapısından bahsettiğimiz vektör toplama örneğinin sunucu tarafında çalışan kodunu yakından 
 inceleyelim. Kodun tamamına ulaşmak için :ref:`tıklayınız <cuda-vector-addition>`.
 
@@ -218,7 +218,7 @@ Hata Kontrolü
 Daha önceki bölümlerde CUDA fonksiyonlarının bir hata kodu döndürdüğünden bahsetmiştik. Bu noktada kodumuzla ilgili sorunları anlayabilmemiz açısından bu hata 
 kodlarını kontrol etmek oldukça önemlidir. Örnek bir hata kontrolü kodunu inceleyelim:
 
-.. code-block:: C++
+.. code-block::
 
    cudaError_t err = cudaMalloc((void **) &d_input1, size);
 
@@ -234,9 +234,9 @@ hata kontrolünden geçirilir.
 .. code-block:: C++
 
    #define cudaCheckError() {                                             
-         cudaError_t e=cudaGetLastError();
-         if(e!=cudaSuccess) {
-               printf("Cuda failure %s:%d: '%s'\n",__FILE__,__LINE__,cudaGetErrorString(e));
-               exit(EXIT_FAILURE);
-         }
+      cudaError_t e = cudaGetLastError();
+      if(e != cudaSuccess) {
+            printf("Cuda failure %s:%d: '%s'\n",__FILE__,__LINE__,cudaGetErrorString(e));
+            exit(EXIT_FAILURE);
       }
+   }

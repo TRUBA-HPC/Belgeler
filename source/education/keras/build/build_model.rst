@@ -2,7 +2,7 @@
 Modellerin Oluşturulması
 ========================
 
-Bir "katman", basitçe girdi-çıktı arasında verinin manipüle edilmesi olarak düşünülebilir. :doc:`Veri Yükleme ve Önişlem Uygulama <data_load_preprocess.rst>` bölümünde bahsedilen ölçekleme ve kırpma katmanları gibi).
+Bir "katman", basitçe girdi-çıktı arasında verinin manipüle edilmesi olarak düşünülebilir. Veri Yükleme ve Önişlem Uygulama bölümünde bahsedilen ölçekleme ve kırpma katmanları gibi).
 "Model" ise katmanlardan oluşan bir yönlü tekrarsız çizgedir (directed acyclic graph). Model aynı zamanda veriye maruz bırakılmak suretiyle öğrenebilen birden fazla alt katmandan oluşan bir büyük katman olarak da düşünülebilir.
 
 Keras modellerini oluşturmanın en işlevsel yolu fonksiyonel arayüzü kullanmaktır (Functional API). Fonksiyonel arayüz ile model inşa etmek için öncelikle girdi verisinin boyutları ve opsiyonel olarak tipi belirtilmelidir. 

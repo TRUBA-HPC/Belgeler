@@ -12,14 +12,14 @@ C programlama dilinde veri tipleri, standart tarafından tanımlanmış ve derle
 
 C programa dilinde özel bir veri yapısı aşağıdaki gibi tanımlanabilir:
 
-.. code-block:: c
+.. code-block::
 
    struct pair{
        int first,
        char second
    }
 
- Bu şekilde tanımlanan ``pair``  veri yapısı yeni bir veri yapısıdır. C standardı bu yeni data yapısının sorunsuz bir şekilde kullanılması için gereklilikleri belirler ve derleyici de gereken makine kodunu oluşturur. Böylece kullanıncı için yeni oluşturulan bu veri yapısının temel veri yapılarından bir farkı yoktur, fakat bunların hepsi derleme zamanında gerçekleşir.
+Bu şekilde tanımlanan ``pair``  veri yapısı yeni bir veri yapısıdır. C standardı bu yeni data yapısının sorunsuz bir şekilde kullanılması için gereklilikleri belirler ve derleyici de gereken makine kodunu oluşturur. Böylece kullanıncı için yeni oluşturulan bu veri yapısının temel veri yapılarından bir farkı yoktur, fakat bunların hepsi derleme zamanında gerçekleşir.
 
 MPI'da özle veri yapılarını kullanmak için kullanıcının heterojen mimarilerde sorunsuz bir şekilde mesaj yollayıp alabilmesi için alt düzey bilgiler vermesi gerekmektedir.
 

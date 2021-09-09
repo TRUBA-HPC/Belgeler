@@ -26,7 +26,7 @@ Giriş
 -  Bir programda birden fazla paralel alan bulunabilir ve her alan
    farklı sayıda iş parçacığı kullanabilir.
 
-.. figure:: %22../images/fork_join.png%22
-   :alt: Çatallanma modelini gösteren bir şekil. İlk paralel alan 3,
-   ikinci paralel alan 2 iş parçacığı kullanacak şekilde ayarlanmış.
+.. image:: /assets/openmp-education/images/fork_join.png
 
+Üstte çatallanma modelini gösteren bir şekil verilmiştir. 
+İlk paralel alan 3, ikinci paralel alan 2 iş parçacığı kullanacak şekilde ayarlanmış.
