@@ -74,7 +74,5 @@ Bu noktada kodun içeriğindense üzerinde çalıştığınız sistemi tanımaya
    
 .. admonition:: Çıktı
    :class: dropdown, information
-
-    .. code-block:: C++
-
-        Üzerinde çalıştığınız sisteme bağlı olarak değişik çıktılar alabilirsiniz.
+   
+   Üzerinde çalıştığınız sisteme bağlı olarak değişik çıktılar alabilirsiniz.

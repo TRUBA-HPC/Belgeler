@@ -27,7 +27,7 @@ Bu noktada aklımıza **kontrol dağılımının** bu gibi uç durum kontrolleri
     Yukardaki örnek kodda da gördüğünüz gibi yaptığımız uç durum kontrolleri **kontrol dağılmasına** neden olabilir.
 
 Örnek: Bölmeli matrix çarpımı ve Kontrol Dağılması
-------------------------------------------------
+---------------------------------------------------
 
 .. image:: /assets/cuda/05/02/02.png
    :width: 400

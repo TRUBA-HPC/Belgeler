@@ -61,7 +61,8 @@ Eğer aynı blok içerisindeki iş parçacıklarının yürütülmesi hakkında 
 Bu konudan daha önce bahsetmiştik.
 
 Kontrol Dağılması (ing., control divergence)
---------------------------------------
+---------------------------------------------
+
 SM donanımsal yapısından dolayı aynı **warp** içindeki iş parçacıklarının aynı komutu (ing., instruction) çalıştırmak zorunda olduğundan bahsetmiştik. 
 Ancak program akışında dallanma oluşturan bazı komutlar yürütüldükleri veri ile bağımlı olarak farklı komutların yürütülmesine yol açabilirler. 
 Örneğin bir **if** ifadesi aynı **warp** içerisindeki bir iş parçacığında **doğru** (true) olarak hesaplanıp dallanmaya neden 

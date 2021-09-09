@@ -1,3 +1,5 @@
+.. _deep-learning-virtual-env:
+
 ===============================
 Sanal Ortam Kullanarak Çalışma
 ===============================

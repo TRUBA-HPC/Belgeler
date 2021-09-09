@@ -49,8 +49,7 @@ programlarının derlenmesini gösteren aşağıdaki görseli inceleyelim.
 
 Görüldüğü üzere CUDA C programı, NVIDIA nvcc derleyicisi ile derlenmesi esnasında iki farklı işlemden geçer.
 
-* İlki host kodu olarak geçen ve işlemci üzerinde çalıştırılan kısımdır ve bu kısım klasik bir C++ derleyicisi 
-(örneğin *g++*) ile derlenir. Bu derleyicinin değiştirilmesi mümkündür. 
+* İlki host kodu olarak geçen ve işlemci üzerinde çalıştırılan kısımdır ve bu kısım klasik bir C++ derleyicisi (örneğin *g++*) ile derlenir. Bu derleyicinin değiştirilmesi mümkündür.
 * İkincisi ise cihaz (device) kodu olarak geçen ve grafik işlem ünitesi üzerinde çalıştırılan kısımdır. 
 
 .. note::

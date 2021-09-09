@@ -14,6 +14,7 @@ Bellek ve Veri Lokalizasyonu
 
 İnceleme: Resim Bulanıklaştırma Çekirdeği
 -----------------------------------------
+
 Bir önceki bölümde incelediğimiz resim bulanıklaştırma çekirdeğini bellek erişimi açısından inceleyelim. 
 Önce, bu çekirdekteki bellek erişimi açısından en kritik satırı gösteren aşağıdaki görsele bakalım.
 
@@ -107,7 +108,7 @@ Hesaplamada her bir **blok** tarafından birden çok kere kullanacağımız veri
 Böylece aynı veri için ulaşım süresi daha uzun olan **evrensel belleği** beklemek zorunda kalmayız.
 
 Örnek: Paylaşımlı Bellekte Değişken Tanımlama:
------------------------------------------
+----------------------------------------------
 
 .. code-block:: C++
 
