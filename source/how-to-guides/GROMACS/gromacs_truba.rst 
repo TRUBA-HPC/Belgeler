@@ -42,3 +42,4 @@ GROMACS_DIR=/truba/home/kullanıcıadı/gromacs/gromacs-2021.2/bin
 mpirun  $GROMACS_DIR/gmx_mpi  mdrun  $ntmpi -ntomp $ntomp -v -s çalıştıracağınız_dosyanın_adı
 
 exit
+

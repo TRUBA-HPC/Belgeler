@@ -13,4 +13,6 @@ LAMMPS (Large-scale Atomic/Molecular Massively Parallel Simulator), Sandia Ulusa
     lammps_install_truba.rst
     lammps_truba.rst
     lammps_local.rst
+    lammps_gpu.rst
+    
 

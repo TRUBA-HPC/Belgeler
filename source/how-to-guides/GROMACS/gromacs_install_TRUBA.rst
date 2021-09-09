@@ -138,3 +138,6 @@ Gerekli ortamlar için aşağıdaki komut satırını terminalinizden uygulayın
 
 
 
+
+
+

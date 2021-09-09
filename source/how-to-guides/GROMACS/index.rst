@@ -9,6 +9,7 @@ GROMACS Uygulaması Nasıl Kurulur?
 
     gromacs_description.rst
     gromacs_install_truba.rst
+    gromacs_gpu.rst
     gromacs_truba.rst
 =======
 GROMACS Kılavuzu

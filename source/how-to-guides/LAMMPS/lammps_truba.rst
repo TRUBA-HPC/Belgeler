@@ -30,9 +30,9 @@ LAMMPS_run.slurm
   module load centos7.3/comp/intel/PS2018-update2
   module load centos7.3/lib/openmpi/4.0.1-intel-PS2018
 
-  GROMACS_DIR=/truba/home/username/bin
+  LAMMPS_DIR=/truba/home/username/bin
 
-  mpirun  $GROMACS_DIR/lmp  < in.lammpsinputfile > lammps-outputfile.out
+  mpirun  $LAMMPS_DIR/lmp  < in.lammpsinputfile > lammps-outputfile.out
 
   exit
 
@@ -42,6 +42,8 @@ Güncel LAMMPS versiyonu için benzer betik dosyasını ``/truba/sw/scripts`` kl
 
 .. code-block:: bash
   
-   sbatch vasp_run.slurm
+   sbatch lammps_run.slurm
 
 Komutu ile TRUBA sistemine işinizi gönderebilirsiniz.
+
+
