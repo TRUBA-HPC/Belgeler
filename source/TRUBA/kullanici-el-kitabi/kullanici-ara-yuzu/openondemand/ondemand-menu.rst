@@ -96,9 +96,9 @@ Bu kısımda çalıştırılacak tüm işler otomatik olarak "interactive" kuyru
     
     .. image:: /assets/open-ondemand/images/300px-Google-chrome-clipboard.png
 
-* **MATLAB:** Uygun lisansı olan kullanıcı, TRUBA'da hali hazırda yüklü olan MATLAB uygulamasını görsel arayüzle ve etkileşimli olarak çalıştırabilir. *Bu uygulamayı çalıştırabilmek için kullanıcının kendi kurumu tarafından doğrulanacak floating lisansı veya levrek167 hostu için tanımlanmış lisansının bulunması gerekmektedir.*
+* **MATLAB:** Uygun lisansı olan kullanıcı, TRUBA'da hali hazırda yüklü olan MATLAB uygulamasını görsel arayüzle ve etkileşimli olarak çalıştırabilir. *Bu uygulamayı çalıştırabilmek için kullanıcının kendi kurumu tarafından doğrulanacak floating lisansının bulunması gerekmektedir.*
 
-* **Mathematica:** Uygun lisansı olan kullanıcı, TRUBA'da hali hazırda yüklü olan Mathematica uygulamasını görsel arayüzle ve etkileşimli olarak çalıştırabilir. *Bu uygulamayı çalıştırabilmek için kullanıcın kendi kurumu tarafından doğrulanacak floating lisansı veya levrek167 hostu için tanımlanmış lisansının bulunması gerekmektedir.*
+* **Mathematica:** Uygun lisansı olan kullanıcı, TRUBA'da hali hazırda yüklü olan Mathematica uygulamasını görsel arayüzle ve etkileşimli olarak çalıştırabilir. *Bu uygulamayı çalıştırabilmek için kullanıcın kendi kurumu tarafından doğrulanacak floating lisansının bulunması gerekmektedir.*
 
 * **GNUPLOT:** Ücretsiz ve açık lisanslı uygulamalara bir örnektir.
 
