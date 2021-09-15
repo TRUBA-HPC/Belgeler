@@ -6,15 +6,16 @@ Snakemake Kılavuzu
 İÇERİK
 --------
 
--  `GİRİŞ <#giris>`__
--  `Uygulama 1: Yüksek Başarımlı Hesaplama (YBH) kümesinde örnek iş koşturma <#exp1>`__
--  `Uygulama 2: Ardışık hesaplamanın yapıldığı örnek iş koşturma <#exp2>`__
--  `Uygulama 3: Ardışık hesaplamalarda ölçeklenebilirlik <#exp3>`__
--  `Uygulama 4: Tek hesaplı basit iş akışı örneği (Snakemake) <#exp4>`__
--  `Uygulama 5: Çok hesaplı iş akışı örneği (Snakemake ve Conda) <#exp5>`__
--  `Uygulama 6: Snakemake ile gerçek uygulama – Phylogeny <#exp6>`__
--  `SONUÇ <#sonuc>`__ 
+-  :ref:`target to giris`
+-  :ref:`target to exp1`
+-  :ref:`target to exp2`
+-  :ref:`target to exp3`
+-  :ref:`target to exp4`
+-  :ref:`target to exp5`
+-  :ref:`target to exp6`
+-  :ref:`target to sonuc`
 
+.. _target to giris:
 
 ------
 GİRİŞ
@@ -50,6 +51,8 @@ https://github.com/emrahkyn/snakemake_hpc_tutorial
 Ayrıca, 16 Eylül, 2021 tarihinde detayları aşağıda linkte belirtilen sunumda bu uygulamalar gösterilmiştir.
 
 https://indico.truba.gov.tr/event/48/ 
+
+.. _target to exp1:
 
 -------------------------------------------------------------------------
 Uygulama 1: Yüksek Başarımlı Hesaplama (YBH) kümesinde örnek iş koşturma 
@@ -136,6 +139,8 @@ Uyarılar:
    İşiniz 8 çekirdek gerektiriyorsa bunu 1 hesaplama ucu, 8 çekirdek
    şeklinde talep ediniz. MPI tarzı kütüphanelerin kullanımında birden
    fazla hesaplama ucu kullanmak anlamlı olabilir.
+
+.. _target to exp2:
 
 -------------------------------------------------------------
 Uygulama 2: Ardışık hesaplamanın yapıldığı örnek iş koşturma 
@@ -241,6 +246,8 @@ Uyarilar:
  -  İş akışında herhangi bir değişiklik yapılması gerektiğinde, örneğin yazılım versiyonu ya da bir parametre, bütün iş dosyalarında bu değişimi tek tek yapmak gerekecektir.
  -  Ardışık hesapların arasına yeni bir hesap eklemek ya da çıkarmak sadece input ve output dosyalarını takip ederek oldukça zahmetli bir iştir. 
 
+.. _target to exp3:
+
 -----------------------------------------------------
 Uygulama 3: Ardışık hesaplamalarda ölçeklenebilirlik
 -----------------------------------------------------
@@ -287,6 +294,8 @@ Uyarilar:
    dosyası oluşacak demektir, 20.000 iş dosyasını hazırlamak, tek tek
    yollamak, sonuçları takip etmek, hata ile bitenleri tekrar yollayıp
    yönetmek oldukça zordur.
+
+.. _target to exp4:
 
 ----------------------------------------------------------
 Uygulama 4: Tek hesaplı basit iş akışı örneği (Snakemake) 
@@ -352,6 +361,8 @@ Uyarilar:
  -  YBH üzerine iş gönderildiğine squeue ile işin durumunu, oluşturulan slurm dosyası (slurm-.out) ile işin nasıl ilerlediğini takip edebilirsiniz. Bu dosya oluşmadıysa Snakemake, slurm üzerinden işinizi kümeye gönderememiş demektir, bu durumda özellikle –cluster ile gönderdiğiniz bilgileri kontrol ediniz.
  -  .snakemake/log dizini altında snakemake komutu ile çalıştırdığınız her bir hesaplamanın çıktısı burada yer alan dosyaya yazılmaktadır (örn: .snakemake/log/2021-09-05T131457.207403.snakemake.log)
    
+.. _target to exp5:
+
 ------------------------------------------------------------------
 Uygulama 5: Çok hesaplı iş akışı örneği (Snakemake ve Conda)
 ------------------------------------------------------------------
@@ -477,6 +488,8 @@ Uyarilar:
 
     • İş akışı yöneticisi kullanmanın en büyük avantajlarından biri tekrar hesaplamanın önüne geçmektir. Örneğin iş akışında ki P01008 proteinin için son hesap olan get_blasthits manuel bir şekilde sonlandırılıp işler tekrar çalıştırılırsa, bu durumda önceki hesapların (query_fasta, psiblast) tekrar yapılmasına gerek olmayacaktır. Dry-run ile çalıştırıldığında sadece bu hesap için çalıştırılacağı görünecektir.
     • Snakemake bir hesabın bitip bitmediğini çıktı dosyasının olup olmadığına bakarak anlar. Eğer bir iş öldüyse ve hata log yerine output dosyasının içine yazıyorsa sorunun nereden kaynaklandığı bulunamaz. Çünkü snakemake bitmeyen o hesaba ait tüm çıktı dosyalarını silerek süreci tamamlar.
+
+.. _target to exp6:
 
 ------------------------------------------------------
 Uygulama 6: Snakemake ile gerçek uygulama – Phylogeny 
@@ -610,6 +623,8 @@ Komutlar
     vi config.yml
     snakemake --use-conda --cache --profile ../config/slurm_truba –dry-run
     snakemake --use-conda --cache --profile ../config/slurm_truba --dry-run --wms-monitor http://ephesus.sabanciuniv.edu:5000
+
+.. _target to sonuc:
 
 ------
 SONUÇ 
