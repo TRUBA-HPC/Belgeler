@@ -394,10 +394,7 @@ tanımı dosyası ile bu iş akışı hesabının tanımlanacak bir liste ile t�
 proteinler için koşturulması kolaylıkla yapılabilmektedir. Bu, büyük
 ölçekte veri analizinda büyük esneklik sağlamaktadır.
 
-.. figure:: images/pipeline1.png
-   :alt: is ikisi 1
-
-   is ikisi 1
+.. image:: /assets/snakemake-howto/pipeline1.png 
 **Şekil 1.** Örnek iş akışı diagramı
 
 İş paketi yöneticisi (conda), kullanıcı arayüzünde kullanıcı tarafından
@@ -551,10 +548,7 @@ olduğu yerde fiziksel dosya oluşturmak yerine sembolik link atılır.
 Tekrar hesaplama yapıldığında snakemake önce kontrol eder, önbellekte
 varsa hesap yapmadan basitçe sembolik link atarak hesabı bitirmiş olur.
 
-.. figure:: images/pipeline2.png
-   :alt: is ikisi 2
-
-   is ikisi 2
+.. image:: /assets/snakemake-howto/pipeline2.png 
 **Şekil 2.** Phylogeny – İş akışı diagramı
 
 **6. Loglama & Performans** İş akışında yer alan her bir iş için hem log
@@ -594,7 +588,8 @@ açısından faydalıdır. Bunun için bir örnek diagram hazırlanmıştır (Ş
 3), yardımcı olur düşüncesiyle de bash betik kodları github üzerinden
 paylaşılmıştır.
 
-|framework 1| **Şekil 3.** Verinin arşivlenmesi ve yedeklenmesi
+.. image:: /assets/snakemake-howto/framework1.png 
+**Şekil 3.** Verinin arşivlenmesi ve yedeklenmesi
 
 Genel olarak mevcut durumu özetleyen, hesabı biten işleri arşivleyen,
 yedekleyen örnek kodlar aşağıdan ulaşılabilir durumdadır.
@@ -604,23 +599,8 @@ Dosyalar ve Komutlar:
 ~~~~~~~~~~~~~~~~~~~~~
 
 Mevcut dosya ve klasörler 
-└── phylogeny-snakemake
-    ├── config
-    │   ├── slurm_sabanci
-    │   └── slurm_truba
-    ├── images
-    ├── resources
-    │   ├── query_fasta
-    │   └── query_ids
-    │       └── scripts
-    └── workflow
-        ├── envs
-        ├── logs
-        │   ├── benchmarks
-        │   ├── cluster
-        │   └── rules
-        ├── rules
-        └── scripts
+
+.. image:: /assets/snakemake-howto/directory1.png 
 
 Komutlar
 
