@@ -497,7 +497,7 @@ tanımlandıkları bir önceki bölüm olan sınır bölgeleri kısmında ifade
 edilmiştir.
 
 .. figure:: /assets/Nektar-howto/images/boundaryconditions_ornek.PNG
-   :name: sinir_koşul
+   :name: sinir_kosul
 
    Sınır koşulları örneği
 
