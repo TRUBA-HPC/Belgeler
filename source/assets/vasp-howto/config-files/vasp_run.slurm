@@ -2,25 +2,27 @@
 #!/bin/bash
 #SBATCH -p mid1 
 #SBATCH -C barbun
-#SBATCH -A accountname
+#SBATCH -A kullanici_adi
 #SBATCH -J vasp-test
-#SBATCH -N 2
+#SBATCH -N 1
 #SBATCH -n 20
 #SBATCH --time=03:00:00
 #SBATCH --output=slurm-%j.out
 #SBATCH --error=slurm-%j.err
 
+# Compiler Links
+module load centos7.3/comp/intel/PS2018-update2
+module load centos7.3/lib/openmpi/4.0.1-intel-PS2018
+
+export OMP_NUM_THREADS=1
+
 
 echo "SLURM_NODELIST $SLURM_NODELIST"
 echo "NUMBER OF CORES $SLURM_NTASKS"
 
-export OMP_NUM_THREADS=1
- 
-source /truba/sw/centos7.3/comp/intel/PS2018-update2/bin/compilervars.sh intel64
-module load centos7.3/comp/intel/PS2018-update2
+ulimit -s unlimited
 
-VASP_DIR=/truba/home/username/vasp/vasp.5.4.1/bin
 
-mpirun $VASP_DIR/vasp_std 
+mpirun  /truba/home/kullanici_adi/derleme/vasp.6.2.0/bin/vasp_std > vasp.out
   
 exit

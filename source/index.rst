@@ -33,6 +33,7 @@ TRUBA Kullanıcı Dökümanları
    how-to-guides/Gaussian/index.rst
    how-to-guides/CASTEP/index.rst
    how-to-guides/MATLAB/index.rst
+   how-to-guides/Snakemake/index.rst
 
 .. toctree::
    :caption: TRUBA hakkında
