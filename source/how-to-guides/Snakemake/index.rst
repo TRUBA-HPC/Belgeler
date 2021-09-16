@@ -65,10 +65,12 @@ Bu uygulamada, TRUBA YBH kümesine basit bir iş dosyası hazırlanıp
 koşturulması sağlanacak, bir iş dosyasının olması gereken temel
 özelliklerinden bahsedilecektir. 
 
-Kaynak: `Uygulama-1 <https://github.com/emrahkyn/snakemake_hpc_tutorial/tree/main/exp1>`__
+Kaynak:
 ========
 
-Bilgi
+`Uygulama-1 <https://github.com/emrahkyn/snakemake_hpc_tutorial/tree/main/exp1>`__
+
+Bilgi:
 ======
 
 YBH Temel Bileşenleri 
@@ -106,7 +108,8 @@ sağlar. TRUBA’da bunun için SLURM kullanılmaktadır.
 “Merhaba dünya”, yazdırmak yeni bir ortam/programalama dili
 öğrenildiğinde sıklıkla kullanılan bir örnektir. Bu uygulama için bir iş
 dosyası hazırlanacak ve küme üzerinde koşturularak hesaplama ucu
-üzerinde çalıştırılması sağlanacaktır. Bunun için temel olarak: 
+üzerinde çalıştırılması sağlanacaktır. Bunun için temel olarak:
+
  1. İşin hangi hesaplama grubunda, kaç hesaplama ucu ve çekirdeği üzerinde, ne kadar tahmini süre çalışacağı tanımlanmalıdır. 
  2. Kodun çalışması için ortamın hazırlanması (PATH, LIBRARY vb.) sağlanmalıdır. 
  3. İşin çıktı (output) dosyasının yazılacağı dizin, koşturulan işin çıktı ve hata dosyalarının tutulması (log) gerekmektedir.
@@ -147,7 +150,7 @@ Uygulama 2: Ardışık hesaplamanın yapıldığı örnek iş koşturma
 -------------------------------------------------------------
 
 Amaç:
-=====
+======
 
 Bu uygulamada birbirini takip eden (bir sonraki hesaplamanın önceki
 hesabın bitmesini beklediği durum) örnek bir hesaplama iş betik dosyası
@@ -155,8 +158,10 @@ kullanılarak hazırlanmıştır. İş akışı yönetim (workflow) araçları
 kullanmaksızın bu hesaplamanın nasıl yapılacağı gösterilmiş eksikleri
 belirtilip ne gibi sorunlarla karşılaşılabileceği tartışılmıştır. 
 
-Kaynak: `Uygulama-2 <https://github.com/emrahkyn/snakemake_hpc_tutorial/tree/main/exp2>`__
+Kaynak:
 =======
+
+`Uygulama-2 <https://github.com/emrahkyn/snakemake_hpc_tutorial/tree/main/exp2>`__
 
 Bilgi: 
 ======
@@ -257,8 +262,10 @@ Amaç:
 Bu uygulamada 3 protein için 3 tane ardışık hesaplama işi oluşturulacak ve on binlerce iş dosyası olduğunda oluşabilecek sorunlardan bahsedilecektir. 
 
 
-Kaynak: `Uygulama-3 <https://github.com/emrahkyn/snakemake_hpc_tutorial/tree/main/exp3>`__
+Kaynak:
 =======
+
+`Uygulama-3 <https://github.com/emrahkyn/snakemake_hpc_tutorial/tree/main/exp3>`__
 
 Bilgi: 
 =======
@@ -308,8 +315,10 @@ Amaç:
 YBH üzerinde çalıştırılacak ve temel özelliklerinden bahsedilecektir.
 Snakemake temel komutları ile temel giriş yapılacaktır. 
 
-Kaynak: `Uygulama-4 <https://github.com/emrahkyn/snakemake_hpc_tutorial/tree/main/exp4>`__
+Kaynak:
 ========
+
+`Uygulama-4 <https://github.com/emrahkyn/snakemake_hpc_tutorial/tree/main/exp4>`__
 
 Bilgi: 
 =======
@@ -375,8 +384,10 @@ birlikte kullanıldığı, örnek bir hesap üzerinden 3 protein için küme
 üzerinde iş koşturulacak, tipik bir iş akışı için gerekli bilgiler
 tanıtılacaktır. 
 
-Kaynak: `Uygulama-5 <https://github.com/emrahkyn/snakemake_hpc_tutorial/tree/main/exp5>`__
+Kaynak:
 ========
+
+`Uygulama-5 <https://github.com/emrahkyn/snakemake_hpc_tutorial/tree/main/exp5>`__
 
 Bilgi: 
 =======
@@ -503,8 +514,10 @@ kullandığımız iş akışı örneği gösterilip ileri düzey yapılandırma
 örnekleri ile snakemake ve conda’nın bu kapsamda sağladığı avantajlardan
 bahsedilecektir. 
 
-Kaynak: `Uygulama-6 <https://github.com/emrahkyn/snakemake_hpc_tutorial/tree/main/exp6>`__
+Kaynak:
 ========
+
+`Uygulama-6 <https://github.com/emrahkyn/snakemake_hpc_tutorial/tree/main/exp6>`__
 
 Bilgi: 
 =======
@@ -561,7 +574,8 @@ olduğu yerde fiziksel dosya oluşturmak yerine sembolik link atılır.
 Tekrar hesaplama yapıldığında snakemake önce kontrol eder, önbellekte
 varsa hesap yapmadan basitçe sembolik link atarak hesabı bitirmiş olur.
 
-.. image:: /assets/snakemake-howto/pipeline2.png 
+.. image:: /assets/snakemake-howto/pipeline2.png
+
 **Şekil 2.** Phylogeny – İş akışı diagramı
 
 **6. Loglama & Performans** İş akışında yer alan her bir iş için hem log
@@ -601,7 +615,8 @@ açısından faydalıdır. Bunun için bir örnek diagram hazırlanmıştır (Ş
 3), yardımcı olur düşüncesiyle de bash betik kodları github üzerinden
 paylaşılmıştır.
 
-.. image:: /assets/snakemake-howto/framework1.png 
+.. image:: /assets/snakemake-howto/framework1.png
+
 **Şekil 3.** Verinin arşivlenmesi ve yedeklenmesi
 
 Genel olarak mevcut durumu özetleyen, hesabı biten işleri arşivleyen,
@@ -609,7 +624,7 @@ yedekleyen örnek kodlar aşağıdan ulaşılabilir durumdadır.
 https://github.com/CompGenomeLab/phylogeny-snakemake/tree/main/resources/query\_ids
 
 Dosyalar ve Komutlar:
-~~~~~~~~~~~~~~~~~~~~~
+========================
 
 Mevcut dosya ve klasörler 
 
