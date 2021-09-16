@@ -9,6 +9,7 @@ GROMACS, yüzlerce hatta milyonlarca parçacık içeren sistemler için Newton�
     :maxdepth: 1
 
     gromacs_install_TRUBA.rst
+    gromacs_gpu.rst
     gromacs_TRUBA.rst
    
 
