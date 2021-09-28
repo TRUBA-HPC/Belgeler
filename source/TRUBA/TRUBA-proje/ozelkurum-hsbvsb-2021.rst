@@ -49,7 +49,7 @@ Bu kapsamda proje önerisinde hesaplama ve veri depolama isteği bulunan kurumla
 | Depolama Tipi        | Saatlik 1 TB              | Sunucu Özelliği                             |
 |                      | Depoloma Bedeli [#note4]_ |                                             |
 +----------------------+---------------------------+---------------------------------------------+
-| Depolama-Lustre-2019 |    0,21 TL                | 8400 TB tüm hesaplama sunucuları tarafından |
+| Depolama-Lustre-2019 |    0,03 TL                | 8400 TB tüm hesaplama sunucuları tarafından |
 |                      |                           | görünen performans disk alanı               |
 +----------------------+---------------------------+---------------------------------------------+
 
