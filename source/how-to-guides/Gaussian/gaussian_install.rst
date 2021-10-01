@@ -59,38 +59,82 @@ Slurm Dosyasının Oluşturulması
 
 Slurm dosyası oluşturmak için aşağıdaki komut satırlarını kendi işinize göre uyarlayarak kopyalayınız. 
 
+Barbun kümesi için örnek SLURM betik dosyası
+----------------------------------------------
+
+Gaussian09-barbun.slurm
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: bash
 
   #!/bin/bash
-   #SBATCH -p mid1
-   #SBATCH -C barbun
-   #SBATCH -A kullaniciadi
-   #SBATCH -J jobname 
-   #SBATCH -- nodes=1
-   #SBATCH -- ntask-per-node=20
-   #SBATCH --time=1-00:00:00
-   #SBATCH --workdir=$PWD
-   #SBATCH --output=slurm-%j.out
-   #SBATCH --error=slurm-%j.err
+  #SBATCH -p mid1
+  #SBATCH -A kullaniciadi
+  #SBATCH --constraint=barbun
+  #SBATCH -J jobname
+  #SBATCH --nodes=1
+  #SBATCH --ntasks-per-node=20
+  #SBATCH --time=12:00:00
+  #SBATCH --workdir=/truba/scratch/kullaniciadi/hesaplama_yapilan_dizin
+  #SBATCH --output=jobname.out
+  #SBATCH --error=slurm-%j.err
 
-   export GAUSS_MEMDEF=550000
-   export g16root=/truba/home/kullaniciadi/
-   export GAUSS_SCRDIR=/tmp/$SLURM_JOB_ID
-    
-   mkdir -p $GAUSS_SCRDIR
-   
-   . $g16root/g16/bsd/g16.profile
+  export g09root=/truba/home/kullaniciadi
+  export GAUSS_SCRDIR=/truba/scratch/kullaniciadi
+  . /truba/home/kullaniciadi/g09/bsd/g09.profile
 
-   $g16root/g16/g16 < $PWD/siface.gjf >> siface.out
+  /truba/home/kullaniciadi/g09/g09 < /truba/home/kullaniciadi/hesaplama_yapilan_dizin/jobname.gjf
 
-   rm -rf $GAUSS_SCRDIR
 
-   exit
+Hamsi kümesi için örnek SLURM betik dosyası
+----------------------------------------------
+
+Gaussian09-hamsi.slurm
+
+.. code-block:: bash
+
+  #!/bin/bash
+  #SBATCH -p hamsi
+  #SBATCH -A kullaniciadi
+  #SBATCH -J jobname
+  #SBATCH --nodes=1
+  #SBATCH --ntasks-per-node=28
+  #SBATCH --time=12:00:00
+  #SBATCH --workdir=/truba/scratch/kullaniciadi/hesaplama_yapilan_dizin
+  #SBATCH --output=jobname.out
+  #SBATCH --error=slurm-%j.err
+
+  export g09root=/truba/home/kullaniciadi
+  export GAUSS_SCRDIR=/truba/scratch/kullaniciadi
+  . /truba/home/kullaniciadi/g09/bsd/g09.profile
+
+  /truba/home/kullaniciadi/g09/g09 < /truba/home/kullaniciadi/hesaplama_yapilan_dizin/jobname.gjf
+
+.. note::
+
+  Farklı kümelerde hesap yaparken (örneğin sardalya kümesi için) #SBATCH --constraint=barbun satırındaki barbun kısmını değiştirebilirsiniz (#SBATCH --constraint=sardalya). Diğer kümelerdeki minimum çekirdek sayıları için https://docs.truba.gov.tr/TRUBA/kullanici-el-kitabi/hesaplamakumeleri.html ziyaret ediniz. 
+
+  #SBATCH --time=12:00:00 satırını daha uzun süreli hesaplarınız için saat yerine gün olarak #SBATCH --time=2-00:00:00 (2 gün) şeklinde değiştirebilirsiniz. 
+
+  Süreyi ve hesaplama kümesini kurallar dahilinde değiştirebilirsiniz: 
+  https://docs.truba.gov.tr/TRUBA/kullanici-el-kitabi/hesaplamakumeleri.html#kuyruklar-partitions
+
+  #SBATCH --workdir=/truba/scratch/kullaniciadi/hesaplama_yapilan_dizin satırını hesap yaptığınız dizine göre değiştirmelisiniz. Hesap yaptığınız dizini öğrenmek için terminalde ``pwd`` komutunu kullanabilirsiniz.
+
+  export g09root=/truba/home/kullaniciadi
+  export GAUSS_SCRDIR=/truba/scratch/kullaniciadi
+  . /truba/home/kullaniciadi/g09/bsd/g09.profile
+
+  export g09root=/truba/home/kullaniciadi satırındaki /truba/home/kullaniciadi kısmını g09 yazılımının bulunduğu dizine göre düzenlemeniz gerekmektedir. 
+
+  export GAUSS_SCRDIR=/truba/scratch/kullaniciadi satırındaki /truba/scratch/kullaniciadi kısmı için kendi ev dizininizin yerini veriniz.
+
+  . /truba/home/kullaniciadi/g09/bsd/g09.profile g09.profile bulunduğu dizinin yerini veriniz.  
+
+  /truba/home/kullaniciadi/hesaplama_yapilan_dizin/jobname.gjf satırındaki .gjf uzantılı dosya yerine com uzantılı dosya kullanılıyorsa  .com şeklinde değiştirilmelidir.
 
 
 Yukarıdaki SLURM betik dosyasını oluşturduktan sonra ``sbatch job.slurm`` komutu ile işlerinizi çalıştırabilirsiniz.
-
 
 .. warning:: 
 
