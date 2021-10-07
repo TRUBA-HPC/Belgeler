@@ -9,10 +9,10 @@
 --------------
 
 Çözüm Ağı Oluşturma
-~~~~~~~~~~~~~~~~~~~
+----------------------
 
 NekMesh yapısı yüksek mertebeli çözüm ağlarını direkt olarak CAD
-definasyonlarından alma kabiliyetine sahiptir. Normalde bu özellik aktif
+definasyonlarından alma kabiliyetine sahiptir.^Normalde bu özellik aktif
 değildir. Bu nedenle kurulum esnasında Nektar++ **NEKTAR_USE_MESHGEN**
 opsiyonu ile birlikte derlenmelidir. Bu işlemin nasıl yapılacağı
 :ref:`nektar-kurulum` kısmında açıklanmıştır. CAD yazılımları için
@@ -176,7 +176,7 @@ olanak tanır. Basit halde en temel fonksiyonlar şöyle listelenebilir:
 -  Düzlem yüzeyleri için
 
 Çözüm Parametrelerini Ayarlama
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Çözüm ağı oluşturulduktan sonra çözüm parametreleri ve çözücü seçimi ile
 çözücü ayarları yapılmalıdır. Nektar++ üzerinde problemi tanımlamak için
@@ -250,7 +250,7 @@ difüzyon, problem, zaman integrasyonu ve viskozite tipleri aşağıdaki
 düzende seçilir.
 
 .. figure:: /assets/Nektar-howto/images/solver.PNG
-   :name: cozucu
+   :name: cozucu_parametre
 
 Değişkenler
 ~~~~~~~~~~~~~
@@ -329,7 +329,7 @@ okunur ve çözüm sonuçları incelenebilir.
 .. _seri_ornek:
 
 Seri Örnek İş Hazırlama
------------------------
+--------------------------
 
 Sıkıştırılabilir akış çözücüsü ile Navier Stokes denklemlerini çözme
 amacında bir örnek aşağıda verilmiştir. Bu örnekte kullanılan dosyalar
@@ -346,7 +346,7 @@ olarak bilinmektedir.
 .. _seri_ornek_problem:
 
 Problem Tanımı
-~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^
 
 Akış ve hesaplama alanı [-10 20] x [-10 10] olarak seçilmiştir ve çözüm
 ağı 639 dörtyüzlü elemandan oluşmaktadır. Sınır koşulları
@@ -375,7 +375,7 @@ modellenebilir. Bu aşamadan sonra çözüm parametreleri tanımlanacak,
 çözücü koşturulacak ve sonuçların görüntülenmesi yapılacaktır.
 
 Ön İşlemler ve Çözüm Ağı Oluşturma
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Nektar++ üzerinde problemi tanımlamak için üç temel basamak vardır.
 Öncelikle çözüm ağı oluşturulur, ardından genişleme tabanları ayarlanır.
@@ -450,7 +450,7 @@ Kompozit veya alt alanların kullanımı için genişleme tabanları
 tanımlanabilir. Örneği `aşağıdaki şekil <#alan_ve_genisleme1>`__ içinde bulunabilir. Burada tek kompozit ve
 3 temel denklem (NUMMODES) için örnekleme yapılmıştır.
 
-.. figure:: /assets/Nektar-howto/images/domain_and_expansions_örnek.PNG
+.. figure:: /assets/Nektar-howto/images/domain_and_expansions_ornek.PNG
    :name: alan_ve_genişleme1
 
    Alan ve genişleme tabanları tanımlama örnekleri
@@ -485,7 +485,7 @@ Değişkenler & Sınır Bölgeleri
 tanımlanabilir.
 
 .. figure:: /assets/Nektar-howto/images/solver_and_boundary_info.PNG
-   :name: cozucu
+   :name: cozucu_degisken
 
    Çözücü ayarları örneği
 
@@ -497,7 +497,7 @@ tanımlandıkları bir önceki bölüm olan sınır bölgeleri kısmında ifade
 edilmiştir.
 
 .. figure:: /assets/Nektar-howto/images/boundaryconditions_ornek.PNG
-   :name: sinir_kosul
+   :name: sinir_kosul_cozumagi
 
    Sınır koşulları örneği
 
@@ -506,7 +506,7 @@ Sürekli projeksiyon sıkıştırılamaz akış çözücüsünde desteklenmediğ
 Başlangıç koşulları şu şekilde tanımlanabilir.
 
 .. figure:: /assets/Nektar-howto/images/functions_ornek.PNG
-   :name: baslangic_kosul
+   :name: baslangic_kosul-2
 
    Başlangıç koşulları örneği
 
@@ -572,7 +572,7 @@ sonuçtur ve kullanıcıların da benzer sonuçlar elde etmeleri
 beklenmektedir.
 
 Paralel Örnek İş Hazırlama
---------------------------
+----------------------------
 
 İşlemlerin cihazdaki başka çekirdekleri kullanarak daha hızlı bir
 şekilde tamamlanmasına olanak sağlayan paralel çalıştırma Nektar++
@@ -586,7 +586,7 @@ problem tanımı da :ref:`seri_ornek_problem` kısmı ile aynıdır.
 .. _on-islemler-ve-cozum-agi-olusturma-1:
 
 Ön İşlemler ve Çözüm Ağı Oluşturma
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Nektar++ üzerinde problemi tanımlamak için üç temel basamak vardır.
 Öncelikle çözüm ağı oluşturulur, ardından genişleme tabanları ayarlanır.
@@ -643,7 +643,7 @@ simülasyonlar için çözüm ağının GEOMETRY etiketi altındaki 6 alt bölü
    Eğri tanımlama örnekleri
 
 .. figure:: /assets/Nektar-howto/images/composite_ornek.PNG
-   :name: kompozit
+   :name: kompozit-2
 
    Kompozit alan tanımlama örnekleri
 
@@ -664,7 +664,7 @@ Bu noktada çözümde baz alınacak değerler tanımlanır. Örnek olarak
 aşağıdaki şekil incelenebilir.
 
 .. figure:: /assets/Nektar-howto/images/parameters_ornek.PNG
-   :name: parametre_ornek
+   :name: parametre_ornek-2
 
    Çözüm parametreleri örneği
 
@@ -700,7 +700,7 @@ oluşturacağı Nektar++ ile uyumlu olan ".xml" dosyasının adı. Örnek komut
 Yukarıdaki komutta bulunan "NEK" kısaltması Nektar++ kodunun çalıştırılacak olan "executable" dosyalarının bulunduğu adresi temsil eder. 2 boyuttaki simülasyonlar için çözüm ağının ``GEOMETRY`` etiketi altındaki 6 alt bölüm ile tanımlanması gerekmektedir. ``VERTEX`` etiketi köşe noktalarının uzaydaki koordinatlarını içerir. ``EDGE`` bu köşeleri bağlayan doğruları kapsar. ``ELEMENT`` ise çözüm ağı elemanlarını tanımlar. ``CURVED`` ise eğriler üzerinde kontrol noktalarını tanımlamak için kullanılır. Eğer eğri kenarlar veya yüzeyler yoksa bu etiket gözardı edilebilir. ``COMPOSITE`` çözümün alt alanlarını ve denklem setlerinin çözüleceği yerleri tanımlar. Sınır koşulları için de kompozit alanlar kullanılabilir. Son etiket olan ``DOMAIN`` ise tüm çözüm alanının ve kompozit alanlarının bütünlüğünü sağlar. Aşağıdaki görsel geometri tanımlarının özetini içerir.
 
 .. figure:: /assets/Nektar-howto/images/geometry.PNG
-   :name: geometri
+   :name: geometri-2
 
    Geometri tanımları
 
@@ -713,7 +713,7 @@ bulunabilir. Burada tek kompozit ve 3 temel denklem (NUMMODES) için
 örnekleme yapılmıştır.
 
 .. figure:: /assets/Nektar-howto/images/expansion.PNG
-   :name: expansions
+   :name: expansions-2
 
    Genişleme tabanları tanımı
 
@@ -743,7 +743,7 @@ difüzyon, problem, zaman integrasyonu ve viskozite tipleri aşağıdaki
 düzende seçilir.
 
 .. figure:: /assets/Nektar-howto/images/solver.PNG
-   :name: cozucu
+   :name: cozucu_ayar
 
    Çözücü ayarları
 
@@ -756,7 +756,7 @@ farklılık gösterebilir. Kullanıcının duruma uygun değişkenler seçmesi v
 bunları tanımlaması önem arz etmektedir.
 
 .. figure:: /assets/Nektar-howto/images/variables.PNG
-   :name: degiskenler
+   :name: degiskenler-2
 
    Değişkenler
 
@@ -769,7 +769,7 @@ Sınır bölgeleri ``BOUNDARY REGIONS`` içinde tanımlanır. 2 boyut için örn
 şu şekildedir.
 
 .. figure:: /assets/Nektar-howto/images/boundaryregions.PNG
-   :name: sinir_bolge
+   :name: sinir_bolge-2
 
    Sınır bölgeleri
 
@@ -778,7 +778,7 @@ tanımlandıkları bir önceki bölüm olan sınır bölgeleri kısmında ifade
 edilmiştir.
 
 .. figure:: /assets/Nektar-howto/images/boundaryconditions.PNG
-   :name: sinir_kosul
+   :name: sinir_kosul_cozucu
 
    Sınır koşulları
 
@@ -787,7 +787,7 @@ Sürekli projeksiyon sıkıştırılamaz akış çözücüsünde desteklenmediğ
 Başlangıç koşulları şu şekilde tanımlanabilir.
 
 .. figure:: /assets/Nektar-howto/images/functions.PNG
-   :name: baslangic_kosul
+   :name: baslangic_kosul-3
 
    Başlangıç koşulları
 
