@@ -20,8 +20,10 @@ Nisan 2021'den itibaren, `EuroHPC Ortak Girişim Konsey Yönetmeliği ve Ortak G
 
 EuroHPC Ortak Girişim Kıyaslama ve Geliştirme Erişim Modları için Teklif Çağrısı, gönderim tarihinden itibaren maksimum iki hafta kaynak erişim süresi (başlangıç tarihi) ile sürekli açık çağrılardır. Teklifler için bir sonraki son tarihler:
 
- * 1 Mayıs 2021 – 11:00 CEST
- * 1 Haziran 2021 – 11:00 CEST
- * 1 Temmuz 2021 – 11:00 CEST
+ * 1 Kasım 2021 – 11:00 CEST
+ * 1 Aralık 2021 – 11:00 CEST
+ * 1 Ocak 2022 – 11:00 CEST
+ * 1 Şubat 2022 – 11:00 CEST
+ * 1 Mart 2022 – 11:00 CEST
 
 EuroHPC Ortak Girişim Kıyaslama ve Geliştirme Erişim çağrılarının amacı, araştırmacılara ve HPC uygulama geliştiricilerine, aşırı ölçekli ve/veya normal bir projeye başvurmadan önce, gerçekleşmesi yakın/mevcut EuroHPC Pre-exascale ve/veya Petascale sisteminde uygulamalarını geliştirme, test etme ve optimize etme fırsatı vererek onları desteklemektir. Proje önerileri, PRACE Değerlendirme Sayfası aracılığıyla, herhangi bir zamanda sunulabilir (sürekli açık). Projelerin değerlendirilmesi, her ay sabit bir tarihten sonra yapılır (kesme tarihi olarak anılır). 
