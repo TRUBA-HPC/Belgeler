@@ -586,7 +586,7 @@ problem tanımı da :ref:`seri_ornek_problem` kısmı ile aynıdır.
 .. _on-islemler-ve-cozum-agi-olusturma-1:
 
 Ön İşlemler ve Çözüm Ağı Oluşturma
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Nektar++ üzerinde problemi tanımlamak için üç temel basamak vardır.
 Öncelikle çözüm ağı oluşturulur, ardından genişleme tabanları ayarlanır.
