@@ -30,8 +30,6 @@ TRUBA'da GROMACS Programı Nasıl Kullanılır?
     exit
 
 
-
-
 ------------------------------------------------------------------------------------------------
 TRUBA'da GROMACS Programını Singularity Container Kullanarak GPU Destekli Nasıl Çalıştırılır?
 ------------------------------------------------------------------------------------------------
@@ -52,28 +50,28 @@ Programı GPU destekli kullanmak için **Singularity** ile kayıt ettikten sonra
   #SBATCH --output=slurm-%j.out
   #SBATCH --error=slurm-%j.err
 
-# Automatic selection of ntomp argument based on "-c" (-c, --cpus-per-task=<ncpus>) argument to sbatch
+  # Automatic selection of ntomp argument based on "-c" (-c, --cpus-per-task=<ncpus>) argument to sbatch
 
-if [ -n "$SLURM_CPUS_PER_TASK" ]; then
+  if [ -n "$SLURM_CPUS_PER_TASK" ]; then
     ntomp="$SLURM_CPUS_PER_TASK"
-else
+  else
     ntomp="1"
-fi
+  fi
 
-echo $ntomp
+  echo $ntomp
 
-export OMP_NUM_THREADS=$ntomp
-
-
-echo "SLURM_NODELIST $SLURM_NODELIST"
-echo "NUMBER OF CORES $SLURM_NTASKS"
+  export OMP_NUM_THREADS=$ntomp
 
 
-export SIF=/truba/home/kullanici_adi/gromacs-gpu/gromacs-2021.sif
+  echo "SLURM_NODELIST $SLURM_NODELIST"
+  echo "NUMBER OF CORES $SLURM_NTASKS"
 
-singularity run --nv $SIF gmx mdrun $ntmpi -ntomp $ntomp -v -s calistiracaginiz_girdi_dosyalari
 
-exit
+  export SIF=/truba/home/kullanici_adi/gromacs-gpu/gromacs-2021.sif
+
+  singularity run --nv $SIF gmx mdrun $ntmpi -ntomp $ntomp -v -s calistiracaginiz_girdi_dosyalari
+
+  exit
 
 ---------------------------------------------------------------------------------------
 TRUBA'da GROMACS Programını Palamut-Cuda Kümelerinde GPU Destekli Nasıl Çalıştırılır?

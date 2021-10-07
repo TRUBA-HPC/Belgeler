@@ -177,6 +177,7 @@ Lokal bir bilgisayarda tipik bir hesaplama temel olarak şunları içerir:
 Bu hesabın Yüksek Başarımlı Hesaplama (YBH) üzerinde çalışabilmesi
 içinse slurm iş dosyası hazırlanmalıdır. Bu dosya içerisinde şunlar
 tanımlıdır: 
+
  - kaynak gereksinimi (cpu, ram, zaman limiti, vb) 
  - hangi hesap ve hangı grup bilgisayarda koşacağı (partition) 
  - ortam değişkenlerinin tanımlanması (path gibi) 
@@ -270,6 +271,7 @@ Kaynak:
 Bilgi: 
 =======
 Geniş ölçekli (large-scale) bir veri analizinde ölçeklenebilirlik oldukça önemlidir. Hesaplamanın büyüklüğünü ardışık hesapların sayısı yanında kaç tane bu şekilde ardışık işin olduğu da tanımlar. On binlerce hesap bu şekilde yapılacaksa her biri için iş dosyası oluşturmak, isimlerini tek tek değiştirmek, sonuçlarını takip ve kontrol etmek pratik değildir. Nitekim 3 ardışık hesaplama olan 3 iş dosyası için:
+
  - 9 adet log dosyası
  - 9 adet çıktı dosyası
  - 6 adet slurm çıktı ve hata dosyası aynı dizinde oluşturulur.
@@ -278,16 +280,18 @@ Dosyalar ve Komutlar:
 ======================
 
 Mevcut dosya ve klasörler 
-- input: iş akışı için gerekli girdi dosyaları (blastb gibi) 
-- output: iş akışı sonrasında üretilen dosyalar 
-- logs: ardışık hesaplarda oluşacak hataların tutulması için 
-- scripts: çalışabilir dosyalar (python kodları) 
-- *.slurm: her bir protein için hazırlanan iş dosyası 
-- slurm-*.out, slurm-*.err: koşan işin çıktı ve hata dosyaları 
-- readMe: çalıştırılan komutlar, çıktılar ve notlar
+
+ - input: iş akışı için gerekli girdi dosyaları (blastb gibi) 
+ - output: iş akışı sonrasında üretilen dosyalar 
+ - logs: ardışık hesaplarda oluşacak hataların tutulması için 
+ - scripts: çalışabilir dosyalar (python kodları) 
+ - \*.slurm: her bir protein için hazırlanan iş dosyası 
+ - slurm-\*.out, slurm-\*.err: koşan işin çıktı ve hata dosyaları 
+ - readMe: çalıştırılan komutlar, çıktılar ve notlar
 
 Komutlar
-::
+
+.. code-block:: bash
 
     sbatch P01008.slurm, sbatch P22033.slurm, sbatch P68871.slurm
     squeue
@@ -416,8 +420,9 @@ tanımı dosyası ile bu iş akışı hesabının tanımlanacak bir liste ile t�
 proteinler için koşturulması kolaylıkla yapılabilmektedir. Bu, büyük
 ölçekte veri analizinda büyük esneklik sağlamaktadır.
 
-.. image:: /assets/snakemake-howto/pipeline1.png 
-**Şekil 1.** Örnek iş akışı diagramı
+.. figure:: /assets/snakemake-howto/pipeline1.png 
+
+   **Şekil 1.** Örnek iş akışı diagramı
 
 İş paketi yöneticisi (conda), kullanıcı arayüzünde kullanıcı tarafından
 bir yükleme yapılmaksızın gerekli ortamın kurulması, çevre
@@ -433,7 +438,7 @@ ayrı ayrı kaynak talebinde bulunabilir. Örneğin, “cpus=8, time\_min=300”
 ile o hesap için 8 çekirdek talep edileceği, hesaplamanın da 300 sn
 süreceği belirtilmiş olur.
 
-::
+.. code-block:: bash
 
     name: blast
     channels:
@@ -450,7 +455,7 @@ alınabilmektedir, bu hem okunabilirliği oldukça kolaylaştırır hem de bir
 değişkende yapılan değişimin tüm iş dosyalarında otomatik yapılmasını
 sağlar.
 
-::
+.. code-block:: bash
 
     #general config
     query_ids: ["P01008", "P22033", "P68871"]
@@ -482,7 +487,9 @@ Mevcut dosya ve klasörler
  - readMe: çalıştırılan komutlar, çıktılar ve notlar 
  - config.yml: Hesaplar için tanımlı parametreler 
  - workflow.svg: iş akışını gösterir Snakemake tarafından oluşturulan resim 
+
 Komutlar 
+
  - İşlerin gönderilmeden önce kontrolü amacı ile çalıştırılması 
      - snakemake -j 3 --use-conda --cluster "sbatch -A emrah -p sardalya -n 4 -J test.job -t 30:00" --keep-going  --dry-run 
  - Aynı anda 3 iş çalıştırabilecek şekilde conda paket yöneticisi ile birlikte hesapların çalıştırılmaya başlanması 
@@ -495,7 +502,7 @@ Komutlar
 Uyarilar:
 ==========
 
-::
+.. code-block:: bash
 
     • İş akışı yöneticisi kullanmanın en büyük avantajlarından biri tekrar hesaplamanın önüne geçmektir. Örneğin iş akışında ki P01008 proteinin için son hesap olan get_blasthits manuel bir şekilde sonlandırılıp işler tekrar çalıştırılırsa, bu durumda önceki hesapların (query_fasta, psiblast) tekrar yapılmasına gerek olmayacaktır. Dry-run ile çalıştırıldığında sadece bu hesap için çalıştırılacağı görünecektir.
     • Snakemake bir hesabın bitip bitmediğini çıktı dosyasının olup olmadığına bakarak anlar. Eğer bir iş öldüyse ve hata log yerine output dosyasının içine yazıyorsa sorunun nereden kaynaklandığı bulunamaz. Çünkü snakemake bitmeyen o hesaba ait tüm çıktı dosyalarını silerek süreci tamamlar.
@@ -574,9 +581,9 @@ olduğu yerde fiziksel dosya oluşturmak yerine sembolik link atılır.
 Tekrar hesaplama yapıldığında snakemake önce kontrol eder, önbellekte
 varsa hesap yapmadan basitçe sembolik link atarak hesabı bitirmiş olur.
 
-.. image:: /assets/snakemake-howto/pipeline2.png
+.. figure:: /assets/snakemake-howto/pipeline2.png
 
-**Şekil 2.** Phylogeny – İş akışı diagramı
+    **Şekil 2.** Phylogeny – İş akışı diagramı
 
 **6. Loglama & Performans** İş akışında yer alan her bir iş için hem log
 hem de işin ne kadar sürdüğü ile ilgili benchmark sonuçları her bir
@@ -615,9 +622,9 @@ açısından faydalıdır. Bunun için bir örnek diagram hazırlanmıştır (Ş
 3), yardımcı olur düşüncesiyle de bash betik kodları github üzerinden
 paylaşılmıştır.
 
-.. image:: /assets/snakemake-howto/framework1.png
+.. figure:: /assets/snakemake-howto/framework1.png
 
-**Şekil 3.** Verinin arşivlenmesi ve yedeklenmesi
+    **Şekil 3.** Verinin arşivlenmesi ve yedeklenmesi
 
 Genel olarak mevcut durumu özetleyen, hesabı biten işleri arşivleyen,
 yedekleyen örnek kodlar aşağıdan ulaşılabilir durumdadır.
@@ -632,7 +639,7 @@ Mevcut dosya ve klasörler
 
 Komutlar
 
-::
+.. code-block:: bash
 
     git clone
     vi config.yml
@@ -650,4 +657,4 @@ SONUÇ
 -  Hazırlık, öğrenme zaman alıcı bir süreç, uzun vadede sağladığı pek çok avantajla işleri çok kolaylaştırıyor.
 -  Araştırma döngüsünde (iş akışında değişiklik, parametre havuzu, yazılım güncelleme, yeni girdi dosyaları) büyük avantaj sağlar.
 
-.. |framework 1| image:: images/framework1.png
+.. |framework 1| image:: /assets/snakemake-howto/framework1.png
