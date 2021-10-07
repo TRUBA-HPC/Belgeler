@@ -271,6 +271,7 @@ Kaynak:
 Bilgi: 
 =======
 Geniş ölçekli (large-scale) bir veri analizinde ölçeklenebilirlik oldukça önemlidir. Hesaplamanın büyüklüğünü ardışık hesapların sayısı yanında kaç tane bu şekilde ardışık işin olduğu da tanımlar. On binlerce hesap bu şekilde yapılacaksa her biri için iş dosyası oluşturmak, isimlerini tek tek değiştirmek, sonuçlarını takip ve kontrol etmek pratik değildir. Nitekim 3 ardışık hesaplama olan 3 iş dosyası için:
+
  - 9 adet log dosyası
  - 9 adet çıktı dosyası
  - 6 adet slurm çıktı ve hata dosyası aynı dizinde oluşturulur.
@@ -284,8 +285,8 @@ Mevcut dosya ve klasörler
  - output: iş akışı sonrasında üretilen dosyalar 
  - logs: ardışık hesaplarda oluşacak hataların tutulması için 
  - scripts: çalışabilir dosyalar (python kodları) 
- - *.slurm: her bir protein için hazırlanan iş dosyası 
- - slurm-*.out, slurm-*.err: koşan işin çıktı ve hata dosyaları 
+ - \*.slurm: her bir protein için hazırlanan iş dosyası 
+ - slurm-\*.out, slurm-\*.err: koşan işin çıktı ve hata dosyaları 
  - readMe: çalıştırılan komutlar, çıktılar ve notlar
 
 Komutlar
@@ -656,4 +657,4 @@ SONUÇ
 -  Hazırlık, öğrenme zaman alıcı bir süreç, uzun vadede sağladığı pek çok avantajla işleri çok kolaylaştırıyor.
 -  Araştırma döngüsünde (iş akışında değişiklik, parametre havuzu, yazılım güncelleme, yeni girdi dosyaları) büyük avantaj sağlar.
 
-.. |framework 1| image:: assets/snakemake-howto/framework1.png
+.. |framework 1| image:: /assets/snakemake-howto/framework1.png

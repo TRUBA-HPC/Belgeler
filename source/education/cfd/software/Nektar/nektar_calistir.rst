@@ -726,7 +726,7 @@ duyacağı sabitler ve parametreler problem tanımlamasına uygun bir
 şekilde ifade edilir.
 
 .. figure:: /assets/Nektar-howto/images/parameters.PNG
-   :name: parametre
+   :name: parametre_ornek-3
 
    Çözüm parametreleri
 
