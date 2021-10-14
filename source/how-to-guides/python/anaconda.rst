@@ -49,6 +49,7 @@ Anaconda Sanal Ortamı Kullanılan Uygulamalar
     :maxdepth: 1
 
     ../deep-learning/index.rst
+    ../data-analytics/spark.rst
 
 .. _jupyter-anaconda:
 
