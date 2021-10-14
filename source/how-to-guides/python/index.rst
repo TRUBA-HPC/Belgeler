@@ -10,3 +10,4 @@ Bu belge TRUBA altyapısında Python ve ilgili platformların kullanımını kol
     :maxdepth: 1
 
     anaconda.rst
+    jupyter.rst
