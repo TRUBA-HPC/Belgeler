@@ -82,7 +82,7 @@ Jupyter ve gpu etiketli tensorflow docker imajlarından birini indirin:
 
     singularity pull docker://tensorflow/tensorflow:latest-gpu-jupyter
 
-`srun <https://slurm.schedmd.com/salloc.html>`_ kullanarak üzerinde GPU bulunan kuyruklardan interaktif çalışmak için tahsis talep edin:
+`srun <https://slurm.schedmd.com/srun.html>`_ kullanarak üzerinde GPU bulunan kuyruklardan interaktif çalışmak için tahsis talep edin:
 
 .. code-block:: bash
 
