@@ -2,7 +2,7 @@
 Container Kullanarak Çalışma
 ======================================
 
-TRUBA kuyruklarında Singularity kullanarak container imajları çalıştırabilirsiniz.
+TRUBA altyapısında GPU bulunan kümelerde Singularity kullanarak container imajları çalıştırabilirsiniz.
 
 .. note::
     `Singularity <https://sylabs.io/guides/3.7/user-guide/introduction.html#introduction-to-singularity>`_, karmaşık uygulamaların YBH kümelerinde taşınabilir ve tekrarlanabilir şekilde çalıştırılmasını sağlar. Singularity kullanarak `Sylabs Cloud Library <https://cloud.sylabs.io/library>`_'deki ve `Docker Hub <https://hub.docker.com/>`_'daki imajları çalıştırabilirsiniz.
