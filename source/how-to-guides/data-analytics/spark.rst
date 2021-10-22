@@ -2,7 +2,7 @@
 Apache Spark Kılavuzu
 =======================
 
-TRUBA altyapısında bir Spark kümesini `bağımsız <https://spark.apache.org/docs/latest/spark-standalone.html>`_ modda çalıştırabilir ve çalıştırdığınız kümeye iş gönderebilirsiniz. 
+TRUBA altyapısında bir Spark kümesini `bağımsız modda <https://spark.apache.org/docs/latest/spark-standalone.html>`_ çalıştırabilir ve çalıştırdığınız kümeye iş gönderebilirsiniz. 
 
 ------------------------------------------------
 Apache Spark'ın indirilmesi ve yapılandırılması
