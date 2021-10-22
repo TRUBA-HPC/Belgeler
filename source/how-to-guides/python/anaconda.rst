@@ -45,9 +45,7 @@ Bu adımdan sonra kullanacağınız kütüphalenerin kurulumunu conda sanal orta
 Anaconda Sanal Ortamı Kullanılan Uygulamalar
 ---------------------------------------------
 
-.. toctree::
-    :maxdepth: 1
 
-    ../deep-learning/index.rst
-    jupyter.rst
-    ../data-analytics/spark.rst
+* :doc:`Jupyter Notebook <jupyter>`
+* :doc:`Derin Öğrenme <../deep-learning/virtual-env>`
+* :doc:`Apache Spark <../data-analytics/spark>`
