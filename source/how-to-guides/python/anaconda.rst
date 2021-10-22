@@ -45,48 +45,7 @@ Bu adımdan sonra kullanacağınız kütüphalenerin kurulumunu conda sanal orta
 Anaconda Sanal Ortamı Kullanılan Uygulamalar
 ---------------------------------------------
 
-.. toctree::
-    :maxdepth: 1
 
-    ../deep-learning/index.rst
-
-.. _jupyter-anaconda:
-
-=============================================================================
-Open OnDemand Arayüzünde Jupyter Kullanmak için Anaconda Yapılandırması
-=============================================================================
-
-Open OnDemand arayüzünde Jupyter kullanmak için hesaplama sunucularında Anaconda yüklemesini merkezi dosya sisteminde kurulu olan python modülü ile gerçekleştirebilirsiniz:
-
-.. code-block:: bash
-    
-    module load centos7.3/comp/python/3.6.5-gcc
-    /truba/sw/src/Anaconda3-2020.07-Linux-x86_64.sh # Sorulan sorulara '"yes"' seçeneğiyle ile yanıt verin.
-
-Her loginde bu ayarların geçerli olması için bu ayarların ``.profile`` ve ``.bash_profile`` dosyalarında olması gerekir.
-
-.. code-block:: bash
-
-    touch .bash_profile # Eğer yoksa .bash_profile dosyası yaratın.
-
-``.bash_profile`` dosyasının içeriğini düzenleyin:
-
-.. code-block:: bash
-
-    module load centos7.3/comp/python/3.6.5-gcc
-    export PATH="$PATH:/truba/home/$USER/anaconda3/bin"
-
-``.profile`` dosyasını sembolik olarak ``.bash_profile`` dosyasına bağlayın:
-
-.. code-block:: bash
-
-    rm .profile
-    ln -s .profile .bash_profile
-
-Logout olup login olduktan sonra ayarların doğruluğunu test edin:
-
-.. code-block:: bash
-
-    jupyter notebook
-
-Jupyter notebook logout olup login olduktan sonra çalışıyorsa Open OnDemand arayüzünde Jupyter kullanabilirsiniz. ``ctrl+c`` kullanarak notebook'u kapatın.
+* :doc:`Jupyter Notebook <jupyter>`
+* :doc:`Derin Öğrenme <../deep-learning/virtual-env>`
+* :doc:`Apache Spark <../data-analytics/spark>`

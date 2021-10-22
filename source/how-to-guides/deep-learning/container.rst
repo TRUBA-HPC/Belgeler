@@ -2,7 +2,7 @@
 Container Kullanarak Çalışma
 ======================================
 
-TRUBA kuyruklarında Singularity kullanarak container imajları çalıştırabilirsiniz.
+TRUBA altyapısında GPU bulunan kümelerde Singularity kullanarak container imajları çalıştırabilirsiniz.
 
 .. note::
     `Singularity <https://sylabs.io/guides/3.7/user-guide/introduction.html#introduction-to-singularity>`_, karmaşık uygulamaların YBH kümelerinde taşınabilir ve tekrarlanabilir şekilde çalıştırılmasını sağlar. Singularity kullanarak `Sylabs Cloud Library <https://cloud.sylabs.io/library>`_'deki ve `Docker Hub <https://hub.docker.com/>`_'daki imajları çalıştırabilirsiniz.
@@ -72,13 +72,17 @@ Kuyruğa gönderdiğiniz işleri kontrol edin:
 Jupyter Notebook ile Çalışma
 ---------------------------------------------
 
+.. warning::
+
+    TRUBA tipi Yüksek Başarımlı Hesaplama altyapılarında limitli miktarda kaynak pek çok kullanıcı tarafından paylaşımlı olarak kullanılmaktadır. Bu nedenle bu bölümde anlatılan bilgileri kullanarak uzun süreli kaynak tahsis edip bu kaynakları etkili bir şekilde kullanmamak (örneğin interaktif işi sonlandırmadan bilgisayar başından ayrılmak) doğru değildir.
+    
 Jupyter ve gpu etiketli tensorflow docker imajlarından birini indirin:
 
 .. code-block:: bash
 
     singularity pull docker://tensorflow/tensorflow:latest-gpu-jupyter
 
-`srun <https://slurm.schedmd.com/salloc.html>`_ kullanarak üzerinde GPU bulunan kuyruklardan interaktif çalışmak için tahsis talep edin:
+`srun <https://slurm.schedmd.com/srun.html>`_ kullanarak üzerinde GPU bulunan kuyruklardan interaktif çalışmak için tahsis talep edin:
 
 .. code-block:: bash
 

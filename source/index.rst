@@ -23,9 +23,10 @@ TRUBA Kullanıcı Dökümanları
    :caption: Uygulama Kılavuzları
    :maxdepth: 1
    
-   how-to-guides/GPU/index.rst
    how-to-guides/python/index.rst
+   how-to-guides/GPU/index.rst
    how-to-guides/deep-learning/index.rst
+   how-to-guides/data-analytics/index.rst
    how-to-guides/GROMACS/index.rst
    how-to-guides/LAMMPS/index.rst
    how-to-guides/VASP/index.rst
