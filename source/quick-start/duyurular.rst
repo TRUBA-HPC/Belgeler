@@ -7,4 +7,4 @@ Duyurular
     
     /TRUBA/kullanici-el-kitabi/kullanicihesaplari.rst
     /TRUBA/TRUBA-proje/index.rst
-    /TRUBA/eurohpc-erisim/index.rst
+    /EuroHPC/access.rst

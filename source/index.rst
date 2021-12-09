@@ -48,7 +48,6 @@ TRUBA Kullanıcı Dökümanları
    TRUBA/TRUBA-proje/index.rst
    TRUBA/kullanici-el-kitabi/TRUBAtesekkur.rst
    TRUBA/topluluk-portali/index.rst
-   TRUBA/eurohpc-erisim/index.rst
    
 .. toctree::
    :caption: EuroHPC hakkında
