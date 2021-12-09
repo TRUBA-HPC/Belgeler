@@ -28,7 +28,7 @@ author = 'TÜBİTAK ULAKBİM'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx_togglebutton'
+    'sphinx_togglebutton',
 ]
 
 

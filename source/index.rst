@@ -8,7 +8,7 @@ TRUBA Kullanıcı Dökümanları
 ===========================
 
 .. toctree::
-   :caption: Başlangıç
+   :caption: Hızlı Erişim
    :maxdepth: 1
 
    quick-start/duyurular.rst
@@ -50,6 +50,13 @@ TRUBA Kullanıcı Dökümanları
    TRUBA/topluluk-portali/index.rst
    TRUBA/eurohpc-erisim/index.rst
    
+.. toctree::
+   :caption: EuroHPC hakkında
+   :maxdepth: 1
+
+   EuroHPC/EuroHPC-JU.rst
+   EuroHPC/systems.rst
+   EuroHPC/access.rst
 
 .. toctree::
    :caption: Eğitim materyalleri

@@ -11,7 +11,7 @@ TRUBA altyapısında GPU bulunan kümelerde Singularity kullanarak container ima
 sbatch Kullanarak Kuyruğa İş Gönderme
 ---------------------------------------
 
-DockerHub'daki `tensorflow imajlarından <https://hub.docker.com/r/tensorflow/tensorflow>`_ uygun etiketli (gpu) birini seçin ve `singularity pull <https://sylabs.io/guides/3.7/user-guide/cli/singularity_pull.html>`_ kullanarak indirin:
+DockerHub'daki `Tensorflow imajlarından <https://hub.docker.com/r/tensorflow/tensorflow>`_ uygun etiketli (gpu) birini seçin ve `singularity pull <https://sylabs.io/guides/3.7/user-guide/cli/singularity_pull.html>`_ komutunu kullanarak indirin:
 
 .. code-block:: bash
 

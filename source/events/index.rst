@@ -9,10 +9,11 @@ EuroCC Etkinlikleri
 EuroCC@Türkiye projesi kapsamında düzenlenen seminerler, çalıştaylar, yaz/kış okulu etkinlikleri ile ilgili güncel bilgilere `Indico etkinlik sayfası üzerinden <https://indico.truba.gov.tr>`_ ulaşabilirsiniz.
 
 
-* `Seminerler <https://indico.truba.gov.tr/category/5/>`_
+* `Seminerler <https://indico.truba.gov.tr/category/2/>`_
 * `Çalıştaylar <https://indico.truba.gov.tr/category/4/>`_
-* `Yaz/Kış Okulu <https://indico.truba.gov.tr/category/3/>`_
+* `Okullar <https://indico.truba.gov.tr/category/3/>`_
 * `Computhon <https://indico.truba.gov.tr/category/11/>`_
+* `KOBİ Webinarları <https://indico.truba.gov.tr/category/17/>`_
 
 
 --------------------
