@@ -47,7 +47,7 @@ git clone -b [BRANCH_NAME] https://github.com/TRUBA-HPC/Belgeler.git truba-belge
 ## Belgeleme sistemi hakkında genel bilgi
 
 [TRUBA Kullanıcı Dökümanları'nda](https://docs.truba.gov.tr) bulunan başlıklar [dört ana kategoride](https://documentation.divio.com/) toplanmıştır:
-- Referans materyalleri (TRUBA Hakkında)
+- Referans materyalleri (TRUBA Hakkında ve EuroHPC Hakkında)
 - Nasıl yapılır kılavuzları (Uygulama Kılavuzları)
 - Detaylı açıklamalar (Eğitim Materyalleri)
 - Öğretici başlangıç materyalleri

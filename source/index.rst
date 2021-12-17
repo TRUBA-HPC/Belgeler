@@ -17,6 +17,7 @@ TRUBA Kullanıcı Dökümanları
    TRUBA/kullanici-el-kitabi/kullanici-ara-yuzu/openondemand/index.rst
    TRUBA/kullanici-el-kitabi/index.rst
    TRUBA/sss.rst
+   quick-start/contact-template.rst
    quick-start/TRUBAseminerleri.rst
 
 .. toctree::

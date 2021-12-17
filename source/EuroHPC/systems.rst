@@ -60,7 +60,7 @@ LUMI Hesaplama Bölümleri
    * - Bölüm
      - Sunucu sayısı
      - CPU
-     - GPU
+     - Hızlandırıcı
      - Bellek
      - Lokal depolama
    * - LUMI-C (Type 1)
@@ -84,7 +84,7 @@ LUMI Hesaplama Bölümleri
    * - LUMI-G (Not yet available)
      - 2560
      - 1x AMD Trento (64 Cores)
-     - 4x AMD Instinct MI250X
+     - 4x AMD Instinct MI250X (128 GB Memory)
      - 512 GB
      - *-*
    * - LUMI-D (Type 1)
@@ -113,7 +113,7 @@ Vega Hesaplama Bölümleri
    * - Bölüm
      - Sunucu sayısı
      - CPU
-     - GPU
+     - Hızlandırıcı
      - Bellek
      - Lokal depolama
    * - CPU Standard
@@ -154,7 +154,7 @@ Karolina Hesaplama Bölümleri
    * - Bölüm
      - Sunucu sayısı
      - CPU
-     - GPU
+     - Hızlandırıcı
      - Bellek
      - Lokal depolama
    * - CPU
@@ -166,7 +166,7 @@ Karolina Hesaplama Bölümleri
    * - GPU
      - 72
      - 2x AMD EPYC 7763 (64 Cores, 2.45 GHz)
-     - *-*
+     - 8x NVIDIA A100 (40GB Memory)
      - 1 TB
      - *-*
    * - Data Analytics
@@ -195,7 +195,7 @@ Discoverer Hesaplama Bölümleri
    * - Bölüm
      - Sunucu sayısı
      - CPU
-     - GPU
+     - Hızlandırıcı
      - Bellek
      - Lokal depolama
    * - CPU Standard
