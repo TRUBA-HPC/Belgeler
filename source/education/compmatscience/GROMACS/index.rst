@@ -11,6 +11,8 @@ GROMACS kullanılarak birçok farklı hesaplama yapılması mümkün olsa da tem
     gromacs_applications.rst
     gromacs_prepareprc.rst
     gromacs_analysis.rst
+    gromacs_vmd.rst
+    gromacs_gmxgpu.rst
 
 -----
 
