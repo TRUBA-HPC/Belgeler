@@ -57,6 +57,11 @@ TRUBA altyapısındaki GPU kaynakları SLURM kaynak yöneticisi ile kullanılabi
     * akya-cuda ve akya-ai kümeleri için 10*[GPU_SAYISI]
     * barbun-cuda kümesi için 20*[GPU_SAYISI]
 
+
+.. note::
+
+    palamut-cuda kümesinin kullanım izni ile ilgili bilgiler için lütfen :ref:`palamut-cuda` sayfasını inceleyiniz.
+
 --------------------------------
 GPU Kullanılan Uygulamalar
 --------------------------------
