@@ -79,9 +79,43 @@ Akya sunucuları 24 adet Supermicro 1029GQ-TRT model sunuculardan oluşmaktadır
 ^^^^^^^^^^^^^^^^^^^^
 Hamsi sunucuları 144 adet INSPUR NF5180M5 sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adetIntel(R) Xeon(R) Gold 6258R CPU @ 2.70GHz işlemci ve toplam 56 adet işlemci çekirdeği bulunmaktadır. Sunucular birbirlerine HDR100 (100Gbps) Infiniband ağ kartları ile non-blocking yapıda bağlıdırlar. 
 
+.. _palamut-cuda:
+
 *Palamut-cuda (Yeni Küme)*
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Palamut sunucuları 9 adet HP Proliant XL675d Gen10 Plus model sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet AMD EPYC 7742 2.24GHz işlemci ve toplam 128 adet işlemci çekirdeği ve 8 adet Nvidia Tesla A100 (80GB, NVLink ) GPU kartı bulunmaktadır. Sunucular birbirlerine 4xHDR (200Gbps) Infiniband ağ kartları ile non-blocking yapıda bağlıdırlar.
+
+* Palamut-cuda kümesi üzerinde Red Hat Enterprise Linux 8.5 işletim sistemi ve NVIDIA 495 sürücüsü bulunmaktadır. NVIDIA 495 sürücüsü CUDA 11.5 versiyonuna kadar izin vermektedir. 
+
+* Şu an için sadece kayıtlı çalışma grupları ``palamut-cuda`` hesaplama kümesine iş gönderebileceklerdir.
+
+* Palamut-cuda hesaplama kümesi için yeni bir kullanıcı arayüzü kurulmuştur (``palamut-ui``). Palamut-cuda kuyruğuna sadece ``palamut-ui`` arayüzü üzerinden iş gönderilebilecektir. Palamut-cuda kuyruğuna erişim izni olan proje kullanıcıları ``levrek1``, ``barbun1``, ``sardalya1`` herhangi bir kullanıcı arayüzü üzerinden ``palamut-ui`` arayüz sunucusuna ssh ile geçiş yapabilirler. Ssh anahtalarını henüz oluşturmamış kullanıcılar, bu sunucuya geçiş yapabilmek için ssh anahtarlarını ``ssh-keygen`` ile aşağıdaki gibi oluşturabilirler:
+
+.. code-block::
+
+   $>ssh-keygen (Sorulan tüm soruları “Enter” tuşuna basarak geçiniz)
+   
+   $>cp -p .ssh/id_rsa.pub .ssh/authorized_keys
+
+.. note::
+
+   Her bir GPU icin kullanıcılar 16 çekirdek talep etmelidir.
+	Örneğin: 2 sunucu üzerinde 4'er görev ve 4'er GPU kullanabilmek icin:
+	
+   .. code-block::
+
+      srun -N 2  -n 8 -c 16 --gres=gpu:4   <komut>
+      sbatch  -N 2  -n 8 -c 16 --gres=gpu:4 <betik_dosyasi>
+
+   Kullanılacak toplam çekirdek sayısı = n x c
+
+   N : kulllanılacak node sayısı
+
+   n : çalıştırılacak görev sayısı
+
+   c : her bir görev için kullanılacak çekirdek sayısı (varsayılan 1)
+
+   gres=gpu:x : her bir node üzerinde kullanılacak GPU sayısı
 
 .. _partitions:
 
@@ -103,57 +137,61 @@ Tüm kuyrukların varsayılan çalışma süresi 2 dakikadır. Betik dosyasında
 
 Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarına bağlı olarak bellek sınırlamaları mevcuttur. Eğer betik dosyalarında (ya da srun komutunda) herhangi bir bellek değeri girilmemişse, ilgili iş için, ``çekirdek sayısı x DefMemPerCore`` kadar bellek ayrılır. Betik dosyalarında (ya da srun komutunda) işler için ``--mem-per-core`` ya da ``--mem`` parametreleri ile daha fazla bellek talebinde bulunulabilir, ancak talep edilen bellek miktarı hiçbir koşulda *maxMemPerCore* degerini geçemez. *MaxMemPerCore* ve *DefMemPerCore* değerleri her sunucu ailesi için farklıdır. Tüm sunucular için bu verilere aşağıdaki tablodan erişilebilir. 
 
-+-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|partitions   |   nodes      | #nodes  |  max run time | priority | min core | defMemPerCore  | maxMemPerCore |
-+=============+==============+=========+===============+==========+==========+================+===============+
-|  single     |  levrekv2    |     8   |  15-00:00:00  |  2000    |    1     |    9500MB      |    10500MB    |
-+-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  short      |  sardalya    |    99   |  00-04:00:00  |  3600    |    4     |    8000MB      |    9000MB     |
-+-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  short      |  barbun      |   119   |  00-04:00:00  |  3600    |    4     |    8500MB      |    9500MB     |
-+-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  mid1       |  barbun      |   119   |  04-00:00:00  |  3400    |    4     |    8500MB      |    9500MB     |
-+-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  mid1       |  sardalya    |    99   |  04-00:00:00  |  3400    |    4     |    8000MB      |    9000MB     |
-+-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  mid2       |  barbun      |   119   |  08-00:00:00  |  3200    |    4     |    8500MB      |    9500MB     |
-+-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  mid2       |  sardalya    |    99   |  08-00:00:00  |  3200    |    4     |    8000MB      |    9000MB     |
-+-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  long       |  barbun      |   119   |  15-00:00:00  |  3000    |    4     |    8500MB      |    9500MB     |
-+-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  long       |  sardalya    |    99   |  15-00:00:00  |  3000    |    4     |    8000MB      |    9000MB     |
-+-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  smp        |  orkinos     |     1   |  8-00:00:00   |  2800    |    4     |    17000MB     |    18400MB    |
-+-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  sardalya   |  sardalya    |   100   |  15-00:00:00  |  2800    |    4     |    8000MB      |    9000MB     |
-+-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  barbun     |  barbun      |   119   |  15-00:00:00  |  2800    |    4     |    8500MB      |    9500MB     |
-+-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-| interactive |  levrekv2    |    14   |  15-00:00:00  |  3000    |    1     |    8000MB      |    9000MB     |
-+-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-| barbun-cuda |  barbun-cuda |    24   |  15-00:00:00  |  2800    |   20     |    8500MB      |    9500MB     |
-+-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  akya-cuda  |  akya-cuda   |    20   |  15-00:00:00  |  2800    |   20     |    8500MB      |    9500MB     |
-+-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  akya-ai    |  akya-cuda   |    4    |  15-00:00:00  |  2800    |   20     |    8500MB      |    9500MB     |
-+-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  hamsi      |   hamsi      |   144   |  03-00:00:00  |  2800    |   28     |    3400MB      |    3400MB     |
-+-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-| palamut-cuda|  palamut     |    9    |  03-00:00:00  |  2800    |   16     |    7500MB      |    8000MB     |
-+-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  debug      |  barbun      |   119   |  00-00:15:00  |  65535   |    1     |    8500MB      |    9500Mb     |
-+-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  debug      |  barbun-cuda |    24   |  00-00:15:00  |  65535   |   20     |    8500MB      |    9500Mb     |
-+-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  debug      |  akya-cuda   |    24   |  00-00:15:00  |  65535   |   10     |    8500MB      |    9500Mb     |
-+-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  debug      |  orkinos     |     1   |  00-00:15:00  |  65535   |    1     |    17000MB     |    18400Mb    |
-+-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
-|  debug      |  sardalya    |    99   |  00-00:15:00  |  65535   |    1     |    8000MB      |    9000Mb     |
-+-------------+--------------+---------+---------------+----------+----------+----------------+---------------+
++-------------+--------------+---------+---------------+----------+----------+----------------+---------------+---------------+
+|partitions   |   nodes      | #nodes  |  max run time | priority | min core | defMemPerCore  | maxMemPerCore | Bilgi         |
++=============+==============+=========+===============+==========+==========+================+===============+===============+
+|  single     |  levrekv2    |     8   |  15-00:00:00  |  2000    |    1     |    9500MB      |    10500MB    | Aktif         |
++-------------+--------------+---------+---------------+----------+----------+----------------+---------------+---------------+
+|  short      |  sardalya    |    99   |  00-04:00:00  |  3600    |    4     |    8000MB      |    9000MB     | Kullanım Dışı |
++-------------+--------------+---------+---------------+----------+----------+----------------+---------------+---------------+
+|  short      |  barbun      |   119   |  00-04:00:00  |  3600    |    4     |    8500MB      |    9500MB     | Kullanım Dışı |
++-------------+--------------+---------+---------------+----------+----------+----------------+---------------+---------------+
+|  mid1       |  barbun      |   119   |  04-00:00:00  |  3400    |    4     |    8500MB      |    9500MB     | Kullanım Dışı |
++-------------+--------------+---------+---------------+----------+----------+----------------+---------------+---------------+
+|  mid1       |  sardalya    |    99   |  04-00:00:00  |  3400    |    4     |    8000MB      |    9000MB     | Kullanım Dışı |
++-------------+--------------+---------+---------------+----------+----------+----------------+---------------+---------------+
+|  mid2       |  barbun      |   119   |  08-00:00:00  |  3200    |    4     |    8500MB      |    9500MB     | Aktif         |
++-------------+--------------+---------+---------------+----------+----------+----------------+---------------+---------------+
+|  mid2       |  sardalya    |    99   |  08-00:00:00  |  3200    |    4     |    8000MB      |    9000MB     | Aktif         |
++-------------+--------------+---------+---------------+----------+----------+----------------+---------------+---------------+
+|  long       |  barbun      |   119   |  15-00:00:00  |  3000    |    4     |    8500MB      |    9500MB     | Aktif         |
++-------------+--------------+---------+---------------+----------+----------+----------------+---------------+---------------+
+|  long       |  sardalya    |    99   |  15-00:00:00  |  3000    |    4     |    8000MB      |    9000MB     | Aktif         |
++-------------+--------------+---------+---------------+----------+----------+----------------+---------------+---------------+
+|  smp        |  orkinos     |     1   |  8-00:00:00   |  2800    |    4     |    17000MB     |    18400MB    | Aktif         |
++-------------+--------------+---------+---------------+----------+----------+----------------+---------------+---------------+
+|  sardalya   |  sardalya    |   100   |  15-00:00:00  |  2800    |    4     |    8000MB      |    9000MB     | Özel Kuyruk   |
++-------------+--------------+---------+---------------+----------+----------+----------------+---------------+---------------+
+|  barbun     |  barbun      |   119   |  15-00:00:00  |  2800    |    4     |    8500MB      |    9500MB     | Aktif         |
++-------------+--------------+---------+---------------+----------+----------+----------------+---------------+---------------+
+| interactive |  levrekv2    |    14   |  15-00:00:00  |  3000    |    1     |    8000MB      |    9000MB     | Aktif         |
++-------------+--------------+---------+---------------+----------+----------+----------------+---------------+---------------+
+| barbun-cuda |  barbun-cuda |    24   |  15-00:00:00  |  2800    |   20     |    8500MB      |    9500MB     | Aktif         |
++-------------+--------------+---------+---------------+----------+----------+----------------+---------------+---------------+
+|  akya-cuda  |  akya-cuda   |    20   |  15-00:00:00  |  2800    |   20     |    8500MB      |    9500MB     | Aktif         |
++-------------+--------------+---------+---------------+----------+----------+----------------+---------------+---------------+
+|  akya-ai    |  akya-cuda   |    4    |  15-00:00:00  |  2800    |   20     |    8500MB      |    9500MB     | Aktif         |
++-------------+--------------+---------+---------------+----------+----------+----------------+---------------+---------------+
+|  hamsi      |   hamsi      |   144   |  03-00:00:00  |  2800    |   28     |    3400MB      |    3400MB     | Aktif         |
++-------------+--------------+---------+---------------+----------+----------+----------------+---------------+---------------+
+| palamut-cuda|  palamut     |    9    |  03-00:00:00  |  2800    |   16     |    7500MB      |    8000MB     | Özel Kuyruk   |
++-------------+--------------+---------+---------------+----------+----------+----------------+---------------+---------------+
+|  debug      |  barbun      |   119   |  00-00:15:00  |  65535   |    1     |    8500MB      |    9500Mb     | Aktif         |           
++-------------+--------------+---------+---------------+----------+----------+----------------+---------------+---------------+
+|  debug      |  barbun-cuda |    24   |  00-00:15:00  |  65535   |   20     |    8500MB      |    9500Mb     | Aktif         |
++-------------+--------------+---------+---------------+----------+----------+----------------+---------------+---------------+
+|  debug      |  akya-cuda   |    24   |  00-00:15:00  |  65535   |   10     |    8500MB      |    9500Mb     | Aktif         |
++-------------+--------------+---------+---------------+----------+----------+----------------+---------------+---------------+
+|  debug      |  orkinos     |     1   |  00-00:15:00  |  65535   |    1     |    17000MB     |    18400Mb    | Aktif         |
++-------------+--------------+---------+---------------+----------+----------+----------------+---------------+---------------+
+|  debug      |  sardalya    |    99   |  00-00:15:00  |  65535   |    1     |    8000MB      |    9000Mb     | Aktif         |
++-------------+--------------+---------+---------------+----------+----------+----------------+---------------+---------------+
 
-Short, mid1, mid2 ve long kuyruklarını diğer kuyrukları kapsayacak üst kuyruklar olarak düşünülmelidir. Bu kuyruklara gönderilen işler sardalya ya da barbun sunucularının herhangi birinde çalışmaya başlayabilirler. Bu kuyruklara gönderilecek işlerin belli bir sunucu ailesi üzerinde çalışması isteniyorsa, betik dosyalarına aşağıdaki tanımlar yazılmalıdır: 
+.. warning::
+
+   ``Short`` ve ``mid1`` kurukları 1 Aralık 2021 tarihinde kapatılmıştır. Kısa süreli işlerinizi daha yeni nesil işlemcilere sahip olan ve daha çok sayıda sunucu içeren ``hamsi`` kuyruğuna gönderebilirsiniz. 
+
+``mid2`` ve ``long`` kuyruklarına gönderilen işler sardalya ya da barbun sunucularının herhangi birinde çalışmaya başlayabilirler. Bu kuyruklara gönderilecek işlerin belli bir sunucu ailesi üzerinde çalışması isteniyorsa, betik dosyalarına aşağıdaki tanımlar yazılmalıdır: 
 
 * barbunlar için 
 
@@ -173,7 +211,7 @@ Short, mid1, mid2 ve long kuyruklarını diğer kuyrukları kapsayacak üst kuyr
 
 İşler önceden olduğu gibi üst kuyruklar yerine doğrudan sardalya, barbun veya diğer kuyruklarına gönderilebilir. 
 
-*barbun-cuda, akya-cuda* ve *palamut-cuda* kuyruklarına gönderilen işlerin GPU kullanabilecek ve GPU talep eden işler olması zorunludur. Yeni düzenleme ile aynı GPU'u birden fazla iş tarafından kullanabilecektir. 
+*barbun-cuda, akya-cuda* ve *palamut-cuda* kuyruklarına gönderilen işlerin GPU kullanabilecek ve GPU talep eden işler olması zorunludur. Yeni düzenleme ile aynı GPU'u birden fazla iş tarafından kullanabilecektir. GPU kümelerinin kullanımı ile ilgili dokümantasyon :ref:`gpu-kilavuzu` sayfamızı inceleyebilirsiniz.
 
 *Single*
 ^^^^^^^^^
@@ -346,3 +384,4 @@ Her bir sunucuda 128 çekirdek ve 1TB bellek ayrıca 8'er adet Nvidia A100 80GB 
    scontrol show partition=palamut-cuda
 
 komutu ile görülebilir.
+
