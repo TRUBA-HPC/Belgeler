@@ -89,7 +89,7 @@ Gaussian09-barbun.slurm
   then
   rm -rf $GAUSS_SCRDIR
   else
-  mkdir $GAUSS_SCRDIR
+  mkdir -p $GAUSS_SCRDIR
   fi
 
   $g09root/g09/g09 < /truba/scratch/kullaniciadi/hesaplama_yapilan_dizin/jobname.gjf
@@ -124,7 +124,7 @@ Gaussian09-hamsi.slurm
   then
   rm -rf $GAUSS_SCRDIR
   else
-  mkdir $GAUSS_SCRDIR
+  mkdir -p $GAUSS_SCRDIR
   fi
 
   $g09root/g09/g09 < /truba/scratch/kullaniciadi/hesaplama_yapilan_dizin/jobname.gjf

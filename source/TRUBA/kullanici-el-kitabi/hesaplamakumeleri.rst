@@ -168,9 +168,7 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+---------------+
 | barbun-cuda |  barbun-cuda |    24   |  15-00:00:00  |  2800    |   20     |    8500MB      |    9500MB     | Aktif         |
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+---------------+
-|  akya-cuda  |  akya-cuda   |    20   |  15-00:00:00  |  2800    |   20     |    8500MB      |    9500MB     | Aktif         |
-+-------------+--------------+---------+---------------+----------+----------+----------------+---------------+---------------+
-|  akya-ai    |  akya-cuda   |    4    |  15-00:00:00  |  2800    |   20     |    8500MB      |    9500MB     | Aktif         |
+|  akya-cuda  |  akya-cuda   |    24   |  15-00:00:00  |  2800    |   20     |    8500MB      |    9500MB     | Aktif         |
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+---------------+
 |  hamsi      |   hamsi      |   144   |  03-00:00:00  |  2800    |   28     |    3400MB      |    3400MB     | Aktif         |
 +-------------+--------------+---------+---------------+----------+----------+----------------+---------------+---------------+
@@ -347,7 +345,7 @@ komutu ile görülebilir.
 *Akya-cuda*
 ^^^^^^^^^^^
 
-Her bir sunucuda 40 çekirdek ve 384GB bellek ayrıca 4'er adet Nvidia V100 16GB GPU (NVLink) kartı bulunmaktadır. Kuyrukta işlerin en fazla çalışma süresi 15 gündür. Sistemin verimli kullanılabilmesi için gönderilecek işler en az 40 çekirdek ve 4 GPU talep etmelidir. Ayrıca sistemlerde scratch olarak kullanılmak üzere 1.4TB NVME disk /tmp dizinine bağlanmıştır. Yüksek I/O gerektiren işlerin /tmp dizininde çalıştırılması gerekmektedir.
+Her bir sunucuda 40 çekirdek ve 384GB bellek ayrıca 4'er adet Nvidia V100 16GB GPU (NVLink) kartı bulunmaktadır. Kuyrukta işlerin en fazla çalışma süresi 15 gündür. Ayrıca sistemlerde scratch olarak kullanılmak üzere 1.4TB NVME disk /tmp dizinine bağlanmıştır. Yüksek I/O gerektiren işlerin /tmp dizininde çalıştırılması gerekmektedir.
 
 İşlerde bellek sınırlaması kullanılmaktadır. Gönderilen işlerin sunucuların bellek sınırlamalarına uygun olarak gönderilmesi gerekmektedir. Bu kuyruk ile ilgili ayrıntılı bilgi
 

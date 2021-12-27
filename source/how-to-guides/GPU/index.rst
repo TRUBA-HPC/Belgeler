@@ -53,9 +53,9 @@ TRUBA altyapısındaki GPU kaynakları SLURM kaynak yöneticisi ile kullanılabi
 .. warning::
     Kümede talep ettiğiniz çekirdek sayısını kullanacağınız GPU sayısına göre belirleyiniz.
 
-    * palamut-cuda kümesi için 16*[GPU_SAYISI]
-    * akya-cuda ve akya-ai kümeleri için 10*[GPU_SAYISI]
-    * barbun-cuda kümesi için 20*[GPU_SAYISI]
+    * barbun-cuda kümesi için 20*[GPU_SAYISI] (Bir sunucuda 2 adet P100 bulunmaktadır.)
+    * akya-cuda kümesi için 10*[GPU_SAYISI] (Bir sunucuda 4 adet V100 bulunmaktadır.)
+    * palamut-cuda kümesi için 16*[GPU_SAYISI] (Bir sunucuda 8 adet A100 bulunmaktadır.)
 
 
 .. note::
