@@ -11,14 +11,21 @@ TRUBA Kullanıcı Dökümanları
    :caption: Hızlı Erişim
    :maxdepth: 1
 
-   quick-start/duyurular.rst
+   quick-access/duyurular.rst
    TRUBA/kullanici-el-kitabi/open-vpn/index.rst
    TRUBA/kullanici-el-kitabi/kullanici-ara-yuzu/ssh-ile-baglanti/index.rst
    TRUBA/kullanici-el-kitabi/kullanici-ara-yuzu/openondemand/index.rst
    TRUBA/kullanici-el-kitabi/index.rst
    TRUBA/sss.rst
-   quick-start/contact-template.rst
-   quick-start/TRUBAseminerleri.rst
+   quick-access/contact-template.rst
+   quick-access/TRUBAseminerleri.rst
+
+.. toctree::
+   :caption: Öğretici Başlangıç Materyalleri
+   :maxdepth: 1
+   
+   tutorials/linux-intro.rst
+   tutorials/TRUBA-quick-start.rst
 
 .. toctree::
    :caption: Uygulama Kılavuzları
@@ -65,10 +72,12 @@ TRUBA Kullanıcı Dökümanları
    education/openmp/index.rst
    education/openmpi/index.rst
    education/cfd/index.rst
+   education/compmatscience/index.rst
    education/big-data/index.rst
    education/pytorch/index.rst
    education/cuda/index.rst
    education/keras/index.rst
+
 
 .. toctree::
    :caption: Etkinlikler
