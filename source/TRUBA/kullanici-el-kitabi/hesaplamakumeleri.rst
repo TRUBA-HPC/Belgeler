@@ -85,9 +85,9 @@ Hamsi sunucuları 144 adet INSPUR NF5180M5 sunuculardan oluşmaktadır. Her bir 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Palamut sunucuları 9 adet HP Proliant XL675d Gen10 Plus model sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet AMD EPYC 7742 2.24GHz işlemci ve toplam 128 adet işlemci çekirdeği ve 8 adet Nvidia Tesla A100 (80GB, NVLink ) GPU kartı bulunmaktadır. Sunucular birbirlerine 4xHDR (200Gbps) Infiniband ağ kartları ile non-blocking yapıda bağlıdırlar.
 
-* Palamut-cuda kümesi üzerinde Red Hat Enterprise Linux 8.5 işletim sistemi ve NVIDIA 495 sürücüsü bulunmaktadır. NVIDIA 495 sürücüsü CUDA 11.5 versiyonuna kadar izin vermektedir. 
+* Palamut-cuda kuyruğunda ve palamut-ui kullanıcı arayüzü üzerinde Red Hat Enterprise Linux 8.5 işletim sistemi ve NVIDIA 495 sürücüsü bulunmaktadır. NVIDIA 495 sürücüsü CUDA 11.5 versiyonuna kadar izin vermektedir. 
 
-* Şu an için sadece kayıtlı çalışma grupları ``palamut-cuda`` hesaplama kümesine iş gönderebileceklerdir.
+* Şu an için palamut-cuda kuyruğu öncelikli olarak belirli araştırma gruplarına hizmet vermektedir. Bu araştırma gruplarında hesapları tanımlı kullanıcılar ``palamut-cuda`` hesaplama kümesine iş gönderebileceklerdir.
 
 * Palamut-cuda hesaplama kümesi için yeni bir kullanıcı arayüzü kurulmuştur (``palamut-ui``). Palamut-cuda kuyruğuna sadece ``palamut-ui`` arayüzü üzerinden iş gönderilebilecektir. Palamut-cuda kuyruğuna erişim izni olan proje kullanıcıları ``levrek1``, ``barbun1``, ``sardalya1`` herhangi bir kullanıcı arayüzü üzerinden ``palamut-ui`` arayüz sunucusuna ssh ile geçiş yapabilirler. Ssh anahtalarını henüz oluşturmamış kullanıcılar, bu sunucuya geçiş yapabilmek için ssh anahtarlarını ``ssh-keygen`` ile aşağıdaki gibi oluşturabilirler:
 
