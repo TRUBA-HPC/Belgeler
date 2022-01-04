@@ -13,6 +13,7 @@ TÜBİTAK ve AB Projeleri kapsamında desteklenen araştırma odaklı projesi ka
 
 .. toctree::
     :maxdepth: 1
+    
     ozelkurum-hsbvsb-2022.rst
     ozelkurum-hsbvsb-2021.rst
 
