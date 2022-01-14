@@ -1,5 +1,5 @@
 ==============================
-Hesaplamalı Malzeme Bilimi
+Hesaplamalı Temel Bilimler
 ==============================
 
 .. toctree::
