@@ -192,7 +192,7 @@ Barbun sunucuları 120 adet Dell R640, Barbun-cuda sunucuları R740 model sunucu
 
 *Akya-cuda*
 ^^^^^^^^^^^
-Akya sunucuları 24 adet Supermicro 1029GQ-TRT model sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet Intel Xeon Scalable Gold 6148 işlemci ve toplam 40 adet işlemci çekirdeği ve 4 adet Nvidia Tesla V100 (32GB, NVLink ) GPU kartı bulunmaktadır. Sunucular birbirlerine EDR (100Gbps) Infiniband ağ kartları ile non-blocking yapıda bağlıdırlar.
+Akya sunucuları 24 adet Supermicro 1029GQ-TRT model sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet Intel Xeon Scalable Gold 6148 işlemci ve toplam 40 adet işlemci çekirdeği ve 4 adet Nvidia Tesla V100 (16GB, NVLink) GPU kartı bulunmaktadır. Sunucular birbirlerine EDR (100Gbps) Infiniband ağ kartları ile non-blocking yapıda bağlıdırlar.
 
 *Hamsi (Yeni Küme)*
 ^^^^^^^^^^^^^^^^^^^^
