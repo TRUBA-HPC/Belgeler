@@ -1,0 +1,62 @@
+{
+    "$schema": "https://aka.ms/codetour-schema",
+    "title": "Start documenting!",
+    "steps": [
+      {
+        "file": "source/index.rst",
+        "line": 1,
+        "description": "Welcome to the online doc editor!\n\nWe prepared for you a quick tour to get you started.\n\nClick &rarr; on the top right corner to continue.",
+        "title": "Intro"
+      },
+      {
+        "file": "source/index.rst",
+        "line": 2,
+        "description": "All documentation source files are located in the `source` directory.\n\nFor example, `source/index.rst` is the source file for https://docs.truba.gov.tr/",
+        "title": "Directory for source files"
+      },
+      {
+        "file": "source/index.rst",
+        "line": 3,
+        "description": "You can open preview to the side by clicking the second small icon on the top right corner.\n\nOR\n\nHit F1 and type [\"reStructuredText: Open Preview to the Side\"](command:restructuredtext.showPreviewToSide) &larr; or click just here",
+        "title": "Preview documents"
+      },
+      {
+        "file": "source/index.rst",
+        "line": 6,
+        "description": "This documentation uses [Sphinx](https://www.sphinx-doc.org/en/master/) with the Read The Docs theme. Sphinx is a documentation generator that translates a set of plain text source files into various output formats (e.g.; html and pdf). It extends the reStructuredText markup language to support additional functionality. You can use this [reference](https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html) while writing docs using reStructuredText.",
+        "title": "Sphinx and reStructuredText"
+      },
+      {
+        "title": "Git configuration",
+        "description": "To contribute to documentation in [GitHub](https://github.com/TRUBA-HPC/Belgeler), you need to configure `user.name` and `user.email`. Toggle integrated terminal by hitting F1 and typing [view: toggle terminal](command:workbench.action.terminal.toggleTerminal). Type into terminal:\n\n```\ngit config --global user.name \"Your Name\"\ngit config --global user.email youremail@address.com\n```\n\nNote: Make sure your email address matches your GitHub account email address."
+      },
+      {
+        "title": "Download changes",
+        "description": "Before making any changes, it is good to download the most recent changes from the remote git repository. Type into terminal:\n\n>> git pull origin main"
+      },
+      {
+        "title": "Fork repository",
+        "description": "It would be best to fork the [GitHub repo](https://github.com/TRUBA-HPC/Belgeler) by clicking the Fork button on the top right corner. By default, users can only push changes to forked repositories on their accounts."
+      },
+      {
+        "title": "Create new branch",
+        "description": "The [eventual workflow](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) will look like the following: Create a new branch &rarr; Make changes to the documentation &rarr; Save changes &rarr; Push changes to remote branch &rarr; Create a pull request to propose changes to the repository. Create a new branch by typing:\n\n```\ngit checkout -b [name-of-your-new-branch]\n```"
+      },
+      {
+        "title": "Save changes",
+        "description": "After making changes to documentation, [save your changes](https://www.atlassian.com/git/tutorials/saving-changes) using:\n```\ngit add --all\ngit commit -m \"info about this commit\"\n```"
+      },
+      {
+        "title": "Create GitHub personal access token",
+        "description": "In the next step, when you use Git to authenticate with GitHub, you'll be prompted to enter your credentials to authenticate with GitHub. Password-based authentication is [deprecated](https://docs.github.com/en/github/authenticating-to-github/about-authentication-to-github#authenticating-with-the-command-line), so you should create a personal access token, which is more secure. To create a personal access token, you can follow this [guide](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token). Setting the scope to **repo** is enough."
+      },
+      {
+        "title": "Add new origin",
+        "description": "To push changes to the forked repo on your account, we need to add a new remote. Check remotes using:\n\n```git remote -v\n```\nAdd new remote pointing to the forked repo (change [USERNAME] in the link):\n\n```git remote add myRemote https://github.com/[USERNAME]/Belgeler```"
+      },
+      {
+        "title": "Push changes and create a pull request",
+        "description": "After committing all changes, check if you committed all changes. Also get the `[name-of-your-branch]`\n\n>> git status\n\nPush to remote branch:\n\n```\ngit push myRemote [name-of-your-branch]\n```\nTo create a pull request, go to the [repository (pull requests)](https://github.com/[USERNAME]/Belgeler/pulls), click new pull request, and select the branch you just pushed. Congratulations, you just created a new pull request! 🎉"
+      }
+    ]
+  }
