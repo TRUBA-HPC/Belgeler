@@ -1,4 +1,4 @@
-.. _matlab-kilavuzu:
+.. _matlab-kilavuzu-old:
 
 =================================
 MATLAB Kılavuzu

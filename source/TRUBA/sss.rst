@@ -1,3 +1,5 @@
+.. _sss-TRUBA:
+
 =======================
 Sıkça Sorulan Sorular
 =======================
@@ -74,6 +76,11 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 
 :ref:`35. Kullanıcı dizinlerinin başka kullanıcıların erişimine açılması (ACL) <target to ss35>`
 
+:ref:`36. TRUBA kullanıcı hesabı şifremi nasıl değiştirebilirim? <target to ss36>`
+
+:ref:`37. TRUBA kullanıcı şifremi hatırlamıyorum? Nasıl yeni şifre talep edebilirim? <target to ss37>`
+
+:ref:`38. TRUBA kullanıcı hesabım askıya alındı. Ne yapmalıyım? <target to ss38>`
 
 .. _target to ss1:
 
@@ -348,3 +355,25 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 	    setfacl -dm u:user2:rwx  /truba/home/user1/ortak_dizin
 
     Eğer birden fazla kullanıcıya ortak_dizin'e erişim hakkı verilmek isteniyorsa, diger kullanıcılar için de bu komutlar çalıştırılmalıdır.
+
+.. _target to ss36:
+
+36. TRUBA kullanıcı hesabı şifresinin değiştirilmesi
+
+	Levrek1 kullanıcı arayüzüne bağlandıktan sonra terminal üzerinden ``passwd`` komutunu yazarak mevcut şifrenizi değiştirebilirsiniz.
+
+.. _target to ss37:
+
+37. Yeni TRUBA kullanıcı şifresi talebi
+
+	TRUBA kullanıcı portalı :ref:`<https://portal.truba.gov.tr/>` üzerinden e-devlet aracılıpıyla giriş yaparak ``Yeni Şifre``talebinde bulunabilirsiniz.
+
+.. _target to ss38:
+
+38. TRUBA kullanıcı hesabım askıya alındı. Ne yapmalıyım?
+
+	Kullanıcı arayüzünde iş çalıştırıldığında ve de ilgili kullanıcı tarafından sisteme fazla yük bindirildiği durumlarda sistem kullanıcı hesabını otomatik olarak askıya almaktadır. Lütfen arayüz makinelerinde yoğunluğa sebep olacak işler çalıştırmayınız.
+
+	Kullanıcı hesabınızın yeniden erişime açılabilmesi için TRUBA Dokümantasyon sayfamızda (docs.truba.gov.tr/) yer alan :ref:`Kullanıcı El Kitabı <kullanici-el-kitabi>` ve :ref:`Sıkça Sorulan Sorular <sss-TRUBA>` başlıkları altındaki içerikleri ayrıntılı bir şekilde inceleyip okuyarak hesaplama kümelerinin kullanım şekli ve kuralları konusunda bilgi edinmeniz gerekmektedir. 
+
+	TRUBA kullanıcı hesabınızın tekrardan erişime açılabilmesi için ilgili dokümantasyon sayfalarını okuduktan sonra ``grid-teknik@ulakbim.gov.tr`` adresine bilgilendirme epostası göndermeniz gerekmektedir.
