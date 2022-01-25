@@ -25,8 +25,9 @@
 	"extensions": [
 		"ms-python.python",
 		"lextudio.restructuredtext",
+		"trond-snekvik.simple-rst",
 		"ban.spellright",
-		"trond-snekvik.simple-rst"
+		"vsls-contrib.codetour"
 	]
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.

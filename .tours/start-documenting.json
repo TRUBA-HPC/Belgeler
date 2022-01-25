@@ -5,7 +5,7 @@
       {
         "file": "source/index.rst",
         "line": 1,
-        "description": "Welcome to the online doc editor!\n\nWe prepared for you a quick tour to get you started.\n\nClick &rarr; on the top right corner to continue.",
+        "description": "Hello!\n\nWe prepared for you a quick tour to get you started.",
         "title": "Intro"
       },
       {
@@ -28,7 +28,7 @@
       },
       {
         "title": "Git configuration",
-        "description": "To contribute to documentation in [GitHub](https://github.com/TRUBA-HPC/Belgeler), you need to configure `user.name` and `user.email`. Toggle integrated terminal by hitting F1 and typing [view: toggle terminal](command:workbench.action.terminal.toggleTerminal). Type into terminal:\n\n```\ngit config --global user.name \"Your Name\"\ngit config --global user.email youremail@address.com\n```\n\nNote: Make sure your email address matches your GitHub account email address."
+        "description": "To contribute to documentation in [GitHub](https://github.com/TRUBA-HPC/Belgeler), you need to configure `user.name` and `user.email`. Toggle integrated terminal by hitting F1 and typing [View: toggle terminal](command:workbench.action.terminal.toggleTerminal). Type into terminal:\n\n```\ngit config --global user.name \"Your Name\"\ngit config --global user.email youremail@address.com\n```\n\nNote: Make sure your email address matches your GitHub account email address.\n\nYou can list global Git configuration using:\n\n```git config --list```"
       },
       {
         "title": "Download changes",
@@ -52,7 +52,7 @@
       },
       {
         "title": "Add new origin",
-        "description": "To push changes to the forked repo on your account, we need to add a new remote. Check remotes using:\n\n```git remote -v\n```\nAdd new remote pointing to the forked repo (change [USERNAME] in the link):\n\n```git remote add myRemote https://github.com/[USERNAME]/Belgeler```"
+        "description": "To push changes to the forked repo on your account, we need to add a new remote. Check remotes using:\n\n```git remote -v```\n\nAdd new remote pointing to the forked repo:\n\n ```git remote add myRemote https://github.com/[USERNAME]/Belgeler```\n\nNote: Change ```[USERNAME]``` in the command above."
       },
       {
         "title": "Push changes and create a pull request",
