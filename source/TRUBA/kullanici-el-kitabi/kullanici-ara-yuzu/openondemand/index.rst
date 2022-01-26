@@ -1,3 +1,4 @@
+.. _open_ondemand:
 
 ========================
 Open OnDemand Arayüzü
