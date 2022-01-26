@@ -13,7 +13,7 @@ TÜBİTAK ve AB Projeleri kapsamında desteklenen araştırma odaklı projesi ka
 
 .. toctree::
     :maxdepth: 1
-    
+    ozelkurum-hsbvsb-2022.rst
     ozelkurum-hsbvsb-2021.rst
 
 
@@ -25,7 +25,7 @@ ARDEB tarafından proje önerisi kabul edilmiş ve/veya ARDEB'e proje önerisi s
 
 .. toctree::
     :maxdepth: 1
-
+    ardeb-hsbvsb-2022.rst
     ardeb-hsbvsb-2021.rst
     ardeb-hsbvsb-2020.rst
     ardeb-hsbvsb-2019.rst
