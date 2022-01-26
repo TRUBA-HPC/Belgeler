@@ -31,7 +31,7 @@ Kişisel Bilgisayarınızda MATLAB Çalıştırırak TRUBA'ya İş Göndermek
 
     scp -r username@levrek1.ulakbim.gov.tr:/truba/sw/scripts/matlab/matlabScripts/truba.nonshared.R2021b ~/TRUBA_R2021b
 
-İlgili dosyayı ayrıca :download:`bu web bağlantisindan </assets/matlab-howto/config-files/truba.nonshared.R2021b.zip>`_ indirebilirsiniz.
+İlgili dosyayı ayrıca :download:`bu web bağlantisindan </assets/matlab-howto/config-files/truba.nonshared.R2021b.zip>` indirebilirsiniz.
 
 .. note::
 
