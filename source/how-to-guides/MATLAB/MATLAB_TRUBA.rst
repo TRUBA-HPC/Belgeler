@@ -365,6 +365,7 @@ Arayüz sunucusunda terminal ekranı aldıktan sonra MATLAB ile küme profili ol
     module avail -t 2>&1 | grep -i matlab
 
 .. image:: /assets/matlab-howto/matlab12.png
+   :width: 400px
 
 Sistem üzerinde farklı versiyonlar yüklü olabilir (R2018b ve R2021b vb).
 Örnek olarak R2021b versiyonunu kullanacaksanız öncelikle bu yazılımı ``module load`` ile sisteminize yüklemeniz gerekecektir. Modül kullanımı ile ilgili bigiye :ref:`moduller-truba` sayfasından erişebilirsiniz.
@@ -386,6 +387,7 @@ Sistem üzerinde farklı versiyonlar yüklü olabilir (R2018b ve R2021b vb).
 MATLAB'ı ilk kez çalıştırdığınızda aşağıdaki gibi bir sorgu ekranı açılacak ve lisansınızı aktive etmeniz istenecektir.
 
 .. image:: /assets/matlab-howto/matlab2.png
+   :width: 400px
 
 Eğer ilgili sorgu ekran otomatik olarak açılmazsa ``matlab/bin`` dizinin altinda yer alan ``activate_matlab.sh`` betiğini çalıştırarak da aktivasyonu gerçekleştirebilirsiniz.
 
@@ -447,6 +449,7 @@ Sistemde yüklü yazılımları ``module available`` komutu ile görebilirsiniz.
     module avail -t 2>&1 | grep -i matlab
 
 .. image:: /assets/matlab-howto/matlab1.png
+   :width: 400px
 
 .. warning::
 
