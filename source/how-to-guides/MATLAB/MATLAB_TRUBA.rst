@@ -31,7 +31,7 @@ Kişisel Bilgisayarınızda MATLAB Çalıştırırak TRUBA'ya İş Göndermek
 
     scp -r username@levrek1.ulakbim.gov.tr:/truba/sw/scripts/matlab/matlabScripts/truba.nonshared.R2021b ~/TRUBA_R2021b
 
-İlgili dosyayı ayrıca :download:`bu web bağlantısından </assets/matlab-howto/config-files/truba.nonshared.R2021b.zip>`_ indirebilirsiniz.
+İlgili dosyayı ayrıca :download:`bu web bağlantisindan </assets/matlab-howto/config-files/truba.nonshared.R2021b.zip>`_ indirebilirsiniz.
 
 .. note::
 
@@ -146,7 +146,7 @@ Herhangi bir parametreyi silmek istediğinizde (örneğin e-posta adresi) deği�
 
 .. note::
 
-**Hamsi** kuyruğunda sunucu başına minimum 28 çekirdek kullanılabilir. Hamsi kuyruğuna gönderilecek işler 28  ve katlarında çekirdek kullanmalıdır.
+   **Hamsi** kuyruğunda sunucu başına minimum 28 çekirdek kullanılabilir. Hamsi kuyruğuna gönderilecek işler 28  ve katlarında çekirdek kullanmalıdır.
 
 MATLAB komut satırından çalıştıracağınız tüm komutlar  kişisel bilgisayarınzda çalışacaktır. İşlem gücü gereken  fonksiyon ya da dosyaları TRUBA üzerinde çalıştırmak için ilgili kod parçasını :code:`batch` komutu ile kuyruğa göndermeniz gerekecektir. Aşağıdaki örnekleri inceleyebilirsiniz. Detaylı bilgi için `buradan <https://www.mathworks.com/help/parallel-computing/batch.html>`_ bilgi edinebilirsiniz. 
 
@@ -552,7 +552,8 @@ Lisans dosyanızı TRUBA arayüz sunucusuna transfer ediniz. Bunu terminal arac�
 
     matlab -nodisplay -nosplash -r INPUTFILE -logfile OUTPUTFILE.out 
 
-2 Ek Notlar
+-----------
+Ek Notlar
 -----------
 
 - Örnek betik dosyalarına ``/truba/sw/scripts/matlab`` dizininden erişim sağlayabilirsiniz.
