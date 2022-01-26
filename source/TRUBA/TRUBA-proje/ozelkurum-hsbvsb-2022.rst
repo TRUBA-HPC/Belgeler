@@ -20,18 +20,18 @@ Bu kapsamda proje önerisinde hesaplama ve veri depolama isteği bulunan kurumla
 | Sunucu Tipi           | Saatlik İşlemci            | Sunucu Özelliği                                    |
 |                       | Çekirdeği Bedeli [#note1]_ |                                                    |
 +-----------------------+----------------------------+----------------------------------------------------+
-| Akya-GPU [#note2]_    |    0,23 TL                 | Intel Xeon Gold 6148 2.40GHz, 2x20 çekirdek,       |
+| Akya-GPU [#note2]_    |    0,34 TL                 | Intel Xeon Gold 6148 2.40GHz, 2x20 çekirdek,       |
 |                       |                            | çekirdek başına 9.6 GB bellek, EDR IB bağlantı,    |
 |                       |                            | 4 x Tesla V100 16 GB GPU                           |
 +-----------------------+----------------------------+----------------------------------------------------+
-| Barbun                |    0,08 TL                 | Intel Xeon Gold 6148 2.40GHz, 2x20 çekirdek,       |
+| Barbun                |    0,13 TL                 | Intel Xeon Gold 6148 2.40GHz, 2x20 çekirdek,       |
 |                       |                            | çekirdek başına 9.6 GB bellek, EDR IB bağlantı     |
 +-----------------------+----------------------------+----------------------------------------------------+
-| Palamut-GPU           |    0,29 TL                 | AMD EPYC 7742 2.25GHz, 2x64 çekirdek,              |
+| Palamut-GPU           |    0,42 TL                 | AMD EPYC 7742 2.25GHz, 2x64 çekirdek,              |
 |                       |                            | çekirdek başına 1.5 GB bellek, 4xHDR IB bağlantı,  |
 |                       |                            | 8 x NVidia A100 80G GPU                            |
 +-----------------------+----------------------------+----------------------------------------------------+
-| Hamsi                 |    0,07 TL                 | Intel Xeon Gold 6258R 2.70GHz, 2x28 çekirdek,      |
+| Hamsi                 |    0,10 TL                 | Intel Xeon Gold 6258R 2.70GHz, 2x28 çekirdek,      |
 |                       |                            | çekirdek başına 3.42 GB bellek, HDR100 IB bağlantı |
 +-----------------------+----------------------------+----------------------------------------------------+
 
@@ -47,7 +47,7 @@ Bu kapsamda proje önerisinde hesaplama ve veri depolama isteği bulunan kurumla
 | Depolama Tipi        | Saatlik 1 TB              | Sunucu Özelliği                             |
 |                      | Depoloma Bedeli [#note4]_ |                                             |
 +----------------------+---------------------------+---------------------------------------------+
-| Depolama-Lustre-2019 |    0,04 TL                | 8400 TB tüm hesaplama sunucuları tarafından |
+| Depolama-Lustre-2019 |    0,05 TL                | 8400 TB tüm hesaplama sunucuları tarafından |
 |                      |                           | görünen performans disk alanı               |
 +----------------------+---------------------------+---------------------------------------------+
 
@@ -90,9 +90,9 @@ Eğer kullanıcı hesaplarını, Barbun sunucuları üzerinde gerçekleştirmek 
 
  .. code-block::
 
-    Toplam HSB = 138.240 saat x 0,08 TL = 11.059,20 TL
-    Toplam VSB = 120 gün x 24 saat  x 1 TB x 0,04 = 115,20 TL
-    Toplam Tutar = 11.059,20 TL + 115,20 TL = 11.174,40 TL (KDV Hariç)
+    Toplam HSB = 138.240 saat x 0,13 TL = 17.971,20 TL
+    Toplam VSB = 120 gün x 24 saat  x 1 TB x 0,05 = 144,00 TL
+    Toplam Tutar = 17.971,20 TL + 144,00 TL = 18.115,20 TL (KDV Hariç)
 
 .. [#note6] Aynı anda kullanılabilecek çekirdek sayısı sınırlıdır. En fazla aynı anda kullanılacak çekirdek sayısını bildirmek gerekmektedir. İlgili sayı proje yürütücüsü ve TÜBİTAK ULAKBİM Müdürlüğü arasında imzalanacak olan sözleşmede yer alacaktır.
 
@@ -115,9 +115,9 @@ Eğer kullanıcı hesaplarını Hamsi sunucuları üzerinde gerçekleştirmek is
 
     Toplam Çalışma Süresi  = 120 gün x 24 saat = 2880 Saat
     Toplam Çekirdek Zamanı = 120 gün x 24 saat x 112 = 322560 Saat
-    Toplam HSB = 2880 Saat x 112 x 0,07 TL = 22.579,20 TL 
-    Toplam VSB = 2880 saat x 1 TB x 0,04 = 115,20 TL 
-    Toplam Tutar = 22.579,20 TL + 115,20 TL = 22.694,40 TL (KDV Hariç)
+    Toplam HSB = 2880 Saat x 112 x 0,10 TL = 32.256,00 TL 
+    Toplam VSB = 2880 saat x 1 TB x 0,05 = 144,00 TL 
+    Toplam Tutar = 32.256,00 TL + 144,00 TL = 32.400,00 TL (KDV Hariç)
 
 .. [#note9] Hesaplanan miktarlar KDV hariç tutarlar olup, projenizin bütçesini belirlerken %18 KDV miktarının da dahil edilmesi gerekmektedir. 
 
@@ -127,9 +127,9 @@ Eğer kullanıcı hesaplarını Hamsi sunucuları üzerinde gerçekleştirmek is
 
     Toplam Çalışma Süresi  = 120 gün x 24 saat = 2880 Saat
     Toplam Çekirdek Zamanı = 120 gün x 24 saat x 80 çekirdek = 230400 Saat
-    Toplam HSB = 2880 Saat x 80 x 0,23 TL = 52.992,00 TL 
-    Toplam VSB = 2880 saat x 1 TB x 0,04 = 115,20 TL 
-    Toplam Tutar = 52.992,00 TL + 115,20 TL = 53.107,20 TL (KDV Hariç)
+    Toplam HSB = 2880 Saat x 80 x 0,34 TL = 78.336,00 TL 
+    Toplam VSB = 2880 saat x 1 TB x 0,05 = 144,00 TL 
+    Toplam Tutar = 78.336,00 TL + 144,00 TL = 78.480,00 TL (KDV Hariç)
 
 
 .. [#note10] Hesaplanan miktarlar KDV hariç tutarlar olup, projenizin bütçesini belirlerken %18 KDV miktarının da dahil edilmesi gerekmektedir. 

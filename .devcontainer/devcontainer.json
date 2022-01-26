@@ -1,0 +1,41 @@
+{
+	"name": "Doceditor",
+	"image": "keremkayabay/doceditor-local:latest",
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": { 
+		"restructuredtext.confPath": "${workspaceFolder}/source", 
+	    "python.pythonPath": "python3", 
+	    "workbench.colorTheme": "Default Dark+",
+	    "[restructuredtext]": { 
+            "editor.wordWrap": "on", 
+        }, 
+        "spellright.language": [ 
+            "en", 
+            "tr" 
+        ], 
+        "spellright.documentTypes": [ 
+            "markdown", 
+            "restructuredtext", 
+            "plaintext" 
+        ]
+	},
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"ms-python.python",
+		"lextudio.restructuredtext",
+		"trond-snekvik.simple-rst",
+		"ban.spellright",
+		"vsls-contrib.codetour"
+	]
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "uname -a",
+
+	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
+	// "remoteUser": "vscode"
+}
