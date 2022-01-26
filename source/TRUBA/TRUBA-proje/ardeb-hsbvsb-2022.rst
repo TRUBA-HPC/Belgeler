@@ -19,22 +19,22 @@ Bu kapsamda 2011 yılından itibaren TÜBİTAK ARDEB ile yapılan işbirliği il
 | Sunucu Tipi           | Saatlik İşlemci            | Sunucu Özelliği                                         |
 |                       | Çekirdeği Bedeli [#note1]_ |                                                         |
 +-----------------------+----------------------------+---------------------------------------------------------+
-| Akya-GPU              |    0,09 TL                 | Intel Xeon Gold 6148 2.40GHz, 2x20 çekirdek,            |
+| Akya-GPU              |    0,18 TL                 | Intel Xeon Gold 6148 2.40GHz, 2x20 çekirdek,            |
 |                       |                            | çekirdek başına 9.6 GB bellek, EDR IB bağlantı,         |
 |                       |                            | 4 x Tesla V100 16 GB GPU                                |
 +-----------------------+----------------------------+---------------------------------------------------------+
-| Barbun                |    0,05 TL                 | Intel Xeon Gold 6148 2.40GHz, 2x20 çekirdek,            |
+| Barbun                |    0,09 TL                 | Intel Xeon Gold 6148 2.40GHz, 2x20 çekirdek,            |
 |                       |                            | çekirdek başına 9.6 GB bellek, EDR IB bağlantı          |
 +-----------------------+----------------------------+---------------------------------------------------------+
-| Barbun-GPU            |    0,08 TL                 | Intel Xeon Gold 6148 2.40GHz, 2x20 çekirdek,            |
+| Barbun-GPU            |    0,17 TL                 | Intel Xeon Gold 6148 2.40GHz, 2x20 çekirdek,            |
 |                       |                            | çekirdek başına 9.6 GB bellek, EDR IB bağlantı,         |
 |                       |                            | 4 x Tesla V100 16 GB GPU                                |
 +-----------------------+----------------------------+---------------------------------------------------------+
-| Palamut-GPU           |    0,08 TL                 | AMD EPYC 7742 2.25GHz, 2x64 çekirdek,                   |
+| Palamut-GPU           |    0,19 TL                 | AMD EPYC 7742 2.25GHz, 2x64 çekirdek,                   |
 |                       |                            | çekirdek başına 1.5 GB bellek, 4xHDR IB bağlantı        |
 |                       |                            | 8 x NVidia A100 80G GPU                                 |
 +-----------------------+----------------------------+---------------------------------------------------------+
-| Hamsi                 |    0,03 TL                 | Intel Xeon Gold 6258R 2.70GHz, 2x28 çekirdek,           |
+| Hamsi                 |    0,06 TL                 | Intel Xeon Gold 6258R 2.70GHz, 2x28 çekirdek,           |
 |                       |                            | çekirdek başına 3.42 GB bellek, HDR100 IB bağlantı      |
 +-----------------------+----------------------------+---------------------------------------------------------+
 
@@ -48,7 +48,7 @@ Bu kapsamda 2011 yılından itibaren TÜBİTAK ARDEB ile yapılan işbirliği il
 | Depolama Tipi        | Saatlik 1 TB              | Sunucu Özelliği                             |
 |                      | Depoloma Bedeli [#note3]_ |                                             |
 +----------------------+---------------------------+---------------------------------------------+
-| Depolama-Lustre-2019 |    0,03 TL                | 8400 TB tüm hesaplama sunucuları tarafından |
+| Depolama-Lustre-2019 |    0,04 TL                | 8400 TB tüm hesaplama sunucuları tarafından |
 |                      |                           | görünen performans disk alanı               |
 +----------------------+---------------------------+---------------------------------------------+
 
@@ -88,9 +88,9 @@ Eğer kullanıcı hesaplarını, Barbun sunucuları üzerinde gerçekleştirmek 
 
  .. code-block::
 
-   Toplam HSB = 138.240 saat x 0,05 TL = 6.912,00 TL  
-   Toplam VSB = 120 gün x 24 saat  x 1 TB x 0,03 = 86,40 TL
-   Toplam Tutar = 6.912,00 TL + 86,40 TL = 6.998,40 TL (KDV Hariç)
+   Toplam HSB = 138.240 saat x 0,09 TL = 12.441,60 TL  
+   Toplam VSB = 120 gün x 24 saat  x 1 TB x 0,04 = 115,20 TL
+   Toplam Tutar = 12.441,60 TL + 115,20 TL = 12.556,80 TL (KDV Hariç)
 
 .. [#note4] Aynı anda kullanılabilecek çekirdek sayısı sınırlıdır. En fazla aynı anda kullanılacak çekirdek sayısını bildirmek gerekmektedir. İlgili sayı proje yürütücüsü ve TÜBİTAK ULAKBİM Müdürü arasında imzalanacak olan sözleşmede yer alacaktır.
 
@@ -106,15 +106,15 @@ Hizmet bedelinin, çekirdek sayısı ve proje süresi üzerinden hesaplamak iste
 
 Mesela, projesi kapsamında 120 gün boyunca 112 çekirdek ile hesaplama yapmak ve 1 TB'a kadar Lustre-2019 depolama alanı kullanmak isteyen bir kullanıcı, toplam hizmet bedelini aşağıdaki gibi hesaplayabilir.
 
-Eğer kullanıcı hesaplarını Sardalya sunucuları üzerinde gerçekleştirmek istiyorsa [#note7]_ :
+Eğer kullanıcı hesaplarını hamsi sunucuları üzerinde gerçekleştirmek istiyorsa [#note7]_ :
 
  .. code-block::
 
    Toplam Çalışma Süresi  = 120 gün x 24 saat = 2880 Saat
    Toplam Çekirdek Zamanı = 120 gün x 24 saat x 112 = 322560 Saat
    Toplam HSB = 2880 Saat x 112 x 0,06 TL = 19.353,60 TL 
-   Toplam VSB = 2880 saat x 1 TB x 0,02 = 57,60 TL 
-   Toplam Tutar = 19.353,60 TL + 57,60 TL = 19.411,20 TL (KDV Hariç)
+   Toplam VSB = 2880 saat x 1 TB x 0,04 = 115,20 TL 
+   Toplam Tutar = 19.353,60 TL + 115,20 TL = 19.468,80 TL (KDV Hariç)
 
 .. [#note7]  Hesaplanan miktarlar KDV hariç tutarlar olup, projenizin bütçesini belirlerken %18 KDV miktarının da dahil edilmesi gerekmektedir. 
 
@@ -124,8 +124,8 @@ GPU ile hesaplama yapmak isteyen kullanıcılar, GPU'ların takılı oldugu sunu
 
    Toplam Çalışma Süresi  = 120 gün x 24 saat = 2880 Saat
    Toplam Çekirdek Zamanı = 120 gün x 24 saat x 120 = 345600 Saat
-   Toplam HSB = 2880 Saat x 120 x 0,08 TL = 27.648,00 TL 
-   Toplam VSB = 2880 saat x 1 TB x 0,03 = 86,40 TL 
-   Toplam Tutar = 27.648,00 TL + 86,40 TL = 27.734,40 TL (KDV Hariç)
+   Toplam HSB = 2880 Saat x 120 x 0,17 TL = 58.752,00 TL 
+   Toplam VSB = 2880 saat x 1 TB x 0,04 = 115,20 TL 
+   Toplam Tutar = 58.752,00 TL + 115,20 TL = 58.876,20 TL (KDV Hariç)
 
 .. [#note8]  Hesaplanan miktarlar KDV hariç tutarlar olup, projenizin bütçesini belirlerken %18 KDV miktarının da dahil edilmesi gerekmektedir. 
