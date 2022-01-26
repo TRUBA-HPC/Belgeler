@@ -31,7 +31,7 @@ Kişisel Bilgisayarınızda MATLAB Çalıştırırak TRUBA'ya İş Göndermek
 
     scp -r username@levrek1.ulakbim.gov.tr:/truba/sw/scripts/matlab/matlabScripts/truba.nonshared.R2021b ~/TRUBA_R2021b
 
-İlgili dosyayı ayrıca  `bu web bağlantısından <source/how-to-guides/MATLAB/truba.nonshared.R2021b.zip>`_ indirebilirsiniz.
+İlgili dosyayı ayrıca :download:`bu web bağlantısından </assets/matlab-howto/config-files/truba.nonshared.R2021b.zip>`_ indirebilirsiniz.
 
 .. note::
 
@@ -127,18 +127,22 @@ Herhangi bir parametreyi silmek istediğinizde (örneğin e-posta adresi) deği�
 
     c.AdditionalProperties.EmailAddress = ''
 
+.. list-table:: 
+   :widths: 25 25 25
+   :header-rows: 1
 
-.. table::
-
-    +-----------------------------+--------------------------------------+------------------------------------------------------------------------------------------------------+
-    | Slurm Parametresi           | MATLAB Karşılığı                     | Açıklama                                                                                             |
-    +=============================+======================================+======================================================================================================+
-    | :code:`--nodes, -N`         | :code:`c.AdditionalProperties.Nodes` | \                                                                                                    |
-    +-----------------------------+--------------------------------------+------------------------------------------------------------------------------------------------------+
-    | :code:`--ntasks, -n`        | :code:`pool=`                  | en fazla c.NumWorkers  kadar olabilir. Herhangi bir değer verilmezse c.NumWorkers değeri kullanılır. |
-    +-----------------------------+--------------------------------------+------------------------------------------------------------------------------------------------------+
-    | :code:`--cpus-per-task, -c` | :code:`c.NumThreads`                 | \                                                                                                    |
-    +-----------------------------+--------------------------------------+------------------------------------------------------------------------------------------------------+
+   * - Slurm Parametresi 
+     - MATLAB Karşılığı
+     - Açıklama
+   * - :code:`--nodes, -N`
+     - :code:`c.AdditionalProperties.Nodes`
+     - 
+   * - :code:`--ntasks, -n` 
+     - :code:`pool=`
+     - en fazla c.NumWorkers  kadar olabilir. Herhangi bir değer verilmezse c.NumWorkers değeri kullanılır.
+   * - :code:`--cpus-per-task, -c`
+     - :code:`c.NumThreads`
+     -  
 
 .. note::
 
