@@ -62,11 +62,13 @@ TRUBA altyapısındaki GPU kaynakları SLURM kaynak yöneticisi ile kullanılabi
 
     palamut-cuda kümesinin kullanım izni ile ilgili bilgiler için lütfen :ref:`palamut-cuda` sayfasını inceleyiniz.
 
---------------------------------
-GPU Kullanılan Uygulamalar
---------------------------------
+-----------------------------------------------
+GPU Kullanımı için Hazırlanan Diğer Kılavuzlar
+-----------------------------------------------
 
 .. toctree::
     :maxdepth: 1
 
     ../deep-learning/index.rst
+    ../GROMACS/gromacs_gpu.rst
+    ../LAMMPS/lammps_gpu.rst
