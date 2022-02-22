@@ -36,7 +36,7 @@ Hazırlık: VSCode'da Docker Container içerisinde geliştirme yapmak için [ilg
 
 Hazırlığı tamamladıktan sonra klonladığınız depoyu bilgisayarınızda açmak için VSCode `F1`&rarr;`Remote-Containers: Open folder in container...` komutunu kullanabilirsiniz.
 
-Klasör VSCode'da Docker container içinde açıldıktan sonra eklentiler menüsünden önerilen ekletileri etkinleştirmeniz gerekmektedir:
+Klasör VSCode'da Docker container içinde açıldıktan sonra eklentiler menüsünden önerilen eklentileri etkinleştirmeniz gerekmektedir:
 
 ![](remote-container-extensions.png)
 
