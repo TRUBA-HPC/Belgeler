@@ -20,7 +20,12 @@ Open OnDemand arayüzünde Jupyter kullanmak için Anaconda yüklemenizi kullana
     
     Belgenin geri kalanda ev dizinine Miniconda kurulumu yapılmış kabul edilmektedir. Ev dizininizde Miniconda kurulu değilse kurulumu :doc:`Python Kılavuzu'nu <anaconda>` takip ederek yapabilirsiniz.
 
-Her loginde conda'nın (Miniconda) temel ortamını etkinleştirmek için ev dizininizde bulunan ``.bash_profile`` dosyasına şu satırı ekleyin.
+Her loginde conda'nın (Miniconda) temel ortamını etkinleştirmek için ev dizininizde bulunan ``.bash_profile`` dosyasına aşağıdaki satırı ekleyin.
+
+.. code-block:: bash
+    :caption: .bash_profile
+
+    eval "$(/truba/home/$USER/miniconda3/bin/conda shell.bash hook)"
 
 .. note::
 
@@ -32,11 +37,6 @@ Her loginde conda'nın (Miniconda) temel ortamını etkinleştirmek için ev diz
         rm .profile .bashrc
         ln -s .bash_profile .profile
         ln -s .bash_profile .bashrc
-
-.. code-block:: bash
-    :caption: .bash_profile
-
-    eval "$(/truba/home/$USER/miniconda3/bin/conda shell.bash hook)"
 
 Logout olup login olduktan sonra conda temel ortamının aktif olması gerekir. Temel ortamda yüklü olan paketleri görüntülemek için:
 
