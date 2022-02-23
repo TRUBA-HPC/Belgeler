@@ -11,8 +11,7 @@ Barbun Hesaplama Kümesi için Örnek Slurm Dosyası
 
     #!/bin/bash
     #SBATCH -M truba
-    #SBATCH -p short
-    #SBATCH --constraint=barbun 
+    #SBATCH -p barbun 
     #SBATCH -A accountname
     #SBATCH -J qe67barbun
     #SBATCH -N 1

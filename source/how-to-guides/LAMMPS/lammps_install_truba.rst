@@ -12,7 +12,7 @@ Kurulumu ``barbun`` kuyruğu için optimize bir şekilde kurmak istiyorsanız ö
 
 .. code-block:: bash
 
-   srun -N 1 -A kullaniciadi -p short --ntasks-per-node=4 --time=01:00:00 --constraint=barbun --job-name "lmp install" --pty bash -i
+   srun -N 1 -A kullaniciadi -p barbun --ntasks-per-node=4 --time=01:00:00 --job-name "lmp install" --pty bash -i
 
 .. note::
 

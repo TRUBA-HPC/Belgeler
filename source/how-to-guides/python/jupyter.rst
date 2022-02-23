@@ -113,7 +113,7 @@ Oluşturulan yapılandırma dosyasını düzenleyerek aşağıdaki satırları d
 
 .. code-block:: bash
 
-    srun -p short -n 1 -c 4 --time 1:00:00 --pty /bin/bash
+    srun -p barbun -n 1 -c 4 --time 1:00:00 --pty /bin/bash
 
 Jupyter'in çalıştığı makinenin ismini öğrenin: ``[HOSTNAME]``
 
