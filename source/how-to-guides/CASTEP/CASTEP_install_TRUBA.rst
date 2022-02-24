@@ -26,7 +26,7 @@ Sıkıştırılmış arşiv dosyalarını açınız ve kurulum dosyalarının ol
 
 .. code-block:: bash
 
-   srun -A kullaniciadi -p short -C barbun -N 1 --ntasks-per-node=4 --time=02:00:00 --constraint=barbun --job-name "castep-install" --pty bash -i
+   srun -A kullaniciadi -p barbun -N 1 --ntasks-per-node=4 --time=02:00:00 --constraint=barbun --job-name "castep-install" --pty bash -i
 
 **3.** TRUBA sisteminde genel olarak kurulu olan programlar hakkındaki bilgiye
 

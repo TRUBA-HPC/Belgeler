@@ -2,10 +2,36 @@
 TRUBA'da GROMACS Kurulumu
 ==========================
 
+Kullanıcılarımız tarafından sıklıkla kullanılan, açık kaynak kodlu olan ve GNU GPL lisansı altında sunulan yazılımlar altyapımızda yer almaktadır. TRUBA’ya terminalden bağlantı sağladıktan sonra levrek1 kullanıcı arayüzünde terminalden
+
+.. code-block::
+
+  module available
+
+komutunu yazdığınızda TRUBA sisteminde kurulu olan temel programlar listelenecektir. Module isimlendirmesi ile ilgili bilgilere TRUBA :ref:`moduller-truba` sayfamızdan ulaşabilirsiniz.
+
+Centos7.3 işletim sistemi olan ``barbun-cuda`` hesaplama kümesinde GROMACS 2021'in CUDA opsiyonu ile kurulu olan versiyonu bulunmaktadır. İlgili modul ismi:
+
+.. code-block::
+
+  centos7.3/app/gromacs/2021-openmpi-4.0.1-python-3.6.5-gcc-7-GOLD-CUDA
+
+Bu versiyonu kullanmak için örnek slurm betik dosyasına ``/truba/sw/scripts/gromacs`` klasörü altından ulaşabilirsiniz. Dosya ismi: ``gromacs-2021-openmpi-4.0.1-python-3.6.5-gcc-7-GOLD-CUDA.slurm``
+
+Hamsi hesaplama kümesinde ise Centos 7.9 işletim sistemi yüklüdür ve burada GROMACS 2021.2 versiyonu bulunmaktadır. İlgili modüle ismi:
+
+.. code-block::
+
+  centos7.9/app/gromacs/2021.2-impi-mkl-oneapi-2021.2-GOLD
+
+Bu versiyonu kullanmak için örnek slurm betik dosyasına ``/truba/sw/scripts/gromacs`` klasörü altından ulaşabilirsiniz. Dosya ismi: ``gromacs-2021.2-impi-mkl-oneapi-2021.2-GOLD.slurm``
+
 Aşağıda GROMACS programının gromacs-2021.2 versiyonunun TRUBA altyapısında derlenmesi için gerekli adımlar verilmiştir. Siz de aşağıdaki adımları takip ederek GROMACS programını kendi ev dizininizde kurabilirsiniz.
 
+.. _hamsi-gromacs-install:
+
 --------------------------------------------------------------------------------------
-Hamsi Sunucularında GROMACS Programının GNU Derleyicileri ve OPEN MPI ile  Kurulması
+Hamsi Sunucularında GROMACS Programının GNU Derleyicileri ve OpenMPI İle Kurulması
 --------------------------------------------------------------------------------------
 
 **1.** Öncelikle kaynak kodunu aşağıdaki komut yardımıyla kendi ev dizininize indiriniz.
@@ -105,7 +131,7 @@ Kurulumu ``barbun`` kümelerinde yapmak için bu kümelerden boş bir işlemci s
 
 .. code-block:: bash 
  
-  srun -A kullaniciadi -p short -C barbun -N 1 -n 4 --time=02:00:00 --job-name "install-gromacs" --pty bash -i
+  srun -A kullaniciadi -p barbun -N 1 -n 4 --time=02:00:00 --job-name "install-gromacs" --pty bash -i
 
 **4.**
 
@@ -131,8 +157,6 @@ Gerekli ortamlar için aşağıdaki komut satırını terminalinizden uygulayın
   cmake .. -DCMAKE_C_COMPILER=mpicc  -DCMAKE_CXX_COMPILER=mpic++ -DGMX_MPI=on  -DGMX_SIMD=AVX_512 -DGMX_BUILD_OWN_FFTW=ON  -DGMX_GPU=OFF  -DCMAKE_INSTALL_PREFIX=/truba/home/kullaniciadi/bin
   
   make 
-
-  make check
   
   make install
 
