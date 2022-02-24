@@ -11,3 +11,4 @@ Bu belge TRUBA altyapısında derin öğrenme kütüphanelerinin kullanımını 
 
     virtual-env.rst
     container.rst
+    horovod.rst
