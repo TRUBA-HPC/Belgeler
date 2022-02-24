@@ -12,8 +12,7 @@ CASTEP SLURM Dosyası Örneği
 
     #!/bin/bash
     #SBATCH -M truba
-    #SBATCH -p short
-    #SBATCH -C barbun
+    #SBATCH -p barbun
     #SBATCH -A ACCOUNTNAME
     #SBATCH -J castep-test
     #SBATCH -N 1

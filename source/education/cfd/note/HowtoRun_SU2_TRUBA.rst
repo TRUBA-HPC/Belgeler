@@ -119,7 +119,7 @@ or edit the job script and submit & check the que and job output
 	
 	#SBATCH -A userid		# user account name
 	#SBATCH -J su2rotor		# job name
-	#SBATCH -p short		# partition name: debug, short, long, ...
+	#SBATCH -p barbun		# partition name: debug, short, long, ...
 	#SBATCH -N 1			# number of nodes (-N)
 	#SBATCH -n 16			# total number of tasks / cores (-n / -c)
 	#SBATCH --time=04:00:00		# max run time
