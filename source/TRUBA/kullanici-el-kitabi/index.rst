@@ -1,3 +1,5 @@
+.. _kullanici-el-kitabi:
+
 ====================
 Kullanıcı El Kitabı
 ====================

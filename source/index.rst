@@ -45,7 +45,7 @@ TRUBA Kullanıcı Dökümanları
    how-to-guides/Snakemake/index.rst
 
 .. toctree::
-   :caption: TRUBA hakkında
+   :caption: TRUBA Hakkında
    :maxdepth: 1
 
    TRUBA/TRUBAgenel.rst
@@ -58,7 +58,7 @@ TRUBA Kullanıcı Dökümanları
    TRUBA/topluluk-portali/index.rst
    
 .. toctree::
-   :caption: EuroHPC hakkında
+   :caption: EuroHPC Hakkında
    :maxdepth: 1
 
    EuroHPC/EuroHPC-JU.rst
@@ -66,7 +66,7 @@ TRUBA Kullanıcı Dökümanları
    EuroHPC/access.rst
 
 .. toctree::
-   :caption: Eğitim materyalleri
+   :caption: Eğitim Materyalleri
    :maxdepth: 1
    
    education/openmp/index.rst

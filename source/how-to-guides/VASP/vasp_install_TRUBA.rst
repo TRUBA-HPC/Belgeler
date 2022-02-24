@@ -29,7 +29,7 @@ gerekli dosyalar buraya kopyalanır.
 
 .. code-block:: bash 
  
-  srun -N 1 -A kullanıcıadı -p short -n 4 --time=02:00:00 -C barbun --job-name "install-gromacs" --pty bash -i
+  srun -N 1 -A kullanıcıadı -p barbun -n 4 --time=02:00:00 --job-name "install-gromacs" --pty bash -i
 
 
 **4.** Intel Parallel Studio'nun güncel versiyonu load edilir. Program barbun sunucuları üzerinden derlendiği için centos7.3' ün modulleri load edilir. 

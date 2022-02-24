@@ -3,8 +3,6 @@
     "title": "Start documenting!",
     "steps": [
       {
-        "file": "source/index.rst",
-        "line": 1,
         "description": "Hello!\n\nWe prepared for you a quick tour to get you started.",
         "title": "Intro"
       },
@@ -19,12 +17,6 @@
         "line": 3,
         "description": "You can open preview to the side by clicking the second small icon on the top right corner.\n\nOR\n\nHit F1 and type [\"reStructuredText: Open Preview to the Side\"](command:restructuredtext.showPreviewToSide) &larr; or click just here",
         "title": "Preview documents"
-      },
-      {
-        "file": "source/index.rst",
-        "line": 6,
-        "description": "This documentation uses [Sphinx](https://www.sphinx-doc.org/en/master/) with the Read The Docs theme. Sphinx is a documentation generator that translates a set of plain text source files into various output formats (e.g.; html and pdf). It extends the reStructuredText markup language to support additional functionality. You can use this [reference](https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html) while writing docs using reStructuredText.",
-        "title": "Sphinx and reStructuredText"
       },
       {
         "title": "Git configuration",
@@ -57,6 +49,10 @@
       {
         "title": "Push changes and create a pull request",
         "description": "After committing all changes, check if you committed all changes. Also get the `[name-of-your-branch]`\n\n>> git status\n\nPush to remote branch:\n\n```\ngit push myRemote [name-of-your-branch]\n```\nTo create a pull request, go to the [repository (pull requests)](https://github.com/[USERNAME]/Belgeler/pulls), click new pull request, and select the branch you just pushed. Congratulations, you just created a new pull request! 🎉"
+      },
+      {
+        "description": "Finally, this documentation uses [Sphinx](https://www.sphinx-doc.org/en/master/) with the Read The Docs theme. Sphinx is a documentation generator that translates a set of plain text source files into various output formats (e.g.; html and pdf). It extends the reStructuredText markup language to support additional functionality.\n\nYou can use this [reference](https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html) while writing docs using reStructuredText.",
+        "title": "Sphinx and reStructuredText"
       }
     ]
   }

@@ -74,6 +74,11 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 
 :ref:`35. Kullanıcı dizinlerinin başka kullanıcıların erişimine açılması (ACL) <target to ss35>`
 
+:ref:`36. TRUBA kullanıcı hesabı şifremi nasıl değiştirebilirim? <target to ss36>`
+
+:ref:`37. TRUBA kullanıcı şifremi hatırlamıyorum? Nasıl yeni şifre talep edebilirim? <target to ss37>`
+
+:ref:`38. TRUBA kullanıcı hesabım askıya alındı. Ne yapmalıyım? <target to ss38>`
 
 .. _target to ss1:
 
@@ -82,7 +87,6 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
     Evet. Sadece ULAKNET ağına bağlı bilgisayarlardan (tüm kamu üniversiteleri ve bazı vakıf üniversiteleri) levrek1.ulakbim.gov.tr sunucusuna SSH ile doğrudan bağlanabilir.
     
     Eğer internete ULAKNET üzerinden bağlanılmıyorsa, öncelikle OpenVPN ile TRUBA sanal ağına bağlanılmalı, sonrasında levrek1.ulakbim.gov.tr (ya da 172.16.7.1 adresine) ssh ile bağlanılmalıdır.  
-
 
 .. _target to ss2:
 
@@ -120,7 +124,6 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 6.  OpenVPN bağlantısı yapamıyorum, her 5 saniyede program yeniden bağlanmaya çalışıyor
 
 	Büyük ihtimal sertifikanızın geçerlilik süresi dolmuştur. Kullandığınız sertifika yönetici programından, ya da sertifikanızı yedeklediğiniz web tarayıcısından sertifikanızın geçerlilik süresini kontrol ediniz. Sertifikanızın süresi dolmuş ise, daha önce sertifika başvurusu için size gönderilmiş olan e-postadaki sertifika başvuru linkine tıklayarak yeniden sertifika talebinde bulunabilirsiniz.
-
 
 .. _target to ss7:
 
@@ -347,4 +350,26 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 	    setfacl -m u:user2:x  /truba/home/user1
 	    setfacl -dm u:user2:rwx  /truba/home/user1/ortak_dizin
 
-    Eğer birden fazla kullanıcıya ortak_dizin'e erişim hakkı verilmek isteniyorsa, diger kullanıcılar için de bu komutlar çalıştırılmalıdır.
+    Eğer birden fazla kullanıcıya ortak_dizin'e erişim hakkı verilmek isteniyorsa, diğer kullanıcılar için de bu komutlar çalıştırılmalıdır.
+
+.. _target to ss36:
+
+36. TRUBA kullanıcı hesabı şifresinin değiştirilmesi
+
+	Levrek1 kullanıcı arayüzüne bağlandıktan sonra terminal üzerinden ``passwd`` komutunu yazarak mevcut şifrenizi değiştirebilirsiniz.
+
+.. _target to ss37:
+
+37. Yeni TRUBA kullanıcı şifresi talebi
+
+	`TRUBA kullanıcı portalı <https://portal.truba.gov.tr/>`_ üzerinden e-devlet aracılıpıyla giriş yaparak ``Yeni Şifre`` talebinde bulunabilirsiniz.
+
+.. _target to ss38:
+
+38.  TRUBA kullanıcı hesabım askıya alındı. Ne yapmalıyım?
+
+	Kullanıcı arayüzünde iş çalıştırıldığında ve de ilgili kullanıcı tarafından sisteme fazla yük bindirildiği durumlarda sistem kullanıcı hesabını otomatik olarak askıya almaktadır. Lütfen arayüz makinelerinde yoğunluğa sebep olacak işler çalıştırmayınız.
+
+	Kullanıcı hesabınızın yeniden erişime açılabilmesi için TRUBA Dokümantasyon sayfamızda (docs.truba.gov.tr/) yer alan :doc:`Kullanıcı El Kitabı <kullanici-el-kitabi/index>` ve :doc:`Sıkça Sorulan Sorular <sss>` başlıkları altındaki içerikleri ayrıntılı bir şekilde inceleyip okuyarak hesaplama kümelerinin kullanım şekli ve kuralları konusunda bilgi edinmeniz gerekmektedir. 
+	
+	TRUBA kullanıcı hesabınızın tekrardan erişime açılabilmesi için ilgili dokümantasyon sayfalarını okuduktan sonra ``grid-teknik@ulakbim.gov.tr`` adresine bilgilendirme epostası göndermeniz gerekmektedir.

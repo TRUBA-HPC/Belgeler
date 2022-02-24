@@ -151,7 +151,7 @@ TRUBA Kaynakları
      - Xeon 6148 2.40GHz
      - 1400 
      - 2048Gflops & 4x7800Gflops
-     - 384 GB & 2x16 GB HBM 
+     - 384 GB & 4x16 GB HBM 
      - Akya-Cuda Kümesi
    * - 2021
      - 144
