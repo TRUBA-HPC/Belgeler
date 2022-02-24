@@ -362,14 +362,14 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 
 37. Yeni TRUBA kullanıcı şifresi talebi
 
-	TRUBA kullanıcı portalı :ref:`<https://portal.truba.gov.tr/>` üzerinden e-devlet aracılıpıyla giriş yaparak ``Yeni Şifre``talebinde bulunabilirsiniz.
+	`TRUBA kullanıcı portalı <https://portal.truba.gov.tr/>`_ üzerinden e-devlet aracılıpıyla giriş yaparak ``Yeni Şifre`` talebinde bulunabilirsiniz.
 
 .. _target to ss38:
 
-38. TRUBA kullanıcı hesabım askıya alındı. Ne yapmalıyım?
+38.  TRUBA kullanıcı hesabım askıya alındı. Ne yapmalıyım?
 
 	Kullanıcı arayüzünde iş çalıştırıldığında ve de ilgili kullanıcı tarafından sisteme fazla yük bindirildiği durumlarda sistem kullanıcı hesabını otomatik olarak askıya almaktadır. Lütfen arayüz makinelerinde yoğunluğa sebep olacak işler çalıştırmayınız.
 
-	Kullanıcı hesabınızın yeniden erişime açılabilmesi için TRUBA Dokümantasyon sayfamızda (docs.truba.gov.tr/) yer alan :ref:`Kullanıcı El Kitabı <kullanici-el-kitabi>` ve :ref:`Sıkça Sorulan Sorular <sss-TRUBA>` başlıkları altındaki içerikleri ayrıntılı bir şekilde inceleyip okuyarak hesaplama kümelerinin kullanım şekli ve kuralları konusunda bilgi edinmeniz gerekmektedir. 
+	Kullanıcı hesabınızın yeniden erişime açılabilmesi için TRUBA Dokümantasyon sayfamızda (docs.truba.gov.tr/) yer alan :doc:`Kullanıcı El Kitabı <kullanici-el-kitabi/index>` ve :doc:`Sıkça Sorulan Sorular <sss>` başlıkları altındaki içerikleri ayrıntılı bir şekilde inceleyip okuyarak hesaplama kümelerinin kullanım şekli ve kuralları konusunda bilgi edinmeniz gerekmektedir. 
 	
 	TRUBA kullanıcı hesabınızın tekrardan erişime açılabilmesi için ilgili dokümantasyon sayfalarını okuduktan sonra ``grid-teknik@ulakbim.gov.tr`` adresine bilgilendirme epostası göndermeniz gerekmektedir.
