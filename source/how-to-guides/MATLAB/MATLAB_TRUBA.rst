@@ -2,7 +2,7 @@
 TRUBA'da MATLAB Kullanımı
 =================================
 
-TRUBA üzerinde MATLAB çalıştırmak isteyen kullanıcıların **kendilerine ait bir lisansa** sahip olması gerekmektedir. Bu lisans **kişisel, akademik ya da floating (kayar) lisans** olabilir.
+TRUBA üzerinde MATLAB çalıştırmak isteyen kullanıcıların **kendilerine ait bir lisansa** sahip olması gerekmektedir. Bu lisans **akademik ya da floating (kayar) lisans** olabilir.
 
 Lisans türleri hakkında bilgiye `https://www.mathworks.com/pricing-licensing.html <https://www.mathworks.com/pricing-licensing.html>`_ adresinden erişebilirsiniz. Ayrıca üniversitelerin bilgi işlem merkezlerinden de lisansınız hakkında detaylı bilgi edinebilirsiniz.
 
@@ -12,32 +12,42 @@ MATLAB, sahip olunan lisans türüne göre TRUBA üzerinde farklı şekillerde �
 Akademik (TAH: Total Academic Headcount) Lisansı Olan Kullanıcılar
 -------------------------------------------------------------------
 
-EGI ile MATHWORKS arasındaki anlaşma sayesinde kullanıcılar, **kişisel lisansları** ile EGI üyesi ülkelerin süperbilgisayar merkezlerinde MATLAB çalıştırabilmektedirler. Akademik lisansınızın Mathworks üzerinden doğrulanabilmesi için grafik ekrana ihtiyaç duyulmaktadır. Bu lisansa sahip olarak TRUBA üzerinde MATLAB çalıştıracaksanız birkaç metot bulunmaktadır.
+EGI ile MATHWORKS arasındaki anlaşma sayesinde kullanıcılar, **"MATLAB Parallel Server lisansları"** ile EGI üyesi ülkelerin süperbilgisayar merkezlerinde MATLAB çalıştırabilmektedirler. Akademik lisansınızın Mathworks üzerinden doğrulanabilmesi için grafik ekrana ihtiyaç duyulmaktadır. Bu lisansa sahip olarak TRUBA üzerinde MATLAB çalıştıracaksanız birkaç metot bulunmaktadır.
 
 - **Kişisel bilgisayarınızda MATLAB çalıştırarak**
+
 
 - TRUBA üzerindeki kullanıcı arayüz sunucularından :ref:`grafik-ekran` alarak
 
 Kişisel Bilgisayarınızda MATLAB Çalıştırırak TRUBA'ya İş Göndermek
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+- Kullanıcılar tarafından en çok tercih edilen yöntem budur. Bu yöntem ile iş gönderebilmek için kendi bilgisyarınıza TRUBA üzerinde yüklü MATLAB versiyonunu yüklemeniz gerekmektedir. 
+  
 - MATLAB'ın güncel versiyonunu `Mathworks <https://www.mathworks.com/downloads/>`_ sitesinden indirebilirsiniz. Akademik lisansa sahipseniz, kullanıcı adı ve şifrenizle giriş yapıp MATLAB'ı indirebilir ve kişisel bilgisayarınıza kurulumu gerçekleştirebilirsiniz.
+
+.. note::
+
+   TRUBA'da MATLAB kullanilabilmesi için lisansınızın "**MATLAB Parallel Server**" özelliği olması gerekmektedir. Akademiden kullanıcılarımız bağlı oldukları üniversitelerin bilgi işlem merkezinden ilgili lisans özelliğini aktive ettirmesi gerekebilir. Bununla ilgili olarak bağlı olduğunuz birimin bilgi işlem daire başkanlığıyla iletişime geçiniz. `Mathworks hesabınıza <https://www.mathworks.com/mwaccount>`_  girdiğinizde aşağıdaki gibi "MATLAB Parallel Server" özelliğini görmeniz gerekmektedir.
+
+.. image:: /assets/matlab-howto/matlab-lisans.png
+      :width: 800px		      
 
 - Kişisel bilgisayarınızdan çalıştırdığınız MATLAB ile TRUBA’ya iş gönderebilmek için bir seferlik küme ayarının (“parallel cluster”) yapılması gerekmektedir.
 
 - İlgili ayar dosyaları ``/truba/sw/scripts/matlab/matlabScripts/truba.nonshared.R2021b`` klasöründe yer almaktadır. Buradan ilgili klasörü kendi bilgisayarınıza indirebilirsiniz. 
 
   ::
-
+     
+    # kampüs ağı dışından VPN ile bağlantı gerçekleştiriyorsanız levrek1.ulakbim.gov.tr yerine 	172.16.7.1 adresini yazmanız gerekecektir.
     scp -r username@levrek1.ulakbim.gov.tr:/truba/sw/scripts/matlab/matlabScripts/truba.nonshared.R2021b ~/TRUBA_R2021b
 
-İlgili dosyayı ayrıca :download:`bu web bağlantisindan </assets/matlab-howto/config-files/truba.nonshared.R2021b.zip>` indirebilirsiniz.
+İlgili dosyayı ayrıca :download:`bu web bağlantisindan </assets/matlab-howto/config-files/truba.nonshared.R2021b.zip>`_ indirebilirsiniz.
 
 .. note::
 
-    * TRUBA üzerinde MATLAB R2021b versiyonu yüklüdür. Bu yöntem ile çalışmak istiyorsanız siz de kendi bilgisayarınıza aynı versiyonu yüklemeniz gerekmektedir.
+    * TRUBA üzerinde **MATLAB R2021b** versiyonu yüklüdür. Bu yöntem ile çalışmak istiyorsanız siz de kendi bilgisayarınıza aynı versiyonu yüklemeniz gerekmektedir.
     
-    * Aşağıdaki örnek ilgili klasörün ``'~/TRUBA_R2021b'`` altında olduğu varsayılarak düzenlenmiştir.)
+    * Aşağıdaki örnek ilgili klasörün ``'~/TRUBA_R2021b'`` altında olduğu varsayılarak düzenlenmiştir.
 
 - Kişisel bilgisayarınızda çalıştırdığınız **MATLAB komut penceresinden** indirmiş olduğunuz ayar dosyasına gidip, ``configCluster`` komutunu çalıştırınız. Sonrasında TRUBA kullanıcı adınızı giriniz.
 
@@ -47,11 +57,11 @@ Kişisel Bilgisayarınızda MATLAB Çalıştırırak TRUBA'ya İş Göndermek
     >> configCluster
 
 .. image:: /assets/matlab-howto/matlab3.png
-   :width: 400px
+   :width: 800px
    
 .. note::
 
-    ``configCluster`` komutunu çalıştırdığınızda varsayılan kümeniz TRUBA olarak ayarlanacaktır. Eğer lokal makinenizde iş çalıştıracaksanız 
+    ``configCluster`` komutunu çalıştırdığınızda varsayılan kümeniz TRUBA olarak ayarlanacaktır. Eğer lokal makinenizde küme profili oluşturacaksanız  
     ``c=parcluster('local');``
     şeklinde ilgili ayarı değiştirmeniz gerekecektir. 
 
@@ -62,7 +72,7 @@ Bu işlemi bir kez gerçekleştirmek yeterlidir. Bundan sonra iş gönderirken �
 Hesap ve kuyruk parametrelerinin yapılandırması
 :::::::::::::::::::::::::::::::::::::::::::::::
 
-MATLAB’ı çalıştıracağınız küme hakkındaki parametrelerinizi ayarlamanız gerekmektedir. "**truba.nonshared.R2021b**" dizini içerisindeki **truba.m** dosyası parametreleri otomatik olarak yapılandırmaktadır.  **MATLAB komut satırından** :code:`truba` komutunun çalıştırılması yeterlidir. 
+MATLAB’ı çalıştıracağınız küme hakkındaki parametrelerinizi ayarlamanız gerekmektedir. "**truba.nonshared.R2021b**" dizini içerisindeki **truba.m** dosyası parametreleri otomatik olarak yapılandırmaktadır. İhtiyacınıza göre ilgili parametreleri bu dosyadan değiştirebilirsiniz. Sonrasıda **MATLAB komut satırından** :code:`truba` komutunun çalıştırılması yeterli olacaktir. Ayrıca küme ve işinizle ilgili ayarları MATLAB komut satırı  üzerinden de değiştirebilirsiniz. Parametreler ile ilgili aşağıda bir örnek  verilmiştir. 
  
    
 .. warning::
@@ -71,17 +81,21 @@ MATLAB’ı çalıştıracağınız küme hakkındaki parametrelerinizi ayarlama
 
 ::
 
+    %%%%%%%%%%%%%%%%%%%%%%%%%%% İş gönderirken belirtilmesi gereken seçenekler %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % kümeyi oluşturun
     c=parcluster;
 
+    % Lisansinizi kullanabilmeniz icin bu parametreyi aktive etmelisiniz.
+    c.RequiresOnlineLicensing=true
+    
     % bağlanacağınız arayüz makinesinin ip adresini 
-    %VPN ile bağlanıyorsanız 172.16.7.1 , ULAKNET üzerinden bağlanıyorsanız  levrek1.ulakbim.gov.tr
+    %VPN ile bağlanıyorsanız 172.16.7.1 ; ULAKNET üzerinden (kampus icerisinden) bağlanıyorsanız  levrek1.ulakbim.gov.tr
     c.AdditionalProperties.ClusterHost='172.16.7.1';
 
     % ssh portunu ayarlayın
     c.AdditionalProperties.UseSshPort=22;
 
-    % işinizi göndereceğiniz kuyruğun adını yazın
+    % işinizi göndereceğiniz kuyruğun adını yazın 
     c.AdditionalProperties.QueueName='hamsi';
 
     % işinizin süreceği maksimum zamanı girin. Aksilik yaşamamanız için tahmin ettiğiniz sürenin %20 fazlasını belirtin.
@@ -90,8 +104,30 @@ MATLAB’ı çalıştıracağınız küme hakkındaki parametrelerinizi ayarlama
     % Node sayısını belirtin. (Genelde çalıştırılan işler için bir node yeterlidir)
     c.AdditionalProperties.Nodes=1
 
-    % Thread sayısını giriniz. (--cpu-per-task)
+    % Thread sayısını giriniz. (--cpu-per-task) 
     c.NumThreads=28;
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%% Tercihen Değiştirilebilecek seçenekler %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    % c.AdditionalProperties.EmailAddress = 'your-email@your' 
+
+    %% Eger her seferinde TRUBA şifrenizi yazmak istemiyorsanız, ssh anahtar ayarini aktif edebilirsiniz.
+    %c.AdditionalProperties.UseIdentityFile=1
+    %% ssh anahtarinizin yerini belirtin
+    %c.AdditionalProperties.IdentityFile='/Users/sbilmis/.ssh/id_rsa_ulakbim'
+    %c.AdditionalProperties.IdentityFileHasPassphrase: 0
+    
+    %% Debugging ozelligini de tercihe gore degistirebilirsiniz
+    %c.AdditionalProperties.EnableDebug=true;
+
+    %% isinizle ilgili bir rezervasyona sahipseniz belirtebilirsiniz
+    %c.AdditionalProperties.Reservation='Varsa_rezervasyon_adi'
+
+    %% isinizin truba uzerinde nerede saklanacagi ile ilgili yeri belirtebilirsiniz
+    % c.AdditionalProperties.RemoteJobStorageLocation='/truba/home/sbilmis/.matlab/3p_cluster_jobs/truba/sbilmis.local/R2021b/nonshared'w
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
     % işinizi kuyruğa göndermeden önce konfigürasyonunuzu tekrar gözden geçirebilirsiniz.
     c.AdditionalProperties
@@ -101,25 +137,25 @@ MATLAB’ı çalıştıracağınız küme hakkındaki parametrelerinizi ayarlama
 
 
 .. image:: /assets/matlab-howto/matlab4.png
-    :width: 400px
+    :width: 800px
 
-Küme ayarlarınız başarıyla oluşturulmuş durumda. Ayrıca ``"Home->Parallel-> Create and Manage Clusters"`` sekmesi altından oluşturmuş olduğunuz kümenin özelliklerini görebilirsiniz. MATLAB'ı kapatıp açsanız da oluşturmuş olduğunuz küme ayarlarınız kayıtlı halde duracaktır. Buradan "default profile" seçimini de gerçekleştirebilirsiniz.
+Küme ayarlarınız başarıyla oluşturulmuş durumda. Ayrıca ``"Home->Parallel-> Create and Manage Clusters"`` sekmesi altından oluşturmuş olduğunuz kümenin özelliklerini görebilir ve değiştirebilirsiniz. MATLAB'ı kapatıp açsanız da oluşturmuş olduğunuz küme ayarlarınız kayıtlı halde duracaktır. Buradan "default profile" seçimini de gerçekleştirebilirsiniz.
 
-İşlerinizi gönderirken arayüz üzerinden de bu ayarları değiştirebilirsiniz.
+İşlerinizi göndermeden önce küme ayarlarını komut satırı yerine bu arayüz üzerinden de değiştirebilirsiniz. Ayar değişikliğinin aktif olması için parcluster komutunu yeniden çalıştırınız :code:`clear c; c=parcluster` .  
 
 .. warning::
 
-    TRUBA üzerinde kurulu MATLAB, sadece  CentOS-7.9 işletim sistemi ile çalışmaktadır. Bu nedenle işler sadece **hamsi** kümesine gönderilebilir.
+    TRUBA üzerinde kurulu MATLAB, sadece  CentOS-7.9 işletim sistemi ile çalışmaktadır. Bu nedenle şu an için işler sadece **hamsi** kümesine gönderilebilir.
 
 
 .. image:: /assets/matlab-howto/matlab6.png
-    :width: 400px
+    :width: 800px
 
 .. note::
 
-    Küme üzerinde İşlerinizin kayıt edildiği yer varsayılan olarak ``.matlab/3p_cluster_jobs/truba/TRUBA.R2021b/nonshared`` klasörüdür.  İşinizin durumunu ve sonuçlarını buradan kontrol edebilirsiniz.
+    Küme üzerinde işlerinizin kayıt edildiği yer varsayılan olarak ``.matlab/3p_cluster_jobs/truba/TRUBA.R2021b/nonshared`` klasörüdür.  İşinizin durumunu ve sonuçlarını buradan kontrol edebilirsiniz.
 
-    :code:`c.AdditionalProperties.RemoteJobStorageLocation=` komutu ile de ilgili klasörün yerini de değiştirebilirsiniz.
+    :code:`c.AdditionalProperties.RemoteJobStorageLocation=''` komutu ile de ilgili klasörün yerini de değiştirebilirsiniz.
 
 Herhangi bir parametreyi silmek istediğinizde (örneğin e-posta adresi) değişkeni boş bırakmanız yeterlidir.
 
@@ -127,7 +163,10 @@ Herhangi bir parametreyi silmek istediğinizde (örneğin e-posta adresi) deği�
 
     c.AdditionalProperties.EmailAddress = ''
 
-.. list-table:: 
+MATLAB komut satırından çalıştıracağınız tüm komutlar  kişisel bilgisayarınızda çalışacaktır. İşlem gücü gereken fonksiyon ya da dosyaları TRUBA üzerinde çalıştırmak için ilgili kod parçasını :code:`batch` komutu ile kuyruğa göndermeniz gerekecektir. Detaylar için `buradan <https://www.mathworks.com/help/parallel-computing/batch.html>`_ bilgi edinebilir ve aşağıdaki örnekleri inceleyebilirsiniz.
+
+   
+.. list-table:: MATLAB ve Slurm Parametreleri Karşılaştırması 
    :widths: 25 25 25
    :header-rows: 1
 
@@ -139,16 +178,15 @@ Herhangi bir parametreyi silmek istediğinizde (örneğin e-posta adresi) deği�
      - 
    * - :code:`--ntasks, -n` 
      - :code:`pool=`
-     - en fazla c.NumWorkers  kadar olabilir. Herhangi bir değer verilmezse c.NumWorkers değeri kullanılır.
+     - en fazla :code:`c.NumWorkers`  kadar olabilir. Herhangi bir değer verilmezse c.NumWorkers değeri kullanılır.
    * - :code:`--cpus-per-task, -c`
      - :code:`c.NumThreads`
      -  
 
 .. note::
 
-   **Hamsi** kuyruğunda sunucu başına minimum 28 çekirdek kullanılabilir. Hamsi kuyruğuna gönderilecek işler 28  ve katlarında çekirdek kullanmalıdır.
+   **Hamsi** kuyruğunda sunucu başına minimum 28 çekirdek kullanılabilir. Hamsi kuyruğuna gönderilecek işler 28 ve katlarında çekirdek kullanmalıdır.
 
-MATLAB komut satırından çalıştıracağınız tüm komutlar  kişisel bilgisayarınzda çalışacaktır. İşlem gücü gereken  fonksiyon ya da dosyaları TRUBA üzerinde çalıştırmak için ilgili kod parçasını :code:`batch` komutu ile kuyruğa göndermeniz gerekecektir. Aşağıdaki örnekleri inceleyebilirsiniz. Detaylı bilgi için `buradan <https://www.mathworks.com/help/parallel-computing/batch.html>`_ bilgi edinebilirsiniz. 
 
 
 Örnek 1: Dahili komutlar ya da fonksiyonlar
@@ -163,17 +201,17 @@ Bu örnekte dahili :code:`pwd` komutu/fonksiyonu kuyruk üzerinde çalıştırı
 İşinizi gönderdiğinizde, şekilde görüldüğü gibi TRUBA şifrenizin girilmesi istenecektir. Bu sorgu ekranı gelmiyorsa yukarıdaki küme ayarlarınızı kontrol ediniz. Ayrıca ``batch`` komutunun nasıl kullanılacağı ve ilgili parametrelerin ne olduğu hakkında bilgiye `MATLAB yardım merkezinden <https://www.mathworks.com/help/parallel-computing/batch.html#d123e38009>`_ erişim sağlayabilirsiniz. 
 
 .. image:: /assets/matlab-howto/matlab7.png
-    :width: 400px
+    :width: 800px
 
 İşinizi gönderdiğinizde bir "Slurm Jobid" si atanacaktır. Ayrica levrek1 arayüzünden :code:`squeue` komutu ile de işinizin durumunu öğrenebilirsiniz.
 
 .. image:: /assets/matlab-howto/matlab8.png
-    :width: 400px
+    :width: 800px
 
 
 .. image:: /assets/matlab-howto/matlab9.png
-    :width: 400px
-
+    :width: 800px
+	    
 MATLAB komut penceresi üzerinden işinizin durumu hakkında bilgi edinebilirsiniz.
 
 ::
@@ -193,14 +231,26 @@ MATLAB komut penceresi üzerinden işinizin durumu hakkında bilgi edinebilirsin
     % eğer var olan tüm işleri silmek isterseniz
     delete(c.Jobs)
 
+Ayrica iş paketi yöneticisi (slurm) ile ilgili kimi parametrelere de MATLAB üzerinden erişebilirsiniz.
 
+::
+
+    % Slurm jobid bilgisini elde etmek icin
+    getTaskSchedulerIDs(j)
+
+    %% Gondermis oldugunuz isle ilgili slurm bilgisini ekrana yazdirmak isterseniz
+    setSchedulerMessageHandler(@disp)
+    
+    % debug bilgisi edinmek icin
+    getDebugLog(c,j)
+    
 İşinizin durumunu ayrıca "**MATLAB Job Monitor Tool**" ile de görebilirsiniz. İşinizle ilgili sonucu bu arayüz aracılığıyla da çekebilirsiniz.
 
 .. image:: /assets/matlab-howto/matlab5.png
-    :width: 400px
+    :width: 800px
 
 .. image:: /assets/matlab-howto/matlab10.png
-    :width: 400px
+    :width: 800px
 
 
 .. note::
@@ -218,7 +268,7 @@ MATLAB komut penceresi üzerinden işinizin durumu hakkında bilgi edinebilirsin
      j2.fetchOutputs
 
 .. image:: /assets/matlab-howto/matlab11.png
-    :width: 400px
+    :width: 800px
 
 
 Örnek 2: \*.m dosyaları
@@ -327,7 +377,6 @@ Kodu kuyruğa göndermek için
 
 ::
 
-    c.NumWorkers=4;
     c.NumThreads=7; 
     j = batch(c,@test4, 1, {}, 'pool',3,'CurrentFolder', '.','AutoAddClientPath',false)
 
@@ -336,7 +385,7 @@ Kodu kuyruğa göndermek için
     işinizi gönderdiğinizde config ayarlarınıza göre aşağıdaki gibi bir çıktı göreceksiniz. 
     ``additionalSubmitArgs = '--ntasks=4 --cpus-per-task=7 -p hamsi -t 3:00:00 -N 1 '``
 
-    pool sayisi :code:`--ntask` parametresine karşılık gelmektedir. Bir çekirdek işi orkestra eden olarak ayrıldığından pool sayısı ``"ntasks-1"`` şeklinde girilmelidir.    
+    pool sayisi :code:`--ntask` parametresine karşılık gelmektedir. Bir çekirdek işi orkestra eden olarak ayrıldığından pool sayısı ``"ntasks-1"`` şeklinde girilmelidir. Hamsi kümesi için  Number_of_nodes x (pool + 1) x num_Threads = 28 ve katlari seklinde belirtilmelidir. Bu parametreleri işinizin yapısına göre düzenlemeniz gerekmektedir. Yüksek çekirdek talebi işinizin daha kısa sürede tamamlanacağı anlamına gelmemektedir, işinizin yapısına düzenlemeniz gerekmektedir.     
 
 
 Barbun1 ya da Sardalya1 üzerinde MATLAB çalıştırarak TRUBA'ya iş göndermek
@@ -365,7 +414,7 @@ Arayüz sunucusunda terminal ekranı aldıktan sonra MATLAB ile küme profili ol
     module avail -t 2>&1 | grep -i matlab
 
 .. image:: /assets/matlab-howto/matlab12.png
-   :width: 400px
+   :width: 800px
 
 Sistem üzerinde farklı versiyonlar yüklü olabilir (R2018b ve R2021b vb).
 Örnek olarak R2021b versiyonunu kullanacaksanız öncelikle bu yazılımı ``module load`` ile sisteminize yüklemeniz gerekecektir. Modül kullanımı ile ilgili bigiye :ref:`moduller-truba` sayfasından erişebilirsiniz.
@@ -387,7 +436,7 @@ Sistem üzerinde farklı versiyonlar yüklü olabilir (R2018b ve R2021b vb).
 MATLAB'ı ilk kez çalıştırdığınızda aşağıdaki gibi bir sorgu ekranı açılacak ve lisansınızı aktive etmeniz istenecektir.
 
 .. image:: /assets/matlab-howto/matlab2.png
-   :width: 400px
+   :width: 800px
 
 Eğer ilgili sorgu ekran otomatik olarak açılmazsa ``matlab/bin`` dizinin altinda yer alan ``activate_matlab.sh`` betiğini çalıştırarak da aktivasyonu gerçekleştirebilirsiniz.
 
@@ -429,7 +478,7 @@ Bu ayar dosyasını bir kez çalıştırmanız yeterlidir. Daha sonra :ref:`MATL
 
     Kişisel bilgisayar üzerinden çalıştırdığınız MATLAB ile TRUBA kümesine iş göndermek için ``/truba/sw/scripts/matlab/matlabScripts/truba.nonshared.R2021b`` ayar dosyasını,
 
-    TRUBA arayüz sunucularında grafik ekran alarak çalıştırdığınız MATLAB ile kümeye iş gönderecekseniz ise ``/truba/sw/scripts/matlab/matlabScripts/truba.shared.R2021b ~/TRUBA_2021b_shared`` ayar dosyasını kullanmanız gerekecektir. Aksi takdirde işlerinizde hata ile karşılaşacaksınız.
+    TRUBA arayüz sunucularında grafik ekran alarak çalıştırdığınız MATLAB ile kümeye iş gönderecekseniz ise ``/truba/sw/scripts/matlab/matlabScripts/truba.shared.R2021b`` ayar dosyasını kullanmanız gerekecektir. Aksi takdirde işlerinizde hata ile karşılaşacaksınız.
 
 --------------------------------------------
 Kayar (Floating) Lisansı Olan Kullanıcılar 
@@ -449,7 +498,7 @@ Sistemde yüklü yazılımları ``module available`` komutu ile görebilirsiniz.
     module avail -t 2>&1 | grep -i matlab
 
 .. image:: /assets/matlab-howto/matlab1.png
-   :width: 400px
+   :width: 800px
 
 .. warning::
 
