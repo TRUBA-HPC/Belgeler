@@ -12,6 +12,7 @@ Kullanıcı El Kitabı
     kullanicihesaplari.rst
     hesaplamakumeleri.rst
     dosyasistemleri.rst
+    yardimciuygulamalar.rst
     yazilimlar.rst
     moduller.rst
     kutuphaneler.rst
