@@ -6,7 +6,7 @@ EuroHPC Sistemlerine Erişim Modları ve Çağrılar
 Erişim Modları
 ---------------
 
-Ortak girişim tarafından finanse edilen süper bilgisayarlara erişim süresi tahsisi, `EuroHPC Ortak Girişimi Konsey Yönetmeliği ve Ortak Girişimi’in Erişim Politikası <https://eurohpc-ju.europa.eu/sites/default/files/2021-03/Decision%2006.2021%20-%20Access%20policy.pdf>`_’nda belirtilen ilkelere göre düzenlenecektir.
+Ortak girişim tarafından finanse edilen süper bilgisayarlara erişim süresi tahsisi, `EuroHPC Ortak Girişimi Konsey Yönetmeliği ve Ortak Girişimi’in Erişim Politikası <https://eurohpc-ju.europa.eu/sites/default/files/2021-10/Decision%2018.2021%20-%20Access%20policy.pdf>`_’nda belirtilen ilkelere göre düzenlenecektir.
 
 Bu ilkelere göre bilimsel, endüstriyel ve kamu sektörü kullanıcıları için altı farklı erişim modu bulunmaktadır:
 
@@ -29,12 +29,24 @@ EuroHPC Çağrıları
 Kıyaslama (Benchmark) ve Geliştirme Çağrıları
 ==============================================
 
-EuroHPC Ortak Girişimi Kıyaslama ve Geliştirme Erişim Modları için Teklif Çağrıları, gönderim tarihinden itibaren maksimum iki hafta kaynak erişim başlangıç tarihi olacak şekilde sürekli açık çağrılardır. Teklifler için bir sonraki son tarihler:
+EuroHPC Ortak Girişimi Kıyaslama ve Geliştirme Erişim Modları için Teklif Çağrıları, gönderim tarihinden itibaren maksimum iki hafta kaynak erişim başlangıç tarihi olacak şekilde sürekli açık çağrılardır. Teklifler için 2022 yılı son başvuru tarihleri aşağıdaki gibidir:
 
- * 1 Aralık 2021 – 11:00 CEST
- * 1 Ocak 2022 – 11:00 CEST
- * 1 Şubat 2022 – 11:00 CEST
- * 1 Mart 2022 – 11:00 CEST
+
+.. list-table::
+   :widths: 40 40
+ 
+   * - 1 Ocak 2022 – 11:00 AM CET
+     - 1 Temmuz 2022 – 11:00 AM CEST
+   * - 1 Şubat 2022 – 11:00 AM CET
+     - 1 Ağustos 2022 – 11:00 AM CEST
+   * - 1 Mart 2022 – 11:00 AM CET
+     - 1 Eylül 2022 – 11:00 AM CEST
+   * - 1 Nisan 2022 – 11:00 AM CEST
+     - 1 Ekim 2022 – 11:00 AM CEST
+   * - 1 Mayıs 2022 – 11:00 AM CEST
+     - 1 Kasım 2022 – 11:00 AM CET
+   * - 1 Haziran 2022 – 11:00 AM CEST
+     - 1 Aralık 2022 – 11:00 AM CET
 
 EuroHPC Ortak Girişimi Kıyaslama ve Geliştirme Erişim çağrılarının amacı, araştırmacılara ve HPC uygulama geliştiricilerine, aşırı ölçekli ve/veya normal bir projeye başvurmadan önce, gerçekleşmesi yakın/mevcut EuroHPC Pre-exascale ve/veya Petascale sisteminde uygulamalarını geliştirme, test etme ve optimize etme fırsatı vererek onları desteklemektir. Proje önerileri, PRACE Değerlendirme Sayfası aracılığıyla, herhangi bir zamanda sunulabilir (sürekli açık). Projelerin değerlendirilmesi, her ay sabit bir tarihten sonra yapılır (kesme tarihi olarak anılır). Tahsis süreleri, kıyaslama çağrısı için iki veya ay, geliştirme çağrısı için ise bir yıldır. Geliştirme çağrısı için tahsis iki kere yenilenebilir.
 
