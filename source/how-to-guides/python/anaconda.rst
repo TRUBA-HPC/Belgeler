@@ -1,3 +1,5 @@
+.. _miniconda-kurulum:
+
 ===============================
 Ev Dizinine Anaconda Kurulumu
 ===============================

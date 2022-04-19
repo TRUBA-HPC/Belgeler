@@ -35,6 +35,8 @@ Kullanıcının kimlik doğrulamasının e-Devlet ve YÖKSİS üzerinden yapılm
 
    TRUBA sistemini kullanan araştırmacılarımız bilimsel çalışmalar yürüttükleri için, yayınları ile eşleştirmek amacıyla, ORCID ID’lerine de ihtiyaç duymaktayız. Dolayısıyla, TRUBA sistemini kullanmak üzere başvuruda bulunacak araştırmacılarımızın `https://orcid.org/ <https://orcid.org/>`_ adresinden e-posta adresleri ile eşlesen bir ORCID ID alıp portaldaki (`portal.truba.gov.tr <http://portal.truba.gov.tr/>`_) profillerine eklemeleri gerekmektedir. 
    
+.. _kullanici-hesabi-ozellik:
+
 Standart kullanıcı hesabı özellikleri
 --------------------------------------
 

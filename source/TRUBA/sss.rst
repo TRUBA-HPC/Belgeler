@@ -80,6 +80,9 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 
 :ref:`38. TRUBA kullanıcı hesabım askıya alındı. Ne yapmalıyım? <target to ss38>`
 
+:ref:`39. İşlerim "AssocGrpCpuLimit" uyarısı vererek başlamıyor, neden? <target to ss39>`
+
+
 .. _target to ss1:
 
 1. Kullanıcı arayüzü sunucularına erişim kısıtlamaları var mı?
@@ -327,7 +330,7 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 
 .. _target to ss34:
 
-34. İşlerim AssociationJobLimit veya AssocGrpCPUMinutesLimit uyarısı vererek başlamıyor.
+34. İşlerim AssociationJobLimit veya AssocGrpCPUMinutesLimit uyarısı vererek başlamıyor. Neden?
 
 	Hesabınız için tanımlanmış olan çekirdek-saat kotasının tamamını kullanmış olduğunuz için, işleriniz iş kuyruğuna alınmasına rağmen başlamaz. İşlerinizin başlayabilmesi için çekirdek-saat kotanızın arttırılması gerekir.
 
@@ -373,3 +376,13 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 	Kullanıcı hesabınızın yeniden erişime açılabilmesi için TRUBA Dokümantasyon sayfamızda (docs.truba.gov.tr/) yer alan :doc:`Kullanıcı El Kitabı <kullanici-el-kitabi/index>` ve :doc:`Sıkça Sorulan Sorular <sss>` başlıkları altındaki içerikleri ayrıntılı bir şekilde inceleyip okuyarak hesaplama kümelerinin kullanım şekli ve kuralları konusunda bilgi edinmeniz gerekmektedir. 
 	
 	TRUBA kullanıcı hesabınızın tekrardan erişime açılabilmesi için ilgili dokümantasyon sayfalarını okuduktan sonra ``grid-teknik@ulakbim.gov.tr`` adresine bilgilendirme epostası göndermeniz gerekmektedir.
+
+.. _target to ss39:
+
+39. İşlerim "AssocGrpCpuLimit" uyarısı vererek başlamıyor. Neden?
+
+	Hesabınız için tanımlanmış olan aynı anda kullanabileceğiniz çekirdek sayısının üzerinde kaynak talebinde bulunduğunuz için, işleriniz iş kuyruğuna alınmasına rağmen başlamaz. İşlerinizin başlayabilmesi için TRUBA kullanıcı hesabınıza tanımlı çekirdek sayısı limitini göz önünde bulunudrarak SLURM betik dosyanızı düzenlemeniz gerekmektedir.  
+
+	TRUBA kullanıcıları için tanımlanan kullanım kotaları hakkındaki bilgiye :ref:`kullanici-hesabi-ozellik` sayfamızdan erişim sağlayabilirsiniz.
+	
+
