@@ -1,3 +1,4 @@
+.. _cvmfs-kilavuzu:
 
 TRUBA'da CVMFS Kullanımı
 --------------------------
