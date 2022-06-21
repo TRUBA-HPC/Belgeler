@@ -48,7 +48,7 @@ EuroHPC Ortak Girişimi Kıyaslama ve Geliştirme Erişim Modları için Teklif 
    * - 1 Haziran 2022 – 11:00 AM CEST
      - 1 Aralık 2022 – 11:00 AM CET
 
-EuroHPC Ortak Girişimi Kıyaslama ve Geliştirme Erişim çağrılarının amacı, araştırmacılara ve HPC uygulama geliştiricilerine, aşırı ölçekli ve/veya normal bir projeye başvurmadan önce, gerçekleşmesi yakın/mevcut EuroHPC Pre-exascale ve/veya Petascale sisteminde uygulamalarını geliştirme, test etme ve optimize etme fırsatı vererek onları desteklemektir. Proje önerileri, PRACE Değerlendirme Sayfası aracılığıyla, herhangi bir zamanda sunulabilir (sürekli açık). Projelerin değerlendirilmesi, her ay sabit bir tarihten sonra yapılır (kesme tarihi olarak anılır). Tahsis süreleri, kıyaslama çağrısı için iki veya ay, geliştirme çağrısı için ise bir yıldır. Geliştirme çağrısı için tahsis iki kere yenilenebilir.
+EuroHPC Ortak Girişimi Kıyaslama ve Geliştirme Erişim çağrılarının amacı, araştırmacılara ve HPC uygulama geliştiricilerine, aşırı ölçekli ve/veya normal bir projeye başvurmadan önce, gerçekleşmesi yakın/mevcut EuroHPC Pre-exascale ve/veya Petascale sisteminde uygulamalarını geliştirme, test etme ve optimize etme fırsatı vererek onları desteklemektir. Proje önerileri, PRACE Değerlendirme Sayfası aracılığıyla, herhangi bir zamanda sunulabilir (sürekli açık). Projelerin değerlendirilmesi, her ay sabit bir tarihten sonra yapılır (kesme tarihi olarak anılır). Tahsis süreleri, kıyaslama çağrısı için iki veya üç ay, geliştirme çağrısı için ise 6 ay veya bir yıldır. Geliştirme çağrısı için tahsis iki kere yenilenebilir.
 
 Kıyaslama ve Geliştirme Çağrıları için daha fazla bilgi almak için ilgili web sayfalarını ziyaret ediniz:
 
@@ -62,7 +62,7 @@ EuroHPC Ortak Girişimi Düzenli Erişim Modu için Teklif Çağrısı, kesinti 
 
 * 4 Mart 2022 - 10:00 CET
 * 1 Temmuz 2022 - 10:00 CEST
-* 7 Ekim 2022 - 10:00 CEST
+* 4 Kasım 2022 - 10:00 CET
 
 Tahsisler, projelerin devamı için başvurma seçeneği ile bir (1) yıl süreyle verilir. Bu devam, usulüne uygun olarak gerekçelendirilecek, maksimum bir (1) ek yılla sınırlı olacak ve devam etmekte olan ihale edilen projelerinin değerlendirmesine bağlı olacaktır. Başvuru Sahipleri (Baş Müfettişler) herhangi bir zamanda yalnızca bir Düzenli Erişime hak kazanabilirler.
 
@@ -90,17 +90,26 @@ Proje konsorsiyumu, 2013 ve 2018 yılları arasında yürütülen Fortissimo ve 
 FF4EuroHPC Başvurusu ve Değerlendirme
 ---------------------------------------
 
-KOBİ'ler için toplamda iki açık çağrı sunulacaktır. İlk açık katılım çağrısı kapanmıştır. **FF4EuroHPC 2. Çağrısı Yüksek Başarımlı Hesaplama (YBH), Veri Analitiği ve Yapay Zeka servislerini kullanarak yenilikçi çözümler üretmek isteyen KOBİ başvurularına açılmıştır. Son başvuru tarihi 29 Eylül 2021 olarak ilan edilmiştir.**
+..
+  KOBİ'ler için toplamda iki açık çağrı sunulacaktır. İlk açık katılım çağrısı kapanmıştır. **FF4EuroHPC 2. Çağrısı Yüksek Başarımlı Hesaplama (YBH), Veri Analitiği ve Yapay Zeka servislerini kullanarak yenilikçi çözümler üretmek isteyen KOBİ başvurularına açılmıştır. Son başvuru tarihi 29 Eylül 2021 olarak ilan edilmiştir.**
 
-`FF4EuroHPC 2. Çağrı hakkında ayrıntılı bilgiye ulaşmak için lütfen web sayfasını ziyaret ediniz. <https://www.ff4eurohpc.eu/calls>`_
+.. 
+  `FF4EuroHPC 2. Çağrı hakkında ayrıntılı bilgiye ulaşmak için lütfen web sayfasını ziyaret ediniz. <https://www.ff4eurohpc.eu/calls>`_
 
-Çeşitli uygulama alanlarından Avrupa KOBİ'lerinden gelen problemleri ve zorlukları ele alan projeler aranmaktadır. Mühendislik, imalat veya Avrupa için hızlı ekonomik büyüme veya belirli ekonomik etki gösterebilecek sektörler tercih edilmektedir.
+KOBİ'ler için toplamda iki açık çağrı sunulmuştur. İlgili çağrılar kapsamında çeşitli uygulama alanlarından Avrupa KOBİ'lerinden gelen problemleri ve zorlukları ele alan projelerin desteklenmesi planlanmıştır. Mühendislik, imalat veya Avrupa için hızlı ekonomik büyüme veya belirli ekonomik etki gösterebilecek sektörler tercih edilmektedir.
 
-Değerlendirme sürecinde hangi kriterlere uyulduğunu ve proje önerileri yazılırken nelere dikkat edilmesi gerektiğini öğrenmek için ilk açık çağrı için kullanılan kontrol listesini inceleyebilirsiniz. 
+..
+ Değerlendirme sürecinde hangi kriterlere uyulduğunu ve proje önerileri yazılırken nelere dikkat edilmesi gerektiğini öğrenmek için ilk açık çağrı için kullanılan kontrol listesini inceleyebilirsiniz. 
 
-https://www.ff4eurohpc.eu/en/open-calls/check-list/
+ https://www.ff4eurohpc.eu/en/open-calls/check-list/
 
 Açık çağrıya başvuru yapıp kabul edilen projeler bulut tabanlı HPC sistemi üzerinde gerçekleştirilecektir. Projelerin başarı öyküleriyle sonuçlanarak endüstri topluluğuna ilham vermesi hedeflenmektedir. 
+
+FF4EuroHPC tarafından sunulan ilk çağrıya 25 Avrupa ülkesinden (ek olarak Kanada'nın da yer aldığı) 68 proje başvurusu olmuştur. Bunlardan 16 tanesi Haziran 2021 itibari ile desteklenmeye başlanmıştır. İlk çağrıda desteklenen projeler hakkındaki bilgiye aşağıdaki linkten erişim sağlayabilirsiniz.
+
+
+
+
 
 PRACE SHAPE
 ============
