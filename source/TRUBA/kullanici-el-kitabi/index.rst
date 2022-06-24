@@ -25,4 +25,5 @@ Kullanıcı El Kitabı
     open-vpn/index.rst
     kaynakyoneticisi-isdongusu/index.rst
     kullanici-ara-yuzu/openondemand/index.rst
+    verisetleri.rst
     ../topluluk-portali/index.rst

@@ -4,7 +4,7 @@ EuroHPC Sistemleri
 
 EuroHPC Ortak Girişimi kapsamında, pre-exascale ve petascale süper bilgisayarların (EuroHPC süper bilgisayarları) Avrupa Birliği’ndeki süper bilgi işlem merkezlerinde konumlandırılması ve bu merkezler tarafından işletilmesi planlanmaktadır.
 
-Kurulacak olan süper bilgisayarlar mimari, hesaplama bölümleri, depolama ve kaynak yöneticisi açısından birbirinden farklı olacaklardır. Erişime açık olan sistemlerin karşılaştırması aşağıdaki tabloda verilmiştir. Eylül 2021'de `sistemler hakkında detaylı rapor <https://eurohpc-ju.europa.eu/sites/default/files/2021-10/EuroHPC%20Systems%20Report-Sep2021.pdf>`_  da yayınlanmıştır.
+Kurulacak olan süper bilgisayarlar mimari, hesaplama bölümleri, depolama ve kaynak yöneticisi açısından birbirinden farklı olacaklardır. Erişime açık olan sistemlerin karşılaştırması aşağıdaki tabloda verilmiştir. Eylül 2021'de `sistemler hakkında detaylı rapor <https://eurohpc-ju.europa.eu/system/files/2022-03/EuroHPC%20Systems%20Report-Sep2021.pdf>`_  da yayınlanmıştır.
 
 .. list-table:: EuroHPC Sistemleri
    :widths: 25 25 25 25 25 25

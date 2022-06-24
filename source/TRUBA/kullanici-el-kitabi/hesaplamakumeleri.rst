@@ -180,10 +180,11 @@ Güncel olarak kullanımda olan hesaplama kaynakları aşağıdaki gibidir.
 ^^^^^^^^^
 Sunucu üzerinde 4128 GB bellek, 224 adet Intel Xeon e7-4850 V4 çekirdeği bulunmaktadır. Yüksek belleki bir SMP sunucusudur. Üzerinde Redhat 7.2 işletim sistemi bulunmaktadır. Ortak dosya sistemine Infiniband ağ katmanı ile bağlıdır. Ortak dosya sistemi üzerindeki uygulamaların büyük bir çoğunluğu bu sistem üzerinde çalışabilir durumdadır. Ancak uygulamaların yüksek verimde çalışması için Intel derleyiciler ve MKL kütüphanesi ile ya da GCC derleyicileri ve kütüphaneleri ile derlenirken V3 işlemcilerin vektör komut setlerinin (AVX2) kullanılması için özellikle parametre girilmesi gerekmektedir.
 
-*Sardalya*
-^^^^^^^^^^
+..
+  *Sardalya*
+  ^^^^^^^^^^
 
-Sardalya sunucuları 153 adet Huawei Tecal RH1288 V3 model sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet Intel Xeon E5-2690 V4 işlemci ve toplam 28 adet işlemci çekirdeği bulunmaktadır. Sunucular birbirlerine EDR (100Gbps) Infiniband ağ kartları ile non-blocking yapıda bağlıdırlar. 
+  Sardalya sunucuları 153 adet Huawei Tecal RH1288 V3 model sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet Intel Xeon E5-2690 V4 işlemci ve toplam 28 adet işlemci çekirdeği bulunmaktadır. Sunucular birbirlerine EDR (100Gbps) Infiniband ağ kartları ile non-blocking yapıda bağlıdırlar. 
 
 *Barbun ve Barbun-cuda*
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -208,7 +209,7 @@ Palamut sunucuları 9 adet HP Proliant XL675d Gen10 Plus model sunuculardan olu�
 
 * Şu an için palamut-cuda kuyruğu öncelikli olarak belirli araştırma gruplarına hizmet vermektedir. Bu araştırma gruplarında hesapları tanımlı kullanıcılar ``palamut-cuda`` hesaplama kümesine iş gönderebileceklerdir.
 
-* Palamut-cuda hesaplama kümesi için yeni bir kullanıcı arayüzü kurulmuştur (``palamut-ui``). Palamut-cuda kuyruğuna sadece ``palamut-ui`` arayüzü üzerinden iş gönderilebilecektir. Palamut-cuda kuyruğuna erişim izni olan proje kullanıcıları ``levrek1``, ``barbun1``, ``sardalya1`` herhangi bir kullanıcı arayüzü üzerinden ``palamut-ui`` arayüz sunucusuna ssh ile geçiş yapabilirler. Ssh anahtalarını henüz oluşturmamış kullanıcılar, bu sunucuya geçiş yapabilmek için ssh anahtarlarını ``ssh-keygen`` ile aşağıdaki gibi oluşturabilirler:
+* Palamut-cuda hesaplama kümesi için yeni bir kullanıcı arayüzü kurulmuştur (``palamut-ui``). Palamut-cuda kuyruğuna sadece ``palamut-ui`` arayüzü üzerinden iş gönderilebilecektir. Palamut-cuda kuyruğuna erişim izni olan proje kullanıcıları ``levrek1`` veya ``barbun1`` kullanıcı arayüzü üzerinden ``palamut-ui`` arayüz sunucusuna ssh ile geçiş yapabilirler. Ssh anahtalarını henüz oluşturmamış kullanıcılar, bu sunucuya geçiş yapabilmek için ssh anahtarlarını ``ssh-keygen`` ile aşağıdaki gibi oluşturabilirler:
 
 .. code-block::
 
@@ -288,7 +289,7 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - 3400MB
      - Aktif
    * - mid2
-     - barbun, sardalya
+     - barbun
      - 189
      - 08-00:00:00 
      - 3200  
@@ -297,7 +298,7 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - 9000MB
      - Aktif
    * - long
-     - sardalya, barbun
+     - barbun
      - 189
      - 15-00:00:00
      - 3000  
@@ -322,7 +323,7 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - 4
      - 8000MB
      - 9000MB
-     - Aktif 
+     - Kullanım Dışı
    * - barbun 
      - barbun   
      - 119  
@@ -369,7 +370,7 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - 16384MB
      - Özel Kuyruk 
    * - debug
-     - barbun, barbun-cuda, akya-cuda, orkinos, sardalya 
+     - barbun, barbun-cuda, akya-cuda, orkinos
      - 238
      - 00-00:15:00
      - 65535
@@ -383,25 +384,26 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
 
    ``Short`` ve ``mid1`` kurukları 1 Aralık 2021 tarihinde kapatılmıştır. Kısa süreli işlerinizi daha yeni nesil işlemcilere sahip olan ve daha çok sayıda sunucu içeren ``hamsi`` kuyruğuna gönderebilirsiniz. 
 
-``mid2`` ve ``long`` kuyruklarına gönderilen işler sardalya ya da barbun sunucularının herhangi birinde çalışmaya başlayabilirler. Bu kuyruklara gönderilecek işlerin belli bir sunucu ailesi üzerinde çalışması isteniyorsa, betik dosyalarına aşağıdaki tanımlar yazılmalıdır: 
+..
+  ``mid2`` ve ``long`` kuyruklarına gönderilen işler sardalya ya da barbun sunucularının herhangi birinde çalışmaya başlayabilirler. Bu kuyruklara gönderilecek işlerin belli bir sunucu ailesi üzerinde çalışması isteniyorsa, betik dosyalarına aşağıdaki tanımlar yazılmalıdır: 
 
-* barbunlar için 
+  * barbunlar için 
 
-.. code-block::
+  .. code-block::
 
    #SBATCH --constraint=barbun 
 
-* sardalyalar için 
+  * sardalyalar için 
 
-.. code-block::
+  .. code-block::
 
    #SBATCH --constraint=sardalya 
 
-.. note::
+  .. note::
 
    --contstraint parametresi yerine -C de kullanılabilir. 
 
-İşler önceden olduğu gibi üst kuyruklar yerine doğrudan sardalya, barbun veya diğer kuyruklarına gönderilebilir. 
+  İşler önceden olduğu gibi üst kuyruklar yerine doğrudan sardalya, barbun veya diğer kuyruklarına gönderilebilir. 
 
 *barbun-cuda, akya-cuda* ve *palamut-cuda* kuyruklarına gönderilen işlerin GPU kullanabilecek ve GPU talep eden işler olması zorunludur. Yeni düzenleme ile aynı GPU'u birden fazla iş tarafından kullanabilecektir. GPU kümelerinin kullanımı ile ilgili dokümantasyon :ref:`gpu-kilavuzu` sayfamızı inceleyebilirsiniz.
 
@@ -490,19 +492,19 @@ Bu kuyruk ile ilgili ayrıntılı bilgi
 
 komutu ile görülebilir.
 
+..
+  *Sardalya*
+  ^^^^^^^^^^
 
-*Sardalya*
-^^^^^^^^^^
+  Her bir sunucuda 28 çekirdek ve 256GB bellek bulunmaktadır. Kuyrukta işlerin en fazla çalışma süresi 15 gündür. Sistemin verimli kullanılabilmesi için gönderilecek işler en az 14 çekirdek talep etmelidir. Kuyruğa gönderilebilecek işlerin minimum çekirdek sayısı 4'tür.
 
-Her bir sunucuda 28 çekirdek ve 256GB bellek bulunmaktadır. Kuyrukta işlerin en fazla çalışma süresi 15 gündür. Sistemin verimli kullanılabilmesi için gönderilecek işler en az 14 çekirdek talep etmelidir. Kuyruğa gönderilebilecek işlerin minimum çekirdek sayısı 4'tür.
+  İşlerde bellek sınırlaması kullanılmaktadır. Gönderilen işlerin sunucuların bellek sınırlamalarına uygun olarak gönderilmesi gerekmektedir. Bu kuyruk ile ilgili ayrıntılı bilgi
 
-İşlerde bellek sınırlaması kullanılmaktadır. Gönderilen işlerin sunucuların bellek sınırlamalarına uygun olarak gönderilmesi gerekmektedir. Bu kuyruk ile ilgili ayrıntılı bilgi
+  .. code-block::
 
-.. code-block::
+    scontrol show partition=sardalya
 
-   scontrol show partition=sardalya
-
-komutu ile görülebilir.
+  komutu ile görülebilir.
 
 .. _barbun-node:
 
