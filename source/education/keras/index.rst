@@ -1,3 +1,5 @@
+.. _keras_intro:
+
 =====
 Keras
 =====
