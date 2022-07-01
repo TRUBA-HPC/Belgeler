@@ -15,22 +15,20 @@ Conda kullanarak sanal ortam yaratın ve yarattığınız ortamı aktifleştirin
 
 .. code-block:: bash
     
-    conda create --name qnn-env
-    conda activate qnn-env
+    conda create --name qnn-keras-env
+    conda activate qnn-keras-env
     conda list
 
 
 .. warning::
-    Adımları takip edebilmek için gerekli olan ensorflow paketini yüklemek için :ref:`deep-learning-virtual-env`  PennyLane paketinin kurulumu için de :ref:`qcomp_build`  sayfasına göz atabilirsiniz.
+    Adımları takip edebilmek için gerekli olan Tensorflow paketini yüklemek için :ref:`deep-learning-virtual-env`  PennyLane paketinin kurulumu için de :ref:`qcomp_build`  sayfasına göz atabilirsiniz.
     
 .. warning::
-    Ayrıca gerekli olan matplotlib, scikit-learn ve numpy kütüphanelerini aşağıdaki gibi kurabilirsiniz.
+    Ayrıca gerekli olan scikit-learn kütüphanesini aşağıdaki gibi kurabilirsiniz.
     
     .. code-block:: bash
     
-       pip install matplotlib
-       pip install numpy
-       pip3 install -U scikit-learn
+       pip install -U scikit-learn
 
 .. note::
     İstediğiniz zaman sanal ortamı kaldırıp baştan başlayabilirsiniz:
@@ -38,9 +36,9 @@ Conda kullanarak sanal ortam yaratın ve yarattığınız ortamı aktifleştirin
     .. code-block:: bash
 
         conda deactivate
-        conda remove -n qnn-env --all
-        conda create --name qnn-env
-        conda activate qnn-env
+        conda remove -n qnn-keras-env--all
+        conda create --name qnn-keras-env
+        conda activate qnn-keras-env
 
 Klasik Keras Katmanlarından oluşan bir nöral ağ oluşturma
 ==========================================================
@@ -70,7 +68,6 @@ Burada kolay anlaşılması için basit bir veri kümesi olan ``scikit-learn`` i
 
 .. code-block:: python
 
-    import matplotlib.pyplot as plt
     import numpy as np
     from sklearn.datasets import make_moons
 
@@ -81,15 +78,11 @@ Burada kolay anlaşılması için basit bir veri kümesi olan ``scikit-learn`` i
     X, y = make_moons(n_samples=200, noise=0.1)
     y_hot = tf.keras.utils.to_categorical(y, num_classes=2)  # one-hot encoding ile kodlanmış etiketler
 
-    c = ["#1f77b4" if y_ == 0 else "#ff7f0e" for y_ in y]  # her sınıf için renk değerleri
-    plt.axis("off")
-    plt.scatter(X[:, 0], X[:, 1], c=c)
-    plt.show()
 
 Quantum Node Oluşturma
 ======================
 
-PennyLane kütüphanesi içindeki herhangi bir cihaz, operasyon veya ölçüm Quantum Node oluştururken kullanılabilir. Ancak, Quantum Node'u keras katmanına çevirebilmemiz için Quantum Node ``inputs`` isimli bir argümana sahip olmalı ve ayrıca diğer bütün argümanları array veya tensör olmalıdır. Bu diğer argümanlar eğitilebilir ağırlık olarak kullanılacak. Biz ``templates`` modülündeki ``default.qubit`` simülatorünü ve operasyonları kullanrak 2-qubit bulunan bir node oluşturuyoruz.
+PennyLane kütüphanesi içindeki herhangi bir cihaz, operasyon veya ölçüm Quantum Node oluştururken kullanılabilir. Ancak, Quantum Node'u keras katmanına çevirebilmemiz için Quantum Node ``inputs`` isimli bir argümana sahip olmalı ve ayrıca diğer bütün argümanları array veya tensör olmalıdır. Bu diğer argümanlar eğitilebilir ağırlık olarak kullanılacak. Biz ``templates`` modülündeki ``default.qubit`` simülatorünü ve operasyonları kullanrak 2 kübit bulunan bir node oluşturuyoruz.
 
 .. note::
     Templates hakkında daha fazla bilgi için `dokümantasyon <https://pennylane.readthedocs.io/en/latest/introduction/templates.html>`_ sayfasını ziyaret edebilirsiniz.
@@ -166,7 +159,6 @@ Sıralı Model Kodunun Tam Hali
 
     import tensorflow as tf
     import pennylane as qml
-    import matplotlib.pyplot as plt
     import numpy as np
     from sklearn.datasets import make_moons
 
@@ -178,11 +170,6 @@ Sıralı Model Kodunun Tam Hali
 
     X, y = make_moons(n_samples=200, noise=0.1)
     y_hot = tf.keras.utils.to_categorical(y, num_classes=2)  # one-hot encoding ile kodlanmış etiketler
-
-    c = ["#1f77b4" if y_ == 0 else "#ff7f0e" for y_ in y]  # her sınıf için renk değerleri
-    plt.axis("off")
-    plt.scatter(X[:, 0], X[:, 1], c=c)
-    plt.show()
 
     n_qubits = 2
     dev = qml.device("default.qubit", wires=n_qubits)
@@ -268,7 +255,6 @@ Sıralı Olmayan Model Kodunun Tam Hali
 
     import tensorflow as tf
     import pennylane as qml
-    import matplotlib.pyplot as plt
     import numpy as np
     from sklearn.datasets import make_moons
 
@@ -280,11 +266,6 @@ Sıralı Olmayan Model Kodunun Tam Hali
 
     X, y = make_moons(n_samples=200, noise=0.1)
     y_hot = tf.keras.utils.to_categorical(y, num_classes=2)  # one-hot encoding ile kodlanmış etiketler
-
-    c = ["#1f77b4" if y_ == 0 else "#ff7f0e" for y_ in y]  # her sınıf için renk değerleri
-    plt.axis("off")
-    plt.scatter(X[:, 0], X[:, 1], c=c)
-    plt.show()
 
     n_qubits = 2
     dev = qml.device("default.qubit", wires=n_qubits)
@@ -330,7 +311,8 @@ Kuyruğa iş göndermek için bir `slurm betiği <https://slurm.schedmd.com/sbat
 .. code-block:: bash
 
     #!/bin/bash
-    #SBATCH -p akya-cuda             # Kuyruk adi: Uzerinde GPU olan kuyruk olmasina dikkat edin.
+    #SBATCH -p debug                 # Kuyruk adi: Bu gibi deneme kodlari için debug kuyrugunu kullaniyoruz 
+    #SBATCH -C akya-cuda             # Kisitlama: GPU bulunan bir sunucuyu  verdiğinizden emin olun.
     #SBATCH -A [USERNAME]            # Kullanici adi
     #SBATCH -J sequential_qnn        # Gonderilen isin ismi
     #SBATCH -o sequential_qnn.out    # Ciktinin yazilacagi dosya adi
@@ -338,10 +320,11 @@ Kuyruğa iş göndermek için bir `slurm betiği <https://slurm.schedmd.com/sbat
     #SBATCH -N 1                     # Gorev kac node'da calisacak?
     #SBATCH -n 1                     # Ayni gorevden kac adet calistirilacak?
     #SBATCH --cpus-per-task 10       # Her bir gorev kac cekirdek kullanacak? Kumeleri kontrol edin.
-    #SBATCH --time=1:00:00           # Sure siniri koyun.
+    #SBATCH --time=0:15:00           # Sure siniri koyun.
+    #SBATCH --error=slurm-%j.err     # Hata dosyasi
 
     eval "$(/truba/home/$USER/miniconda3/bin/conda shell.bash hook)"
-    conda activate qnn-env
+    conda activate qnn-keras-env
     python sequential_qnn.py
 
 .. note::
@@ -349,6 +332,9 @@ Kuyruğa iş göndermek için bir `slurm betiği <https://slurm.schedmd.com/sbat
 
 .. note::
     En alttaki ``python sequential_qnn.py`` yerine ``python nonsequential_qnn.py`` yazarak sıralı olmayan hibrit modeli de kuyruğa gönderebilirdik.
+
+.. warning::
+    Kodun GPU'da çalıştığından emin olmak için :ref:`deep-learning-virtual-env` 'daki örnek kodu çalıştırarak Tensorflow'un CUDA cihazını görüp görmediğini kontrol edin.
 
 İşi kuyruğa gönderin.
 
