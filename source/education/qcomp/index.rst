@@ -6,7 +6,7 @@ Kuantum Hesaplama
     :caption: İçerik
     :maxdepth: 1
     
-    build/index.rst
+    setup/index.rst
     hybrid-nets/index.rst
 
     

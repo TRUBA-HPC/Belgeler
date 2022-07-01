@@ -20,7 +20,7 @@ Conda kullanarak sanal ortam yaratın ve yarattığınız ortamı aktifleştirin
     conda list
 
 .. warning::
-    Adımları takip edebilmek için gerekli olan PyTorch paketini yüklemek için :ref:`deep-learning-virtual-env`  PennyLane paketinin kurulumu için de :ref:`qcomp_build`  sayfasına göz atabilirsiniz.
+    Adımları takip edebilmek için gerekli olan PyTorch paketini yüklemek için :ref:`deep-learning-virtual-env`  PennyLane paketinin kurulumu için de :ref:`qcomp_setup`  sayfasına göz atabilirsiniz.
     
 .. warning::
     Ayrıca gerekli olan scikit-learn kütüphanesini aşağıdaki gibi kurabilirsiniz.    
