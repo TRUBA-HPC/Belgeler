@@ -45,7 +45,7 @@ PyTorch için:
 
 .. code-block:: bash
 
-    conda install -y python=3.8 pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c nvidia
+    conda install -y python=3.8 pytorch torchvision torchaudio cudatoolkit=11.6 -c pytorch -c conda-forge
 
 .. note::
     Yüklediğiniz kütüphanelerin versiyonlarının uyumlu olmasına dikkat edin:
