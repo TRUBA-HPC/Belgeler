@@ -2,6 +2,8 @@
 TRUBA'da GROMACS Programı Nasıl Kullanılır?
 =============================================
 
+TRUBA sisteminde hali hazırda kurulan olan GROMACS versiyonları için örnek SLURM betik dosyalarına ``/truba/sw/scripts/gromacs`` dizini altından erişim sağlayabilirsiniz.
+
 Hamsi hesaplama kümesinde (:ref:`hamsi-gromacs-install`) GNU Derleyicileri ve OpenMPI ile kurulumu gerçekleştirdiyseniz aşağıdaki betik dosyasını referans alabilirsiniz:
 
 .. code-block::
@@ -78,8 +80,7 @@ Programı GPU destekli kullanmak için **Singularity** ile kayıt ettikten sonra
 TRUBA'da GROMACS Programını Palamut-Cuda Kümelerinde GPU Destekli Nasıl Çalıştırılır?
 ---------------------------------------------------------------------------------------
 
-Bir önceki bölümde GROMACS yazılımını palamut-cuda kümelerinde derlemeyi gösterdik. Programın bu kümelerde düzgün çalışabilmesi için aşağıdaki örnek **slurm** dosyasını 
-kendinize göre uyarlayabilirsiniz.
+Bir önceki bölümde GROMACS yazılımını palamut-cuda kümelerinde derlemeyi gösterdik. Programın bu kümelerde düzgün çalışabilmesi için aşağıdaki örnek **slurm** dosyasını kendinize göre uyarlayabilirsiniz.
 
 
 .. code-block:: bash

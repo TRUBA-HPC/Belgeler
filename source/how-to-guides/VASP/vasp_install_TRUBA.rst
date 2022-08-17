@@ -9,8 +9,7 @@ VASP programının 6.2.0 versiyonunun TRUBA sisteminde derlenmesi için gerekli 
 ederek VASP kurulumunu kendi dizinizde kurabilirsiniz.
 
 
-**1.**  Öncelikle VASP programını derlemek için gerekli ortam hazılanır. **derleme** adında bir klasör oluşrurulup 
-gerekli dosyalar buraya kopyalanır.
+**1.**  Öncelikle VASP programını derlemek için gerekli ortam hazılanır. **derleme** adında bir klasör oluşturulup gerekli dosyalar buraya kopyalanır.
  
 .. code-block:: bash
 

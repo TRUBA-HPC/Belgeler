@@ -22,12 +22,15 @@ Altyapının kullanılması için çalışabilir uygulamaların (açık kaynak k
 ----------------------------------
 Başvuru ve Hesap Açılma Prosedürü
 ----------------------------------
+..
+   Henüz öğrenci durumundaki araştırmacıların hesaplarının açılabilmesi için birlikte çalıştıkları akademik personelin ``grid-teknik@ulakbim.gov.tr`` e-posta adresine, başvuranın kendisi ile çalıştığına dair bilgi içeren bir onay e-postası göndermesi gerekmektedir. 
 
-Henüz öğrenci durumundaki araştırmacıların hesaplarının açılabilmesi için birlikte çalıştıkları akademik personelin ``grid-teknik@ulakbim.gov.tr`` e-posta adresine, başvuranın kendisi ile çalıştığına dair bilgi içeren bir onay e-postası göndermesi gerekmektedir. 
-
-Yukarıdaki ve başvuru sayfasındaki kullanım şartlarını sağlayan ve Linux işletim sistemi temel kullanım bilgisine sahip araştırmacı `portal.truba.gov.tr <http://portal.truba.gov.tr/>`_ adresine kayıt olduktan sonra kısa süre sonrasında portaldaki kayıtlı e-posta adresine bilgilendirme e-postaları gönderilecektir. 
+Yukarıdaki ve başvuru sayfasındaki kullanım şartlarını sağlayan ve Linux işletim sistemi temel kullanım bilgisine sahip araştırmacı `portal.truba.gov.tr <http://portal.truba.gov.tr/>`_ adresine kayıt olduktan sonra 5 iş günü içerisinde portaldaki kayıtlı e-posta adresine bilgilendirme e-postaları gönderilecektir. Bilgilendirme e-postalarının iletilebilmesi için de öncelikli olarak araştırmacının e-posta adresi dorulamasını gerçekleştirmiş olması gerekmektedir (:ref:`uyelik-bilgi`).
 
 Ön onaydan geçen araştırmacının kimlik bilgileri, e-Devlet ve YÖKSİS üzerinden onaylanmaktadır. Bu nedenle, araştırmacının herhangi bir kimlik bilgisini e-posta ve/veya başka yöntemlerle göndermesine gerek bulunmamaktadır. 
+
+
+Yüksek Lisans öğrenimine devam etmekte olan araştırmacılara kullanıcı hesabı tahsisi yapılabilmesi için `TRUBA portal <http://portal.truba.gov.tr/>`_ başvurusundan sonra portal üzerinden kayıtlı e-posta adreslerine "Danışman Onayı" ile ilgili bir e-posta iletilmektedir. İlgili bilgilendirme mailine istinaden birlikte çalıştıkları danışmanları tarafından ``grid-teknik@ulakbim.gov.tr`` adresimize mail gönderilmesi gerekmektedir.
 
 Kullanıcının kimlik doğrulamasının e-Devlet ve YÖKSİS üzerinden yapılmasının ardından, kullanıcının sistem üzerindeki kullanıcı hesabı (user account), ve kümeye iş gönderebilmesi için kaynak yöneticisi hesabı (bank account) kısa süre içerisinde açılarak, kullanıcıya e-posta ile kullanıcı adı ve şifresi hakkında geri bildirim yapılacaktır. TRUBA hesabı açılan araştırmacı, kullanıcı hesabı başvuru sayfasındaki kullanım politikasını kabul eder ve bu şartlara göre çalışmalarını yürütür. 
 
@@ -42,13 +45,13 @@ Standart kullanıcı hesabı özellikleri
 
 Her araştırmacıya kullanıcı adı ile birlikte aynı anda kullanılabilecek çekirdek miktarı, çekirdek saat kotası ve disk kotası tanımlanmaktadır. Mevcut eğitim düzeyine göre tanımlanan kotalar aşağıda belirtilmektedir:
 
-- *Lisans Öğrencileri:*  Danışmanları birlikte bir projeye dahil olmaları durumunda hesap açılmakta olup, ilgili proje hesabının kaynak miktarlarından faydalanabilmektedirler.
+- *Lisans Öğrencileri:*  Danışmanları birlikte bir projeye dahil olmaları durumunda hesap açılmakta olup, sadece ilgili proje hesabının kaynak miktarlarından faydalanabilmektedirler.
 
-- *Y. Lisans Öğrencileri:* Danışman onaylarından sonra hesapları açılmakta olup, aynı anda 40 çekirdek kullanımı, toplam 200.000 çekirdek saat hesaplama kotası ve 1TByte veri depolama alanı sağlanmaktadır.
+- *Y. Lisans Öğrencileri:* Danışman onaylarından sonra hesapları açılmakta olup, aynı anda 56 çekirdek kullanımı, toplam 200.000 çekirdek saat hesaplama kotası ve 2TByte veri depolama alanı sağlanmaktadır.
 
    Danışmanları ile birlikte bir projeye dahil olmaları ve ilgili projenin TRUBA kaynaklarında bir proje hesabı bulunması durumunda, ilgili proje hesabının kaynak miktarlarından da faydalanabilmektedirler.
 
-- *Doktora Öğrencileri ve Akademisyenler:* Hesapları YÖKSİS bilgilerine göre doğrudan açılmaktadır. Aynı anda 160 çekirdek kullanımı, toplam 400.000 çekirdek saat hesaplama kotası ve 1TByte veri depolama alanı sağlanmaktadır.
+- *Doktora Öğrencileri ve Akademisyenler:* Hesapları YÖKSİS bilgilerine göre doğrudan açılmaktadır. Aynı anda 168 çekirdek kullanımı, toplam 400.000 çekirdek saat hesaplama kotası ve 2TByte veri depolama alanı sağlanmaktadır.
 
    Araştırmacılar bir projeye dahil olmaları ve ilgili projenin TRUBA kaynaklarında bir proje hesabı bulunması durumunda, ilgili proje hesabının kaynak miktarlarından da faydalanabilmektedirler.
 
@@ -77,7 +80,7 @@ TRUBA tarafından standart kullanıcılara verilen hizmet best-effort niteliğin
 
 Güncel olarak tüm kullanıcı hesaplarının TRUBA'daki tüm kuyruklara iş gönderme yetkisi vardır. Sadece yeni nesil kaynaklardan **hamsi** kümesine doktora öğrencileri, akademisyenler, proje hesapları iş gönderebilirler. Ayrıca yeni nesil A100 GPU'ların bulunduğu **palamut** kümesi kullanımı sadece Yapay Zeka çalışmalarına ayrılmış olup, bu alanda çalışma yapan araştırmacılar tarafından kullanılabilmektedir. 
 
-Konu ile ilgili her türlü soru ve sorununuzu grid-teknik@ulakbim.gov.tr adresine e-posta ile iletebilirsiniz.
+Konu ile ilgili her türlü soru ve sorununuzu ``grid-teknik@ulakbim.gov.tr`` adresine e-posta ile iletebilirsiniz.
 
 Ayrıcalıklı Kullanım / ARDEB Projeleri
 ---------------------------------------
@@ -85,6 +88,8 @@ Ayrıcalıklı Kullanım / ARDEB Projeleri
 Standart kullanıcı hesaplarına tanınan hesaplama kaynaklarının yeterli olmadığı ya da zaman kısıtlı projelerin yürütülmekte olduğu durumlarda, cüzi bir hizmet bedeli karşılığında kuyruk önceliği olan, ayrıcalıklı hizmet almak mümkündür. Talep edilen kaynak miktarı için verilecek hizmet bedeli, ilgili donanımın talep edilen kullanım süresinde harcayacağı elektrik enerjisi miktarı ve altyapı bakım-onarım maliyetleri göz önüne alınarak hesaplanmaktadır.
 
 ARDEB'e proje başvurusunda bulunacak kullanıcılar proje başvurusu sırasında, yeni hesaplama donanımı alımı için fon talebinde bulunabilecekleri gibi, uygulamalarının TRUBA üzerinde çalışması mümkünse, hesaplarını TRUBA'da yürütmeyi tercih edebilirler.
+
+Ayrıntılı bilgi için :ref:`hizmet-bedelleri` sayfamızı inceleyebilirsiniz.
 
 .. _yeni-sertifika:
 
