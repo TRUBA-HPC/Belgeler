@@ -80,7 +80,7 @@ TRUBA Kullanıcı Dökümanları
    education/pytorch/index.rst
    education/cuda/index.rst
    education/keras/index.rst
-
+   education/qcomp/index.rst
 
 .. toctree::
    :caption: Etkinlikler
