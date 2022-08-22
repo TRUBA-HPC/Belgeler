@@ -1,3 +1,5 @@
+.. _gromacs-install:
+
 ==========================
 TRUBA'da GROMACS Kurulumu
 ==========================
@@ -10,13 +12,13 @@ Kullanıcılarımız tarafından sıklıkla kullanılan, açık kaynak kodlu ola
 
 komutunu yazdığınızda TRUBA sisteminde kurulu olan temel programlar listelenecektir. Module isimlendirmesi ile ilgili bilgilere TRUBA :ref:`moduller-truba` sayfamızdan ulaşabilirsiniz.
 
-Centos7.3 işletim sistemi olan ``barbun-cuda`` hesaplama kümesinde GROMACS 2021'in CUDA opsiyonu ile kurulu olan versiyonu bulunmaktadır. İlgili modul ismi:
+Centos7.3 işletim sistemi olan ``barbun-cuda`` hesaplama kümesinde GROMACS 2021'in CUDA opsiyonu ile kurulu olan versiyonu bulunmaktadır. İlgili module ismi:
 
 .. code-block::
 
   centos7.3/app/gromacs/2021-openmpi-4.0.1-python-3.6.5-gcc-7-GOLD-CUDA
 
-Bu versiyonu kullanmak için örnek slurm betik dosyasına ``/truba/sw/scripts/gromacs`` klasörü altından ulaşabilirsiniz. Dosya ismi: ``gromacs-2021-openmpi-4.0.1-python-3.6.5-gcc-7-GOLD-CUDA.slurm``
+İlgili versiyonda ``plumed patch`` de yer almaktadır. Bu versiyonu kullanmak için örnek slurm betik dosyasına ``/truba/sw/scripts/gromacs`` klasörü altından ulaşabilirsiniz. Dosya ismi: ``gromacs-2021-openmpi-4.0.1-python-3.6.5-gcc-7-GOLD-CUDA.slurm``
 
 Hamsi hesaplama kümesinde ise Centos 7.9 işletim sistemi yüklüdür ve burada GROMACS 2021.2 versiyonu bulunmaktadır. İlgili modüle ismi:
 

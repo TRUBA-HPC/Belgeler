@@ -2,6 +2,8 @@
 TRUBA'da LAMMPS Kullanımı
 ==========================================
 
+TRUBA sisteminde hali hazırda kurulan olan LAMMPS versiyonları için örnek SLURM betik dosyalarına ``/truba/sw/scripts/lammps`` dizini altından erişim sağlayabilirsiniz.
+
 Bir önceki adımda anlatıldığı gibi (:ref:`LAMMPS kurulumu <lammps_install_truba>`) kendi kullanıcınıza kurduğunuz LAMMPS programını TRUBA sisteminde çalıştırmak için örnek iş betiği dosyası aşağıdaki gibidir:
 
 ------------------
@@ -38,10 +40,10 @@ LAMMPS_run.slurm
 
 * :download:`İlgili Slurm dosyasını indirmek için tıklayınız... </assets/LAMMPS-howto/config-files/LAMMPS-barbun_openmpi4-intel18.slurm>`
 
-Güncel LAMMPS versiyonu için benzer betik dosyasını ``/truba/sw/scripts`` klasörü altında bulabilirsiniz (lammps-4Feb21-openmpi-1.8.8-gcc.slurm). Çalıştığınız klasör içerisinde yukarıdaki betik dosyasını düzenleyip oluşturduktan sonra aşağıdaki adıma geçebilirsiniz.
+Çalıştığınız klasör içerisinde yukarıdaki betik dosyasını düzenleyip oluşturduktan sonra aşağıdaki adıma geçebilirsiniz.
 
 .. code-block:: bash
   
-   sbatch vasp_run.slurm
+  sbatch LAMMPS_run.slurm
 
 Komutu ile TRUBA sistemine işinizi gönderebilirsiniz.
