@@ -15,30 +15,32 @@ tanımlanmaktadır.
 
 Mevcut eğitim düzeyine göre tanımlanan kotalar aşağıda belirtilmektedir:
 
-- **Lisans Öğrencileri:** Danışmanları birlikte bir projeye dahil olmaları durumunda hesap açılmakta olup, ilgili proje hesabının kaynak miktarlarından faydalanabilmektedirler.
+- **Lisans Öğrencileri:** Danışmanları birlikte bir projeye dahil olmaları durumunda hesap açılmakta olup, sadece ilgili proje hesabının kaynak miktarlarından faydalanabilmektedirler.
 
-- **Y. Lisans Öğrencileri:** Danışman onaylarından sonra hesapları açılmakta olup, aynı anda 40 çekirdek kullanımı, toplam 200.000 çekirdek saat hesaplama kotası ve 1TByte veri depolama alanı sağlanmaktadır.
+- **Y. Lisans Öğrencileri:** Danışman onaylarından sonra hesapları açılmakta olup, aynı anda 56 çekirdek kullanımı, toplam 200.000 çekirdek saat hesaplama kotası ve 2TByte veri depolama alanı sağlanmaktadır.
 
 .. note::
 
    Danışmanları ile birlikte bir projeye dahil olmaları ve **ilgili projenin TRUBA kaynaklarında bir proje hesabı bulunması** durumunda, ilgili proje hesabının kaynak miktarlarından da faydalanabilmektedirler.
 
-- **Doktora Öğrencileri ve Akademisyenler:** Hesapları YÖKSİS bilgilerine göre doğrudan açılmaktadır. Aynı anda 160 çekirdek kullanımı, toplam 400.000 çekirdek saat hesaplama kotası ve 1TByte veri depolama alanı sağlanmaktadır.
+- **Doktora Öğrencileri ve Akademisyenler:** Hesapları YÖKSİS bilgilerine göre doğrudan açılmaktadır. Aynı anda 168 çekirdek kullanımı, toplam 400.000 çekirdek saat hesaplama kotası ve 2TByte veri depolama alanı sağlanmaktadır.
 
 .. note::
 
    Araştırmacılar bir projeye dahil olmaları ve **ilgili projenin TRUBA kaynaklarında bir proje hesabı bulunması** durumunda, ilgili proje hesabının kaynak miktarlarından da faydalanabilmektedirler.
    
 
-Kullanıcının ev dizinlerinin (/truba/home/$USER ve /truba/scratch/$USER) boyutundan bağımsız olarak kullanıcı dizinlerindeki dosya sayısı da Dosya Sistemi'nde aşırı yük yaratmaktadır. Özellikle kurulum dosyalarının (source code) kurulumdan sonra silinmemesi, ya da anaconda gibi uygulamaların merkezi versiyonu yerine kullanıcı ev dizinlerine kurulması dosya sisteminin aşırı dolmasına ve sistem performansının düşmesine neden olmaktadır. 
+.. warning::
 
-Bu sorunlardan dolayı 1 Mayıs 2022 tarihinden itibaren dosya sayısı kotası (inode) uygulanmaya başlanacaktır. Her 1Tbyte disk kotası için 150 000 adet inode kotası tanımlanacaktır. Kullanıcılar 
+	Kullanıcının ev dizinlerinin (/truba/home/$USER ve /truba/scratch/$USER) boyutundan bağımsız olarak kullanıcı dizinlerindeki dosya sayısı da Dosya Sistemi'nde aşırı yük yaratmaktadır. Özellikle kurulum dosyalarının (source code) kurulumdan sonra silinmemesi, ya da anaconda gibi uygulamaların merkezi versiyonu yerine kullanıcı ev dizinlerine kurulması dosya sisteminin aşırı dolmasına ve sistem performansının düşmesine neden olmaktadır. 
 
-.. code-block::
+	Bu sorunlardan dolayı 1 Mayıs 2022 tarihinden itibaren dosya sayısı kotası (inode) uygulanmaya başlanacaktır. Her 1Tbyte disk kotası için 150 000 adet inode kotası tanımlanacaktır. Kullanıcılar 
 
-	lfs quota -g $USER /truba
+	.. code-block::
+
+		lfs quota -g $USER /truba
 	
-komutu ile kullandığı inode dosya sayısını öğrenebilir. Ayrıca terminalden kullanıcı arayüzüne bağlantı sağladıktan sonra login ekranına dökülen kota bilgilerine ``dosya kotası`` da % olarak eklenmiştir. Bu değerin %100'un altında olması gerekmektedir.
+	komutu ile kullandığı inode dosya sayısını öğrenebilir. Ayrıca terminalden kullanıcı arayüzüne bağlantı sağladıktan sonra login ekranına dökülen kota bilgilerine ``dosya kotası`` da % olarak eklenmiştir. Bu değerin %100'un altında olması gerekmektedir.
 
 Kullanıcılarımızdan 
 

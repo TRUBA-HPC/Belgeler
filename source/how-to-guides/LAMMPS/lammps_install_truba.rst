@@ -8,7 +8,7 @@ TRUBA'da LAMMPS Kurulumu
 Barbun Hesaplama Kümesi'nde Kurulum
 ------------------------------------
 
-Kurulumu ``barbun`` kuyruğu için optimize bir şekilde kurmak istiyorsanız öncelikle ``srun`` komutu ile ``barbun`` kuyruğundaki 1 tane makineden 4 tane CPU'yu (Barbun kümesindeki CPU kullanımı için bakınız : :ref:`barbun-node`)   kendi kullanıcınız için interaktif olarak ayırabilirsiniz. Aşağıdaki komutu yazdığınızda bekleme listesine gireceksiniz. Sıranız geldiğinde doğrudan ilgili node'a bağlanacaksınız. 
+Kurulumu ``barbun`` kuyruğu için optimize bir şekilde kurmak istiyorsanız iki şekilde yapabilirsiniz. Birincisi ``levrek1`` arayüzüne bağlandıktan sonra ``ssh barbun1`` komutu ile barbun kullanıcı arayüzüne geçip kurulum işlemlerinize orada devam edebilirsiniz. İkincisi ise ``srun`` komutu ile ``barbun`` kuyruğundaki 1 tane makineden 4 tane CPU'yu (Barbun kümesindeki CPU kullanımı için bakınız : :ref:`barbun-node`) kendi kullanıcınız için interaktif olarak ayırabilirsiniz. Aşağıdaki komutu yazdığınızda bekleme listesine gireceksiniz. Sıranız geldiğinde doğrudan ilgili node'a bağlanacaksınız. 
 
 .. code-block:: bash
 

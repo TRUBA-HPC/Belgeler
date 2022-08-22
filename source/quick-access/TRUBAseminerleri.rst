@@ -1,3 +1,5 @@
+.. _baslangic-seminerleri:
+
 ============================
 TRUBA Başlangıç Seminerleri
 ============================
