@@ -54,7 +54,7 @@ Kurulumu ``palamut-cuda`` kümelerinde yapmak için bu kümelerden boş bir işl
 
 .. code-block:: bash 
 
-   srun -N 1 -n 16 -A kullanıcı_adı -p palamut-cuda --gres=gpu:1 --time=02:00:00  --job-name "install" --pty bash -i
+   srun -N 1 -n 16 -A kullanici_adi -p palamut-cuda --gres=gpu:1 --time=02:00:00  --job-name "install" --pty bash -i
  
 **3.**
 Kurulumu doğru bir şekilde yapabilmemiz için gerekli ortamların hazır olması gerekmektedir. Bu yüzden program için gerekli modulleri yüklememiz gerekir. 
@@ -77,7 +77,7 @@ Gerekli ortamlar için aşağıdaki komut satırını terminalinizden uygulayın
    export CC=mpiicc CXX=mpiicpc
    cmake .. -DCMAKE_C_COMPILER=mpiicc  -DCMAKE_CXX_COMPILER=mpiicpc -DGMX_MPI=on  -DGMX_SIMD=AVX_512 -DGMX_BUILD_OWN_FFTW=mkl  
    -DGMX_GPU=CUDA -DCUDA_TOOLKIT_ROOT_DIR=/truba/sw/centos7.9/lib/cuda/11.4 
-   -DCMAKE_INSTALL_PREFIX=/truba/home/kullanıcı_adı/gromacs-derleme/gromacs-2021.3/bin
+   -DCMAKE_INSTALL_PREFIX=/truba/home/kullanici_adi/gromacs-derleme/gromacs-2021.3/bin
 
 **4.**
 Bütün ortamlar yüklendikten sonra aşaıdaki komut satırlarını sırasıyla terminalinize yazarak kurulumu tamamlayabilirsiniz.

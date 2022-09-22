@@ -54,6 +54,12 @@ Kullanıcılarımızdan
 
 önemle rica etmekteyiz. Tar komutunun kullanımı hakkında bilgiye ulaşmak için :ref:`tıklayınız <tar-kullanimi>`.
 
+.. _merkezi-anaconda:
+
+----------------------------
+Merkezi Anaconda Kullanımı
+----------------------------
+
 .. note::
 
 	* Ev dizininizde Miniconda kurulumunu :ref:`miniconda-kurulum` sayfamızdaki yönergeleri takip ederek yapabilirsiniz.
@@ -92,6 +98,9 @@ Kullanıcılarımızdan
 	
 .. _tar-kullanimi:
 
+----------------------------
+Tar Komutunun Kullanımı
+----------------------------
 
 Tar komutu ile dosyalarınızı aşağıdaki gibi arşivleyebilirsiniz. Birden çok dosyayı tek bir arşiv dosyasında birleştirmek için (örneğin, ``arsiv_dosya.tar.gz``), aşağıdaki komutu kullanabilirsiniz
 

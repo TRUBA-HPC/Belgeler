@@ -4,8 +4,7 @@
 Giriş
 -----
 
-C++ ile OpenMP kullanımı aşağıdaki örnekte basit bir şekilde
-gösterilmiştir.
+C++ ile OpenMP kullanımı aşağıdaki örnekte basit bir şekilde gösterilmiştir.
 
 .. code:: cpp
 
@@ -21,20 +20,14 @@ gösterilmiştir.
        // Tek iş parçacığı
    }
 
-Burada ``#pragma omp parallel`` bloğu dışındaki kısımlar tamamıyla
-standard C++ kodundan ibarettir. Bu bloğun içinde ise OpenMP ile paralel
-programlama gerçekleştirilebilir.
+Burada ``#pragma omp parallel`` bloğu dışındaki kısımlar tamamıyla standard C++ kodundan ibarettir. Bu bloğun içinde ise OpenMP ile paralel programlama gerçekleştirilebilir.
 
 OMP For
 -------
 
-``#pragma omp for`` direktifi kullanılarak standard C/C++ for döngüleri
-paralel hale getirilebilir. Bu durumda döngünün içindeki kod birden
-fazla iş parçacığı tarafından bazıları paralel olacak şekilde
-çalıştırılacaktır.
+``#pragma omp for`` direktifi kullanılarak standard C/C++ for döngüleri paralel hale getirilebilir. Bu durumda döngünün içindeki kod birden fazla iş parçacığı tarafından bazıları paralel olacak şekilde çalıştırılacaktır.
 
-Aşağıdaki örnekte bu direktif kullanılarak iki rastgele sayılardan
-oluşan dizi (İngilizce: array) paralel olarak çarpılmıştır.
+Aşağıdaki örnekte bu direktif kullanılarak iki rastgele sayılardan oluşan dizi (İngilizce: array) paralel olarak çarpılmıştır.
 
 .. code:: cpp
 
@@ -68,9 +61,7 @@ oluşan dizi (İngilizce: array) paralel olarak çarpılmıştır.
    }
    }
 
-Eğer parallel blok içerisinde başka bir işlem yapılmayacaksa (üstteki
-örnekte olduğu gibi), iki direktif ``#pragma omp parallel for`` şeklinde
-birliştirilebilir
+Eğer parallel blok içerisinde başka bir işlem yapılmayacaksa (üstteki örnekte olduğu gibi), iki direktif ``#pragma omp parallel for`` şeklinde birliştirilebilir.
 
 Aşağıda aynı örnek bu kısayol kullanılarak verilmiştir.
 
@@ -100,10 +91,7 @@ Aşağıda aynı örnek bu kısayol kullanılarak verilmiştir.
        }
    }
 
-Matris çarpımı sıklıkla kullanılan ve çoğu zaman paralel programlama
-kullanılmadan istenilen hıza erişemeyen bir işlemdir. Aşağıda bu işlemi
-gösteren bir örnek verilmiştir. Matrisler C++ standard kütüphanesinin
-parçası olan ``vector`` veri yapısı kullanılarak temsil edilmişlerdir.
+Matris çarpımı sıklıkla kullanılan ve çoğu zaman paralel programlama kullanılmadan istenilen hıza erişemeyen bir işlemdir. Aşağıda bu işlemi gösteren bir örnek verilmiştir. Matrisler C++ standard kütüphanesinin parçası olan ``vector`` veri yapısı kullanılarak temsil edilmişlerdir.
 
 .. code:: cpp
 
@@ -151,31 +139,20 @@ parçası olan ``vector`` veri yapısı kullanılarak temsil edilmişlerdir.
    }
 
 Bazı önemli detaylar: 
-- Paralel bir çalışmada, seri çalışmada olduğu gibi yinelemelerin 
-(ing., iteration) verilen sırayı takip etmesi beklenemez.Bir diğer değişle döngü
-beklenenden farklı bir sırada çalıştırılabilir. 
-- An itibariyle OpenMP standardına göre sadece “canonical loop form” yani ``for(...;...;...)``
-şeklindeki looplar desteklenmekte. Yani C++11 ile birlikle gelen
-``for(... : ...)`` şeklindeki looplar bu direktif ile kullanılamaz. 
-- OpenMP 5 ile birlikte ``loop`` adında benzer bir direktif eklenmiştir.
-An itibariyle Truba’da yüklü olan derleyeciler OpenMP 5’i desteklemediği
-için bu direktif dokümana dahil edilmemiştir. 
-- Yukarıda verilen örneklerde iş parçacıkları veriyi (bu durumda ``a``, ``b``, ``c`` dizilerini)
-paylaşmaktadır. Yani bütün threadler aynı dizilere erişmekte ve
-değiştirmektedir. Bu veri kapsamları bölümünde daha detaylı
-açıklanacaktır. 
-- Genelde döngünün yenileme sayısı iş parçacığı
-sayısından fazla olacağından, bir iş dağıtımı yöntemi gereklidir.
-Bu durumda varsayılan davranış derleyiciler arasında değişiklik
-göstermektedir ve iş dağıtımı bölümünde daha detaylı açıklanacaktır.
+- Paralel bir çalışmada, seri çalışmada olduğu gibi yinelemelerin  (ing., iteration) verilen sırayı takip etmesi beklenemez.Bir diğer değişle döngü beklenenden farklı bir sırada çalıştırılabilir. 
+
+- An itibariyle OpenMP standardına göre sadece “canonical loop form” yani ``for(...;...;...)`` şeklindeki looplar desteklenmekte. Yani C++11 ile birlikle gelen ``for(... : ...)`` şeklindeki looplar bu direktif ile kullanılamaz. 
+
+- OpenMP 5 ile birlikte ``loop`` adında benzer bir direktif eklenmiştir. An itibariyle TRUBA’da yüklü olan derleyeciler OpenMP 5’i desteklemediği için bu direktif dokümana dahil edilmemiştir.
+
+- Yukarıda verilen örneklerde iş parçacıkları veriyi (bu durumda ``a``, ``b``, ``c`` dizilerini) paylaşmaktadır. Yani bütün threadler aynı dizilere erişmekte ve değiştirmektedir. Bu veri kapsamları bölümünde daha detaylı açıklanacaktır. 
+
+- Genelde döngünün yenileme sayısı iş parçacığı sayısından fazla olacağından, bir iş dağıtımı yöntemi gereklidir. Bu durumda varsayılan davranış derleyiciler arasında değişiklik göstermektedir ve iş dağıtımı bölümünde daha detaylı açıklanacaktır.
 
 OMP Sections
 ------------
 
-``omp for`` direktifinde tüm iş parçacıkları ``for`` döngüsünün içinde
-yer alan aynı kodu çalıştırmaktadır. Eğer bu iş parçacıklarının farklı
-görevleri yerine getirmelerini istersek ``sections`` direktifini
-kullanabiliriz.
+``omp for`` direktifinde tüm iş parçacıkları ``for`` döngüsünün içinde yer alan aynı kodu çalıştırmaktadır. Eğer bu iş parçacıklarının farklı görevleri yerine getirmelerini istersek ``sections`` direktifini kullanabiliriz.
 
 Bu direktif için genel kullanım aşğıdaki örnekte gösterilmiştir.
 
@@ -199,13 +176,9 @@ Bu direktif için genel kullanım aşğıdaki örnekte gösterilmiştir.
    return 0;
    }
 
-``for`` direktifinde olduğu gibi ``parallel`` ve ``sections`` beraber
-kullanılabilir (``#pragma omp parallel sections``). Bu tür bir kullanımda her bir ``section`` 
-bir iş parçacığına atanır.
+``for`` direktifinde olduğu gibi ``parallel`` ve ``sections`` beraber kullanılabilir (``#pragma omp parallel sections``). Bu tür bir kullanımda her bir ``section``  bir iş parçacığına atanır.
 
-Aşağıdaki örnek ``for`` örneklerinde olduğu gibi iki dizinin çarpımını
-hesaplar. Fakat ek olarak bir iş parçacığı çarpımı hesaplarken bir
-diğeri aynı dizelerin toplamını hesaplamaktadır.
+Aşağıdaki örnek ``for`` örneklerinde olduğu gibi iki dizinin çarpımını hesaplar. Fakat ek olarak bir iş parçacığı çarpımı hesaplarken bir diğeri aynı dizelerin toplamını hesaplamaktadır.
 
 .. code:: cpp
 
@@ -258,10 +231,6 @@ sunmaktadır.
 
 -  Programın çalıştırılırken ``OMP_NUM_THREADS=4 <program>`` şeklinde.
 -  Programın içerisinde ``omp_set_num_threads(4);`` şeklinde.
--  Direktiflere eklenerek ``#pragma omp parallel num_threads(4)``
-   şeklinde.
+-  Direktiflere eklenerek ``#pragma omp parallel num_threads(4)`` şeklinde.
 
-OpenMP iş parçacıkları donanım tarafından limitli değildir, dolayısıyla
-iş parçacığı sayısı sistemin çekirdek sayısından fazla olabilir. Fakat
-böyle durumlarda performans kaybı yaşanabilir. Dolayısıyla bu değerin
-kullanılan sisteme göre ayarlanması çoğu durumda gereklidir.
+OpenMP iş parçacıkları donanım tarafından limitli değildir, dolayısıyla iş parçacığı sayısı sistemin çekirdek sayısından fazla olabilir. Fakat böyle durumlarda performans kaybı yaşanabilir. Dolayısıyla bu değerin kullanılan sisteme göre ayarlanması çoğu durumda gereklidir.

@@ -52,7 +52,7 @@ C++ OpenMP Kodu Derlemek
 
    g++ main.cpp -o main -fopenmp -O3 -std=c++14
 
-Truba üzerinde Slurm ile OpenMP kodu çalıştırmak
+TRUBA üzerinde Slurm ile OpenMP kodu çalıştırmak
 ------------------------------------------------
 
 Aşağıda örnek bir slurm dosyası verilmiştir.
@@ -61,7 +61,7 @@ Aşağıda örnek bir slurm dosyası verilmiştir.
 
    #!/bin/bash
 
-   # Truba hesap adı
+   # TRUBA hesap adı
    #SBATCH --account=<hesap adı>
 
    # Programın adı

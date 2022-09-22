@@ -35,7 +35,7 @@ ulaşabilirsiniz.
 
 .. warning:: 
 
-  Truba kümelerinde ``/truba/sw/scripts/`` dizininin altında sizin için hazırlanmış slurm betik örnekleri mevcuttur. Bu örneklerden birini kendi dizininize kopyalarak 
+  TRUBA sisteminde ``/truba/sw/scripts/`` dizininin altında sizin için hazırlanmış slurm betik örnekleri mevcuttur. Bu örneklerden birini kendi dizininize kopyalarak 
   kendi kullanıcı adınıza uygun olarak hazılayabilirsiniz. 
 
 -------------------------------------------------------------------

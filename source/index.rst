@@ -37,12 +37,12 @@ TRUBA Kullanıcı Dökümanları
    how-to-guides/deep-learning/index.rst
    how-to-guides/data-analytics/index.rst
    how-to-guides/AMBER/index.rst
+   how-to-guides/CASTEP/index.rst
+   how-to-guides/Gaussian/index.rst
    how-to-guides/GROMACS/index.rst
    how-to-guides/LAMMPS/index.rst
-   how-to-guides/VASP/index.rst
    how-to-guides/QuantumEspresso/index.rst
-   how-to-guides/Gaussian/index.rst
-   how-to-guides/CASTEP/index.rst
+   how-to-guides/VASP/index.rst
    how-to-guides/MATLAB/index.rst
    how-to-guides/Snakemake/index.rst
    how-to-guides/Cvmfs/index.rst
@@ -72,15 +72,16 @@ TRUBA Kullanıcı Dökümanları
    :caption: Eğitim Materyalleri
    :maxdepth: 1
    
+   education/big-data/index.rst
    education/openmp/index.rst
    education/openmpi/index.rst
-   education/cfd/index.rst
-   education/compchem/index.rst
-   education/big-data/index.rst
    education/pytorch/index.rst
    education/cuda/index.rst
    education/keras/index.rst
    education/qcomp/index.rst
+   education/cfd/index.rst
+   education/compscience/index.rst
+   
 
 .. toctree::
    :caption: Etkinlikler
