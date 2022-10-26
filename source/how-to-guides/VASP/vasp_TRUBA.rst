@@ -79,7 +79,7 @@ Hamsi kümeleri için VASP SLURM Dosyası Örneği
  ulimit -s unlimited
 
 
- mpirun  /truba/home/kullanıcı_adı/derleme/vasp.6.2.0/bin/vasp_std> vasp.out
+ mpirun  /truba/home/kullanici_adi/derleme/vasp.6.2.0/bin/vasp_std> vasp.out
   
  exit
 

@@ -363,7 +363,7 @@ BETİK DOSYASININ HAZIRLANMASI
 
     #!/bin/bash
     #SBATCH -J text_gpu             #sırada görünmek üzere kuyruğa yolladığınız işe bir isim verin
-    #SBATCH -A kullanıcı_adınız     #kullanıcı adınızı girin
+    #SBATCH -A kullanici_adiniz     #kullanıcı adınızı girin
     #SBATCH -p akya-cuda            #işin yollanacağı kuyruğu girin
     #SBATCH --nodes=1               #işin toplamda çalışacağı node sayısını girin
     #SBATCH --ntasks=1              #toplam iş parçacığı sayısını girin. Bu örnekte bir node üzerinde bir iş parçacığı çalıştıracağız.

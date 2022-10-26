@@ -111,7 +111,7 @@ or edit the job script and submit & check the que and job output
 	
 	$ more su2_job.sh
 	#!/bin/bash	
-	# Job Script for Truba
+	# Job Script for TRUBA
 	# To submit:            $ sbatch su2_job.sh
 	# To check the que:     $ squeue
 	# To check the output:  $ tail -f slurm-job_ID.out

@@ -2,12 +2,13 @@
 
 
 ===============================
-Kurulum
+Qiskit ve PennyLane Kurulumları
 ===============================
 
 .. warning::
-    Belgenin geri kalanda ev dizinine Miniconda kurulumu yapılmış kabul edilmektedir. Ev dizininizde Miniconda kurulu değilse kurulumu :doc:`Python Kılavuzu'nu <../python/anaconda>` takip ederek yapabilirsiniz.
+    Belgenin geri kalanında ev dizinine Miniconda kurulumunun yapılmış olduğu kabul edilmektedir. Ev dizininizde Miniconda kurulu değilse kurulumu :ref:`Python Kılavuzu'nu <python-kilavuzu>` takip ederek yapabilirsiniz.
 
+    Merkezi anaconda kullanımı hakkındaki bilgiye ulaşmak için :ref:`tıklayınız... <merkezi-anaconda>`.
 
 --------------------------
 Qiskit Kurulumu
@@ -53,12 +54,13 @@ Qiskit paketlerini kurun.
     pip install qiskit-aer-gpu
 
 .. note::
-    Qiskit machine learning gibi ekstra Qiskit kütüphanelerini kurmak için `Qiskit'in Dokümantasyonuna <https://qiskit.org/documentation/>`_ bakabilirsiniz.
+    ``Qiskit machine learning`` gibi ekstra Qiskit kütüphanelerini kurmak için `Qiskit'in Dokümantasyonuna <https://qiskit.org/documentation/>`_ bakabilirsiniz.
 
 
 ----------------------------------------------
 PennyLane Kurulumu
 ----------------------------------------------
+
 Aynı virtual environment aktifken yine benzer şekilde PennyLane paketini kurun.
 
 .. code-block:: bash
@@ -80,7 +82,7 @@ PennyLane'e Qiskit eklentisini kurarak Qiskit içinde bulunan cihazları PennyLa
 
 
 ----------------------------------------------
-sbatch Kullanarak Kuyruğa İş Gönderme
+SLURM Betik Dosyası ile Kuyruğa İş Gönderme
 ----------------------------------------------
 
 Örnek kod hazırlayın: ``install_debug.py``
@@ -134,8 +136,6 @@ Eğer bir CUDA cihazı göremiyorsa yukarıdaki çıktıya ek olarak sistem aşa
 
         WARNING:qiskit.providers.aer.backends.aerbackend:Simulation failed and returned the following error message:
         ERROR: Failed to load qobj: No CUDA device available!
-
-
 
 
 Kuyruğa iş göndermek için bir `slurm betiği <https://slurm.schedmd.com/sbatch.html>`_ hazırlayın: ``submit-install_debug-job.sh``
