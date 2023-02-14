@@ -558,5 +558,6 @@ Ek Notlar
 
 - Örnek betik dosyalarına ``/truba/sw/scripts/matlab`` dizininden erişim sağlayabilirsiniz.
 
+- Mathworks tarafından organize edilen TRUBA üzerinde MATLAB kullanımı ile ilgili yansılara :download:`buradan </assets/matlab-howto/Parallel-Computing-Workshop-Part-II.pdf>` ve seminerin videosuna ise `youtube kanalımızdan <https://youtu.be/-eUBuyXFDwU>`_  erişebilirsiniz.  
 
 Dökümanla ilgili eksik ya da hata bulmanız durumunda bizlere grid-teknik@ulakbim.gov.tr adresinden erişebilirsiniz. Eklenmesini istediğiniz bilgiler için de bizlere aynı adresten ulaşabilirsiniz. 
