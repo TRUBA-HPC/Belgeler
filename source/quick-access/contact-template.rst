@@ -11,8 +11,8 @@ TRUBA sistemini kullanırken karşılaştığınız sorunları ``grid-teknik@ula
 .. code-block:: 
 
     Sistemdeki kullanıcı adınız:
-    Çalıştığınız dizin:
-    Kuyruğa gönderdiğiniz dosyanın ismi:
+    Çalıştığınız dizin (/truba/home/kullaniciadi veya /truba/scratch/kullaniciadi dizinleri altında çalıştığınız klasörün tam yolu):
+    Kuyruğa gönderdiğiniz dosyanın ismi (SLURM betik dosyanızın ismi):
     İş numarası (Job ID):
     İşin çalıştığı sunucuların bilgisi (Node List):
     Hata kayıtları:
