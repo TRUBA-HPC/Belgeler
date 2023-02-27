@@ -111,7 +111,7 @@ R çalıştıktan sonra
 
 yazılarak Jupyter araçlarının R kernel'ı görmesi sağlanır. Jupyter araçlarına bağlandıktan sonra Kernel menüsünden geçiş yapabilirsiniz.
 
-Ya da conda sana ortamında bir R kernel da kurabilirsiniz.
+İstenilirse conda sanal ortamında modüllerden bağımsız bir R kernel da kurabilirsiniz.
 
 .. code-block:: bash
 

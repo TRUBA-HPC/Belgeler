@@ -332,6 +332,10 @@ yapılabiliir.
     module load centos7.9/app/R/4.2.2-gcc-7
     rstudio
 
+.. note::
+
+    İstenilirse Jupyter araçları ile belirtilen R modülleri kullanabilir. Detayları :ref:`jupyter-anaconda` tarafında bulabilirsiniz.
+
 Benchmark Sonuçları
 -------------------
 
