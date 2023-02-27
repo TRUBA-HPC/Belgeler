@@ -23,3 +23,4 @@ Uygulama Kılavuzları
    MATLAB/index.rst
    Snakemake/index.rst
    Cvmfs/index.rst
+   R/index.rst

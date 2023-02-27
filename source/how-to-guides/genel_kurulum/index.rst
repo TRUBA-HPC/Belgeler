@@ -37,7 +37,8 @@ Kaynak kod olarak dağıtılan uygulamaların mevcut sistem üzerinde, sistemdek
 2- oluşan dizine girilir 
 
 .. code-block::
-    cd yeni_oluşan_dizin)
+
+    cd yeni_oluşan_dizin
 
 3- Makefile dosyası oluşturulur 
 
@@ -56,11 +57,13 @@ komutu ile de kurulum seçenekleri listelenebilir.
 4- derlemenin başlatılması
 
 .. code-block::
+
     make -j 4
 
 5- derlenmiş dosyaların "yukleme_dizini" ne kurulması 
 
 .. code-block::
+
     make install
 
 Bazı uygulamalar ``make`` yerine ``cmake`` (make'in GUI'li versiyonu) kullanabilir. Uygulama kitapçığına göre kurlum adımlarına devam edilmelidir.

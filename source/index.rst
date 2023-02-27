@@ -33,6 +33,7 @@ TRUBA Kullanıcı Dökümanları
    
    how-to-guides/genel_kurulum/index.rst
    how-to-guides/python/index.rst
+   how-to-guides/R/index.rst
    how-to-guides/GPU/index.rst
    how-to-guides/deep-learning/index.rst
    how-to-guides/data-analytics/index.rst
