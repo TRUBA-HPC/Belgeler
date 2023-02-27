@@ -79,8 +79,50 @@ Yükleme tamamlandıktan sonra Open OnDemand arayüzünde Interactive Apps menü
         jupyter notebook
     Jupyter notebook logout olup login olduktan sonra çalışıyorsa Open OnDemand arayüzünde Jupyter kullanabilirsiniz. ``ctrl+c`` kullanarak notebook'u kapatın.
 
+--------------------
+Jupyter ile R kernel kullanma
+--------------------
+
+Jupyter araçları sistemimizde var olan R modüllerini kullanarak kernel oluşturabilirsiniz. Bu sayede farklı kernel'lara bir notebook üzerinden geçiş yapabilirsiniz. 
+
+Öncelikle yeni bir sanal ortam oluşturup aktif edelim:
+
+.. code-block:: bash
+    
+    conda create --name r-env
+    conda activate r-env
+
+Sonra, istenilen derleyici ve R modülü çağrılır.
+ 
+.. code-block:: bash
+
+    module load centos7.9/comp/gcc/7
+    module load centos7.9/app/R-4.2.2-gcc-7
+    R
+
+R çalıştıktan sonra
+
+.. code-block:: r
+
+    chooseCRANmirror(ind=69)
+    install.packages('IRkernel')
+    library(IRkernel)
+    IRkernel::installspec()
+
+yazılarak Jupyter araçlarının R kernel'ı görmesi sağlanır. Jupyter araçlarına bağlandıktan sonra Kernel menüsünden geçiş yapabilirsiniz.
+
+Ya da conda sana ortamında bir R kernel da kurabilirsiniz.
+
+.. code-block:: bash
+
+    conda create --name r-env-default
+    conda activate r-env-default
+    conda install -c conda-forge notebook
+    conda install -c r r-kernel
+
+-------------------
 Farklı sanal ortamdaki Kernel'ı kullanma
-===========================================
+-------------------
 
 Bağlanmak istediğiniz Anaconda veya Miniconda sanal ortamına ipykernel ve jupyter paketlerini yükledikten sonra sanal ortamı Jupyter Notebook'da kullanmak için ``ipython kernel install`` komutunu kullanabilirsiniz.
 
@@ -133,16 +175,33 @@ Notebook başlatmak istediğiniz sanal ortama geçiş yapın ve notebook başlat
     
     eval "$(/truba/home/$USER/miniconda3/bin/conda shell.bash hook)" # Bu satır .bash_profile dosyanızda tanımlı değilse çalıştırın.
     conda activate jupyter-test-env
-    jupyter notebook --no-browser
+    jupyter-notebook --no-browser --ip=0.0.0.0 --port=8888
 
 .. note::
 
+    Eğer ``[PORT]`` numaranız kullanımda ise değiştirerek (mesela 8889) girebilirsiniz. 
     URL'deki port numarasını ``[PORT]`` ve token'i not edin.
+    Bu bilgilere yukarıdaki kodu çalıştırtıktan sonra karşınıza gelen URL üzerinden
+    `http://127.0.0.1:[PORT]/?token=[your-token]` edinebilirsiniz.
+
 
 Jupyter Notebook'a erişmek için yeni bir terminal kullanarak ssh tüneli oluşturun:
 
 .. code-block:: bash
 
-    ssh -N -L 8888:[HOSTNAME]:[PORT] 172.16.7.1
+    ssh -N -L [PORT]:[HOSTNAME]:[PORT] 172.16.7.1
 
-Web tarayıcınızda http://localhost:8888 üzerinden Jupyter Notebook'a token kullanarak giriş yapabilirsiniz.
+Yerel internet tarayıcınızda ya http://localhost:[PORT] üzerinden Jupyter Notebook'a token kullanarak ya da URL adresini kopyalayıp yapıştırarak giriş yapabilirsiniz.
+
+-----------------------
+JupyterLab kullanımı
+-----------------------
+
+Versiyon ve paketler karışmaması için yeni bir sanal ortam oluşturulup aktif edildikten sonra `JupyterLab <https://jupyter.org/install>`_ kurarak kullanabilirsiniz.
+
+.. code-block:: bash
+
+    conda create --name jupyter-lab-env
+    conda activate jupyter-lab-env
+    conda install -c conda-forge jupyter-lab
+    jupyter-lab --no-browser --ip=0.0.0.0 --port=8888
