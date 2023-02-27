@@ -38,7 +38,13 @@ Her loginde conda'nın (Miniconda) temel ortamını etkinleştirmek için ev diz
         ln -s .bash_profile .profile
         ln -s .bash_profile .bashrc
 
-Logout olup login olduktan sonra conda temel ortamının aktif olması gerekir. Temel ortamda yüklü olan paketleri görüntülemek için:
+Logout olup login olduktan sonra conda temel ortamının aktif olması (``base``) gerekir. Eğer hala aktif değilse 
+
+.. code-block:: bash
+
+    conda config -set auto_activate_base true
+
+olarak deneyiniz. Temel ortamda yüklü olan paketleri görüntülemek için:
 
 .. code-block:: bash
 
@@ -127,7 +133,7 @@ Notebook başlatmak istediğiniz sanal ortama geçiş yapın ve notebook başlat
     
     eval "$(/truba/home/$USER/miniconda3/bin/conda shell.bash hook)" # Bu satır .bash_profile dosyanızda tanımlı değilse çalıştırın.
     conda activate jupyter-test-env
-    jupyter notebook
+    jupyter notebook --no-browser
 
 .. note::
 

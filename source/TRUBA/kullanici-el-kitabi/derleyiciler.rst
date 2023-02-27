@@ -52,7 +52,7 @@ Intel oneAPI Derleyicileri
 Modern bilgisayar mimarilerinde yüksek bilgi işlem performansı elde etmek için optimize olmuş, ölçeklendirilmiş kodlar kullanmak gereklidir. 
 İş yükü çeşitliliğinin artmasıyla beraber, yüksek performans için, tek bir mimari her iş için en uygunu olmayabilir. Bu durum  çok çeşitli mimarilere duyulan ihtiyacı artırmıştır.
 Gerekli performansı elde etmek için CPU, GPU, AI ve FPGA hızlandırıcılarında dağıtılan  skaler, vektör, matris ve SVMS mimarilerinin bir karışımı gereklidir. Bunların yanında  CPU ve hızlandırıcılar için kodlama
-farklı diller, kitaplıklar ve araçlar grektiriyor. Bu durum her bir donanım platformunun tamamen farklı yazılım yatırımları  gerektirdiği anlamına gelir.
+farklı diller, kitaplıklar ve araçlar gerektiriyor. Bu durum her bir donanım platformunun tamamen farklı yazılım yatırımları  gerektirdiği anlamına gelir.
 
 oneAPI programlama Data Parallel C++ (DPC++) adlı açık kaynak programlama diliyle, paralelliği ifade etmek için  C++ özelliklerini kullanarak 
 CPU'ların ve hızlandırıcıların programlanmasını basitleştirir. oneAPI ayrıca mevcut C/C++ veya Fortran koduyla OpenMP*  özelliğini kullanan CPU'larda 
