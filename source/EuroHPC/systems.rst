@@ -116,9 +116,9 @@ LUMI Hesaplama Bölümleri
 
 .. _leonardo-partitions:
 
--------------------------
+-------------------------------
 Leonardo Hesaplama Bölümleri
--------------------------
+-------------------------------
 
 .. list-table:: Leonardo Hesaplama Bölümleri 
    :widths: 25 25 25 25 25 25
@@ -145,9 +145,9 @@ Leonardo Hesaplama Bölümleri
 
 .. _deucalion-partitions:
 
--------------------------
+------------------------------
 Deucalion Hesaplama Bölümleri
--------------------------
+------------------------------
 
 .. list-table:: Deucalion Hesaplama Bölümleri 
    :widths: 25 25 25 25 25 25
