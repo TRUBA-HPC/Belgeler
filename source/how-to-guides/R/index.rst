@@ -318,7 +318,7 @@ Resimde görüldüğü üzere kısa yoldan RStudio arayüzünü kullanabilmek i�
 .. image:: /assets/RStudio-howto/images/OpenOnDemandRstudio.png
 
 
-Bu kısayoldan kullanılan RStudio R-4.0.2 versiyonu kullanır. 
+Bu kısayoldan kullanılan RStudio R-4.2.2 versiyonu kullanır. 
 Farklı versiyonlarda kullanmak için TRUBA-Desktop'a bağlanıp
 uzak masaüstü içinde terminale aşağıdakiler yazılarak 
 yapılabiliir. 
