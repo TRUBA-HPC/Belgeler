@@ -29,7 +29,7 @@ veya intel versiyonu yüklemek için
     
     module purge
     source /truba/sw/centos7.9/comp/intel/oneapi-2021.2/setvars.sh intel64
-    module load centos7.9/app/R/4.2.2-intel	
+    module load centos7.9/app/R/4.2.2-mkl-oneapi-2021.2
 
 kod parçaları yazılır.
 İş vermeden önce kullanılmak istenilen makinelere bağlandıktan sonra istenilen 
