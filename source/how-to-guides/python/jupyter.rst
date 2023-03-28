@@ -79,9 +79,9 @@ Yükleme tamamlandıktan sonra Open OnDemand arayüzünde Interactive Apps menü
         jupyter notebook
     Jupyter notebook logout olup login olduktan sonra çalışıyorsa Open OnDemand arayüzünde Jupyter kullanabilirsiniz. ``ctrl+c`` kullanarak notebook'u kapatın.
 
---------------------
+--------------------------------------------
 Jupyter ile R kernel kullanma
---------------------
+--------------------------------------------
 
 Jupyter araçları sistemimizde var olan R modüllerini kullanarak kernel oluşturabilirsiniz. Bu sayede farklı kernel'lara bir notebook üzerinden geçiş yapabilirsiniz. 
 
@@ -120,9 +120,11 @@ yazılarak Jupyter araçlarının R kernel'ı görmesi sağlanır. Jupyter araç
     conda install -c conda-forge notebook
     conda install -c r r-kernel
 
--------------------
+Sonrasında miniconda içindeki r-kernel kullanan iş vermek istediğinizde 
+o env aktif edildikten sonra ``R CMD BATCH my_R_Script.R`` ile çalıştırabilirsiniz. 
+
 Farklı sanal ortamdaki Kernel'ı kullanma
--------------------
+--------------------------------------------
 
 Bağlanmak istediğiniz Anaconda veya Miniconda sanal ortamına ipykernel ve jupyter paketlerini yükledikten sonra sanal ortamı Jupyter Notebook'da kullanmak için ``ipython kernel install`` komutunu kullanabilirsiniz.
 
@@ -179,9 +181,10 @@ Notebook başlatmak istediğiniz sanal ortama geçiş yapın ve notebook başlat
 
 .. note::
 
-    Eğer ``[PORT]`` numaranız kullanımda ise değiştirerek (mesela 8889) girebilirsiniz. 
+    Genel ssh tüneli şu şekildedir: ``ssh -N -L local-address:local-port:remote-address:remote-port remote-user@remote-host``. Karmaşıklığı önlemek adına hem yerel hem de uzaktan aynı ``[PORT]`` numarası 
+    kullanmanız tavsiye edilir. Eğer ``[PORT]`` numaranız kullanımda ise değiştirerek (mesela 8889) girebilirsiniz. 
     URL'deki port numarasını ``[PORT]`` ve token'i not edin.
-    Bu bilgilere yukarıdaki kodu çalıştırtıktan sonra karşınıza gelen URL üzerinden
+    Bu bilgilere yukarıdaki kodu çalıştırdıktan sonra karşınıza gelen URL üzerinden
     `http://127.0.0.1:[PORT]/?token=[your-token]` edinebilirsiniz.
 
 
@@ -189,9 +192,12 @@ Jupyter Notebook'a erişmek için yeni bir terminal kullanarak ssh tüneli oluş
 
 .. code-block:: bash
 
-    ssh -N -L [PORT]:[HOSTNAME]:[PORT] 172.16.7.1
+    ssh -N -L localhost:[PORT]:[HOSTNAME]:[PORT] kullanici_id@172.16.7.1
 
 Yerel internet tarayıcınızda ya http://localhost:[PORT] üzerinden Jupyter Notebook'a token kullanarak ya da URL adresini kopyalayıp yapıştırarak giriş yapabilirsiniz.
+
+.. note:: 
+    Windows kullanıcılar için :ref:`putty_ssh_tunnel` sayfasını ziyaret edebilirsiniz.
 
 -----------------------
 JupyterLab kullanımı

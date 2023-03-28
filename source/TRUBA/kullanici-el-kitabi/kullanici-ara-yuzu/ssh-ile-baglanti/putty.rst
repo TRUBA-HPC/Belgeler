@@ -1,3 +1,4 @@
+.. _windows_putty:
 
 =========================================================================================
 Windows İşletim Sistemi için PuTTY Uygulaması Kurulumu ve TRUBA Bilgisayarlarına Bağlanma

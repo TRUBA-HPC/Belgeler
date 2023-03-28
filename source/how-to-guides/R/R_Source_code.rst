@@ -1,8 +1,8 @@
 .. _R_Source_code:
 
-===============
+==============================================
 Kaynak kod kullanılarak R kurulumu 
-===============
+==============================================
 Kaynak koddan kurulum için :ref:`genelkurulum-kilavuzu` inceleyebilirsiniz.
 Sistemimizde var olan R'ın farklı versiyonları kurmak için temelde şu adımlar izlenebilir.
 
@@ -32,8 +32,9 @@ Sunucu gelip gelmediğini bağlı olunan makine ismine bakarak öğrenebiliriz.
 
     hostname
 
+
 gcc ile derlenmiş R versiyonu kurmak için 
-------------------------------------------
+--------------------------------------------
 
 .. code-block:: bash
     
@@ -61,8 +62,9 @@ gcc ile derlenmiş R versiyonu kurmak için
     # prefix ile belirtilen dizine kurulum yapıyoruz.
     make install
 
+
 intel ile derlenmiş R versiyonu kurmak için 
-----------------------------------
+--------------------------------------------
 
 .. code-block:: bash
     

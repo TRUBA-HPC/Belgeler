@@ -29,7 +29,7 @@ veya intel versiyonu yüklemek için
     
     module purge
     source /truba/sw/centos7.9/comp/intel/oneapi-2021.2/setvars.sh intel64
-    module load centos7.9/app/R/4.2.2-intel	
+    module load centos7.9/app/R/4.2.2-mkl-oneapi-2021.2
 
 kod parçaları yazılır.
 İş vermeden önce kullanılmak istenilen makinelere bağlandıktan sonra istenilen 
@@ -52,8 +52,7 @@ O halde işleri slurm'a vermeden önce program içerisinde kullanılan paketleri
 R çalışmaya başlar ve paket kurulum aşamasına geçebiliriz.
 
 R paketi kurulum
--------
-
+------------------
 Paketleri kurmadan önce hangi repoyu kullanacığını belirtebiliriz. 
 Sonrasında diyelim ki kaynak kodlu paketleri kurmak için kullanılan ``remotes``
 R paketini kurmak istiyoruz. Kendi dizininizde ilk R paketi kurduğunuzda karşınıza 
@@ -71,9 +70,9 @@ Bu durumda iki defa ``yes`` yazdıktan sonra paketiniz kurulum aşamasına geçe
     ‘~/R/x86_64-pc-linux-gnu-library/4.2’
     to install packages into? (yes/No/cancel) yes
 
-HPC Paketler
-------------------
 
+HPC Paketler
+----------------
 HPC'de sıklıkla kullanılan R paketlerini 
 `buradan <https://cran.r-project.org/web/views/HighPerformanceComputing.html>`_ bulabilirsiniz.
 Mesela Rmpi paketi kurmak isteyelim.
@@ -100,7 +99,7 @@ Bu adımdan sonra R çağrılmış olacak ve paket kurmak şu adımlar ile devam
       ")   
 
 Terminalde R ile çalışmak
-------------------------
+----------------------------
 Temelde R ile ``shell script``'de iki farklı şekilde çalışabilirsiniz. R betiklerini çalıştırırken kullanılan 
 daha fazla parametre detayları için
 `burayı <https://cran.r-project.org/doc/manuals/R-intro.html#Invoking-R-from-the-command-line>`_ ziyaret edebilirsiniz.
@@ -113,8 +112,7 @@ daha fazla parametre detayları için
     Rscript my_R_Script.R
 
 Slurm ve R
-------------------
-
+--------------------------
 Yazdığımız R betiklerini SLURM'a verebilmek için örnek dosyalar aşağıdaki
 gibi olabilir.
 
@@ -195,7 +193,7 @@ Sonrasında işlerimizi SLURM'a gönderebiliriz.
     188.951   1.587 139.614 
 
 Çok-Çekirdek ve Çok-Sunucu kullanımı
--------------------
+--------------------------------------
 SLURM sizin için işlerinizi çoklu çekirdek yada sunucu kullanmanız için ayarlama yapmaz.
 Sizler betiklerinizi hazırlarken gerekli paketleri ve formatta hazırlamaya dikkat etmelisiniz.
 Bu amaç için aşağıda iki örnek senaryo bulunmaktadır. Daha önce de belirtildiği gibi
@@ -308,8 +306,7 @@ Bu durumda her sunucuda 28 çekirdek olacaktır.
     mpirun R CMD BATCH mpi_multi_nodes.R
 
 Open OnDemand ile RStudio
-------------------
-
+-----------------------------
 Kullanıcı arayüzü kullanarak RStudio kullanım yol haritasını :ref:`open_ondemand`
 de bulabilirsiniz.
 Resimde görüldüğü üzere kısa yoldan RStudio arayüzünü kullanabilmek için 2 aşamadan oluşmaktadır.
@@ -321,7 +318,7 @@ Resimde görüldüğü üzere kısa yoldan RStudio arayüzünü kullanabilmek i�
 .. image:: /assets/RStudio-howto/images/OpenOnDemandRstudio.png
 
 
-Bu kısayoldan kullanılan RStudio R-4.0.2 versiyonu kullanır. 
+Bu kısayoldan kullanılan RStudio R-4.2.2 versiyonu kullanır. 
 Farklı versiyonlarda kullanmak için TRUBA-Desktop'a bağlanıp
 uzak masaüstü içinde terminale aşağıdakiler yazılarak 
 yapılabiliir. 
@@ -337,8 +334,7 @@ yapılabiliir.
     İstenilirse Jupyter araçları ile belirtilen R modülleri kullanabilir. Detayları :ref:`jupyter-anaconda` tarafında bulabilirsiniz.
 
 Benchmark Sonuçları
--------------------
-
+--------------------
 Sistemlerimizde iki farklı derleyici ile elde edilmiş R versiyonları bulunmaktadır. 
 Ne zaman hangisini kullanacağımız konusunda ön bilgi sahibi olmak 
 adına aşağıda yapılmış olan benchmark sonuçlarını inceleyebilirsiniz.
@@ -418,7 +414,7 @@ kütüphanesinden kullanıyor.
                         --- End of test ---
 
 İşlerin Takibi
---------------
+-----------------
 Çalışmakta olan işlerinizin işlemci  yükünü ve bellek kullanımını 
 http://grafana.yonetim:3000  veya http://172.16.0.114:3000 adreslerinden 15 güne kadar takip edebilirsiniz.
 Bu bağlantıya sadece openvpn baglantısı (:ref:`openvpn ile erişim<open-vpn>`) üzerinden erişilebilmektedir.
@@ -430,5 +426,5 @@ Ek Notlar
 - Örnek betik dosyasına ``/truba/sw/scripts/R`` dizininden erişim sağlayabilirsiniz.
 
 
-Dökümanla ilgili eksik ya da hata bulmanız durumunda bizlere grid-teknik@ulakbim.gov.tr adresinden erişebilirsiniz. Eklenmesini istediğiniz bilgiler için de bizlere aynı adresten ulaşabilirsiniz. 
+Dokümanla ilgili eksik ya da hata bulmanız durumunda bizlere grid-teknik@ulakbim.gov.tr adresinden erişebilirsiniz. Eklenmesini istediğiniz bilgiler için de bizlere aynı adresten ulaşabilirsiniz. 
 
