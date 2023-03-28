@@ -105,7 +105,7 @@ or edit the job script and submit & check the que and job output
 
 7. Sample job script:
 
-	* :download:`su2_job.sh</assets/cfd-education/note/su2_job.sh>`
+..	* :download:`su2_job.sh</assets/cfd-education/note/su2_job.sh>`
 
 .. code-block:: bash
 	

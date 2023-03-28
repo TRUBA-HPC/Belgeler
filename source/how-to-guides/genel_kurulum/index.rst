@@ -16,7 +16,7 @@ Yaygın kullanılmakta olan pek çok uygulamanın/kütüphanenin farklı versiyo
 
 Merkezi kurulumları kullanabilmek için ilgili yazılımın ve bağlantılı kütüphanelerin modüllerinin "load" edilmesi yeterlidir.Sistemde hali hazırda kurulu olan programlar hakkındaki bilgiye terminalden
 
-.. code-block::
+.. code-block:: bash
 
     module available
 
@@ -36,19 +36,19 @@ Kaynak kod olarak dağıtılan uygulamaların mevcut sistem üzerinde, sistemdek
 
 2- oluşan dizine girilir 
 
-.. code-block::
+.. code-block:: bash
 
-    cd yeni_oluşan_dizin
+    cd yeni_olusan_dizin
 
 3- Makefile dosyası oluşturulur 
 
-.. code-block::
+.. code-block:: bash
 
     ./configure --prefix=/truba/home/kullanici_adi/yukleme_dizini
 
 Bu aşamada kullanıcılacak ek kütüphane ve derleyicilere göre farklı ``configure`` komutunda opsiyonlarının kullanılması söz konusu olabilir. Uygulamanın el kitabına bakılmalıdır.
 
-.. code-block::
+.. code-block:: bash
 
     ./configure --help 
 
@@ -56,13 +56,13 @@ komutu ile de kurulum seçenekleri listelenebilir.
 
 4- derlemenin başlatılması
 
-.. code-block::
+.. code-block:: bash
 
     make -j 4
 
 5- derlenmiş dosyaların "yukleme_dizini" ne kurulması 
 
-.. code-block::
+.. code-block:: bash
 
     make install
 
