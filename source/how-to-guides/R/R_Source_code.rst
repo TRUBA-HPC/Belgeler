@@ -32,7 +32,6 @@ Sunucu gelip gelmediğini bağlı olunan makine ismine bakarak öğrenebiliriz.
 
     hostname
 
-
 gcc ile derlenmiş R versiyonu kurmak için 
 --------------------------------------------
 
@@ -61,7 +60,6 @@ gcc ile derlenmiş R versiyonu kurmak için
     make -j28
     # prefix ile belirtilen dizine kurulum yapıyoruz.
     make install
-
 
 intel ile derlenmiş R versiyonu kurmak için 
 --------------------------------------------
