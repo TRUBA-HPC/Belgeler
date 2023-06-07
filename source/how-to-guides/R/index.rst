@@ -9,7 +9,7 @@ Bu belge TRUBA altyapısında `R <https://www.r-project.org/>`_ platformunun kul
 R işlerini çalıştırabilmek için öncelikle modülleri yüklememiz gerekir.
 Centos 7.9 sistemimizde gcc ve intel ile derlenmiş iki farklı R versiyonu bulunmaktadır.
 
-Yüklü modülleri görmek için 
+TRUBA'da bulunan modülleri görmek için 
 
 .. code-block:: bash
 
@@ -32,18 +32,15 @@ veya intel versiyonu yüklemek için
     module load centos7.9/app/R/4.2.2-mkl-oneapi-2021.2
 
 kod parçaları yazılır.
-İş vermeden önce kullanılmak istenilen makinelere bağlandıktan sonra istenilen 
-R paketlerini kurmanızı öneririz. Şöyle bir senaryo olabilir:
-Diyelim ki işlerimizi *barbun1* sunucularında çalıştırmak istiyoruz.
-O halde işleri slurm'a vermeden önce program içerisinde kullanılan paketleri 
-önceden yükleyebiliriz. Bu işlem için şu adımları takip edebiliriz:
-*levrek1* sunucusunda iken *barbun1* sunucusuna geçiş yapmak için 
+İş vermeden önce kullanılmak istenilen R paketlerini kullanılacak dizine kurmanızı öneririz.
+Yoğunluğa sebep vermemek ve hesabınızın askıya alınmaması için paket kurulumlarınızı *barbun1* arayüzünde gerçekleştirmeniz tavsiye edilir. O halde işleri SLURM'a vermeden önce şu adımları takip edebiliriz:
+*levrek1* kullanıcı arayüzünde iken 
 
 .. code-block:: bash
 
     ssh barbun1 
 
-*barbun1* sunucusu içinde iken yukarıda belirtildiği gibi modüller yüklendikten sonra terminale şunu yazdığımızda 
+ile *barbun1* sunucusuna geçiş yapılır. *barbun1* sunucusu içinde iken yukarıda belirtildiği gibi modüller yüklendikten sonra terminale şunu yazdığımızda 
 
 .. code-block:: r
 
@@ -53,9 +50,9 @@ R çalışmaya başlar ve paket kurulum aşamasına geçebiliriz.
 
 R paketi kurulum
 ------------------
-Paketleri kurmadan önce hangi repoyu kullanacığını belirtebiliriz. 
-Sonrasında diyelim ki kaynak kodlu paketleri kurmak için kullanılan ``remotes``
-R paketini kurmak istiyoruz. Kendi dizininizde ilk R paketi kurduğunuzda karşınıza 
+Paketleri kurmadan önce hangi repoyu kullanacağını belirtebiliriz. 
+Sonrasında, diyelim ki kaynak kodlu paketleri kurmak için kullanılan ``remotes``
+R paketini kurmak istiyoruz. Kullanıcı ev dizininizde ilk R paketi kurduğunuzda karşınıza 
 "is not writable" uyarısı ve kişisiel kütüphane oluşturmak için öneri alacaksınız.
 Bu durumda iki defa ``yes`` yazdıktan sonra paketiniz kurulum aşamasına geçecektir. 
 
@@ -89,13 +86,13 @@ ile paket istenilen yere kurulmuş olur. Ayrıca var olan paketin bulunduğu diz
 
 .. code-block:: bash
 
-    export R_LIBS_USER=/path/to/R_libs 
+    export R_LIBS_USER=/path/to/R_libs
 
 HPC Paketler
 ----------------
 HPC'de sıklıkla kullanılan R paketlerini 
 `buradan <https://cran.r-project.org/web/views/HighPerformanceComputing.html>`_ bulabilirsiniz.
-Mesela Rmpi paketi kurmak isteyelim.
+Mesela, R'da MPI işleri için yazılan Rmpi paketi kurmak isteyelim.
 Rmpi'yi kümeye yüklemek için, gcc ile derlenmiş R'yi başlatmadan önce uygun MPI modülünü yüklememiz gerekir.
 
 .. code-block:: bash
@@ -127,14 +124,16 @@ daha fazla parametre detayları için
 .. code-block:: bash
 
     # Çıktı olarak my_R_Script.Rout'sını çalışma dizinine kayıt eder.
-    R CMD BATCH my_R_Script.R
+    R CMD BATCH R_script.R
     # Terminal içinde çıktıları yazar.
-    Rscript my_R_Script.R
+    Rscript R_script.R
+    # Terminal içinde çıktıları yazar.
+    Rscript R_script.R > R_script.Rout
 
-Slurm ve R
+SLURM, R ve Paralelleştirme
 --------------------------
 
-İşlerimizi ölçeklendirme kısmında R yüklenirken, OpenMP ortam değişkeni OMP_NUM_THREADS ayarlanmamış olarak bırakılır. Bu, R kodunu doğrudan bir dev-node üzerinde çalıştırırken, bu sunucudaki tüm CPU'ların R'de derlenen dahili çoklu iş parçacığı kütüphanesi tarafından kullanılacağı anlamına gelir. Sunucu aşırı yükleneceğinden ve işiniz başarısız olabileceğinden bu önerilmez. Bu nedenle, lütfen R kodunu çalıştırmadan önce slurm betiği içerisinde OMP_NUM_THREADS değerini uygun bir değere ayarlayın. Örneğin, R içinde dahili çoklu iş parçacığında kullanılmak üzere 4 çekirdek atamak için
+İşlerimizi ölçeklendirme kısmında R yüklenirken, OpenMP ortam değişkeni *OMP_NUM_THREADS* ayarlanmamış olarak bırakılır. Bu, R kodunu doğrudan bir dev-node üzerinde çalıştırırken, bu sunucudaki tüm CPU'ların R'de derlenen dahili çoklu iş parçacığı kütüphanesi tarafından kullanılacağı anlamına gelir. Sunucu aşırı yükleneceğinden ve işiniz başarısız olabileceğinden bu önerilmez. Bu nedenle, lütfen R kodunu çalıştırmadan önce slurm betiği içerisinde *OMP_NUM_THREADS* değerini uygun bir değere ayarlayın. Örneğin, R içinde dahili çoklu iş parçacığında kullanılmak üzere 4 çekirdek atamak için
 
 .. code-block:: slurm
 
@@ -145,7 +144,7 @@ yazılabilir. Diğer taraftan bir de kod parçacıkları içerisinde paketler ku
 Yazdığımız R betiklerini SLURM'a verebilmek için örnek dosyalar aşağıdaki
 gibi olabilir:
 
-.. dropdown:: R ve Slurm dosyası (Tıklayınız)
+.. dropdown:: R ve SLURM dosyası (Tıklayınız)
 
     .. tab-set:: 
 
@@ -241,7 +240,7 @@ Sonrasında işlerimizi SLURM'a gönderebiliriz.
 
 Çok-Çekirdek ve Çok-Sunucu kullanımı
 -------------------------------------
-SLURM sizin için işlerinizi çoklu çekirdek ya da sunucu kullanmanız için ayarlama yapmaz.
+SLURM sizin için işlerinizi çoklu çekirdek ya da sunucu kullanmanız için tahsis eder ve ayarlama yapmaz.
 Sizler betiklerinizi hazırlarken gerekli paketleri ve formatta hazırlamaya dikkat etmelisiniz.
 Bu amaç için aşağıda iki örnek senaryo bulunmaktadır. Daha önce de belirtildiği gibi
 program içinde kullanılan paketlerin kurulmuş olması gerekir.
@@ -252,9 +251,9 @@ program içinde kullanılan paketlerin kurulmuş olması gerekir.
 İşlerimizi verirken çok çekirdek kullanması için `parallel_R_script.R`  ve `anode_mtask_acore.sh`
 dosyalarını örnek alabilirsiniz. 
 
-foreach paketi for döngüsünü ``%do%`` ile seri ve ``%dopar%`` ile paralel olarak kullanmamızı kolaylaştıran fonksiyonları sağlayan bir pakettir. Yalnız, paralel çalışması için %dopar% öncesinde mevcut olan çekirdek sayısı kayıt edilmeli. Bu süreç için ``registerDoParallel()``, ``%dopar%`` öncesinde belirtilmeli. Eğer ``registerDoParallel()`` çağrılırsa mevcut olan çekirdek sayısının yarısı kadar kayıt eder. İstenilirse ``registerDoParallel(cores=number_cores)`` ile çekirdek sayısını belirtebiliriz. 
+*foreach* paketi for döngüsünü ``%do%`` ile seri ve ``%dopar%`` ile paralel olarak kullanmamızı kolaylaştıran fonksiyonları sağlayan bir pakettir. Yalnız, paralel çalışması için %dopar% öncesinde mevcut olan çekirdek sayısı kayıt edilmeli. Bu süreç için ``registerDoParallel()``, ``%dopar%`` öncesinde belirtilmeli. Eğer ``registerDoParallel()`` çağrılırsa mevcut olan çekirdek sayısının yarısı kadar kayıt eder. İstenilirse ``registerDoParallel(cores=number_cores)`` ile çekirdek sayısını belirtebiliriz. 
 
-.. dropdown:: R ve Slurm dosyası (Tıklayınız)
+.. dropdown:: R ve SLURM dosyası (Tıklayınız)
     
     .. tab-set:: 
         
@@ -335,10 +334,10 @@ foreach paketi for döngüsünü ``%do%`` ile seri ve ``%dopar%`` ile paralel ol
 
 **OpenMPI**
 
-Birden fazla sunucu ve çekirdek kullanmak istediğinizde 
+Birden fazla sunucu içerisinde işlerimizi dağıtık olarak çok çekirdek kullanmak istediğinizde 
 `mpi_R_script.R` ve `mnode_mtask_acore.sh` dosyalarını kullanabilirsiniz.
 
-.. dropdown:: R ve Slurm dosyası (Tıklayınız)
+.. dropdown:: R ve SLURM dosyası (Tıklayınız)
 
     .. tab-set:: 
 
@@ -407,13 +406,13 @@ Birden fazla sunucu ve çekirdek kullanmak istediğinizde
 
                 exit
 
-SLURM'a **--ntasks=10 -nodes=2 --ntasks-per-node=5** diyerek her sunucuda 5'er iş olmak üzere 2 tane sunucuda toplamda 10 çekirdek ayırmasını söyleyebiliriz.
+SLURM'a **- -ntasks=10 - -nodes=2 - -ntasks-per-node=5** diyerek her sunucuda 5'er iş olmak üzere 2 tane sunucuda toplamda 10 iş çalışacağını söyleyebiliriz.
 
 **Hibrit (OpenMP + OpenMPI) iş verme**
 
 Çoklu sunucuları kullanmanın avantajlarından yararlanabilmek için kodumuzu ona göre ayarlamalıyız. Mesela aşağıdaki kod parçacıklarına dikkat edilirse ``foreach`` fonksiyonu ile 10 tane iş bölünür ve her iş ``mclapply`` ile 2 tane çekirdek üzerinden koşturulur.
 
-.. dropdown:: Slurm ve R dosyası (Tıklayınız)
+.. dropdown::  R ve SLURM dosyası (Tıklayınız)
 
     .. tab-set:: 
 
@@ -495,7 +494,7 @@ SLURM'de kullanılan ``--array`` parametresinin atadığı değerlere ``$(SLURM_
 
 - ``--array=2,5,8``: *program 2*, *program 5* ve *program 8* olmak üzere 3 iş başlatılır.
 - ``--array=1-10`` : 1'den 10'a kadar değer vererek 10 tane işi aynı anda çalıştırır.
-- ``--array=0-9:``: 0, 3, 6, 9 değerleri ile birlikte 4 tane iş başlatılır.
+- ``--array=0-9``: 0, 3, 6, 9 değerleri ile birlikte 4 tane iş başlatılır.
 - ``--array=1-10%2``: Aynı anda 2'şer iş çalıştırmak üzere modifiye eder.
 
 Girdi dosyalarınızı *input_1, input_2, ... , input_10* olduğunda ``program input_$((SLURM_ARRAY_TASK_ID))`` ile her iş için ayrı bir girdi dosyasını alarak koşturulabilir.
