@@ -68,7 +68,7 @@ which R
 
 `conda activate rstudio-env`
 
-6. Bu basamakta `.bash_profile` dosyasını düzenleyerek, `.bashrc` dosyasının yeni oturum oluşturulurken otomatik olarak çalıştırılmasını sağlayacağız. `nano .bash_profile` komutuyla dosyayı açın, aşağıdaki satırı ekleyin, ve yukarıdaki gibi kaydedin:
+6. Bu basamakta `.bash_profile` dosyasını düzenleyerek, `.bashrc` dosyasının yeni oturum oluşturulurken otomatik olarak çalıştırılmasını sağlayacağız. Her bağlanıldığında bu ortam içerisinde bulunmak istemiyorsanız, bu basamağı atlayabilirsiniz. `nano .bash_profile` komutuyla dosyayı açın, aşağıdaki satırı ekleyin, ve yukarıdaki gibi kaydedin:
 
 `source ~/.bashrc`
 
@@ -105,7 +105,7 @@ which R
 
 1. RStudio arayüzü interaktif analizler için iyi bir çözümken, daha yüksek performans gerektiren hesaplama işleri için SLURM kaynak yöneticisinin kullanılması daha uygundur. [İlgili kılavuzda](https://docs.truba.gov.tr/TRUBA/kullanici-el-kitabi/kaynakyoneticisi-isdongusu/basic_slurm_commands.html) daha fazla bilgi sahibi olabilirsiniz. Burada iki adet kullanım örneğini paylaşacağım.
 
-2. Bu tip kullanımlar için yazılan R kodunu script olarak kaydetmek gerekecektir. Bu kod içerisinde oluşturulacak veri objeleri `.rds` veya `.rda` olarak kaydedilebilir. Bu objeler daha sonra interaktif RStudio ortamında görselleştirme vb. amaçlarla kullanılabilir. Bahsedildiği gibi oluşturulan scriptleri iş kümesine göndermeden önce test etmek gerekebilir. Bu amaçla aşağıdaki kod ile `debug` kuyruğundan 15 dakika boyunca 10 iş kullanacak bir çekirdek istenebilir. Böylece ana bilgisayarı meşgul etmeden hesaplama kümesinde size ayrılan bir shell'de işlem yürütebilirsiniz. `srun` argümanları hakkında ayrıntılı bilgiyi [https://slurm.schedmd.com/srun.html](burada) bulabilirsiniz.
+2. Bu tip kullanımlar için yazılan R kodunu script olarak kaydetmek gerekecektir. Bu kod içerisinde oluşturulacak veri objeleri `.rds` veya `.rda` olarak kaydedilebilir. Bu objeler daha sonra interaktif RStudio ortamında görselleştirme vb. amaçlarla kullanılabilir. Bahsedildiği gibi oluşturulan scriptleri iş kümesine göndermeden önce test etmek gerekebilir. Bu amaçla aşağıdaki kod ile `debug` kuyruğundan 15 dakika boyunca 10 iş kullanacak bir çekirdek istenebilir. Böylece ana bilgisayarı meşgul etmeden hesaplama kümesinde size ayrılan bir shell'de işlem yürütebilirsiniz. `srun` argümanları hakkında ayrıntılı bilgiyi [burada]([https://slurm.schedmd.com/srun.html) bulabilirsiniz.
 
 `srun -p debug -N1 -n10 -A kullanici_adi -time=00:15:00 --pty bash -i`
 

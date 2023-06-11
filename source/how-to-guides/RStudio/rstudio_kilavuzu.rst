@@ -112,8 +112,10 @@ RStudio için sanal ortam oluşturma
 
 6. Bu basamakta ``.bash_profile`` dosyasını düzenleyerek, ``.bashrc``
    dosyasının yeni oturum oluşturulurken otomatik olarak
-   çalıştırılmasını sağlayacağız. ``nano .bash_profile`` komutuyla
-   dosyayı açın, aşağıdaki satırı ekleyin, ve yukarıdaki gibi kaydedin:
+   çalıştırılmasını sağlayacağız. Her bağlanıldığında bu ortam
+   içerisinde bulunmak istemiyorsanız, bu basamağı atlayabilirsiniz.
+   ``nano .bash_profile`` komutuyla dosyayı açın, aşağıdaki satırı
+   ekleyin, ve yukarıdaki gibi kaydedin:
 
 ``source ~/.bashrc``
 
@@ -187,7 +189,7 @@ Diğer faydalı bilgiler
    istenebilir. Böylece ana bilgisayarı meşgul etmeden hesaplama
    kümesinde size ayrılan bir shell’de işlem yürütebilirsiniz. ``srun``
    argümanları hakkında ayrıntılı bilgiyi
-   `https://slurm.schedmd.com/srun.html <burada>`__ bulabilirsiniz.
+   `burada <%5Bhttps://slurm.schedmd.com/srun.html>`__ bulabilirsiniz.
 
 ``srun -p debug -N1 -n10 -A kullanici_adi -time=00:15:00 --pty bash -i``
 
