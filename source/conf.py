@@ -30,7 +30,8 @@ author = 'TÜBİTAK ULAKBİM'
 extensions = [
     'sphinx_togglebutton',
     'sphinx_copybutton',
-    'sphinx_design'
+    'sphinx_design',
+    'sphinx_tabs.tabs'
 ]
 
 
