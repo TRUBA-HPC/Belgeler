@@ -986,7 +986,7 @@ Intel derleyicisi ile olan modüller yüklendikten sonra R içerisinde ``session
 --------------
 Çalışmakta olan işlerinizin işlemci  yükünü ve bellek kullanımını 
 http://grafana.yonetim:3000  veya http://172.16.0.114:3000 adreslerinden 15 güne kadar takip edebilirsiniz.
-Bu bağlantıya sadece openvpn baglantısı (:ref:`openvpn ile erişim<open-vpn>`) üzerinden erişilebilmektedir.
+Bu bağlantıya sadece :ref:`openvpn baglantısı ile <open-vpn>` üzerinden erişilebilmektedir.
 
 .. note:: 
     
