@@ -29,7 +29,9 @@ author = 'TÜBİTAK ULAKBİM'
 # ones.
 extensions = [
     'sphinx_togglebutton',
-    'sphinx_copybutton'
+    'sphinx_copybutton',
+    'sphinx_design',
+    'sphinx_tabs.tabs'
 ]
 
 
