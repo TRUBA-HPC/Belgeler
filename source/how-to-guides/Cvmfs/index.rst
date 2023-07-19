@@ -1,6 +1,6 @@
 .. _cvmfs-kilavuzu:
 
-TRUBA'da CVMFS Kullanımı
+CVMFS Kullanımı
 --------------------------
 
 `CernVM Dosya Sistemi <https://cvmfs.readthedocs.io/en/stable/index.html>`_ (CernVM-FS), bilimsel yazılımları sanal makinelere ve fiziksel iş düğümüne (working nodes) hızlı, ölçeklenebilir ve güvenilir bir şekilde sunmak için tasarlanmış salt okunur bir dosya sistemidir. Dosyalar ve dosya meta verileri talep üzerine indirilir ve agresif bir şekilde önbelleğe alınır.

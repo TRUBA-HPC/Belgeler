@@ -1,8 +1,8 @@
 .. _R-modules:
 
-===============
+===
 R
-===============
+===
 
 Bu belge TRUBA altyapısında `R <https://www.r-project.org/>`_ platformunun kullanımını kolaylaştırmak için oluşturulmuştur.
 Bu kılavuz aşağıdakileri kapsamaktadır:
@@ -26,6 +26,7 @@ Bu kılavuz aşağıdakileri kapsamaktadır:
     .. grid-item-card:: :ref:`sorunlar-cozumler`
         :text-align: center
 .. _TRUBA-r-modulleri:
+
 TRUBA'da R Modülleri
 --------------------
 R işlerini çalıştırabilmek için öncelikle modülleri yüklememiz gerekir.
@@ -75,6 +76,7 @@ ile *barbun1* sunucusuna geçiş yapılır. *barbun1* sunucusu içinde iken yuka
 R çalışmaya başlar ve paket kurulum aşamasına geçebiliriz.
 
 .. _r-paket-kurulum:
+
 R paketi kurulum
 ------------------
 Paketleri kurmadan önce hangi repoyu kullanacağını belirtebiliriz. 
@@ -196,7 +198,7 @@ Aşağıda, 5 tane MPI işi için talep edilen aynı sunucu içerisindeki 5 tane
 
                 #!/bin/bash
 
-                #SBATCH --account=iguzel
+                #SBATCH --account=kullanici_adiniz
                 #SBATCH --partition=debug
                 #SBATCH --constraint=barbun
                 #SBATCH --output=%A.out #%A=JOB_ID %a=ArrayIndex
@@ -298,6 +300,7 @@ Aşağıda, 5 tane MPI işi için talep edilen aynı sunucu içerisindeki 5 tane
 
 
 .. _terminalde-r-ile-calismak:
+
 Terminalde R ile çalışmak
 ----------------------------
 Komut satırında R ile temelde iki farklı şekilde çalışabilinir. R betiklerini çalıştırırken kullanılan 
@@ -314,8 +317,9 @@ daha fazla parametre detayları için
     Rscript R_script.R > R_script.Rout
 
 .. _slurm-r-paralellestirme:
+
 R, SLURM ve Paralelleştirme
---------------------------
+---------------------------
 
 Yüksek performans elde edebilmek için kaynaklara ihtiyaç bulunmaktadır. Bu kaynakları etkili şekilde kutlanmak yüksek başarımlı hesaplama alanları içinde önem arz etmektedir. R ortamının kendisi paralelleştirilmemiş olduğunu dikkate aldığımızda vektörel işlemler ya da paralelleştirme için özel paketler kullanılmadığı sürece R tek çekirdek üzerinde çalışmaktadır. Bu amaç doğrultusunda aşağıda kapalı (implicit) ve açık paralelleştirme (explicit) örneklerle kısaca bahsedilmeden önce örnek seri kod, çok iş parçacıklı kodlar, çok düğümlü (parallel MPI) veya hibrit isleri (çok iş parçacıklı ve çok düğümlü kodlar) için SLURM parametreleri paylaşılmıştır. Daha fazla detay için `buraya <https://www.john-ros.com/Rcourse/parallel.html>`_ bakabilirsiniz. 
 
@@ -591,13 +595,13 @@ Ayrıca R betiği içerisinde SLURM aracılığı ile tahsis edilen iş/çekirde
 
             #!/bin/bash
 
-            #SBATCH --account=iguzel
+            #SBATCH --account=kullanici_adiniz
             #SBATCH --partition=debug
             #SBATCH --constraint=barbun
             #SBATCH --output=%A.out #%A=JOB_ID %a=ArrayIndex
             #SBATCH --error=%A.err
             #SBATCH --time=00:15:00
-            #SBATCH --workdir=/truba/home/iguzel/sw-u/R/script
+            #SBATCH --workdir=/truba/home/kullanici_adiniz/sw-u/R/script
             #SBATCH --job-name=1120.1-G
             #SBATCH --ntasks=1
             #SBATCH --nodes=1
@@ -718,13 +722,13 @@ Tek sunucu içerisinde kullanılabilecek maksimum çekirdek sayıısı yetersiz 
 
                 #!/bin/bash
 
-                #SBATCH --account=iguzel
+                #SBATCH --account=kullanici_adiniz
                 #SBATCH --partition=debug
                 #SBATCH --constraint=barbun
                 #SBATCH --output=%A.out #%A=JOB_ID %a=ArrayIndex
                 #SBATCH --error=%A.err
                 #SBATCH --time=00:15:00
-                #SBATCH --workdir=/truba/home/iguzel/sw-u/R-TRUBA/script
+                #SBATCH --workdir=/truba/home/kullanici_adiniz/sw-u/R-TRUBA/script
                 #SBATCH --job-name=test
                 #SBATCH --ntasks=10
                 #SBATCH --nodes=2
@@ -759,13 +763,13 @@ Tek sunucu içerisinde kullanılabilecek maksimum çekirdek sayıısı yetersiz 
 
                 #!/bin/bash
 
-                #SBATCH --account=iguzel
+                #SBATCH --account=kullanici_adiniz
                 #SBATCH --partition=debug
                 #SBATCH --constraint=barbun
                 #SBATCH --output=%A.out #%A=JOB_ID %a=ArrayIndex
                 #SBATCH --error=%A.err
                 #SBATCH --time=00:15:00
-                #SBATCH --workdir=/truba/home/iguzel/sw-u/R-TRUBA/script
+                #SBATCH --workdir=/truba/home/kullanici_adiniz/sw-u/R-TRUBA/script
                 #SBATCH --job-name=test
                 #SBATCH --ntasks=10
                 #SBATCH --nodes=2
@@ -798,6 +802,7 @@ Tek sunucu içerisinde kullanılabilecek maksimum çekirdek sayıısı yetersiz 
 SLURM'a **- -ntasks=10 - -nodes=2 - -ntasks-per-node=5** diyerek her sunucuda 5'er iş olmak üzere 2 tane sunucuda toplamda 10 işi  birer çekirdek üzerinde çalışacağını söyleyebiliriz. Hibrit işlerde ise aynı kurgu içerisinde 10 iş çalışırken her işi tek çekirdek değil 2 çekirdek kullanarak kapalı paralelleştirme ile hızlandıralabilir.
 
 .. _is-dizileri-job-array:
+
 İş dizileri (job array)
 ------------------------------------------------
 İş dizileri (job array), SLURM'ün tek bir koddan birden fazla iş oluşturma yeteneğinden yararlanmanıza imkan sağlar. Bunun yararlı olduğu durumları şu şekilde olabilir:
@@ -852,12 +857,12 @@ Aşağıda 2 tane girdi kabul eden ve girdiler arasında bir liste oluşturup li
 
                 #!/bin/bash
 
-                #SBATCH --account=iguzel
+                #SBATCH --account=kullanici_adiniz
                 #SBATCH --partition=debug
                 #SBATCH --output=%A_%a.out #%A=JOB_ID %a=ArrayIndex
                 #SBATCH --error=%A_%a.err
                 #SBATCH --time=00:15:00
-                #SBATCH --workdir=/truba/home/iguzel/sw-u/R-TRUBA/script
+                #SBATCH --workdir=/truba/home/kullanici_adiniz/sw-u/R-TRUBA/script
                 #SBATCH --job-name=test
                 #SBATCH --ntasks=1
                 #SBATCH --nodes=1
@@ -898,6 +903,7 @@ Aşağıda 2 tane girdi kabul eden ve girdiler arasında bir liste oluşturup li
 Birbirleri ile bağımlı işler çalıştırmak için ``--dependency`` parametresi için `SLURM'ün sayfası <https://slurm.schedmd.com/sbatch.html>`_ ziyaret edilebilir.
 
 .. _benchmark-sonuclari:
+
 Benchmark Sonuçları
 --------------------
 Sistemlerimizde iki farklı derleyici ile elde edilmiş R versiyonları bulunmaktadır. 
@@ -982,6 +988,7 @@ Intel derleyicisi ile olan modüller yüklendikten sonra R içerisinde ``session
                                     --- End of test ---
 
 .. _islerin-takibi:
+
 İşlerin Takibi
 --------------
 Çalışmakta olan işlerinizin işlemci  yükünü ve bellek kullanımını 
@@ -993,6 +1000,7 @@ Bu bağlantıya sadece :ref:`openvpn baglantısı ile <open-vpn>` üzerinden eri
     Örnek betik dosyalarına ``/truba/sw/scripts/R`` dizininden erişim sağlayabilirsiniz.
 
 .. _sorunlar-cozumler:
+
 Sorunlar ve Çözümler
 ------------------------------
 R paketlerinin kurulumu sırasında derleyici sorunlarını çözmek için diğer yaklaşımlar:

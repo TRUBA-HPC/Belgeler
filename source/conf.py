@@ -31,7 +31,8 @@ extensions = [
     'sphinx_togglebutton',
     'sphinx_copybutton',
     'sphinx_design',
-    'sphinx_tabs.tabs'
+    'sphinx_tabs.tabs',
+    'sphinx_last_updated_by_git'
 ]
 
 

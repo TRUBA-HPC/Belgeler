@@ -16,7 +16,7 @@ Aşağıda Quantum Espresso programı için hazırlanan örnek betik dosyası ko
 
    #!/bin/bash
    #SBATCH -p barbun # isin gönderileceği node grubu
-   #SBATCH -A mdemirtas #kullanilacak kredi hesabının adı. Siz de kendi hesabınızın ismini yazmalısınız.
+   #SBATCH -A kullanici_adiniz #kullanilacak kredi hesabının adı. Siz de kendi hesabınızın ismini yazmalısınız.
    #SBATCH -J silicon_surf # işin kurukta gösterilecek adı. 
    #SBATCH -N 1  #Hesaplama sırasında, kullanılacak çekirdeklerin kaç farklı node tarafından sağlanacağını belirler. 
    #SBATCH -n 20 #Görev sayısı (mpi işleri için, uygulamanın çalıştırılacağı kopya sayısı). 
@@ -30,12 +30,12 @@ Aşağıda Quantum Espresso programı için hazırlanan örnek betik dosyası ko
    echo "SLURM_NODELIST $SLURM_NODELIST"
    echo "NUMBER OF CORES $SLURM_NTASKS"
 
-   wdir=/truba_scratch/mdemirtas/si_surface   #Uygulama için çalıştırılacak dosyaların adresleri. 
+   wdir=/truba_scratch/kullanici_adiniz/si_surface   #Uygulama için çalıştırılacak dosyaların adresleri. 
    cd $wdir
 
    infile=$wdir/in.si #Uygulamanın çalışması için gerekli input ve output dosyaların adları. 
    outfile=$wdir/out.si
    
 
-   ESPRESSO_DIR=/truba/home/mdemirtas/q-e-qe-6.5MaX  #Uygulamanın bulunduğu adres
+   ESPRESSO_DIR=/truba/home/kullanici_adiniz/q-e-qe-6.5MaX  #Uygulamanın bulunduğu adres
    mpirun $ESPRESSO_DIR/bin/pw.x <$infile> $outfile  #Uygulamanın çalışması için tanımlı kod.
