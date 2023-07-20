@@ -47,6 +47,7 @@ TRUBA Kullanıcı Dökümanları
    how-to-guides/MATLAB/index.rst
    how-to-guides/Snakemake/index.rst
    how-to-guides/Cvmfs/index.rst
+   how-to-guides/Apptainer/index.rst
 
 .. toctree::
    :caption: TRUBA Hakkında

@@ -19,6 +19,7 @@ Kılavuzda aşağıdaki basamaklar anlatılmıştır:
         :text-align: center
 
 .. _open-ondemand-ile-rstudio:
+
 Open OnDemand ile RStudio
 -----------------------------
 Kullanıcı arayüzü kullanarak RStudio kullanım yol haritasını :ref:`open_ondemand`
@@ -41,6 +42,7 @@ kendi R/RStudio kurulumlarını yapabildikleri gibi :ref:`R_Source_code` kılavu
 
 
 .. _farkli-rstudio-versiyonu-kullanma:
+
 Farklı RStudio versiyonu kullanma
 -----------------------------------
 
@@ -181,6 +183,7 @@ yapılabilir.
     İstenilirse Jupyter araçları ile belirtilen R modülleri kullanabilir. Detayları :ref:`jupyter-anaconda` tarafında bulabilirsiniz.
 
 .. _yuksek_performansli_islerin_yapilmasi:
+
 Yüksek performanslı işlerin yapılması
 -------------------------------------
 

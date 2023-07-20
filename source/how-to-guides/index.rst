@@ -24,3 +24,4 @@ Uygulama Kılavuzları
    Snakemake/index.rst
    Cvmfs/index.rst
    R/index.rst
+   Apptainer/index.rst
