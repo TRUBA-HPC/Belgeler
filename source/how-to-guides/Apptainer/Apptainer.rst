@@ -110,7 +110,7 @@ ile apptainer içerisinde  kurulu olan programı verilen betik ve *Arg1* paramet
 
         apptainer cache clean
 
-    ile temizlemeniz gerekebilir. Daha fazla detay için `ilgili kılavuz <https://apptainer.org/docs/user/main/index.html>`_ ziyaret edilebilir.  Yukarıdaki adımlar yerine önbellekte tutulmasını istemiyorsak ``--disable-cache`` parametresini kullanabiliriz.
+    ile temizlemeniz gerekebilir. Daha fazla detay için `ilgili kılavuz <https://apptainer.org/docs/user/main/index.html>`_ ziyaret edilebilir.  Yukarıdaki adımlar yerine önbellekte tutulmasını istemiyorsak ``--disable-cache`` parametresini de kullanabiliriz.
 
 
 
@@ -128,11 +128,9 @@ Konteyner Açma, Ekleme ve Kapatma
 -------------------
 Yeni bir konteyner inşa etmek için bir konteyner servisi, tanım (def) ya da görüntü (image)  dosyalarına ihtiyaç bulunmaktadır. İstenilirse hazır bir konteyner elde edildikten sonra konteyneri bir klasör şeklinde açıp içerisinde bulunan terminal çalıştırılarak manuel olarak program kurabilir ya da kurulu olan bir programa paket eklenebilir. Bu konteyner klasörünü daha sonra kapatılıp kullanıma sunulabilir.
 
-Bu süreç için aşağıdaki örneğe bakılabilir:
-
 .. hint::
     
-    Docker içerisinde servis edilen R programlama dili için r-base-4.3.0 konteyneri çekilecek ve içerisine ``remotes`` paketi kurulumu yapıldıktan sonra kullanıma özelleştirilmiş bir konteyner elde etmek için gerekli komutlar şu şekilde olabilmektedir:
+    Örneğin, Docker içerisinde servis edilen R programlama dili için r-base-4.3.0 konteyneri çekilecek ve içerisine ``remotes`` paketi kurulumu yapıldıktan sonra kullanıma özelleştirilmiş bir konteyner elde etmek için gerekli komutlar şu şekilde olabilmektedir:
 
     .. code-block:: bash
 
@@ -158,7 +156,7 @@ Bu süreç için aşağıdaki örneğe bakılabilir:
 Konteyner içinde Anaconda
 -------------------------
 
-Conda platformunu konteyner içerisinde kullanmak için hazır anaconda ya da miniconda için servis edilen konteynerler kullanılabildiği gibi istenilen bir işletim sistemine ait bir konteyner içerisine de kurulup yapıulabilir. Burada örnek olarak, hazır miniconda konteyneri oluşturulacak ve içerisine yeni bir conda ortamı oluşturma süreci gösterilecektir.
+Conda platformunu konteyner içerisinde kullanmak için hazır anaconda ya da miniconda için servis edilen konteynerler kullanılabildiği gibi istenilen bir işletim sistemine ait bir konteyner içerisine de kurulum yapılabilir. Burada örnek olarak, hazır miniconda konteyneri oluşturulacak ve içerisine yeni bir conda ortamı oluşturma ve o ortam içerisinde python 3.9 versiyonu yükleme süreci gösterilecektir.
 
 .. tabs:: 
 
@@ -166,12 +164,14 @@ Conda platformunu konteyner içerisinde kullanmak için hazır anaconda ya da mi
 
         .. code-block:: bash
 
+            # Konteyner indirme işlemi 
             apptainer build --sandbox miniconda3-container docker://continuumio/miniconda3
+            # Konteyner içerisinde terminal açma
             apptainer shell --no-home --writable --fakeroot miniconda3-container
             apt update && apt install -y apt-utils vim
-            # conda aktif edebilmek için yan sekmede sunulan bilgileri vi ile eklenir.
+            # conda aktif edebilmek için yan sekmede sunulan bilgileri vi ile ekleme
             vi /.singularity.d/env/90-environment.sh
-            # conda base ortamı aktif edilir.
+            # conda base ortamı aktif etme
             source /.singularity.d/env/90-environment.sh
     
     .. tab:: 90-environment.sh
@@ -204,12 +204,12 @@ Miniconda için ayarlamalar yapıldıktan sonra istenilirse ``test`` isminde ort
 
             apptainer shell --no-home --writable --fakeroot miniconda3-container
             source /.singularity.d/env/90-environment.sh
-            # test isminde bir conda ortamı oluşturmak
+            # test isminde bir conda ortamı oluşturma
             conda create --name test
             conda activate test
-            # istenilen paket kurulumları gerçekleştirilir.
+            # istenilen paket kurulumları gerçekleştirme
             conda install python=3.9
-            # Konteyner kapatılır.
+            # Konteyner kapatma
             apptainer build miniconda3-container.sif ./miniconda3-container
 
     .. tab:: conda-env-settings
@@ -236,7 +236,7 @@ Sonrasında konteyner içine girmeden ``test`` ortamı aktif edilmek ve ``python
 Kontenyer, MPI ve GPU
 ---------------------
 
-Konteyner içinde GPU kullanmasına olanak sağlamak için ``--nv`` parametresi kullanılarak yapılabilir. Daha fazla detay için `GPU kılavuzu <https://apptainer.org/docs/user/latest/gpu.html>`_ ziyaret edilebilir.
+Konteyner içinde GPU kullanmasına olanak sağlamak için ``--nv`` parametresi kullanılarak yapılabilir. Daha fazla detay için `ilgili GPU kılavuzu <https://apptainer.org/docs/user/latest/gpu.html>`_ ziyaret edilebilir.
 
 MPI işleri için konteyner içinde ve dışında aynı MPI programı ve versiyonu uyumlu olmalıdır. Program çalıştırırken 
 ``apptainer exec mpirun -n <mpi-is-sayisi> <Konteyner> <Program> <Betik>`` olarak değil,
