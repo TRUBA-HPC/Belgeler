@@ -10,7 +10,7 @@ TRUBA üzerinde grafik ekran gerektiren uygulamaları çalıştırmak için "ssh
 ssh X-forwarding
 ================
 
-Arayüz sunucularına (levrek1, barbun1,sardalya1) grafik ekran bağlantısı gerçekleştirerek (X-forwarding) görsel uygulamalar çalıştırmak mümkündür. 
+Arayüz sunucularına (levrek1, barbun1) grafik ekran bağlantısı gerçekleştirerek (X-forwarding) görsel uygulamalar çalıştırmak mümkündür. 
 
 
 Sunucu üzerindeki görsel öğeyi kullanıcının kendi bilgisayarına aktarabilmesi için
@@ -49,7 +49,7 @@ Bağlanti gerçekleştiğinde xclock komutu ile test yapılabilir.
 TRUBA'da VNC ile Kullanıcı Arayüzlerine Görsel Bağlantı
 ===========================================================
 
-Kullanıcı arayüzü sunucularında (sardalya1 ve barbun1) ``vncserver`` kuruludur. Kullanıcılar aşağıdaki ayarları gerçekleştirdikten sonra kişisel bilgisayarlarında vncviewer kullanarak grafik arayüzü gerektiren programları (MATLAB vb.) çalıştırabilirler. 
+Kullanıcı arayüzü sunucularında (barbun1) ``vncserver`` kuruludur. Kullanıcılar aşağıdaki ayarları gerçekleştirdikten sonra kişisel bilgisayarlarında vncviewer kullanarak grafik arayüzü gerektiren programları (MATLAB vb.) çalıştırabilirler. 
 
 
 .. warning::

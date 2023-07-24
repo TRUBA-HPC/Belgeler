@@ -72,7 +72,6 @@ Gaussian09-barbun.slurm
   #!/bin/bash
   #SBATCH -p mid2
   #SBATCH -A kullaniciadi
-  #SBATCH --constraint=barbun
   #SBATCH -J jobname
   #SBATCH --nodes=1
   #SBATCH --ntasks-per-node=20
@@ -136,7 +135,9 @@ Gaussian09-hamsi.slurm
 
 .. note::
 
-  Farklı kümelerde hesap yaparken (örneğin sardalya kümesi için) ``#SBATCH --constraint=barbun`` satırındaki barbun kısmını değiştirebilirsiniz (``#SBATCH --constraint=sardalya``) Diğer kümelerdeki minimum çekirdek sayıları için https://docs.truba.gov.tr/TRUBA/kullanici-el-kitabi/hesaplamakumeleri.html ziyaret ediniz. 
+  .. Farklı kümelerde hesap yaparken (örneğin sardalya kümesi için) ``#SBATCH --constraint=barbun`` satırındaki barbun kısmını değiştirebilirsiniz (``#SBATCH --constraint=sardalya``) 
+  
+  Diğer kümelerdeki minimum çekirdek sayıları için https://docs.truba.gov.tr/TRUBA/kullanici-el-kitabi/hesaplamakumeleri.html ziyaret ediniz. 
 
   ``#SBATCH --time=12:00:00`` satırını daha uzun süreli hesaplarınız için saat yerine gün olarak ``#SBATCH --time=2-00:00:00`` (2 gün) şeklinde değiştirebilirsiniz. 
 

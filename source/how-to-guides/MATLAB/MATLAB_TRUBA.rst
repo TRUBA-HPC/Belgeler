@@ -115,7 +115,7 @@ MATLAB’ı çalıştıracağınız küme hakkındaki parametrelerinizi ayarlama
     %% Eger her seferinde TRUBA şifrenizi yazmak istemiyorsanız, ssh anahtar ayarini aktif edebilirsiniz.
     %c.AdditionalProperties.UseIdentityFile=1
     %% ssh anahtarinizin yerini belirtin
-    %c.AdditionalProperties.IdentityFile='/Users/sbilmis/.ssh/id_rsa_ulakbim'
+    %c.AdditionalProperties.IdentityFile='/Users/kullaniciadi/.ssh/id_rsa_ulakbim'
     %c.AdditionalProperties.IdentityFileHasPassphrase: 0
     
     %% Debugging ozelligini de tercihe gore degistirebilirsiniz
@@ -125,7 +125,7 @@ MATLAB’ı çalıştıracağınız küme hakkındaki parametrelerinizi ayarlama
     %c.AdditionalProperties.Reservation='Varsa_rezervasyon_adi'
 
     %% isinizin truba uzerinde nerede saklanacagi ile ilgili yeri belirtebilirsiniz
-    % c.AdditionalProperties.RemoteJobStorageLocation='/truba/home/sbilmis/.matlab/3p_cluster_jobs/truba/sbilmis.local/R2021b/nonshared'w
+    % c.AdditionalProperties.RemoteJobStorageLocation='/truba/home/kullaniciadi/.matlab/3p_cluster_jobs/truba/kullaniciadi.local/R2021b/nonshared'w
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -388,21 +388,21 @@ Kodu kuyruğa göndermek için
     pool sayisi :code:`--ntask` parametresine karşılık gelmektedir. Bir çekirdek işi orkestra eden olarak ayrıldığından pool sayısı ``"ntasks-1"`` şeklinde girilmelidir. Hamsi kümesi için  Number_of_nodes x (pool + 1) x num_Threads = 28 ve katlari seklinde belirtilmelidir. Bu parametreleri işinizin yapısına göre düzenlemeniz gerekmektedir. Yüksek çekirdek talebi işinizin daha kısa sürede tamamlanacağı anlamına gelmemektedir, işinizin yapısına düzenlemeniz gerekmektedir.     
 
 
-Barbun1 ya da Sardalya1 üzerinde MATLAB çalıştırarak TRUBA'ya iş göndermek
+Barbun1 üzerinde MATLAB çalıştırarak TRUBA'ya iş göndermek
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Öncelikle kişisel lisansınızın TRUBA üzerinde aktif edilmesi gerekmektedir. Lisansınızı aktifleştirmek için **barbun1** ya da **sardalya1** bir sunucularından herhangi birine  grafik arayüzü desteği ile bağlanmak gereklidir. TRUBA kullanıcı arayüzlerine 3 farklı şekilde grafik arayüzü bağlantısı yapılabilir.
 
 1. ``ssh -XY username@sunucu_adi`` komutu aracılığıyla :ref:`grafik arayüz <grafik-ekran>` alarak
 
-2. :ref:`VNC ile (barbun1 ve sardalya1) üzerinde (Linux XFCE Desktop) masaüstü çalıştırarak <TRUBA-vnc>`
+2. :ref:`VNC ile (barbun1) üzerinde (Linux XFCE Desktop) masaüstü çalıştırarak <TRUBA-vnc>`
 
 3. :ref:`OpenOnDemand <open_ondemand>` ile bağlanarak. “Interactive Apps” sekmesinden ``“TRUBA Desktop”`` **(Linux XFCE Desktop)** oturumu başlatılabilir. Linux Masaüstü üzerinde çalıştırılacak uygulamalar, küme üzerindeki hesaplama sunucularında çalıştırılmış olacaktır. Linux Masaüstünde **terminal** uygulamasından verilecek komutlarla sunucu üzerinde MATLAB da dahil olmak üzere herhangi bir görsel uygulama çalıştırılabilir.
 
 
 .. warning::
 
-    Not: VNC ile grafik arayüzü alarak MATLAB çalıştırmak sadece ``sardalya1`` ve ``barbun1`` sunucuları için geçerlidir.
+    Not: VNC ile grafik arayüzü alarak MATLAB çalıştırmak sadece ``barbun1`` sunucuları için geçerlidir.
 
 :ref:`Buradan <grafik-ekran>` grafik arayüzüne nasıl bağlanılacağı hakkında detaylı bilgi edinebilirsiniz. 
 

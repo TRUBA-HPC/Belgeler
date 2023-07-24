@@ -19,8 +19,8 @@ OpenVPN bağlantısını, herhangi bir sertifikaya ihtiyaç olmadan, TRUBA kulla
 VPN bağlantısını bu şekilde yaptıktan sonra, kullanıcı arayüzüne aşağıdaki adreslerden herhangi bir ssh istemcisi ile ulaşılabilir.
 
 * levrek1 için **levrek1.yonetim** yada ``172.16.7.1``
-* sardalya1 için **sardalya1.yonetim** yada ``172.16.10.1``
 * barbun1 için **barbun1.yonetim** yada ``172.16.11.1``
+.. * sardalya1 için **sardalya1.yonetim** yada ``172.16.10.1``
 
 Windows 10'da OpenVPN Kurulumu
 ------------------------------

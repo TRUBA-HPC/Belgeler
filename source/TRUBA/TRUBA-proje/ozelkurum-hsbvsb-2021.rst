@@ -100,7 +100,7 @@ Eğer kullanıcı hesaplarını, Barbun sunucuları üzerinde gerçekleştirmek 
 
 .. [#note7] Bu süre, yapılacak hesaplamanın bitiş zamanından daha uzun olması gerekmektedir. Hesaplamaların bu süreden daha uzun çıkması durumunda, fazla süre ile kullanılan disk alanı bedeli son faturaya yansıtılacaktır.
 
-.. [#note8] Hesaplanan miktarlar KDV hariç tutarlar olup, projenizin bütçesini belirlerken %18 KDV miktarının da dahil edilmesi gerekmektedir.
+.. [#note8] Hesaplanan miktarlar KDV hariç tutarlar olup, projenizin bütçesini belirlerken %20 KDV miktarının da dahil edilmesi gerekmektedir.
 
 
 
@@ -121,7 +121,7 @@ Eğer kullanıcı hesaplarını Hamsi sunucuları üzerinde gerçekleştirmek is
     Toplam VSB = 2880 saat x 1 TB x 0,03 = 86,40 TL 
     Toplam Tutar = 19.353,60 TL + 86,40 TL = 19.440,00 TL (KDV Hariç)
 
-.. [#note9] Hesaplanan miktarlar KDV hariç tutarlar olup, projenizin bütçesini belirlerken %18 KDV miktarının da dahil edilmesi gerekmektedir. 
+.. [#note9] Hesaplanan miktarlar KDV hariç tutarlar olup, projenizin bütçesini belirlerken %20 KDV miktarının da dahil edilmesi gerekmektedir. 
 
 **GPU** ile hesaplama yapmak isteyen kullanıcılar, GPU'ların takılı oldugu sunuculardaki tüm çekirdekleri de fiyatlandırmak durumundadır. Örneğin 120 Gün boyunca 8 GPU kullanarak hesaplama yapmak isteyen bir kullanıcı, her biri 4 adet GPU bulunduran Akya sunucusunu kullanabilir. Akya sunucularındaki çekirdek sayısı 40'dır. Toplam 8 adet GPU kullanımı icin 2 adet Akya-GPU sunucusu ücretlendirilmelidir. Böyle bir hizmet talep edilmesi durumunda, hizmet tutarı aşağıdaki gibi hesaplanabilir [#note10]_ :
 
@@ -134,4 +134,4 @@ Eğer kullanıcı hesaplarını Hamsi sunucuları üzerinde gerçekleştirmek is
     Toplam Tutar = 48.384,00 TL + 86,40 TL = 48.470,40 TL (KDV Hariç)
 
 
-.. [#note10] Hesaplanan miktarlar KDV hariç tutarlar olup, projenizin bütçesini belirlerken %18 KDV miktarının da dahil edilmesi gerekmektedir. 
+.. [#note10] Hesaplanan miktarlar KDV hariç tutarlar olup, projenizin bütçesini belirlerken %20 KDV miktarının da dahil edilmesi gerekmektedir. 
