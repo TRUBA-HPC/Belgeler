@@ -15,6 +15,11 @@ TRUBA Veri Setleri
      - Eklenme Tarihi
      - Bulunduğu Dizin
      - Açıklama
+   * - `MegaDepth <https://www.cs.cornell.edu/projects/megadepth/>`_
+     - 258 814
+     - 7 Ağustos 2023
+     - /truba/repo/phoenix
+     - Tüm kullanıcıların erişimine açık
    * - `ADNI <https://adni.loni.usc.edu/data-samples/access-data/>`_
      - 116 036
      - 25 Mayıs 2022
