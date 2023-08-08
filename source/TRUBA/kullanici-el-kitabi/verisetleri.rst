@@ -15,11 +15,16 @@ TRUBA Veri Setleri
      - Eklenme Tarihi
      - Bulunduğu Dizin
      - Açıklama
-   * - `ADNI <https://adni.loni.usc.edu/data-samples/access-data/>`_
-     - 116 036
-     - 25 Mayıs 2022
-     - /truba/repo/ALLADNI
-     - NÖROM grubu kullanıcılarına açık
+   * - `MegaDepth <https://www.cs.cornell.edu/projects/megadepth/>`_
+     - 258 814
+     - 7 Ağustos 2023
+     - /truba/repo/phoenix
+     - Tüm kullanıcıların erişimine açık
+   * - `QuickDraw Google <https://github.com/googlecreativelab/quickdraw-dataset>`_
+     - 828 004
+     - 11 Temmuz 2023
+     - /truba/repo/QuickDraw_Google
+     - Tüm kullanıcıların erişimine açık
    * - `AlphaFold <https://github.com/deepmind/alphafold>`_
      - 191 377
      - 8 Haziran 2022
