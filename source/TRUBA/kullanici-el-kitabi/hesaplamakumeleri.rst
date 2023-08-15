@@ -435,18 +435,20 @@ Bu kuyruk ile ilgili ayrıntılı bilgi
 
 komutu ile görülebilir. 
 
-*Mid1*
-^^^^^^
+.. 
 
-Bu kuyrukta çalışma süresi en fazla 4 gün olan işler çalıştırılır. Bu süre içerisinde tamamlanmamış işler sistem tarafından otomatik olarak sonlandırılmaktadır.
+  *Mid1*
+  ^^^^^^
 
-Bu kuyruk ile ilgili ayrıntılı bilgi 
+  Bu kuyrukta çalışma süresi en fazla 4 gün olan işler çalıştırılır. Bu süre içerisinde tamamlanmamış işler sistem tarafından otomatik olarak sonlandırılmaktadır.
 
-.. code-block::
+  Bu kuyruk ile ilgili ayrıntılı bilgi 
 
-   scontrol show partition=mid1 
+  .. code-block::
 
-komutu ile görülebilir. 
+    scontrol show partition=mid1 
+
+  komutu ile görülebilir. 
 
 *Mid2*
 ^^^^^^

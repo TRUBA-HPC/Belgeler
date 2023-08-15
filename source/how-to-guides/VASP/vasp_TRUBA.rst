@@ -14,8 +14,7 @@ Barbun kümeleri için VASP SLURM Dosyası Örneği
 .. code-block:: bash
 
   #!/bin/bash
-  #SBATCH -p mid1 
-  #SBATCH -C barbun
+  #SBATCH -p mid2
   #SBATCH -A kullanici_adi
   #SBATCH -J vasp-test
   #SBATCH -N 1
@@ -110,8 +109,7 @@ VASP SLURM Dosyası Örneği
 .. code-block:: bash
 
   #!/bin/bash
-  #SBATCH -p mid1 
-  #SBATCH -C barbun
+  #SBATCH -p mid2
   #SBATCH -A accountname
   #SBATCH -J vasp-test
   #SBATCH -N 2
