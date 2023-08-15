@@ -69,6 +69,7 @@ TRUBA Kullanıcı Dökümanları
    EuroHPC/EuroHPC-JU.rst
    EuroHPC/systems.rst
    EuroHPC/access.rst
+   EuroHPC/inno4scale.rst
 
 .. toctree::
    :caption: Eğitim Materyalleri

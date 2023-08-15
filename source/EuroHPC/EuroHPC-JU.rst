@@ -12,3 +12,12 @@ EuroHPC Ortak Girişimi’ne Türkiye 2 Nisan 2019’da katılmıştır. 4 Nisan
 Ortak girişim tarafından finanse edilen süper bilgisayarlara, Nisan 2021'den itibaren, `EuroHPC Ortak Girişimi Konsey Yönetmeliği ve Ortak Girişim’in Erişim Politikası <https://eurohpc-ju.europa.eu/document/download/0f55a298-59ac-48bf-85e0-76b6168fe0ea_en?filename=EuroHPC%20JU%20Decision%2025.2021%20-%20Access%20policy.%20First%20amendment.pdf>`_’nda belirtilen ilkelere göre, zorlu uygulama gereksinimlerine uygun olarak Avrupalı bilimsel, endüstriyel ve kamu sektörü kullanıcıları için erişim süresi tahsis edilecektir.
 
 Ayrıntılı bilgi için `EuroHPC Ortak Girişimi <https://eurohpc-ju.europa.eu/about/discover-eurohpc-ju_en>`_ web sayfasını ziyaret edebilirsiniz. 
+
+.. toctree::
+    :maxdepth: 1
+
+    systems.rst
+    access.rst
+    inno4scale.rst
+
+
