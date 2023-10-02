@@ -356,7 +356,7 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - 24  
      - 15-00:00:00 
      - 2800 
-     - 24 
+     - 10 
      - 8500MB   
      - 9500MB
      - Aktif

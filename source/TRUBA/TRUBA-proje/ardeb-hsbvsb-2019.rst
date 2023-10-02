@@ -29,7 +29,7 @@ Bu kapsamda 2011 yılından itibaren TÜBİTAK ARDEB ile yapılan işbirliği il
 +-----------------------+----------------------------+---------------------------------------------------------+
 | Barbun-GPU            |    0,05 TL                 | Intel Xeon Gold 6148 2.40GHz, 2x20 çekirdek,            |
 |                       |                            | çekirdek başına 9.6 GB bellek, EDR IB bağlantı,         |
-|                       |                            | 4 x Tesla P100 16 GB GPU                                |
+|                       |                            | 2 x Tesla P100 16 GB GPU                                |
 +-----------------------+----------------------------+---------------------------------------------------------+
 | Sardalya              |    0,04 TL                 | Intel E-5 2690 v4 2.60GHz, 2x14 çekirdek,               |
 |                       |                            | çekirdek başına 9.18 GB bellek, EDR IB bağlantı         |
