@@ -36,10 +36,11 @@ Tensorflow için:
 
 .. code-block:: bash
 
-    conda install python=3.8
-    conda install -c conda-forge cudatoolkit=11.2
-    conda install -c conda-forge cudnn=8.1
-    pip install tensorflow-gpu==2.5
+    conda install python=3.11 -y
+    conda install -c conda-forge cudatoolkit=11.5 -y
+    conda install -c conda-forge cudnn=8.8 -y
+    pip install nvidia-tensorrt
+    pip install tensorflow
 
 PyTorch için:
 
