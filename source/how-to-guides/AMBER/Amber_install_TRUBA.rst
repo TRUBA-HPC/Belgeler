@@ -424,7 +424,7 @@ CUDA seri kurulumu başarıyla tamamladıktan sonra CUDA ve MPI ile kurulum içi
 
 .. warning::
 
-    CUDA ile kurulum için cuda hesaplama kümelerinden interaktif olarak ``srun`` komutu ile rezervsyon yapabilirsiniz. Kurulumu GPU kartı olan CUDA hesaplama küümesinde gerçekleştirmniz gerekmektedir.
+    CUDA ile kurulum için cuda hesaplama kümelerinden interaktif olarak ``srun`` komutu ile rezervsyon yapabilirsiniz. Kurulumu GPU kartı olan CUDA hesaplama kümesinde gerçekleştirmeniz gerekmektedir.
 
     srun -A username -p barbun-cuda -N 1 -n 20 --gres=gpu:1 --time=00-02:30:00 --job-name "amber" --pty bash -i
 
