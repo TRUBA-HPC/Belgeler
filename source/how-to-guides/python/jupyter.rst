@@ -137,77 +137,78 @@ Bağlanmak istediğiniz Anaconda veya Miniconda sanal ortamına ipykernel ve jup
 
 Jupyter arayüzünde Kernel > Change kernel menüsünden ilgili sanal ortama geçiş yapabilirsiniz veya yeni bir notebook başlatırken eklediğiniz Kernel'i seçebilirsiniz.
 
-----------------------------------------------------------
-Jupyter Notebook ile kümelerde interaktif çalışma
-----------------------------------------------------------
+..
+    ----------------------------------------------------------
+    Jupyter Notebook ile kümelerde interaktif çalışma
+    ----------------------------------------------------------
 
-.. warning::
+    .. warning::
 
-    TRUBA tipi Yüksek Başarımlı Hesaplama altyapılarında limitli miktarda kaynak pek çok kullanıcı tarafından paylaşımlı olarak kullanılmaktadır. Bu nedenle bu bölümde anlatılan bilgileri kullanarak uzun süreli kaynak tahsis edip bu kaynakları etkili bir şekilde kullanmamak (örneğin interaktif işi sonlandırmadan bilgisayar başından ayrılmak) doğru değildir.
+        TRUBA tipi Yüksek Başarımlı Hesaplama altyapılarında limitli miktarda kaynak pek çok kullanıcı tarafından paylaşımlı olarak kullanılmaktadır. Bu nedenle bu bölümde anlatılan bilgileri kullanarak uzun süreli kaynak tahsis edip bu kaynakları etkili bir şekilde kullanmamak (örneğin interaktif işi sonlandırmadan bilgisayar başından ayrılmak) doğru değildir.
 
-Henüz yoksa, aşağıdaki komut satırını kullanarak bir yapılandırma dosyası oluşturun:
+    Henüz yoksa, aşağıdaki komut satırını kullanarak bir yapılandırma dosyası oluşturun:
 
-.. code-block:: bash
+    .. code-block:: bash
 
-    jupyter notebook --generate-config
+        jupyter notebook --generate-config
 
-Oluşturulan yapılandırma dosyasını düzenleyerek aşağıdaki satırları değiştirin.
+    Oluşturulan yapılandırma dosyasını düzenleyerek aşağıdaki satırları değiştirin.
 
-.. code-block:: bash
-    :caption: jupyter_notebook_config.py
+    .. code-block:: bash
+        :caption: jupyter_notebook_config.py
 
-    c.NotebookApp.allow_origin = '0.0.0.0'
-    c.NotebookApp.ip = '0.0.0.0'
+        c.NotebookApp.allow_origin = '0.0.0.0'
+        c.NotebookApp.ip = '0.0.0.0'
 
-`srun <https://slurm.schedmd.com/srun.html>`_ kullanarak interaktif çalışmak için bir kümeden kaynak talep edin:
+    `srun <https://slurm.schedmd.com/srun.html>`_ kullanarak interaktif çalışmak için bir kümeden kaynak talep edin:
 
-.. code-block:: bash
+    .. code-block:: bash
 
-    srun -p barbun -n 1 -c 4 --time 1:00:00 --pty /bin/bash
+     srun -p barbun -n 1 -c 4 --time 1:00:00 --pty /bin/bash
 
-Jupyter'in çalıştığı makinenin ismini öğrenin: ``[HOSTNAME]``
+    Jupyter'in çalıştığı makinenin ismini öğrenin: ``[HOSTNAME]``
 
-.. code-block:: bash
+    .. code-block:: bash
 
-    hostname
+        hostname
 
-Notebook başlatmak istediğiniz sanal ortama geçiş yapın ve notebook başlatın.
+    Notebook başlatmak istediğiniz sanal ortama geçiş yapın ve notebook başlatın.
 
-.. code-block:: bash
+    .. code-block:: bash
     
-    eval "$(/truba/home/$USER/miniconda3/bin/conda shell.bash hook)" # Bu satır .bash_profile dosyanızda tanımlı değilse çalıştırın.
-    conda activate jupyter-test-env
-    jupyter-notebook --no-browser --ip=0.0.0.0 --port=8888
+        eval "$(/truba/home/$USER/miniconda3/bin/conda shell.bash hook)" # Bu satır .bash_profile dosyanızda tanımlı değilse çalıştırın.
+        conda activate jupyter-test-env
+        jupyter-notebook --no-browser --ip=0.0.0.0 --port=8888
 
-.. note::
+    .. note::
 
-    Genel ssh tüneli şu şekildedir: ``ssh -N -L local-address:local-port:remote-address:remote-port remote-user@remote-host``. Karmaşıklığı önlemek adına hem yerel hem de uzaktan aynı ``[PORT]`` numarası 
-    kullanmanız tavsiye edilir. Eğer ``[PORT]`` numaranız kullanımda ise değiştirerek (mesela 8889) girebilirsiniz. 
-    URL'deki port numarasını ``[PORT]`` ve token'i not edin.
-    Bu bilgilere yukarıdaki kodu çalıştırdıktan sonra karşınıza gelen URL üzerinden
-    `http://127.0.0.1:[PORT]/?token=[your-token]` edinebilirsiniz.
+     Genel ssh tüneli şu şekildedir: ``ssh -N -L local-address:local-port:remote-address:remote-port remote-user@remote-host``. Karmaşıklığı önlemek adına hem yerel hem de uzaktan aynı ``[PORT]`` numarası 
+        kullanmanız tavsiye edilir. Eğer ``[PORT]`` numaranız kullanımda ise değiştirerek (mesela 8889) girebilirsiniz. 
+        URL'deki port numarasını ``[PORT]`` ve token'i not edin.
+        Bu bilgilere yukarıdaki kodu çalıştırdıktan sonra karşınıza gelen URL üzerinden
+        `http://127.0.0.1:[PORT]/?token=[your-token]` edinebilirsiniz.
 
 
-Jupyter Notebook'a erişmek için yeni bir terminal kullanarak ssh tüneli oluşturun:
+    Jupyter Notebook'a erişmek için yeni bir terminal kullanarak ssh tüneli oluşturun:
 
-.. code-block:: bash
+    .. code-block:: bash
 
-    ssh -N -L localhost:[PORT]:[HOSTNAME]:[PORT] kullanici_id@172.16.7.1
+     ssh -N -L localhost:[PORT]:[HOSTNAME]:[PORT] kullanici_id@172.16.7.1
 
-Yerel internet tarayıcınızda ya http://localhost:[PORT] üzerinden Jupyter Notebook'a token kullanarak ya da URL adresini kopyalayıp yapıştırarak giriş yapabilirsiniz.
+    Yerel internet tarayıcınızda ya http://localhost:[PORT] üzerinden Jupyter Notebook'a token kullanarak ya da URL adresini kopyalayıp yapıştırarak giriş yapabilirsiniz.
 
-.. note:: 
-    Windows kullanıcılar için :ref:`putty_ssh_tunnel` sayfasını ziyaret edebilirsiniz.
+    .. note:: 
+        Windows kullanıcılar için :ref:`putty_ssh_tunnel` sayfasını ziyaret edebilirsiniz.
 
------------------------
-JupyterLab kullanımı
------------------------
+    -----------------------
+    JupyterLab kullanımı
+    -----------------------
 
-Versiyon ve paketler karışmaması için yeni bir sanal ortam oluşturulup aktif edildikten sonra `JupyterLab <https://jupyter.org/install>`_ kurarak kullanabilirsiniz.
+    Versiyon ve paketler karışmaması için yeni bir sanal ortam oluşturulup aktif edildikten sonra `JupyterLab <https://jupyter.org/install>`_ kurarak kullanabilirsiniz.
 
-.. code-block:: bash
+    .. code-block:: bash
 
-    conda create --name jupyter-lab-env
-    conda activate jupyter-lab-env
-    conda install -c conda-forge jupyter-lab
-    jupyter-lab --no-browser --ip=0.0.0.0 --port=8888
+        conda create --name jupyter-lab-env
+        conda activate jupyter-lab-env
+        conda install -c conda-forge jupyter-lab
+        jupyter-lab --no-browser --ip=0.0.0.0 --port=8888
