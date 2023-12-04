@@ -154,21 +154,24 @@ Spark kümesi başlatma ve master düğüm arayüzüne bağlanma
     sbatch start-spark-cluster-hamsi.sh
     squeue
 
-Master düğüm nodelist'teki ilk node'da çalışacaktır (örn. hamsi88). Bu node'u iş çalışmaya başladıktan sonra ``spark-test-hamsi.out`` dosyasından öğrenebilirsiniz. Master düğüm arayüzüne erişmek isterseniz 8080 portu için levrek1 arayüz sunucusu üzerinden ssh tüneli oluşturabilirsiniz.
+Master düğüm nodelist'teki ilk node'da çalışacaktır (örn. hamsi88). Bu node'u iş çalışmaya başladıktan sonra ``spark-test-hamsi.out`` dosyasından öğrenebilirsiniz. 
+..
 
-.. code-block:: bash
-    :caption: Yerel bilgisayar terminali
+    Master düğüm arayüzüne erişmek isterseniz 8080 portu için levrek1 arayüz sunucusu üzerinden ssh tüneli oluşturabilirsiniz.
 
-    ssh -N -L 8080:[HOSTNAME]:[PORT] 172.16.7.1
+    .. code-block:: bash
+        :caption: Yerel bilgisayar terminali
 
-.. note::
+        ssh -N -L 8080:[HOSTNAME]:[PORT] 172.16.7.1
 
-    İlgili node'da 8080 portu kullanımdaysa arayüze farklı bir port kullanarak erişmek gerekir. İlgili port numarasını bulmak için ``spark-test-hamsi.out`` dosyasından master düğüm loglarının nerede olduğunu öğrendikten sonra bu logları inceleyebilirsiniz.
+    .. note::
 
-Yerel bilgisayar web tarayıcınızda http://localhost:8080 üzerinden master düğüm arayüzüne bağlanabilirsiniz.
+        İlgili node'da 8080 portu kullanımdaysa arayüze farklı bir port kullanarak erişmek gerekir. İlgili port numarasını bulmak için ``spark-test-hamsi.out`` dosyasından master düğüm loglarının nerede olduğunu öğrendikten sonra bu logları inceleyebilirsiniz.
 
-.. image:: /assets/spark-howto/web-interface.png  
-   :width: 1000
+    Yerel bilgisayar web tarayıcınızda http://localhost:8080 üzerinden master düğüm arayüzüne bağlanabilirsiniz.
+
+    .. image:: /assets/spark-howto/web-interface.png  
+        :width: 1000
 
 sbatch kodunda Spark kümesine iş gönderme
 -------------------------------------------
