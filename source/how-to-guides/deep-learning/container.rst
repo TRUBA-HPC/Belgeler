@@ -70,6 +70,7 @@ Kuyruğa gönderdiğiniz işleri kontrol edin:
 
 ..
 
+..
     ---------------------------------------------
     Jupyter Notebook ile Çalışma
     ---------------------------------------------
@@ -77,7 +78,7 @@ Kuyruğa gönderdiğiniz işleri kontrol edin:
     .. warning::
 
         TRUBA tipi Yüksek Başarımlı Hesaplama altyapılarında limitli miktarda kaynak pek çok kullanıcı tarafından paylaşımlı olarak kullanılmaktadır. Bu nedenle bu bölümde anlatılan bilgileri kullanarak uzun süreli kaynak tahsis edip bu kaynakları etkili bir şekilde kullanmamak (örneğin interaktif işi sonlandırmadan bilgisayar başından ayrılmak) doğru değildir.
-    
+
     Jupyter ve gpu etiketli tensorflow docker imajlarından birini indirin:
 
     .. code-block:: bash
@@ -97,7 +98,7 @@ Kuyruğa gönderdiğiniz işleri kontrol edin:
 
     .. code-block:: bash
 
-     hostname
+        hostname
 
     Çalışan imaja bağlamak için notebooks klasörü oluşturun:
 
