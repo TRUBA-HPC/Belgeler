@@ -70,54 +70,54 @@ Kuyruğa gönderdiğiniz işleri kontrol edin:
 
 ..
 
-    ---------------------------------------------
-    Jupyter Notebook ile Çalışma
-    ---------------------------------------------
+        ---------------------------------------------
+        Jupyter Notebook ile Çalışma
+        ---------------------------------------------
 
-    .. warning::
+        .. warning::
 
-        TRUBA tipi Yüksek Başarımlı Hesaplama altyapılarında limitli miktarda kaynak pek çok kullanıcı tarafından paylaşımlı olarak kullanılmaktadır. Bu nedenle bu bölümde anlatılan bilgileri kullanarak uzun süreli kaynak tahsis edip bu kaynakları etkili bir şekilde kullanmamak (örneğin interaktif işi sonlandırmadan bilgisayar başından ayrılmak) doğru değildir.
+            TRUBA tipi Yüksek Başarımlı Hesaplama altyapılarında limitli miktarda kaynak pek çok kullanıcı tarafından paylaşımlı olarak kullanılmaktadır. Bu nedenle bu bölümde anlatılan bilgileri kullanarak uzun süreli kaynak tahsis edip bu kaynakları etkili bir şekilde kullanmamak (örneğin interaktif işi sonlandırmadan bilgisayar başından ayrılmak) doğru değildir.
     
-    Jupyter ve gpu etiketli tensorflow docker imajlarından birini indirin:
+        Jupyter ve gpu etiketli tensorflow docker imajlarından birini indirin:
 
-    .. code-block:: bash
+        .. code-block:: bash
 
-        singularity pull docker://tensorflow/tensorflow:latest-gpu-jupyter
+            singularity pull docker://tensorflow/tensorflow:latest-gpu-jupyter
 
-    `srun <https://slurm.schedmd.com/srun.html>`_ kullanarak üzerinde GPU bulunan kuyruklardan interaktif çalışmak için tahsis talep edin:
+        `srun <https://slurm.schedmd.com/srun.html>`_ kullanarak üzerinde GPU bulunan kuyruklardan interaktif çalışmak için tahsis talep edin:
 
-    .. code-block:: bash
+        .. code-block:: bash
 
-        srun -N 1 -n 1 -c 10 --gres=gpu:1 -p akya-cuda --time 1:00:00 --pty /bin/bash
+            srun -N 1 -n 1 -c 10 --gres=gpu:1 -p akya-cuda --time 1:00:00 --pty /bin/bash
 
-    .. note::
-        ``--gres=gpu:1`` parametresindeki rakamı daha fazla GPU talep etmek için değiştirebilirsiniz. Bu durumda çekirdek sayısını :ref:`GPU Kılavuzu'na <core-gpu-count>` göre güncellemeyi unutmayın.
+        .. note::
+            ``--gres=gpu:1`` parametresindeki rakamı daha fazla GPU talep etmek için değiştirebilirsiniz. Bu durumda çekirdek sayısını :ref:`GPU Kılavuzu'na <core-gpu-count>` göre güncellemeyi unutmayın.
 
-    Jupyter'in çalıştığı makinenin ismini öğrenin: ``[HOSTNAME]``
+        Jupyter'in çalıştığı makinenin ismini öğrenin: ``[HOSTNAME]``
 
-    .. code-block:: bash
+        .. code-block:: bash
 
-     hostname
+        hostname
 
-    Çalışan imaja bağlamak için notebooks klasörü oluşturun:
+        Çalışan imaja bağlamak için notebooks klasörü oluşturun:
 
-    .. code-block:: bash
+        .. code-block:: bash
 
-        mkdir notebooks
+            mkdir notebooks
 
-    Jupyter notebook başlatın.
+        Jupyter notebook başlatın.
 
-    .. code-block:: bash
+        .. code-block:: bash
 
-        singularity run --nv -B notebooks:/tf/notebooks tensorflow_latest-gpu-jupyter.sif
+            singularity run --nv -B notebooks:/tf/notebooks tensorflow_latest-gpu-jupyter.sif
 
-    .. note::
-        URL'deki port numarasını ``[PORT]`` ve token'i not edin.
+        .. note::
+            URL'deki port numarasını ``[PORT]`` ve token'i not edin.
 
-    Jupyter Notebook'a erişmek için yeni bir terminal kullanarak ssh tüneli oluşturun:
+        Jupyter Notebook'a erişmek için yeni bir terminal kullanarak ssh tüneli oluşturun:
 
-    .. code-block:: bash
+        .. code-block:: bash
 
-        ssh -N -L 8888:[HOSTNAME]:[PORT] 172.16.7.1
+            ssh -N -L 8888:[HOSTNAME]:[PORT] 172.16.7.1
 
-    Web tarayıcınızda http://localhost:8888 üzerinden Jupyter Notebook'a token kullanarak giriş yapabilirsiniz. **notebooks** klasöründe yaptığınız çalışmalar kalıcı olacaktır.
+        Web tarayıcınızda http://localhost:8888 üzerinden Jupyter Notebook'a token kullanarak giriş yapabilirsiniz. **notebooks** klasöründe yaptığınız çalışmalar kalıcı olacaktır.
