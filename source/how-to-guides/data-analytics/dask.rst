@@ -122,13 +122,14 @@ Dask-MPI kullanarak Batch modunda çalışma
 
     cat dask_mpi_batch_test.out
 
-Scheduler IP adresinde başlayan Dashboard'a bağlanmak için yerel bilgisayarınızda yeni bir terminal kullanarak ssh tüneli oluşturun:
+..
+    Scheduler IP adresinde başlayan Dashboard'a bağlanmak için yerel bilgisayarınızda yeni bir terminal kullanarak ssh tüneli oluşturun:
 
-.. code-block:: bash
+    .. code-block:: bash
     
-    ssh -N -L 8787:SCHEDULER_IP_ADDR:8787 172.16.7.1
+        ssh -N -L 8787:SCHEDULER_IP_ADDR:8787 172.16.7.1
 
-Tüneli oluşturduktan sonra web tarayıcınızda http://localhost:8787 üzerinden Dashboard'a ulaşabilirisiniz.
+    Tüneli oluşturduktan sonra web tarayıcınızda http://localhost:8787 üzerinden Dashboard'a ulaşabilirisiniz.
 
 İncelemenizi tamamladıktan sonra çalışan görevleri sonlandırın:
 
