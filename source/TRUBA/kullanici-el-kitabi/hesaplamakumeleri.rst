@@ -519,20 +519,6 @@ komutu ile görülebilir. İlgili kuyrukta barbun, barbun-cuda, akya-cuda ve ork
 
   --contstraint parametresi yerine -C de kullanılabilir. 
 
-.. 
-
-  *Mid1*
-  ^^^^^^
-
-  Bu kuyrukta çalışma süresi en fazla 4 gün olan işler çalıştırılır. Bu süre içerisinde tamamlanmamış işler sistem tarafından otomatik olarak sonlandırılmaktadır.
-
-  Bu kuyruk ile ilgili ayrıntılı bilgi 
-
-  .. code-block::
-
-    scontrol show partition=mid1 
-
-  komutu ile görülebilir. 
 
 *Mid2*
 ^^^^^^
