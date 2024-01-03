@@ -169,7 +169,7 @@ TRUBA Kaynakları
      - 4.600Gflops & 8x9600Gflops
      - 1 TB & 8x80GB HBM
      - Palamut-Cuda Kümesi
-    * - 2023
+   * - 2023
      - 504
      - 56 çekirdek x 2CPU 
      - Intel(R) Xeon(R) Platinum 8480+ 2.0GHz
