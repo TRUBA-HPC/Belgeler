@@ -169,7 +169,7 @@ TRUBA Kaynakları
      - 4.600Gflops & 8x9600Gflops
      - 1 TB & 8x80GB HBM
      - Palamut-Cuda Kümesi
-    * - 2023
+   * - 2023
      - 504
      - 56 çekirdek x 2CPU 
      - Intel(R) Xeon(R) Platinum 8480+ 2.0GHz
@@ -519,34 +519,6 @@ komutu ile görülebilir. İlgili kuyrukta barbun, barbun-cuda, akya-cuda ve ork
 
   --contstraint parametresi yerine -C de kullanılabilir. 
 
-.. 
-
-  *Short*
-  ^^^^^^^
-  Kısa sürmesi beklenen işler bu kuyruğa gönderilmelidir. Kuyruktaki işler en fazla 4 saat çalışır. 4 saat içerisinde tamamlanmamış işler sistem tarafından otomatik olarak sonlandırılmaktadır. 
-
-  Bu kuyruk ile ilgili ayrıntılı bilgi 
-
-    .. code-block::
-
-      scontrol show partition=short 
-
-  komutu ile görülebilir. 
-
-.. 
-
-  *Mid1*
-  ^^^^^^
-
-  Bu kuyrukta çalışma süresi en fazla 4 gün olan işler çalıştırılır. Bu süre içerisinde tamamlanmamış işler sistem tarafından otomatik olarak sonlandırılmaktadır.
-
-  Bu kuyruk ile ilgili ayrıntılı bilgi 
-
-  .. code-block::
-
-    scontrol show partition=mid1 
-
-  komutu ile görülebilir. 
 
 *Mid2*
 ^^^^^^
