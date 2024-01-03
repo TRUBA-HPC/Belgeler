@@ -258,7 +258,7 @@ Orfoz sunucuları 504 adet Lenovo ThinkSystem SR630 V3 sunuculardan oluşmaktad�
   
     .. code-block::
     
-    /arf/home/kulaniciadi 
+      /arf/home/kulaniciadi 
 
   olarak tanımlıdır. Kullanıcıların tüm uygulamalarının ve çalışma dosyalarının /arf/home/kulaniciadi dizini altında olması gerekmektedir. Kullanıcılar ihtiyacı olan dosyaları arf-ui1 (veya arf-ui2) kullanıcı arayüz sunucusu üzerinde /truba/home/kullaniciadi dizininden /arf/home/kullaniciadi dizinine kopyalayabilirler. 
 
@@ -272,6 +272,7 @@ Orfoz sunucuları 504 adet Lenovo ThinkSystem SR630 V3 sunuculardan oluşmaktad�
   veya
 
   .. code-block::  
+
     ssh -l kullaniciadi arf-ui2.yonetim
 
   ile geçiş yapabilirler. SSH anahtalarını henüz oluşturmamış kullanıcılar, bu sunucuya geçiş yapabilmek için ssh anahtarlarını ``ssh-keygen`` ile aşağıdaki gibi oluşturabilirler:
@@ -520,17 +521,17 @@ komutu ile görülebilir. İlgili kuyrukta barbun, barbun-cuda, akya-cuda ve ork
 
 .. 
 
-    *Short*
+  *Short*
   ^^^^^^^
-      Kısa sürmesi beklenen işler bu kuyruğa gönderilmelidir. Kuyruktaki işler en fazla 4 saat çalışır. 4 saat içerisinde tamamlanmamış işler sistem tarafından otomatik olarak sonlandırılmaktadır. 
+  Kısa sürmesi beklenen işler bu kuyruğa gönderilmelidir. Kuyruktaki işler en fazla 4 saat çalışır. 4 saat içerisinde tamamlanmamış işler sistem tarafından otomatik olarak sonlandırılmaktadır. 
 
-      Bu kuyruk ile ilgili ayrıntılı bilgi 
+  Bu kuyruk ile ilgili ayrıntılı bilgi 
 
-      .. code-block::
+    .. code-block::
 
-        scontrol show partition=short 
+      scontrol show partition=short 
 
-      komutu ile görülebilir. 
+  komutu ile görülebilir. 
 
 .. 
 
