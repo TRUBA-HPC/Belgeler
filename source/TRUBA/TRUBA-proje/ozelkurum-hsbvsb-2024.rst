@@ -29,8 +29,8 @@ Bu kapsamda proje önerisinde hesaplama ve veri depolama isteği bulunan kurumla
 | Hamsi                 |    0,30 TL                 | Intel Xeon Gold 6258R 2.70GHz, 2x28 çekirdek,      |
 |                       |                            | çekirdek başına 3.42 GB bellek, HDR100 IB bağlantı |
 +-----------------------+----------------------------+----------------------------------------------------+
-| Orfoz [#note3]_       |    0,25 TL                 | Intel Xeon Platinum 8480+ 3.80GHz, 2x56 çekirdek,  |
-|                       |                            | çekirdek başına 2.28 GB bellek, HDR200 IB bağlantı |
+| Orfoz [#note3]_       |    0,25 TL                 | Intel Xeon Platinum 8480+ 2.0GHz, 2x56 çekirdek,  |
+|                       |                            | çekirdek başına 2.28 GB bellek, NDR200 IB bağlantı |
 +-----------------------+----------------------------+----------------------------------------------------+
 
 .. [#note1] Saatlik hesaplama servis biriminin KDV hariç bedelidir.Herhangi bir hesaplama, veri depolama alanı olmadan kullanılamayacağı için ilgili bedele en az 1TB depolama alanı saatlik bedeli dahil edilmelidir.

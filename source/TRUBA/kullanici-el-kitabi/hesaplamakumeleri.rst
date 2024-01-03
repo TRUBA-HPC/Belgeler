@@ -10,7 +10,7 @@ TRUBA hesaplama kümeleri, her yıl geliştirilerek güncellenmektedir. Yapılan
 TRUBA Kaynakları
 ----------------
 
-2003 yılında faaliyete geçen TÜBİTAK ULAKBİM Yüksek Başarımlı ve Grid Hesaplama Merkezi'nde bulunan kaynaklar TRUBA'ya dahildir. Günümüzde TRUBA > 25.000 işlemci çekirdeği, 216 adet GPU ve toplamda 7.5PByte yapılandırılmış yüksek performanslı Lustre dosya sistemi ile araştırmacılarımıza hizmet vermektedir. 
+2003 yılında faaliyete geçen TÜBİTAK ULAKBİM Yüksek Başarımlı ve Grid Hesaplama Merkezi'nde bulunan kaynaklar TRUBA'ya dahildir. Günümüzde TRUBA > 80.000 işlemci çekirdeği, 216 adet GPU ve toplamda 7.5PByte yapılandırılmış yüksek performanslı Lustre dosya sistemi ile araştırmacılarımıza hizmet vermektedir. 
 
 
 .. list-table:: TRUBA Kaynakları
@@ -249,19 +249,30 @@ Palamut sunucuları 9 adet HP Proliant XL675d Gen10 Plus model sunuculardan olu�
 
 *Orfoz*
 ^^^^^^^^^^^^^^^^^^^^
-Orfoz sunucuları 504 adet Lenovo ThinkSystem SR630 V3 sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet Intel(R) Xeon(R) Platinum 8480+ CPU @ 2.0GHz işlemci ve toplam 112 adet işlemci çekirdeği bulunmaktadır. Sunucular birbirlerine 200Gbps Infiniband ağ kartları ile non-blocking yapıda bağlıdırlar. 
+Orfoz sunucuları 504 adet Lenovo ThinkSystem SR630 V3 sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet Intel(R) Xeon(R) Platinum 8480+ CPU @ 2.0GHz işlemci ve toplam 112 adet işlemci çekirdeği bulunmaktadır. Sunucular birbirlerine 200Gbps Infiniband ağ kartları ile bağlıdırlar. 
+
 
 .. note::
 
-  * Şu an için orfoz kuyruğu öncelikli olarak belirli araştırma gruplarına hizmet vermektedir. Bu araştırma gruplarında hesapları tanımlı kullanıcılar ``orfoz`` hesaplama kümesine iş gönderebileceklerdir.
+  * Şu an için orfoz kuyruğu öncelikli olarak belirli araştırma gruplarına hizmet vermektedir. Bu araştırma gruplarında hesapları tanımlı kullanıcılar ``orfoz`` hesaplama kümesine iş gönderebileceklerdir. Kullanıcıların bu kümedeki ev dizinlerinin adresi 
+  
+    .. code-block::
+    
+    /arf/home/kulaniciadi 
+
+  olarak tanımlıdır. Kullanıcıların tüm uygulamalarının ve çalışma dosyalarının /arf/home/kulaniciadi dizini altında olması gerekmektedir. Kullanıcılar ihtiyacı olan dosyaları arf-ui1 (veya arf-ui2) kullanıcı arayüz sunucusu üzerinde /truba/home/kullaniciadi dizininden /arf/home/kullaniciadi dizinine kopyalayabilirler. 
+
 
   * Orfoz hesaplama kümesi için yeni bir kullanıcı arayüzü kurulmuştur (``arf-ui1`` ve ``arf-ui2``). Orfoz kuyruğuna sadece ``arf-ui`` arayüzü üzerinden iş gönderilebilecektir. Orfoz kuyruğuna erişim izni olan proje kullanıcıları ``levrek1`` veya ``barbun1`` kullanıcı arayüzü üzerinden arf-ui arayüz sunucusuna 
 
   .. code-block::
 
-    ssh arf-ui1.yonetim
-    veya 
-    ssh arf-ui2.yonetim
+    ssh -l kullaniciadi arf-ui1.yonetim
+    
+  veya
+
+  .. code-block::  
+    ssh -l kullaniciadi arf-ui2.yonetim
 
   ile geçiş yapabilirler. SSH anahtalarını henüz oluşturmamış kullanıcılar, bu sunucuya geçiş yapabilmek için ssh anahtarlarını ``ssh-keygen`` ile aşağıdaki gibi oluşturabilirler:
 
