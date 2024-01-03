@@ -169,6 +169,14 @@ TRUBA Kaynakları
      - 4.600Gflops & 8x9600Gflops
      - 1 TB & 8x80GB HBM
      - Palamut-Cuda Kümesi
+    * - 2023
+     - 504
+     - 56 çekirdek x 2CPU 
+     - Intel(R) Xeon(R) Platinum 8480+ 2.0GHz
+     - *-*
+     - 7 Tflops
+     - 256 GB
+     - Orfoz Kümesi
 
 
 ----------------------
@@ -195,29 +203,31 @@ Barbun sunucuları 120 adet Dell R640, Barbun-cuda sunucuları R740 model sunucu
 ^^^^^^^^^^^
 Akya sunucuları 24 adet Supermicro 1029GQ-TRT model sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet Intel Xeon Scalable Gold 6148 işlemci ve toplam 40 adet işlemci çekirdeği ve 4 adet Nvidia Tesla V100 (16GB, NVLink) GPU kartı bulunmaktadır. Sunucular birbirlerine EDR (100Gbps) Infiniband ağ kartları ile non-blocking yapıda bağlıdırlar.
 
-*Hamsi (Yeni Küme)*
+*Hamsi*
 ^^^^^^^^^^^^^^^^^^^^
-Hamsi sunucuları 144 adet INSPUR NF5180M5 sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adetIntel(R) Xeon(R) Gold 6258R CPU @ 2.70GHz işlemci ve toplam 56 adet işlemci çekirdeği bulunmaktadır. Sunucular birbirlerine HDR100 (100Gbps) Infiniband ağ kartları ile non-blocking yapıda bağlıdırlar. 
+Hamsi sunucuları 144 adet INSPUR NF5180M5 sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet Intel(R) Xeon(R) Gold 6258R CPU @ 2.70GHz işlemci ve toplam 56 adet işlemci çekirdeği bulunmaktadır. Sunucular birbirlerine HDR100 (100Gbps) Infiniband ağ kartları ile non-blocking yapıda bağlıdırlar. 
 
 .. _palamut-cuda:
 
-*Palamut-cuda (Yeni Küme)*
+*Palamut-cuda*
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Palamut sunucuları 9 adet HP Proliant XL675d Gen10 Plus model sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet AMD EPYC 7742 2.24GHz işlemci ve toplam 128 adet işlemci çekirdeği ve 8 adet Nvidia Tesla A100 (80GB, NVLink ) GPU kartı bulunmaktadır. Sunucular birbirlerine 4xHDR (200Gbps) Infiniband ağ kartları ile non-blocking yapıda bağlıdırlar.
 
-* Palamut-cuda kuyruğunda ve palamut-ui kullanıcı arayüzü üzerinde Red Hat Enterprise Linux 8.5 işletim sistemi ve NVIDIA 495 sürücüsü bulunmaktadır. NVIDIA 495 sürücüsü CUDA 11.5 versiyonuna kadar izin vermektedir. 
+* Palamut-cuda kuyruğunda ve palamut-ui kullanıcı arayüzü üzerinde Red Hat Enterprise Linux 8.5 işletim sistemi ve NVIDIA 545.23.06 sürücüsü bulunmaktadır. `NVIDIA 545.23.06 sürücüsü CUDA 12.3 versiyonu ile uyumludur <https://docs.nvidia.com/deploy/cuda-compatibility/>`_ .
 
-* Şu an için palamut-cuda kuyruğu öncelikli olarak belirli araştırma gruplarına hizmet vermektedir. Bu araştırma gruplarında hesapları tanımlı kullanıcılar ``palamut-cuda`` hesaplama kümesine iş gönderebileceklerdir.
+.. note:
 
-* Palamut-cuda hesaplama kümesi için yeni bir kullanıcı arayüzü kurulmuştur (``palamut-ui``). Palamut-cuda kuyruğuna sadece ``palamut-ui`` arayüzü üzerinden iş gönderilebilecektir. Palamut-cuda kuyruğuna erişim izni olan proje kullanıcıları ``levrek1`` veya ``barbun1`` kullanıcı arayüzü üzerinden ``palamut-ui`` arayüz sunucusuna ssh ile geçiş yapabilirler. Ssh anahtalarını henüz oluşturmamış kullanıcılar, bu sunucuya geçiş yapabilmek için ssh anahtarlarını ``ssh-keygen`` ile aşağıdaki gibi oluşturabilirler:
+  * Şu an için palamut-cuda kuyruğu öncelikli olarak belirli araştırma gruplarına hizmet vermektedir. Bu araştırma gruplarında hesapları tanımlı kullanıcılar ``palamut-cuda`` hesaplama kümesine iş gönderebileceklerdir.
 
-.. code-block::
+  * Palamut-cuda hesaplama kümesi için yeni bir kullanıcı arayüzü kurulmuştur (``palamut-ui``). Palamut-cuda kuyruğuna sadece ``palamut-ui`` arayüzü üzerinden iş gönderilebilecektir. Palamut-cuda kuyruğuna erişim izni olan proje kullanıcıları ``levrek1`` veya ``barbun1`` kullanıcı arayüzü üzerinden ``palamut-ui`` arayüz sunucusuna ssh ile geçiş yapabilirler. SSH anahtalarını henüz oluşturmamış kullanıcılar, bu sunucuya geçiş yapabilmek için ssh anahtarlarını ``ssh-keygen`` ile aşağıdaki gibi oluşturabilirler:
 
-   $>ssh-keygen (Sorulan tüm soruları “Enter” tuşuna basarak geçiniz)
+  .. code-block::
+
+    $>ssh-keygen (Sorulan tüm soruları “Enter” tuşuna basarak geçiniz)
    
-   $>cp -p .ssh/id_rsa.pub .ssh/authorized_keys
+    $>cp -p .ssh/id_rsa.pub .ssh/authorized_keys
 
-.. note::
+.. warning:
 
    Her bir GPU icin kullanıcılar 16 çekirdek talep etmelidir.
 	Örneğin: 2 sunucu üzerinde 4'er görev ve 4'er GPU kullanabilmek icin:
@@ -236,6 +246,31 @@ Palamut sunucuları 9 adet HP Proliant XL675d Gen10 Plus model sunuculardan olu�
    c : her bir görev için kullanılacak çekirdek sayısı (varsayılan 1)
 
    gres=gpu:x : her bir node üzerinde kullanılacak GPU sayısı
+
+*Orfoz*
+^^^^^^^^^^^^^^^^^^^^
+Orfoz sunucuları 504 adet Lenovo ThinkSystem SR630 V3 sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet Intel(R) Xeon(R) Platinum 8480+ CPU @ 2.0GHz işlemci ve toplam 112 adet işlemci çekirdeği bulunmaktadır. Sunucular birbirlerine 200Gbps Infiniband ağ kartları ile non-blocking yapıda bağlıdırlar. 
+
+.. note:
+
+  * Şu an için orfoz kuyruğu öncelikli olarak belirli araştırma gruplarına hizmet vermektedir. Bu araştırma gruplarında hesapları tanımlı kullanıcılar ``orfoz`` hesaplama kümesine iş gönderebileceklerdir.
+
+  * Orfoz hesaplama kümesi için yeni bir kullanıcı arayüzü kurulmuştur (``arf-ui1`` ve ``arf-ui2``). Orfoz kuyruğuna sadece ``arf-ui`` arayüzü üzerinden iş gönderilebilecektir. Orfoz kuyruğuna erişim izni olan proje kullanıcıları ``levrek1`` veya ``barbun1`` kullanıcı arayüzü üzerinden arf-ui arayüz sunucusuna 
+
+  .. code-block::
+
+    ssh arf-ui1.yonetim
+    veya 
+    ssh arf-ui2.yonetim
+
+  ile geçiş yapabilirler. SSH anahtalarını henüz oluşturmamış kullanıcılar, bu sunucuya geçiş yapabilmek için ssh anahtarlarını ``ssh-keygen`` ile aşağıdaki gibi oluşturabilirler:
+
+  .. code-block::
+
+    $>ssh-keygen (Sorulan tüm soruları “Enter” tuşuna basarak geçiniz)
+   
+    $>cp -p .ssh/id_rsa.pub .ssh/authorized_keys
+
 
 .. _partitions:
 
@@ -279,14 +314,14 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - 9500MB
      - 10500MB  
      - Aktif
-   * - hamsi  
-     - hamsi 
-     - 144  
-     - 03-00:00:00  
-     - 2800     
-     - 28    
-     - 3400MB 
-     - 3400MB
+   * - debug
+     - barbun, barbun-cuda, akya-cuda, orkinos
+     - 238
+     - 00-00:15:00
+     - 65535
+     - 1
+     - 8000MB 
+     - 9500MB
      - Aktif
    * - mid2
      - barbun
@@ -305,6 +340,15 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - 4  
      - 8000MB, 8500MB   
      - 9000MB, 9500MB 
+     - Aktif
+   * - interactive 
+     - levrekv2
+     - 14  
+     - 15-00:00:00 
+     - 3000   
+     - 1     
+     - 8000MB   
+     - 9000MB
      - Aktif
    * - smp
      - orkinos
@@ -333,15 +377,6 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - 8500MB  
      - 9500MB
      - Aktif
-   * - interactive 
-     - levrekv2
-     - 14  
-     - 15-00:00:00 
-     - 3000   
-     - 1     
-     - 8000MB   
-     - 9000MB
-     - Aktif
    * - barbun-cuda 
      - barbun-cuda 
      - 24  
@@ -369,15 +404,24 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - 7500MB  
      - 16384MB
      - Özel Kuyruk 
-   * - debug
-     - barbun, barbun-cuda, akya-cuda, orkinos
-     - 238
-     - 00-00:15:00
-     - 65535
-     - 1
-     - 8000MB 
-     - 9500MB
+   * - hamsi  
+     - hamsi 
+     - 144  
+     - 03-00:00:00  
+     - 2800     
+     - 28    
+     - 3400MB 
+     - 3400MB
      - Aktif
+   * - orfoz 
+     - orfoz 
+     - 504
+     - 03-00:00:00  
+     - 3000     
+     - 56    
+     - 2000MB 
+     - 2295MB
+     - Özel Kuyruk
 
 
 .. warning::
@@ -422,18 +466,61 @@ Bu kuyruk ile ilgili ayrıntılı bilgi
 
 komutu ile görülebilir. 
 
-*Short*
-^^^^^^^
+*Debug*
+^^^^^^^^^
 
-Kısa sürmesi beklenen işler bu kuyruğa gönderilmelidir. Kuyruktaki işler en fazla 4 saat çalışır. 4 saat içerisinde tamamlanmamış işler sistem tarafından otomatik olarak sonlandırılmaktadır. 
+Bu kuyruğa test amaçlı kısa süreli işler (öreneğin SLURM betik dosyanızın, kodunuzun doğru çalıştığından emin olmak için) gönderilir. Bu kuyruktaki herhangi bir işin çalışma süresi en fazla 15 dakikadır. 15 gün içinde tamamlanmamış işler sistem tarafından otomatik olarak sonlandırılmaktadır. 
 
-Bu kuyruk ile ilgili ayrıntılı bilgi 
+Bu kuyruk ile ilgili ayrıntılı bilgi
 
 .. code-block::
 
-   scontrol show partition=short 
+   scontrol show partition=debug
 
-komutu ile görülebilir. 
+komutu ile görülebilir. İlgili kuyrukta barbun, barbun-cuda, akya-cuda ve orkinos sunucuları tanımlıdır. Bu kuyruklara gönderilecek işlerin belli bir sunucu ailesi üzerinde çalışması isteniyorsa, betik dosyalarına aşağıdaki tanımlar yazılmalıdır: 
+
+* Barbun için 
+
+.. code-block::
+
+  #SBATCH --constraint=barbun 
+
+* Barbun-cuda için 
+
+.. code-block::
+
+  #SBATCH --constraint=barbun-cuda
+
+* Akya-cuda için 
+
+.. code-block::
+
+  #SBATCH --constraint=akya-cuda
+
+* Orkinos için 
+
+.. code-block::
+
+  #SBATCH --constraint=smp
+
+.. note::
+
+  --contstraint parametresi yerine -C de kullanılabilir. 
+
+.. 
+
+  *Short*
+  ^^^^^^^
+
+  Kısa sürmesi beklenen işler bu kuyruğa gönderilmelidir. Kuyruktaki işler en fazla 4 saat çalışır. 4 saat içerisinde tamamlanmamış işler sistem tarafından otomatik olarak sonlandırılmaktadır. 
+
+  Bu kuyruk ile ilgili ayrıntılı bilgi 
+
+    .. code-block::
+
+      scontrol show partition=short 
+
+  komutu ile görülebilir. 
 
 .. 
 
@@ -573,7 +660,7 @@ komutu ile görülebilir.
 
 Her bir sunucuda 128 çekirdek ve 1TB bellek ayrıca 8'er adet Nvidia A100 80GB GPU (NVLink) kartı bulunmaktadır. Kuyrukta işlerin en fazla çalışma süresi 3 gündür. Sistemin verimli kullanılabilmesi için gönderilecek işler en az 16 çekirdek ve 1 GPU talep etmelidir. Ayrıca sistemlerde scratch olarak kullanılmak üzere 12TB NVME disk /localscratch dizinine bağlanmıştır. Yüksek I/O gerektiren işlerin /localscratch dizininde çalıştırılması gerekmektedir.
 
-İşlerde bellek sınırlaması kullanılmaktadır. Gönderilen işlerin sunucuların bellek sınırlamalarına uygun olarak gönderilmesi gerekmektedir. Bu kuyruk ile ilgili ayrıntılı bilgi
+İşlerde bellek sınırlaması kullanılmaktadır. Gönderilen işlerin sunucuların bellek sınırlamalarına uygun olarak gönderilmesi gerekmektedir. Bu kuyruk ile ilgili ayrıntılı bilgi palamut-ui kullanıcı arayüzüne bağlandıktan sonra
 
 .. code-block::
 
@@ -581,3 +668,17 @@ Her bir sunucuda 128 çekirdek ve 1TB bellek ayrıca 8'er adet Nvidia A100 80GB 
 
 komutu ile görülebilir.
 
+.. _hamsi-node:
+
+*orfoz*
+^^^^^^^
+
+Her bir sunucuda 112 çekirdek ve 256GB bellek bulunmaktadır. Kuyrukta işlerin en fazla çalışma süresi 3 gündür. Sistemin verimli kullanılabilmesi için gönderilecek işler en az 56 çekirdek talep etmelidir. Kuyruğa gönderilebilecek işlerin minimum çekirdek sayısı 56'dır.
+
+İşlerde bellek sınırlaması kullanılmaktadır. Gönderilen işlerin sunucuların bellek sınırlamalarına uygun olarak gönderilmesi gerekmektedir. Bu kuyruk ile ilgili ayrıntılı bilgi ilgili kullanıcı arayüzüne bağlandıktan sonra
+
+.. code-block::
+
+   scontrol show partition=orfoz
+
+komutu ile görülebilir.
