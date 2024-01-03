@@ -509,18 +509,17 @@ komutu ile görülebilir. İlgili kuyrukta barbun, barbun-cuda, akya-cuda ve ork
 
 .. 
 
-  *Short*
+    *Short*
   ^^^^^^^
+      Kısa sürmesi beklenen işler bu kuyruğa gönderilmelidir. Kuyruktaki işler en fazla 4 saat çalışır. 4 saat içerisinde tamamlanmamış işler sistem tarafından otomatik olarak sonlandırılmaktadır. 
 
-  Kısa sürmesi beklenen işler bu kuyruğa gönderilmelidir. Kuyruktaki işler en fazla 4 saat çalışır. 4 saat içerisinde tamamlanmamış işler sistem tarafından otomatik olarak sonlandırılmaktadır. 
+      Bu kuyruk ile ilgili ayrıntılı bilgi 
 
-  Bu kuyruk ile ilgili ayrıntılı bilgi 
+      .. code-block::
 
-    .. code-block::
+        scontrol show partition=short 
 
-      scontrol show partition=short 
-
-  komutu ile görülebilir. 
+      komutu ile görülebilir. 
 
 .. 
 
