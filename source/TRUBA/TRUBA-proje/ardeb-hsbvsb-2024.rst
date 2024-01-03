@@ -39,8 +39,8 @@ Hesaplama ve veri depolama ihtiyacı olan isteklilerin, ihtiyaçlarının TRUBA 
 | Hamsi                 |    0,24 TL                 | Intel Xeon Gold 6258R 2.70GHz, 2x28 çekirdek,           |
 |                       |                            | çekirdek başına 3.42 GB bellek, HDR100 IB bağlantı      |
 +-----------------------+----------------------------+---------------------------------------------------------+
-| Orfoz[#note2]_        |    0,11 TL                 | Intel Xeon Platinum 8480+ 3.80GHz, 2x56 çekirdek,       |
-|                       |                            | çekirdek başına 2.28 GB bellek, HDR200 IB bağlantı      |
+| Orfoz [#note2]_        |    0,11 TL                 | Intel Xeon Platinum 8480+ 2.0GHz, 2x56 çekirdek,       |
+|                       |                            | çekirdek başına 2.28 GB bellek, NDR200 IB bağlantı      |
 +-----------------------+----------------------------+---------------------------------------------------------+
 
 
