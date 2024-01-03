@@ -215,7 +215,7 @@ Palamut sunucuları 9 adet HP Proliant XL675d Gen10 Plus model sunuculardan olu�
 
 * Palamut-cuda kuyruğunda ve palamut-ui kullanıcı arayüzü üzerinde Red Hat Enterprise Linux 8.5 işletim sistemi ve NVIDIA 545.23.06 sürücüsü bulunmaktadır. `NVIDIA 545.23.06 sürücüsü CUDA 12.3 versiyonu ile uyumludur <https://docs.nvidia.com/deploy/cuda-compatibility/>`_ .
 
-.. note:
+.. note::
 
   * Şu an için palamut-cuda kuyruğu öncelikli olarak belirli araştırma gruplarına hizmet vermektedir. Bu araştırma gruplarında hesapları tanımlı kullanıcılar ``palamut-cuda`` hesaplama kümesine iş gönderebileceklerdir.
 
@@ -227,7 +227,7 @@ Palamut sunucuları 9 adet HP Proliant XL675d Gen10 Plus model sunuculardan olu�
    
     $>cp -p .ssh/id_rsa.pub .ssh/authorized_keys
 
-.. warning:
+.. warning::
 
    Her bir GPU icin kullanıcılar 16 çekirdek talep etmelidir.
 	Örneğin: 2 sunucu üzerinde 4'er görev ve 4'er GPU kullanabilmek icin:
@@ -251,7 +251,7 @@ Palamut sunucuları 9 adet HP Proliant XL675d Gen10 Plus model sunuculardan olu�
 ^^^^^^^^^^^^^^^^^^^^
 Orfoz sunucuları 504 adet Lenovo ThinkSystem SR630 V3 sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet Intel(R) Xeon(R) Platinum 8480+ CPU @ 2.0GHz işlemci ve toplam 112 adet işlemci çekirdeği bulunmaktadır. Sunucular birbirlerine 200Gbps Infiniband ağ kartları ile non-blocking yapıda bağlıdırlar. 
 
-.. note:
+.. note::
 
   * Şu an için orfoz kuyruğu öncelikli olarak belirli araştırma gruplarına hizmet vermektedir. Bu araştırma gruplarında hesapları tanımlı kullanıcılar ``orfoz`` hesaplama kümesine iş gönderebileceklerdir.
 
