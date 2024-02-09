@@ -247,10 +247,13 @@ Palamut sunucuları 9 adet HP Proliant XL675d Gen10 Plus model sunuculardan olu�
 
    gres=gpu:x : her bir node üzerinde kullanılacak GPU sayısı
 
+.. _orfoz:
+
 *Orfoz*
 ^^^^^^^^^^^^^^^^^^^^
 Orfoz sunucuları 504 adet Lenovo ThinkSystem SR630 V3 sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet Intel(R) Xeon(R) Platinum 8480+ CPU @ 2.0GHz işlemci ve toplam 112 adet işlemci çekirdeği bulunmaktadır. Sunucular birbirlerine 200Gbps Infiniband ağ kartları ile bağlıdırlar. 
 
+Orfoz sunucularının yer aldığı ARF hesaplama kümesi hakkındaki ayrıntılı bilgilere :ref:`arf-kumesi` sayfasından erişim sağlayabilirsiniz.
 
 .. note::
 
@@ -275,13 +278,13 @@ Orfoz sunucuları 504 adet Lenovo ThinkSystem SR630 V3 sunuculardan oluşmaktad�
 
     ssh -l kullaniciadi arf-ui2.yonetim
 
-  ile geçiş yapabilirler. SSH anahtalarını henüz oluşturmamış kullanıcılar, bu sunucuya geçiş yapabilmek için ssh anahtarlarını ``ssh-keygen`` ile aşağıdaki gibi oluşturabilirler:
+  ile geçiş yapabilirler. SSH anahtalarını henüz oluşturmamış kullanıcılar, bu sunucuya geçiş yapabilmek için levrek1 kullanıcı arayüz sunucusuna bağlı iken ssh anahtarlarını ``ssh-keygen`` komutu ile aşağıdaki gibi oluşturabilirler:
 
   .. code-block::
 
     $>ssh-keygen (Sorulan tüm soruları “Enter” tuşuna basarak geçiniz)
    
-    $>cp -p .ssh/id_rsa.pub .ssh/authorized_keys
+    $>cp -p .ssh/id_rsa.pub /arf/home/kullaniciadi/.ssh/authorized_keys
 
 
 .. _partitions:
@@ -651,7 +654,7 @@ Her bir sunucuda 128 çekirdek ve 1TB bellek ayrıca 8'er adet Nvidia A100 80GB 
 
 komutu ile görülebilir.
 
-.. _hamsi-node:
+.. _orfoz-node:
 
 *orfoz*
 ^^^^^^^
