@@ -10,11 +10,11 @@ Kullanıcı arayüzü sunucuları:
 
 .. code-block::
 
-	arf-ui1.yonetim (172.16.34.183) 
+	arf-ui1.yonetim (172.16.6.11) 
 
 .. code-block::
 
-	arf-ui2.yonetim (172.16.34.384)
+	arf-ui2.yonetim (172.16.6.12)
 
 - Hesaplama sunucu sayısı: 504
 - Hesaplama sunucu adı: orfoz[1-504]
@@ -52,10 +52,7 @@ Kullanıcı arayüzü sunucuları:
 		- openfoam	
 		- R
 		- Siesta
-		- Yambo
 		- Matlab
-		- WRF
-		- Quantum Espresso
 		- LAMMPS
 			
 	- Yardımcı Kütüphaneler:
