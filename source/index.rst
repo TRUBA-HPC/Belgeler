@@ -19,6 +19,8 @@ TRUBA Kullanıcı Dökümanları
    TRUBA/sss.rst
    quick-access/contact-template.rst
    quick-access/TRUBAseminerleri.rst
+   quick-access/arf-hesaplamakumesi.rst
+
 
 .. toctree::
    :caption: Öğretici Başlangıç Materyalleri
