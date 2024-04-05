@@ -11,6 +11,7 @@ Kullanıcı El Kitabı
     kullanici-portali/index.rst
     kullanicihesaplari.rst
     hesaplamakumeleri.rst
+    ../../quick-access/arf-hesaplamakumesi.rst
     dosyasistemleri.rst
     yardimciuygulamalar.rst
     yazilimlar.rst
