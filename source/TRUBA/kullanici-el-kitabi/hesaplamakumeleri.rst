@@ -6,6 +6,19 @@ Hesaplama Kümeleri
 
 TRUBA hesaplama kümeleri, her yıl geliştirilerek güncellenmektedir. Yapılan her güncelleme, zamanın ihtiyaçları ve mevcut sunucu teknolojileri gözüne alınarak yapıldığından, alınan hesaplama sunucularının modelleri, işlemcileri, çekirdek sayıları ve bellek miktarı farklılık göstermektedir.
 	
+Bu kılavuz aşağıdakileri kapsamaktadır:
+
+.. grid:: 3
+
+    .. grid-item-card::  :ref:`truba-kaynaklari`
+        :text-align: center
+    .. grid-item-card:: :ref:`guncel-sunucu-aileleri`
+        :text-align: center
+    .. grid-item-card:: :ref:`partitions`
+        :text-align: center
+
+.. _truba-kaynaklari:
+
 ----------------
 TRUBA Kaynakları
 ----------------
@@ -179,6 +192,8 @@ TRUBA Kaynakları
      - Orfoz Kümesi
 
 
+.. _guncel-sunucu-aileleri:
+
 ----------------------
 Güncel Sunucu Aileleri
 ----------------------
@@ -206,6 +221,14 @@ Akya sunucuları 24 adet Supermicro 1029GQ-TRT model sunuculardan oluşmaktadır
 *Hamsi*
 ^^^^^^^^^^^^^^^^^^^^
 Hamsi sunucuları 144 adet INSPUR NF5180M5 sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet Intel(R) Xeon(R) Gold 6258R CPU @ 2.70GHz işlemci ve toplam 56 adet işlemci çekirdeği bulunmaktadır. Sunucular birbirlerine HDR100 (100Gbps) Infiniband ağ kartları ile non-blocking yapıda bağlıdırlar. 
+
+.. _orfoz:
+
+*Orfoz*
+^^^^^^^^^^^^^^^^^^^^
+Orfoz sunucuları 504 adet Lenovo ThinkSystem SR630 V3 sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet Intel(R) Xeon(R) Platinum 8480+ CPU @ 2.0GHz işlemci ve toplam 112 adet işlemci çekirdeği bulunmaktadır. Sunucular birbirlerine 200Gbps Infiniband ağ kartları ile bağlıdırlar. 
+
+Orfoz sunucularının yer aldığı ARF hesaplama kümesi hakkındaki ayrıntılı bilgilere  :ref:`arf-kumesi` sayfasından erişim sağlayabilirsiniz.
 
 .. _palamut-cuda:
 
@@ -247,46 +270,6 @@ Palamut sunucuları 9 adet HP Proliant XL675d Gen10 Plus model sunuculardan olu�
 
    gres=gpu:x : her bir node üzerinde kullanılacak GPU sayısı
 
-.. _orfoz:
-
-*Orfoz*
-^^^^^^^^^^^^^^^^^^^^
-Orfoz sunucuları 504 adet Lenovo ThinkSystem SR630 V3 sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet Intel(R) Xeon(R) Platinum 8480+ CPU @ 2.0GHz işlemci ve toplam 112 adet işlemci çekirdeği bulunmaktadır. Sunucular birbirlerine 200Gbps Infiniband ağ kartları ile bağlıdırlar. 
-
-Orfoz sunucularının yer aldığı ARF hesaplama kümesi hakkındaki ayrıntılı bilgilere :ref:`arf-kumesi` sayfasından erişim sağlayabilirsiniz.
-
-.. note::
-
-  * Şu an için orfoz kuyruğu öncelikli olarak belirli araştırma gruplarına hizmet vermektedir. Bu araştırma gruplarında hesapları tanımlı kullanıcılar ``orfoz`` hesaplama kümesine iş gönderebileceklerdir. Kullanıcıların bu kümedeki ev dizinlerinin adresi 
-  
-    .. code-block::
-    
-      /arf/home/kulaniciadi 
-
-  olarak tanımlıdır. Kullanıcıların tüm uygulamalarının ve çalışma dosyalarının /arf/home/kulaniciadi dizini altında olması gerekmektedir. Kullanıcılar ihtiyacı olan dosyaları arf-ui1 (veya arf-ui2) kullanıcı arayüz sunucusu üzerinde /truba/home/kullaniciadi dizininden /arf/home/kullaniciadi dizinine kopyalayabilirler. 
-
-
-  * Orfoz hesaplama kümesi için yeni bir kullanıcı arayüzü kurulmuştur (``arf-ui1`` ve ``arf-ui2``). Orfoz kuyruğuna sadece ``arf-ui`` arayüzü üzerinden iş gönderilebilecektir. Orfoz kuyruğuna erişim izni olan proje kullanıcıları ``levrek1`` veya ``barbun1`` kullanıcı arayüzü üzerinden arf-ui arayüz sunucusuna 
-
-  .. code-block::
-
-    ssh -l kullaniciadi arf-ui1.yonetim
-    
-  veya
-
-  .. code-block::  
-
-    ssh -l kullaniciadi arf-ui2.yonetim
-
-  ile geçiş yapabilirler. SSH anahtalarını henüz oluşturmamış kullanıcılar, bu sunucuya geçiş yapabilmek için levrek1 kullanıcı arayüz sunucusuna bağlı iken ssh anahtarlarını ``ssh-keygen`` komutu ile aşağıdaki gibi oluşturabilirler:
-
-  .. code-block::
-
-    $>ssh-keygen (Sorulan tüm soruları “Enter” tuşuna basarak geçiniz)
-   
-    $>cp -p .ssh/id_rsa.pub /arf/home/kullaniciadi/.ssh/authorized_keys
-
-
 .. _partitions:
 
 ----------------------
@@ -303,7 +286,7 @@ Zaman zaman bazı kuyruklardaki kaynak miktarı arttırılabilir ya da azaltıla
 
 Kuyrukların kullanım durumuna, paylaşılan, dolu ya da boş olan node ve çekirdeklerin durumuna ``sinfo`` komutu ile erişilebilir. 
 
-Tüm kuyrukların varsayılan çalışma süresi 2 dakikadır. Betik dosyasında zaman bilgisi girilmeyen işler 2 dakika sonunda otomatik olarak sonlandırılmaktadır. Slurm betik dosyasında `#SBATCH --time <https://slurm.schedmd.com/sbatch.html>`_ komutu ile hesaplama için öngörülen zaman bilgisi girilen işler, belirtilen zaman sonunda otomatik olarak sonlandırılmaktadır. 
+Tüm kuyrukların varsayılan çalışma süresi 2 dakikadır. Betik dosyasında zaman bilgisi girilmeyen işler 2 dakika sonunda otomatik olarak sonlandırılmaktadır. Slurm betik dosyasında `#SBATCH -\-time <https://slurm.schedmd.com/sbatch.html>`_ komutu ile hesaplama için öngörülen zaman bilgisi girilen işler, belirtilen zaman sonunda otomatik olarak sonlandırılmaktadır. 
 
 Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarına bağlı olarak bellek sınırlamaları mevcuttur. Eğer betik dosyalarında (ya da srun komutunda) herhangi bir bellek değeri girilmemişse, ilgili iş için, ``çekirdek sayısı x DefMemPerCore`` kadar bellek ayrılır. Betik dosyalarında (ya da srun komutunda) işler için ``--mem-per-core`` ya da ``--mem`` parametreleri ile daha fazla bellek talebinde bulunulabilir, ancak talep edilen bellek miktarı hiçbir koşulda *maxMemPerCore* degerini geçemez. *MaxMemPerCore* ve *DefMemPerCore* değerleri her sunucu ailesi için farklıdır. Tüm sunucular için bu verilere aşağıdaki tablodan erişilebilir. 
 
@@ -436,7 +419,7 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - 56    
      - 2000MB 
      - 2295MB
-     - Özel Kuyruk
+     - aktif
 
 
 .. warning::
@@ -520,7 +503,7 @@ komutu ile görülebilir. İlgili kuyrukta barbun, barbun-cuda, akya-cuda ve ork
 
 .. note::
 
-  --contstraint parametresi yerine -C de kullanılabilir. 
+  `-\-contstraint` parametresi yerine `-C` de kullanılabilir. 
 
 
 *Mid2*
@@ -659,7 +642,7 @@ komutu ile görülebilir.
 *orfoz*
 ^^^^^^^
 
-Her bir sunucuda 112 çekirdek ve 256GB bellek bulunmaktadır. Kuyrukta işlerin en fazla çalışma süresi 3 gündür. Sistemin verimli kullanılabilmesi için gönderilecek işler en az 56 çekirdek talep etmelidir. Kuyruğa gönderilebilecek işlerin minimum çekirdek sayısı 56'dır.
+Her bir sunucuda 112 çekirdek ve 256GB bellek bulunmaktadır. Kuyrukta işlerin en fazla çalışma süresi 3 gündür. Sistemin verimli kullanılabilmesi için gönderilecek işler en az 56 çekirdek talep edilmelidir. Kuyruğa gönderilebilecek işlerin minimum çekirdek sayısı 56'dır.
 
 İşlerde bellek sınırlaması kullanılmaktadır. Gönderilen işlerin sunucuların bellek sınırlamalarına uygun olarak gönderilmesi gerekmektedir. Bu kuyruk ile ilgili ayrıntılı bilgi ilgili kullanıcı arayüzüne bağlandıktan sonra
 
