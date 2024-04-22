@@ -19,8 +19,6 @@ TRUBA Kullanıcı Dökümanları
    TRUBA/sss.rst
    quick-access/contact-template.rst
    quick-access/TRUBAseminerleri.rst
-   quick-access/arf-hesaplamakumesi.rst
-
 
 .. toctree::
    :caption: Öğretici Başlangıç Materyalleri
@@ -28,6 +26,12 @@ TRUBA Kullanıcı Dökümanları
    
    tutorials/linux-intro.rst
    tutorials/TRUBA-quick-start.rst
+
+.. toctree::
+   :caption: ARF Hesaplama Kumeleri
+   :maxdepth: 1
+   
+   TRUBA/kullanici-el-kitabi/arf/index.rst
 
 .. toctree::
    :caption: Uygulama Kılavuzları
