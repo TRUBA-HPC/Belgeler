@@ -28,7 +28,7 @@ TRUBA Kullanıcı Dökümanları
    tutorials/TRUBA-quick-start.rst
 
 .. toctree::
-   :caption: ARF Hesaplama Kumeleri
+   :caption: ARF Hakkında
    :maxdepth: 1
    
    TRUBA/kullanici-el-kitabi/arf/index.rst

@@ -4,11 +4,12 @@
 ARF Hesaplama Kümesi
 =======================
 
-2023 yılı sonunda MODSIMMER Veri Merkezi'nde kurulumu gerçekleştirilen ve ARF ismini verdiğimiz yeni hesaplama kümemiz test kullanımına açılmış bulunmaktadır. 
+2023 yılı sonunda MODSİMMER Veri Merkezi'nde kurulumu gerçekleştirilen ve ARF ismini verdiğimiz yeni hesaplama kümemiz test kullanımına açılmış bulunmaktadır. Bu kılavuz ARF sisteminin kullanımı hakkında kullanıcıları bilgilendirmek amacıyla oluşturulmuştur.
+
 
 .. toctree::
     :maxdepth: 1
 
-    arf-bilgileri.rst
+    arf-genel-bilgileri.rst
     arf-baglanti.rst
-    arf-open-ondemand.rst
+    arf-truba-aktarim.rst

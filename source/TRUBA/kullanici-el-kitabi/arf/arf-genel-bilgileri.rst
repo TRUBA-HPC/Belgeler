@@ -1,10 +1,13 @@
-.. _arf-bilgileri:
+.. _arf-genel-bilgileri:
 
-=======================
-ARF Hesaplama Kümesi
-=======================
+===================================
+ARF Kümesi Hakkında Genel Bilgiler
+===================================
 
-2023 yılı sonunda MODSIMMER Veri Merkezi'nde kurulumu gerçekleştirilen ve ARF ismini verdiğimiz yeni hesaplama kümemiz test kullanımına açılmış bulunmaktadır. Kümenin genel özellikleri aşağıdaki gibidir:
+
+ARF hesaplama kümesi için ``arf-ui1`` ve ``arf-ui2`` olmak üzere iki tane sunucu, kullanıcı arayüzü olarak hizmete sunulmustur. Bu hesaplama kümesinde bulunan ``orfoz`` ismini atadığımız hesaplama sunucularında iş koşturmak için arf kullanıcı arayüzleri kullanılacaktır. 
+
+Kümenin genel özellikleri aşağıdaki gibidir:
 
 - Hesaplama sunucu sayısı: 504
 - Hesaplama sunucu adı: orfoz[1-504]
@@ -83,16 +86,3 @@ komutu ile listeleyebilirsiniz. Aşağıda örnek kurulu olan modülleri bulabil
 				lib/pnetcdf/1.12.3-oneapi-2023.0
 				lib/pnetcdf/1.13.0-oneapi-2024            
 		                
-Diğer hesaplama kümelerinde olduğu gibi, ARF hesaplama kümesinde de kota uygulaması mevcuttur. Küme test aşamasında olduğu için ev dizini kotaları  (kapasite ve dosya sayısı) düşük tutulmuştur. Şu an için güncel kotalar aşağıdaki gibidir:
-
-.. code-block::
-
-	Kapasite: 100GB 
-	Dosya sayısı: 100K 
-
-ARF kümesine ayrılmış disk alanı (/arf) , mevcut disk alanından (/truba) tamamen bağımsızdır. Sadece kullanıcı arayüzü sunucularının /truba depolama sistemine erişimi vardır. Hesaplama sunucularının /truba dosya sistemine erişimi yoktur. O nedenle kullanıcılar, verilerini /arf/home/$USER dizinine taşımalı, ihtiyaç duyduğu uygulamaları yine bu dizine kurmalıdır. 
- 
-Arf dosya sisteminin kapasitesi kısıtlı olduğu için kullanıcılar  sadece çalışacakları verileri bu dosya sistemine taşımalı, ihtiyaç ortadan kalktıktan sonra, sistemden silmeli ya da /truba dosya sistemine taşımalıdır. Dosya sayısı kısıtından dolayı kullanıcılar ev dizinlerine Anaconda, miniconda ya da türevlerini kurmamalıdır.
-
-ARF kümesinde yer alan orfoz sunucularına bağlanmak için ilgili bilgilere :ref:`hesaplama-kumeleri` sayfasında yer alan :ref:`orfoz` içeriğinden erişebilirsiniz.
-

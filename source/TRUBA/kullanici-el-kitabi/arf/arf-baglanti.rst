@@ -1,7 +1,7 @@
 .. _arf-baglanti:
 
 ================================
-ARF Kullanici Arayuzune Baglanti
+ARF Kullanıcı Arayüzüne Bağlantı
 ================================
 
 ARF hesaplama kümesi erişim adresleri şu şekildedir:
@@ -33,7 +33,8 @@ ARF hesaplama kümesi erişim adresleri şu şekildedir:
      - http://172.16.6.25:3000/login
 
 
-Open VPN bağlantınız olduğu varsayılarak ARF hesaplama kümesine `<kullanıcı-adınız>` kısmını kendi kullanıcı adınız ile değiştirerek 
+
+OpenVPN bağlantınız olduğu varsayılarak kişisel makinenizden ARF hesaplama kümesine `<kullanıcı-adınız>` kısmını kendi kullanıcı adınız ile değiştirerek 
 
 .. tabs::
 
@@ -51,3 +52,26 @@ Open VPN bağlantınız olduğu varsayılarak ARF hesaplama kümesine `<kullanı
 
 
 ile bağlantı sağlayabilirsiniz.
+
+..
+  * Orfoz hesaplama sunucularına sadece ``arf-ui`` kullanıcı arayüzü üzerinden iş gönderilebilecektir.
+
+  Orfoz kuyruğuna is kosturmak icin ``levrek1`` kullanıcı arayüzü üzerinden arf-ui arayüz sunucusuna 
+
+  .. code-block::
+
+    ssh arf-ui1.yonetim
+    
+  veya
+
+  .. code-block::  
+
+    ssh arf-ui2.yonetim
+
+  ile geçiş yapabilirler. SSH anahtalarını henüz oluşturmamış kullanıcılar, bu sunucuya geçiş yapabilmek için ``levrek1`` kullanıcı arayüz sunucusuna bağlı iken ssh anahtarlarını ``ssh-keygen`` komutu ile aşağıdaki gibi oluşturabilirler:
+
+  .. code-block::
+
+    $>ssh-keygen (Sorulan tüm soruları “Enter” tuşuna basarak geçiniz)
+    
+    $>cp -p .ssh/id_rsa.pub /arf/home/$USER/.ssh/authorized_keys
