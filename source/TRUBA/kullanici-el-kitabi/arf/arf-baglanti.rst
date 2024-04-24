@@ -75,3 +75,15 @@ ile bağlantı sağlayabilirsiniz.
     $>ssh-keygen (Sorulan tüm soruları “Enter” tuşuna basarak geçiniz)
     
     $>cp -p .ssh/id_rsa.pub /arf/home/$USER/.ssh/authorized_keys
+
+
+.. warning::
+  Derleme, pre-process, post-process işlerinizi ``arf-ui1,arf-ui2`` kullanıcı arayüzü sunucuları yerine, ``debug`` kuyruğunda interaktif olarak  gerçekleştirebilirsiniz.
+
+  debug kuyruğundan interaktif shell almak icin
+
+  .. code-block:: 
+    
+    srun -n 1 -N 1 -p debug --time=30:00 --pty /bin/bash -i
+
+  komutunu kullanabilir ya da `Open OnDemand <https://openondemand.yonetim/>`_  (https://172.16.6.20)  web arayüzünde linux desktop alarak islemlerinizi gerçekleştirebilirsiniz.
