@@ -13,3 +13,4 @@ ARF Hesaplama Kümesi
     arf-genel-bilgileri.rst
     arf-baglanti.rst
     arf-truba-aktarim.rst
+    arf-python.rst
