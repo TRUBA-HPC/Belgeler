@@ -125,7 +125,8 @@ Konteyneri ``apptainer shell image-name.sif`` ile çalıştırılırsa ``ls``  k
 .. _konteyner_inşa_etme:
 
 Konteyner Açma, Ekleme ve Kapatma
--------------------
+----------------------------------
+
 Yeni bir konteyner inşa etmek için bir konteyner servisi, tanım (def) ya da görüntü (image)  dosyalarına ihtiyaç bulunmaktadır. İstenilirse hazır bir konteyner elde edildikten sonra konteyneri bir klasör şeklinde açıp içerisinde bulunan terminal çalıştırılarak manuel olarak program kurabilir ya da kurulu olan bir programa paket eklenebilir. Bu konteyner klasörünü daha sonra kapatılıp kullanıma sunulabilir.
 
 .. hint::
@@ -233,7 +234,7 @@ Sonrasında konteyner içine girmeden ``test`` ortamı aktif edilmek ve ``python
 
 .. _konteyner_mpi:
 
-Kontenyer, MPI ve GPU
+Konteyner, MPI ve GPU
 ---------------------
 
 Konteyner içinde GPU kullanmasına olanak sağlamak için ``--nv`` parametresi kullanılarak yapılabilir. Daha fazla detay için `ilgili GPU kılavuzu <https://apptainer.org/docs/user/latest/gpu.html>`_ ziyaret edilebilir.
