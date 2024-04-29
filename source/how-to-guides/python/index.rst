@@ -9,5 +9,5 @@ Bu belge TRUBA altyapısında Python ve ilgili platformların kullanımını kol
 .. toctree::
     :maxdepth: 1
 
-    anaconda.rst
+    anaconda-miniconda.rst
     jupyter.rst

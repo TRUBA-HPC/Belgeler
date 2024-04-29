@@ -46,7 +46,7 @@ Kullanıcılarımızdan
 
 	* kullandıkları uygulamaların merkezi versiyonu varsa (module vb.) merkezi versiyonlarını kullanmalarını
 	* merkezi versiyonu olmayan uygulamaların kendi ev dizinlerine kurulması gerekiyorsa, kurulum sonrasında kaynak dosyaları silmelerini
-	* özellikle ``Anaconda`` kullanıcılarının merkezi Anaconda kurulumunu kullanmalarını ya da ``Anaconda`` yerine ``Miniconda`` kullanmalarını
+	* özellikle ``Anaconda`` kullanıcılarının merkezi Anaconda kurulumunu kullanmalarını ya da ``Anaconda`` yerine ``Miniconda`` kullanmalarını (bkz. :ref:`anaconda-miniconda-kurulum`)
 	* ihtiyaç duymadıklari her türlü dosyayı silmelerini
 	* saklanması gereken dosyaları kendi bilgisayarlarına indirmelerini
 	* sadece kısa zaman icinde kullanacakları dosyaları sistemde tutmalarını
@@ -54,47 +54,6 @@ Kullanıcılarımızdan
 
 önemle rica etmekteyiz. Tar komutunun kullanımı hakkında bilgiye ulaşmak için :ref:`tıklayınız <tar-kullanimi>`.
 
-.. _merkezi-anaconda:
-
-----------------------------
-Merkezi Anaconda Kullanımı
-----------------------------
-
-.. note::
-
-	* Ev dizininizde Miniconda kurulumunu :ref:`miniconda-kurulum` sayfamızdaki yönergeleri takip ederek yapabilirsiniz.
-
-	* Merkezi anaconda kurulumu hesaplama kümeleri için aşağıdaki dizinlerde yer almaktadır:
-
-	Centos 7.3 işletim sistemi kurulu hesaplama kümelerinde: `/truba/sw/centos7.3/lib/anaconda3/` dizini altında `2020.07` ve `2021.11` versiyonları kuruludur. İlgili Anaconda ortamlarını kullanmak için .bashrc dosyanıza aşağıdaki satırı eklemeniz gerekmektedir:
-	
-	2020.07 versiyonu için:
-
-	.. code-block::
-
-		eval "$(/truba/sw/centos7.3/lib/anaconda3/2020.07/bin/conda shell.bash hook)"
-
-	2021.11 versiyonu için:
-
-	.. code-block::
-
-		eval "$(/truba/sw/centos7.3/lib/anaconda3/2021.11/bin/conda shell.bash hook)"
-
-	Centos 7.9 işletim sistemi kurulu hesaplama kümelerinde ise Anaconda ortamlarını kullanmak için .bashrc dosyanıza aşağıdaki satırı eklemeniz gerekmektedir:
-	
-	2020.07 versiyonu için:
-
-	.. code-block::
-
-		eval "$(/truba/sw/centos7.9/lib/anaconda3/2020.07/bin/conda shell.bash hook)"
-
-	2021.11 versiyonu için:
-
-	.. code-block::
-
-		eval "$(/truba/sw/centos7.9/lib/anaconda3/2021.11/bin/conda shell.bash hook)"
-
-	Veya terminalden doğrudan ilgili komutu kullanabilirsiniz. Daha sonrasında :ref:`miniconda-kurulum` sayfamızda belirtildiği gibi ihtiyacınız olan sanal ortamları kullanıcı ev dizininize kurabilirsiniz. SLURM betik dosyanızda da benzer şekilde ilgili anaconda versiyonu için olan yukarıdaki komutu yazmanız gerekmektedir.
 	
 .. _tar-kullanimi:
 
