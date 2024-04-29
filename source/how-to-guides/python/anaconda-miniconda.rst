@@ -21,26 +21,38 @@ Bu kılavuz aşağıdakileri kapsamaktadır:
 
 Merkezi Anaconda Kullanımı
 --------------------------
+TRUBA'da merkezi olarak farklı anaconda platformları bulunmaktadir. Bu platformlar, içerisinde bulunan python ve diğer paketlerin farklı versiyonlarına kullanıcılar tarafından ihtiyaç duyulmasından kaynaklı oluşturulmuştur.
 
-Merkezi anaconda kurulumu hesaplama kümeleri için aşağıdaki dizinlerde yer almaktadır:
+Merkezi anaconda platformları:
 
-.. code-block::
+*   .. code-block::
 
-    eval "$(/truba/sw/centos7.3/lib/anaconda3/2020.07/bin/conda shell.bash hook)"
-    eval "$(/truba/sw/centos7.3/lib/anaconda3/2021.11/bin/conda shell.bash hook)"
-    eval "$(/truba/sw/centos7.9/lib/anaconda3/2020.07/bin/conda shell.bash hook)"
-    eval "$(/truba/sw/centos7.9/lib/anaconda3/2021.11/bin/conda shell.bash hook)"
+        eval "$(/truba/sw/centos7.3/lib/anaconda3/2020.07/bin/conda shell.bash hook)"
 
-Farklı anaconda platformlarının bulunması, içerisinde bulunan python ve diğer paketlerin farklı versiyonlarına kullanıcılar tarafından ihtiyaç duyulmasından kaynaklı oluşturulmuştur.
+*    .. code-block::
+
+        eval "$(/truba/sw/centos7.3/lib/anaconda3/2021.11/bin/conda shell.bash hook)"
+
+*    .. code-block::
+
+        eval "$(/truba/sw/centos7.9/lib/anaconda3/2020.07/bin/conda shell.bash hook)"
+
+*    .. code-block::
+
+        eval "$(/truba/sw/centos7.9/lib/anaconda3/2021.11/bin/conda shell.bash hook)"
+
+.. warning:: 
+
+    **Hangi platfomu seçmeliyiz?**
+
+    İlgili komut çalıştırıldıktan sonra ``conda info`` ve ``conda list`` ile sanal ortam bilgisine ve içerisinde bulunan paketlerin versiyonlarına erişim sağlayabilirsiniz. Bu bilgiler ışığında ihtiyacınıza göre hangi platformu kullanmanız gerektiğine karar verebilirsiniz.
 
 İlgili Anaconda ortamlarını kulllanıcı arayüzlerinde ve hesaplama sunucularında aktif olması isteniliyorsa ``.bashrc`` dosyanıza ihtiyaç duyduğunuz satırı eklemeniz gerekmektedir.
 
 Ayrıca, sadece ihtiyaç duyulan zamanlarda aktif edilmek istenilirse terminalde doğrudan ilgili komutu kullanabilirsiniz. SLURM betik dosyanızda da benzer şekilde ilgili anaconda versiyonu için olan yukarıdaki komutu yazmanız gerekmektedir.
 
 .. note::
-    Kullanıcılar özelinde merkezi kurulum ihitiyaçları karşılamadığı durumda kendi ev dizinlerine anaconda kurulum sağlamak yerine :ref:`miniconda-kurulum` tecih edilmelidir. Bir başka öneri ise merkezi anaconda kullanılarak yeni bir sanal ortam oluşturmaktır. Önerilen çözümler ile ihtiyaç duyulan paketlerin sağlanması sonucunda inode problemi ile karşılaşılması engellenmektedir.
-
-İlgili komut çalıştırdıktan sonra sanal ortam hakkında bilgi edinmek için  ``conda info`` ve ``conda list`` ile env bilgisine ve içerisinde bulunan paketlerin versiyonlarına erişim sağlayabilirsiniz.
+    Kullanıcılar özelinde merkezi kurulum ihitiyaçları karşılamadığı durumda kendi ev dizinlerine anaconda kurulum sağlamak yerine :ref:`miniconda-kurulum` tecih edilmelidir. Bir başka öneri ise merkezi anaconda kullanılarak yeni bir sanal ortam oluşturmaktır. Önerilen çözümler ile ihtiyaç duyulan paketlerin sağlanması sonucunda dosya sayısı (inode) problemi ile karşılaşılması engellenmektedir.
 
 .. _miniconda-kurulum:
 
