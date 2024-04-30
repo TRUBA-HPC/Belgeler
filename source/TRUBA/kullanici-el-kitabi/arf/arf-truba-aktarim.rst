@@ -37,7 +37,7 @@ Kullanıcı arayüzünde iken (``arf-ui1, arf-ui2``) `/truba/home/$USER/kaynak-d
 	Kapasite: 100GB 
 	Dosya sayısı: 100K 
 
-ARF kumesinde bulunan `/arf` dosya sisteminin kapasitesi kısıtlı olduğu için kullanıcılar  sadece çalışacakları verileri bu dosya sistemine taşımalı, ihtiyaç ortadan kalktıktan sonra, sistemden silmeli ya da `/truba` dosya sistemine taşımalıdır. Dosya sayısı kısıtından dolayı kullanıcılar ev dizinlerine Anaconda, miniconda ya da türevlerini kurmak yerine merkezi kurulumlari kullanabilirler. 
+ARF kumesinde bulunan `/arf` dosya sisteminin kapasitesi kısıtlı olduğu için kullanıcılar  sadece çalışacakları verileri bu dosya sistemine taşımalı, ihtiyaç ortadan kalktıktan sonra, sistemden silmeli ya da `/truba` dosya sistemine taşımalıdır. Dosya sayısı kısıtından dolayı kullanıcılar ev dizinlerine Anaconda, miniconda ya da türevlerini kurmak yerine merkezi kurulumları kullanabilirler. 
 
 ARF kümesinde yer alan orfoz sunucularına bağlanmak için ilgili bilgilere :ref:`hesaplama-kumeleri` sayfasında yer alan :ref:`orfoz-node` içeriğinden erişebilirsiniz.
 

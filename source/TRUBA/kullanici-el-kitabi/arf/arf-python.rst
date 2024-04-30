@@ -6,14 +6,14 @@ ARF Kümesinde Python Kullanımı
 
 Bu belge ARF kumelerinde `Python <https://www.python.org/>`_ platformunun kullanımını kolaylaştırmak için oluşturulmuştur.
 
-Sistemde kullanılabilecek conda ve standart ortam olmak iki farklı python platformu bulunmaktadır. Conda platfomu içerisinde ise standart ve intel optimize edilmiş python olmak üzere iki farklı kullanım mevcuttur.
+Sistemde kullanılabilecek conda ve standart ortam olmak üzere iki farklı python platformu bulunmaktadır. Conda platfomu içerisinde ise standart ve intel optimize edilmiş python olmak üzere iki farklı kullanım mevcuttur.
 
 - Standart Python
 
     .. code-block:: 
 
         module load comp/python/3.12.2
-    ile yuklemeler yapilabiblir. Bu python kullanılarak bir sanal ortam oluşturulması ve o ortam içerisine ihtiyaç duyulan paketlerin oluşturulan sanal ortama kurulması önerilmektedir. Bu süreç şu şekilde tamamlanabilir:
+    ile yüklemeler yapilabiblir. Bu python kullanılarak bir sanal ortam oluşturulması ve o ortam içerisine ihtiyaç duyulan paketlerin oluşturulan sanal ortama kurulması önerilmektedir. Bu süreç aşağıdaki adımlar ile tamamlanabilir:
 
     - Sanal ortam oluşturma : ``virtualenv /arf/home/$USER/python-3.12``
     - Sanal ortamı aktif etme : ``source /arf/home/$USER/python3.12/bin/activate``

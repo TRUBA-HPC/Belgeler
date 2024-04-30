@@ -8,6 +8,28 @@ ARF hesaplama kümesi erişim adresleri şu şekildedir:
 
 
 .. list-table:: 
+   :widths: 40 60
+   :header-rows: 1
+   :align: center
+
+   * - Sunucu
+     - Open VPN
+
+   * - arf-ui1
+     - 172.16.6.11
+
+   * - arf-ui2
+     - 172.16.6.12
+
+   * - Open OnDemand
+     - http://172.16.6.20
+
+   * - Grafana
+     - http://172.16.6.25:3000/login
+
+
+.. 
+  .. list-table:: 
    :widths: 30 40 40
    :header-rows: 1
    :align: center
@@ -31,7 +53,7 @@ ARF hesaplama kümesi erişim adresleri şu şekildedir:
    * - Grafana
      - http://grafana.yonetim:3000/login
      - http://172.16.6.25:3000/login
-
+..
 
 
 OpenVPN bağlantınız olduğu varsayılarak kişisel makinenizden ARF hesaplama kümesine `<kullanıcı-adınız>` kısmını kendi kullanıcı adınız ile değiştirerek 
@@ -86,4 +108,4 @@ ile bağlantı sağlayabilirsiniz.
     
     srun -n 1 -N 1 -p debug --time=30:00 --pty /bin/bash -i
 
-  komutunu kullanabilir ya da `Open OnDemand <https://openondemand.yonetim/>`_  (https://172.16.6.20)  web arayüzünde linux desktop alarak islemlerinizi gerçekleştirebilirsiniz.
+  komutunu kullanabilir ya da `Open OnDemand <https://172.16.6.20/>`_  web arayüzünde linux desktop alarak islemlerinizi gerçekleştirebilirsiniz.
