@@ -27,35 +27,6 @@ ARF hesaplama kümesi erişim adresleri şu şekildedir:
    * - Grafana
      - http://172.16.6.25:3000/login
 
-
-.. 
-  .. list-table:: 
-   :widths: 30 40 40
-   :header-rows: 1
-   :align: center
-
-   * - Sunucu
-     - Kampus ici
-     - Open VPN
-
-   * - arf-ui1
-     - arf-ui1.yonetim
-     - 172.16.6.11
-
-   * - arf-ui2
-     - arf-ui2.yonetim
-     - 172.16.6.12
-
-   * - Open OnDemand
-     - http://openondemand.yonetim
-     - http://172.16.6.20
-
-   * - Grafana
-     - http://grafana.yonetim:3000/login
-     - http://172.16.6.25:3000/login
-..
-
-
 OpenVPN bağlantınız olduğu varsayılarak kişisel makinenizden ARF hesaplama kümesine `<kullanıcı-adınız>` kısmını kendi kullanıcı adınız ile değiştirerek 
 
 .. tabs::
