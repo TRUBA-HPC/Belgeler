@@ -102,83 +102,83 @@ Jupyter araçları kullanarak kısa süreli ve kısıtlı kaynak üzerinden çal
 .. dropdown:: :octicon:`codespaces;1.5em;secondary` Örnek Betik (Tıklayınız)
     :color: info
 
-.. tabs::
+        .. tab-set::
 
-    .. tab:: Is Gonderme
+            .. tab-item:: İş Gönderme
 
-        .. code-block:: bash
+                .. code-block:: bash
 
-            sbatch job.slurm
+                    sbatch job.slurm
 
-    .. tab:: job.slurm
+            .. tab-item:: job.slurm
 
-        .. code-block:: bash
-    
-            #!/bin/bash
+                .. code-block:: bash
+            
+                    #!/bin/bash
 
-            #SBATCH --account=kullanici_adiniz
-            #SBATCH --output=slurm-%j.out
-            #SBATCH --error=slurm-%j.err
-            #SBATCH --time=00:15:00
-            #SBATCH --job-name=test
+                    #SBATCH --account=kullanici_adiniz
+                    #SBATCH --output=slurm-%j.out
+                    #SBATCH --error=slurm-%j.err
+                    #SBATCH --time=00:15:00
+                    #SBATCH --job-name=test
 
-            #SBATCH --partition=orfoz
-            #SBATCH --ntasks=112
-            #SBATCH --nodes=1
-            #SBATCH --cpus-per-task=1
+                    #SBATCH --partition=orfoz
+                    #SBATCH --ntasks=112
+                    #SBATCH --nodes=1
+                    #SBATCH --cpus-per-task=1
 
-            ###SBATCH --mal-user= your_email_address
-            ###SBATCH --mail-type=BEGIN,END,FAIL
-            ###SBATCH --mail-type=ALL
+                    ###SBATCH --mal-user= your_email_address
+                    ###SBATCH --mail-type=BEGIN,END,FAIL
+                    ###SBATCH --mail-type=ALL
 
-            ### Load modules
+                    ### Load modules
 
-            module purge
-            module load comp/python/ai-tools
+                    module purge
+                    module load comp/python/ai-tools
 
-            echo "We have the modules: $(module list 2>&1)" > ${SLURM_JOB_ID}.info
+                    echo "We have the modules: $(module list 2>&1)" > ${SLURM_JOB_ID}.info
 
-            ### jobs
-            python xgboost-test.py
+                    ### jobs
+                    python xgboost-test.py
 
-            exit
+                    exit
 
-    .. tab:: xgboost-test.py
-        
-        ..  code-block:: python
+            .. tab-item:: xgboost-test.py
+                
+                ..  code-block:: python
 
-            from sklearn.datasets import make_classification
-            from sklearn.model_selection import train_test_split
-            from sklearn.metrics import accuracy_score
-            from xgboost import XGBClassifier
-            from matplotlib import pyplot
+                    from sklearn.datasets import make_classification
+                    from sklearn.model_selection import train_test_split
+                    from sklearn.metrics import accuracy_score
+                    from xgboost import XGBClassifier
+                    from matplotlib import pyplot
 
-            import time
-            start_time = time.time()  # Record the start time
+                    import time
+                    start_time = time.time()  # Record the start time
 
-            # define dataset
-            X, y = make_classification(n_samples=100000, n_features=100, n_informative=100, n_redundant=0, random_state=1)
+                    # define dataset
+                    X, y = make_classification(n_samples=100000, n_features=100, n_informative=100, n_redundant=0, random_state=1)
 
-            # split data into train and test sets
-            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.50, random_state=1)
+                    # split data into train and test sets
+                    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.50, random_state=1)
 
-            # define the model
-            model = XGBClassifier(n_estimators=2000, eta=0.05, subsample=0.5, colsample_bytree=0.5)
+                    # define the model
+                    model = XGBClassifier(n_estimators=2000, eta=0.05, subsample=0.5, colsample_bytree=0.5)
 
-            # define the datasets to evaluate each iteration
-            evalset = [(X_train, y_train), (X_test,y_test)]
+                    # define the datasets to evaluate each iteration
+                    evalset = [(X_train, y_train), (X_test,y_test)]
 
-            # fit the model
-            model.fit(X_train, y_train, eval_metric='logloss', eval_set=evalset)
+                    # fit the model
+                    model.fit(X_train, y_train, eval_metric='logloss', eval_set=evalset)
 
-            # evaluate performance
-            yhat = model.predict(X_test)
-            score = accuracy_score(y_test, yhat)
-            print('Accuracy: %.3f' % score)
+                    # evaluate performance
+                    yhat = model.predict(X_test)
+                    score = accuracy_score(y_test, yhat)
+                    print('Accuracy: %.3f' % score)
 
-            # retrieve performance metrics
-            results = model.evals_result()
-            print(results)
+                    # retrieve performance metrics
+                    results = model.evals_result()
+                    print(results)
 
-            evaluation_time = time.time() - start_time  # Calculate the elapsed time
-            print("Evaluation Time:", round(evaluation_time, 2), "seconds")
+                    evaluation_time = time.time() - start_time  # Calculate the elapsed time
+                    print("Evaluation Time:", round(evaluation_time, 2), "seconds")
