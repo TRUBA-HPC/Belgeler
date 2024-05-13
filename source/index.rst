@@ -31,7 +31,7 @@ TRUBA Kullanıcı Dökümanları
    :caption: ARF Hakkında
    :maxdepth: 1
    
-   TRUBA/kullanici-el-kitabi/arf/index.rst
+   TRUBA/kullanici-el-kitabi/arf-hesaplamakumesi/index.rst
 
 .. toctree::
    :caption: Uygulama Kılavuzları
