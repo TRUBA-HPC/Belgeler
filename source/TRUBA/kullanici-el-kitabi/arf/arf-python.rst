@@ -68,17 +68,17 @@ Sistemde kullanılabilecek conda ve standart ortam olmak üzere iki farklı pyth
 Jupyter Araçları 
 --------------------------
 
-ARF sisteminde interaktif islerinizi gerceklestirebileceginiz Open OnDemand servis edilmisitr. :ref:`arf-baglanti` sayfasindan interaktif arayuze ait baglanti bilgilerine erisebilirsiniz. Bu grafik kullanici arayuz uzerinde bulunan notebook kullanim ozet bilgileri su sekildedir:
+ARF sisteminde interaktif islerinizi gerçekleştirebileceğiniz Open OnDemand arayüzü servis edilmişitr. :ref:`arf-baglanti` sayfasından interaktif arayüze ait bağlantı bilgilerine erişebilirsiniz. Bu kullanıcı arayüz üzerinde bulunan notebook kullanım özet bilgileri şu şekildedir:
 
 **Jupyter Notebook - Intel AI tools**
 
-Bu jupyter notebook, yapay zeka alanında kullanılan intel işlemciler için özelliştirilmiş paketlerin kurulumlarını içermektedir. Buradan açılmış bir jupyter notebook içerisinde
+Buradan açılan jupyter notebook, yapay zeka alanında kullanılan intel işlemciler için özelliştirilmiş paketlerin kurulumlarını içermektedir. Buradan açılmış bir jupyter notebook içerisinde
 
 .. code-block:: 
 
     !conda list
 
-ile yüklü paketleri listeleyebilirsiniz. Temel olarak, ``XGBoost, TensorFlow, Keras, PyTorch, Scikit-learn`` paketleri intel işlemciler ile optimize çalışacak şekilde mevcuttur. Daha fazla detayına `buradan <https://www.intel.com/content/www/us/en/developer/tools/oneapi/ai-analytics-toolkit.html#gs.9ay6kn>`_ erişebilirsiniz.
+ile yüklü paketleri listeleyebilirsiniz. Temel olarak, ``XGBoost, TensorFlow, Keras, PyTorch, Scikit-learn`` paketleri intel işlemciler ile optimize çalışacak şekilde kurulmuştur. Daha fazla detayına `buradan <https://www.intel.com/content/www/us/en/developer/tools/oneapi/ai-analytics-toolkit.html#gs.9ay6kn>`_ erişebilirsiniz.
 
 **Jupyter Notebook - Custom**
 
