@@ -12,6 +12,7 @@ TRUBA Kullanıcı Dökümanları
    :maxdepth: 1
 
    quick-access/duyurular.rst
+   /TRUBA/kullanici-el-kitabi/arf-hesaplamakumesi.rst
    TRUBA/kullanici-el-kitabi/open-vpn/index.rst
    TRUBA/kullanici-el-kitabi/kullanici-ara-yuzu/ssh-ile-baglanti/index.rst
    TRUBA/kullanici-el-kitabi/kullanici-ara-yuzu/openondemand/index.rst
