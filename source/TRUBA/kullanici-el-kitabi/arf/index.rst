@@ -14,3 +14,4 @@ ARF Hesaplama Kümesi
     arf-baglanti.rst
     arf-truba-aktarim.rst
     arf-python.rst
+    uygulama-kilavuzlari/Gaussian/index.rst
