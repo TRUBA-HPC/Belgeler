@@ -26,7 +26,9 @@ TRUBA’yı kullanan araştırmacılarımıza hizmet vermek üzere molekül ve r
 
 Lisanslı olarak dağıtılan Gaussian 16, GaussView 6 ve TCP Linda programlarına erişim talebi olan araştırmacılar aşağıdaki linkte yer alan bilgiler doğrultusunda erişim talebinde bulunabileceklerdir.
 
-* ÖNEMLİ NOT: İlgili yazılım savunma sanayisine hizmet eden askeri amaçlı projelerde kullanılamaz.
+.. note::
+
+    * ÖNEMLİ NOT: İlgili yazılım savunma sanayisine hizmet eden askeri amaçlı projelerde kullanılamaz.
 
 .. toctree::
     :maxdepth: 1
