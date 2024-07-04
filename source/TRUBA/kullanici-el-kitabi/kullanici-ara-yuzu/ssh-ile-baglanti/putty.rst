@@ -33,7 +33,7 @@ Bilgisayarınıza uygulamayı yükledikten sonra açıp, TRUBA bilgisayarlarına
 
 .. note::
 
-   ULAKNET ağı dışından (örneğin üniversite kampüsü dışından) bağlantı sağlıyorsanız eğer öncelikle :ref:`OpenVPN bağlantısını sağlamalısınız <open-vpn>`. Bu durumda sunucu adı yerine ``172.16.7.1`` veya ``levrek1.yonetim`` yazmanız gerekmektedir. 
+   ULAKNET ağı dışından (örneğin üniversite kampüsü dışından) bağlantı sağlıyorsanız eğer öncelikle :ref:`OpenVPN bağlantısını sağlamalısınız <open-vpn>`. Bu durumda sunucu adı yerine ``172.16.11.1`` veya ``levrek1.yonetim`` yazmanız gerekmektedir. 
 
    ULAKNET ağından sunuculara bağlanmak için ise OpenVPN kullanımına gerek yoktur. Bu durumda sunucu adı yerine ``levrek1.ulakbim.gov.tr`` adresini yazmanız gerekmektedir.
 

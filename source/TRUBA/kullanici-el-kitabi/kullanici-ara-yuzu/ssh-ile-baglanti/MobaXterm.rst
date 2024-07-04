@@ -48,9 +48,13 @@ Dosya Windows'un farklı sürümünde .msi uzantılı da olabilir. Böyle bir du
 
 **Remote host:** levrek.ulakbim.gov.tr  
 
-Eğer kampüs dışından bağlanıyorsanız MobaXterm’ü kullanmak için öncelikle OpenVPN ile TRUBA bilgisayarlarına bağlanmanız gerekmektedir.
+..
 
-**Remote host:** 172.16.7.1 ya da levrek1.yonetim 
+    Eğer kampüs dışından bağlanıyorsanız MobaXterm’ü kullanmak için öncelikle OpenVPN ile TRUBA bilgisayarlarına bağlanmanız gerekmektedir.
+
+MobaXterm’ü kullanmak için öncelikle OpenVPN ile TRUBA bilgisayarlarına bağlanmanız gerekmektedir.
+
+**Remote host:** 172.16.11.1
 
 **Specify username:** kullaniciadi (örnek:osari)
 

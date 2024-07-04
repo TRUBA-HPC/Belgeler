@@ -18,6 +18,6 @@ Ayrıntılı bilgi için `EuroHPC Ortak Girişimi <https://eurohpc-ju.europa.eu/
 
     systems.rst
     access.rst
+    ffplus.rst
     inno4scale.rst
-
 

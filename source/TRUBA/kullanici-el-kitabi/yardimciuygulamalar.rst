@@ -4,7 +4,7 @@
 Yardımcı Uygulamalar
 =======================
 
-TRUBA kullanıcı arayüz sunucusu ``levrek1`` e bağlı iken aşağıdaki yardımcı komutlar sayesinde pratik bilgilere erişim sağlayabilirsiniz.
+TRUBA kullanıcı arayüz sunucusu ``barbun1`` e bağlı iken aşağıdaki yardımcı komutlar sayesinde pratik bilgilere erişim sağlayabilirsiniz.
 
 
 .. toctree::
