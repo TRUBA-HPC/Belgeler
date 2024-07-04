@@ -36,16 +36,15 @@ Lisanslı olarak dağıtılan Gaussian 16, GaussView 6 ve TCP Linda programları
 .. toctree::
     :maxdepth: 1
 
-    g16lisans_erisim.rst
-
+    TRUBA/kullanici-el-kitabi/arf/uygulama-kilavuzlari/Gaussian/g16lisans_erisim.rst
 
 TRUBA sisteminde yer alan ARF kümesi üzerinde Gaussian 16, GaussView 6 ve TCP Linda programlarına erişim ve kullanım için lisans şartlarını kabul eden kullanıcılar aşağıdaki bölümlerde ayrıntılı olarak açıklandığı şekilde ilgili programları çalıştırıp kullanabileceklerdir. TRUBA'da yer alan barbun ve hamsi kümeleri için ise yakın zamanda kullanıma açılarak kullanıma dair ilgili dokümantasyon içerikleri eklenecektir.
 
 .. toctree::
     :maxdepth: 1
 
-    gaussview6.rst
-    gaussian16_arf.rst
+    TRUBA/kullanici-el-kitabi/arf/uygulama-kilavuzlari/Gaussian/gaussview6.rst
+    TRUBA/kullanici-el-kitabi/arf/uygulama-kilavuzlari/Gaussian/gaussian16_arf.rst
 
 
 Eğer Gaussian lisansına sahipseniz kendi Gaussian versiyonunuzu kullanmak üzere aşağıdaki sayfada yer alan kurulum/kullanım adımlarını takip edebilirsiniz.
