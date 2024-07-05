@@ -45,7 +45,7 @@ Singularity imajını oluşturarak TRUBA dosya sistemine aktarın.
 .. code-block:: bash
 
     sudo singularity build dask.sif dask.def
-    scp dask.sif 172.16.7.1:/truba/home/USERNAME/dask.sif # USERNAME yer tutucusunu kullanıcı adınızla değiştirin.
+    scp dask.sif 172.16.11.1:/truba/home/USERNAME/dask.sif # USERNAME yer tutucusunu kullanıcı adınızla değiştirin.
 
 Dask-MPI kullanarak Batch modunda çalışma
 =========================================

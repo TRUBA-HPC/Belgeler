@@ -33,6 +33,7 @@ TRUBA Kullanıcı Dökümanları
    :maxdepth: 1
    
    TRUBA/kullanici-el-kitabi/arf/index.rst
+   TRUBA/kullanici-el-kitabi/arf/uygulama-kilavuzlari/Gaussian/index.rst
 
 .. toctree::
    :caption: Uygulama Kılavuzları

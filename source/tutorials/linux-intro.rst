@@ -14,7 +14,7 @@ Bu yüzden TRUBA kümelerine bağlantı yapabilmek için ``ssh`` komutunu kullan
  
 .. code-block:: bash
    
-   ssh kullanici_adi@172.16.7.1
+   ssh kullanici_adi@172.16.11.1
 
 **2.** ``pwd``
 
@@ -133,7 +133,7 @@ Hesaplarınızı tamamladıktan sonra, TRUBA kümelerinden input ve output dosya
 
 .. code-block:: bash 
 
-  scp  kullanici_adi@172.16.7.1: /truba_scratch/kullanici_adi/ads_co/co.in /home/kullanici_adi/Desktop
+  scp  kullanici_adi@172.16.11.1: /truba_scratch/kullanici_adi/ads_co/co.in /home/kullanici_adi/Desktop
 
 
 **12.** ``passwd``

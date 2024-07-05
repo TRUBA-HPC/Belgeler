@@ -39,11 +39,11 @@ Bilgisayarınıza OpenVPN uygulamasını kolayca kurabilmek için sırasıyla a�
 .. image:: /assets/openvpn-TRUBA/images/app_opvn.png   
    :width: 300
    
-**7.** Artık TRUBA bilgisayarlarına ssh protokolüyle terminalinizden ulaşabilirsiniz. Aşağıdaki verilen komut satırını kendi kullanıcı adınıza göre uyarlayarak terminalden erişim sağlayabilirsiniz. Örnekte verilen adres **levrek1** arayüz sunucusuna ulaşmak içindir.
+**7.** Artık TRUBA bilgisayarlarına ssh protokolüyle terminalinizden ulaşabilirsiniz. Aşağıdaki verilen komut satırını kendi kullanıcı adınıza göre uyarlayarak terminalden erişim sağlayabilirsiniz. Örnekte verilen adres **barbun1** arayüz sunucusuna ulaşmak içindir.
 
 .. code-block:: bash
      
-	ssh  kullanici_adi@172.16.7.1      
+	ssh  kullanici_adi@172.16.11.1      
     
 
 

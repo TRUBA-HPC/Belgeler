@@ -29,7 +29,21 @@ Aşağıdaki linklerde farklı işletim sistemleri için OpenVPN dosyalarının 
 Sonraki bölümlerde bu farklı işletim sistemlerinde OpenVPN kurulumları ayrıntılı bir şekilde verilecektir. OpenVPN için gerekli kurulumları yaptıktan sonra kullanıcı arayüzüne aşağıda verilen adreslerden herhangi birine **SSH** protokolü ile ulaşabilirsiniz. :ref:`Windows işletim sistemi için SSH ile bağlantı sağlama kılavuzlarına ulaşmak için tıklayınız... <ssh-baglanti>`
 
 .. note::
+
+   OpenVPN aktif iken 
+
+   TRUBA için
+
+      - 172.16.11.1 ile barbun1, 
    
+   ARF için
+   
+      - 172.16.6.11 ile arf-ui1,
+      - 172.16.6.12 ile arf-ui2
+
+  kullanıcı arayüzlerine bağlanabilirsiniz.
+
+..
    ULAKNET ağı dışından (örneğin üniversite kampüsü dışından) bağlantı sağlıyorsanız:
 
    * levrek1 için **levrek1.yonetim** ya da ``172.16.7.1``
