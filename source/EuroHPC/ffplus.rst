@@ -1,19 +1,19 @@
 .. _ffplus-opencall:
 
-===========
-FFPlus
-===========
+================
+FFPlus Çağrısı
+================
 
 FFPlus (`Fortissimo Plus <https://www.ffplus-project.eu/>`_), Avrupa'daki KOBİ'ler ve yeni kurulan şirketler (start-up'lar)tarafından Yüksek Başarımlı Hesaplamanın (YBH) benimsenmesini ve kullanılmasını teşvik eden bir Avrupa girişimidir. FFPlus girişiminin amacı KOBİ’lerin ve start-up’ların YBH yetkinliklerini geliştirmek, yenilikçilik ve rekabet gücü ile güçlendirmektedir. Hedeflenen projelerin kapsamı, hem YBH sistemlerinde hesaplama yöntemleri (modelleme ve simülasyon, veri analitiği, makine öğrenimi, yapay zeka vb.) yoluyla iş zorluklarının çözümünü hem de (üretken) Yapay Zeka yazılım çözümleri ve hizmetlerinin geliştirilmesi için süper bilgisayar kaynaklarının kullanımını içerir. Üretken yapay zeka için süper bilgisayarları kullanmanın stratejik hedefi, bu önemli alanda Avrupa KOBİ'lerinin teknolojik gelişimini kolaylaştırmak ve güçlendirmektir.
 
-FFPlus, ürün veya süreçleri optimize etmek veya geliştirmek için YBH, Yüksek Başarımlı Veri Analitiği veya Yapay Zeka kullanarak KOBİ'lerin önündeki engellerin nasıl aşılacağını doğrudan ele alan ve Avrupa endüstrisinin küresel rekabet gücünü güçlendirmeyi amaçlayan önceki `Fortissimo projelerinin (Fortissimo 1 ve 2, FF4EuroHPC) <https://www.fortissimo-project.eu/>`_ devamı niteliğindedir.`Fortissimo (2013-2016), Fortissimo 2 (2015-2018) <https://www.fortissimo-project.eu/en/success-stories/>`_ ve `FF4EuroHPC (2020-2023) <https://www.ff4eurohpc.eu/en/success-stories/>`_ tarafından desteklenen projelerin sonucunda ortaya çıkan `başarı hikayelerine erişmek için tıklayınız..<https://www.ffplus-project.eu/en/success-stories/>`_ 
+FFPlus, ürün veya süreçleri optimize etmek veya geliştirmek için YBH, Yüksek Başarımlı Veri Analitiği veya Yapay Zeka kullanarak KOBİ'lerin önündeki engellerin nasıl aşılacağını doğrudan ele alan ve Avrupa endüstrisinin küresel rekabet gücünü güçlendirmeyi amaçlayan önceki `Fortissimo projelerinin (Fortissimo 1 ve 2, FF4EuroHPC) <https://www.fortissimo-project.eu/>`_ devamı niteliğindedir. `Fortissimo (2013-2016), Fortissimo 2 (2015-2018) <https://www.fortissimo-project.eu/en/success-stories/>`_ ve `FF4EuroHPC (2020-2023) <https://www.ff4eurohpc.eu/en/success-stories/>`_ tarafından desteklenen projelerin sonucunda ortaya çıkan `başarı hikayelerine erişmek için tıklayınız.. <https://www.ffplus-project.eu/en/success-stories/>`_
 
 FFPlus projesi süresince (2024-2028) yenilikçi KOBİ'leri içeren, YBH ve üretken yapay zekanın dönüştürücü potansiyelini sergileyen en yüksek kalitede deneyleri hedefleyen iş deneyleri ve yenilik çalışmaları elde etmek için toplamda 24M Avro bütçeli altı açık çağrı yayınlanacaktır. Teklifler, çeşitli endüstriyel sektörlerden Avrupalı KOBİ'lerin ve yeni girişimlerin karşılaştığı iş zorluklarını ele alacaktır.
 
 Planlanan çağrılardan 2 tanesi son başvuru tarihi 4 Eylül olacak şekilde planlanmıştır. Bu çağrılarla ilgili detaylar aşağıda paylaşılmıştır. 
 
 
-* `Business Experiments <https://www.ffplus-project.eu/en/open-call/business-experiments/`_
+* `Business Experiments <https://www.ffplus-project.eu/en/open-call/business-experiments/>`_
 ----------------------------------------------------------------------------------------------------
 
 Daha önce YBH hizmetlerini kullanmamış veya bu konuda deneyimi olmayan KOBİ'lerin belirli iş zorluklarını çözmek amacıyla YBH'nın KOBİ'ler tarafından kullanımını ele alan ilk teklif çağrısıdır. Ortaya çıkan alt projeler, YBH kullanımının iş zorluklarını çözdüğünü ve YBH tabanlı hesaplama yöntemlerinin kullanımı ve dağıtımı yoluyla olumlu iş etkisine yol açtığını daha geniş Avrupa KOBİ ekosistemine göstermesi gereken "iş deneyleri" (sadece deneyler olarak da adlandırılır) gerçekleştirecektir. Bu nedenle, temel çıktıları, YBH kullanımının iş üzerindeki etkisini KOBİ ekosistemine tanıtan, ileten ve yayan başarı hikayeleridir.
@@ -21,6 +21,8 @@ Daha önce YBH hizmetlerini kullanmamış veya bu konuda deneyimi olmayan KOBİ'
 Çeşitli uygulama alanlarından Avrupalı KOBİ'lerin iş zorluklarını ele alan teklifler aranmakta olup, gelişmiş YBH hizmetlerinin benimsenmesi en yüksek iş etkisini yaratacak olan KOBİ'lere öncelik verilecektir. Akademik odaklı KOBİ'ler veya sadece uzun vadede potansiyel etkisi olan faaliyetler çağrı kapsamında değildir.
 
 Bu FFplus çağrısı, paralel olarak yürütülen Üretken Yapay Zeka Modellerinin Geliştirilmesine yönelik açık teklif çağrısını (FFplus_Call-1-Type-2 Tanımlayıcısı) tamamlayıcı niteliktedir. KOBİ'lerin (ana katılımcı rolünde) iki tür alt projeden sadece birine katılabileceği unutulmamalıdır.
+
+.. warning:: 
 
   * Son Başvuru Tarihi: 4 Eylül 2024, Brüksel yerel saatiyle 17:00
 
@@ -52,7 +54,8 @@ Bu çağrı, üretken yapay zeka, profesyonel yazılım geliştirme ve veri işl
 
 Bu FFplus çağrısı, paralel olarak yürütülen YBH'nın KOBİ'ler tarafından kullanımı ele alan iş deneyleri için açık teklif çağrısını (Tanımlayıcı FFplus_Call-1-Type-1) tamamlayıcı niteliktedir. KOBİ'lerin (ana katılımcı rolünde) iki tür alt projeden yalnızca birine katılabileceği unutulmamalıdır.
 
-
+.. warning::
+  
   * Son Başvuru Tarihi: 4 Eylül 2024, Brüksel yerel saatiyle 17:00
 
   * Desteklenecek projelerin 1 Aralık 2024'te başlaması hedeflenmektedir. Proje süresi maksimum 10 ay.
