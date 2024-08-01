@@ -30,7 +30,7 @@ Arşiv dosyaları ``amber22_src`` isimli klasöre açılacaktır.
    Amber22.tar.bz2 isimli sıkıştırılmış dosyaya Amber lisansına sahipseniz erşiminiz olacaktır.
 
 
-Kurulumu ``barbun`` kuyruğu için optimize bir şekilde kurmak için terminalden ``levrek1`` arayüzüne bağlandıktan sonra ``ssh barbun1`` komutu ile barbun kullanıcı arayüzüne geçip kurulum işlemlerinize orada devam edebilirsiniz.
+Kurulumu ``barbun`` kuyruğu için optimize bir şekilde kurmak için terminalden ``barbun1`` kullanıcı arayüzüne (:ref:`openvpn-info`) bağlanarak kurulum işlemlerinize başlayabilirsiniz.
 
 .. note::
 

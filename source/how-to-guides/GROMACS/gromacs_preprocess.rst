@@ -5,7 +5,7 @@ TRUBA'da GROMACS'in İnteraktif Kullanımı (Pre-process işlemi için)
 ==================================================================
 
 
-Hesaplamalarınız için CUDA destekli GROMACS programını kullanacaksanız eğer girdi (input) dosyanızı oluştururken de ilgili GROMACS versiyonunu kullanmanız gerekmektedir. GROMACS-CUDA modulunu terminalden interaktif olarak kullanıyorsanız ilgili işlemi levrek1 ve/veya barbun1 kullanıcı arayüz makinelerinde gerçekleştirmeniz mümkün değildir, bu işlem için de yine ``barbun-cuda`` hesaplama kümesini kullanmanız gerekmektedir. Bunu iki şekilde yapabilirsiniz:
+Hesaplamalarınız için CUDA destekli GROMACS programını kullanacaksanız eğer girdi (input) dosyanızı oluştururken de ilgili GROMACS versiyonunu kullanmanız gerekmektedir. GROMACS-CUDA modulunu terminalden interaktif olarak kullanıyorsanız ilgili işlemi barbun1 kullanıcı arayüz makinelerinde gerçekleştirmeniz maalesef mümkün değildir, bu işlem için de yine ``barbun-cuda`` hesaplama kümesini kullanmanız gerekmektedir. Bunu iki şekilde yapabilirsiniz:
 
 1-  İlgili pre-process işlemi için "srun" komutu ile interaktif olarak node rezervasyonu yapmanız gerekli. Eğer ilgili işlem 15 dakikayı aşmayan bir işlem ise debug kuyrugundan interaktif node talebini aşağıdaki gibi yapabilirsiniz:
 

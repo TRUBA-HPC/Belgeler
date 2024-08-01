@@ -27,7 +27,7 @@ ARF hesaplama kümesi erişim adresleri şu şekildedir:
    * - Grafana
      - http://172.16.6.25:3000/login
 
-OpenVPN bağlantınız olduğu varsayılarak kişisel makinenizden ARF hesaplama kümesine `<kullanıcı-adınız>` kısmını kendi kullanıcı adınız ile değiştirerek 
+OpenVPN bağlantınız olduğu varsayılarak kişisel makinenizden ARF hesaplama kümesine `<kullanici-adiniz>` kısmını kendi kullanıcı adınız ile değiştirerek 
 
 .. tabs::
 
@@ -49,7 +49,7 @@ ile bağlantı sağlayabilirsiniz.
 ..
   * Orfoz hesaplama sunucularına sadece ``arf-ui`` kullanıcı arayüzü üzerinden iş gönderilebilecektir.
 
-  Orfoz kuyruğuna is kosturmak icin ``levrek1`` kullanıcı arayüzü üzerinden arf-ui arayüz sunucusuna 
+  Orfoz kuyruğuna is kosturmak icin ``barbun1`` kullanıcı arayüzü üzerinden arf-ui arayüz sunucusuna 
 
   .. code-block::
 
@@ -61,7 +61,21 @@ ile bağlantı sağlayabilirsiniz.
 
     ssh arf-ui2.yonetim
 
-  ile geçiş yapabilirler. SSH anahtalarını henüz oluşturmamış kullanıcılar, bu sunucuya geçiş yapabilmek için ``levrek1`` kullanıcı arayüz sunucusuna bağlı iken ssh anahtarlarını ``ssh-keygen`` komutu ile aşağıdaki gibi oluşturabilirler:
+  ile geçiş yapabilirdiniz. Veya yukarıda da belirtildiği gibi OpenVPN bağlantısı aktif iken doğrudan terminalden
+
+  .. code-block::  
+
+    ssh 172.16.6.11 
+    
+  ile arf-ui1,
+
+  .. code-block::  
+
+    ssh 172.16.6.12 
+    
+  ile arf-ui2 kullanıcı arayüzlerine bağlanabilirsiniz.
+  
+  SSH anahtalarını henüz oluşturmamış kullanıcılar, bu sunucuya geçiş yapabilmek için ``barbun1`` kullanıcı arayüz sunucusuna bağlı iken ssh anahtarlarını ``ssh-keygen`` komutu ile aşağıdaki gibi oluşturabilirler:
 
   .. code-block::
 

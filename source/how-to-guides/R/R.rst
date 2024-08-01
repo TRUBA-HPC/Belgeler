@@ -60,14 +60,7 @@ Sisteminize gcc ve intel versiyonlarını modül olarak kullanmak için aşağı
 
 
 İş vermeden önce kullanılmak istenilen R paketlerini kullanılacak dizine kurmanızı öneririz.
-Yoğunluğa sebep vermemek ve hesabınızın askıya alınmaması için paket kurulumlarınızı *barbun1* arayüzünde gerçekleştirmeniz tavsiye edilir. O halde işleri SLURM'a vermeden önce şu adımları takip edebiliriz:
-*levrek1* kullanıcı arayüzünde iken 
-
-.. code-block:: bash
-
-    ssh barbun1 
-
-ile *barbun1* sunucusuna geçiş yapılır. *barbun1* sunucusu içinde iken yukarıda belirtildiği gibi modüller yüklendikten sonra terminale şunu yazdığımızda 
+Kısa süreli paket kurulumlarınızı *barbun1* kullanıcı arayüzünde gerçekleştirebilirsiniz. OpenVPN bağlantınız aktif iken *barbun1* kullanıcı arayüz sunucusuna bağlandıktan sonra (ssh username@172.16.11.1) yukarıda belirtildiği gibi modüller yüklendikten sonra terminale şunu yazdığımızda 
 
 .. code-block:: r
 
@@ -75,15 +68,16 @@ ile *barbun1* sunucusuna geçiş yapılır. *barbun1* sunucusu içinde iken yuka
 
 R çalışmaya başlar ve paket kurulum aşamasına geçebiliriz.
 
+..
+
+    Yoğunluğa sebep vermemek ve hesabınızın askıya alınmaması için paket kurulumlarınızı *barbun1* arayüzünde gerçekleştirmeniz tavsiye edilir. *barbun1* sunucusu içinde iken yukarıda belirtildiği gibi modüller yüklendikten sonra terminale şunu yazdığımızda 
+
 .. _r-paket-kurulum:
 
 R paketi kurulum
 ------------------
-Paketleri kurmadan önce hangi repoyu kullanacağını belirtebiliriz. 
-Sonrasında, diyelim ki kaynak kodlu paketleri kurmak için kullanılan ``remotes``
-R paketini kurmak istiyoruz. Kullanıcı ev dizininizde ilk R paketi kurduğunuzda karşınıza 
-"is not writable" uyarısı ve kişisiel kütüphane oluşturmak için öneri alacaksınız.
-Bu durumda iki defa ``yes`` yazdıktan sonra paketiniz kurulum aşamasına geçecektir. 
+
+Paketleri kurmadan önce hangi repoyu kullanacağını belirtebiliriz.  Sonrasında, diyelim ki kaynak kodlu paketleri kurmak için kullanılan ``remotes`` R paketini kurmak istiyoruz. Kullanıcı ev dizininizde ilk R paketi kurduğunuzda karşınıza  "is not writable" uyarısı ve kişisiel kütüphane oluşturmak için öneri alacaksınız. Bu durumda iki defa ``yes`` yazdıktan sonra paketiniz kurulum aşamasına geçecektir. 
 
 .. code-block:: r
     

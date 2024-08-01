@@ -6,7 +6,7 @@ LAMMPS Kılavuzu
 
 LAMMPS (Large-scale Atomic/Molecular Massively Parallel Simulator), Sandia Ulusal Laboratuvarı'ndaki araştırmacılar tarafından geliştirilen ve malzeme modellemeye odaklanan bir klasik moleküler dinamik kodudur. Bu belge, TRUBA altyapısında LAMMPS programının kullanımı hakkında bilgi vermek için oluşturulmuştur.
 
-Kullanıcılarımız tarafından sıklıkla kullanılan, açık kaynak kodlu olan ve GNU GPL lisansı altında sunulan yazılımlar altyapımızda yer almaktadır. TRUBA’ya terminalden bağlantı sağladıktan sonra levrek1 kullanıcı arayüzünde terminalden
+Kullanıcılarımız tarafından sıklıkla kullanılan, açık kaynak kodlu olan ve GNU GPL lisansı altında sunulan yazılımlar altyapımızda yer almaktadır. TRUBA’ya terminalden bağlantı sağladıktan sonra barbun1 kullanıcı arayüzünde terminalden
 
 .. code-block::
 

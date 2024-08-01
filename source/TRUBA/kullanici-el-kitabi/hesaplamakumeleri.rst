@@ -209,14 +209,26 @@ Sunucu üzerinde 4128 GB bellek, 224 adet Intel Xeon e7-4850 V4 çekirdeği bulu
 
   Sardalya sunucuları 153 adet Huawei Tecal RH1288 V3 model sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet Intel Xeon E5-2690 V4 işlemci ve toplam 28 adet işlemci çekirdeği bulunmaktadır. Sunucular birbirlerine EDR (100Gbps) Infiniband ağ kartları ile non-blocking yapıda bağlıdırlar. 
 
+.. _barbun-cuda:
+
 *Barbun ve Barbun-cuda*
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Barbun sunucuları 120 adet Dell R640, Barbun-cuda sunucuları R740 model sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet Intel Xeon Scalable Gold 6148 işlemci ve toplam 40 adet işlemci çekirdeği bulunmaktadır. Sunucular birbirlerine EDR (100Gbps) Infiniband ağ kartları ile non-blocking yapıda bağlıdırlar.
+Barbun sunucuları 120 adet Dell R640, Barbun-cuda sunucuları R740 model sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet Intel Xeon Scalable Gold 6148 işlemci ve toplam 40 adet işlemci çekirdeği bulunmaktadır. Sunucular birbirlerine EDR (100Gbps) Infiniband ağ kartları ile non-blocking yapıda bağlıdırlar. Barbun-cuda sunucularının her birinde 2 adet Nvidia P100 GPU kartı bulunmaktadır.
+
+Mevcut durumda barbun bölümlendirmesinde 3 kuyruk tanımı bulunmaktadır: *mid2, long* ve *barbun*. Öncelik sıralaması da yüksekten düşüğe dogru *mid2, long* ve *barbun* şeklindedir. İşlerinizin tahmini çalışma süresine göre SLURM betik dosyanızda mid2 (maksimum 8 gün) veya long (maksimum 15 gün) kuyruklarını tanımlayabilirsiniz.
+
+.. _akya-cuda:
 
 *Akya-cuda*
 ^^^^^^^^^^^
-Akya sunucuları 24 adet Supermicro 1029GQ-TRT model sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet Intel Xeon Scalable Gold 6148 işlemci ve toplam 40 adet işlemci çekirdeği ve 4 adet Nvidia Tesla V100 (16GB, NVLink) GPU kartı bulunmaktadır. Sunucular birbirlerine EDR (100Gbps) Infiniband ağ kartları ile non-blocking yapıda bağlıdırlar.
+Akya-cuda sunucuları 24 adet Supermicro 1029GQ-TRT model sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet Intel Xeon Scalable Gold 6148 işlemci ve toplam 40 adet işlemci çekirdeği ve 4 adet Nvidia Tesla V100 (16GB, NVLink) GPU kartı bulunmaktadır. Sunucular birbirlerine EDR (100Gbps) Infiniband ağ kartları ile non-blocking yapıda bağlıdırlar.
+
+.. note::
+
+  Akya-cuda sunucularında NVIDIA 550.90.07 sürücüsü bulunmaktadır. `NVIDIA 550.90.07 sürücüsü CUDA 12.4 versiyonu ile uyumludur <https://docs.nvidia.com/deploy/cuda-compatibility/>`_ .
+
+.. _hamsi:
 
 *Hamsi*
 ^^^^^^^^^^^^^^^^^^^^
@@ -240,9 +252,11 @@ Palamut sunucuları 9 adet HP Proliant XL675d Gen10 Plus model sunuculardan olu�
 
 .. note::
 
-  * Şu an için palamut-cuda kuyruğu öncelikli olarak belirli araştırma gruplarına hizmet vermektedir. Bu araştırma gruplarında hesapları tanımlı kullanıcılar ``palamut-cuda`` hesaplama kümesine iş gönderebileceklerdir.
+  * Palamut-cuda hesaplama kümesi özel küme olup sadece araştırma merkezleri tarafından yürütülen alt yapı projeleri (İlgili altyapı projeleri T.C. Cumhurbaşkanlığı Strateji ve Bütçe Başkanlığı, Strateji ve Bütçe Başkanlığı tarafından desteklenen projelerdir) ve de sözleşmeli proje araştırmacıları (TÜBİTAK ULAKBİM ile proje kapsamında sözleşmesi olan projeler) tarafından kullanılabilmektedir. Barbun-cuda ve akya-cuda hesaplama kümeleri tüm kullanıcılarımızın kullanımına açıktır.
 
-  * Palamut-cuda hesaplama kümesi için yeni bir kullanıcı arayüzü kurulmuştur (``palamut-ui``). Palamut-cuda kuyruğuna sadece ``palamut-ui`` arayüzü üzerinden iş gönderilebilecektir. Palamut-cuda kuyruğuna erişim izni olan proje kullanıcıları ``levrek1`` veya ``barbun1`` kullanıcı arayüzü üzerinden ``palamut-ui`` arayüz sunucusuna ssh ile geçiş yapabilirler. SSH anahtalarını henüz oluşturmamış kullanıcılar, bu sunucuya geçiş yapabilmek için ssh anahtarlarını ``ssh-keygen`` ile aşağıdaki gibi oluşturabilirler:
+  * Mevcut durumda palamut-cuda kuyruğu öncelikli olarak belirli araştırma gruplarına hizmet vermektedir. Bu araştırma gruplarında hesapları tanımlı olan kullanıcılar ``palamut-cuda`` hesaplama kümesine iş gönderebileceklerdir.
+
+  * Palamut-cuda hesaplama kümesi için yeni bir kullanıcı arayüzü kurulmuştur (``palamut-ui``). Palamut-cuda kuyruğuna sadece ``palamut-ui`` arayüzü üzerinden iş gönderilebilecektir. Palamut-cuda kuyruğuna erişim izni olan proje kullanıcıları ``barbun1`` kullanıcı arayüzü üzerinden ``palamut-ui`` arayüz sunucusuna ssh ile geçiş yapabilirler. SSH anahtalarını henüz oluşturmamış kullanıcılar, bu sunucuya geçiş yapabilmek için ssh anahtarlarını ``ssh-keygen`` ile aşağıdaki gibi oluşturabilirler:
 
   .. code-block::
 
@@ -311,7 +325,7 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - 1
      - 9500MB
      - 10500MB  
-     - Aktif
+     - Kullanım Dışı
    * - debug
      - barbun, barbun-cuda, akya-cuda, orkinos
      - 238
@@ -447,22 +461,26 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
 
   İşler önceden olduğu gibi üst kuyruklar yerine doğrudan sardalya, barbun veya diğer kuyruklarına gönderilebilir. 
 
-*barbun-cuda, akya-cuda* ve *palamut-cuda* kuyruklarına gönderilen işlerin GPU kullanabilecek ve GPU talep eden işler olması zorunludur. Yeni düzenleme ile aynı GPU'u birden fazla iş tarafından kullanabilecektir. GPU kümelerinin kullanımı ile ilgili dokümantasyon :ref:`gpu-kilavuzu` sayfamızı inceleyebilirsiniz.
+.. warning::
 
-*Single*
-^^^^^^^^^
+  *barbun-cuda, akya-cuda* ve *palamut-cuda* kuyruklarına gönderilen işlerin GPU kullanabilecek ve GPU talep eden işler olması zorunludur. Yeni düzenleme ile aynı GPU'u birden fazla iş tarafından kullanılabilecektir. GPU kümelerinin kullanımı ile ilgili dokümantasyon :ref:`gpu-kilavuzu` sayfamızı inceleyebilirsiniz.
 
-Bu kuyruğa tek çekirdeklik (genelde seri) işler gönderilir. Toplam çekirdek sayısı 1'den fazla ise, iş başka bir kuyruğa gönderilmiş olsa bile, otomatik olarak bu kuyruğa yönlendirilir. 
+..
 
-Bu kuyruktaki herhangi bir işin çalışma süresi en fazla 15 gündür. 15 gün içinde tamamlanmamış işler sistem tarafından otomatik olarak sonlandırılmaktadır. 
+  *Single*
+  ^^^^^^^^^
 
-Bu kuyruk ile ilgili ayrıntılı bilgi
+  Bu kuyruğa tek çekirdeklik (genelde seri) işler gönderilir. Toplam çekirdek sayısı 1'den fazla ise, iş başka bir kuyruğa gönderilmiş olsa bile, otomatik olarak bu kuyruğa yönlendirilir. 
 
-.. code-block::
+  Bu kuyruktaki herhangi bir işin çalışma süresi en fazla 15 gündür. 15 gün içinde tamamlanmamış işler sistem tarafından otomatik olarak sonlandırılmaktadır. 
+
+  Bu kuyruk ile ilgili ayrıntılı bilgi
+
+  .. code-block::
 
    scontrol show partition=single 
 
-komutu ile görülebilir. 
+  komutu ile görülebilir. 
 
 *Debug*
 ^^^^^^^^^

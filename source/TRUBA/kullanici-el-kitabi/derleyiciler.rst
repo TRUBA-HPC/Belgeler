@@ -97,7 +97,7 @@ CUDA kütüphanesinin farklı versiyonları ``/truba/sw/centos7.3/lib/cuda`` diz
    centos7.3/lib/cuda/9.0
    centos7.3/lib/cuda/9.2
 
-İlgili kütüphanelerin dizinlerinde ``(/truba/sw/centos7.3/lib/cuda/x.x)`` ayrıca örnek CUDA kodları ve uygulama örnekleri bulunmaktadır. Kurulum alanında yer alan örnekler kaynak yöneticisi aracılığı ile CUDA destekli kuyruklarda ya da kullanıcı arayüz sunucusunda (levrek1) komut satırından çalıştırılabilir.
+İlgili kütüphanelerin dizinlerinde ``(/truba/sw/centos7.3/lib/cuda/x.x)`` ayrıca örnek CUDA kodları ve uygulama örnekleri bulunmaktadır. Kurulum alanında yer alan örnekler kaynak yöneticisi aracılığı ile CUDA destekli kuyruklarda çalıştırılabilir.
 
 Nümerik Kütüphaneler
 ----------------------
