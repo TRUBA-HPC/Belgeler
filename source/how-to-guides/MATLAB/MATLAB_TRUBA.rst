@@ -38,8 +38,8 @@ Kişisel Bilgisayarınızda MATLAB Çalıştırırak TRUBA'ya İş Göndermek
 
   ::
      
-    # kampüs ağı dışından VPN ile bağlantı gerçekleştiriyorsanız levrek1.ulakbim.gov.tr yerine 	172.16.7.1 adresini yazmanız gerekecektir.
-    scp -r username@levrek1.ulakbim.gov.tr:/truba/sw/scripts/matlab/matlabScripts/truba.nonshared.R2021b ~/TRUBA_R2021b
+    # TRUBA'ya bağlantı sağlamak için OpenVPN bağlantısını sağladıktan sonra terminalde 172.16.11.1 adresini  kullanmanız gerekecektir (:ref:`openvpn-info`).
+    scp -r username@172.16.11.1:/truba/sw/scripts/matlab/matlabScripts/truba.nonshared.R2021b ~/TRUBA_R2021b
 
 İlgili dosyayı ayrıca :download:`bu web bağlantisindan </assets/matlab-howto/config-files/truba.nonshared.R2021b.zip>` indirebilirsiniz.
 
@@ -89,8 +89,8 @@ MATLAB’ı çalıştıracağınız küme hakkındaki parametrelerinizi ayarlama
     c.RequiresOnlineLicensing=true
     
     % bağlanacağınız arayüz makinesinin ip adresini 
-    %VPN ile bağlanıyorsanız 172.16.7.1 ; ULAKNET üzerinden (kampus icerisinden) bağlanıyorsanız  levrek1.ulakbim.gov.tr
-    c.AdditionalProperties.ClusterHost='172.16.7.1';
+    % OpenVPN ile bağlantınız mevcut iken 172.16.11.1
+    c.AdditionalProperties.ClusterHost='172.16.11.1';
 
     % ssh portunu ayarlayın
     c.AdditionalProperties.UseSshPort=22;
@@ -203,7 +203,7 @@ Bu örnekte dahili :code:`pwd` komutu/fonksiyonu kuyruk üzerinde çalıştırı
 .. image:: /assets/matlab-howto/matlab7.png
     :width: 800px
 
-İşinizi gönderdiğinizde bir "Slurm Jobid" si atanacaktır. Ayrica levrek1 arayüzünden :code:`squeue` komutu ile de işinizin durumunu öğrenebilirsiniz.
+İşinizi gönderdiğinizde bir "Slurm Jobid" si atanacaktır. Ayrica barbun1 kullanıcı arayüzünden :code:`squeue` komutu ile de işinizin durumunu öğrenebilirsiniz.
 
 .. image:: /assets/matlab-howto/matlab8.png
     :width: 800px
@@ -461,7 +461,7 @@ Lisans doğrulamasını gerçekleştirdikten sonra Matlab'ı yeniden çalıştı
 
 ::
 
-    ## bagli oldugunuz arayuz sunucusunda (ornegin levrek1)
+    ## bagli oldugunuz arayuz sunucusunda (ornegin barbun1)
     cp -r /truba/sw/scripts/matlab/matlabScripts/truba.shared.R2021b ~/TRUBA_2021b_shared
 
 Daha sonra **MATLAB Komut Satırından** ilgili ayar dosyası çalıştırılır.
@@ -509,7 +509,7 @@ Lisans dosyanızı TRUBA arayüz sunucusuna transfer ediniz. Bunu terminal arac�
 ::
 
     ## username kısmını TRUBA kullanıcı adınızla değiştirmeyi unutmayin
-    scp -r "lisans_dosyanızın_bilgisayarınızdaki_yeri" username@levrek1.ulakbim.gov.tr:/truba/home/username/
+    scp -r "lisans_dosyanızın_bilgisayarınızdaki_yeri" username@172.16.11.1:/truba/home/username/
 
 - Kullanacağınız MATLAB versiyonuna karar verdiyseniz
 

@@ -21,7 +21,7 @@ Bu menüden, hesabınızın erişim hakkı olduğu dosya sistemlerine ve ev dizi
 
 Web tabanlı dosya gezginini kullanarak:
 
-- Levrek1 sunucusunda terminal açabilir
+- barbun1 kullanıcı arayüz sunucusunda terminal açabilir
 - Kişisel bilgisayarınızdan TRUBA'ya, TRUBA'dan kişisel bilgisayarınıza dosya transferi
 - Dosya ve dizin oluşturma, silme, taşıma, yeniden isimlendirme
 - Dosya düzenleme işlerinizi 
@@ -76,7 +76,7 @@ Cluster Menüsü
 
 .. image:: /assets/open-ondemand/images/700px-Menu_cluster.png
 
-Bu menüde "_TRUBA Shell Access" linkinden levrek1 sunucusuna terminal ekranı açmak mümkündür. Aslında portalın neredeyse tüm sayfalarından terminal ekranına ulaşmak mümkündür.
+Bu menüde "_TRUBA Shell Access" linkinden barbun1 sunucusuna terminal ekranı açmak mümkündür. Aslında portalın neredeyse tüm sayfalarından terminal ekranına ulaşmak mümkündür.
 
 -------------------------
 Interactive Apps Menüsü

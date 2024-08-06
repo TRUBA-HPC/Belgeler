@@ -79,36 +79,16 @@ YBH, temel olarak kullanıcı arayüzü, iş planlayıcı (denetleyici) ve hesap
 oluşmaktadır. Kullanıcının yapmak istediği hesaplama ise iş olarak
 adlandırılmaktadır.
 
-Kullanıcının YBH ile etkileşimi kullanıcı arayüzü (TRUBA için levrek1)
-sunucusu üzerinden olmaktadır. Yeni bir iş yollama, küme üzerinde
-hesaplama yapılan (koşturulan) işin durumu, devam eden işin
-sonlandırılması, ihtiyaç duyulan ortam (yazılım, kütüphane, araç)
-kurulması vb işler bu sunucu üzerinde yapılmaktadır.
+Kullanıcının YBH ile etkileşimi kullanıcı arayüzü (TRUBA için barbun1, ARF için arf-ui1 veya arf-ui2) sunucusu üzerinden olmaktadır. Yeni bir iş yollama, küme üzerinde hesaplama yapılan (koşturulan) işin durumu, devam eden işin sonlandırılması, ihtiyaç duyulan ortam (yazılım, kütüphane, araç) kurulması vb işler bu sunucu üzerinde yapılmaktadır.
 
-Kullanıcı bir iş yolladığında bu iş kullanıcı arayüzünde değil hesaplama
-uçlarında koşturulmaktadır. Hesaplama uçları kendi içerisinde
-gruplandırılır (örneğin aynı marka/model fiziksel sunucuların aynı
-grupta yer alması gibi) ve kullanıcı işini bu gruptan (iş dosyasında
-partition olarak ifade edilir, örn: mid2, barbun, long) birine yollar.
-İş dosyası hazırlarken kaç hesaplama ucu, kaç çekirdek, ne kadar bellek
-ve işin tahminen ortalama ne kadar süreceği gibi bilgilere bağlı olarak
-hesaplama uçları belirlenir ve hesaplamalar bu uçlar üzerindeki
-çekirdekler üzerinde yapılır. TRUBA’da sardalya, mercan, barbun vb
-ismindeki sunucular hesaplama uçlarıdır.
+Kullanıcı bir iş yolladığında bu iş kullanıcı arayüzünde değil hesaplama uçlarında koşturulmaktadır. Hesaplama uçları kendi içerisinde gruplandırılır (örneğin aynı marka/model fiziksel sunucuların aynı grupta yer alması gibi) ve kullanıcı işini bu gruptan (iş dosyasında partition olarak ifade edilir, örn: mid2, barbun, long) birine yollar. İş dosyası hazırlarken kaç hesaplama ucu, kaç çekirdek, ne kadar bellek ve işin tahminen ortalama ne kadar süreceği gibi bilgilere bağlı olarak hesaplama uçları belirlenir ve hesaplamalar bu uçlar üzerindeki çekirdekler üzerinde yapılır. TRUBA’da sardalya, mercan, barbun vb ismindeki sunucular hesaplama uçlarıdır.
 
-İş planlayıcı (denetleyici) ise temelde kuyruk yönetim sistemlerinde
-olduğu gibi kullanıcının bilgileri, gönderdiği işin özellikleri ve
-kümenin durumu (hesaplama uçlarının kullanım yoğunluğu) gibi bilgilere
-göre kaynakları belirler ve hesabın bu kaynaklar üzerinde yapılmasını
-sağlar. TRUBA’da bunun için SLURM kullanılmaktadır.
+İş planlayıcı (denetleyici) ise temelde kuyruk yönetim sistemlerinde olduğu gibi kullanıcının bilgileri, gönderdiği işin özellikleri ve kümenin durumu (hesaplama uçlarının kullanım yoğunluğu) gibi bilgilere göre kaynakları belirler ve hesabın bu kaynaklar üzerinde yapılmasını sağlar. TRUBA’da bunun için SLURM kullanılmaktadır.
 
 İşin (Run) Özellikleri
 ^^^^^^^^^^^^^^^^^^^^^^
 
-“Merhaba dünya”, yazdırmak yeni bir ortam/programalama dili
-öğrenildiğinde sıklıkla kullanılan bir örnektir. Bu uygulama için bir iş
-dosyası hazırlanacak ve küme üzerinde koşturularak hesaplama ucu
-üzerinde çalıştırılması sağlanacaktır. Bunun için temel olarak:
+“Merhaba dünya”, yazdırmak yeni bir ortam/programalama dili öğrenildiğinde sıklıkla kullanılan bir örnektir. Bu uygulama için bir iş dosyası hazırlanacak ve küme üzerinde koşturularak hesaplama ucu üzerinde çalıştırılması sağlanacaktır. Bunun için temel olarak:
 
  1. İşin hangi hesaplama grubunda, kaç hesaplama ucu ve çekirdeği üzerinde, ne kadar tahmini süre çalışacağı tanımlanmalıdır. 
  2. Kodun çalışması için ortamın hazırlanması (PATH, LIBRARY vb.) sağlanmalıdır. 
@@ -133,15 +113,8 @@ Dosyalar ve Komutlar:
 Uyarılar:
 =========
 
--  Kullanıcı arayüzü sunucusu (levrek1), işlerin yönetimi ve
-   yazılımların kurulması için ayrılmıştır. Burada işleri koşturmak,
-   sunucu üzerinde ki kaynakları (cpu, ram) tüketeceğinden dolayı diğer
-   kullanıcıların kümeyi kullanamaz haline getirme riski bulunmaktadir.
-   Bu nedenle kullanıcı arayüzü üzerinde iş koşturmadan kaçınılmalıdır.
--  Olabildiğince 1 hesaplama ucu üzerinde işleri koşturmaya çalışınız.
-   İşiniz 8 çekirdek gerektiriyorsa bunu 1 hesaplama ucu, 8 çekirdek
-   şeklinde talep ediniz. MPI tarzı kütüphanelerin kullanımında birden
-   fazla hesaplama ucu kullanmak anlamlı olabilir.
+-  Kullanıcı arayüzü sunucusu (barbun1), işlerin yönetimi ve yazılımların kurulması için ayrılmıştır. Burada işleri koşturmak, sunucu üzerinde ki kaynakları (cpu, ram) tüketeceğinden dolayı diğer kullanıcıların kümeyi kullanamaz haline getirme riski bulunmaktadir. Bu nedenle kullanıcı arayüzü üzerinde iş koşturmadan kaçınılmalıdır.
+-  Olabildiğince 1 hesaplama ucu üzerinde işleri koşturmaya çalışınız. İşiniz 8 çekirdek gerektiriyorsa bunu 1 hesaplama ucu, 8 çekirdek şeklinde talep ediniz. MPI tarzı kütüphanelerin kullanımında birden fazla hesaplama ucu kullanmak anlamlı olabilir.
 
 .. _target to exp2:
 
@@ -152,11 +125,7 @@ Uygulama 2: Ardışık hesaplamanın yapıldığı örnek iş koşturma
 Amaç:
 ======
 
-Bu uygulamada birbirini takip eden (bir sonraki hesaplamanın önceki
-hesabın bitmesini beklediği durum) örnek bir hesaplama iş betik dosyası
-kullanılarak hazırlanmıştır. İş akışı yönetim (workflow) araçları
-kullanmaksızın bu hesaplamanın nasıl yapılacağı gösterilmiş eksikleri
-belirtilip ne gibi sorunlarla karşılaşılabileceği tartışılmıştır. 
+Bu uygulamada birbirini takip eden (bir sonraki hesaplamanın önceki hesabın bitmesini beklediği durum) örnek bir hesaplama iş betik dosyası kullanılarak hazırlanmıştır. İş akışı yönetim (workflow) araçları kullanmaksızın bu hesaplamanın nasıl yapılacağı gösterilmiş eksikleri belirtilip ne gibi sorunlarla karşılaşılabileceği tartışılmıştır. 
 
 Kaynak:
 =======
@@ -174,29 +143,16 @@ Lokal bir bilgisayarda tipik bir hesaplama temel olarak şunları içerir:
  - log 
  - araç, yazılım (python)
 
-Bu hesabın Yüksek Başarımlı Hesaplama (YBH) üzerinde çalışabilmesi
-içinse slurm iş dosyası hazırlanmalıdır. Bu dosya içerisinde şunlar
-tanımlıdır: 
+Bu hesabın Yüksek Başarımlı Hesaplama (YBH) üzerinde çalışabilmesi içinse slurm iş dosyası hazırlanmalıdır. Bu dosya içerisinde şunlar tanımlıdır: 
 
  - kaynak gereksinimi (cpu, ram, zaman limiti, vb) 
  - hangi hesap ve hangı grup bilgisayarda koşacağı (partition) 
  - ortam değişkenlerinin tanımlanması (path gibi) 
  - hangi hesaplamaların sırayla yapılacağı
 
-Ardışık hesaplamalarda bu iş dosyasında hesaplar sırayla yazılır. İlk
-görevin (hesaplamanın) çıktı dosyası, bir sonraki görevin girdi dosyası
-olarak devam edecek şekilde bir iş akışı elle (manual) oluşturulur.
+Ardışık hesaplamalarda bu iş dosyasında hesaplar sırayla yazılır. İlk görevin (hesaplamanın) çıktı dosyası, bir sonraki görevin girdi dosyası olarak devam edecek şekilde bir iş akışı elle (manual) oluşturulur.
 
-Her bir görev için gerekli ortamın (yazılım, araç, kütüphane) kurulumu
-kullanıcının ev dizininde yapması gereken bir süreçtir. Kullanıcı
-arayüzünde kullanıcının hesapları kısıtlıdır, diğer bir deyişle süper
-kullanıcı hakkı (root) verilmemiştir. Bu nedenle kurulum yapmak genel
-olarak sistemde mevcut derleyiciler (gnu, intel, vb) kullanılarak kaynak
-kod üzerinden yapılır, ancak bu paket yöneticisi (conda gibi) araçlar
-kullanılmadan yapılması zor ve zahmetli bir süreçtir. İşlemci mimarisine
-göre derleme yapmak, uygun kütüphaneleri ve versiyonlarını eklemek
-(dependency problem), yapılandırmada uygun parametreleri seçmek
-(configuration) dikkat isteyen bir durumdur.
+Her bir görev için gerekli ortamın (yazılım, araç, kütüphane) kurulumu kullanıcının ev dizininde yapması gereken bir süreçtir. Kullanıcı arayüzünde kullanıcının hesapları kısıtlıdır, diğer bir deyişle süper kullanıcı hakkı (root) verilmemiştir. Bu nedenle kurulum yapmak genel olarak sistemde mevcut derleyiciler (gnu, intel, vb) kullanılarak kaynak kod üzerinden yapılır, ancak bu paket yöneticisi (conda gibi) araçlar kullanılmadan yapılması zor ve zahmetli bir süreçtir. İşlemci mimarisine göre derleme yapmak, uygun kütüphaneleri ve versiyonlarını eklemek (dependency problem), yapılandırmada uygun parametreleri seçmek (configuration) dikkat isteyen bir durumdur.
 
 Bu uygulamada blast veri tabanından seçilen bir protein için 3 ardışık
 görev slurm iş dosyasında tanımlanarak küme üzerinde koşturulmuştur.

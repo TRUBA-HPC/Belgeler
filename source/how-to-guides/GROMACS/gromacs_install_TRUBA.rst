@@ -4,7 +4,7 @@
 TRUBA'da GROMACS Kurulumu
 ==========================
 
-Kullanıcılarımız tarafından sıklıkla kullanılan, açık kaynak kodlu olan ve GNU GPL lisansı altında sunulan yazılımlar altyapımızda yer almaktadır. TRUBA’ya terminalden bağlantı sağladıktan sonra levrek1 kullanıcı arayüzünde terminalden
+Kullanıcılarımız tarafından sıklıkla kullanılan, açık kaynak kodlu olan ve GNU GPL lisansı altında sunulan yazılımlar altyapımızda yer almaktadır. TRUBA’ya terminalden bağlantı sağladıktan sonra barbun1 kullanıcı arayüzünde terminalden
 
 .. code-block::
 

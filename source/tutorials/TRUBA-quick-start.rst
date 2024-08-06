@@ -2,11 +2,7 @@
 TRUBA Kümelerini İlk Kez Kullanacaklar İçin
 =================================================
 
-TRUBA kümelerini ilk kez kullanacaklar için aşağıdaki adımları dikkatle okumasını, verilen linkleri dikkatli takip etmeleri beklenmektedir. Aksi takdirde
-sistemlere giriş yaparken problem yaşayabilir, kendi home dizininizde çalıştırdığınız programlardan ötürü hesabınız askıya alınabilir. Aşağıda kullandığınız işletim sisteminize uygun 
-adımları izlediğiniz anda **levrek1.ulakbim.gov.tr**  arayüz sunucusuna bağlanmış olacaksınız. **levrek1.ulakbim.gov.tr** herhangi bir web servis sağlayıcısı değildir. 
-Dolayısıyla herhangi bir internet tarayıcısından erişim sağlayamazsınız. Aşağıdaki klavuzların yanında TRUBA kullanımını özetleyen iki adet seminer videomuz bulunmaktadır.
-İlgili içeriklere aşağıdaki linklerden ulaşabilirsiniz.
+TRUBA kümelerini ilk kez kullanacaklar için aşağıdaki adımları dikkatle okumasını, verilen linkleri dikkatli takip etmeleri beklenmektedir. Aksi takdirde sistemlere giriş yaparken problem yaşayabilir, kendi home dizininizde çalıştırdığınız programlardan ötürü hesabınız askıya alınabilir. Aşağıda kullandığınız işletim sisteminize uygun adımları izlediğiniz anda **levrek1.ulakbim.gov.tr** arayüz sunucusuna bağlanmış olacaksınız. **levrek1.ulakbim.gov.tr** herhangi bir web servis sağlayıcısı değildir. Dolayısıyla herhangi bir internet tarayıcısından erişim sağlayamazsınız. Aşağıdaki klavuzların yanında TRUBA kullanımını özetleyen iki adet seminer videomuz bulunmaktadır. İlgili içeriklere aşağıdaki linklerden ulaşabilirsiniz.
 
 **Yeni başlayanlar için TRUBA**
 https://indico.truba.gov.tr/event/12/

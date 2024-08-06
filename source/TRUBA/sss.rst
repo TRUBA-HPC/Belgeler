@@ -87,7 +87,19 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 
 1. Kullanıcı arayüzü sunucularına erişim kısıtlamaları var mı?
 
-    Evet. Sadece ULAKNET ağına bağlı bilgisayarlardan (tüm kamu üniversiteleri ve bazı vakıf üniversiteleri) levrek1.ulakbim.gov.tr sunucusuna SSH ile doğrudan bağlanabilir.
+    Öncelikle OpenVPN ile TRUBA sanal ağına bağlanılmalı, sonrasında 
+
+	#. TRUBA için 172.16.11.1 ile barbun1,
+
+    #. ARF için 172.16.6.11 ile arf-ui1 veya 172.16.6.12 ile arf-ui2
+
+	kullanıcı arayüz suncuularına ssh ile bağlanabilirsiniz. :ref:`OpenVPN hakkında bilgilere erişmek için tıklayınız...<open-vpn>`
+	
+	  
+
+..
+
+	Evet. Sadece ULAKNET ağına bağlı bilgisayarlardan (tüm kamu üniversiteleri ve bazı vakıf üniversiteleri) levrek1.ulakbim.gov.tr sunucusuna SSH ile doğrudan bağlanabilir.
     
     Eğer internete ULAKNET üzerinden bağlanılmıyorsa, öncelikle OpenVPN ile TRUBA sanal ağına bağlanılmalı, sonrasında levrek1.ulakbim.gov.tr (ya da 172.16.7.1 adresine) ssh ile bağlanılmalıdır.  
 
@@ -229,7 +241,7 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 
 19. Disk kotamı nasıl görürüm?
 
-	levrek1 (veya herhangi bir kullanıcı arayüzü sunucusunda) sunucusu üzerinde “quota” komutunu çalıştırarak ilgili dosya sistemlerindeki ev dizini kotalarınızı ve kullanım durumunuzu görebilirsiniz.
+	barbun1 (veya herhangi bir kullanıcı arayüzü sunucusunda) sunucusu üzerinde “quota” komutunu çalıştırarak ilgili dosya sistemlerindeki ev dizini kotalarınızı ve kullanım durumunuzu görebilirsiniz.
 
 	Not: TRUBA'da her kullanıcı için bir kullanıcı grubu oluşturulmuştur. Kullanıcı adı ile kullanıcı grubunun adları (UID ve GID) aynıdır. Kotalar UID üzerinden değil GID üzerinden tanımlanmıştır.
 
@@ -359,7 +371,7 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 
 36. TRUBA kullanıcı hesabı şifresinin değiştirilmesi
 
-	Levrek1 kullanıcı arayüzüne bağlandıktan sonra terminal üzerinden ``passwd`` komutunu yazarak mevcut şifrenizi değiştirebilirsiniz.
+	*barbun1* kullanıcı arayüzüne bağlandıktan sonra terminal üzerinden ``passwd`` komutunu yazarak mevcut şifrenizi değiştirebilirsiniz.
 
 .. _target to ss37:
 
