@@ -49,7 +49,7 @@ Merkezi anaconda platformları:
     İlgili komut çalıştırıldıktan sonra ``conda info`` ve ``conda list`` ile sanal ortam bilgisine ve içerisinde bulunan paketlerin versiyonlarına erişim sağlayabilirsiniz. Bu bilgiler ışığında ihtiyacınıza göre hangi platformu kullanmanız gerektiğine karar verebilirsiniz.
 
     .. note::
-        Yapay zeka alanında sıklıkla kullanılan TenserFlow, PyTorch, Transformers, Huggingface Hub ve CUDA araçlarının kurulu olduğu python 3.10 versiyonu için takip eden anaconda ortamını kullanabilirsiniz.
+        Yapay zeka alanında sıklıkla kullanılan TenserFlow, PyTorch, Transformers, Huggingface Hub ve CUDA araçlarının kurulu olduğu python 3.10 versiyonu için takip eden aşağıdaki anaconda ortamını kullanabilirsiniz. Örnek SLURM betiklerini ``/truba/sw/scripts/python/akya-gpu`` dizini altinda bulabilirsiniz.
 
     .. code-block::
 
