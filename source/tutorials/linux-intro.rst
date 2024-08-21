@@ -18,11 +18,11 @@ Bu yüzden TRUBA kümelerine bağlantı yapabilmek için ``ssh`` komutunu kullan
 
 **2.** ``pwd``
 
-ssh protokolü ile TRUBA' ya başarıyla bağlandıktan sonra, ``pwd`` (present working directory) komutu ile hangi dizinde olduğunuzu kolayca görmek için kullanabilirsiniz. TRUBA kümelerine ilk bağlantıyı yaptıktan sonra komut satırına ``pwd`` yazdığınızda ekranda ``/truba/home/kullanici_adi`` yazdırılacaktır. 
+ssh protokolü ile TRUBA'ya başarıyla bağlandıktan sonra, ``pwd`` (present working directory) komutu ile hangi dizinde olduğunuzu kolayca görmek için kullanabilirsiniz. TRUBA kümelerine ilk bağlantıyı yaptıktan sonra komut satırına ``pwd`` yazdığınızda ekranda ``/truba/home/kullanici_adi`` yazdırılacaktır. 
 
 **3.** ``ls``
  
-``ls`` komutu kullanarak bulunduğunuz dizindeki dosyaları listeleyebilirsiniz. ``ls`` komutunu birtakım alfabetik tag'lerle kullanarak  bu komutun kullanımını özelleştirebilirisiniz (Ör: ``ls -al``  : Dosya ve dizinleri ayrıntılı listelemek için kullanılır.). Bu alfabetik tag'ler ve anlamlarını 
+``ls`` komutu kullanarak bulunduğunuz dizindeki dosyaları listeleyebilirsiniz. ``ls`` komutunu bir takım alfabetik tag'lerle kullanarak  bu komutun kullanımını özelleştirebilirisiniz (Ör: ``ls -al``  : Dosya ve dizinleri ayrıntılı listelemek için kullanılır.). Bu alfabetik tag'ler ve anlamlarını 
 
 .. code-block:: bash
 
@@ -91,7 +91,7 @@ Dosya açmak için kullanılan bir komuttur. ``touch job.slurm`` komutuyla bulun
 Dosyaları silmek için kullanılan bir komuttur. ``rm job.slurm`` komutuyla bulunduğumuz dizindeki job.slurm dosyasını silmek için kullanabiliriz. Aynı şekilde dizinleri silmek için **-r** parametresi
 ile kullanılabilir. 
 
-Buraya kadar anlatılan komutları bir örnek üzerinde özeteleyelim. Kendi ev dizinimizde öncelikle **ads** adlı bir dizin oluşturalım. Bu dizine girip **co.in** adlı bir file oluşturalım. İkini adım 
+Buraya kadar anlatılan komutları bir örnek üzerinde özeteleyelim. Kendi ev dizinimizde öncelikle **ads** adlı bir dizin oluşturalım. Bu dizine girip **co.in** adlı bir dosya oluşturalım. İkinci adım 
 olarak bu dizini **/truba_scratch/kullanici_adi** isimli dosyaya kopyalayalım. Üçünücü adım olarak dizinin ismini **ads_co**  olarak değiştirdikten sonra, son olarak oluşturduğumuz co.in adlı dosyayı 
 silelim. Bu örnek için aşağıdaki kod bloğunu takip ederek kolayca uygulayabilirsiniz. 
 
@@ -104,7 +104,6 @@ silelim. Bu örnek için aşağıdaki kod bloğunu takip ederek kolayca uygulaya
   cp -r ads /truba_scratch/kullanici_adi
   mv  /truba_scratch/kullanici_adi/ads /truba_scratch/kullanici_adi/ads_co
   rm /truba_scratch/kullanici_adi/ads_co/co.in
-
 
 **9.** ``emacs`` ve ``vim``
 

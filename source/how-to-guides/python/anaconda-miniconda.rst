@@ -41,15 +41,26 @@ Merkezi anaconda platformları:
 
         eval "$(/truba/sw/centos7.9/lib/anaconda3/2021.11/bin/conda shell.bash hook)"
 
+
 .. warning:: 
 
     **Hangi platfomu seçmeliyiz?**
 
     İlgili komut çalıştırıldıktan sonra ``conda info`` ve ``conda list`` ile sanal ortam bilgisine ve içerisinde bulunan paketlerin versiyonlarına erişim sağlayabilirsiniz. Bu bilgiler ışığında ihtiyacınıza göre hangi platformu kullanmanız gerektiğine karar verebilirsiniz.
 
-İlgili Anaconda ortamlarını kulllanıcı arayüzlerinde ve hesaplama sunucularında aktif olması isteniliyorsa ``.bashrc`` dosyanıza ihtiyaç duyduğunuz satırı eklemeniz gerekmektedir.
+    .. note::
+        Yapay zeka alanında sıklıkla kullanılan TenserFlow, PyTorch, Transformers, Huggingface Hub ve CUDA araçlarının kurulu olduğu python 3.10 versiyonu için takip eden aşağıdaki anaconda ortamını kullanabilirsiniz. Örnek SLURM betiklerini ``/truba/sw/scripts/python/akya-gpu`` dizini altinda bulabilirsiniz.
+
+    .. code-block::
+
+        eval "$(/truba/sw/centos7.9/lib/anaconda3/2023.03/bin/conda shell.bash hook)"
+
+İlgili Anaconda ortamlarını kulllanıcı arayüzlerinde ve hesaplama sunucularında aktif olması isteniliyorsa ``.bashrc`` ya da ``.bash_profile`` dosyanıza ihtiyaç duyduğunuz satırı eklemeniz gerekmektedir.
 
 Ayrıca, sadece ihtiyaç duyulan zamanlarda aktif edilmek istenilirse terminalde doğrudan ilgili komutu kullanabilirsiniz. SLURM betik dosyanızda da benzer şekilde ilgili anaconda versiyonu için olan yukarıdaki komutu yazmanız gerekmektedir.
+
+
+
 
 .. note::
     Kullanıcılar özelinde merkezi kurulum ihitiyaçları karşılamadığı durumda kendi ev dizinlerine anaconda kurulum sağlamak yerine :ref:`miniconda-kurulum` tecih edilmelidir. Bir başka öneri ise merkezi anaconda kullanılarak yeni bir sanal ortam oluşturmaktır. Önerilen çözümler ile ihtiyaç duyulan paketlerin sağlanması sonucunda dosya sayısı (inode) problemi ile karşılaşılması engellenmektedir.

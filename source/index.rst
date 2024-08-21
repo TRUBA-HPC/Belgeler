@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
    
 ===========================
-TRUBA Kullanıcı Dökümanları
+TRUBA Kullanıcı Dokümanları
 ===========================
 
 .. toctree::
