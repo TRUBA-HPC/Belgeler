@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'TRUBA Kullanıcı Dökümanları'
+project = 'TRUBA Kullanıcı Dokümanları'
 copyright = '2021, TÜBİTAK ULAKBİM'
 author = 'TÜBİTAK ULAKBİM'
 
