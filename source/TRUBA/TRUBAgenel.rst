@@ -25,14 +25,14 @@ Kaynaklar
 
 Yüksek hesaplama ve depolama gücüne sahip olan TRUBA, 25.000’den fazla işlemci çekirdeği, teorik 1.3 Tflops; 48+96+72 adet grafik işlemci ve teorik 1.7 Tflops; 14 PByte veri depolama alanıyla, ülkemizde hesaplamalı bilimler alanında çalışan araştırmacılara ve AR-GE faaliyetleri sürdüren kurumlara hizmet vermektedir. 
 
-----------
-Kullanım
-----------
+------------------------
+Kullanım İstatistikleri
+------------------------
 
 TRUBA, birçok farklı disiplinden araştırmacıya üniversite, kamu ve endüstri ayrımı gözetmeksizin hizmet vermektedir.
 
-•	13M çekirdek saat/ay
-•	>3600 kayıtlı araştırmacı
-•	>350 aynı anda kullanan araştırmacı
-•	>100 ARDEB ve Bilimsek Araştırma Proje desteği
+•	25M çekirdek saat/ay
+•	>6000 kayıtlı araştırmacı
+•	>500 aynı anda kullanan araştırmacı
+•	>180 ARDEB ve Bilimsek Araştırma Proje desteği
 •	Kurumsal iş birlikleri: AFAD, T.C. Çevre ve Şehircilik Bakanlığı, Kandilli Rasathanesi, TUSAŞ, TÜBİTAK SAGE, TÜBİTAK TUG, TÜBİTAK MAM, TÜBİTAK KARE
