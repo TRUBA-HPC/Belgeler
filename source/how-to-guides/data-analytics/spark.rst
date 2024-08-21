@@ -155,8 +155,8 @@ Spark kümesi başlatma ve master düğüm arayüzüne bağlanma
     squeue
 
 Master düğüm nodelist'teki ilk node'da çalışacaktır (örn. hamsi88). Bu node'u iş çalışmaya başladıktan sonra ``spark-test-hamsi.out`` dosyasından öğrenebilirsiniz. 
-..
 
+..
     Master düğüm arayüzüne erişmek isterseniz 8080 portu için levrek1 arayüz sunucusu üzerinden ssh tüneli oluşturabilirsiniz.
 
     .. code-block:: bash
