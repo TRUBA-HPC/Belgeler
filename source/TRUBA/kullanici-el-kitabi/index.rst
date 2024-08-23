@@ -12,7 +12,7 @@ Kullanıcı El Kitabı
     kullanicihesaplari.rst
     hesaplamakumeleri.rst
     arf/index.rst
-    dosyasistemleri.rst
+    yuksek-performansli-dosya-sistemleri.rst
     yardimciuygulamalar.rst
     yazilimlar.rst
     moduller.rst
