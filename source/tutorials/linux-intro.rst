@@ -122,9 +122,41 @@ Sizler daha fazla kısayol öğrenmek isterseniz, **emacs shorcuts ya da vim sho
   Dosyanızda yaptığınız değişiklikleri kaydetmek için Esc tuşuna bastıktan sonra ekranın sol alt köşesinde ``:w`` yazarak yapabilirsiniz.
   Dosyayı kapatmak için tekrar Esc tuşuna bastıktan sonra ``:q`` yazmanız yeterlidir.
 
+.. _tar-kullanimi:
+
 **10.** ``tar``
 
-Terminalinizden sıkıştırılmış arşiv dosyalarını açmak için ``tar`` komutu kullanabilirsiniz.  Elinizde **vasp.5.4.4.tar.gz**  isimli bir dosya olduğunu farzedelim. Bu dosyayı ayıklamak için ``tar -xvzf vasp.5.4.4.tar.gz`` komutunu kullanabilirsiniz. 
+Terminalinizden sıkıştırılmış arşiv dosyalarını açmak ya da kapatmak için ``tar`` komutu kullanabilirsiniz.  
+
+Elinizde **arsiv_dosya.tar.gz**  isimli bir dosya olduğunu farzedelim. Bu dosyayı ayıklamak için aşağıdaki komutunu kullanabilirsiniz. 
+
+.. code-block:: 
+  
+  tar -xvzf arsiv_dosya.tar.gz
+  
+Tar komutu ile dosyalarınızı aşağıdaki gibi arşivleyebilirsiniz. Birden çok dosyayı tek bir arşiv dosyasında birleştirmek için (örneğin, ``arsiv_dosya.tar.gz``), aşağıdaki komutu kullanabilirsiniz
+
+.. code-block::
+
+	tar -cvzf arsiv_dosya.tar.gz dosya1 dosya2
+
+
+.. note::
+
+	dosya1 ve dosya2'yi birleştirmek istediğiniz dosyaların adlarıyla değiştiriniz.
+
+Bir dizindeki tüm dosyaları tek bir arşiv dosyasında birleştirmek için (örneğin, ``arsiv_dosya.tar.gz``), aşağıdaki komutu kullanabilirsiniz
+
+.. code-block::
+
+	tar -cvzf arsiv_dosya.tar.gz /ilgili/klasor/yolu
+
+.. note:: 
+
+	/ilgili/klasor/yolu ile birleştirmek istediğiniz dosyaları içeren dizinin mutlak yolunu belirtiniz.
+
+Ayrıca terminalden ``man tar`` komutu ile tar komutunun kulllanımı ile ilgili detaylara ulaşabilirsiniz.
+
 
 **11.** ``scp``
   
