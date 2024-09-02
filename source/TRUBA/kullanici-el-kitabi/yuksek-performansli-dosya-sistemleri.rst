@@ -219,10 +219,9 @@ Kullanıcının ev dizinlerinin (`../home/$USER` ve `../scratch/$USER`) boyutund
 
 .. code-block::
 
-   lfs quota -gh $USER /truba  
-   lfs quota -gh $USER /arf
+  lfs quota -gh $USER /truba
 
-komutu ile kullandığı dosya sayısını(inode) öğrenebilir. Ayrıca terminalden kullanıcı arayüzüne bağlantı sağladıktan sonra login ekranına dökülen kota bilgilerine ``dosya kotası`` da % olarak eklenmiştir. Bu değerin %100'un altında olması gerekmektedir.
+komutu ile kullandığı dosya sayısını(inode) öğrenebilir. Ayrıca terminalden ``barbun1`` kullanıcı arayüzüne bağlantı sağladıktan sonra login ekranına dökülen kota bilgilerine ``dosya kotası`` da % olarak eklenmiştir. Bu değerin %100'un altında olması gerekmektedir.
 
 .. _inode-cozum-tavsiyeleri:
 
