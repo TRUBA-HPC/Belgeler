@@ -610,3 +610,5 @@ Ek Notlar
 - Mathworks tarafından organize edilen TRUBA üzerinde MATLAB kullanımı ile ilgili yansılara :download:`buradan </assets/matlab-howto/Parallel-Computing-Workshop-Part-II.pdf>` ve seminerin videosuna ise `youtube kanalımızdan <https://youtu.be/-eUBuyXFDwU>`_  erişebilirsiniz.  
 
 Dökümanla ilgili eksik ya da hata bulmanız durumunda bizlere grid-teknik@ulakbim.gov.tr adresinden erişebilirsiniz. Eklenmesini istediğiniz bilgiler için de bizlere aynı adresten ulaşabilirsiniz. 
+
+MATLAB ile ilgili sorularınızı gönderirken cc olarak Figes Mühendislik'ten Onur Özkan'ı da ekleyiniz (onur.ozkan@figes.com.tr). Karşılaşmış olduğunuz hata ile ilgili ekran görüntüsü ve mümkünse matlab dosyasını da e-postaya ek yapınız.
