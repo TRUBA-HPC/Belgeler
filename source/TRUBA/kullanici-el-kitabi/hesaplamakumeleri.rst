@@ -23,7 +23,7 @@ Bu kılavuz aşağıdakileri kapsamaktadır:
 TRUBA Kaynakları
 ----------------
 
-2003 yılında faaliyete geçen TÜBİTAK ULAKBİM Yüksek Başarımlı ve Grid Hesaplama Merkezi'nde bulunan kaynaklar TRUBA'ya dahildir. Günümüzde TRUBA > 80.000 işlemci çekirdeği, 216 adet GPU ve toplamda 7.5PByte yapılandırılmış yüksek performanslı Lustre dosya sistemi ile araştırmacılarımıza hizmet vermektedir. 
+2003 yılında faaliyete geçen TÜBİTAK ULAKBİM Yüksek Başarımlı ve Grid Hesaplama Merkezi'nde bulunan kaynaklar TRUBA'ya dahildir. Günümüzde TRUBA > 80.000 işlemci çekirdeği, 312 adet GPU ve toplamda 7.5PByte yapılandırılmış yüksek performanslı Lustre ve WEKA dosya sistemi ile araştırmacılarımıza hizmet vermektedir. 
 
 
 .. list-table:: TRUBA Kaynakları
@@ -133,7 +133,7 @@ TRUBA Kaynakları
      - *-*
      - 7.9 Tflops
      - 4 TB 
-     - Orkinos Kümesi 
+     - orkinos
    * - 2017
      - 128 
      - 14 çekirdek x 2 CPU 
@@ -141,7 +141,7 @@ TRUBA Kaynakları
      - 970 
      - 1164 Gflops
      - 256 GB 
-     - Sardalya Kümesi
+     - sardalya
    * - 2018
      - 120
      - 20 çekirdek x 2 CPU
@@ -149,7 +149,7 @@ TRUBA Kaynakları
      - 1400
      - 2048Gflops
      - 384 GB
-     - Barbun Kümesi
+     - barbun
    * - 2018
      - 24
      - 20 çekirdek x 2CPU & 2xNvidia P100 GPU
@@ -157,7 +157,7 @@ TRUBA Kaynakları
      - 1400
      - 2048Gflops & 9400Gflops 
      - 384 GB & 2x16 GB HBM2
-     - Barbun-Cuda Kümesi
+     - barbun-cuda
    * - 2018
      - 24
      - 20 çekirdek x 2CPU & 4xNvidia V100 GPU
@@ -165,7 +165,7 @@ TRUBA Kaynakları
      - 1400 
      - 2048Gflops & 4x7800Gflops
      - 384 GB & 4x16 GB HBM 
-     - Akya-Cuda Kümesi
+     - akya-cuda
    * - 2021
      - 144
      - 28 çekirdek x 2 CPU
@@ -173,15 +173,15 @@ TRUBA Kaynakları
      - *-*
      - 3.234 Tflops
      - 192 GB 
-     - Hamsi Kümesi
+     - hamsi
    * - 2021
      - 9
      - 64 çekirdek x 2CPU & 8xNvidia A100 GPU
      - AMD 7742 2.24GHz
      - *-*
-     - 4.600Gflops & 8x9600Gflops
+     - 4.600Gflops & 8x9.7Tflops
      - 1 TB & 8x80GB HBM
-     - Palamut-Cuda Kümesi
+     - palamut-cuda
    * - 2023
      - 504
      - 56 çekirdek x 2CPU 
@@ -189,8 +189,15 @@ TRUBA Kaynakları
      - *-*
      - 7 Tflops
      - 256 GB
-     - Orfoz Kümesi
-
+     - orfoz
+   * - 2024
+     - 24
+     - 32 çekirdek x 2CPU & 4xNvidia H100 GPU
+     - Intel(R) Xeon(R) GOLD 6548Y+ 2.5GHz
+     - *-*
+     - 5Tflops & 4x34Tflops
+     - 1 TB & 4x80GB HBM
+     - kolyoz-cuda 
 
 .. _guncel-sunucu-aileleri:
 
@@ -241,6 +248,16 @@ Hamsi sunucuları 144 adet INSPUR NF5180M5 sunuculardan oluşmaktadır. Her bir 
 Orfoz sunucuları 504 adet Lenovo ThinkSystem SR630 V3 sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet Intel(R) Xeon(R) Platinum 8480+ CPU @ 2.0GHz işlemci ve toplam 112 adet işlemci çekirdeği bulunmaktadır. Sunucular birbirlerine 200Gbps Infiniband ağ kartları ile bağlıdırlar. 
 
 Orfoz sunucularının yer aldığı ARF hesaplama kümesi hakkındaki ayrıntılı bilgilere  :ref:`arf-kumesi` sayfasından erişim sağlayabilirsiniz.
+
+.. _kolyoz-cuda:
+
+*Kolyoz-cuda*
+^^^^^^^^^^^^^^^^^^^^
+Kolyoz sunucuları 24 adet `Lenovo ThinkSystem SD650-N V3 <https://www.lenovo.com/us/en/p/servers-storage/servers/supercomputing/thinksystem-sd650-n-v3-high-density-server/len21ts0028>`_ sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet Intel(R) Xeon(R) GOLD 6548Y+ CPU @ 2.5GHz işlemci ve toplam 64 adet işlemci çekirdeği ve 4 adet NVIDIA H100 (80GB, NVLink, HBM3, SXM5) GPU kartı bulunmaktadır. Sunucular birbirlerine 4 adet 200Gbps Infiniband ağ kartları ile bağlıdırlar. 
+
+``kolyoz-cuda`` kuyruğunda ve ``cuda-ui`` kullanıcı arayüzü üzerinde Rocky Linux (BLue Onyx) 9.4 ve 9.2 işletim sistemi ve hesaplama sunucuları üzerinde NVIDIA 560.35.03 sürücüsü bulunmaktadır. `NVIDIA 560.35.03 sürücüsü CUDA 12.* versiyonu ile uyumludur <https://docs.nvidia.com/deploy/cuda-compatibility/>`_ .
+
+Kolyoz sunucularının yer aldığı ARF ACC hesaplama kümesi hakkındaki ayrıntılı bilgilere  :ref:`arf-acc-kumesi` sayfasından erişim sağlayabilirsiniz.
 
 .. _palamut-cuda:
 
@@ -312,7 +329,6 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - nodes
      - #nodes
      - max run time
-     - priority
      - min core
      - defMemPerCore 
      - maxMemPerCore
@@ -321,7 +337,6 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - levrekv2 
      - 8
      - 15-00:00:00
-     - 2000 
      - 1
      - 9500MB
      - 10500MB  
@@ -330,7 +345,6 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - barbun, barbun-cuda, akya-cuda, orkinos
      - 238
      - 00-00:15:00
-     - 65535
      - 1
      - 8000MB 
      - 9500MB
@@ -339,7 +353,6 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - barbun
      - 189
      - 08-00:00:00 
-     - 3200  
      - 4    
      - 8000MB     
      - 9000MB
@@ -348,7 +361,6 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - barbun
      - 189
      - 15-00:00:00
-     - 3000  
      - 4  
      - 8000MB, 8500MB   
      - 9000MB, 9500MB 
@@ -357,7 +369,6 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - levrekv2
      - 14  
      - 15-00:00:00 
-     - 3000   
      - 1     
      - 8000MB   
      - 9000MB
@@ -366,7 +377,6 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - orkinos
      - 1
      - 8-00:00:00
-     - 2800    
      - 4 
      - 17000MB  
      - 18400MB
@@ -375,7 +385,6 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - sardalya
      - 100   
      - 15-00:00:00
-     - 2800  
      - 4
      - 8000MB
      - 9000MB
@@ -384,7 +393,6 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - barbun   
      - 119  
      - 15-00:00:00  
-     - 2800     
      - 4
      - 8500MB  
      - 9500MB
@@ -392,8 +400,7 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
    * - barbun-cuda 
      - barbun-cuda 
      - 24  
-     - 15-00:00:00   
-     - 2800  
+     - 15-00:00:00  
      - 20       
      - 8500MB    
      - 9500MB   
@@ -402,7 +409,6 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - akya-cuda
      - 24  
      - 15-00:00:00 
-     - 2800 
      - 10 
      - 8500MB   
      - 9500MB
@@ -411,7 +417,6 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - palamut
      - 9  
      - 03-00:00:00
-     - 2800   
      - 16   
      - 7500MB  
      - 16384MB
@@ -429,12 +434,18 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - orfoz 
      - 504
      - 03-00:00:00  
-     - 3000     
-     - 56    
+     - 56 / 55
      - 2000MB 
      - 2295MB
      - aktif
-
+   * - kolyoz-cuda
+     - kolyoz
+     - 24
+     - 03-00:00:00  
+     - 16  
+     - 16GB 
+     - 16GB
+     - YZ Çalışmaları
 
 .. warning::
 
@@ -463,7 +474,7 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
 
 .. warning::
 
-  *barbun-cuda, akya-cuda* ve *palamut-cuda* kuyruklarına gönderilen işlerin GPU kullanabilecek ve GPU talep eden işler olması zorunludur. Yeni düzenleme ile aynı GPU'u birden fazla iş tarafından kullanılabilecektir. GPU kümelerinin kullanımı ile ilgili dokümantasyon :ref:`gpu-kilavuzu` sayfamızı inceleyebilirsiniz.
+  *barbun-cuda, akya-cuda*, *palamut-cuda* ve *kolyoz-cuda* kuyruklarına gönderilen işlerin GPU kullanabilecek ve GPU talep eden işler olması zorunludur.  GPU kümelerinin kullanımı ile ilgili dokümantasyon :ref:`gpu-kilavuzu` sayfamızı inceleyebilirsiniz.
 
 ..
 
@@ -642,6 +653,21 @@ Her bir sunucuda 56 çekirdek ve 192GB bellek bulunmaktadır. Kuyrukta işlerin 
 
 komutu ile görülebilir.
 
+.. _orfoz-node:
+
+*orfoz*
+^^^^^^^
+
+Her bir sunucuda 112 çekirdek ve 256GB bellek bulunmaktadır. Kuyrukta işlerin en fazla çalışma süresi 3 gündür. Sistemin verimli kullanılabilmesi için gönderilecek işler en az 56 çekirdek talep edilmelidir. Kuyruğa gönderilebilecek işlerin minimum çekirdek sayısı 56'dır.
+
+İşlerde bellek sınırlaması kullanılmaktadır. Gönderilen işlerin sunucuların bellek sınırlamalarına uygun olarak gönderilmesi gerekmektedir. Bu kuyruk ile ilgili ayrıntılı bilgi ilgili kullanıcı arayüzüne bağlandıktan sonra
+
+.. code-block::
+
+   scontrol show partition=orfoz
+
+komutu ile görülebilir.
+
 *Palamut-cuda*
 ^^^^^^^^^^^^^^
 
@@ -655,17 +681,16 @@ Her bir sunucuda 128 çekirdek ve 1TB bellek ayrıca 8'er adet Nvidia A100 80GB 
 
 komutu ile görülebilir.
 
-.. _orfoz-node:
 
-*orfoz*
-^^^^^^^
+*Kolyoz-cuda*
+^^^^^^^^^^^^^^
 
-Her bir sunucuda 112 çekirdek ve 256GB bellek bulunmaktadır. Kuyrukta işlerin en fazla çalışma süresi 3 gündür. Sistemin verimli kullanılabilmesi için gönderilecek işler en az 56 çekirdek talep edilmelidir. Kuyruğa gönderilebilecek işlerin minimum çekirdek sayısı 56'dır.
+Her bir sunucuda 64 çekirdek ve 1TB bellek ayrıca 4'er adet NVIDIA H100 80GB GPU (NVLink) kartı bulunmaktadır. Kuyrukta işlerin en fazla çalışma süresi 3 gündür. Sistemin verimli kullanılabilmesi için gönderilecek işler en az 16 çekirdek ve 1 GPU talep etmelidir. Ayrıca sistemlerde tmp olarak kullanılmak üzere 7TB NVME disk / dizinine bağlanmıştır. Yüksek I/O gerektiren işlerin / dizininde çalıştırılması gerekmektedir.
 
-İşlerde bellek sınırlaması kullanılmaktadır. Gönderilen işlerin sunucuların bellek sınırlamalarına uygun olarak gönderilmesi gerekmektedir. Bu kuyruk ile ilgili ayrıntılı bilgi ilgili kullanıcı arayüzüne bağlandıktan sonra
+İşlerde bellek sınırlaması kullanılmaktadır. Gönderilen işlerin sunucuların bellek sınırlamalarına uygun olarak gönderilmesi gerekmektedir. Bu kuyruk ile ilgili ayrıntılı bilgi cuda-ui kullanıcı arayüzüne bağlandıktan sonra
 
 .. code-block::
 
-   scontrol show partition=orfoz
+   scontrol show partition=kolyoz-cuda
 
 komutu ile görülebilir.

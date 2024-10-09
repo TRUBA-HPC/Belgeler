@@ -4,8 +4,7 @@
 ARF ACC Kümesi Hakkında Genel Bilgiler
 ===================================
 
-
-ARF ACC hesaplama kümesinde bulunan ``kolyoz`` ismini atadığımız `Lenovo ThinkSystem SD650-N V3 <https://www.lenovo.com/us/en/p/servers-storage/servers/supercomputing/thinksystem-sd650-n-v3-high-density-server/len21ts0028>`_ hesaplama sunucularından oluşan kümenin genel özellikleri ve bir tane sunucunun üstten görünümü aşağıdaki gibidir:
+ARF ACC hesaplama kümesinde bulunan ``kolyoz`` ismini atadığımız `Lenovo ThinkSystem SD650-N V3 <https://www.lenovo.com/us/en/p/servers-storage/servers/supercomputing/thinksystem-sd650-n-v3-high-density-server/len21ts0028>`_ hesaplama sunucularından oluşan ``kolyoz-cuda``kümesinin genel özellikleri ve bir tane sunucunun üstten görünümü aşağıdaki gibidir:
 
 .. image:: /assets/arf-acc/arf-acc.png
    :width: 100%

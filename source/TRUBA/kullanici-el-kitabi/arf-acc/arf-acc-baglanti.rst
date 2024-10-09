@@ -4,7 +4,7 @@
 ARF ACC Kullanıcı Arayüzüne Bağlantı
 ================================
 
-ARF ACC hesaplama kümesinde yer alan ``kolyoz`` hesaplama sunucularından oluşan ``kolyoz-cuda`` bölümü yalnızca ``cuda-ui`` kullanıcı arayüzü üzerinden iş gönderimine izin verecektir.
+ARF ACC hesaplama kümesinde yer alan ``kolyoz`` hesaplama sunucularından oluşan ``kolyoz-cuda`` kuyruğu yalnızca ``cuda-ui`` kullanıcı arayüzü üzerinden iş gönderimine izin verecektir.
 
 Kullanıcı arayüzüne erişim için aşağıdaki adresleri kullanabilirsiniz:
 
@@ -42,6 +42,6 @@ Herhangi bir kullanıcı arayüzündeyseniz (``babrun1, arf-ui1, arf-ui2``) doğ
 
 .. code-block::  
 
-    ssh 172.16.6.11 
+    ssh 172.16.6.16 
 
 ile ``cuda-ui`` kullanıcı arayüzüne bağlanabilirsiniz.
