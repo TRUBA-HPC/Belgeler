@@ -10,21 +10,30 @@ Kullanıcı arayüzüne erişim için aşağıdaki adresleri kullanabilirsiniz:
 
 
 .. list-table:: 
-   :widths: 40 60
+   :widths: 25 25 25 25
    :header-rows: 1
    :align: center
 
-   * - Sunucu
-     - Open VPN
 
-   * - cuda-ui
-     - 172.16.6.16
+   *  - Tur 
+      - Sunucu
+      - Adres
+      - IP
 
-   * - Open OnDemand
-     - http://172.16.6.16
+   *  - ssh
+      - cuda-ui.yonetim
+      - cuda-ui.yonetim
+      - 172.16.6.16
 
-   * - Grafana
-     - http://172.16.6.25:3000/login
+   *  - web
+      - cuda-ui.yonetim
+      - https://cuda-ui.yonetim
+      - 172.16.6.16
+
+   *  - web-monitör
+      - grafana.yonetim
+      - http://grafana.yonetim:3000/login
+      - 172.16.6.25
 
 OpenVPN bağlantınız olduğu varsayılarak kişisel makinenizden ARF ACC hesaplama kümesine `<kullanici-adiniz>` kısmını kendi kullanıcı adınız ile değiştirerek 
 
@@ -38,7 +47,7 @@ OpenVPN bağlantınız olduğu varsayılarak kişisel makinenizden ARF ACC hesap
 
 ile bağlantı sağlayabilirsiniz.
 
-Herhangi bir kullanıcı arayüzündeyseniz (``babrun1, arf-ui1, arf-ui2``) doğrudan terminalden
+Herhangi bir kullanıcı arayüzündeyseniz (``barbun1, arf-ui1, arf-ui2``) doğrudan terminalden
 
 .. code-block::  
 
