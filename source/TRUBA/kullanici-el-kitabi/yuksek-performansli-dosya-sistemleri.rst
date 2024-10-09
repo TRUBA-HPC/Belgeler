@@ -81,21 +81,21 @@ ARF hesaplama kümesi için `/arf/home`, `/arf/scratch` ve `/truba/home` dosya s
      - Bellek: 100GB  |br| Dosya Sayısı: 100K(inode) 
      - Araştırmacının önemli gördüğü, |br| kalıcı dosyalarının bulunacağı |br| hızlı ana dizin.
      - Uygulama kurulumları, |br| Betik dosyaları, |br| İşlerin girdi dosyaları  |br| Yeniden kullanılabilir, |br| Küçük boyutlu çıktı dosyalarının bulunacağı dizindir. |br| Herhangi bir kota arttırımı söz konusu değildir.  |br| Proje kotaları ayrıca belirlenmektedir.
-     - arf-ui1  |br| arf-ui2 |br| OpenOndemand |br| orfoz
+     - arf-ui1  |br| arf-ui2 |br| OpenOndemand |br| orfoz |br| cuda-ui |br| kolyoz
 
    * - `/arf/scratch`
      - Scratch dizini
      - Bellek: 1TB  |br| Dosya Sayısı: 200K(inode) 
      - Araştırmacının işlerini, |br| çalıştırmak için kullanacağı |br| hızlı ana dizin
      - Çalışan işler için kullanılacak dizin, |br| Çalışan işin geçici dosyalarının kullanabileceği dizin, |br| Çalışan işlerin çıktı dosyalarının depolanabileceği dizindir. |br| Bu dizin içerisinde uzun süreli veri depolaması gerçekleştirilemez. |br| Dosyalar periyodik olarak sistem tarafından otomatik silinecektir. |br| Herhangi bir kota arttırımı ve süre uzatımı söz konusu değildir. |br| Proje kotaları ayrıca belirlenmektedir.
-     - arf-ui1  |br| arf-ui2 |br| OpenOndemand |br| orfoz
+     - arf-ui1  |br| arf-ui2 |br| OpenOndemand |br| orfoz |br| cuda-ui |br| kolyoz
 
    * - `/truba/home`
      - Depolama
      - Bellek: 2TB  |br| Dosya Sayısı: 100K(inode) 
      - Araştırmacının verilerini |br| geçici olarak depolayacağı dizin
      - `/arf/scratch` dizini |br| otomatik olarak temizleneceği için; |br| girdi ve çıktı dosyalarının |br| proje süresi boyunca depolanabileceği ev dizinidir.
-     - arf-ui1  |br| arf-ui2 |br| OpenOndemand |br| orfoz
+     - arf-ui1  |br| arf-ui2 |br| OpenOndemand |br| orfoz |br| cuda-ui |br| kolyoz
 
 .. _truba-dosya-sistemi:
 
@@ -147,6 +147,26 @@ Sunucular ve Kullanıcı Arayüzleri
 ---------------------------------
 
 ARF ve TRUBA hesaplama kümelerinde bulunan sunuculara iş gönderebilmek için bağlı bulundukları kullanıcı arayüzleri kullanılmalıdır. İki sistem için merkezi kurulumlar ve erişebildikleri dosya sistemleri farklıdır. Hangi sunucuların veya kuyrukların işleriniz için uygun olduğu bilgisi :ref:`hesaplama kümeleri <hesaplama-kumeleri>`  sayfasından detaylı bilgilere erişilerek karar verilebilir.
+
+
+.. list-table:: ARF ACC Sistemi
+   :widths: 10 15 25 25 25 25
+   :header-rows: 1
+   :align: center
+
+   * - Sunucu Türü
+     - Ev Dizini
+     - Scratch
+     - Depolama
+     - Yerel
+     - Kullanıcı Arayüzü
+
+   * - kolyoz
+     - `/arf/home`
+     - `/arf/scratch`
+     - `/truba/home`
+     - `/tmp` - 6TB
+     - cuda-ui |br| OpenOndemand
 
 .. list-table:: ARF Sistemi
    :widths: 10 15 25 25 25 25
