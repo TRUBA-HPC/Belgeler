@@ -6,6 +6,7 @@ Duyurular
     :maxdepth: 1
     
     /TRUBA/kullanici-el-kitabi/arf-hesaplamakumesi.rst
+    /TRUBA/kullanici-el-kitabi/arf-acc/index.rst
     /TRUBA/kullanici-el-kitabi/yuksek-performansli-dosya-sistemleri.rst
     /TRUBA/kullanici-el-kitabi/kullanicihesaplari.rst
     /TRUBA/TRUBA-proje/index.rst
