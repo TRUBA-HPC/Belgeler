@@ -13,6 +13,7 @@ TRUBA Kullanıcı Dokümanları
 
    quick-access/duyurular.rst
    TRUBA/kullanici-el-kitabi/arf-hesaplamakumesi.rst
+   TRUBA/kullanici-el-kitabi/arf-acc/index.rst
    TRUBA/kullanici-el-kitabi/yuksek-performansli-dosya-sistemleri.rst
    TRUBA/kullanici-el-kitabi/open-vpn/index.rst
    TRUBA/kullanici-el-kitabi/kullanici-ara-yuzu/ssh-ile-baglanti/index.rst
@@ -34,7 +35,7 @@ TRUBA Kullanıcı Dokümanları
    :maxdepth: 1
    
    TRUBA/kullanici-el-kitabi/arf/index.rst
-   TRUBA/kullanici-el-kitabi/arf/uygulama-kilavuzlari/Gaussian/index.rst
+   TRUBA/kullanici-el-kitabi/arf-acc/index.rst
 
 .. toctree::
    :caption: Uygulama Kılavuzları
