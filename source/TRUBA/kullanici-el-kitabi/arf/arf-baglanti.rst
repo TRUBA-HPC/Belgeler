@@ -8,24 +8,46 @@ ARF hesaplama kümesi erişim adresleri şu şekildedir:
 
 
 .. list-table:: 
-   :widths: 40 60
-   :header-rows: 1
-   :align: center
+  :widths: 25 25 25 25
+  :header-rows: 1
+  :align: center
 
-   * - Sunucu
-     - Open VPN
+  * - Tur 
+    - Sunucu
+    - Adres
+    - IP
 
-   * - arf-ui1
-     - 172.16.6.11
+  * - ssh
+    - arf-ui1.yonetim
+    - arf-ui1.yonetim
+    - 172.16.6.11
 
-   * - arf-ui2
-     - 172.16.6.12
+  * - ssh
+    - arf-ui2.yonetim
+    - arf-ui2.yonetim
+    - 172.16.6.12
 
-   * - Open OnDemand
-     - http://172.16.6.20
+  * - ssh
+    - arf-ui3.yonetim
+    - arf-ui3.yonetim
+    - 172.16.6.13
 
-   * - Grafana
-     - http://172.16.6.25:3000/login
+  * - ssh
+    - arf-ui4.yonetim
+    - arf-ui4.yonetim
+    - 172.16.6.14
+
+  * - web
+    - openondemand.yonetim
+    - https://openondemand.yonetim
+    - 172.16.6.20
+
+  * - web-monitör
+    - grafana.yonetim
+    - http://grafana.yonetim:3000/login
+    - 172.16.6.25
+
+
 
 OpenVPN bağlantınız olduğu varsayılarak kişisel makinenizden ARF hesaplama kümesine `<kullanici-adiniz>` kısmını kendi kullanıcı adınız ile değiştirerek 
 

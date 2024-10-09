@@ -11,3 +11,4 @@ ARF ACC Hesaplama Kümesi
 
     arf-acc-genel-bilgileri.rst
     arf-acc-baglanti.rst
+    arf-acc-python.rst
