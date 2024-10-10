@@ -15,7 +15,7 @@ Kullanıcı arayüzüne erişim için aşağıdaki adresleri kullanabilirsiniz:
    :align: center
 
 
-   *  - Tur 
+   *  - Tür 
       - Sunucu
       - Adres
       - IP
