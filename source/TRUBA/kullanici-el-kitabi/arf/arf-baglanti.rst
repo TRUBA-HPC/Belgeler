@@ -12,7 +12,7 @@ ARF hesaplama kümesi erişim adresleri şu şekildedir:
   :header-rows: 1
   :align: center
 
-  * - Tur 
+  * - Tür 
     - Sunucu
     - Adres
     - IP
@@ -39,12 +39,12 @@ ARF hesaplama kümesi erişim adresleri şu şekildedir:
 
   * - web
     - openondemand.yonetim
-    - https://openondemand.yonetim
+    - `https://openondemand.yonetim <https://172.16.6.20>`_
     - 172.16.6.20
 
   * - web-monitör
     - grafana.yonetim
-    - http://grafana.yonetim:3000/login
+    - `http://grafana.yonetim:3000/login <http://172.16.6.25:3000/login>`_
     - 172.16.6.25
 
 
