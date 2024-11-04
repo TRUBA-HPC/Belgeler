@@ -10,13 +10,13 @@ Aşırı Ölçekli Erişim çağrısı, yüksek etkili ve yüksek kazançlı yen
 Çağrı, hesaplama süresi, veri depolama ve destek kaynakları açısından son derece büyük tahsislere olan ihtiyacı ve kullanım kapasitesini gerekçelendiren bilim, endüstri ve kamu sektörünün tüm alanlarına açıktır.
 
 * 17 Nisan 2024 - 10:00 (Lüksemburg Saati)
-* 4 Ekim 2024 - 10:00 (Lüksemburg Saati)
+* 10 Ekim 2024 - 10:00 (Lüksemburg Saati)
 
 Tahsisler, projelerin devamı için başvurma seçeneği ile bir (1) yıl süreyle verilir. Bu devam, usulüne uygun olarak gerekçelendirilecek, maksimum bir (1) ek yılla sınırlı olacak ve devam etmekte olan ihale edilen projelerinin değerlendirmesine bağlı olacaktır. 
 
 Başvuru Sahipleri (Proje Yürütücüleri (PI)) herhangi bir zamanda yalnızca bir Aşırı Ölçekli Erişime hak kazanabilirler.
 
-Proje başvuruları `PRACE Kullanıcı Portalı <https://pracecalls.eu/>`_ aracılığıyla gerçekleştirilmektedir.
+Proje başvuruları `EuroHPC JU Kullanıcı Portalı <https://access.eurohpc-ju.europa.eu/>`_ aracılığıyla gerçekleştirilmektedir.
 
 .. list-table:: Aşırı Ölçekli Erişim Çağrısı için EuroHPC JU Sistemleri
    :widths: 25 25 25 25 25 25

@@ -27,7 +27,7 @@ Bu erişim çağrıları kapsamında endüstriyel kullanıcılar için iki tip k
 
 * **Ticari Erişim:** Endüstriyel kullanıcılar sivil uygulamalar için değerlendirmeye dayalı bir süreç olmadan ödeme yaparak kaynakları kullanabilmeleri planlanmaktadır.
 
-İlgili erişim modlarına başvurular, `PRACE Kullanıcı Portalı <https://pracecalls.eu/>`_ üzerinden yapılabilmektedir. 
+İlgili erişim modlarına başvurular, `EuroHPC JU Kullanıcı Portalı <https://access.eurohpc-ju.europa.eu/>`_ üzerinden yapılabilmektedir. 
 
 ..
 

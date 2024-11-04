@@ -13,15 +13,24 @@ Uygulama Kılavuzları
    GPU/index.rst
    deep-learning/index.rst
    data-analytics/index.rst
-   AMBER/index.rst
-   GROMACS/index.rst
-   LAMMPS/index.rst
-   VASP/index.rst
-   QuantumEspresso/index.rst
-   Gaussian/index.rst
-   CASTEP/index.rst
-   MATLAB/index.rst
-   Snakemake/index.rst
-   Cvmfs/index.rst
-   R/index.rst
    Apptainer/index.rst
+   AMBER/index.rst
+   CASTEP/index.rst
+   Cvmfs/index.rst
+   Gaussian/index.rst
+   GREASY/index.rst
+   GROMACS/index.rst
+   MATLAB/index.rst
+   LAMMPS/index.rst
+   QuantumEspresso/index.rst
+   R/index.rst
+   Snakemake/index.rst
+   VASP/index.rst
+   
+   
+   
+   
+   
+   
+   
+   
