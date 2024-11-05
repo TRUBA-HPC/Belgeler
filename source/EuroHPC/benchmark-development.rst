@@ -31,7 +31,7 @@ Başvuru koşulları hakkında bilgi edinmek için aşağıdaki linkte yer alan 
 * `Geliştirme (Development) Erişim Çağrısı için <https://eurohpc-ju.europa.eu/eurohpc-ju-call-proposals-development-access_en>`_
 
 
-Proje önerileri, `PRACE Kullanıcı Portalı <https://pracecalls.eu/>`_ aracılığıyla, herhangi bir zamanda sunulabilir (sürekli açık). Projelerin değerlendirilmesi, her ay sabit bir tarihten sonra yapılır (kesme tarihi olarak anılır). Tahsis süreleri, kıyaslama çağrısı için iki veya üç ay, geliştirme çağrısı için ise 6 ay veya bir yıldır. Geliştirme çağrısı için tahsis iki kere yenilenebilir.
+Proje önerileri, `EuroHPC JU Kullanıcı Portalı <https://access.eurohpc-ju.europa.eu/>`_ aracılığıyla, herhangi bir zamanda sunulabilir (sürekli açık). Projelerin değerlendirilmesi, her ay sabit bir tarihten sonra yapılır (kesme tarihi olarak anılır). Tahsis süreleri, kıyaslama çağrısı için iki veya üç ay, geliştirme çağrısı için ise 6 ay veya bir yıldır. Geliştirme çağrısı için tahsis iki kere yenilenebilir.
 
 
 .. list-table:: Kıyaslama ve Geliştirme Erişim Çağrıları için EuroHPC JU Sistemleri
@@ -149,7 +149,7 @@ Proje önerileri, `PRACE Kullanıcı Portalı <https://pracecalls.eu/>`_ aracıl
 
 .. note::
 
-  * Yukarıdaki EuroHPC sistemleri, üretime giren en son mevcut sistemi gösterecek şekilde sıralanmıştır. 
+  * Yukarıdaki EuroHPC sistemleri, operasyonel olan en son mevcut sistemi gösterecek şekilde sıralanmıştır. 
   * Kaynaklar düğüm saati (node hours) cinsinden gösterilmektedir.
 
 Kıyaslama ve Geliştirme Çağrıları için daha fazla bilgi almak üzere ilgili web sayfalarını ziyaret edebilirsiniz:

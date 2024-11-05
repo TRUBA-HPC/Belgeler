@@ -26,7 +26,7 @@ Güncel kurulu yazılımları
 
 	module available
 
-komutu ile listeleyebilirsiniz. Aşağıda örnek kurulu olan modülleri bulabilirsiniz. 
+komutu ile listeleyebilirsiniz. Aşağıda örnek kurulu olan modülleri bulabilirsiniz. Örnek SLURM betik dosyaları ``/arf/sw/scripts`` dizininde bulunmaktadır.
 
 .. dropdown::  :octicon:`codespaces;1.5em;secondary` Yüklü Modüller (Tıklayınız)
     :color: info

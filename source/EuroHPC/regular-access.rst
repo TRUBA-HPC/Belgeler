@@ -15,7 +15,7 @@ Tahsisler, projelerin devamı için başvurma seçeneği ile bir (1) yıl sürey
 
 Başvuru Sahipleri (Proje Yürütücüleri (PI)) herhangi bir zamanda yalnızca bir Düzenli Erişime hak kazanabilirler.
 
-Proje başvuruları `PRACE Kullanıcı Portalı <https://pracecalls.eu/>`_ aracılığıyla gerçekleştirilmektedir.
+Proje başvuruları `EuroHPC JU Kullanıcı Portalı <https://access.eurohpc-ju.europa.eu/>`_ aracılığıyla gerçekleştirilmektedir.
 
 
 .. list-table:: Düzenli Erişim Çağrısı için EuroHPC JU Sistemleri
