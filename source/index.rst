@@ -42,6 +42,7 @@ TRUBA Kullanıcı Dokümanları
    :maxdepth: 1
    
    how-to-guides/genel_kurulum/index.rst
+   how-to-guides/Apptainer/index.rst
    how-to-guides/python/index.rst
    how-to-guides/R/index.rst
    how-to-guides/GPU/index.rst
@@ -50,6 +51,7 @@ TRUBA Kullanıcı Dokümanları
    how-to-guides/AMBER/index.rst
    how-to-guides/CASTEP/index.rst
    how-to-guides/Gaussian/index.rst
+   how-to-guides/GREASY/index.rst
    how-to-guides/GROMACS/index.rst
    how-to-guides/LAMMPS/index.rst
    how-to-guides/QuantumEspresso/index.rst
@@ -57,7 +59,7 @@ TRUBA Kullanıcı Dokümanları
    how-to-guides/MATLAB/index.rst
    how-to-guides/Snakemake/index.rst
    how-to-guides/Cvmfs/index.rst
-   how-to-guides/Apptainer/index.rst
+
 
 .. toctree::
    :caption: TRUBA Hakkında
