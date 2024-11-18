@@ -1,7 +1,7 @@
 .. _arf-acc-python:
 
 ===============================
-ARF ACC Kümesinde Python Kullanımı
+Python Kullanımı
 ===============================
 
 Bu belge ARF ACC kumelerinde `Python <https://www.python.org/>`_ platformunun kullanımını kolaylaştırmak için oluşturulmuştur.
@@ -19,11 +19,11 @@ Bu belge ARF ACC kumelerinde `Python <https://www.python.org/>`_ platformunun ku
 Python Kullanımı
 ----------------
 
-Yapay zeka alanında sıklıkla kullanılan ``XGBoost, Catboost, TensorFlow, Keras, PyTorch, Lightning, scikit-learn, tranformers,deepspeed, datasets, langchain...`` paketleri NVIDIA H100 GPUlar ile uyumlu özelliştirilmiş kurulumlarını içeren bir modül hazırlanmıştır. Bu modülü 
+Yapay zeka alanında sıklıkla kullanılan ``XGBoost, Catboost, TensorFlow, Keras, PyTorch, Lightning, scikit-learn, tranformers, deepspeed, datasets, langchain...`` paketleri NVIDIA H100 ve A100 GPUlar ile uyumlu özelliştirilmiş kurulumlarını içeren bir modül hazırlanmıştır. Bu modülü 
 
     .. code-block:: bash
 
-        module load comp/python/ai-tools-kolyoz-1.0
+        module load apps/truba-ai/gpu-2024.0
 
 ile yükledikten sonra, ``conda list`` komutu ile yüklü paketleri listeleyebilirsiniz.
 

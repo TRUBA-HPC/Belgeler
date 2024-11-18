@@ -1,7 +1,7 @@
 .. _arf-acc-baglanti:
 
 ================================
-ARF ACC Kullanıcı Arayüzüne Bağlantı
+Kullanıcı Arayüzüne Bağlantı
 ================================
 
 ARF ACC hesaplama kümesinde yer alan ``kolyoz`` hesaplama sunucularından oluşan ``kolyoz-cuda`` kuyruğu yalnızca ``cuda-ui`` kullanıcı arayüzü üzerinden iş gönderimine izin verecektir.

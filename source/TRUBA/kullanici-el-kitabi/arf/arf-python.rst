@@ -70,15 +70,28 @@ Jupyter Araçları
 
 ARF sisteminde interaktif islerinizi gerçekleştirebileceğiniz Open OnDemand arayüzü servis edilmişitr. :ref:`arf-baglanti` sayfasından interaktif arayüze ait bağlantı bilgilerine erişebilirsiniz. Bu kullanıcı arayüz üzerinde bulunan notebook kullanım özet bilgileri şu şekildedir:
 
-**Jupyter Notebook - Intel AI tools**
+..
+    **Jupyter Notebook - Intel AI tools**
 
-Buradan açılan jupyter notebook, yapay zeka alanında kullanılan intel işlemciler için özelliştirilmiş paketlerin kurulumlarını içermektedir. Buradan açılmış bir jupyter notebook içerisinde
+    Buradan açılan jupyter notebook, yapay zeka alanında kullanılan intel işlemciler için özelliştirilmiş paketlerin kurulumlarını içermektedir. Buradan açılmış bir jupyter notebook içerisinde
+
+    .. code-block:: 
+
+        !conda list
+
+    ile yüklü paketleri listeleyebilirsiniz. Temel olarak, ``XGBoost, TensorFlow, Keras, PyTorch, Scikit-learn`` paketleri intel işlemciler ile optimize çalışacak şekilde kurulmuştur. Daha fazla detayına `buradan <https://www.intel.com/content/www/us/en/developer/tools/oneapi/ai-analytics-toolkit.html#gs.9ay6kn>`_ erişebilirsiniz.
+
+
+**Jupyter Notebook**
+
+Buradan açılan jupyter notebook, yapay zeka alanında kullanılan temel olarak, ``XGBoost, TensorFlow, Keras, PyTorch, Scikit-learn`` paketlerin kurulumlarını içermektedir. Buradan açılmış bir jupyter notebook içerisinde
 
 .. code-block:: 
 
     !conda list
 
-ile yüklü paketleri listeleyebilirsiniz. Temel olarak, ``XGBoost, TensorFlow, Keras, PyTorch, Scikit-learn`` paketleri intel işlemciler ile optimize çalışacak şekilde kurulmuştur. Daha fazla detayına `buradan <https://www.intel.com/content/www/us/en/developer/tools/oneapi/ai-analytics-toolkit.html#gs.9ay6kn>`_ erişebilirsiniz.
+ile yüklü paketleri listeleyebilirsiniz.
+
 
 **Jupyter Notebook - Custom**
 
@@ -134,7 +147,7 @@ Jupyter araçları kullanarak kısa süreli ve kısıtlı kaynak üzerinden çal
                     ### Load modules
 
                     module purge
-                    module load comp/python/ai-tools
+                    module load apps/truba-ai/cpu-2024.0
 
                     echo "We have the modules: $(module list 2>&1)" > ${SLURM_JOB_ID}.info
 
