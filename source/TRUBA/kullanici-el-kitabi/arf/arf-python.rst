@@ -20,8 +20,17 @@ Bu belge ARF kumelerinde `Python <https://www.python.org/>`_ platformunun kullan
 ----------------
 Python Kullanımı
 ----------------
+Günümüz çalışma ortamlarında en çok kullanılan programlama dillerinden biri olan Python, ARF kümelerinde de kullanıcıların işlerini kolaylaştırmak için sunulmaktadır. Yapay zeka alanında kullanılan kütüphaneleri içeren özelleştirilmiş python ortamları ve standart python ortamları kullanıcıların hizmetine sunulmuştur.
 
-Sistemde kullanılabilecek conda ve standart ortam olmak üzere iki farklı python platformu bulunmaktadır. Conda platfomu içerisinde ise standart ve intel optimize edilmiş python olmak üzere iki farklı kullanım mevcuttur.
+Yapay zeka alanında kullanılmak üzere CPU işlemciler için oluşturulmuş merkezi modüllerin yüklenmesi için
+
+.. code-block:: bash
+
+    module load apps/truba-ai/cpu-2024.0
+
+ile sağlanabilir. Bu modülü yükledikten sonra, ``conda list`` komutu ile yüklü paketleri listeleyebilirsiniz.
+
+Sistemde özelleştirelebilecek conda ve standart ortam olmak üzere iki farklı python platformu bulunmaktadır. Conda platformu içerisinde ise standart ve intel optimize edilmiş python olmak üzere iki farklı kullanım mevcuttur.
 
 - Standart Python
 
