@@ -1,16 +1,18 @@
 .. _arf-acc-python:
 
 ===============================
-ARF ACC Kümesinde Python Kullanımı
+Python Kullanımı
 ===============================
 
 Bu belge ARF ACC kumelerinde `Python <https://www.python.org/>`_ platformunun kullanımını kolaylaştırmak için oluşturulmuştur.
 
-.. grid:: 2
+.. grid:: 3
 
     .. grid-item-card::  :ref:`arf-acc-python-kullanimi`
         :text-align: center
     .. grid-item-card:: :ref:`arf-acc-python-ornek`
+        :text-align: center
+    .. grid-item-card:: :ref:`arf-acc-jupyter-araclari`
         :text-align: center
 
 .. _arf-acc-python-kullanimi:
@@ -19,11 +21,11 @@ Bu belge ARF ACC kumelerinde `Python <https://www.python.org/>`_ platformunun ku
 Python Kullanımı
 ----------------
 
-Yapay zeka alanında sıklıkla kullanılan ``XGBoost, Catboost, TensorFlow, Keras, PyTorch, Lightning, scikit-learn, tranformers,deepspeed, datasets, langchain...`` paketleri NVIDIA H100 GPUlar ile uyumlu özelliştirilmiş kurulumlarını içeren bir modül hazırlanmıştır. Bu modülü 
+Yapay zeka alanında sıklıkla kullanılan ``XGBoost, Catboost, TensorFlow, Keras, PyTorch, Lightning, scikit-learn, tranformers, deepspeed, datasets, langchain...`` paketleri NVIDIA H100 ve A100 GPUlar ile uyumlu özelliştirilmiş kurulumlarını içeren bir modül hazırlanmıştır. Bu modülü 
 
     .. code-block:: bash
 
-        module load comp/python/ai-tools-kolyoz-1.0
+        module load apps/truba-ai/gpu-2024.0
 
 ile yükledikten sonra, ``conda list`` komutu ile yüklü paketleri listeleyebilirsiniz.
 
@@ -125,3 +127,23 @@ ile yükledikten sonra, ``conda list`` komutu ile yüklü paketleri listeleyebil
 
                     strategy = tf.distribute.MirroredStrategy()
                     print("Number of devices: {}".format(strategy.num_replicas_in_sync))
+
+
+
+.. _arf-acc-jupyter-araclari:
+
+--------------------------
+Jupyter Araçları 
+--------------------------
+
+ARF ACC sisteminde interaktif islerinizi gerçekleştirebileceğiniz Open OnDemand arayüzü servis edilmişitr. :ref:`arf-acc-baglanti` sayfasından interaktif arayüze ait bağlantı bilgilerine erişebilirsiniz. Bu kullanıcı arayüz üzerinde bulunan notebook kullanım özet bilgileri şu şekildedir:
+
+**Jupyter Notebook**
+
+Buradan açılan jupyter notebook, yapay zeka alanında kullanılan temel olarak, ``XGBoost, TensorFlow, Keras, PyTorch, Scikit-learn, accelerate, deepspeed, transformers, ...`` paketlerin kurulumlarını içermektedir. Buradan açılmış bir jupyter notebook içerisinde
+
+.. code-block:: 
+
+    !conda list
+
+ile yüklü paketleri listeleyebilirsiniz.
