@@ -424,8 +424,7 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
    * - hamsi  
      - hamsi 
      - 144  
-     - 03-00:00:00  
-     - 2800     
+     - 03-00:00:00      
      - 28    
      - 3400MB 
      - 3400MB
