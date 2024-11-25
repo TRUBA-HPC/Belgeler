@@ -322,7 +322,7 @@ Tüm kuyrukların varsayılan çalışma süresi 2 dakikadır. Betik dosyasında
 Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarına bağlı olarak bellek sınırlamaları mevcuttur. Eğer betik dosyalarında (ya da srun komutunda) herhangi bir bellek değeri girilmemişse, ilgili iş için, ``çekirdek sayısı x DefMemPerCore`` kadar bellek ayrılır. Betik dosyalarında (ya da srun komutunda) işler için ``--mem-per-core`` ya da ``--mem`` parametreleri ile daha fazla bellek talebinde bulunulabilir, ancak talep edilen bellek miktarı hiçbir koşulda *maxMemPerCore* degerini geçemez. *MaxMemPerCore* ve *DefMemPerCore* değerleri her sunucu ailesi için farklıdır. Tüm sunucular için bu verilere aşağıdaki tablodan erişilebilir. 
 
 .. list-table:: Kuyruklar (partitions)
-   :widths: 25 25 25 25 25 25 25 25 25
+   :widths: 25 25 25 25 25 25 25 25
    :header-rows: 1
 
    * - partitions 
@@ -436,7 +436,7 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - 56 / 55
      - 2000MB 
      - 2295MB
-     - aktif
+     - Aktif
    * - kolyoz-cuda
      - kolyoz
      - 24
