@@ -436,7 +436,7 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - 56 / 55
      - 2000MB 
      - 2295MB
-     - aktif
+     - Aktif
    * - kolyoz-cuda
      - kolyoz
      - 24

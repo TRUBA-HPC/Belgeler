@@ -12,7 +12,8 @@ ARF Hesaplama Kümesi
 
     arf-genel-bilgileri.rst
     arf-baglanti.rst
-    arf-truba-aktarim.rst    
+    arf-truba-aktarim.rst
+    TRUBA-arf-gecis-rehberi.rst
     /TRUBA/kullanici-el-kitabi/yuksek-performansli-dosya-sistemleri.rst
     arf-python.rst
     uygulama-kilavuzlari/Gaussian/index.rst
