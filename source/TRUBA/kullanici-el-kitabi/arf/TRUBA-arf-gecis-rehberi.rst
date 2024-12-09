@@ -241,9 +241,47 @@ Orfoz ve hamsi kuyruklarında çalışmakta olan sunucularda, cihazların sahip 
 
   Kullanıcılar derleme ya da benzeri yük getiren işlerini kesinlikle ``arf-ui`` sunucuları üzerinde gerçekleştirmemelidirler. Bu tür işler için ``debug`` kuyruğundan srun ile interaktif kaynak talep edilmeli ve işlemler hesap sunucularında gerçekleştirilmelidir. Ayrıca Open OnDemand üzerinden Linux Desktop alınarak kısa süreli görsel ve interaktif işlerin gerçekleştirilmesi mümkündür. İnteraktif iş çalıştırmak için ``debug`` kuyruğundan kaynak talep edilmelidir.
 
+ ``debug``kuyruğu farklı sunucu türlerinden oluştuğundan, derleme yapmak için kullanacağınız sunucu türünü -C (constraint) parametresi ile seçebilirsiniz. Sunucu türü belirtilmez ise, sistem otomatik olarak atama yapacaktır. 
+
+ ``Seçimsiz:``
+
   .. code-block:: bash
 
     srun -p debug -N 1 -n 1 -c 112 -A kullanici_adi -J test --time=0:30:00 --pty /usr/bin/bash -i
+
+ ``orfoz:``
+
+  .. code-block:: bash
+
+    srun -p debug -C orfoz -N 1 -n 1 -c 56 -A kullanici_adi -J test --time=0:30:00 --pty /usr/bin/bash -i
+
+
+ ``hamsi:``
+
+  .. code-block:: bash
+
+    srun -p debug -C hamsi -N 1 -n 1 -c 55 -A kullanici_adi -J test --time=0:30:00 --pty /usr/bin/bash -i
+
+
+ ``barbun:``
+
+  .. code-block:: bash
+
+    srun -p debug -C barbun -N 1 -n 1 -c 40-A kullanici_adi -J test --time=0:30:00 --pty /usr/bin/bash -i
+
+ ``barbun-cuda:``
+
+  .. code-block:: bash
+
+    srun -p debug -C barbun-cuda -N 1 -n 1 -c 40 --gres=gpu:2 -A kullanici_adi -J test --time=0:30:00 --pty /usr/bin/bash -i
+
+
+ ``akya-cuda:``
+
+  .. code-block:: bash
+
+    srun -p debug -C akya-cuda -N 1 -n 1 -c 40 --gres=gpu:4 -A kullanici_adi -J test --time=0:30:00 --pty /usr/bin/bash -i
+
 
 
 

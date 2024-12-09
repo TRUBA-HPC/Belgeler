@@ -1,7 +1,7 @@
 .. _arf-g16-kilavuzu:
 
 ===========================================================
-ARF Hesaplama Kümesinde Gaussian 16 Programının Kulanılması
+ARF Hesaplama Kümesinde Gaussian 16 Programının Kullanılması
 ===========================================================
 
 `Gaussian'ın sayfasında <http://gaussian.com/>`_ verilen kullanıcı el kitabına aşağıdaki linkten ulaşarak ilgili program ve de kullanımı hakkında detaylı bilgilere ulaşabilirsiniz.
@@ -63,9 +63,6 @@ Gaussian 16 programına erişimi tanımlı olan araştırmacılar kendi kullanı
 SLURM Betik Dosyasının Oluşturulması 
 --------------------------------------
 
-Orfoz kümesi için örnek SLURM betik dosyası
------------------------------------------------
-
 Aşağıda örnek olarak verilen SLURM betik dosyasında 
 
 .. code-block:: bash
@@ -80,52 +77,130 @@ modülünü kullanmaları önerilir.
 
 `AVX, AVX2 ve diğer binary versiyonlar arasındaki temel farklar hakkındaki bilgiye erişmek için lütfen tıklayınız <https://gaussian.com/g16/g16_plat.pdf>`_ 
 
+.. tabs::
 
-gaussian16-orfoz.slurm
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    .. tab:: orfoz
 
-.. code-block:: bash
+        .. code-block:: bash
 
-  #!/bin/bash
-  #SBATCH -p orfoz
-  #SBATCH -A kullaniciadi
-  #SBATCH -J jobname
-  #SBATCH -N 1
-  #SBATCH -n 1
-  #SBATCH -c 56 # orfoz sunucularinda 56 ve katlari olacak sekilde cekirdek taklep edilebilir. 
-  #SBATCH --time=2-00:00:00 # maksimum is calistirma suresi 3 gundur
-  #SBATCH --output=jobname.out
-  #SBATCH --error=slurm-%j.err
+            #!/bin/bash
+            #SBATCH -p orfoz
+            #SBATCH -A kullanici_adi
+            #SBATCH -J jobname
+            #SBATCH -N 1
+            #SBATCH -n 1
+            #SBATCH -c 55   # orfoz sunucularinda node basina 55 veya 110 cekirdek talep edilebilir. 
+            #SBATCH -C weka
+            #SBATCH --time=3-00:00:00
+            #SBATCH --output=jobname.out
+            #SBATCH --error=slurm-%j.err
 
-  echo "SLURM_NODELIST $SLURM_NODELIST"
-  echo "NUMBER OF TASKS $SLURM_NTASKS"
-  echo "NUMBER OF CORES=$SLURM_CPUS_PER_TASK"
+            echo "SLURM_NODELIST $SLURM_NODELIST"
+            echo "NUMBER OF TASKS $SLURM_NTASKS"
+            echo "NUMBER OF CORES=$SLURM_CPUS_PER_TASK"
 
-  module purge
+            module purge
+            module load apps/gaussian/g16-avx
 
-  module load apps/gaussian/g16-avx
+            export GAUSS_SCRDIR=/tmp/$SLURM_JOB_ID
+            source $g16root/g16/bsd/g16.profile
+            
+            if [ -d "$GAUSS_SCRDIR" ]
+            then
+            rm -rf $GAUSS_SCRDIR
+            else
+            mkdir -p $GAUSS_SCRDIR
+            fi
 
-  export GAUSS_SCRDIR=/tmp/$SLURM_JOB_ID
-  source $g16root/g16/bsd/g16.profile
+            $g16root/g16/g16 < g16input_file.gjf
 
-  if [ -d "$GAUSS_SCRDIR" ]
-  then
-  rm -rf $GAUSS_SCRDIR
-  else
-  mkdir -p $GAUSS_SCRDIR
-  fi
+            rm -rf $GAUSS_SCRDIR
 
-  $g16root/g16/g16 < g16input_file.gjf
+            exit
 
-  rm -rf $GAUSS_SCRDIR
+    .. tab:: hamsi
 
-  exit
+        .. code-block:: bash
+      
+            #!/bin/bash
+            #SBATCH -p hamsi
+            #SBATCH -A kullanici_adi
+            #SBATCH -J jobname
+            #SBATCH -N 1
+            #SBATCH -n 1
+            #SBATCH -c 54   # hamsi sunucularinda node basina 54 cekirdek talep edilebilir. 
+            #SBATCH -C weka
+            #SBATCH --time=3-00:00:00
+            #SBATCH --output=jobname.out
+            #SBATCH --error=slurm-%j.err
+
+            echo "SLURM_NODELIST $SLURM_NODELIST"
+            echo "NUMBER OF TASKS $SLURM_NTASKS"
+            echo "NUMBER OF CORES=$SLURM_CPUS_PER_TASK"
+
+            module purge
+            module load apps/gaussian/g16-avx
+
+            export GAUSS_SCRDIR=/tmp/$SLURM_JOB_ID
+            source $g16root/g16/bsd/g16.profile
+            
+            if [ -d "$GAUSS_SCRDIR" ]
+            then
+            rm -rf $GAUSS_SCRDIR
+            else
+            mkdir -p $GAUSS_SCRDIR
+            fi
+
+            $g16root/g16/g16 < g16input_file.gjf
+
+            rm -rf $GAUSS_SCRDIR
+
+            exit
+
+    .. tab:: barbun
+
+        .. code-block:: bash
+      
+            #!/bin/bash
+            #SBATCH -p barbun
+            #SBATCH -A kullanici_adi
+            #SBATCH -J jobname
+            #SBATCH -N 1
+            #SBATCH -n 1
+            #SBATCH -c 20   # barbun sunucularinda 20 ve katlari olacak sekilde cekirdek talep edilebilir. 
+            #SBATCH --time=3-00:00:00
+            #SBATCH --output=jobname.out
+            #SBATCH --error=slurm-%j.err
+
+            echo "SLURM_NODELIST $SLURM_NODELIST"
+            echo "NUMBER OF TASKS $SLURM_NTASKS"
+            echo "NUMBER OF CORES=$SLURM_CPUS_PER_TASK"
+
+            module purge
+            module load apps/gaussian/g16-avx
+
+            export GAUSS_SCRDIR=/tmp/$SLURM_JOB_ID
+            source $g16root/g16/bsd/g16.profile
+            
+            if [ -d "$GAUSS_SCRDIR" ]
+            then
+            rm -rf $GAUSS_SCRDIR
+            else
+            mkdir -p $GAUSS_SCRDIR
+            fi
+
+            $g16root/g16/g16 < g16input_file.gjf
+
+            rm -rf $GAUSS_SCRDIR
+
+            exit
+
 
 
 İlgili SLURM betik dosyasını kendi kullanıcı dizininizde yer alan çalışma klasörünüzde düzenledikten sonra
 
 .. code-block:: bash
 
-    sbatch gaussian16-orfoz.slurm
+    sbatch gaussian16.slurm
 
 komutu ile sisteme submit edebilirsiniz.
