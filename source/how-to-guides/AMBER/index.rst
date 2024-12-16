@@ -4,7 +4,7 @@ Amber Kılavuzu
 
 `Amber <https://ambermd.org/>`_; kullanıcıların özellikle biyomoleküller üzerinde moleküler dinamik simülasyonları gerçekleştirmesine izin veren bir program paketinin toplu adıdır. Amber iki parça halinde dağıtılır: AmberToolsXX ve AmberXX. AmberToolsXX'i AmberXX olmadan kullanabilirsiniz, ancak bunun tersi mümkün değildir. Kodun nasıl indirileceği hakkında bilgi için Amber sayfasına bakabilirsiniz.
 
-Bu belge, TRUBA altyapısında AMBER programının kurulumu ve kullanımı hakkında bilgi vermek için oluşturulmuştur. `Amber <https://ambermd.org/>`_ sayfasında verilen kullanıcı el kitabı dökümantasyonu referans olarak alınmıştır. 
+Bu belge, ARF kümesindeki sunucularda AMBER programının kurulumu ve kullanımı hakkında bilgi vermek için oluşturulmuştur. `Amber <https://ambermd.org/>`_ sayfasında verilen kullanıcı el kitabı dökümantasyonu referans olarak alınmıştır. 
 
 
 .. note::

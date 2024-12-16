@@ -11,7 +11,7 @@ TRUBA sistemini kullanırken karşılaştığınız sorunları ``grid-teknik@ula
 .. code-block:: 
 
     Sistemdeki kullanıcı adınız:
-    Çalıştığınız dizin (/truba/home/kullaniciadi veya /truba/scratch/kullaniciadi dizinleri altında çalıştığınız klasörün tam yolu):
+    Çalıştığınız dizin (/arf/scratch/kullaniciadi dizini altında çalıştığınız klasörün tam yolu):
     Kuyruğa gönderdiğiniz dosyanın ismi (SLURM betik dosyanızın ismi):
     İş numarası (Job ID):
     İşin çalıştığı sunucuların bilgisi (Node List):
@@ -20,7 +20,7 @@ TRUBA sistemini kullanırken karşılaştığınız sorunları ``grid-teknik@ula
 
 .. note::
 
-    İşinizin numarasını ve hesaplama kümesinde hangi sunucu(lar)da çalıştığı bilgisini kayıt dosyasına yazdırmak için SLURM kodunuza aşağıdaki satırları ekleyebilirsiniz:
+    İşinizin numarasını ve hesaplama kümesinde hangi sunucu(lar)da çalıştığı bilgisini kayıt dosyasına yazdırmak için SLURM dosyanıza aşağıdaki satırları ekleyebilirsiniz:
 
     .. code-block:: bash
 

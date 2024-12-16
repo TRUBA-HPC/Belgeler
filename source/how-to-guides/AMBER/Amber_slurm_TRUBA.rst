@@ -4,41 +4,103 @@ Amber SLURM Dosyası
 ==========================================
 
 
-SLURM betik dosyanızı aşağıdaki gibi yapilandirabilirsiniz. Node sayısını ve de ``--ntasks-per-node`` parametresini probleminizin gereksinimlerine göre değiştirebilirsiniz (https://slurm.schedmd.com/sbatch.html)
+SLURM betik dosyanızı aşağıdaki gibi yapilandirabilirsiniz. Node sayısını (``-N``) ve de ``--ntasks`` (``-n``) parametresini probleminizin gereksinimlerine göre değiştirebilirsiniz (https://slurm.schedmd.com/sbatch.html)
 
 
 ------------------
-Amber_mpi.slurm
+Amber_MPI.slurm
 ------------------
 
-.. code-block:: bash
 
-    #!/bin/bash
-    #SBATCH -p barbun
-    #SBATCH -A accountname
-    #SBATCH -J amber-test
-    #SBATCH -N 1
-    #SBATCH --ntasks-per-node=20
-    #SBATCH --time=3-00:00:00
-    #SBATCH --output=slurm-%j.out
-    #SBATCH --error=slurm-%j.err
+.. tabs::
 
-    export OMP_NUM_THREADS=1
-    export OMPI_MCA_btl_openib_allow_ib=1
+    .. tab:: orfoz
 
-    echo "SLURM_NODELIST $SLURM_NODELIST"
-    echo "NUMBER OF CORES $SLURM_NTASKS"
+        .. code-block:: bash
 
-    module purge
-    module load centos7.3/comp/gcc/10.4 
-    module load centos7.3/lib/openmpi/4.1.4-gcc-10.4
+            #!/bin/bash
+            #SBATCH -p orfoz
+            #SBATCH -A kullanici_adi
+            #SBATCH -J jobname
+            #SBATCH -N 1
+            #SBATCH -n 1
+            #SBATCH -c 55
+            #SBATCH -C weka
+            #SBATCH --time=3-00:00:00
 
-    source /truba/home/fcaglar/amber-ulak/amber20/amber.sh
+            export OMP_NUM_THREADS=1
+            export OMPI_MCA_btl_openib_allow_ib=1
 
-    mpirun calistirma komutu
+            echo "SLURM_NODELIST $SLURM_NODELIST"
+            echo "NUMBER OF CORES $SLURM_NTASKS"
 
-    exit
+            module purge
+            module load lib/openmpi/5.0.4 
 
+            source /arf/home/username/amber24/amber.sh
+
+            mpirun calistirma komutu
+
+            exit
+
+    .. tab:: hamsi
+
+        .. code-block:: bash
+      
+            #!/bin/bash
+            #SBATCH -p hamsi
+            #SBATCH -A kullanici_adi
+            #SBATCH -J jobname
+            #SBATCH -N 1
+            #SBATCH -n 1
+            #SBATCH -c 54
+            #SBATCH -C weka
+            #SBATCH --time=3-00:00:00
+
+            export OMP_NUM_THREADS=1
+            export OMPI_MCA_btl_openib_allow_ib=1
+
+            echo "SLURM_NODELIST $SLURM_NODELIST"
+            echo "NUMBER OF CORES $SLURM_NTASKS"
+
+            module purge
+            module load lib/openmpi/5.0.4 
+
+            source /arf/home/username/amber24/amber.sh
+
+            mpirun calistirma komutu
+
+            exit
+
+    .. tab:: barbun
+
+        .. code-block:: bash
+      
+            #!/bin/bash
+            #SBATCH -p barbun
+            #SBATCH -A kullanici_adi
+            #SBATCH -J jobname
+            #SBATCH -N 1
+            #SBATCH -n 1
+            #SBATCH -c 20
+            #SBATCH --time=3-00:00:00
+            #SBATCH --output=slurm-%j.out
+            #SBATCH --output=slurm-%j.err
+
+            export OMP_NUM_THREADS=1
+            export OMPI_MCA_btl_openib_allow_ib=1
+
+            echo "SLURM_NODELIST $SLURM_NODELIST"
+            echo "NUMBER OF CORES $SLURM_NTASKS"
+
+            module purge
+            module load lib/openmpi/5.0.4 
+
+            source /arf/home/username/amber24/amber.sh
+
+            mpirun calistirma komutu
+
+            exit
 
 
 ----------------------
@@ -46,37 +108,75 @@ Amber_CudaMPI.slurm
 ----------------------
 
 
-.. code-block:: bash
+.. tabs::
 
-    #!/bin/bash
-    #SBATCH -p barbun-cuda
-    #SBATCH -A accountname
-    #SBATCH -J amber-test
-    #SBATCH -N 1
-    #SBATCH --ntasks-per-node=20
-    #SBATCH --gres=gpu:1 
-    #SBATCH --time=3-00:00:00
-    #SBATCH --output=slurm-%j.out
-    #SBATCH --error=slurm-%j.err
+    .. tab:: barbun-cuda
 
-    export OMP_NUM_THREADS=1
-    export OMPI_MCA_btl_openib_allow_ib=1
+        .. code-block:: bash
+      
+            #!/bin/bash
+            #SBATCH -p barbun-cuda
+            #SBATCH -A kullanici_adi
+            #SBATCH -J jobname
+            #SBATCH -N 1
+            #SBATCH -n 1
+            #SBATCH -c 20
+            #SBATCH --gres=gpu:1
+            #SBATCH --time=3-00:00:00
+            #SBATCH --output=slurm-%j.out
+            #SBATCH --output=slurm-%j.err
 
-    echo "SLURM_NODELIST $SLURM_NODELIST"
-    echo "NUMBER OF CORES $SLURM_NTASKS"
+            export OMP_NUM_THREADS=1
+            export OMPI_MCA_btl_openib_allow_ib=1
 
-    export CUDA_VISIBLE_DEVICES=0
+            echo "SLURM_NODELIST $SLURM_NODELIST"
+            echo "NUMBER OF CORES $SLURM_NTASKS"
 
-    module purge
-    module load centos7.3/comp/gcc/10.4 
-    module load centos7.3/lib/openmpi/4.1.4-gcc-10.4
-    module load centos7.9/lib/cuda/11.1
+            export CUDA_VISIBLE_DEVICES=0
 
-    source /truba/home/fcaglar/amber-ulak/amber20/amber.sh
+            module purge
+            module load lib/cuda/12.4
+            module load lib/openmpi/5.0.4-cuda-12.4
 
-    mpirun calistirma komutu
+            source /arf/home/username/amber-ulak/amber24/amber.sh
 
-    exit
+            mpirun calistirma komutu
+
+            exit
+
+    .. tab:: akya-cuda
+
+        .. code-block:: bash
+      
+            #!/bin/bash
+            #SBATCH -p akya-cuda
+            #SBATCH -A kullanici_adi
+            #SBATCH -J jobname
+            #SBATCH -N 1
+            #SBATCH -n 1
+            #SBATCH -c 10
+            #SBATCH --gres=gpu:1
+            #SBATCH --time=3-00:00:00
+            #SBATCH --output=slurm-%j.out
+            #SBATCH --output=slurm-%j.err
+
+            export OMP_NUM_THREADS=1
+            export OMPI_MCA_btl_openib_allow_ib=1
+
+            echo "SLURM_NODELIST $SLURM_NODELIST"
+            echo "NUMBER OF CORES $SLURM_NTASKS"
+
+            export CUDA_VISIBLE_DEVICES=0
+
+            module purge
+            module load lib/cuda/12.4
+            module load lib/openmpi/5.0.4-cuda-12.4
+
+            source /arf/home/username/amber-ulak/amber24/amber.sh
+
+            mpirun calistirma komutu
+
+            exit
 
 
 

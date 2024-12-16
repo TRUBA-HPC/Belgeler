@@ -39,9 +39,17 @@ Sonraki bölümlerde bu farklı işletim sistemlerinde OpenVPN kurulumları ayr�
    ARF için
    
       - 172.16.6.11 ile arf-ui1,
-      - 172.16.6.12 ile arf-ui2
+      - 172.16.6.12 ile arf-ui2,
+      - 172.16.6.13 ile arf-ui3,
+      - 172.16.6.14 ile arf-ui4,
+      - 172.16.6.15 ile arf-ui5,
 
-  kullanıcı arayüzlerine bağlanabilirsiniz.
+
+  kullanıcı arayüzlerinden birisine bağlanabilirsiniz.
+
+
+
+
 
 ..
    ULAKNET ağı dışından (örneğin üniversite kampüsü dışından) bağlantı sağlıyorsanız:

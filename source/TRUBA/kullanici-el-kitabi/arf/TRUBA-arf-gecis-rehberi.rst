@@ -48,7 +48,15 @@ Aşağıdaki tabloda, ARF kümesinde yer alan kullanıcı arayüz sunucularını
    * - openondemand.yonetim
      - 172.16.6.20 (web / görsel)
 
-ARF kümesinde kuyrukların güncel durumuna ``sinfo`` komutu ile bakılabilmektedir. Ayrıca kuyruk yapılandırması 
+ARF kümesinde kuyrukların güncel durumuna ``sinfo`` komutu ile bakılabilmektedir. 
+
+Örneğin;
+
+.. code-block:: bash
+
+    sinfo -p orfoz
+
+Ayrıca kuyruk yapılandırması 
 
 .. code-block:: bash
 
@@ -132,8 +140,8 @@ ARF kümesinde, TRUBA kümesinden farklı olarak, ev dizini ve iş dizini olarak
 .. warning::
 
   Kullanıcı Disk Kotası:
-    - Ev dizinleri  (``/arf/home``) için 100TB / 150bin dosya
-    - İş dizinleri  (``/arf/scratch``) için 1TB ancak maksimum dosya ömrü 1 aydır. 	
+    - Ev dizinleri  (``/arf/home``) için 100 GB / 150bin dosya
+    - İş dizinleri  (``/arf/scratch``) için 1 TB ancak maksimum dosya ömrü 1 aydır. 	
 
 Ev dizinleri, kullanıcıların kullanacakları uygulamaları kurmaları ve kullanıcı ayar dosyaları, betik dosyaları vb. dosyaların saklanması içindir. Bu dizinlerde kısa süreli düşük hacimli işler çalıştırılabilir, ancak üretim amaçlı tüm işler kesinlikle ``/arf/scratch`` altındaki dizinlerde çalıştırılmalıdır.
 
@@ -240,8 +248,8 @@ Orfoz ve hamsi kuyruklarında çalışmakta olan sunucularda, cihazların sahip 
 .. warning::
 
   Kullanıcılar derleme ya da benzeri yük getiren işlerini kesinlikle ``arf-ui`` sunucuları üzerinde gerçekleştirmemelidirler. Bu tür işler için ``debug`` kuyruğundan srun ile interaktif kaynak talep edilmeli ve işlemler hesap sunucularında gerçekleştirilmelidir. Ayrıca Open OnDemand üzerinden Linux Desktop alınarak kısa süreli görsel ve interaktif işlerin gerçekleştirilmesi mümkündür. İnteraktif iş çalıştırmak için ``debug`` kuyruğundan kaynak talep edilmelidir.
-
-  ``debug``kuyruğu farklı sunucu türlerinden oluştuğundan, derleme yapmak için kullanacağınız sunucu türünü -C (constraint) parametresi ile seçebilirsiniz. Sunucu türü belirtilmez ise, sistem otomatik olarak atama yapacaktır. ``debug`` kuyruğundan ``srun`` ile kaynak talebi için aşağıdaki omut sekmelerini inceleyebilirsiniz.
+  
+  ``debug`` kuyruğu farklı sunucu türlerinden oluştuğundan, derleme yapmak için kullanacağınız sunucu türünü -C (constraint) parametresi ile seçebilirsiniz. Sunucu türü belirtilmez ise, sistem otomatik olarak atama yapacaktır. ``debug`` kuyruğundan ``srun`` ile kaynak talebi için aşağıdaki komut sekmelerini inceleyebilirsiniz.
 
 
 .. tabs::
@@ -268,19 +276,19 @@ Orfoz ve hamsi kuyruklarında çalışmakta olan sunucularda, cihazların sahip 
 
         .. code-block:: bash
       
-            srun -p debug -C barbun -N 1 -n 1 -c 40 -A kullanici_adi -J test --time=0:30:00 --pty /usr/bin/bash -i
+            srun -p debug -C barbun -N 1 -n 1 -c 20 -A kullanici_adi -J test --time=0:30:00 --pty /usr/bin/bash -i
   
     .. tab:: barbun-cuda
 
         .. code-block:: bash
       
-            srun -p debug -C barbun-cuda -N 1 -n 1 -c 40 --gres=gpu:2 -A kullanici_adi -J test --time=0:30:00 --pty /usr/bin/bash -i
+            srun -p debug -C barbun-cuda -N 1 -n 1 -c 20 --gres=gpu:1 -A kullanici_adi -J test --time=0:30:00 --pty /usr/bin/bash -i
 
     .. tab:: akya-cuda
 
         .. code-block:: bash
       
-            srun -p debug -C akya-cuda -N 1 -n 1 -c 40 --gres=gpu:4 -A kullanici_adi -J test --time=0:30:00 --pty /usr/bin/bash -i
+            srun -p debug -C akya-cuda -N 1 -n 1 -c 10 --gres=gpu:1 -A kullanici_adi -J test --time=0:30:00 --pty /usr/bin/bash -i
 
 
 
