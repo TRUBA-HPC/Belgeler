@@ -221,19 +221,37 @@ Sunucu üzerinde 4128 GB bellek, 224 adet Intel Xeon e7-4850 V4 çekirdeği bulu
 *Barbun ve Barbun-cuda*
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Barbun sunucuları 120 adet Dell R640, Barbun-cuda sunucuları R740 model sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet Intel Xeon Scalable Gold 6148 işlemci ve toplam 40 adet işlemci çekirdeği bulunmaktadır. Sunucular birbirlerine EDR (100Gbps) Infiniband ağ kartları ile non-blocking yapıda bağlıdırlar. Barbun-cuda sunucularının her birinde 2 adet Nvidia P100 GPU kartı bulunmaktadır.
+Barbun sunucuları 120 adet Dell R640, Barbun-cuda sunucuları R740 model sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet Intel Xeon Scalable Gold 6148 işlemci ve toplam 40 adet işlemci çekirdeği bulunmaktadır. Sunucular birbirlerine EDR (100Gbps) Infiniband ağ kartları ile non-blocking yapıda bağlıdırlar. Barbun-cuda sunucularının her birinde ``2 adet NVIDIA P100`` GPU kartı bulunmaktadır.
 
-Mevcut durumda barbun bölümlendirmesinde 3 kuyruk tanımı bulunmaktadır: *mid2, long* ve *barbun*. Öncelik sıralaması da yüksekten düşüğe dogru *mid2, long* ve *barbun* şeklindedir. İşlerinizin tahmini çalışma süresine göre SLURM betik dosyanızda mid2 (maksimum 8 gün) veya long (maksimum 15 gün) kuyruklarını tanımlayabilirsiniz.
+..
+  
+  Mevcut durumda barbun bölümlendirmesinde 3 kuyruk tanımı bulunmaktadır: *mid2, long* ve *barbun*. Öncelik sıralaması da yüksekten düşüğe dogru *mid2, long* ve *barbun* şeklindedir. İşlerinizin tahmini çalışma süresine göre SLURM betik dosyanızda mid2 (maksimum 8 gün) veya long (maksimum 15 gün) kuyruklarını tanımlayabilirsiniz.
+
+.. note::
+
+  barbun-cuda sunucularında NVIDIA 565.57.01 sürücüsü bulunmaktadır:
+
+  - NVIDIA-SMI 565.57.01              
+  - Driver Version: 565.57.01      
+  - CUDA Version: 12.7
+  
+  `NVIDIA 565.57.01 sürücüsü CUDA 12.x versiyonu ile uyumludur <https://docs.nvidia.com/deploy/cuda-compatibility/>`_ .
 
 .. _akya-cuda:
 
 *Akya-cuda*
 ^^^^^^^^^^^
-Akya-cuda sunucuları 24 adet Supermicro 1029GQ-TRT model sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet Intel Xeon Scalable Gold 6148 işlemci ve toplam 40 adet işlemci çekirdeği ve 4 adet Nvidia Tesla V100 (16GB, NVLink) GPU kartı bulunmaktadır. Sunucular birbirlerine EDR (100Gbps) Infiniband ağ kartları ile non-blocking yapıda bağlıdırlar.
+Akya-cuda sunucuları 24 adet Supermicro 1029GQ-TRT model sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet Intel Xeon Scalable Gold 6148 işlemci ve toplam 40 adet işlemci çekirdeği ve ``4 adet NVIDIA Tesla V100`` (16GB, NVLink) GPU kartı bulunmaktadır. Sunucular birbirlerine EDR (100Gbps) Infiniband ağ kartları ile non-blocking yapıda bağlıdırlar.
 
 .. note::
 
-  Akya-cuda sunucularında NVIDIA 550.90.07 sürücüsü bulunmaktadır. `NVIDIA 550.90.07 sürücüsü CUDA 12.4 versiyonu ile uyumludur <https://docs.nvidia.com/deploy/cuda-compatibility/>`_ .
+  akya-cuda sunucularında NVIDIA 550.90.07 sürücüsü bulunmaktadır:
+
+  - NVIDIA-SMI 565.57.01              
+  - Driver Version: 565.57.01      
+  - CUDA Version: 12.7
+
+  `NVIDIA 565.57.01 sürücüsü CUDA 12.x versiyonu ile uyumludur <https://docs.nvidia.com/deploy/cuda-compatibility/>`_ .
 
 .. _hamsi:
 
@@ -255,7 +273,13 @@ Orfoz sunucularının yer aldığı ARF hesaplama kümesi hakkındaki ayrıntıl
 ^^^^^^^^^^^^^^^^^^^^
 Kolyoz sunucuları 24 adet `Lenovo ThinkSystem SD650-N V3 <https://www.lenovo.com/us/en/p/servers-storage/servers/supercomputing/thinksystem-sd650-n-v3-high-density-server/len21ts0028>`_ sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet Intel(R) Xeon(R) GOLD 6548Y+ CPU @ 2.5GHz işlemci ve toplam 64 adet işlemci çekirdeği ve 4 adet NVIDIA H100 (80GB, NVLink, HBM3, SXM5) GPU kartı bulunmaktadır. Sunucular birbirlerine 4 adet 200Gbps Infiniband ağ kartları ile bağlıdırlar. 
 
-``kolyoz-cuda`` kuyruğunda ve ``cuda-ui`` kullanıcı arayüzü üzerinde Rocky Linux (BLue Onyx) 9.4 ve 9.2 işletim sistemi ve hesaplama sunucuları üzerinde NVIDIA 560.35.03 sürücüsü bulunmaktadır. `NVIDIA 560.35.03 sürücüsü CUDA 12.* versiyonu ile uyumludur <https://docs.nvidia.com/deploy/cuda-compatibility/>`_ .
+.. note::
+
+ ``kolyoz-cuda`` kuyruğunda Rocky Linux (BLue Onyx) 9.4 işletim sistemi ve hesaplama sunucuları üzerinde NVIDIA 560.35.03 sürücüsü bulunmaktadır. `NVIDIA 560.35.03 sürücüsü CUDA 12.* versiyonu ile uyumludur <https://docs.nvidia.com/deploy/cuda-compatibility/>`_ .
+
+  - NVIDIA-SMI 565.57.01
+  - Driver Version: 565.57.01
+  - CUDA Version: 12.7
 
 Kolyoz sunucularının yer aldığı ARF ACC hesaplama kümesi hakkındaki ayrıntılı bilgilere  :ref:`arf-acc-kumesi` sayfasından erişim sağlayabilirsiniz.
 
@@ -265,15 +289,37 @@ Kolyoz sunucularının yer aldığı ARF ACC hesaplama kümesi hakkındaki ayrı
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Palamut sunucuları 9 adet HP Proliant XL675d Gen10 Plus model sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet AMD EPYC 7742 2.24GHz işlemci ve toplam 128 adet işlemci çekirdeği ve 8 adet Nvidia Tesla A100 (80GB, NVLink ) GPU kartı bulunmaktadır. Sunucular birbirlerine 4xHDR (200Gbps) Infiniband ağ kartları ile non-blocking yapıda bağlıdırlar.
 
-* Palamut-cuda kuyruğunda ve palamut-ui kullanıcı arayüzü üzerinde Red Hat Enterprise Linux 8.5 işletim sistemi ve NVIDIA 545.23.06 sürücüsü bulunmaktadır. `NVIDIA 545.23.06 sürücüsü CUDA 12.3 versiyonu ile uyumludur <https://docs.nvidia.com/deploy/cuda-compatibility/>`_ .
+.. note::
+
+  Palamut-cuda kuyruğunda Rocky Linux (BLue Onyx) 9.4 işletim sistemi ve NVIDIA 565.57.01 sürücüsü bulunmaktadır. `NVIDIA 565.57.01 sürücüsü CUDA 12.X versiyonu ile uyumludur <https://docs.nvidia.com/deploy/cuda-compatibility/>`_ .
+
+  - NVIDIA-SMI 565.57.01
+  - Driver Version: 565.57.01
+  - CUDA Version: 12.7
 
 .. note::
 
-  * Palamut-cuda hesaplama kümesi özel küme olup sadece araştırma merkezleri tarafından yürütülen alt yapı projeleri (İlgili altyapı projeleri T.C. Cumhurbaşkanlığı Strateji ve Bütçe Başkanlığı, Strateji ve Bütçe Başkanlığı tarafından desteklenen projelerdir) ve de sözleşmeli proje araştırmacıları (TÜBİTAK ULAKBİM ile proje kapsamında sözleşmesi olan projeler) tarafından kullanılabilmektedir. Barbun-cuda ve akya-cuda hesaplama kümeleri tüm kullanıcılarımızın kullanımına açıktır.
+  * kolyoz-cuda ve palamut-cuda hesaplama kümeleri özel küme olup sadece araştırma merkezleri tarafından yürütülen alt yapı projeleri (İlgili altyapı projeleri T.C. Cumhurbaşkanlığı Strateji ve Bütçe Başkanlığı, Strateji ve Bütçe Başkanlığı tarafından desteklenen projelerdir) ve de sözleşmeli proje araştırmacıları (TÜBİTAK ULAKBİM ile proje kapsamında sözleşmesi olan projeler) tarafından kullanılabilmektedir. Barbun-cuda ve akya-cuda hesaplama kümeleri tüm kullanıcılarımızın erişimine açıktır.
 
-  * Mevcut durumda palamut-cuda kuyruğu öncelikli olarak belirli araştırma gruplarına hizmet vermektedir. Bu araştırma gruplarında hesapları tanımlı olan kullanıcılar ``palamut-cuda`` hesaplama kümesine iş gönderebileceklerdir.
+  * Mevcut durumda kolyoz-cuda ve palamut-cuda kuyrukları öncelikli olarak belirli araştırma gruplarına hizmet vermektedir. Bu araştırma gruplarında hesapları tanımlı olan kullanıcılar ``kolyoz-cuda`` ve/veya ``palamut-cuda`` hesaplama kümesine iş gönderebileceklerdir.
 
-  * Palamut-cuda hesaplama kümesi için yeni bir kullanıcı arayüzü kurulmuştur (``palamut-ui``). Palamut-cuda kuyruğuna sadece ``palamut-ui`` arayüzü üzerinden iş gönderilebilecektir. Palamut-cuda kuyruğuna erişim izni olan proje kullanıcıları ``barbun1`` kullanıcı arayüzü üzerinden ``palamut-ui`` arayüz sunucusuna ssh ile geçiş yapabilirler. SSH anahtalarını henüz oluşturmamış kullanıcılar, bu sunucuya geçiş yapabilmek için ssh anahtarlarını ``ssh-keygen`` ile aşağıdaki gibi oluşturabilirler:
+  * kolyoz-cuda ve palamut-cuda hesaplama kümeleri için ayrı bir kullanıcı arayüzü kurulmuştur (``cuda-ui``). İlgili cuda kuyruklarına sadece ``cuda-ui`` arayüzü üzerinden iş gönderilebilecektir. 
+
+  *``cuda-ui`` kullanıcı arayüzü üzerinde Rocky Linux 9.2 işletim sistemi bulunmaktadır.
+  
+  * kolyoz-cuda ve palamut-cuda hesaplama kümelerine erişim izni olan proje kullanıcıları aktif bir OpenVPN bağlantıları mevcut iken ``cuda-ui`` arayüz sunucusuna ``172.16.6.16`` IP adresine veya ``cuda-ui.yonetim`` adresine ssh ile bağlanabilirler.
+
+  .. code-block:: bash
+
+    ssh username@172.16.6.16
+  
+  veya
+
+  .. code-block:: bash
+
+    ssh username@cuda-ui.yonetim
+  
+  Veya aktif bir OpenVPN bağlantısı ile arf-ui kullanıcı arayüz sunucularından birisine bağlı iken ilgili kullanıcı arayüzü üzerinden cuda-ui arayüz sunucusuna ssh ile geçiş yapabilirler. SSH anahtalarını henüz oluşturmamış kullanıcılar, bu sunucuya arf-ui üzerinden geçiş yapabilmek için ssh anahtarlarını ``ssh-keygen`` ile aşağıdaki gibi oluşturabilirler:
 
   .. code-block::
 
@@ -283,8 +329,7 @@ Palamut sunucuları 9 adet HP Proliant XL675d Gen10 Plus model sunuculardan olu�
 
 .. warning::
 
-   Her bir GPU icin kullanıcılar 16 çekirdek talep etmelidir.
-	Örneğin: 2 sunucu üzerinde 4'er görev ve 4'er GPU kullanabilmek icin:
+   Her bir GPU icin kullanıcılar 16 çekirdek talep etmelidir. Örneğin: 2 sunucu üzerinde 4'er görev ve 4'er GPU kullanabilmek icin:
 	
    .. code-block::
 
@@ -342,9 +387,9 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - 10500MB  
      - Kullanım Dışı
    * - debug
-     - barbun, barbun-cuda, akya-cuda, orkinos
+     - orfoz, hamsi, barbun, barbun-cuda, akya-cuda, orkinos
      - 238
-     - 00-00:15:00
+     - 00-04:00:00
      - 1
      - 8000MB 
      - 9500MB
@@ -356,7 +401,7 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - 4    
      - 8000MB     
      - 9000MB
-     - Aktif
+     - Kullanım Dışı
    * - long
      - barbun
      - 189
@@ -364,7 +409,7 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - 4  
      - 8000MB, 8500MB   
      - 9000MB, 9500MB 
-     - Aktif
+     - Kullanım Dışı
    * - interactive 
      - levrekv2
      - 14  
@@ -376,7 +421,7 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
    * - smp
      - orkinos
      - 1
-     - 8-00:00:00
+     - 3-00:00:00
      - 4 
      - 17000MB  
      - 18400MB
@@ -392,7 +437,7 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
    * - barbun 
      - barbun   
      - 119  
-     - 15-00:00:00  
+     - 03-00:00:00  
      - 4
      - 8500MB  
      - 9500MB
@@ -400,7 +445,7 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
    * - barbun-cuda 
      - barbun-cuda 
      - 24  
-     - 15-00:00:00  
+     - 03-00:00:00  
      - 20       
      - 8500MB    
      - 9500MB   
@@ -408,7 +453,7 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
    * - akya-cuda
      - akya-cuda
      - 24  
-     - 15-00:00:00 
+     - 03-00:00:00 
      - 10 
      - 8500MB   
      - 9500MB
