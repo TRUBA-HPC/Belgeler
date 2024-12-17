@@ -848,25 +848,8 @@ için aşağıdaki şekile benzer bir sonuç beklenmektedir.
 
    Basınç dağılımı
 
-Yukarıdaki şekilden de görülebileceği gibi basınç ön tarafta hız
-düşmesinden dolayı daha yüksektir, ve sonradan düşmeye başlar.
-Silindirin devamında akış basıncıyla aynı duruma gelir. Bu beklenen bir
-sonuçtur ve kullanıcıların da benzer sonuçlar elde etmeleri
-beklenmektedir.
+Yukarıdaki şekilden de görülebileceği gibi basınç ön tarafta hız düşmesinden dolayı daha yüksektir, ve sonradan düşmeye başlar. Silindirin devamında akış basıncıyla aynı duruma gelir. Bu beklenen bir sonuçtur ve kullanıcıların da benzer sonuçlar elde etmeleri beklenmektedir.
 
-TRUBA sunucusunda GUI (Grafiksel Kullanıcı Arayüzü) kullanılamadığından
-komutların terminalden girilmesi gerekmektedir. Çoğu adım seri iş
-oluşturma ile benzerlik gösterdiğinden daha detaylı anlatım için
-:ref:`is_gonderimi` ve :ref:`seri_ornek` bölümleri incelenebilir. 
+TRUBA sunucusunda GUI (Grafiksel Kullanıcı Arayüzü) kullanılamadığından komutların terminalden girilmesi gerekmektedir. Çoğu adım seri iş oluşturma ile benzerlik gösterdiğinden daha detaylı anlatım için :ref:`is_gonderimi` ve :ref:`seri_ornek` bölümleri incelenebilir. 
 
-TRUBA sunucusunda GUI (Grafiksel Kullanıcı Arayüzü) kullanılamadığından
-komutların terminalden girilmesi gerekmektedir. Kullanım rahatlığı
-açısından TRUBA sunucuna bağlanmadan kullanıcı arayüzü vasıtasıyla iş
-klasörünün oluşturulması ve istenilen seçimlerin yapılıp
-**ProblemAdı.xml** içine kaydedilmesi önerilir. Oluşturulan iş klasörü
-bir dosya aktarım programı, örneğin Filezilla, yardımı ile TRUBA
-sunucusuna taşınabilir. Ardından <**NEK/ÇözücüAdı dosyaadı.xml**>
-komutunun çalıştırılması yeterlidir. İş tamamlandıktan sonra sonuç
-dosyaları görüntüleme programlarında kullanılmak üzere, yine bir dosya
-transfer programı yardımıyla, tekrar kullanıcının bilgisayarına
-taşınabilir.
+TRUBA sunucusunda GUI (Grafiksel Kullanıcı Arayüzü) kullanılamadığından komutların terminalden girilmesi gerekmektedir. Kullanım rahatlığı açısından TRUBA sunucuna bağlanmadan kullanıcı arayüzü vasıtasıyla iş klasörünün oluşturulması ve istenilen seçimlerin yapılıp **ProblemAdı.xml** içine kaydedilmesi önerilir. Oluşturulan iş klasörü bir dosya aktarım programı, örneğin Filezilla, yardımı ile TRUBA sunucusuna taşınabilir. Ardından <**NEK/ÇözücüAdı dosyaadı.xml**> komutunun çalıştırılması yeterlidir. İş tamamlandıktan sonra sonuç dosyaları görüntüleme programlarında kullanılmak üzere, yine bir dosya transfer programı yardımıyla, tekrar kullanıcının bilgisayarına taşınabilir.

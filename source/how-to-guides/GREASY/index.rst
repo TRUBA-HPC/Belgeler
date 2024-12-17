@@ -44,7 +44,9 @@ komutunu yazdığınızda ARF kümesinde kurulu olan temel programlar listelenec
 
     komutlarından birisini yazabilirsiniz.
 
-/arf/sw/scripts/greasy dizini altında yer alan örnek SLURM betik dosyasını ve *.txt uzantılı olarak verilen iş dosyasını inceleyebilirsiniz.
+.. note::
+
+    /arf/sw/scripts/greasy dizini altında yer alan örnek SLURM betik dosyasını ve *.txt uzantılı olarak verilen iş dosyasını inceleyebilirsiniz.
 
 Greasy yazılımının kullanımı ile ilgili ayrıntılı bilgilere aşağıdaki içerikten erişebilirsiniz:
 
