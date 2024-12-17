@@ -45,19 +45,17 @@ Amber programı kullanım kitapçığındaki standart `CMake prosedürünü <htt
 
 .. note::
 
-    Aşağıdaki kurulum yönergesi ``GNU`` derleyicileri içindir. INTEL veya farklı derleyiciler için Amber kullanıcı dökümanını inceleyebilirsiniz.
+    Aşağıdaki kurulum yönergesi ``GNU`` derleyicileri içindir. INTEL veya farklı derleyiciler için `Amber <https://ambermd.org/>`_ sayfasında verilen kullanıcı dökümanını inceleyebilirsiniz.
 
 .. grid:: 2
    
-    .. grid-item-card:: :ref:`amber_cpu_seri_kurulum`
+    .. grid-item-card:: :ref:`amber_cpu`
         :text-align: center   
-    .. grid-item-card::  :ref:`amber_cpu_oepnmp_kurulum`
-        :text-align: center
-    .. grid-item-card:: :ref:`amber_cpu_mpi_kurulum`
-        :text-align: center
-    .. grid-item-card:: :ref:`amber_cpu_cuda_kurulum`
+    .. grid-item-card::  :ref:`amber_gpu`
         :text-align: center
 
+ 
+ .. _amber_cpu:
 
 -------------------------------------------
 CPU İçeren Hesaplama Kümeleri İçin Kurulum
@@ -114,6 +112,15 @@ Amber programını GNU derleyicileri ile kurmak için bağlandığınız sunucud
    gcc --version
 
 komutu ile kontrol edebilirsiniz. Eğer ilgili ``GCC`` versiyonu, programın gereksinimlerini karşılayan bir versiyonsa ayrıca bir ``GCC`` modülü yüklemenize gerek yoktur. Sunucudaki ``GCC`` versiyonundan daha üst bir versiyona ihtiyaç söz konusu ise ``module available`` komutu ile listelediğiniz ``GCC`` versiyonlarından uygun olanını ``module load`` komutu ile yükleyebilirsiniz. Bu kurulum yönergesinde sistemde varsayılan olarak yer alan ``GCC`` versiyonu ile devam edilecektir.
+
+.. grid:: 3
+   
+    .. grid-item-card:: :ref:`amber_cpu_seri_kurulum`
+        :text-align: center   
+    .. grid-item-card::  :ref:`amber_cpu_openmp_kurulum`
+        :text-align: center
+    .. grid-item-card:: :ref:`amber_cpu_mpi_kurulum`
+        :text-align: center
 
 
 .. _amber_cpu_seri_kurulum:
@@ -361,18 +368,13 @@ Kurulum tamamlandıktan sonra kontrol etmek amacıyla test adımına geçebilirs
 
     make test.parallel
 
+.. _amber_gpu:
 
-.. _amber_cpu_cuda_kurulum:
+-------------------------------------------
+GPU İçeren Hesaplama Kümeleri İçin Kurulum
+-------------------------------------------
 
-CUDA ile Kurulum
---------------------
-
-CUDA, NVIDIA GPU'larında çalışan özel uygulamalar oluşturmak için NVIDIA'nın yazılım geliştirme kitidir. Amber öncelikle ``pmemd.cuda`` da CUDA'yı kullanır, ancak aynı zamanda AmberTools'daki ``cpptraj, mdgx, pbsa`` gibi diğer bazı uygulamaları hızlandırmak için de kullanılır. Mevcut durumda Amber 24 versiyonu, 7.5 ile 12.4 dahil CUDA sürümlerini desteklemektedir.
-
-.. warning::
-
-    CUDA ile kurulum için barbun-cuda veya akya-cuda hesaplama kümelerinden interaktif olarak ``srun`` komutu ile rezervasyon yapabilirsiniz. Kurulumu GPU kartı olan CUDA hesaplama kümesinde gerçekleştirmeniz gerekmektedir.
-
+GPU destekli Amber programının kurulumu için barbun-cuda veya akya-cuda hesaplama kümelerinden interaktif olarak ``srun`` komutu ile rezervasyon yapabilirsiniz. Kurulumu GPU kartı olan CUDA hesaplama kümesinde gerçekleştirmeniz gerekmektedir.
 
 .. tabs::
 
@@ -388,6 +390,48 @@ CUDA, NVIDIA GPU'larında çalışan özel uygulamalar oluşturmak için NVIDIA'
       
             srun -p debug -C akya-cuda -N 1 -n 1 -c 10 --gres=gpu:1 -A kullanici_adi -J test --time=0:30:00 --pty /usr/bin/bash -i
 
+TRUBA sisteminde genel olarak kurulu olan programlar hakkındaki bilgiye
+
+.. code-block:: bash
+
+   module available
+
+komutu ile ulaşabilirsiniz. Kullanıcınızda yüklenmiş modülleri 
+
+.. code-block:: bash
+
+   module list
+
+komutu ile listeleyebilirsiniz. Herhangi bir çakışma olmaması açısından kurulum işlemlerine başlamadan önce
+
+.. code-block:: bash
+
+   module purge
+
+komutu ile kullanıcınızda tanımlı olan tüm modüle dosyalarını kaldırmanız önerilmektedir.
+
+Amber programını GNU derleyicileri ile kurmak için bağlandığınız sunucuda yer alan ``GCC`` versiyonunu 
+
+.. code-block:: bash
+
+   gcc --version
+
+komutu ile kontrol edebilirsiniz. Eğer ilgili ``GCC`` versiyonu, programın gereksinimlerini karşılayan bir versiyonsa ayrıca bir ``GCC`` modülü yüklemenize gerek yoktur. Sunucudaki ``GCC`` versiyonundan daha üst bir versiyona ihtiyaç söz konusu ise ``module available`` komutu ile listelediğiniz ``GCC`` versiyonlarından uygun olanını ``module load`` komutu ile yükleyebilirsiniz. Bu kurulum yönergesinde sistemde varsayılan olarak yer alan ``GCC`` versiyonu ile devam edilecektir.
+
+.. grid:: 2
+   
+    .. grid-item-card:: :ref:`amber_cuda_kurulum`
+        :text-align: center
+    .. grid-item-card:: :ref:`amber_cuda_mpi_kurulum`
+        :text-align: center       
+ 
+
+.. _amber_cuda_kurulum:
+
+CUDA ile Kurulum
+--------------------
+
+CUDA, NVIDIA GPU'larında çalışan özel uygulamalar oluşturmak için NVIDIA'nın yazılım geliştirme kitidir. Amber öncelikle ``pmemd.cuda`` da CUDA'yı kullanır, ancak aynı zamanda AmberTools'daki ``cpptraj, mdgx, pbsa`` gibi diğer bazı uygulamaları hızlandırmak için de kullanılır. Mevcut durumda Amber 24 versiyonu, 7.5 ile 12.4 dahil CUDA sürümlerini desteklemektedir.
 
 Kurulum için amber_src dizini altındaki ``build`` klasörüne gidiniz.
 
@@ -471,6 +515,8 @@ Kurulum tamamlandıktan sonra kontrol etmek amacıyla test adımına geçebilirs
     cd $AMBERHOME
     export CUDA_VISIBLE_DEVICES=0
     make test.cuda.serial
+
+.. _amber_cuda_mpi_kurulum:
 
 CUDA ve MPI ile Kurulum
 --------------------------
