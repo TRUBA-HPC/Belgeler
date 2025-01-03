@@ -15,6 +15,7 @@ ARDEB tarafından proje önerisi kabul edilmiş ve/veya ARDEB'e proje önerisi s
 
 .. toctree::
     :maxdepth: 1
+
     ardeb-hsbvsb-2025.rst
     ardeb-hsbvsb-2024.rst
     ardeb-hsbvsb-2023.rst
