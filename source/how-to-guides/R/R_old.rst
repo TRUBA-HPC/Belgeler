@@ -4,12 +4,12 @@
 R
 ===
 
-Bu belge `R <https://www.r-project.org/>`_ platformunun kullanımını kolaylaştırmak için oluşturulmuştur.
+Bu belge TRUBA altyapısında `R <https://www.r-project.org/>`_ platformunun kullanımını kolaylaştırmak için oluşturulmuştur.
 Bu kılavuz aşağıdakileri kapsamaktadır:
 
 .. grid:: 4
 
-    .. grid-item-card::  :ref:`r-modulleri`
+    .. grid-item-card::  :ref:`TRUBA-r-modulleri`
         :text-align: center
     .. grid-item-card:: :ref:`r-paket-kurulum`
         :text-align: center
@@ -25,20 +25,20 @@ Bu kılavuz aşağıdakileri kapsamaktadır:
         :text-align: center
     .. grid-item-card:: :ref:`sorunlar-cozumler`
         :text-align: center
-.. _r-modulleri:
+.. _TRUBA-r-modulleri:
 
-R Modülleri
+TRUBA'da R Modülleri
 --------------------
 R işlerini çalıştırabilmek için öncelikle modülleri yüklememiz gerekir.
-Merkezi sistemimizde gcc ve intel ile derlenmiş iki farklı R versiyonu bulunmaktadır.
+Centos 7.9 sistemimizde gcc ve intel ile derlenmiş iki farklı R versiyonu bulunmaktadır.
 
-Merkezi sistemimizde bulunan modülleri görmek için 
+TRUBA'da bulunan modülleri görmek için 
 
 .. code-block:: bash
 
-    module avail -t 2>&1 | grep -i apps/R
+    module avail -t 2>&1 | grep -i centos7.9/app/R
 
-Derleyicilerden GCC ve Intel versiyonlarını modül olarak kullanmak için aşağıdaki kod parçacıkları yazılır.
+Sisteminize gcc ve intel versiyonlarını modül olarak kullanmak için aşağıdaki kod parçacıkları yazılır.
 
 .. tabs::
 
@@ -47,26 +47,30 @@ Derleyicilerden GCC ve Intel versiyonlarını modül olarak kullanmak için aşa
         .. code-block:: bash
 
             module purge
-            module load apps/R/4.3.0-gcc-11.3.1
-            
+            module load centos7.9/comp/gcc/7
+            module load centos7.9/app/R/4.2.2-gcc-7
 
     .. tab:: Intel
 
         .. code-block:: bash
     
             module purge
-            module load apps/R/4.3.2-oneapi-2024.0
+            source /truba/sw/centos7.9/comp/intel/oneapi-2021.2/setvars.sh intel64
+            module load centos7.9/app/R/4.2.2-mkl-oneapi-2021.2
 
 
 İş vermeden önce kullanılmak istenilen R paketlerini kullanılacak dizine kurmanızı öneririz.
-
-:ref:`interaktif-is-calistirma` kılavuzu ile interaktif sunucuya bağlandıktan sonra yukarıda belirtildiği gibi modüller yüklendikten sonra terminale şunu yazdığımızda 
+Kısa süreli paket kurulumlarınızı *barbun1* kullanıcı arayüzünde gerçekleştirebilirsiniz. OpenVPN bağlantınız aktif iken *barbun1* kullanıcı arayüz sunucusuna bağlandıktan sonra (ssh username@172.16.11.1) yukarıda belirtildiği gibi modüller yüklendikten sonra terminale şunu yazdığımızda 
 
 .. code-block:: r
 
     R --vanilla
 
 R çalışmaya başlar ve paket kurulum aşamasına geçebiliriz.
+
+..
+
+    Yoğunluğa sebep vermemek ve hesabınızın askıya alınmaması için paket kurulumlarınızı *barbun1* arayüzünde gerçekleştirmeniz tavsiye edilir. *barbun1* sunucusu içinde iken yukarıda belirtildiği gibi modüller yüklendikten sonra terminale şunu yazdığımızda 
 
 .. _r-paket-kurulum:
 
@@ -80,7 +84,7 @@ Paketleri kurmadan önce hangi repoyu kullanacağını belirtebiliriz.  Sonrası
     chooseCRANmirror(ind=69)
     install.packages("remotes")
     Warning in install.packages("remotes") :
-    'lib = "/arf/sw//apps/R/4.3.0-gcc-11.3.1/lib64/R/library"' is not writable
+    'lib = "/truba/sw/centos7.9/app/R/4.2.2/lib64/R/library"' is not writable
     Would you like to use a personal library instead? (yes/No/cancel) yes
     Would you like to create a personal library
     ‘~/R/x86_64-pc-linux-gnu-library/4.2’
@@ -118,8 +122,9 @@ Rmpi'yi kümeye yüklemek için, gcc ile derlenmiş R başlatılmadan önce uygu
 .. code-block:: bash
 
     module purge
-    module load lib/openmpi/4.1.6
-    module load apps/R/4.3.0-gcc-11.3.1
+    module load centos7.9/comp/gcc/7
+    module load centos7.9/lib/openmpi/4.1.5-gcc-7
+    module load centos7.9/app/R/4.2.2-gcc-7
     R --vanilla -q 
 
 Bu adımdan sonra R çağrılmış olacak ve paket kurma adımları ile devam edebiliriz.
@@ -129,22 +134,22 @@ Bu adımdan sonra R çağrılmış olacak ve paket kurma adımları ile devam ed
      chooseCRANmirror(ind=66)
      install.packages("Rmpi",
       configure.args="
-      --with-Rmpi-include=/arf/sw/lib/openmpi/4.1.6/include
-      --with-Rmpi-libpath=/arf/sw/lib/openmpi/4.1.6/lib 
+      --with-Rmpi-include=/truba/sw/centos7.9/lib/openmpi/4.1.5-gcc-7/include
+      --with-Rmpi-libpath=/truba/sw/centos7.9/lib/openmpi/4.1.5-gcc-7/lib 
       --with-Rmpi-type=OPENMPI
       ")   
 
 .. warning:: 
 
-    Rmpi paketi yüklenirken kullanılan OpenMPI ile iş verirken modül olarak yüklediğiniz versiyon aynı olması gerekmektedir.
+    Rmpi paketi yüklenirken kullanılan OpenMPI ile iş verirken modül olarak yüklediğiniz versiyon aynı olması gerekmektedir. Rmpi paketi *barbun* ve *hamsi* hesaplama kümelerinde uyumlu çalışmaktadır.
 
-Kaynak kod kullanılarak Rmpi paketini ``~/libs/R_libs`` dizi altına kurmak isterseniz, öncelikle ``cran`` 'dan paketin `tar.gz` dosyası indirilir ve ``R CMD INSTALL`` kullanılarak kurulabilir.
+Kaynak kod kullanılarak Rmpi paketini ``~/libs/R_libs`` dizi altına kurmak isterseniz, öncelikle ``cran`` 'dan paketin tar.gz dosyası indirilir ve ``R CMD INSTALL`` kullanılarak kurulabilir.
 
 .. code-block:: bash
      
     wget https://cran.r-project.org/src/contrib/Rmpi_0.7-1.tar.gz
 
-    R CMD INSTALL --library=~/libs/R_libs --configure-args="--with-Rmpi-include=/arf/sw/lib/openmpi/4.1.6/include --with-Rmpi-libpath=/arf/sw/lib/openmpi/4.1.6/lib  --with-Rmpi-type=OPENMPI" Rmpi_0.7-1.tar.gz
+    R CMD INSTALL --library=~/libs/R_libs --configure-args="--with-Rmpi-include=/truba/sw/centos7.9/lib/openmpi/4.1.5-gcc-7/include --with-Rmpi-libpath=/truba/sw/centos7.9/lib/openmpi/4.1.5-gcc-7/lib --with-Rmpi-type=OPENMPI" Rmpi_0.7-1.tar.gz
 
 
 .. _ornek_MPI_rmpi:
@@ -200,8 +205,9 @@ Aşağıda, 5 tane MPI işi için talep edilen aynı sunucu içerisindeki 5 tane
 
                 ### Load modules
                 module purge
-                module load lib/openmpi/4.1.6
-                module load apps/R/4.3.0-gcc-11.3.1
+                module load centos7.9/comp/gcc/7
+                module load centos7.9/lib/openmpi/4.1.5-gcc-7
+                module load centos7.9/app/R/4.2.2-gcc-7
 
                 # btl_openib_allow_ib ile sunucular arası infiniband bağlantısı olduğu belirtilir.
                 # fork() uyarısı almamak adına mpi_warn_on_fork false yapılabilir.
@@ -281,6 +287,12 @@ Aşağıda, 5 tane MPI işi için talep edilen aynı sunucu içerisindeki 5 tane
                 [1] 1
                 > mpi.quit()
 
+
+
+
+
+
+
 .. _terminalde-r-ile-calismak:
 
 Terminalde R ile çalışmak
@@ -303,7 +315,7 @@ daha fazla parametre detayları için
 R, SLURM ve Paralelleştirme
 ---------------------------
 
-Yüksek performans elde edebilmek için kaynakların etkili şekilde kullanılması, yüksek başarımlı hesaplama alanlarında önem arz etmektedir. R ortamı, vektörel işlemler veya paralelleştirme için özel paketler kullanılmadığı sürece tek çekirdek üzerinde çalışmaktadır. Bu amaç doğrultusunda, aşağıda kapalı (implicit) ve açık paralelleştirme (explicit) örnekleriyle birlikte seri kod, çok iş parçacıklı kodlar, çok düğümlü (parallel MPI) veya hibrit işleri (çok iş parçacıklı ve çok düğümlü kodlar) için SLURM parametreleri paylaşılmıştır. Daha fazla detay için `buraya <https://www.john-ros.com/Rcourse/parallel.html>`_ bakabilirsiniz.
+Yüksek performans elde edebilmek için kaynaklara ihtiyaç bulunmaktadır. Bu kaynakları etkili şekilde kutlanmak yüksek başarımlı hesaplama alanları içinde önem arz etmektedir. R ortamının kendisi paralelleştirilmemiş olduğunu dikkate aldığımızda vektörel işlemler ya da paralelleştirme için özel paketler kullanılmadığı sürece R tek çekirdek üzerinde çalışmaktadır. Bu amaç doğrultusunda aşağıda kapalı (implicit) ve açık paralelleştirme (explicit) örneklerle kısaca bahsedilmeden önce örnek seri kod, çok iş parçacıklı kodlar, çok düğümlü (parallel MPI) veya hibrit isleri (çok iş parçacıklı ve çok düğümlü kodlar) için SLURM parametreleri paylaşılmıştır. Daha fazla detay için `buraya <https://www.john-ros.com/Rcourse/parallel.html>`_ bakabilirsiniz. 
 
 .. tabs::
 
@@ -350,7 +362,7 @@ Yüksek performans elde edebilmek için kaynakların etkili şekilde kullanılma
 OpenMP-Üstü Kapalı paralellik
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-R kurulumu varsayılan olarak kendi `Basic Linear Algebra Subprograms (BLAS) <https://www.netlib.org/blas/>`_ kütüphanesi ile birlikte gelir. Ancak, BLAS kütüphanesi sadece tek çekirdek üzerinde çalışır. Linear algebra işlemleri için pek çok paralel çalışabilen kütüphane bulunmaktadır. Kütüphanelerin karşılaştırması için `buraya <https://en.wikipedia.org/wiki/Comparison_of_linear_algebra_libraries>`_ bakılabilir. Merkezi sistemde varsayılan ve Intel MKL kütüphanesi kullanan iki farklı versiyon bulunmaktadır. Bu kütüphaneler kullanılarak işlemlerimizi hızlandırabiliriz. İşlerimizi ölçeklendirme kısmında R yüklenirken, OpenMP ortam değişkeni *OMP_NUM_THREADS* ayarlanmamış olarak bırakılır. Bu, R kodunu doğrudan bir master üzerinde çalıştırırken, bu sunucudaki bulunan tüm çekirdeklerin R'de derlenen dahili çoklu iş parçacığı kütüphaneleri tarafından kullanılacağı anlamına gelir. Sunucu aşırı yükleneceğinden ve işiniz başarısız olabileceğinden bu önerilmez. Bu nedenle, R kodunu çalıştırmadan önce SLURM betiği içerisinde *OMP_NUM_THREADS* değerini uygun bir değere ayarlamalısınız. Örneğin, R içinde dahili çoklu iş parçacığında kullanılmak üzere 4 çekirdek atamak için aşağıdakiler SLURM içine yazılabilir.
+R kurulumu varsayılan şeklide kurulduğunda kendi `Basic Linear Algebra Subprograms (BLAS) <https://www.netlib.org/blas/>`_ kütüphanesi ile birlikte gelir. Ancak BLAS kütüphanesi sadece tek çekirdek üzerinde çalışır. Linear algebra işlemleri için pek çok paralel çalışabilen kütüphane bulunmaktadır. Kütüphanelerin karşılaştırması için `buraya <https://en.wikipedia.org/wiki/Comparison_of_linear_algebra_libraries>`_ bakılabilir. TRUBA'da varsayılan R ile intel MKL kütüphanesi kullanan iki farklı versiyon bulanmaktadır. Bu kütüphanler kullanılarak işlemlerimizi hızlandırabiliriz. İşlerimizi ölçeklendirme kısmında R yüklenirken, OpenMP ortam değişkeni *OMP_NUM_THREADS* ayarlanmamış olarak bırakılır. Bu, R kodunu doğrudan bir master üzerinde çalıştırırken, bu sunucudaki bulunan tüm çekirdeklerin R'de derlenen dahili çoklu iş parçacığı kütüphaneleri tarafından kullanılacağı anlamına gelir. Sunucu aşırı yükleneceğinden ve işiniz başarısız olabileceğinden bu önerilmez. Bu nedenle, R kodunu çalıştırmadan önce SLURM betiği içerisinde *OMP_NUM_THREADS* değerini uygun bir değere ayarlanmalı. Örneğin, R içinde dahili çoklu iş parçacığında kullanılmak üzere 4 çekirdek atamak için aşağıdakiler SLURM içine yazılabilir.
 
 .. tabs::
 
@@ -379,7 +391,7 @@ Diğer taraftan bir de kod parçacıkları içerisinde paketler kullanarak çokl
      - system
      - elapsed
      - CPU Efficiency
-   * - R/4.3.0-gcc-11.3.1
+   * - R-4.2.2-GCC
      - 1-1-1 / 1
      - 558.712
      - 2.312
@@ -391,7 +403,7 @@ Diğer taraftan bir de kod parçacıkları içerisinde paketler kullanarak çokl
      - 0.634
      - 400.237
      - 9.88%
-   * - R/4.3.2-oneapi-2024.0
+   * - R-4.2.2-Intel
      - 1-1-1 / 1
      - 59.676
      - 0.517
@@ -445,10 +457,12 @@ Tabloda varsayılan parametreler kullanılarak GCC ile derlenmiş R ve Intel ile
 
                 ### GCC versiyonu için
                 module purge
-                module load apps/R/4.3.0-gcc-11.3.1
-
+                module load centos7.9/comp/gcc/7
+                module load centos7.9/app/R/4.2.2-gcc-7
+                
                 ## Intel versiyonu için
-                ## module load apps/R/4.3.2-oneapi-2024.0
+                ## source /truba/sw/centos7.9/comp/intel/oneapi-2021.2/setvars.sh intel64
+                ## module load centos7.9/app/R/4.2.2-mkl-oneapi-2021.2
 
                 echo "We have the modules: $(module list 2>&1)" > ${SLURM_JOB_ID}.info
 
@@ -493,7 +507,7 @@ Bu amaç için aşağıda örnek senaryolar bulunmaktadır. Açık paralel şeki
 dosyalarını örnek alabilirsiniz. 
 R da açık bir şekilde paralel iş yapmanın kolay yollarından bir tanesi `doParallel <https://cran.r-project.org/web/packages/doParallel/index.html>`_ paketini kullanmaktır. ``doParallel`` içerisinde ``foreach``, ``iterators`` ve ``parallel`` gibi paketleri de içerisinde barındırır. ``foreach`` paketi for döngüsünü ``%do%`` ile seri ve ``%dopar%`` ile paralel olarak kullanmamızı kolaylaştıran pratik fonksiyonları sağlayan bir pakettir. Yalnız, paralel çalışması için %dopar% öncesinde mevcut olan çekirdek sayısı kayıt edilmeli. Bu süreç için ``doParallel::registerDoParallel()``, ``%dopar%`` öncesinde belirtilebilir. Eğer ``registerDoParallel()`` çağrılırsa mevcut olan çekirdek sayısının yaklaşık yarısı kadar kayıt eder. İstenilirse ``registerDoParallel(cores=number_cores)`` ile çekirdek sayısını belirtebiliriz. 
 
-Ayrıca R betiği içerisinde SLURM aracılığı ile tahsis edilen iş/çekirdek sayısına erişmek ve o sayı kadar işlerimizi ölçeklendirmek isteyebiliririz. Bu durumda, ``parallel::detectCores()`` yerine  ``parallelly::availableCores(omit=1)`` veya ``Sys.getenv(c("SLURM_NTASKS"))`` kullanmanız tavsiye edilir. Örnek senaryolar ve çıktıları aşağıda görebilirsiniz. ``barbun`` suncularında fiziksel 40 çekirdek bulunduğu için ``detectCores()`` fonksiyonu istenilenden fazlasını yani hepsini buluyor. 
+Ayrıca R betiği içerisinde SLURM aracılığı ile tahsis edilen iş/çekirdek sayısına erişmek ve o sayı kadar işlerimizi ölçeklendirmek isteyebiliririz. Bu durumda, ``parallel::detectCores()`` yerine  ``parallelly::availableCores(omit=1)`` veya ``Sys.getenv(c("SLURM_NTASKS"))`` kullanmanız tavsiye edilir. Örnek senaryolar ve çıktıları aşağıda görebilirsiniz. ``barbun`` suncularında 80 çekirdek bulunduğu için ``detectCores()`` fonksiyonu istenilenden fazlasını yani hepsini buluyor. 
 
 .. tabs::
 
@@ -581,7 +595,7 @@ Ayrıca R betiği içerisinde SLURM aracılığı ile tahsis edilen iş/çekirde
             #SBATCH --output=%A.out #%A=JOB_ID %a=ArrayIndex
             #SBATCH --error=%A.err
             #SBATCH --time=00:15:00
-            #SBATCH --workdir=/arf/scratch/kullanici_adiniz/sw-u/R/script
+            #SBATCH --workdir=/truba/home/kullanici_adiniz/sw-u/R/script
             #SBATCH --job-name=1120.1-G
             #SBATCH --ntasks=1
             #SBATCH --nodes=1
@@ -590,7 +604,8 @@ Ayrıca R betiği içerisinde SLURM aracılığı ile tahsis edilen iş/çekirde
 
             ### Load modules
             module purge
-            module load apps/R/4.3.0-gcc-11.3.1
+            module load centos7.9/comp/gcc/7
+            module load centos7.9/app/R/4.2.2-gcc-7
 
             echo "We have the modules: $(module list 2>&1)" > ${SLURM_JOB_ID}.info
 
@@ -631,7 +646,7 @@ Ayrıca R betiği içerisinde SLURM aracılığı ile tahsis edilen iş/çekirde
             foreach(i=1:100) %dopar% { svd_func(i) }
             )
 
-R içerisinde yukarıda belirtilen otomatik paralel kayıt işlemi en etkili olan yöntem olmakla birlikte, istenilirse PSOCK ve FORK tipinde de paralel kümeleme ayarı yapılabilir. Bilindiği üzere FORK tipinde paralel işlerde aynı R ortamları (veriler, fonksiyonlar, paketler) kopyalanmadan master iş tarafından paylaşılırken, PSOCK tipinde aynı R ortamı istenilen paralel iş sayısı kadar kopya oluşturulup işler koşturulur. FORK tipi paralellik sadece Unix-benzeri sistemlerde çalışırken, PSOCK tipi hem Unix-benzeri sistemlerde hem de Windows'ta çalışabilir. Aşağıda bu iki tip için kullanılabilecek taslak bir R betiğini inceleyebilirsiniz.
+R içerisinde yukarıda belirtilen otomatik paralel kayıt işlemi en etkili olan yöntem olmakla birlikte, istenilirse PSOCK ve FORK tipinde de paralel kümeleme ayarı yapılabilir. Bilindiği üzere FORK tipinde paralel işlerde aynı R ortamları (veriler, fonksiyonlar, paketler) kopyalanmadan master iş tarafından paylaşılırken, PSOCK tipinde aynı R ortamı istenilen paralel iş sayısı kadar kopya oluşturulup işler koşturulur. Aşağıdaki bu iki tip için kullanılabilicek taslak bir R betiğini incelenebilir.
 
 .. tabs:: 
 
@@ -716,8 +731,11 @@ Tek sunucu içerisinde kullanılabilecek maksimum çekirdek sayıısı yetersiz 
 
                 ### Load modules
                 module purge
-                module load lib/openmpi/4.1.6
-                module load apps/R/4.3.0-gcc-11.3.1
+                module load centos7.9/comp/gcc/7
+                ## MPI icin
+                module load centos7.9/lib/openmpi/4.1.5-gcc-7
+
+                module load centos7.9/app/R/4.2.2-gcc-7
 
                 echo "We have the modules: $(module list 2>&1)" > ${SLURM_JOB_ID}.info
 
@@ -754,8 +772,11 @@ Tek sunucu içerisinde kullanılabilecek maksimum çekirdek sayıısı yetersiz 
 
                 ### Load modules
                 module purge
-                module load lib/openmpi/4.1.6
-                module load apps/R/4.3.0-gcc-11.3.1
+                module load centos7.9/comp/gcc/7
+                ## MPI icin
+                module load centos7.9/lib/openmpi/4.1.5-gcc-7
+
+                module load centos7.9/app/R/4.2.2-gcc-7
 
                 echo "We have the modules: $(module list 2>&1)" > ${SLURM_JOB_ID}.info
 
@@ -845,7 +866,8 @@ Aşağıda 2 tane girdi kabul eden ve girdiler arasında bir liste oluşturup li
 
                 ### Load modules
                 module purge
-                module load apps/R/4.3.0-gcc-11.3.1
+                module load centos7.9/comp/gcc/7
+                module load centos7.9/app/R/4.2.2-gcc-7
 
                 export OMP_NUM_THREADS=1
                 #export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
@@ -878,7 +900,9 @@ Birbirleri ile bağımlı işler çalıştırmak için ``--dependency`` parametr
 
 Benchmark Sonuçları
 --------------------
-Aşağıdaki sonuçlar, TRUBA sistemlerinde bulunan iki farklı derleyici ile elde edilmiş R versiyonları üzerinde gerçekleştirilmiştir. Sonuçlar ARF hesaplama kümesinde farklılık gösterebilir. Hangi derleyiciyi kullanmanız gerektiği konusunda fikir sahibi olabilmek için aşağıdaki benchmark sonuçlarını inceleyebilirsiniz.
+Sistemlerimizde iki farklı derleyici ile elde edilmiş R versiyonları bulunmaktadır. 
+Ne zaman hangisini kullanacağımız konusunda ön bilgi sahibi olmak 
+adına aşağıda yapılmış olan benchmark sonuçlarını inceleyebilirsiniz.
 
 Kullanılan optimize paketlerini görmek için ``sessionInfo()`` fonksiyonu kullanabilirsiniz.
 Intel derleyicisi ile olan modüller yüklendikten sonra R içerisinde ``sessionInfo()`` çalıştırılırsa BLAS/LAPACK paketlerini `Intel® oneAPI Math Kernel Library (oneMKL) <https://www.intel.com/content/www/us/en/developer/articles/technical/using-onemkl-with-r.html>`_ kullanıldığından emin olabiliriz. TRUBA'dan ``hamsi`` kümelerinde yapılan `R-benchmark-2.5 <https://mac.r-project.org/benchmarks/>`_ sonuçlarını aşağıda bulabilirsiniz:
@@ -967,7 +991,7 @@ Bu bağlantıya sadece :ref:`openvpn baglantısı ile <open-vpn>` üzerinden eri
 
 .. note:: 
     
-    Örnek betik dosyalarına ``/arf/sw/scripts/R`` dizininden erişim sağlayabilirsiniz.
+    Örnek betik dosyalarına ``/truba/sw/scripts/R`` dizininden erişim sağlayabilirsiniz.
 
 .. _sorunlar-cozumler:
 

@@ -18,17 +18,6 @@ Detaylı kurulum aşamaları ve yardım için şu sayfalar ziyaret edilebilir:
 - `R Installation and Administration <https://cran.r-project.org/doc/manuals/r-patched/R-admin.html>`_
 - `Install R from Source <https://docs.posit.co/resources/install-r-source/>`_
 - `Using Intel® oneAPI Math Kernel Library (oneMKL) with R <https://www.intel.com/content/www/us/en/developer/articles/technical/using-onemkl-with-r.html>`_
-Kurulum işlemlerimizi interaktif yapmak için bir sunucu isteyebiliriz.
-
-.. code-block:: bash
-
-    srun -N 1 -A kullanici_adiniz -p hamsi --ntasks-per-node=28 --time=01:00:00 --job-name "R-install" --pty bash -i
-
-Sunucu gelip gelmediğini bağlı olunan makine ismine bakarak öğrenebiliriz.
-
-.. code-block:: bash
-
-    hostname
 
 .. dropdown:: :octicon:`codespaces;1.5em;secondary` Kurulum için yönergeler (Tıklayınız)
     :color: info
