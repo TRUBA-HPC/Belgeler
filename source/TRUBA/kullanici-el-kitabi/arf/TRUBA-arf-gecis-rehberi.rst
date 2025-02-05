@@ -7,16 +7,19 @@ TRUBA Kümesinden ARF Kümesine Geçiş Rehberi
 
 Kullanıcı arayüzlerinden **Barbun1/Levrek1** üzerinden erişilip kullanılmakta olan ``barbun, hamsi, barbun-cuda`` ve ``akya-cuda`` sunucuların bulundukları kuyruklar 1 Aralık 2024 tarihi itibari ile güncellenerek ARF kümesinde hizmet vermeye başlayacaklardır. Bu geçişin daha sorunsuz olması için aşağıdaki rehberi takip edebilirsiniz.
 
-.. grid:: 2
+.. grid:: 3
    
     .. grid-item-card:: :ref:`kullanici-arayuzleri-sunucular`
-        :text-align: center   
+        :text-align: center
     .. grid-item-card::  :ref:`dosya-sistemi`
         :text-align: center
     .. grid-item-card:: :ref:`yazilim-ve-kutuphaneler`
         :text-align: center
     .. grid-item-card:: :ref:`is-calistirma`
         :text-align: center
+    .. grid-item-card:: :ref:`interaktif-is-calistirma`
+        :text-align: center
+
 
 .. _kullanici-arayuzleri-sunucular:
 
@@ -244,6 +247,12 @@ Orfoz ve hamsi kuyruklarında çalışmakta olan sunucularda, cihazların sahip 
             #SBATCH -C weka
             #SBATCH --time=3-00:00:00
 
+
+.. _interaktif-is-calistirma:
+
+------------------------
+İnteraktif İş Çalıştırma
+------------------------
 
 .. warning::
 
