@@ -62,7 +62,7 @@ Bilgisayarınızda Docker kuruluysa HTML sayfalarını derlemek için şu komutl
 ```
 mkdir build
 git clone https://github.com/TRUBA-HPC/Belgeler.git truba-belgeler
-docker run --rm -v /path/to/truba-belgeler:/docs -v /path/to/build:/build keremkayabay/sphinx:latest sphinx-build -b html /docs/source /build
+docker run --rm -v /path/to/truba-belgeler:/docs -v /path/to/build:/build docker pull trubahpc/tabula_machina:latest /bin/bash -c "source /opt/sphinx/bin/activate && sphinx-build -b html /docs/source /build"
 ```
 
 Derlenen dosyaları ``build`` klasöründe bulabilirsiniz.
