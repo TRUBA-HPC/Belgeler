@@ -13,4 +13,4 @@ MATLAB, sahip olunan lisans türüne göre TRUBA üzerinde farklı şekillerde �
 .. toctree::
     :maxdepth: 2
 
-    MATLAB_TRUBA.rst
+    MATLAB_TRUBA-tmp.rst

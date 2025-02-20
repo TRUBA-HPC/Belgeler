@@ -3,7 +3,7 @@ GROMACS Programının GPU Destekli Derlenmesi
 ===============================================
 
 GROMACS programını GPU destekli olarak iki şekilde kurabiliriz. Bunlardan ilki hiç module yüklemeden, derleme yapmadan Yüksek Başarımlı Hesaplama' da 
-en çok tercih edilen **Singularity** container kullanmaktır. İkincisi ise TRUBA' da mevcut moduüllerin yüklenmesi ile yapılan derlemedir. Aşağıdaki kurulum
+en çok tercih edilen **Singularity** container kullanmaktır. İkincisi ise TRUBA' da mevcut modüllerin yüklenmesi ile yapılan derlemedir. Aşağıdaki kurulum
 öğreticisinde iki şekilde de gösterilecektir.
 
 ---------------------------------------------------

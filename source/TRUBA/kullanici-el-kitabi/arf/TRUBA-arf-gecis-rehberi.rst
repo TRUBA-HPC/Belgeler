@@ -155,7 +155,8 @@ Ev dizinleri, kullanıcıların kullanacakları uygulamaları kurmaları ve kull
 .. note::
 
   **Önemli Notlar:**
-    - ``/truba/home`` ve ``/truba/scratch``'daki tüm dosyaların taşınmasına gerek yoktur. Lütfen sadece ihtiyacınız olan dosyaları taşıyınız. 
+    - ``/truba/home/username`` dizini altındaki tüm dosyaların taşınmasına gerek yoktur. Lütfen sadece ihtiyacınız olan dosyaları taşıyınız. 
+    - ``/truba/scratch/username`` dizini artık kullanılmamalıdır. Buradaki önemli veriler kullanıcının kendi bilgisayarına indirilmelidir. Eğer daha sonra ARF kümesindeki sunucularda yapılacak hesaplamalarda kullanılması gereken veriler varsa, bu tür veriler eğer kota yetiyorsa ``/arf/home/username`` dizinine eğer kota yetmiyorsa ``/truba/home/username`` dizinine taşınmalı ve ``/truba/scratch/username``  boşaltılmalıdır. 
     - TRUBA ve ARF kümelerindeki dosya sistemlerinden hiç biri kalıcı bir depolama alanı değildir. Buradaki verilerin yedekleri alınmamaktadır. Verilerin yedeklenmesinden kullanıcıların kendileri sorumludur. Saklanması gereken her türlü veri kullanıcının kendi bilgisayarına indirilmelidir. TRUBA ve ARF'ta sadece daha sonraki hesaplar için ihtiyaç olunan veriler saklanmalıdır.
 
 
@@ -197,13 +198,14 @@ ARF kümesinde merkezi olarak kurulu yazılımlar, kütüphaneler ve örnek beti
      - /arf/sw/scripts 
 
 
-ARF kümesindeki sunucular ``RockyLinux 9.2`` işletim sistemi kullanmaktadır. Bu nedenle, TRUBA'da ``barbun`` (``CentOS 7.3``), ``hamsi`` (``CentOS 7.9``) ve ``akya`` (``CentOS 7.3``) sunucuları için derlenmiş uygulamaların çoğu ARF'da ya çalışmayacak ya da düşük performans gösterecektir. Kullanıcılar, ARF'da merkezi olarak kurulu uygulamaları kullanmalı veya kendi uygulamalarını kullanmak istiyorlarsa, bu uygulamaları güncel derleyici ve kütüphanelerle yeniden derleyip ``/arf/home/$USER`` dizinine yüklemelidirler.
+ARF kümesindeki sunucular ``RockyLinux 9.2`` işletim sistemi kullanmaktadır. Bu nedenle, TRUBA'da ``barbun`` (``CentOS 7.3``), ``hamsi`` (``CentOS 7.9``) ve ``akya`` (``CentOS 7.3``) sunucuları için derlenmiş uygulamaların çoğu ARF'da ya çalışmayacak ya da düşük performans gösterecektir. Kullanıcılar, ARF'ta merkezi olarak kurulu uygulamaları kullanmalı veya kendi uygulamalarını kullanmak istiyorlarsa, bu uygulamaları güncel derleyici ve kütüphanelerle yeniden derleyip ``/arf/home/$USER`` dizinine yüklemelidirler.
 
 Hem dosya sistemi yapısının ve yollarının değişmiş olması hem işletim sisteminin değişmiş olması nedeni ile TRUBA'da hali hazırda kullanılmakta olan betik dosyaları ARF'da çalışmayacaktır. Örnek betik dosyaları ``/arf/sw/scripts`` altında bulunmaktadır.
 
 .. note::
 
   Önemli Notlar:
+  
     - Ev dizinlerine kesinlikle conda, miniconda, anaconda veya PIP benzeri paket yöneticileri ile uygulama/kütüphane kurulmamalıdır. Bu tür ortamlara ihtiyaç duyulması halinde merkezi conda ve python kurulumları kullanılabilir. Eğer özel bir kuruluma ihtiyaç varsa, bu kurulum konteynerlar içine yapılmalıdır. Konteyner kurulumu hakkında detaylı bilgiye :ref:`Konteyner Kullanımı <Apptainer>` sayfasından ulaşılabilir.
 
     - Pek çok uygulama ve kütüphane ARF kümesinde hali hazırda kuruludur. Kullanıcılar bu merkezi kurulumları modül dosyaları yardımı ile kullanabilirler. 
