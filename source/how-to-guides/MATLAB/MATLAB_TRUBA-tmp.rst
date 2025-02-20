@@ -34,26 +34,38 @@ Kişisel Bilgisayarınızda MATLAB Çalıştırırak TRUBA'ya İş Göndermek
 
 - Kişisel bilgisayarınızdan çalıştırdığınız MATLAB ile TRUBA’ya iş gönderebilmek için bir seferlik küme ayarının (“parallel cluster”) yapılması gerekmektedir.
 
-- İlgili ayar dosyaları ``/truba/sw/scripts/matlab/matlabScripts/truba.nonshared.R2021b`` klasöründe yer almaktadır. Buradan ilgili klasörü kendi bilgisayarınıza indirebilirsiniz. 
+- MATLAB 2021b ve 2024a versiyonları için ilgili ayar dosyaları sıkıştırılmış formatta ``/arf/sw/scripts/matlab``  dizininde yer almaktadır (sırasıyla; arf.nonshared.R2021b.zip ve arf.nonshared.R2024a.zip). Buradan ilgili klasörü kendi bilgisayarınıza indirebilirsiniz. 
 
   ::
      
-    # TRUBA'ya bağlantı sağlamak için OpenVPN bağlantısını sağladıktan sonra terminalde 172.16.11.1 adresini  kullanmanız gerekecektir (:ref:`openvpn-info`).
-    scp -r username@172.16.11.1:/truba/sw/scripts/matlab/matlabScripts/truba.nonshared.R2021b ~/TRUBA_R2021b
+    # arf-ui kullanıcı arayüz sunucusuna bağlantı sağlamak için OpenVPN bağlantısını sağladıktan sonra terminalde 172.16.6.11 adresini kullanmanız gerekecektir (:ref:`openvpn-info`).
 
-İlgili dosyayı ayrıca :download:`bu web bağlantisindan </assets/matlab-howto/config-files/truba.nonshared.R2021b.zip>` indirebilirsiniz.
+    .. code-block:: bash
+
+        scp -r username@172.16.6.11:/arf/sw/scripts/matlab/arf.nonshared.R2021b.zip ~/ARF_R2021b
+    
+    veya
+
+    .. code-block:: bash
+
+        scp -r username@172.16.6.11:/arf/sw/scripts/matlab/arf.nonshared.R2024a.zip ~/ARF_R2024a
+    
+
+İlgili dosyayı ayrıca aşağıdaki ilgili web bağlantılarından da indirebilirsiniz:
+:download:`MATLAB 2021b </assets/matlab-howto/config-files/arf.nonshared.R2021b.zip>`
+:download:`MATLAB 2024a </assets/matlab-howto/config-files/arf.nonshared.R2024a.zip>`
 
 .. note::
 
-    * TRUBA üzerinde **MATLAB R2021b** versiyonu yüklüdür. Bu yöntem ile çalışmak istiyorsanız siz de kendi bilgisayarınıza aynı versiyonu yüklemeniz gerekmektedir.
+    * ARF üzerinde **MATLAB R2024a** versiyonu yüklüdür. Bu yöntem ile çalışmak istiyorsanız siz de kendi bilgisayarınıza aynı versiyonu yüklemeniz gerekmektedir.
     
-    * Aşağıdaki örnek ilgili klasörün ``'~/TRUBA_R2021b'`` altında olduğu varsayılarak düzenlenmiştir.
+    * Aşağıdaki örnek ilgili klasörün ``'~/ARF_R2024a'`` altında olduğu varsayılarak düzenlenmiştir.
 
 - Kişisel bilgisayarınızda çalıştırdığınız **MATLAB komut penceresinden** indirmiş olduğunuz ayar dosyasına gidip, ``configCluster`` komutunu çalıştırınız. Sonrasında TRUBA kullanıcı adınızı giriniz.
 
 ::
 
-    >> cd ~/TRUBA_R2021b/
+    >> cd ~/ARF_R2024a/
     >> configCluster
 
 .. image:: /assets/matlab-howto/matlab3.png
@@ -72,12 +84,12 @@ Bu işlemi bir kez gerçekleştirmek yeterlidir. Bundan sonra iş gönderirken �
 Hesap ve kuyruk parametrelerinin yapılandırması
 :::::::::::::::::::::::::::::::::::::::::::::::
 
-MATLAB’ı çalıştıracağınız küme hakkındaki parametrelerinizi ayarlamanız gerekmektedir. "**truba.nonshared.R2021b**" dizini içerisindeki **truba.m** dosyası parametreleri otomatik olarak yapılandırmaktadır. İhtiyacınıza göre ilgili parametreleri bu dosyadan değiştirebilirsiniz. Sonrasıda **MATLAB komut satırından** :code:`truba` komutunun çalıştırılması yeterli olacaktir. Ayrıca küme ve işinizle ilgili ayarları MATLAB komut satırı  üzerinden de değiştirebilirsiniz. Parametreler ile ilgili aşağıda bir örnek  verilmiştir. 
+MATLAB’ı çalıştıracağınız küme hakkındaki parametrelerinizi ayarlamanız gerekmektedir. "**arf.nonshared.R2024a**" dizini içerisindeki **arf.m** dosyası parametreleri otomatik olarak yapılandırmaktadır. İhtiyacınıza göre ilgili parametreleri bu dosyadan değiştirebilirsiniz. Sonrasıda **MATLAB komut satırından** :code:`arf` komutunun çalıştırılması yeterli olacaktir. Ayrıca küme ve işinizle ilgili ayarları MATLAB komut satırı  üzerinden de değiştirebilirsiniz. Parametreler ile ilgili aşağıda bir örnek  verilmiştir. 
  
    
 .. warning::
 
-    Eğer kampüs dışından (ULAKNET ağı dışından) bağlanıyorsanız öncelikle :ref:`open-vpn` ile bağlantı yapmanız gerekmektedir. 
+    ARF kullanıcı arayüz sunucularına bağlantı sağlayabilmek için, ULAKNET ağı içinde veya dışında olma durumunuz farketmeksizin, öncelikle :ref:`open-vpn` bağlantısını yapmanız gerekmektedir. 
 
 ::
 
@@ -89,8 +101,8 @@ MATLAB’ı çalıştıracağınız küme hakkındaki parametrelerinizi ayarlama
     c.RequiresOnlineLicensing=true
     
     % bağlanacağınız arayüz makinesinin ip adresini 
-    % OpenVPN ile bağlantınız mevcut iken 172.16.11.1
-    c.AdditionalProperties.ClusterHost='172.16.11.1';
+    % OpenVPN ile bağlantınız mevcut iken 172.16.6.11
+    c.AdditionalProperties.ClusterHost='172.16.6.11';
 
     % ssh portunu ayarlayın
     c.AdditionalProperties.UseSshPort=22;
@@ -125,7 +137,7 @@ MATLAB’ı çalıştıracağınız küme hakkındaki parametrelerinizi ayarlama
     %c.AdditionalProperties.Reservation='Varsa_rezervasyon_adi'
 
     %% isinizin truba uzerinde nerede saklanacagi ile ilgili yeri belirtebilirsiniz
-    % c.AdditionalProperties.RemoteJobStorageLocation='/truba/home/kullaniciadi/.matlab/3p_cluster_jobs/truba/kullaniciadi.local/R2021b/nonshared'w
+    % c.AdditionalProperties.RemoteJobStorageLocation='/arf/home/kullaniciadi/.matlab/3p_cluster_jobs/arf/kullaniciadi.local/R2024a/nonshared'w
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -143,17 +155,13 @@ Küme ayarlarınız başarıyla oluşturulmuş durumda. Ayrıca ``"Home->Paralle
 
 İşlerinizi göndermeden önce küme ayarlarını komut satırı yerine bu arayüz üzerinden de değiştirebilirsiniz. Ayar değişikliğinin aktif olması için parcluster komutunu yeniden çalıştırınız :code:`clear c; c=parcluster` .  
 
-.. warning::
-
-    TRUBA üzerinde kurulu MATLAB, sadece  CentOS-7.9 işletim sistemi ile çalışmaktadır. Bu nedenle şu an için işler sadece **hamsi** kümesine gönderilebilir.
-
 
 .. image:: /assets/matlab-howto/matlab6.png
     :width: 800px
 
 .. note::
 
-    Küme üzerinde işlerinizin kayıt edildiği yer varsayılan olarak ``.matlab/3p_cluster_jobs/truba/TRUBA.R2021b/nonshared`` klasörüdür.  İşinizin durumunu ve sonuçlarını buradan kontrol edebilirsiniz.
+    Küme üzerinde işlerinizin kayıt edildiği yer varsayılan olarak ``.matlab/3p_cluster_jobs/arf/ARF.R2024a/nonshared`` klasörüdür.  İşinizin durumunu ve sonuçlarını buradan kontrol edebilirsiniz.
 
     :code:`c.AdditionalProperties.RemoteJobStorageLocation=''` komutu ile de ilgili klasörün yerini de değiştirebilirsiniz.
 
@@ -185,7 +193,9 @@ MATLAB komut satırından çalıştıracağınız tüm komutlar  kişisel bilgis
 
 .. note::
 
-   **Hamsi** kuyruğunda sunucu başına minimum 28 çekirdek kullanılabilir. Hamsi kuyruğuna gönderilecek işler 28 ve katlarında çekirdek kullanmalıdır.
+    **Orfoz** kuyruğunda sunucu başına minimum 55, maksimum 110 çekirdek kullanılabilir. Orfoz kuyruğuna gönderilecek işler ve katlarında çekirdek kullanmalıdır.
+
+    **Hamsi** kuyruğunda sunucu başına minimum 54 çekirdek kullanılabilir. Hamsi kuyruğuna gönderilecek işler 54 ve katlarında çekirdek kullanmalıdır.
 
 
 
@@ -293,7 +303,7 @@ Bu dosyayı aşağıdaki komutla kuyruğa gönderebilirsiniz:
 
 ::
 
-    j=batch('test2','CurrentFolder','/truba/home/kullanici_calisma_dizini/', 'AutoAddClientPath',false); 
+    j=batch('test2','CurrentFolder','/arf/home/kullanici_calisma_dizini/', 'AutoAddClientPath',false); 
 
 Bu dosya kuyrukta çalışıp sonlandıktan sonra, ekran çıktılarını
 
@@ -334,7 +344,7 @@ Bu dosya kuyruğa aşağıdaki komutla gönderilir.
 
 ::
 
-    j=batch('test3','CurrentFolder','/truba/home/kullanici_calisma_dizini/', 'AutoAddClientPath',false); 
+    j=batch('test3','CurrentFolder','/arf/home/kullanici_calisma_dizini/', 'AutoAddClientPath',false); 
 
 Bu dosya kuyrukta çalışıp sonlandıktan sonra, ekran çıktılarını
 
@@ -355,7 +365,7 @@ lokal arayüzünüze alabilirsiniz.
 
 MATLAB'ın neredeyse tüm fonksiyonları node için paralelleştirmeyi (OpenMP) hali hazırda desteklemektedir. Bu desteği kullanmak için kodda ekstra değişiklikler yapmaya gerek bulunmamaktadır. Herhangi bir MATLAB  fonksiyonu çalıştırıldığında, kod sunucuda izin verilen tüm çekirdekleri kullanacaktır.
 
-MATLAB aynı zamanda nodelar arası paralelleştirmeyi (MPI) de desteklemektedir. Büyük :code:`for` döngüleri ya da destekeleyen diğer fonksiyonlar, birkaç basit  değişiklikle nodelar arası  paralel çalışır hale getirilebilir. Aşağıdaki kod parçasında paralel for döngüsü kullanılmıştır.
+MATLAB aynı zamanda sunucular arası paralelleştirmeyi (MPI) de desteklemektedir. Büyük :code:`for` döngüleri ya da destekeleyen diğer fonksiyonlar, birkaç basit  değişiklikle nodelar arası  paralel çalışır hale getirilebilir. Aşağıdaki kod parçasında paralel for döngüsü kullanılmıştır.
 
 :: 
 
@@ -391,11 +401,11 @@ Kodu kuyruğa göndermek için
 Barbun1 üzerinde MATLAB çalıştırarak TRUBA'ya iş göndermek
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Öncelikle kişisel lisansınızın TRUBA üzerinde aktif edilmesi gerekmektedir. Lisansınızı aktifleştirmek için **barbun1** ya da **sardalya1** bir sunucularından herhangi birine  grafik arayüzü desteği ile bağlanmak gereklidir. TRUBA kullanıcı arayüzlerine 3 farklı şekilde grafik arayüzü bağlantısı yapılabilir.
+Öncelikle kişisel lisansınızın TRUBA üzerinde aktif edilmesi gerekmektedir. Lisansınızı aktifleştirmek için **arf-ui** kullanıcı arayüz sunucularından herhangi birine grafik arayüzü desteği ile bağlanmak gereklidir. TRUBA kullanıcı arayüzlerine 3 farklı şekilde grafik arayüzü bağlantısı yapılabilir.
 
 1. ``ssh -XY username@sunucu_adi`` komutu aracılığıyla :ref:`grafik arayüz <grafik-ekran>` alarak
 
-2. :ref:`VNC ile (barbun1) üzerinde (Linux XFCE Desktop) masaüstü çalıştırarak <TRUBA-vnc>`
+2. :ref:`VNC ile üzerinde (Linux XFCE Desktop) masaüstü çalıştırarak <TRUBA-vnc>`
 
 3. :ref:`OpenOnDemand <open_ondemand>` ile bağlanarak. “Interactive Apps” sekmesinden ``“TRUBA Desktop”`` **(Linux XFCE Desktop)** oturumu başlatılabilir. Linux Masaüstü üzerinde çalıştırılacak uygulamalar, küme üzerindeki hesaplama sunucularında çalıştırılmış olacaktır. Linux Masaüstünde **terminal** uygulamasından verilecek komutlarla sunucu üzerinde MATLAB da dahil olmak üzere herhangi bir görsel uygulama çalıştırılabilir.
 
@@ -416,8 +426,7 @@ Arayüz sunucusunda terminal ekranı aldıktan sonra MATLAB ile küme profili ol
 .. image:: /assets/matlab-howto/matlab12.png
    :width: 800px
 
-Sistem üzerinde farklı versiyonlar yüklü olabilir (R2018b ve R2021b vb).
-Örnek olarak R2021b versiyonunu kullanacaksanız öncelikle bu yazılımı ``module load`` ile sisteminize yüklemeniz gerekecektir. Modül kullanımı ile ilgili bigiye :ref:`moduller-truba` sayfasından erişebilirsiniz.
+Sistem üzerinde farklı versiyonlar yüklü olabilir (R2021b ve R2024a vb). Örnek olarak R2024a versiyonunu kullanacaksanız öncelikle bu yazılımı ``module load`` ile sisteminize yüklemeniz gerekecektir. Modül kullanımı ile ilgili bigiye :ref:`moduller-truba` sayfasından erişebilirsiniz.
 
 ::
 
@@ -425,7 +434,7 @@ Sistem üzerinde farklı versiyonlar yüklü olabilir (R2018b ve R2021b vb).
     module purge
 
     ## modülü yüklemek için
-    module load centos7.9/app/matlab/r2021b
+    module load apps/matlab/2024a
 
     ## modülün doğru şekilde yüklendiğini doğrulamak için
     module list
@@ -451,17 +460,17 @@ Eğer ilgili sorgu ekran otomatik olarak açılmazsa ``matlab/bin`` dizinin alti
     Not: Daha önce sunucu üzerinde lisansınızı kayıt ettirmişseniz kaydın yeniden yapılmasına gerek olmayabilir. Lisans uyarısı aldığınız taktirde ise
     ``activate`` betiğini yeniden çalıştırınız.
 
-Lisans doğrulamasını gerçekleştirdikten sonra Matlab'ı yeniden çalıştırarak slurm küme ayarlarını gerçekleştirebilirsiniz.
+Lisans doğrulamasını gerçekleştirdikten sonra MATLAB'ı yeniden çalıştırarak SLURM küme ayarlarını gerçekleştirebilirsiniz.
 
 ::
 
     matlab -nosplash
 
-Öncelikle ayar dosyasını (``/truba/sw/scripts/matlab/matlabScripts/truba.shared.R2021b``) arayüz sunucusunda kendi dizininize kopyalayın.
+Öncelikle ayar dosyasını (``/arf/sw/scripts/matlab/matlabScripts/truba.shared.R2021b``) arayüz sunucusunda kendi dizininize kopyalayın.
 
 ::
 
-    ## bagli oldugunuz arayuz sunucusunda (ornegin barbun1)
+    ## bagli oldugunuz arayuz sunucusunda (örneğin arf-ui1)
     cp -r /truba/sw/scripts/matlab/matlabScripts/truba.shared.R2021b ~/TRUBA_2021b_shared
 
 Daha sonra **MATLAB Komut Satırından** ilgili ayar dosyası çalıştırılır.
@@ -469,16 +478,16 @@ Daha sonra **MATLAB Komut Satırından** ilgili ayar dosyası çalıştırılır
 ::
 
     matlab -nosplash
-    cd ~/TRUBA_2021b_shared
+    cd ~/ARF_2024a_shared
     configCluster
 
 Bu ayar dosyasını bir kez çalıştırmanız yeterlidir. Daha sonra :ref:`MATLAB-TRUBA_config` yönergelerini takip ederek hesaplama kümelerine iş gönderebilirsiniz.
 
 .. warning::
 
-    Kişisel bilgisayar üzerinden çalıştırdığınız MATLAB ile TRUBA kümesine iş göndermek için ``/truba/sw/scripts/matlab/matlabScripts/truba.nonshared.R2021b`` ayar dosyasını,
+    Kişisel bilgisayar üzerinden çalıştırdığınız MATLAB ile TRUBA kümesine iş göndermek için ``/arf/sw/scripts/matlab/matlabScripts/truba.nonshared.R2021b`` ayar dosyasını,
 
-    TRUBA arayüz sunucularında grafik ekran alarak çalıştırdığınız MATLAB ile kümeye iş gönderecekseniz ise ``/truba/sw/scripts/matlab/matlabScripts/truba.shared.R2021b`` ayar dosyasını kullanmanız gerekecektir. Aksi takdirde işlerinizde hata ile karşılaşacaksınız.
+    TRUBA arayüz sunucularında grafik ekran alarak çalıştırdığınız MATLAB ile kümeye iş gönderecekseniz ise ``/arf/sw/scripts/matlab/matlabScripts/truba.shared.R2021b`` ayar dosyasını kullanmanız gerekecektir. Aksi takdirde işlerinizde hata ile karşılaşacaksınız.
 
 --------------------------------------------
 Kayar (Floating) Lisansı Olan Kullanıcılar 
@@ -509,7 +518,7 @@ Lisans dosyanızı TRUBA arayüz sunucusuna transfer ediniz. Bunu terminal arac�
 ::
 
     ## username kısmını TRUBA kullanıcı adınızla değiştirmeyi unutmayin
-    scp -r "lisans_dosyanızın_bilgisayarınızdaki_yeri" username@172.16.11.1:/truba/home/username/
+    scp -r "lisans_dosyanızın_bilgisayarınızdaki_yeri" username@172.16.6.11:/arf/home/username/
 
 - Kullanacağınız MATLAB versiyonuna karar verdiyseniz
 
@@ -519,7 +528,7 @@ Lisans dosyanızı TRUBA arayüz sunucusuna transfer ediniz. Bunu terminal arac�
 
 - MATLAB lisans dosyanızı arayüz sunucusuna aktardıysanız
 
-örnek bir betik dosyasını ``/truba/sw/scripts/matlab`` dizininin altında inceleyebilir ve işlerinizi kümeye gönderebilirsiniz.
+Örnek bir betik dosyasını ``/arf/sw/scripts/matlab`` dizininin altında inceleyebilir ve işlerinizi kümeye gönderebilirsiniz.
 
 ::
 
@@ -534,7 +543,8 @@ Lisans dosyanızı TRUBA arayüz sunucusuna transfer ediniz. Bunu terminal arac�
     #SBATCH -J matlab
     #SBATCH -N 1 
     #SBATCH -n 1 
-    #SBATCH --cpus-per-task 28 
+    #SBATCH -c 54
+    #SBATCH -C weka 
     #SBATCH --time=1:00:00
 
     echo "SLURM_NODELIST $SLURM_NODELIST"
@@ -547,13 +557,11 @@ Lisans dosyanızı TRUBA arayüz sunucusuna transfer ediniz. Bunu terminal arac�
     module purge
 
     #Cevre degiskenleri modul ile load edebilir
-    module load centos7.9/app/matlab/r2021b
+    module load apps/matlab/2024a
 
-    ## MATLAB R2018b versiyonu icin
-    ## module load centos7.3/app/matlab/R2018b
 
     #ya da kendiniz elle yapilandirabilirsiniz.
-    #MATLAB_DIR=/truba/sw/centos7.3/app/matlab/R2018b
+    #MATLAB_DIR=/arf/sw/apps/matlab/2024a
     #export LD_LIBRARY_PATH=$MATLAB_DIR/lib:$LD_LIBRARY_PATH
     #export PATH=$MATLAB_DIR/bin:$PATH
 
@@ -605,7 +613,7 @@ Lisans dosyanızı TRUBA arayüz sunucusuna transfer ediniz. Bunu terminal arac�
 Ek Notlar
 -----------
 
-- Örnek betik dosyalarına ``/truba/sw/scripts/matlab`` dizininden erişim sağlayabilirsiniz.
+- Örnek betik dosyalarına ``/arf/sw/scripts/matlab`` dizininden erişim sağlayabilirsiniz.
 
 - Mathworks tarafından organize edilen TRUBA üzerinde MATLAB kullanımı ile ilgili yansılara :download:`buradan </assets/matlab-howto/Parallel-Computing-Workshop-Part-II.pdf>` ve seminerin videosuna ise `youtube kanalımızdan <https://youtu.be/-eUBuyXFDwU>`_  erişebilirsiniz.  
 
