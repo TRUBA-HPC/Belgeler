@@ -41,7 +41,8 @@ Komutu ile sistemde çalışmak üzere submit edebilirsiniz.
 
 
 
-TRUBA sisteminde kurulu olan GROMACS versiyonları dışında başka bir versiyona ihtiyacınız söz konusu ise örnek kurulum yönergesine :ref:`gromacs-install` linkinden ulaşabilirsiniz:
+ARF sisteminde kurulu olan GROMACS versiyonları dışında başka bir versiyona ihtiyacınız söz konusu ise GROMACS'in kendi sayfasında yayınlanan kullanım yönergesinden bilgi edinebilirsiniz (`GROMACS Kurulum Yönergesi <https://manual.gromacs.org/2024.4/install-guide/index.html>`_). GROMACS'in paralel çalışması için gerekli derleyici ve kütüphaneleri (Intel OneAPI, OpenMPI, vb.) sistemde halihazırda kurulu bulunan moduller arasından yükleyebilirsiniz.
+
 
 .. toctree::
     :maxdepth: 1
