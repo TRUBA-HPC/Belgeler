@@ -21,13 +21,13 @@ ARF kümesine erişim ve de Open OnDemand servisini kullanmak için TRUBA VPN ba
 
 ARF kümesi Open OnDemand servisine internet tarayıcınızı kullanarak http://172.16.6.20 adresinden ulaşabilirsiniz. Karşınıza gelen ekranda TRUBA kullanıcı adı ve şifre bilginizi girmeniz gerekmektedir.
 
-.. image:: /assets/gaussian/ondemand-signin.png
+.. image:: /assets/open-ondemand/images/ondemand-signin.png
    :align: center
    :width: 600px
 
 Kullanıcı adı ve şifre bilginizi girdikten sonra ARF menüsünden Desktop seçeneğine tıklayınız.
 
-.. image:: /assets/gaussian/ondemand-desktop.png
+.. image:: /assets/open-ondemand/images/ondemand-desktop.png
    :align: center
    :width: 600px
 

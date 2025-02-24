@@ -6,9 +6,9 @@ TRUBA'da hizmet veren Open OnDemand servisine https://172.16.6.20 adresinden ula
 
 .. note::
 
-    Doğrudan ULAKNET altyapısından internete bağlı kullanıcılar için doğrudan bir erişim adresi bulunmamaktadır. Bu kullanıcılar da OpenVPN bağlantılarını gerçekleştirerek Open OnDemand servisine erişebilirler.
+    Kullanıcılarımızın doğrudan ULAKNET altyapısından internete bağlı olup olmadığı durumlarından bağımsız olarak hem kullanıcı arayüz sunucularına hem de Open OnDemand servisine bağlantı sağlayabilmeleri için öncelikle OpenVPN bağlantısını gerçekleştirmeleri gerekmektedir.
 
 
-Web arayüz sunucusuna bağlantı için kullanılan kullanıcı adı ve parolanın girilmesi gerekmektedir.
+Web arayüz sunucusuna bağlantı için TRUBA kullanıcı adı ve parolanın girilmesi gerekmektedir.
 
 .. image:: /assets/open-ondemand/images/openondemand-login.png   
