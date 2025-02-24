@@ -1,16 +1,41 @@
 .. _grafik-ekran:
 
-======================================
-Grafik Ekran Bağlantısı (X-forwarding)
-======================================
+===========================
+Grafik Ekran Bağlantısı 
+===========================
 
-TRUBA üzerinde grafik ekran gerektiren uygulamaları çalıştırmak için "ssh X-forwarding" ve "vnc" yöntemlerini kullanmak mümkündür. Girdi (input) dosyalarını aracı programlarla hazırlayan ya da işin çıktısını lokal bilgisayarına aktarmadan doğrudan sunucu üzerinde görmek isteyen kullanıcılar bu yöntemleri tercih edebilirler.
+TRUBA’da hizmet veren Open OnDemand kullanıcı arayüzü servisi üzerinden ``Desktop`` talep ederek grafik ekran gerektiren uygulamaları çalıştırabilirsiniz. Girdi (input) dosyalarını aracı programlarla hazırlayan ya da işin çıktısını lokal bilgisayarına aktarmadan doğrudan sunucu üzerinde görmek isteyen kullanıcılar bu yöntemi tercih edebilirler. İlgili aracı programları kullanıcıların kendi ev diiznlerine kurmaları gerekmektedir (``/arf/home/kullaniciadi``)
+
+Open OnDemand servisini kullanmak için TRUBA VPN bağlantısının başarılı bir şekilde sağlanmış olması gerekmektedir. 
+
+* TRUBA VPN ile ilgili bilgilere ulaşmak için :ref:`open-vpn` sayfasını inceleyebilirsiniz.
+
+
+======================
+Open OnDemand Desktop
+======================
+
+ARF kümesi Open OnDemand servisine internet tarayıcınızı kullanarak http://172.16.6.20 adresinden ulaşabilirsiniz. Karşınıza gelen ekranda TRUBA kullanıcı adı ve şifre bilginizi girmeniz gerekmektedir.
+
+.. image:: /assets/open-ondemand/images/ondemand-signin.png
+   :align: center
+   :width: 600px
+
+Kullanıcı adı ve şifre bilginizi girdikten sonra ARF menüsünden Desktop seçeneğine tıklayınız.
+
+.. image:: /assets/open-ondemand/images/ondemand-desktop.png
+   :align: center
+   :width: 600px
+
+Bundan sonraki adımda interaktif masaüstü talebinde bulunmanız gerekmektedir. Karşınıza gelen ekranda "Launch" sekmesine tıklayarak interaktif masaüstü için kaynak talebinde bulununuz. 
+
+.. _sshXforward:
 
 ================
 ssh X-forwarding
 ================
 
-Arayüz sunucularına (barbun1, arf-ui1, arf-ui2) grafik ekran bağlantısı gerçekleştirerek (X-forwarding) görsel uygulamalar çalıştırmak mümkündür. 
+Arayüz sunucularına (arf-ui1, arf-ui2) grafik ekran bağlantısı gerçekleştirerek (X-forwarding) görsel uygulamalar çalıştırmak mümkündür. 
 
 
 Sunucu üzerindeki görsel öğeyi kullanıcının kendi bilgisayarına aktarabilmesi için
@@ -22,119 +47,24 @@ Sunucu üzerindeki görsel öğeyi kullanıcının kendi bilgisayarına aktarabi
 
 SSH bağlantısı sağlamak için farklı işletim sistemleri için pek çok farklı uygulama bulunmaktadır.
 
-Windows sistemlerde sık kullanılan SSH istemcilerinden biri Putty'dir. Putty'de X-forwarding seçeneği Connection > SSH > X11 altındadır. Diğer uygulamalarda bu seçeneğin nerede olduğuna dair uygulamanın yardım dökümanları kontrol edilmelidir.
+Windows sistemlerde sık kullanılan SSH istemcilerinden biri PuTTy'dir. PuTTy'de X-forwarding seçeneği ``Connection > SSH > X11`` altındadır. Diğer uygulamalarda bu seçeneğin nerede olduğuna dair uygulamanın yardım dökümanları kontrol edilmelidir.
 
-Terminal arayüzü üzerinden ssh komutuna -XY parametresinin eklenmesi yeterlidir. 
+Terminal üzerinden kullanıcı arayüz sunucularına bağlantı sağlarken ssh komutuna -XY parametresinin eklenmesi yeterlidir. 
 
 .. code-block::
 
-    ssh -l kullanici_adi 172.16.11.1 -XY
+    ssh -l kullanici_adi 172.16.6.11 -XY
 
 
-Bağlanti gerçekleştiğinde xclock komutu ile test yapılabilir.
+Bağlantı gerçekleştiğinde xclock komutu ile test yapılabilir.
 
 .. code-block::
 
     xclock
 
 
-.. image:: /assets/grafik_ekran/xclock.png
+.. image:: /assets/grafik_ekran/xclock-arf.png
   :width: 400
   :alt: Alternative text
 
-
-.. _TRUBA-vnc:
-
-===========================================================
-TRUBA'da VNC ile Kullanıcı Arayüzlerine Görsel Bağlantı
-===========================================================
-
-Kullanıcı arayüzü sunucularında (barbun1) ``vncserver`` kuruludur. Kullanıcılar aşağıdaki ayarları gerçekleştirdikten sonra kişisel bilgisayarlarında vncviewer kullanarak grafik arayüzü gerektiren programları (MATLAB vb.) çalıştırabilirler. 
-
-- Öncelikle (SSH kullanılarak) arayüz makinesine bağlanılırak kullanıcı hesabınızda bir VNC oturumu oluşturulur. Bu aşamada bir VNC parolasının da belirlenmesi gerekmektedir.
-
-Aşağıdaki örnek kampüs dışından bağlantı gerçekleştirdirildiği varsayılarak ``barbun1`` kullanıcı arayüz sunucusu için yazılmıştır. Sunuculara nasıl bağlanılacağı hakkında `buradan <https://docs.truba.gov.tr/TRUBA/kullanici-el-kitabi/open-vpn/openvpn_info.html>`_ bilgi edinebilirsiniz. 
-
-barbun1 arayüz makinesine bağlanmak için:
-
-.. code-block::
-
-    ssh username@172.16.11.1
-    vncpasswd
-
-    ## (olusturacaginiz sifre TRUBA'ya bağlandığınız kullanıcı şifrenizden farklı olabilir)
-    ## ``view only password`` seçeneği sorulduğunda lütfen ``no`` seçeneği ile devam ediniz. 
- 
-.. image:: /assets/grafik_ekran/vnc1.png
-
-Parola oluşturulduktan sonra bir vnc oturumunun başlatılması gerekir. Belirli bir ekran boyutuyla vnc oturumunu aşağıdaki gibi başlatabilirsiniz: 
-
-.. code-block::
-
-    vncserver -geometry 1440x900
-
-.. image:: /assets/grafik_ekran/vnc2.png
-
-Mevcut vnc oturumlarını listelemek ve ``X DISPLAY`` numarasını görmek için
-
-.. code-block::
-
-    vncserver -list
-
-.. image:: /assets/grafik_ekran/vnc3.png
-
-Bu aşamadan sonra, **kişisel bilgisayarınızdaki herhangi bir VNC istemcisini kullanarak**, (örneğin `tigerVNC <https://tigervnc.org/>`_  ya da `turboVNC <https://sourceforge.net/projects/turbovnc/>`_ yazılımları) oturum oluşturduğunuz kullanıcı arayüzü sunucusuna belirlemiş olduğunuz şifreyle görsel bağlantı gerçekleştirebilirsiniz.
-
-.. note::
-
-    VNC bağlantısı yaparken IP adresinin sonuna getirilecek ``X DISPLAY`` numarası buradaki örnekten farklılık gösterebilir.
-
-
-.. code-block::
-
-    ## terminal komutu ile (kendi bilgisayaranizdan)
-    vncviewer 172.16.11.1:3
-    ## bu aşamada oluşturmuş olduğunuz vnc şifresini girip masaüstüne erişim sağlayabilirsiniz. 
-
-.. image:: /assets/grafik_ekran/vnc3_5.png
-
-**tiger vnc-viewer** kullanıyorsanız eğer aşağıdaki gibi ``vnc sunucu bilgi`` kısmına *IP numarası* ve *XDisplay numarasını* yazarak da bağlanabilirsiniz. 
-
-.. image:: /assets/grafik_ekran/vnc4.png
-
-**turbovnc** kullanıyorsanız eğer aşağıdaki gibi ``vnc sunucu`` bilgi kısmına *IP numarası* ve *XDisplay numarasını* yazarak da bağlanabilirsiniz. 
-
-.. image:: /assets/grafik_ekran/vnc6.png
-
--------------
-Ek Notlar:
--------------
-
-- Hangi sunucuda VNC oturumu oluşturduysanız (barbun1 ya da sardalya1) sadece o sunucuya VNC ile bağlanabilirsiniz.
-
-- VNC oturumu oluşturulduktan sonra, aynı oturum tekrar tekrar kullanılabilir. Her seferinde yeni parola ya da yeni oturum oluşturmaya gerek yoktur.
-
-- VNC bağlantısında sorun yaşandığınızda önceki oturumlarınızı silerek yeni bir oturum oluşturmayı deneyebilirsiniz.
-
-
-.. code-block::
-
-    ## vnc-server oluşturmuş olduğunuz sunucuya baglanin (örnegin barbun1)
-    ssh username@172.16.11.1
-
-    ## Mevcut VNC oturumlarını listeleyin
-    vncserver -list
-
-    ## Mevcut vnc oturumunu sonlandırin (X-DISPLAY numaranız farklı olabilir)\\
-    vncserver -kill :3
-
-.. image:: /assets/grafik_ekran/vnc5.png
-
-.. note::
-
-    VNC bilgileri ve logları ev dizininde ``.vnc`` dizininde tutulmaktadır. Herhangi bir sorunda bu dizini silip yeniden oluşturabilirsiniz.
-
-.. code-block::
-
-    rm -rf ~/.vnc
 
