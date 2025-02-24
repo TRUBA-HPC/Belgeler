@@ -4,7 +4,7 @@
 TRUBA'da MATLAB Çalıştırmak için Gerekli Konfigürasyonların Yapılandırılması
 ==================================================================================
 
-.. grid:: 1
+.. grid:: 2
    
     .. grid-item-card:: :ref:`local-MATLAB`
         :text-align: center
@@ -12,6 +12,11 @@ TRUBA'da MATLAB Çalıştırmak için Gerekli Konfigürasyonların Yapılandır�
         :text-align: center
     .. grid-item-card:: :ref:`MATLAB-Ornekler`
         :text-align: center
+    .. grid-item-card:: :ref:`MATLAB-TRUBALisans`
+        :text-align: center    
+    .. grid-item-card:: :ref:`MATLAB_run`
+        :text-align: center    
+
 
 .. _local-MATLAB:
 
