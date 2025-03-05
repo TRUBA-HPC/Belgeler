@@ -131,10 +131,12 @@ TRUBA Kullanıcı Politikası
   
   * Kullanıcıların TRUBA'ya başvuru sırasında belirtilmiş uygulamalardan farklı bir iş çalıştırmaması beklenir. Böyle bir ihtiyaç durumunda kullanıcının ``grid-teknik@ulakbim.gov.tr`` adresine e-posta atarak yeni uygulamalar konusunda yeniden kullanıcı talebinde bulunması gerekmektedir. 
   
-  * Arayüz makinesi veya portal kullanıcı hesabı şifresinin güvenli bir şekilde saklanmasından kullanıcı sorumludur. 
+  * Arayüz makinesi veya portal kullanıcı hesabı şifresinin güvenli bir şekilde saklanmasından kullanıcı sorumludur. Arayüz makinası veya portal kullanıcı hesabı şifresinin güvenli bir şekilde saklanmasından kullanıcı sorumludur. TRUBA kullanıcı hesabı kişiye özeldir. TRUBA kullanıcı hesabının, hesap sahibinden farklı bir kişi(ler) tarafından kullanılması durumunda, ilgili TRUBA kullanıcı hesabına erişim engellenir. 
+  
+  * Bir başkasının hesabını kullanan TRUBA kullanıcısının hesabı, erişime kapatılır.
   
   * Kullanıcılar tarafından TRUBA kullanıcı sertifikası güvenliğinin sağlanması gerekmektedir. 
-  
+
   * Depolama elemanlarının uygulamalar dışında farklı amaçlar için kullanılmaması gerekmektedir. 
   
   * TRUBA kaynakları yasadışı herhangi bir amaçla, altyapının yönetimini ve güvenliğini tehdit edecek biçimde kullanılamaz. 
