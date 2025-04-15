@@ -1,7 +1,7 @@
 .. _Apptainer:
 
 =========
-Apptainer
+Apptainer Guncelleme
 =========
 
 Bu belge TRUBA altyapısında `Apptainer/Singularity <https://apptainer.org/>`_ platformunun kullanımını kolaylaştırmak için oluşturulmuştur.
