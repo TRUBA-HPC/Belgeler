@@ -3,7 +3,7 @@
 Amber SLURM Dosyası
 ==========================================
 
-
+slrm dosyası yapılandırma
 SLURM betik dosyanızı aşağıdaki gibi yapilandirabilirsiniz. Node sayısını (``-N``) ve de ``--ntasks`` (``-n``) parametresini probleminizin gereksinimlerine göre değiştirebilirsiniz (https://slurm.schedmd.com/sbatch.html)
 
 
