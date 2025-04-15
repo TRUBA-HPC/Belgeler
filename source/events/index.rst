@@ -3,7 +3,7 @@ Seminerler ve Eğitimler
 ==========================
 
 --------------------
-EuroCC Etkinlikleri
+EuroCC BAHAR Etkinlikleri 
 --------------------
 
 EuroCC@Türkiye projesi kapsamında düzenlenen seminerler, çalıştaylar, yaz/kış okulu etkinlikleri ile ilgili güncel bilgilere `Indico etkinlik sayfası üzerinden <https://indico.truba.gov.tr>`_ ulaşabilirsiniz.
