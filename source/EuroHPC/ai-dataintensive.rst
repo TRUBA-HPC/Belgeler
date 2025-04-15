@@ -1,7 +1,7 @@
 .. _ai-dataintensive:
 
 ===============================================
-Yapay Zeka ve Veri Yoğun Uygulamalar Çağrısı
+Yapay Zeka ve Veri Yoğun Uygulamalar Çağrısı kkk
 ===============================================
 
 EuroHPC JU Yapay Zeka ve Veri Yoğun Uygulamalara Erişim çağrısı, özellikle temel modellere ve üretken yapay zekaya (örneğin büyük dil modelleri) odaklanarak etik yapay zeka, makine öğrenimi ve genel olarak veri yoğun uygulamaları desteklemeyi amaçlamaktadır.
