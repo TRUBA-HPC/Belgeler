@@ -10,4 +10,6 @@
 
     kullanici-portali/index.rst
     open-vpn/index.rst
+    MobaXterm.rst
+
     

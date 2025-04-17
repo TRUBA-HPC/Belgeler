@@ -1,6 +1,6 @@
 .. _user_support:
 
 =================================
-Kullanici Destegi
+Kullanıcı Desteği
 =================================
 

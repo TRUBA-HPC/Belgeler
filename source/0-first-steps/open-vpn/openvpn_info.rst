@@ -30,9 +30,6 @@ Sonraki bölümlerde bu farklı işletim sistemlerinde OpenVPN kurulumları ayr�
 
    OpenVPN aktif iken 
 
-   TRUBA için
-
-      - 172.16.11.1 ile barbun1, 
    
    ARF için
    
