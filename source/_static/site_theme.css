@@ -9,7 +9,7 @@
     text-align: right;
 }
 .footer-extra img {
-    height: 20px !important;  /* Resim yüksekliğini belirleyin */
+    height: 40px !important;  /* Resim yüksekliğini belirleyin */
     width: auto !important;   /* Genişlik oranını koruyun */
 }
 
