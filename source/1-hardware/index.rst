@@ -5,6 +5,7 @@ Sistem Bilgileri
 ================
 
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
 
     arf-genel-bilgileri.rst
+    hesaplamakumeleri.rst
