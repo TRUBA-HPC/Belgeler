@@ -43,7 +43,7 @@ Bilgisayarınıza OpenVPN uygulamasını kolayca kurabilmek için sırasıyla a�
 
 .. code-block:: bash
      
-	ssh  kullanici_adi@172.16.11.1      
+	ssh  kullanici_adi@172.16.6.11      
     
 
 
