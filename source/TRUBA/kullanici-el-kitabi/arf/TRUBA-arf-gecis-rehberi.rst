@@ -128,7 +128,7 @@ komutu ile kontrol edilebilir.
 Dosya Sistemleri
 ----------------
 
-Ev, İş ve Depoloama Dizinleri:
+Ev, İş ve Depolama Dizinleri:
 --------------------------------
 
 ARF kümesinde, TRUBA kümesinden farklı olarak, ev dizini ve iş dizini olarak yüksek hızlı merkezi NVMe tabanlı bir dosya sistemi kullanılmaktadır. Kullanıcı ev dizinleri ve iş dizinleri bu yüksek hızlı NVMe dosya sisteminde yer almaktadır. Bu nedenle, ARF kümesindeki kullanıcı ev dizinlerinin ve iş dizinlerinin kotaları düşük tutulmuştur.

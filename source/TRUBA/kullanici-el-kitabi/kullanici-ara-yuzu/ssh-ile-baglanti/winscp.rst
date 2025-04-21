@@ -42,23 +42,24 @@ Bu adımda yüklemiş olduğumuz **WinSCP** uygulamasıyla nasıl dosya transfer
 
 .. note::
 
-   Öncelikle, ULAKNET ağı içinde veya dışında olma durumunuz farketmeksizin, :ref:`OpenVPN bağlantısını başarılı bir şekilde sağlamalısınız <open-vpn>`. Sunucu adı yerine ``172.16.11.1`` yazmanız gerekmektedir. 
+   Öncelikle, ULAKNET ağı içinde veya dışında olma durumunuz farketmeksizin, :ref:`OpenVPN bağlantısını başarılı bir şekilde sağlamalısınız <open-vpn>`. Sunucu adı yerine ``172.16.6.11.`` yazmanız gerekmektedir. 
    
 ..
    ULAKNET ağı dışından (örneğin üniversite kampüsü dışından) bağlantı sağlıyorsanız eğer öncelikle :ref:`OpenVPN bağlantısını sağlamalısınız <open-vpn>`. Bu durumda sunucu adı yerine ``172.16.7.1`` veya ``levrek1.yonetim`` yazmanız gerekmektedir. 
    ULAKNET ağından sunuculara bağlanmak için ise OpenVPN kullanımına gerek yoktur. Bu durumda sunucu adı yerine ``levrek1.ulakbim.gov.tr`` adresini yazmanız gerekmektedir.
    
-
-.. image:: /assets/kullanici-arayuzu/ssh-ile-baglanti/winscp/images/winscp-7.png
-   :width: 300
-
 Oturum açılınca sizi iki taraflı bir sayfa karşılayacaktır. Bu sayfanın sol tarafında kendi lokal bilgisayarınızdaki dizinler, sağ tarafında ise TRUBA'da size sağlanan ev dizini ve klasörler mevcuttur. Herhangi bir taraftan diğer bir tarafa dosya transferi yapmak için dosyaları bir taraftan diğer tarafa mouse ya da touch pad yardımıyla sürükleyip yapabilirsiniz.  Ayrıca yukarıdaki menü yardımıyla dosyalarınızı silebilir ve tekrardan düzenleyebilirsiniz (yeniden klasör, dosya oluşturma vb.).
 
-.. image:: /assets/kullanici-arayuzu/ssh-ile-baglanti/winscp/images/winscp-8.png
-   :width: 300
+..
 
-.. image:: /assets/kullanici-arayuzu/ssh-ile-baglanti/winscp/images/winscp-9.png
-   :width: 300
+   .. image:: /assets/kullanici-arayuzu/ssh-ile-baglanti/winscp/images/winscp-7.png
+      :width: 300
+
+   .. image:: /assets/kullanici-arayuzu/ssh-ile-baglanti/winscp/images/winscp-8.png
+      :width: 300
+
+   .. image:: /assets/kullanici-arayuzu/ssh-ile-baglanti/winscp/images/winscp-9.png
+      :width: 300
 
 
  

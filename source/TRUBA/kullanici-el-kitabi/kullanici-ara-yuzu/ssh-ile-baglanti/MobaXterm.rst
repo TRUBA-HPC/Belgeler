@@ -44,35 +44,30 @@ Dosya Windows'un farklı sürümünde .msi uzantılı da olabilir. Böyle bir du
 
 .. image:: /assets/MobaXterm-howto/M8.png 
 
-9. Eğer kampüsten yani ULAKNET ağına bağlı bilgisayarlardan (tüm kamu üniversiteleri ve bazı vakıf üniversiteleri) bağlanıyorsanız, 
+9. ULAKNET ağı içinde veya dışında olma durumunuz farketmeksizin, :ref:`OpenVPN bağlantısını başarılı bir şekilde sağlamalısınız <open-vpn>`. 
 
-**Remote host:** levrek.ulakbim.gov.tr  
 
-..
+**Remote host:** kısmına arf-ui kullanıcı arayüz sunucularından birisnin IP adresini yazmanız gerekmektedir. Aşağıda verilen adres arf-ui1 kullanıcı arayüz sunucusuna erişim içindir. Diğer sunucular için farklı adresler :ref:`open-vpn` sayfasında verilmiştir.
 
-    Eğer kampüs dışından bağlanıyorsanız MobaXterm’ü kullanmak için öncelikle OpenVPN ile TRUBA bilgisayarlarına bağlanmanız gerekmektedir.
 
-MobaXterm’ü kullanmak için öncelikle OpenVPN ile TRUBA bilgisayarlarına bağlanmanız gerekmektedir.
-
-**Remote host:** 172.16.11.1
+**Remote host:** 172.16.6.11
 
 **Specify username:** kullaniciadi (örnek:osari)
 
 **Port:** 22
 
-.. image:: /assets/MobaXterm-howto/M9.png
 
-10. Terminale bağlandıktan sonra şifrenizi giriniz. (örneğin PuTTY'yi daha önce yükleyip kullandıysanız, kaydedilmiş oturumları ve sol sütunda dosyalarınızı görebilirsiniz.)
-
-.. image:: /assets/MobaXterm-howto/M10.png
+10.  Terminale bağlandıktan sonra şifrenizi giriniz. (örneğin PuTTY'yi daha önce yükleyip kullandıysanız, kaydedilmiş oturumları ve sol sütunda dosyalarınızı görebilirsiniz.)
 
 11. Dosya transferi için yani dosyayı kendi bilgisayarınıza indirmek için sol sütunda indirmek istediğiniz dosyayı sağ tıklayarak download’u seçerek dosyanızı indirebilirsiniz.
 
-.. image:: /assets/MobaXterm-howto/M11.png 
 
 
+..
 
+    .. image:: /assets/MobaXterm-howto/M9.png
 
+    .. image:: /assets/MobaXterm-howto/M10.png
 
-
+    .. image:: /assets/MobaXterm-howto/M11.png 
 

@@ -204,3 +204,61 @@ modülünü kullanmaları önerilir.
     sbatch gaussian16.slurm
 
 komutu ile sisteme submit edebilirsiniz.
+
+.. warning:: 
+
+    Gaussian input dosyanızda nprocshared parametresinin, SLURM betik dosyanızda talep ettiğiniz çekirdek sayısı ile aynı olması gerekmektedir.
+
+    Çalışmakta olan işlerinizin işlemci yükünü ve bellek kullanımını [http://grafana.yonetim:3000] veya [http://172.16.6.25:3000] adreslerinden takip edebilirsiniz.
+
+
+
+
+.. note::
+
+
+    GREASY ile tek çekirdek gerektiren işlerinizi iş listesinde ard arda satırlarda belirtebilirsiniz. Böylece olası en fazla sayıda çekirdeği kullanabilirsiniz. GREASY ile iş çalıştırmak için :ref:`greasy-kilavuzu` sayfasını inceleyebilirsiniz.
+
+    Veya SLURM betik dosyasında aşağıdaki gibi srun ile tek çekirdek kullanarak benzer şekilde bir dizi işinizi sisteme gönderebilirsiniz.
+
+
+    srun -n 1 -c 1 command_line &
+
+    srun -n 1 -c 1 command_line &
+
+    srun -n 1 -c 1 command_line &
+
+    srun -n 1 -c 1 command_line
+
+    exit
+
+    Tek bir sunucu üzerinde işinizi 54 ya da 110çekirdek ile kuyruğa gönderip, aynı betikte birden fazla işin birden fazal çekirdek üzerinde çalıştırılmasını da sağlayabilirsiniz. 
+
+    
+    srun -n 1 -c 4 command_line > out1 2>&1 &
+    srun -n 1 -c 4 command_line > out2 2>&1 &
+    srun -n 1 -c 4 command_line > out3 2>&1 &
+    srun -n 1 -c 4 command_line > out4 2>&1 &
+    srun -n 1 -c 12 command_line > out5 >&1 &
+    srun -n 1 -c 12 command_line > out6 >&1 &
+    srun -n 1 -c 12 command_line > out7 2>&1 
+
+    exit
+
+
+    İşleriniz farklı dizinlerdeyse, SLURM betik dosyasında input dosyasının olduğu dizini aşağıdaki gibi belirtebilirsiniz:
+
+    cd /path/to/your/directory
+    srun -n 1 -c 1 command_line &
+
+    cd /path/to/another/directory
+    srun -n 1 -c 1 command_line &
+
+    cd /path/to/yet/another/directory
+    srun -n 1 -c 1 command_line 
+
+    exit
+
+
+
+

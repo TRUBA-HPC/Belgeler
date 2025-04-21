@@ -27,7 +27,7 @@ Gaussian yazılımı ile aşağıda belirtilen birçok kimyasal problem incelene
 
 TRUBA’yı kullanan araştırmacılarımıza hizmet vermek üzere molekül ve reaksiyon modelleme paket yazılımı Gaussian 16, grafik ara yüzü GaussView 6 ve paralel işlem paket yazılımı TCP Linda’nın site lisanslarının TÜBİTAK tarafından alımı gerçekleştirilmiştir. Araştırmacılarımız, ilgili yazılımları TRUBA'da yer alan hesaplama kümelerinde ücretsiz olarak kullanabileceklerdir.
 
-Lisanslı olarak dağıtılan Gaussian 16, GaussView 6 ve TCP Linda programlarına erişim talebi olan araştırmacılar aşağıdaki linkte yer alan bilgiler doğrultusunda erişim talebinde bulunabileceklerdir.
+Lisanslı olarak dağıtılan Gaussian 16, GaussView 6 ve TCP Linda programlarına erişim talebi olan araştırmacılar aşağıdaki linkte yer alan bilgiler doğrultusunda erişim talebinde bulunabilirler.
 
 .. note::
 

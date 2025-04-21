@@ -89,13 +89,15 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 
     Öncelikle OpenVPN ile TRUBA sanal ağına bağlanılmalı, sonrasında 
 	
-		- TRUBA için 
-			- 172.16.11.1 ile barbun1
-		- ARF için 
 			- 172.16.6.11 ile arf-ui1
 			- 172.16.6.12 ile arf-ui2
+			- 172.16.6.13 ile arf-ui3
+			- 172.16.6.14 ile arf-ui4
+			- 172.16.6.15 ile arf-ui5
 
-	kullanıcı arayüz suncuularına ssh ile bağlanabilirsiniz. :ref:`OpenVPN hakkında bilgilere erişmek için tıklayınız...<open-vpn>`
+	kullanıcı arayüz sunucularından birisine ssh ile bağlanabilirsiniz. :ref:`OpenVPN hakkında bilgilere erişmek için tıklayınız...<open-vpn>`
+
+	Aynı anda sadece bir tane aktif OpenVPN bağlantınız olmalıdır. Eğer başka bir cihazda OpenVPN bağlantınız varsa, bu bağlantıyı sonlandırmadan yeni bir bağlantı kurmaya çalışmayınız.
 	
 ..
 	Evet. Sadece ULAKNET ağına bağlı bilgisayarlardan (tüm kamu üniversiteleri ve bazı vakıf üniversiteleri) levrek1.ulakbim.gov.tr sunucusuna SSH ile doğrudan bağlanabilir.
@@ -103,7 +105,7 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 
 .. _target to ss2:
 
-2. Kullanıcı arayüzü sunucularına sabit IP'si olmayan bilgisayarlarla bağlanılabilir mi?
+1. Kullanıcı arayüzü sunucularına sabit IP'si olmayan bilgisayarlarla bağlanılabilir mi?
 
     Evet. Kişisel bilgisayarınıza OpenVPN programını kurup, programı https://docs.truba.gov.tr adresinde anlatıldığı şekilde yapılandırarak, herhangi bir IP kısıtlaması olmadan, dünyanın herhangi bir yerinden kullanıcı arayüzü sunucularına erişmek mümkündür. 
 

@@ -65,7 +65,7 @@ Kişisel Bilgisayarınızda MATLAB Çalıştırırak TRUBA'ya İş Göndermek
 
 .. note::
 
-    arf-ui1 kullanıcı arayüz sunucusuna bağlantı sağlamak için OpenVPN bağlantısını sağladıktan sonra terminalde ``172.16.6.11`` adresini kullanmanız gerekecektir (:ref:`openvpn-info`).
+    arf-ui1 kullanıcı arayüz sunucusuna bağlantı sağlamak için OpenVPN bağlantısını sağladıktan sonra terminalde ``172.16.6.11`` adresini kullanmanız gerekecektir (:ref:`open-vpn`).
 
 
 

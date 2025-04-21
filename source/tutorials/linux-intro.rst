@@ -14,11 +14,11 @@ Bu yüzden TRUBA kümelerine bağlantı yapabilmek için ``ssh`` komutunu kullan
  
 .. code-block:: bash
    
-   ssh kullanici_adi@172.16.11.1
+   ssh kullanici_adi@172.16.6.11
 
 **2.** ``pwd``
 
-ssh protokolü ile TRUBA'ya başarıyla bağlandıktan sonra, ``pwd`` (present working directory) komutu ile hangi dizinde olduğunuzu kolayca görmek için kullanabilirsiniz. TRUBA kümelerine ilk bağlantıyı yaptıktan sonra komut satırına ``pwd`` yazdığınızda ekranda ``/truba/home/kullanici_adi`` yazdırılacaktır. 
+ssh protokolü ile arf-ui kullanıcı arayüz sunucuları ile TRUBA'ya başarıyla bağlandıktan sonra, ``pwd`` (present working directory) komutu ile hangi dizinde olduğunuzu kolayca görmek için kullanabilirsiniz. TRUBA kümelerine ilk bağlantıyı yaptıktan sonra komut satırına ``pwd`` yazdığınızda ekranda ``/arf/home/kullanici_adi`` yazdırılacaktır. 
 
 **3.** ``ls``
  
@@ -32,18 +32,20 @@ komutuyla inceleyebilirsiniz.
 
 **3.** ``cd``
 
-Herhangi dizine geçmek istediğiniz zaman kullanabilirsiniz. Örneğin TRUBA sistemine ilk bağlandığınızda içinde bulunduğunuz dizin  **/truba/home/kullanici_adi** ' dir. Hesaplarınızı yapacağınız /truba_scratch dizinine geçmek için aşağıdaki komut satırını kullanabilirsiniz. 
+Herhangi dizine geçmek istediğiniz zaman kullanabilirsiniz. Örneğin TRUBA sistemine ilk bağlandığınızda içinde bulunduğunuz dizin  **/arf/home/kullanici_adi** ' dir. Hesaplarınızı yapacağınız /arf/scratch/kullaniciadi dizinine geçmek için aşağıdaki komut satırını kullanabilirsiniz. 
 
 .. code-block:: bash
 
-  cd /truba_scratch/kullanci_adi
+  cd /arf/scratch/kullaniciadi
 
 Kendi ev-dizininize kolayca dönmek için ``cd ~``, root dizinine geçmek için ``cd /``, bir alt dizine geçmek için ``cd ..`` komutlarını kullanabilirsiniz. 
 
 .. warning::
 
-  Hesaplarınızı TRUBA kümelerine ilk bağlantı kurduğunuz dizin /truba/home/kullanici_adi dizinidir. Lütfen hesaplarınızı bu dizinde yapmayınız. Hesaplarınızı **/truba_scratch/kullanici_adi** 
-  dizininde yapmalısınız. 
+  Hesaplarınızı TRUBA kümelerine ilk bağlantı kurduğunuz dizin /arf/home/kullanici_adi dizinidir. Lütfen hesaplarınızı bu dizinde yapmayınız. Hesaplarınızı **/arf/scratch/kullanici_adi** 
+  dizininde yapmalısınız. Ayrıntılı bilgi için lütfen :ref:`dosya-sistemi` sayfasını inceleyiniz
+
+
 
 **4.** ``cp``
 
@@ -164,7 +166,7 @@ Hesaplarınızı tamamladıktan sonra, TRUBA kümelerinden input ve output dosya
 
 .. code-block:: bash 
 
-  scp  kullanici_adi@172.16.11.1: /truba_scratch/kullanici_adi/ads_co/co.in /home/kullanici_adi/Desktop
+  scp  kullanici_adi@172.16.6.11:/arf/scratch/kullanici_adi/ads_co/co.in /home/kullanici_adi/Desktop
 
 
 **12.** ``passwd``
