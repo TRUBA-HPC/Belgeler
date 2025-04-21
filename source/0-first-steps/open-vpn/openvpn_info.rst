@@ -1,5 +1,5 @@
 ========================================
-OpenVPN Bağlantısı Hakkında Genel Bilgi
+OpenVPN Bağlantısı 
 ========================================
 
 Bilgisayarında sabit ve gerçek bir IP adresi tanımlama şansı olmayan kullanıcılar, **OpenVPN** kullanarak TRUBA ağına bağlanabilirler ve kullanıcı arayüzü sunucusuna ulaşabilirler. OpenVPN bağlantısı, sadece kullanıcı adı ve parola kullanarak gerçekleştirilebileceği gibi, bunu desteklemeyen versiyonlarda, TRUBA 'dan temin edilecek geçerli bir sertifika ile de gerçekleştirilebilir.
@@ -24,7 +24,6 @@ Aşağıdaki linklerde farklı işletim sistemleri için OpenVPN dosyalarının 
 
    Linklere tıklayarak bilgisayarınızda kullandığınız işletim sistemine uygun dosyayı tıklayarak bilgisayarınıza indirip kaydettikten sonra dosyanın uzantısını kontrol ediniz. Kaydedilen dosya adının **.ovpn** ile bitmesi önemlidir. Bazı sistemlerde ve web tarayıcılarda dosya adının sonuna **.txt** uzantısı eklenebilmektedir. 
 
-Sonraki bölümlerde bu farklı işletim sistemlerinde OpenVPN kurulumları ayrıntılı bir şekilde verilecektir. OpenVPN için gerekli kurulumları yaptıktan sonra kullanıcı arayüzüne aşağıda verilen adreslerden herhangi birine **SSH** protokolü ile ulaşabilirsiniz. :ref:`Windows işletim sistemi için SSH ile bağlantı sağlama kılavuzlarına ulaşmak için tıklayınız... <ssh-baglanti>`
 
 .. note::
 
@@ -32,7 +31,7 @@ Sonraki bölümlerde bu farklı işletim sistemlerinde OpenVPN kurulumları ayr�
 
    
    ARF için
-   
+
       - 172.16.6.11 ile arf-ui1,
       - 172.16.6.12 ile arf-ui2,
       - 172.16.6.13 ile arf-ui3,
@@ -41,6 +40,9 @@ Sonraki bölümlerde bu farklı işletim sistemlerinde OpenVPN kurulumları ayr�
 
 
   kullanıcı arayüzlerinden birisine bağlanabilirsiniz.
+  
+  
+ARF kullanıcı arayüzlerini kullanırken de diğer kuyruklara iş gönderebilirsiniz. Bu konuda endişelenmenize gerek yoktur.
 
 
 
@@ -54,3 +56,13 @@ Sonraki bölümlerde bu farklı işletim sistemlerinde OpenVPN kurulumları ayr�
    * barbun1 için **barbun1.yonetim** ya da ``172.16.11.1``
 
    **Eğer ULAKNET ağı içinden sunuculara bağlantı sağlamak istiyorsanız OpenVPN bağlantısına gerek yoktur.** 
+
+
+Kullandığınız işlemciye göre kurulum yapmak için aşağıdaki sayfaları ziyaret edebilirsiniz.
+
+.. toctree::
+    :maxdepth: 1
+
+    mac_openvpn.rst
+    linux_openvpn.rst
+    windows_openvpn.rst

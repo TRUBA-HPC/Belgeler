@@ -29,7 +29,7 @@ OpenVPN yapılandırması için öncelikle işletim sistemine OpenVPN kurulumunu
 
 	Yukarıdaki işlemleri tamamladıktan sonra terminalinizi kapatmayınız. Kapattığınız takdirde VPN bağlantınız sonlanacaktır.
 
-**5.** VPN uygulamasını çalıştırdığınız terminali kapatmadan yeni bir terminal açarak aşağıdaki kod satırını terminalinize yazarak TRUBA bilgisayarlarına erişebilirsiniz. Aşağıda verilen adres levrek sunucularına erişim içindir. Diğer sunucular için farklı adresler :ref:`openvpn-info` sayfasında verilmiştir.
+**5.** VPN uygulamasını çalıştırdığınız terminali kapatmadan yeni bir terminal açarak aşağıdaki kod satırını terminalinize yazarak TRUBA sunucularına erişebilirsiniz.
 
 .. code-block:: bash
      

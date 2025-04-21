@@ -6,7 +6,7 @@ OpenVPN Bağlantısı
 
 
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
 
     openvpn_info.rst
     mac_openvpn.rst

@@ -107,7 +107,7 @@ ile bağlantı sağlayabilirsiniz.
 
 
 .. warning::
-  Derleme, pre-process, post-process işlerinizi ``arf-ui1,arf-ui2`` kullanıcı arayüzü sunucuları yerine, ``debug`` kuyruğunda interaktif olarak  gerçekleştirebilirsiniz.
+  Derleme, pre-process, post-process işlerinizi kullanıcı arayüzü sunucuları yerine, ``debug`` kuyruğunda interaktif olarak  gerçekleştirebilirsiniz.
 
   debug kuyruğundan interaktif shell almak icin
 

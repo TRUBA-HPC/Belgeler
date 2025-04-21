@@ -83,6 +83,9 @@ html_theme_options = {
     "show_toc_level": 2,
     "body_max_width": "1200px",  # Tüm sayfaya yayılmasını sağlar
     "footer": "_templates/layout.html",
+    "show_navbar_prev_next": True,
+    "home_page_in_toc" : True,
+    "max_navbar_depth" : 2
 }
 
 def setup(app):

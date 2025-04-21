@@ -8,10 +8,10 @@
 **Bağlantı Araçları:**
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 0
 
     kullanici-portali/index.rst
-    open-vpn/index.rst
+    open-vpn/openvpn_info.rst
     MobaXterm.rst
 
 **Hesaplama Kaynaklarına Erişim:**

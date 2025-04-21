@@ -63,6 +63,4 @@ OpenVPN kurulumu tamamlandıktan sonra, TRUBA altyapısına bağlanabilmeniz iç
 
 4. Bağlantı kurduğunuzda OpenVPN sunucusu sizden kullanıcı adınızı ve parolanızı isteyecektir. Kullanıcı adı ve parolanız arayüz makinesine bağlantı için kullandığınız kullanıcı adı ve parola ile aynıdır. Bu aşamadan sonra artık TRUBA sistemine bağlanabilirsiniz. 
 
-.. note::
 
-  :ref:`Windows işletim sistemi için SSH ile bağlantı sağlama kılavuzlarına ulaşmak için tıklayınız... <ssh-baglanti>`

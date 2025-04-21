@@ -16,6 +16,10 @@ BASH kabuk programlama dilinin tüm öğelerini bu betikte kullanarak, pek çok 
     - `SLURM Betik Özellikleri <slurm_file_properties.html>`_
     - `Örnek SLURM Betiği <example_slurm.html>`_
 
+.. note::
+    
+    İnteraktif işlerinizi çalıştırma ile ilgili ayrıntılı bilgi için  `interaktif iş çalıştırma dokümanımızı  <interaktif_is_calistirma.html>`_ ziyaret edebilirsiniz.
+
 
 
 Aşağıda sistemimizde sıklıkla kullanılan bazı uygulamalara yönelik örnek kullanım senaryolarını bulabilirsiniz.  

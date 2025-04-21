@@ -9,15 +9,9 @@ OpenVPN Uygulamasının İnternetten İndirilmesi
 
 Bilgisayarınıza OpenVPN uygulamasını kolayca kurabilmek için sırasıyla aşağıdaki adımları takip ediniz.
 
-**1.** OpenVPN uygulamasına  `openvpn.net <https://openvpn.net/>`_  web sayfasından kolayca ulaşabilirsiniz. Linke tıkladığınızda sizi aşağıdaki şekilde gösterildiği gibi bir ana ekran karşılayacaktır.
+**1.** OpenVPN uygulamasına  `openvpn.net <https://openvpn.net/>`_  web sayfasından kolayca ulaşabilirsiniz.
 
-.. image:: /assets/openvpn-TRUBA/images/openvpn-main-page.png  
-   :width: 500
-
-**2.** IOS işletim sistemine ait uygulamaya erişmek için bu sayfada bulunan **VPN Client** sekmesine tıkladıktan sonra çıkan **OpenVPN Connect** menüsünü ekranda aşağıdaki şekilde gösterildiği gibi göreceksiniz. 
-
-.. image:: /assets/openvpn-TRUBA/images/download-page.png   
-   :width: 500
+**2.** IOS işletim sistemine ait uygulamaya erişmek için bu sayfada bulunan **Apps** sekmesine tıkladıktan sonra çıkan **OpenVPN Connect** menüsünü göreceksiniz.
 
 **3.**  **Download OpenVPN Connect for Mac**  sekmesine tıklayarak bilgisayarınıza kurulum dosyasını indiriniz. 
 
@@ -32,18 +26,18 @@ Bilgisayarınıza OpenVPN uygulamasını kolayca kurabilmek için sırasıyla a�
 
 .. note::
 
-	Dosya uzantısının **.opvn** olduğunu kontrol ediniz.   
+	Dosya uzantısının **.opvn** olduğunu kontrol ediniz. IOS uzantılı dosya bazen IOS versiyonuna bağlı olarak sorun çıkarabilir. Böyle bir sorunla karşılaşırsanız  :download:`genel yapılandırma dosyasını </assets/openvpn-TRUBA/config-files/TRUBA-genel.ovpn>` indirebilirsiniz.
 
 **6.** Bu dosyayı OpenVPN uygulamasının içine sürükleyiniz. Sonrasında sizi aşağıdaki menü karşılayacaktır. Menüde TRUBA tarafından size sağlanan hesap isminizi ve şifrenizi girdikten sonra uygulama artık çalışmaya hazır olacaktır.
 
 .. image:: /assets/openvpn-TRUBA/images/app_opvn.png   
    :width: 300
    
-**7.** Artık TRUBA bilgisayarlarına ssh protokolüyle terminalinizden ulaşabilirsiniz. Aşağıdaki verilen komut satırını kendi kullanıcı adınıza göre uyarlayarak terminalden erişim sağlayabilirsiniz. Örnekte verilen adres **barbun1** arayüz sunucusuna ulaşmak içindir.
+**7.** Artık TRUBA bilgisayarlarına ssh protokolüyle terminalinizden ulaşabilirsiniz. Aşağıdaki verilen komut satırını kendi kullanıcı adınıza göre uyarlayarak terminalden erişim sağlayabilirsiniz. 
 
 .. code-block:: bash
      
-	ssh  kullanici_adi@172.16.11.1      
+	ssh  kullanici_adi@172.16.6.11      
     
 
 

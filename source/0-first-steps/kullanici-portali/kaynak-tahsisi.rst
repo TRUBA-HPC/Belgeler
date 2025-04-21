@@ -1,3 +1,4 @@
+
 =================
 Kaynak Tahsisi 
 =================
@@ -31,3 +32,4 @@ Mevcut eğitim düzeyine göre tanımlanan kotalar aşağıda belirtilmektedir:
    
 
 Konu ile ilgili her türlü soru ve sorununuzu ``grid-teknik@ulakbim.gov.tr`` adresine e-posta ile iletebilirsiniz.
+
