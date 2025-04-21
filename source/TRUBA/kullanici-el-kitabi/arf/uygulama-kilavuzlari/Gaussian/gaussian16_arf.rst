@@ -221,43 +221,56 @@ komutu ile sisteme submit edebilirsiniz.
 
     Veya SLURM betik dosyasında aşağıdaki gibi srun ile tek çekirdek kullanarak benzer şekilde bir dizi işinizi sisteme gönderebilirsiniz.
 
+    .. code-block:: bash
 
-    srun -n 1 -c 1 command_line &
+        srun -n 1 -c 1 command_line &
 
-    srun -n 1 -c 1 command_line &
+        srun -n 1 -c 1 command_line &
 
-    srun -n 1 -c 1 command_line &
+        srun -n 1 -c 1 command_line &
 
-    srun -n 1 -c 1 command_line
+        srun -n 1 -c 1 command_line
 
-    exit
+        exit
 
     Tek bir sunucu üzerinde işinizi 54 ya da 110çekirdek ile kuyruğa gönderip, aynı betikte birden fazla işin birden fazal çekirdek üzerinde çalıştırılmasını da sağlayabilirsiniz. 
 
-    
-    srun -n 1 -c 4 command_line > out1 2>&1 &
-    srun -n 1 -c 4 command_line > out2 2>&1 &
-    srun -n 1 -c 4 command_line > out3 2>&1 &
-    srun -n 1 -c 4 command_line > out4 2>&1 &
-    srun -n 1 -c 12 command_line > out5 >&1 &
-    srun -n 1 -c 12 command_line > out6 >&1 &
-    srun -n 1 -c 12 command_line > out7 2>&1 
+    .. code-block:: bash
 
-    exit
+        srun -n 1 -c 4 command_line > out1 2>&1 &
+
+        srun -n 1 -c 4 command_line > out2 2>&1 &
+    
+        srun -n 1 -c 4 command_line > out3 2>&1 &
+    
+        srun -n 1 -c 4 command_line > out4 2>&1 &
+    
+        srun -n 1 -c 12 command_line > out5 >&1 &
+    
+        srun -n 1 -c 12 command_line > out6 >&1 &
+    
+        srun -n 1 -c 12 command_line > out7 2>&1 
+
+        exit
 
 
     İşleriniz farklı dizinlerdeyse, SLURM betik dosyasında input dosyasının olduğu dizini aşağıdaki gibi belirtebilirsiniz:
 
-    cd /path/to/your/directory
-    srun -n 1 -c 1 command_line &
+    .. code-block:: bash
 
-    cd /path/to/another/directory
-    srun -n 1 -c 1 command_line &
+        cd /path/to/your/directory
 
-    cd /path/to/yet/another/directory
-    srun -n 1 -c 1 command_line 
+        srun -n 1 -c 1 command_line &
 
-    exit
+        cd /path/to/another/directory
+
+        srun -n 1 -c 1 command_line &
+
+        cd /path/to/yet/another/directory
+
+        srun -n 1 -c 1 command_line 
+
+        exit
 
 
 
