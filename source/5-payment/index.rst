@@ -1,7 +1,7 @@
 .. _hizmet-bedelleri:
 
 =============================================
-Proje Kapsamında TRUBA HSB ve VSB hizmetleri 
+Fiyatlandırma 
 =============================================
 
 --------------------------------------
@@ -17,12 +17,7 @@ ARDEB tarafından proje önerisi kabul edilmiş ve/veya ARDEB'e proje önerisi s
     :maxdepth: 1
 
     ARDEB-Fiyatlandırma/ardeb-hsbvsb-2025.rst
-    ARDEB-Fiyatlandırma/ardeb-hsbvsb-2024.rst
-    ARDEB-Fiyatlandırma/ardeb-hsbvsb-2023.rst
-    ARDEB-Fiyatlandırma/ardeb-hsbvsb-2022.rst
-    ARDEB-Fiyatlandırma/ardeb-hsbvsb-2021.rst
-    ARDEB-Fiyatlandırma/ardeb-hsbvsb-2020.rst
-    ARDEB-Fiyatlandırma/ardeb-hsbvsb-2019.rst
+    
 
 --------------------------------------
 Kamu/Özel Kurum Projeleri
@@ -37,10 +32,7 @@ TÜBİTAK ve AB Projeleri kapsamında desteklenen araştırma odaklı projesi ka
     :maxdepth: 1
     
     Özel-Kurum/ozelkurum-hsbvsb-2025.rst
-    Özel-Kurum/ozelkurum-hsbvsb-2024.rst
-    Özel-Kurum/ozelkurum-hsbvsb-2023.rst
-    Özel-Kurum/ozelkurum-hsbvsb-2022.rst
-    Özel-Kurum/ozelkurum-hsbvsb-2021.rst
+
 
 -------------------------------------------
 Özel Kurum ve Kuruluşlar Hizmet Bedelleri

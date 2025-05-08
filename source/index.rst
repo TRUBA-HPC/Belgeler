@@ -20,6 +20,6 @@ Bu dökümantasyona başlamadan önce, aşağıdaki ilk adımları takip etmeniz
     1-hardware/index.rst
     2-run-jobs/index.rst
     3-user-support/index.rst
-    EUROHPC ve Erişim Çağrıları<4-access-calls/index>
-    Fiyatlandırma <5-payment/TRUBA-proje/index>
+    EUROHPC ve Erişim Çağrıları <4-access-calls/index.rst>
+    Fiyatlandırma <5-payment/index.rst>
 
