@@ -1,0 +1,43 @@
+.wy-nav-content {
+    max-width: 1600px !important;
+}   
+.layout {
+    display: block !important;
+    background-color: #743d45;
+    /* footer'ın arka plan rengini belirleyebilirsiniz */
+    padding: 10px;
+    text-align: right;
+}
+.footer-extra img {
+    height: 40px !important;  /* Resim yüksekliğini belirleyin */
+    width: auto !important;   /* Genişlik oranını koruyun */
+}
+
+
+.footer-extra {
+    margin-top: 20px;
+}
+
+nav.bd-toc {
+    margin-bottom: 20px;  /* İstediğin kadar boşluk verebilirsin */
+}
+
+
+/* Sayfanın genel kutusunu tam geniş yap */
+.bd-page-width {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 2rem;
+}
+
+/* İçeriğin sağda daha çok yer kaplaması için */
+.bd-main {
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+
+img.cc-license {
+    width: 22px;
+    height: auto;
+}

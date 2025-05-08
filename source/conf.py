@@ -80,12 +80,13 @@ html_logo = '_static/TRUBA_doc-footer.png'
 html_static_path = ['_static']
 
 html_theme_options = {
-    "show_toc_level": 2,
+    "show_toc_level": 1,
     "body_max_width": "1200px",  # Tüm sayfaya yayılmasını sağlar
     "footer": "_templates/layout.html",
     "show_navbar_prev_next": True,
     "home_page_in_toc" : True,
-    "max_navbar_depth" : 2
+    "max_navbar_depth" : 2,
+    
 }
 
 def setup(app):

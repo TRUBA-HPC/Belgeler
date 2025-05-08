@@ -1,0 +1,527 @@
+
+<!DOCTYPE html>
+
+
+<html lang="tr" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="article:modified_time" content="2025-04-18T17:32:44+03:00" />
+    <title>ARF-ACC Kullanıcı Arayüzüne Bağlantı &#8212; TRUBA Kullanıcı Dokümanları</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/site_theme.css?v=80a908aa" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=a88cc430" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=fef41d8b"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/translations.js?v=34f4c3a9"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/tabs.js?v=3030b3cb"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '0-first-steps/arf-acc-baglanti';</script>
+    <link rel="index" title="Dizin" href="../genindex.html" />
+    <link rel="search" title="Ara" href="../search.html" />
+    <link rel="next" title="TRUBA Kümesinden ARF Kümesine Geçiş Rehberi" href="TRUBA-arf-gecis-rehberi.html" />
+    <link rel="prev" title="Open OnDemand Arayüzü" href="openondemand/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="tr"/>
+    <meta name="docbuild:last-update" content="18 Nis 2025"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/TRUBA_doc-footer.png" class="logo__image only-light" alt="TRUBA Kullanıcı Dokümanları - Home"/>
+    <script>document.write(`<img src="../_static/TRUBA_doc-footer.png" class="logo__image only-dark" alt="TRUBA Kullanıcı Dokümanları - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Ara" aria-label="Ara" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Ara</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    TRUBA (Türk Ulusal Bilim e-Altyapısı)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">İçerikler</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">İlk Adımlar</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="kullanici-portali/index.html">TRUBA Üyelik ve Kaynak Başvuru Rehberi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="open-vpn/openvpn_info.html">OpenVPN Bağlantısı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MobaXterm.html">Windows’da MobaXterm Kurulumu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arf-baglanti.html">ARF Kullanıcı Arayüzüne Bağlantı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openondemand/index.html">Open OnDemand Arayüzü</a></li>
+
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">ARF-ACC Kullanıcı Arayüzüne Bağlantı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TRUBA-arf-gecis-rehberi.html">TRUBA Kümesinden ARF Kümesine Geçiş Rehberi</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1-hardware/index.html">Sistem Bilgileri</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1-hardware/arf-genel-bilgileri.html">ARF Kümesi Hakkında Genel Bilgiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1-hardware/hesaplamakumeleri.html">Hesaplama Kümeleri</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1-hardware/yuksek-performansli-dosya-sistemleri.html">Yüksek Performanslı Dosya Sistemleri</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2-run-jobs/index.html">İş Çalıştırma</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2-run-jobs/genel_kurulum/index.html">TRUBA’da Uygulama/Kütüphane Kurulumu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-run-jobs/interaktif_is_calistirma.html">İnteraktif İş Çalıştırma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-run-jobs/Applications/index.html">Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-run-jobs/GPU/index.html">GPU Kılavuzu</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../3-user-support/index.html">Kullanıcı Desteği</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-access-calls/index.html">EUROHPC ve Erişim Çağrıları</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Bu sayfayı indirin">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/0-first-steps/arf-acc-baglanti.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Kaynak dosyayı indirin"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="PDF olarak yazdır"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Tam ekran modu"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Ara" aria-label="Ara" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>ARF-ACC Kullanıcı Arayüzüne Bağlantı</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="arf-acc-kullanici-arayuzune-baglanti">
+<span id="arf-acc-baglanti"></span><h1>ARF-ACC Kullanıcı Arayüzüne Bağlantı<a class="headerlink" href="#arf-acc-kullanici-arayuzune-baglanti" title="Link to this heading">#</a></h1>
+<p>ARF ACC hesaplama kümesinde yer alan <code class="docutils literal notranslate"><span class="pre">kolyoz</span></code> hesaplama sunucularından oluşan <code class="docutils literal notranslate"><span class="pre">kolyoz-cuda</span></code> kuyruğu yalnızca <code class="docutils literal notranslate"><span class="pre">cuda-ui</span></code> kullanıcı arayüzü üzerinden iş gönderimine izin verecektir.</p>
+<p>Kullanıcı arayüzüne erişim için aşağıdaki adresleri kullanabilirsiniz:</p>
+<div class="pst-scrollable-table-container"><table class="table table-center">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tür</p></th>
+<th class="head"><p>Sunucu</p></th>
+<th class="head"><p>Adres</p></th>
+<th class="head"><p>IP</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ssh</p></td>
+<td><p>cuda-ui.yonetim</p></td>
+<td><p>cuda-ui.yonetim</p></td>
+<td><p>172.16.6.16</p></td>
+</tr>
+<tr class="row-odd"><td><p>web</p></td>
+<td><p>cuda-ui.yonetim</p></td>
+<td><p><a class="reference external" href="https://cuda-ui.yonetim">https://cuda-ui.yonetim</a></p></td>
+<td><p>172.16.6.16</p></td>
+</tr>
+<tr class="row-even"><td><p>web-monitör</p></td>
+<td><p>grafana.yonetim</p></td>
+<td><p><a class="reference external" href="http://grafana.yonetim:3000/login">http://grafana.yonetim:3000/login</a></p></td>
+<td><p>172.16.6.25</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>OpenVPN bağlantınız olduğu varsayılarak kişisel makinenizden ARF ACC hesaplama kümesine <cite>&lt;kullanici-adiniz&gt;</cite> kısmını kendi kullanıcı adınız ile değiştirerek</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">cuda-ui</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>-l<span class="w"> </span>&lt;kullanici-adiniz&gt;<span class="w"> </span><span class="m">172</span>.16.6.16
+</pre></div>
+</div>
+</div></div>
+<p>ile bağlantı sağlayabilirsiniz.</p>
+<p>Herhangi bir kullanıcı arayüzündeyseniz doğrudan terminalden</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="mf">172.16.6.16</span>
+</pre></div>
+</div>
+<p>ile <code class="docutils literal notranslate"><span class="pre">cuda-ui</span></code> kullanıcı arayüzüne bağlanabilirsiniz.</p>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="openondemand/index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">önceki</p>
+        <p class="prev-next-title">Open OnDemand Arayüzü</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="TRUBA-arf-gecis-rehberi.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">sonraki</p>
+        <p class="prev-next-title">TRUBA Kümesinden ARF Kümesine Geçiş Rehberi</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Tarafından TÜBİTAK ULAKBİM
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2021, TÜBİTAK ULAKBİM.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  Son güncelleme: 18 Nis 2025.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <div class="footer-extra" style="text-align: center; margin-top: 20px;">
+    <table style="margin: 0 auto;">
+        <tr>
+            <td>
+                <a href="https://ulakbim.tubitak.gov.tr" target="_blank" style="margin-right: 30px; display: inline-block;">
+                    <img src="https://www.truba.gov.tr/wp-content/uploads/2025/02/STB-ULAKBIM_doc-footer.png" alt="TÜBİTAK ULAKBİM Web Sitesi" height="60px">
+                </a>
+                <a href="https://www.truba.gov.tr" target="_blank" style="margin-right: 30px; display: inline-block;">
+                    <img src="https://www.truba.gov.tr/wp-content/uploads/2025/02/TRUBA_doc-footer.png" alt="TRUBA Web Sitesi" height="60px">
+                </a>
+                <a href="https://eurocc.truba.gov.tr/" target="_blank" style="margin-right: 30px; display: inline-block;">
+                    <img src="https://www.truba.gov.tr/wp-content/uploads/2025/02/NCCTurkiye-Color.png" alt="EuroCC Türkiye Web Sitesi" height="60px">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; padding-top: 10px;">
+                <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+                    <img src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" alt="CC BY-NC-SA 4.0">
+                </a>
+                Bu çalışma, <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Atıf-Gayri Ticari-Aynı Lisansla Paylaş 4.0 Uluslararası Lisansı</a> ile lisanslanmıştır.
+                <br><br>2025.01.01
+            </td>
+        </tr>
+    </table>
+  </div>
+
+  </body>
+</html>

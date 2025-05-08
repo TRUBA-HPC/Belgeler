@@ -1,0 +1,508 @@
+
+<!DOCTYPE html>
+
+
+<html lang="tr" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="article:modified_time" content="2025-04-18T17:32:44+03:00" />
+    <title>Inno4scale Çağrısı &#8212; TRUBA Kullanıcı Dokümanları</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/site_theme.css?v=80a908aa" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=a88cc430" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=fef41d8b"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../_static/translations.js?v=34f4c3a9"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '4-access-calls/EuroHPC/inno4scale';</script>
+    <link rel="index" title="Dizin" href="../../genindex.html" />
+    <link rel="search" title="Ara" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="tr"/>
+    <meta name="docbuild:last-update" content="18 Nis 2025"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/TRUBA_doc-footer.png" class="logo__image only-light" alt="TRUBA Kullanıcı Dokümanları - Home"/>
+    <script>document.write(`<img src="../../_static/TRUBA_doc-footer.png" class="logo__image only-dark" alt="TRUBA Kullanıcı Dokümanları - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Ara" aria-label="Ara" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Ara</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    TRUBA (Türk Ulusal Bilim e-Altyapısı)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">İçerikler</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../0-first-steps/index.html">İlk Adımlar</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../0-first-steps/kullanici-portali/index.html">TRUBA Üyelik ve Kaynak Başvuru Rehberi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../0-first-steps/open-vpn/openvpn_info.html">OpenVPN Bağlantısı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../0-first-steps/MobaXterm.html">Windows’da MobaXterm Kurulumu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../0-first-steps/arf-baglanti.html">ARF Kullanıcı Arayüzüne Bağlantı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../0-first-steps/openondemand/index.html">Open OnDemand Arayüzü</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../0-first-steps/arf-acc-baglanti.html">ARF-ACC Kullanıcı Arayüzüne Bağlantı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../0-first-steps/TRUBA-arf-gecis-rehberi.html">TRUBA Kümesinden ARF Kümesine Geçiş Rehberi</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../1-hardware/index.html">Sistem Bilgileri</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../1-hardware/arf-genel-bilgileri.html">ARF Kümesi Hakkında Genel Bilgiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1-hardware/hesaplamakumeleri.html">Hesaplama Kümeleri</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1-hardware/yuksek-performansli-dosya-sistemleri.html">Yüksek Performanslı Dosya Sistemleri</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2-run-jobs/index.html">İş Çalıştırma</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2-run-jobs/genel_kurulum/index.html">TRUBA’da Uygulama/Kütüphane Kurulumu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2-run-jobs/interaktif_is_calistirma.html">İnteraktif İş Çalıştırma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2-run-jobs/Applications/index.html">Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2-run-jobs/GPU/index.html">GPU Kılavuzu</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3-user-support/index.html">Kullanıcı Desteği</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">EUROHPC ve Erişim Çağrıları</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Bu sayfayı indirin">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/4-access-calls/EuroHPC/inno4scale.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Kaynak dosyayı indirin"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="PDF olarak yazdır"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Tam ekran modu"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Ara" aria-label="Ara" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Inno4scale Çağrısı</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> İçindekiler </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avrupa-exascale-super-bilgisayarlarindaki-uygulamalar-icin-yenilikci-algoritmalar-proje-cagrisi">Avrupa Exascale Süper Bilgisayarlarındaki Uygulamalar için Yenilikçi Algoritmalar Proje Çağrısı</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="inno4scale-cagrisi">
+<h1>Inno4scale Çağrısı<a class="headerlink" href="#inno4scale-cagrisi" title="Link to this heading">#</a></h1>
+<section id="avrupa-exascale-super-bilgisayarlarindaki-uygulamalar-icin-yenilikci-algoritmalar-proje-cagrisi">
+<h2>Avrupa Exascale Süper Bilgisayarlarındaki Uygulamalar için Yenilikçi Algoritmalar Proje Çağrısı<a class="headerlink" href="#avrupa-exascale-super-bilgisayarlarindaki-uygulamalar-icin-yenilikci-algoritmalar-proje-cagrisi" title="Link to this heading">#</a></h2>
+<p>EuroHPC Ortak Girişimi (EuroHPC JU) Avrupa’daki Yüksek Başarımlı Hesaplama (YBH) ekosistemine öncülük etmek için finansman sağlayan bir kuruluştur.</p>
+<p>Inno4scale (Innovative Algorithms for Applications on European Exascale Supercomputers) Projesi, EuroHPC JU tarafından desteklenen altyapılarda (<a class="reference external" href="https://eurohpc-ju.europa.eu/supercomputers/our-supercomputers_en">https://eurohpc-ju.europa.eu/supercomputers/our-supercomputers_en</a>) çalışacak uygulamalar için yeni algoritmalar geliştirerek, bu kaynakların daha verimli bir şekilde kullanılmasını amaçlamaktadır. Bu kapsamda açılan çağrı, exascale sistemlerdeki önemli uygulamalarla ilgili olan PoC (Proof of Concept) çalışmalarının geliştirilmesine finansal destek sağlayacaktır. Bu proje ile exascale sistemlerinin tam potansiyelini ortaya çıkarabilecek uygulamaların belirlenmesi ve geliştirilmesi hedeflenmektedir.</p>
+<p>Bu çağrı, önemli sayısal problemlerin çözümleri için yeni kavramlar tanımlayan ve exascale süper bilgisayarlardaki kullanım durumları ile ilgili çalışmalar yapan araştırmacılara yöneliktir.</p>
+<p>Çağrı detayları aşağıda yer almaktadır.</p>
+<p><strong>Proje Sayfası:</strong> <a class="reference external" href="https://www.inno4scale.eu/calls/">https://www.inno4scale.eu/calls/</a></p>
+<p><strong>Proje Süresi:</strong> 12 ay (en geç 1 Şubat 2024’te başlaması bekleniyor)</p>
+<p><strong>Bütçe:</strong> Gösterge niteliğindeki toplam finansman bütçesi 4 milyon Euro’dur. Teklif başına maksimum finansman talebi ise 200.000 Euro’dur (tüm katılımcıları kapsar).</p>
+<p><strong>Finansman Kısıtlamaları:</strong> Önerilen bir yenilik çalışması için desteklenecek maksimum çalışma süresi (toplamda) 24 PM’dir. Yalnızca bir AB Üye Devletinde veya EuroHPC Ortak Girişimi (EuroHPC JU) üyesi olan ilişkili ülkelerde bulunan kuruluşlar fon almaya uygundur. Gerçek kişiler (bireyler) fon almaya uygun değildir.</p>
+<p><strong>Son başvuru tarihi:</strong> Tüm başvurular 28 Eylül 2023 tarihinde Brüksel yerel saati ile 17:00’ye kadar yapılmalıdır.</p>
+<p>Proje önerileri İngilizce olmalıdır ve proje öneri başvuruları yalnızca elektronik ortamda yapılır.  Proje öneri sahiplerinin son teslim tarihinden önce proje dokümanlarının taslak versiyonlarını (<strong>son teslim tarihine kadar güncellenebilir</strong>) sunmaları gerekmektedir.</p>
+<p>Proje öneri teklifleri temel olarak iki formdan oluşmaktadır. Birincisi çevrimiçi başvuru sistemindeki (<a class="reference external" href="https://pracecalls.eu/calls/26">https://pracecalls.eu/calls/26</a>) tüm proje ortakları hakkında bilgileri içerecek olan idari bilgilerin yer aldığı formdur (Bölüm A). İkincisi ise aşağıdaki talimatlara uygun şekilde doldurulan proje önerisi ayrıntılarını içeren (proje özeti, algoritmanın konsepti-tasarımı, etki değeri, iş paketleri vb.) bir PDF belgesidir (Bölüm B). Word formatında sunulan ve güncel versiyonu proje başvuru sayfasında sunulan (<a class="reference external" href="https://www.inno4scale.eu/calls/submission/">https://www.inno4scale.eu/calls/submission/</a>) form doldurulduktan sonra çevrimiçi başvuru sayfasına PDF olarak yüklenmelidir. PDF belgesinin boyutu 5.0 MB’ı geçmemelidir.</p>
+<p>Bölüm B (teklifin ana bölümü) 10 sayfayı geçmemelidir (B Bölümü kapak sayfası hariç). Word formatındaki proje önerisi formunun metin kısmı 11 punto Arial yazı tipinden küçük olmamalıdır. <strong>Uzunluğu (kapak sayfası hariç) 10 sayfa sınırını aşacak şekilde sunulan teklifler, herhangi bir değerlendirme yapılmadan reddedilecektir.</strong></p>
+<p>Proje önerisi başvuru linkine erişim, proje başvuru formunun güncel versiyonu ve ayrıntılı çağrı başvuru bilgileri, uygulanacak değerlendirme kriterleri hakkında bilgiye aşağıdaki linkten ulaşabilirsiniz:</p>
+<p><a class="reference external" href="https://www.inno4scale.eu/calls/submission/">https://www.inno4scale.eu/calls/submission/</a></p>
+<p>Proje ile ilgili sıkça sorulan sorular hakkında bilgi edinmek için <a class="reference external" href="https://www.inno4scale.eu/calls/faq/">https://www.inno4scale.eu/calls/faq/</a> linkini tıklayabilirsiniz.</p>
+<p>Ayrıca, proje başvurusu değerlendirme kontrol listesini de proje başvurusundan önce başvuru sahiplerinin ayrıntılı olarak incelemesi önemle tavsiye edilmektedir:</p>
+<p><a class="reference external" href="https://www.inno4scale.eu/calls/proposer-evaluator-check-list/">https://www.inno4scale.eu/calls/proposer-evaluator-check-list/</a></p>
+<div class="admonition note">
+<p class="admonition-title">Not</p>
+<p>Çağrı ile ilgili 22 Ağustos 2023 (3:00 PM - 4:00 PM İstanbul) ve 29 Ağustos 2023 (3:00 PM - 4:00 PM İstanbul) tarihlerinde bilgilendirme toplantılarının yapılması planlanmaktadır. Toplantıya katılım için kayıt olmak gerekmektedir. Ayrıntılı bilgilere aşağıdaki sayfadan ulaşabilirsiniz:</p>
+<p><a class="reference external" href="https://www.inno4scale.eu/events/">https://www.inno4scale.eu/events/</a></p>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> İçindekiler
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avrupa-exascale-super-bilgisayarlarindaki-uygulamalar-icin-yenilikci-algoritmalar-proje-cagrisi">Avrupa Exascale Süper Bilgisayarlarındaki Uygulamalar için Yenilikçi Algoritmalar Proje Çağrısı</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Tarafından TÜBİTAK ULAKBİM
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2021, TÜBİTAK ULAKBİM.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  Son güncelleme: 18 Nis 2025.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <div class="footer-extra" style="text-align: center; margin-top: 20px;">
+    <table style="margin: 0 auto;">
+        <tr>
+            <td>
+                <a href="https://ulakbim.tubitak.gov.tr" target="_blank" style="margin-right: 30px; display: inline-block;">
+                    <img src="https://www.truba.gov.tr/wp-content/uploads/2025/02/STB-ULAKBIM_doc-footer.png" alt="TÜBİTAK ULAKBİM Web Sitesi" height="60px">
+                </a>
+                <a href="https://www.truba.gov.tr" target="_blank" style="margin-right: 30px; display: inline-block;">
+                    <img src="https://www.truba.gov.tr/wp-content/uploads/2025/02/TRUBA_doc-footer.png" alt="TRUBA Web Sitesi" height="60px">
+                </a>
+                <a href="https://eurocc.truba.gov.tr/" target="_blank" style="margin-right: 30px; display: inline-block;">
+                    <img src="https://www.truba.gov.tr/wp-content/uploads/2025/02/NCCTurkiye-Color.png" alt="EuroCC Türkiye Web Sitesi" height="60px">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; padding-top: 10px;">
+                <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+                    <img src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" alt="CC BY-NC-SA 4.0">
+                </a>
+                Bu çalışma, <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Atıf-Gayri Ticari-Aynı Lisansla Paylaş 4.0 Uluslararası Lisansı</a> ile lisanslanmıştır.
+                <br><br>2025.01.01
+            </td>
+        </tr>
+    </table>
+  </div>
+
+  </body>
+</html>

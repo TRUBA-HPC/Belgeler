@@ -1,0 +1,1467 @@
+
+<!DOCTYPE html>
+
+
+<html lang="tr" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>R &#8212; TRUBA Kullanıcı Dokümanları</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/site_theme.css?v=80a908aa" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=a88cc430" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=fef41d8b"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../_static/translations.js?v=34f4c3a9"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/tabs.js?v=3030b3cb"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '2-run-jobs/Applications/R/R';</script>
+    <link rel="index" title="Dizin" href="../../../genindex.html" />
+    <link rel="search" title="Ara" href="../../../search.html" />
+    <link rel="next" title="RStudio Kılavuzu" href="RStudio.html" />
+    <link rel="prev" title="R Kılavuzu" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="tr"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/TRUBA_doc-footer.png" class="logo__image only-light" alt="TRUBA Kullanıcı Dokümanları - Home"/>
+    <script>document.write(`<img src="../../../_static/TRUBA_doc-footer.png" class="logo__image only-dark" alt="TRUBA Kullanıcı Dokümanları - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Ara" aria-label="Ara" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Ara</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../index.html">
+                    TRUBA (Türk Ulusal Bilim e-Altyapısı)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">İçerikler</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../0-first-steps/index.html">İlk Adımlar</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/kullanici-portali/index.html">TRUBA Üyelik ve Kaynak Başvuru Rehberi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/open-vpn/openvpn_info.html">OpenVPN Bağlantısı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/MobaXterm.html">Windows’da MobaXterm Kurulumu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/arf-baglanti.html">ARF Kullanıcı Arayüzüne Bağlantı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/openondemand/index.html">Open OnDemand Arayüzü</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/arf-acc-baglanti.html">ARF-ACC Kullanıcı Arayüzüne Bağlantı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/TRUBA-arf-gecis-rehberi.html">TRUBA Kümesinden ARF Kümesine Geçiş Rehberi</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../1-hardware/index.html">Sistem Bilgileri</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../1-hardware/arf-genel-bilgileri.html">ARF Kümesi Hakkında Genel Bilgiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../1-hardware/hesaplamakumeleri.html">Hesaplama Kümeleri</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../1-hardware/yuksek-performansli-dosya-sistemleri.html">Yüksek Performanslı Dosya Sistemleri</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../index.html">İş Çalıştırma</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../genel_kurulum/index.html">TRUBA’da Uygulama/Kütüphane Kurulumu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../interaktif_is_calistirma.html">İnteraktif İş Çalıştırma</a></li>
+<li class="toctree-l2 current active"><a class="reference internal" href="../index.html">Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../GPU/index.html">GPU Kılavuzu</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../3-user-support/index.html">Kullanıcı Desteği</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../4-access-calls/index.html">EUROHPC ve Erişim Çağrıları</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Tam ekran modu"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Ara" aria-label="Ara" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>R</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> İçindekiler </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-modulleri">R Modülleri</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-paketi-kurulum">R paketi kurulum</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hpc-paketler">HPC Paketler</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminalde-r-ile-calismak">Terminalde R ile çalışmak</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-slurm-ve-paralellestirme">R, SLURM ve Paralelleştirme</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#openmp-ustu-kapali-paralellik">OpenMP-Üstü Kapalı paralellik</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paketler-ile-acik-paralellik">Paketler ile açık paralellik</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is-dizileri-job-array">İş dizileri (job array)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark-sonuclari">Benchmark Sonuçları</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#islerin-takibi">İşlerin Takibi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sorunlar-ve-cozumler">Sorunlar ve Çözümler</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="r">
+<span id="r-modules"></span><h1>R<a class="headerlink" href="#r" title="Link to this heading">#</a></h1>
+<p>Bu belge <a class="reference external" href="https://www.r-project.org/">R</a> platformunun kullanımını kolaylaştırmak için oluşturulmuştur.
+Bu kılavuz aşağıdakileri kapsamaktadır:</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-4 sd-row-cols-xs-4 sd-row-cols-sm-4 sd-row-cols-md-4 sd-row-cols-lg-4 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<a class="reference internal" href="#r-modulleri"><span class="std std-ref">R Modülleri</span></a></div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<a class="reference internal" href="#r-paket-kurulum"><span class="std std-ref">R paketi kurulum</span></a></div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<a class="reference internal" href="#terminalde-r-ile-calismak"><span class="std std-ref">Terminalde R ile çalışmak</span></a></div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<a class="reference internal" href="#slurm-r-paralellestirme"><span class="std std-ref">R, SLURM ve Paralelleştirme</span></a></div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<a class="reference internal" href="#is-dizileri-job-array"><span class="std std-ref">İş dizileri (job array)</span></a></div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<a class="reference internal" href="#benchmark-sonuclari"><span class="std std-ref">Benchmark Sonuçları</span></a></div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<a class="reference internal" href="#islerin-takibi"><span class="std std-ref">İşlerin Takibi</span></a></div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<a class="reference internal" href="#sorunlar-cozumler"><span class="std std-ref">Sorunlar ve Çözümler</span></a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="r-modulleri">
+<span id="id2"></span><h2>R Modülleri<a class="headerlink" href="#r-modulleri" title="Link to this heading">#</a></h2>
+<p>R işlerini çalıştırabilmek için öncelikle modülleri yüklememiz gerekir.
+Merkezi sistemimizde gcc ve intel ile derlenmiş iki farklı R versiyonu bulunmaktadır.</p>
+<p>Merkezi sistemimizde bulunan modülleri görmek için</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>avail<span class="w"> </span>-t<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>apps/R
+</pre></div>
+</div>
+<p>Derleyicilerden GCC ve Intel versiyonlarını modül olarak kullanmak için aşağıdaki kod parçacıkları yazılır.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">GCC</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Intel</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>purge
+module<span class="w"> </span>load<span class="w"> </span>apps/R/4.3.0-gcc-11.3.1
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>purge
+module<span class="w"> </span>load<span class="w"> </span>apps/R/4.3.2-oneapi-2024.0
+</pre></div>
+</div>
+</div></div>
+<p>İş vermeden önce kullanılmak istenilen R paketlerini kullanılacak dizine kurmanızı öneririz.</p>
+<p><a class="reference internal" href="../../interaktif_is_calistirma.html#interaktif-is-calistirma"><span class="std std-ref">İnteraktif İş Çalıştırma</span></a> kılavuzu ile interaktif sunucuya bağlandıktan sonra yukarıda belirtildiği gibi modüller yüklendikten sonra terminale şunu yazdığımızda</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">R</span><span class="w"> </span><span class="o">--</span><span class="n">vanilla</span>
+</pre></div>
+</div>
+<p>R çalışmaya başlar ve paket kurulum aşamasına geçebiliriz.</p>
+</section>
+<section id="r-paketi-kurulum">
+<span id="r-paket-kurulum"></span><h2>R paketi kurulum<a class="headerlink" href="#r-paketi-kurulum" title="Link to this heading">#</a></h2>
+<p>Paketleri kurmadan önce hangi repoyu kullanacağını belirtebiliriz.  Sonrasında, diyelim ki kaynak kodlu paketleri kurmak için kullanılan <code class="docutils literal notranslate"><span class="pre">remotes</span></code> R paketini kurmak istiyoruz. Kullanıcı ev dizininizde ilk R paketi kurduğunuzda karşınıza  “is not writable” uyarısı ve kişisiel kütüphane oluşturmak için öneri alacaksınız. Bu durumda iki defa <code class="docutils literal notranslate"><span class="pre">yes</span></code> yazdıktan sonra paketiniz kurulum aşamasına geçecektir.</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">chooseCRANmirror</span><span class="p">(</span><span class="n">ind</span><span class="o">=</span><span class="m">69</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;remotes&quot;</span><span class="p">)</span>
+<span class="n">Warning</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;remotes&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">:</span>
+<span class="s">&#39;lib = &quot;/arf/sw//apps/R/4.3.0-gcc-11.3.1/lib64/R/library&quot;&#39;</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">writable</span>
+<span class="n">Would</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">like</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">personal</span><span class="w"> </span><span class="n">library</span><span class="w"> </span><span class="n">instead</span><span class="o">?</span><span class="w"> </span><span class="p">(</span><span class="n">yes</span><span class="o">/</span><span class="n">No</span><span class="o">/</span><span class="n">cancel</span><span class="p">)</span><span class="w"> </span><span class="n">yes</span>
+<span class="n">Would</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">like</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">create</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">personal</span><span class="w"> </span><span class="n">library</span>
+‘<span class="o">~/</span><span class="n">R</span><span class="o">/</span><span class="n">x86_64</span><span class="o">-</span><span class="n">pc</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span><span class="o">-</span><span class="n">library</span><span class="o">/</span><span class="m">4.2</span>’
+<span class="n">to</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">packages</span><span class="w"> </span><span class="n">into</span><span class="o">?</span><span class="w"> </span><span class="p">(</span><span class="n">yes</span><span class="o">/</span><span class="n">No</span><span class="o">/</span><span class="n">cancel</span><span class="p">)</span><span class="w"> </span><span class="n">yes</span>
+</pre></div>
+</div>
+<p>Varsayalım ki <code class="docutils literal notranslate"><span class="pre">~libs/R_libs</span></code> dizini altına R paketlerini kurmak istiyoruz. Bu durumda öncelikle <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">-p</span> <span class="pre">~libs/R_libs</span></code> ile klasör oluşturulur.
+R içinde iken <code class="docutils literal notranslate"><span class="pre">.libPaths()</span></code> çalıştırıldığında aktif olan kütüphane dizinlerini listeleyebilir ve <code class="docutils literal notranslate"><span class="pre">.libPaths(&quot;path/to/libs&quot;)</span></code> ile de istenilen klasör aktif olarak eklenir. İstediğimiz paketi istediğimiz yerden çağırmak için</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">packagename</span><span class="p">,</span><span class="w"> </span><span class="n">lib.loc</span><span class="o">=</span><span class="s">&quot;~/libs/R_libs&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>yazabiliriz. Paket kurmak istediğimizde ise</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;packagename&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">lib</span><span class="o">=</span><span class="s">&quot;~/libs/R_libs&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>ile paket istenilen yere kurulmuş olur. Ayrıca var olan paketin bulunduğu dizinleri bulmak için <code class="docutils literal notranslate"><span class="pre">find.package(&quot;packagename&quot;)</span></code> kullanılabilir.</p>
+<p>İstenilirse R için kullanılacak kütüphanenin dizini <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> dosyasında belirtilebilinir.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">R_LIBS_USER</span><span class="o">=</span>/path/to/R_libs
+</pre></div>
+</div>
+<section id="hpc-paketler">
+<h3>HPC Paketler<a class="headerlink" href="#hpc-paketler" title="Link to this heading">#</a></h3>
+<p>HPC’de sıklıkla kullanılan R paketlerini
+<a class="reference external" href="https://cran.r-project.org/web/views/HighPerformanceComputing.html">buradan</a> bulabilirsiniz.
+Mesela, R’da MPI işleri için yazılan Rmpi paketi kurmak isteyelim.
+Rmpi’yi kümeye yüklemek için, gcc ile derlenmiş R başlatılmadan önce uygun MPI modülünün yüklenmesi gerekir.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>purge
+module<span class="w"> </span>load<span class="w"> </span>lib/openmpi/4.1.6
+module<span class="w"> </span>load<span class="w"> </span>apps/R/4.3.0-gcc-11.3.1
+R<span class="w"> </span>--vanilla<span class="w"> </span>-q
+</pre></div>
+</div>
+<p>Bu adımdan sonra R çağrılmış olacak ve paket kurma adımları ile devam edebiliriz.</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">chooseCRANmirror</span><span class="p">(</span><span class="n">ind</span><span class="o">=</span><span class="m">66</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;Rmpi&quot;</span><span class="p">,</span>
+<span class="w"> </span><span class="n">configure.args</span><span class="o">=</span><span class="s">&quot;</span>
+<span class="s"> --with-Rmpi-include=/arf/sw/lib/openmpi/4.1.6/include</span>
+<span class="s"> --with-Rmpi-libpath=/arf/sw/lib/openmpi/4.1.6/lib</span>
+<span class="s"> --with-Rmpi-type=OPENMPI</span>
+<span class="s"> &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Uyarı</p>
+<p>Rmpi paketi yüklenirken kullanılan OpenMPI ile iş verirken modül olarak yüklediğiniz versiyon aynı olması gerekmektedir.</p>
+</div>
+<p>Kaynak kod kullanılarak Rmpi paketini <code class="docutils literal notranslate"><span class="pre">~/libs/R_libs</span></code> dizi altına kurmak isterseniz, öncelikle <code class="docutils literal notranslate"><span class="pre">cran</span></code> ‘dan paketin <cite>tar.gz</cite> dosyası indirilir ve <code class="docutils literal notranslate"><span class="pre">R</span> <span class="pre">CMD</span> <span class="pre">INSTALL</span></code> kullanılarak kurulabilir.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://cran.r-project.org/src/contrib/Rmpi_0.7-1.tar.gz
+
+R<span class="w"> </span>CMD<span class="w"> </span>INSTALL<span class="w"> </span>--library<span class="o">=</span>~/libs/R_libs<span class="w"> </span>--configure-args<span class="o">=</span><span class="s2">&quot;--with-Rmpi-include=/arf/sw/lib/openmpi/4.1.6/include --with-Rmpi-libpath=/arf/sw/lib/openmpi/4.1.6/lib  --with-Rmpi-type=OPENMPI&quot;</span><span class="w"> </span>Rmpi_0.7-1.tar.gz
+</pre></div>
+</div>
+<p id="ornek-mpi-rmpi"><strong>Örnek MPI çalışması</strong></p>
+<p>Bir den fazla MPI işleri için tek sunucu içerisinde birden fazla iş çalıştırılabileceği gibi birden fazla sunucu içerisinde de dağıtılabilir. <a class="reference internal" href="#slurm-r-paralellestirme"><span class="std std-ref">R, SLURM ve Paralelleştirme</span></a> içerisinde örnek çalışmalar mevcuttur. Genel anlamda MPI teriminde master, bazı görevleri tamamlamak için <code class="docutils literal notranslate"><span class="pre">slave</span></code> adı verilen bağımlı çekirdeklere mesajlar gönderen ana çekirdektir. Rmpi paketi içinde <code class="docutils literal notranslate"><span class="pre">mpi.spawn.Rslaves()</span></code> kullanarak <cite>slave</cite>’leri oluşturduğunuzda, ilk etapta varsayılan ayar olarak talep edilen mevcut çekirdek sayısını alır. MPI için kullanmak istediğiniz belirli çekirdek sayısını tanımlamak için <code class="docutils literal notranslate"><span class="pre">nslaves=x</span></code> seçeneğini kullanabilirsiniz. Master için bir çekirdek (genelde rank 0) tahsis edilip geriye kalan çekirdekler hesaplama için kullanılmaktadır. Bu süreci daha düzgün yönetebilmek adına <code class="docutils literal notranslate"><span class="pre">mpi.universe.size()</span></code> ile elde edilen mevcut çekirdek sayısından bir eksiği kadar olan çekirdek sayısını kullanarak istenilen çekirdekler kullanılabilir. Daha fazla detay için <a class="reference external" href="https://cran.r-project.org/web/packages/Rmpi/index.html">ilgili sayfaya</a> bakabilirsiniz.</p>
+<p>Aşağıda, 5 tane MPI işi için talep edilen aynı sunucu içerisindeki 5 tane çekirdeğin her biri için <em>rank</em> ve <em>size</em> bilgileri içeren R ve kuyruğa göndermek için SLURM dosyasını örnek alabilirsiniz. Ayrıca, master iş üzerinden diğer 4 çekirdeğe <code class="docutils literal notranslate"><span class="pre">rnorm(10)</span></code> işi <code class="docutils literal notranslate"><span class="pre">mpi.remote.exec()</span></code> fonksiyonu ile gönderilmiş ve çıktıları bir <em>data frame</em> olarak master çekirdeğe kayıt edilmiştir.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-text"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-codespaces secondary" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 3.75C3.5 2.784 4.284 2 5.25 2h13.5c.966 0 1.75.784 1.75 1.75v7.5A1.75 1.75 0 0 1 18.75 13H5.25a1.75 1.75 0 0 1-1.75-1.75Zm-2 12c0-.966.784-1.75 1.75-1.75h17.5c.966 0 1.75.784 1.75 1.75v4a1.75 1.75 0 0 1-1.75 1.75H3.25a1.75 1.75 0 0 1-1.75-1.75ZM5.25 3.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h13.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Zm-2 12a.25.25 0 0 0-.25.25v4c0 .138.112.25.25.25h17.5a.25.25 0 0 0 .25-.25v-4a.25.25 0 0 0-.25-.25Z"></path><path d="M10 17.75a.75.75 0 0 1 .75-.75h6.5a.75.75 0 0 1 0 1.5h-6.5a.75.75 0 0 1-.75-.75Zm-4 0a.75.75 0 0 1 .75-.75h.5a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1-.75-.75Z"></path></svg> R ve SLURM dosyası (Tıklayınız)</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+test_mpi.R</label><div class="sd-tab-content docutils">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="s">&quot;Rmpi&quot;</span><span class="p">)</span>
+<span class="nf">sprintf</span><span class="p">(</span><span class="s">&quot;MPI şleri için toplam çekirdek sayısı: %i&quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">mpi.universe.size</span><span class="p">())</span>
+<span class="n">ntotalslaves</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mpi.universe.size</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">1</span>
+<span class="nf">sprintf</span><span class="p">(</span><span class="s">&quot;Master sunucu hariç toplam  %i slaves açılabilir&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ntotalslaves</span><span class="p">)</span>
+<span class="nf">mpi.spawn.Rslaves</span><span class="p">(</span><span class="n">nslaves</span><span class="o">=</span><span class="n">ntotalslaves</span><span class="p">)</span>
+<span class="c1">###############################</span>
+<span class="nf">mpi.remote.exec</span><span class="p">(</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;I am&quot;</span><span class="p">,</span><span class="nf">mpi.comm.rank</span><span class="p">(),</span><span class="s">&quot;of&quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">mpi.comm.size</span><span class="p">()))</span>
+
+<span class="c1"># Her çekirdeğe bağımsız olarak aynı anda  rnorm(10) fonksiyonu göndermek ve</span>
+<span class="c1"># çıktısını data frame olarak kayıt etmek için</span>
+
+<span class="n">x</span><span class="o">&lt;-</span><span class="nf">mpi.remote.exec</span><span class="p">(</span><span class="n">cmd</span><span class="o">=</span><span class="n">rnorm</span><span class="p">,</span><span class="m">10</span><span class="p">)</span>
+
+<span class="n">x</span>
+<span class="c1">##############################</span>
+<span class="nf">mpi.close.Rslaves</span><span class="p">()</span>
+<span class="nf">mpi.quit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+test_mpi.slurm</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --account=kullanici_adiniz</span>
+<span class="c1">#SBATCH --partition=debug</span>
+<span class="c1">#SBATCH --constraint=barbun</span>
+<span class="c1">#SBATCH --output=%A.out #%A=JOB_ID %a=ArrayIndex</span>
+<span class="c1">#SBATCH --error=%A.err</span>
+<span class="c1">#SBATCH --time=00:15:00</span>
+<span class="c1">#SBATCH --job-name=test</span>
+<span class="c1">#SBATCH --ntasks=5</span>
+<span class="c1">#SBATCH --nodes=1</span>
+<span class="c1">#SBATCH --cpus-per-task=1</span>
+
+<span class="c1">### Load modules</span>
+<span class="n">module</span> <span class="n">purge</span>
+<span class="n">module</span> <span class="n">load</span> <span class="n">lib</span><span class="o">/</span><span class="n">openmpi</span><span class="o">/</span><span class="mf">4.1.6</span>
+<span class="n">module</span> <span class="n">load</span> <span class="n">apps</span><span class="o">/</span><span class="n">R</span><span class="o">/</span><span class="mf">4.3.0</span><span class="o">-</span><span class="n">gcc</span><span class="o">-</span><span class="mf">11.3.1</span>
+
+<span class="c1"># btl_openib_allow_ib ile sunucular arası infiniband bağlantısı olduğu belirtilir.</span>
+<span class="c1"># fork() uyarısı almamak adına mpi_warn_on_fork false yapılabilir.</span>
+<span class="n">mpirun</span> <span class="o">-</span><span class="n">n</span> <span class="mi">1</span> <span class="o">--</span><span class="n">mca</span> <span class="n">btl_openib_allow_ib</span> <span class="n">true</span> <span class="o">--</span><span class="n">mca</span> <span class="n">mpi_warn_on_fork</span> <span class="mi">0</span> <span class="n">R</span> <span class="n">CMD</span> <span class="n">BATCH</span> <span class="o">--</span><span class="n">vanilla</span> <span class="n">test_mpi</span><span class="o">.</span><span class="n">R</span>
+
+<span class="n">exit</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+test_mpi.Rout</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>R version 4.2.2 (2022-10-31) -- &quot;Innocent and Trusting&quot;
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type &#39;license()&#39; or &#39;licence()&#39; for distribution details.
+
+Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type &#39;contributors()&#39; for more information and
+&#39;citation()&#39; on how to cite R or R packages in publications.
+
+Type &#39;demo()&#39; for some demos, &#39;help()&#39; for on-line help, or
+&#39;help.start()&#39; for an HTML browser interface to help.
+Type &#39;q()&#39; to quit R.
+
+&gt; library(Rmpi)
+&gt; sprintf(&quot;MPI şleri için toplam çekirdek sayısı: %i&quot;, mpi.universe.size())
+[1] &quot;MPI şleri için toplam çekirdek sayısı: 5&quot;
+&gt; ntotalslaves &lt;- mpi.universe.size() - 1
+&gt; sprintf(&quot;Master sunucu hariç toplam  %i slaves açılabilir&quot;, ntotalslaves)
+[1] &quot;Master sunucu hariç toplam  4 slaves açılabilir&quot;
+&gt; mpi.spawn.Rslaves(nslaves=ntotalslaves)
+    4 slaves are spawned successfully. 0 failed.
+master (rank 0, comm 1) of size 5 is running on: barbun21
+slave1 (rank 1, comm 1) of size 5 is running on: barbun21
+slave2 (rank 2, comm 1) of size 5 is running on: barbun21
+slave3 (rank 3, comm 1) of size 5 is running on: barbun21
+slave4 (rank 4, comm 1) of size 5 is running on: barbun21
+&gt; ###############################
+&gt; mpi.remote.exec( paste(&quot;I am&quot;,mpi.comm.rank(),&quot;of&quot;, mpi.comm.size()))
+$slave1
+[1] &quot;I am 1 of 5&quot;
+
+$slave2
+[1] &quot;I am 2 of 5&quot;
+
+$slave3
+[1] &quot;I am 3 of 5&quot;
+
+$slave4
+[1] &quot;I am 4 of 5&quot;
+
+&gt;
+&gt; # Her çekirdeğe bağımsız olarak aynı anda  rnorm(10) fonksiyonu göndermek ve
+&gt; # çıktısını data frame olarak kayıt etmek için
+&gt;
+&gt; x&lt;-mpi.remote.exec(cmd=rnorm,10)
+&gt;
+&gt; x
+            X1         X2          X3          X4
+1  -2.132664460 -0.8432298 -0.33385398  1.37359227
+2   1.239282805 -1.6678905  2.53662146 -0.01688626
+3  -0.422106771  2.1799427 -0.05482666 -0.09163513
+4   0.943984186 -2.2284997 -1.14711907 -1.90560222
+5  -1.398988653  0.6544200  0.50693274  1.03411686
+6  -0.573611598 -0.3727489 -0.33978203  0.35506209
+7  -0.953274336 -1.0387477  0.79627835  2.28846078
+8   0.644383745  0.5777544  0.07857582 -2.12907425
+9   0.049157198  1.0551450 -0.64556348 -0.92635345
+10  0.000487631  0.4441380 -0.64147467 -0.55125029
+&gt; ##############################
+&gt; mpi.close.Rslaves()
+[1] 1
+&gt; mpi.quit()
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</details></section>
+</section>
+<section id="terminalde-r-ile-calismak">
+<span id="id3"></span><h2>Terminalde R ile çalışmak<a class="headerlink" href="#terminalde-r-ile-calismak" title="Link to this heading">#</a></h2>
+<p>Komut satırında R ile temelde iki farklı şekilde çalışabilinir. R betiklerini çalıştırırken kullanılan
+daha fazla parametre detayları için
+<a class="reference external" href="https://cran.r-project.org/doc/manuals/R-intro.html#Invoking-R-from-the-command-line">ilgili sayfayı</a> ziyaret edebilirsiniz.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Çıktı olarak my_R_Script.Rout&#39;sını çalışma dizinine kayıt eder.</span>
+R<span class="w"> </span>CMD<span class="w"> </span>BATCH<span class="w"> </span>R_script.R
+<span class="c1"># Terminal içinde çıktıları yazar.</span>
+Rscript<span class="w"> </span>R_script.R
+<span class="c1"># Terminal içinde çıktıları yazar.</span>
+Rscript<span class="w"> </span>R_script.R<span class="w"> </span>&gt;<span class="w"> </span>R_script.Rout
+</pre></div>
+</div>
+</section>
+<section id="r-slurm-ve-paralellestirme">
+<span id="slurm-r-paralellestirme"></span><h2>R, SLURM ve Paralelleştirme<a class="headerlink" href="#r-slurm-ve-paralellestirme" title="Link to this heading">#</a></h2>
+<p>Yüksek performans elde edebilmek için kaynakların etkili şekilde kullanılması, yüksek başarımlı hesaplama alanlarında önem arz etmektedir. R ortamı, vektörel işlemler veya paralelleştirme için özel paketler kullanılmadığı sürece tek çekirdek üzerinde çalışmaktadır. Bu amaç doğrultusunda, aşağıda kapalı (implicit) ve açık paralelleştirme (explicit) örnekleriyle birlikte seri kod, çok iş parçacıklı kodlar, çok düğümlü (parallel MPI) veya hibrit işleri (çok iş parçacıklı ve çok düğümlü kodlar) için SLURM parametreleri paylaşılmıştır. Daha fazla detay için <a class="reference external" href="https://www.john-ros.com/Rcourse/parallel.html">buraya</a> bakabilirsiniz.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-1-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-1-1-0" name="1-0" role="tab" tabindex="0">Seri</button><button aria-controls="panel-1-1-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-1" name="1-1" role="tab" tabindex="-1">OpenMP</button><button aria-controls="panel-1-1-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-2" name="1-2" role="tab" tabindex="-1">MPI-Tek</button><button aria-controls="panel-1-1-3" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-3" name="1-3" role="tab" tabindex="-1">MPI-Çoklu</button><button aria-controls="panel-1-1-4" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-4" name="1-4" role="tab" tabindex="-1">Hibrit</button></div><div aria-labelledby="tab-1-1-0" class="sphinx-tabs-panel" id="panel-1-1-0" name="1-0" role="tabpanel" tabindex="0"><div class="highlight-slurm notranslate"><div class="highlight"><pre><span></span><span class="kp">#SBATCH --nodes=1</span>
+<span class="kp">#SBATCH --ntasks=1</span>
+<span class="kp">#SBATCH --cpus-per-task=1</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-1-1-1" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-1" name="1-1" role="tabpanel" tabindex="0"><div class="highlight-slurm notranslate"><div class="highlight"><pre><span></span><span class="kp">#SBATCH --nodes=1</span>
+<span class="kp">#SBATCH --ntasks=1</span>
+<span class="kp">#SBATCH --cpus-per-task=&lt;c&gt;</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-1-1-2" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-2" name="1-2" role="tabpanel" tabindex="0"><div class="highlight-slurm notranslate"><div class="highlight"><pre><span></span><span class="kp">#SBATCH --nodes=1</span>
+<span class="kp">#SBATCH --ntasks=&lt;n&gt;</span>
+<span class="kp">#SBATCH --cpus-per-task=1</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-1-1-3" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-3" name="1-3" role="tabpanel" tabindex="0"><div class="highlight-slurm notranslate"><div class="highlight"><pre><span></span><span class="kp">#SBATCH --nodes=&lt;N&gt;</span>
+<span class="kp">#SBATCH --ntasks=&lt;n&gt;</span>
+<span class="kp">#SBATCH --cpus-per-task=1</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-1-1-4" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-4" name="1-4" role="tabpanel" tabindex="0"><div class="highlight-slurm notranslate"><div class="highlight"><pre><span></span><span class="kp">#SBATCH --nodes=&lt;N&gt;</span>
+<span class="kp">#SBATCH --ntasks=&lt;n&gt;</span>
+<span class="kp">#SBATCH --cpus-per-task=&lt;c&gt;</span>
+</pre></div>
+</div>
+</div></div>
+<section id="openmp-ustu-kapali-paralellik">
+<h3>OpenMP-Üstü Kapalı paralellik<a class="headerlink" href="#openmp-ustu-kapali-paralellik" title="Link to this heading">#</a></h3>
+<p>R kurulumu varsayılan olarak kendi <a class="reference external" href="https://www.netlib.org/blas/">Basic Linear Algebra Subprograms (BLAS)</a> kütüphanesi ile birlikte gelir. Ancak, BLAS kütüphanesi sadece tek çekirdek üzerinde çalışır. Linear algebra işlemleri için pek çok paralel çalışabilen kütüphane bulunmaktadır. Kütüphanelerin karşılaştırması için <a class="reference external" href="https://en.wikipedia.org/wiki/Comparison_of_linear_algebra_libraries">buraya</a> bakılabilir. Merkezi sistemde varsayılan ve Intel MKL kütüphanesi kullanan iki farklı versiyon bulunmaktadır. Bu kütüphaneler kullanılarak işlemlerimizi hızlandırabiliriz. İşlerimizi ölçeklendirme kısmında R yüklenirken, OpenMP ortam değişkeni <em>OMP_NUM_THREADS</em> ayarlanmamış olarak bırakılır. Bu, R kodunu doğrudan bir master üzerinde çalıştırırken, bu sunucudaki bulunan tüm çekirdeklerin R’de derlenen dahili çoklu iş parçacığı kütüphaneleri tarafından kullanılacağı anlamına gelir. Sunucu aşırı yükleneceğinden ve işiniz başarısız olabileceğinden bu önerilmez. Bu nedenle, R kodunu çalıştırmadan önce SLURM betiği içerisinde <em>OMP_NUM_THREADS</em> değerini uygun bir değere ayarlamalısınız. Örneğin, R içinde dahili çoklu iş parçacığında kullanılmak üzere 4 çekirdek atamak için aşağıdakiler SLURM içine yazılabilir.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-2-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-2-2-0" name="2-0" role="tab" tabindex="0">GCC</button><button aria-controls="panel-2-2-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-2-2-1" name="2-1" role="tab" tabindex="-1">Intel</button></div><div aria-labelledby="tab-2-2-0" class="sphinx-tabs-panel" id="panel-2-2-0" name="2-0" role="tabpanel" tabindex="0"><div class="highlight-slurm notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">4</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-2-2-1" class="sphinx-tabs-panel" hidden="true" id="panel-2-2-1" name="2-1" role="tabpanel" tabindex="0"><div class="highlight-slurm notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">MKL_NUM_THREADS</span><span class="o">=</span><span class="m">4</span>
+</pre></div>
+</div>
+</div></div>
+<p>Diğer taraftan bir de kod parçacıkları içerisinde paketler kullanarak çoklu çekirdek ve/veya çoklu sunucular içerisinde paralelleştirme yapılabilir.</p>
+<div class="pst-scrollable-table-container"><table class="table table-center" id="id8">
+<caption><span class="caption-text">OpenMP karşılaştırılması</span><a class="headerlink" href="#id8" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>N-n-c / OMP</p></th>
+<th class="head"><p>user</p></th>
+<th class="head"><p>system</p></th>
+<th class="head"><p>elapsed</p></th>
+<th class="head"><p>CPU Efficiency</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>R/4.3.0-gcc-11.3.1</p></td>
+<td><p>1-1-1 / 1</p></td>
+<td><p>558.712</p></td>
+<td><p>2.312</p></td>
+<td><p>561.292</p></td>
+<td><p>100.00%</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>1-1-10 / 10</p></td>
+<td><p>398.644</p></td>
+<td><p>0.634</p></td>
+<td><p>400.237</p></td>
+<td><p>9.88%</p></td>
+</tr>
+<tr class="row-even"><td><p>R/4.3.2-oneapi-2024.0</p></td>
+<td><p>1-1-1 / 1</p></td>
+<td><p>59.676</p></td>
+<td><p>0.517</p></td>
+<td><p>60.190</p></td>
+<td><p>96.88%</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>1-1-10 / 10</p></td>
+<td><p>215.618</p></td>
+<td><p>2.443</p></td>
+<td><p>22.037</p></td>
+<td><p>81.85%</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Tabloda varsayılan parametreler kullanılarak GCC ile derlenmiş R ve Intel ile derlenmiş R versiyonlarını farklı OpenMP seçenekleri ile örnekler <code class="docutils literal notranslate"><span class="pre">system.time()</span></code> içerisinde çalıştırılmış ve iş bitiminde <code class="docutils literal notranslate"><span class="pre">seff</span> <span class="pre">&lt;job_id&gt;</span></code> kullanılarak elde edilen <em>CPU Efficiency</em> bilgileri yer almaktadır. Kullanılan <code class="docutils literal notranslate"><span class="pre">svd()</span></code> fonksiyonu kullanılan Linear Algebra paketlerine göre fark göstermiştir. Diğer taraftan, GCC ile olan R versiyonunda 10 tane OpenMP işleri için çekirdek istenmiş olmasına rağmen R’ın kendi BLAS paketi paralel çalışmadığı için zaman olarak pek kazanç elde edilememiştir. Ayrıca CPU etkin kullanımına bakıldığında 10 çekirdeğin sadece 9.88% kullanılmıştır. Yazdığımız R betiklerini SLURM’a verebilmek için örnek dosyalar aşağıdaki gibi olabilir:</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-text"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-codespaces secondary" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 3.75C3.5 2.784 4.284 2 5.25 2h13.5c.966 0 1.75.784 1.75 1.75v7.5A1.75 1.75 0 0 1 18.75 13H5.25a1.75 1.75 0 0 1-1.75-1.75Zm-2 12c0-.966.784-1.75 1.75-1.75h17.5c.966 0 1.75.784 1.75 1.75v4a1.75 1.75 0 0 1-1.75 1.75H3.25a1.75 1.75 0 0 1-1.75-1.75ZM5.25 3.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h13.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Zm-2 12a.25.25 0 0 0-.25.25v4c0 .138.112.25.25.25h17.5a.25.25 0 0 0 .25-.25v-4a.25.25 0 0 0-.25-.25Z"></path><path d="M10 17.75a.75.75 0 0 1 .75-.75h6.5a.75.75 0 0 1 0 1.5h-6.5a.75.75 0 0 1-.75-.75Zm-4 0a.75.75 0 0 1 .75-.75h.5a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1-.75-.75Z"></path></svg> R ve SLURM dosyası (Tıklayınız)</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+single_R_script.R</label><div class="sd-tab-content docutils">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">svd_func</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">x</span><span class="p">){</span>
+<span class="nf">set.seed</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">matrix</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">1e6</span><span class="p">),</span><span class="w"> </span><span class="n">nrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1e3</span><span class="p">)</span>
+<span class="nf">svd</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">system.time</span><span class="p">(</span>
+<span class="nf">lapply</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="n">svd_func</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+anode_atask_mcore.sh</label><div class="sd-tab-content docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --account=kullanici_adiniz</span>
+<span class="c1">#SBATCH --partition=debug</span>
+<span class="c1">#SBATCH --output=%A.out #%A=JOB_ID %a=ArrayIndex</span>
+<span class="c1">#SBATCH --error=%A.err</span>
+<span class="c1">#SBATCH --time=00:15:00</span>
+<span class="c1">#SBATCH --workdir=/path/to/work</span>
+<span class="c1">#SBATCH --job-name=test</span>
+<span class="c1">#SBATCH --ntasks=1</span>
+<span class="c1">#SBATCH --nodes=1</span>
+<span class="c1">#SBATCH --cpus-per-task=10</span>
+
+<span class="c1">### GCC versiyonu için</span>
+module<span class="w"> </span>purge
+module<span class="w"> </span>load<span class="w"> </span>apps/R/4.3.0-gcc-11.3.1
+
+<span class="c1">## Intel versiyonu için</span>
+<span class="c1">## module load apps/R/4.3.2-oneapi-2024.0</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;We have the modules: </span><span class="k">$(</span>module<span class="w"> </span>list<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>.info
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="nv">$SLURM_NTASKS</span>
+<span class="c1">## intel ile derlenmiş R kullanılıyor ise</span>
+<span class="c1">## export MKL_NUM_THREADS=$SLURM_NTASKS</span>
+<span class="c1">## export MKL_NUM_THREADS=1</span>
+
+<span class="c1">#### R scripts #####</span>
+Rscript<span class="w"> </span>--vanilla<span class="w"> </span>single_R_script.R<span class="w"> </span>&gt;<span class="w"> </span>single_R_script.Rout
+
+<span class="nb">printf</span><span class="w"> </span>--<span class="w"> </span><span class="s1">&#39;-%.0s&#39;</span><span class="w"> </span><span class="o">{</span><span class="m">1</span>..50<span class="o">}</span><span class="w">  </span>&gt;&gt;<span class="w">  </span><span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>.info
+<span class="nb">echo</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>.info
+scontrol<span class="w"> </span>show<span class="w"> </span>job<span class="w"> </span><span class="nv">$SLURM_JOB_ID</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>.info
+
+<span class="nb">exit</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</details><p>SLURM ayarlamaları için <a class="reference internal" href="../../basic_slurm_commands.html#basic-slurm-commands"><span class="std std-ref">Temel SLURM Komutları</span></a>, <a class="reference internal" href="../../slurm_file_properties.html#slurm-betik"><span class="std std-ref">SLURM Betik Özellikleri</span></a> ve <a class="reference internal" href="../../example_slurm.html#example-slurm"><span class="std std-ref">Örnek SLURM Betik Dosyaları</span></a> ziyaret edebilirsiniz.</p>
+<p>Sonrasında işlerimizi SLURM aracılığı ile kuyruğa gönderebiliriz.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sbatch<span class="w"> </span>anode_atask_mcore.sh
+</pre></div>
+</div>
+<p>İşimizin durumunu kontrol etmek için <a class="reference internal" href="#islerin-takibi"><span class="std std-ref">İşlerin Takibi</span></a> tarafına bakabilirsiniz. Ayrıca işleriniz bittikten sonra SLURM iş raporlarına <code class="docutils literal notranslate"><span class="pre">seff</span></code>, <code class="docutils literal notranslate"><span class="pre">sacct</span></code> ve <code class="docutils literal notranslate"><span class="pre">sstat</span></code> komutları ile de erişebilirsiniz.</p>
+</section>
+<section id="paketler-ile-acik-paralellik">
+<h3>Paketler ile açık paralellik<a class="headerlink" href="#paketler-ile-acik-paralellik" title="Link to this heading">#</a></h3>
+<p>SLURM sizin için işlerinizi çoklu çekirdek ya da sunucu kullanmanız için tahsis eder ve ancak işlerinizi paralell çalışacak şekilde ayarlama yapmaz. Betikler hazırlanırken gerekli paketlerin kullanılması ve uygun formatta hazırlanmasına dikkat edilmelidir.
+Bu amaç için aşağıda örnek senaryolar bulunmaktadır. Açık paralel şekilde betik yazımında kontrol altına alabilmek için OMP_NUM_THREADS ya da MKL_NUM_THREADS değerleri 1 olarak verilmelidir.</p>
+<p><strong>1. Tek-Sunucu ve Çok-Çekirdek</strong></p>
+<p>İşlerimizi verirken çok çekirdek kullanması için <cite>parallel_R_script.R</cite>  ve <cite>anode_mtask_acore.sh</cite>
+dosyalarını örnek alabilirsiniz.
+R da açık bir şekilde paralel iş yapmanın kolay yollarından bir tanesi <a class="reference external" href="https://cran.r-project.org/web/packages/doParallel/index.html">doParallel</a> paketini kullanmaktır. <code class="docutils literal notranslate"><span class="pre">doParallel</span></code> içerisinde <code class="docutils literal notranslate"><span class="pre">foreach</span></code>, <code class="docutils literal notranslate"><span class="pre">iterators</span></code> ve <code class="docutils literal notranslate"><span class="pre">parallel</span></code> gibi paketleri de içerisinde barındırır. <code class="docutils literal notranslate"><span class="pre">foreach</span></code> paketi for döngüsünü <code class="docutils literal notranslate"><span class="pre">%do%</span></code> ile seri ve <code class="docutils literal notranslate"><span class="pre">%dopar%</span></code> ile paralel olarak kullanmamızı kolaylaştıran pratik fonksiyonları sağlayan bir pakettir. Yalnız, paralel çalışması için %dopar% öncesinde mevcut olan çekirdek sayısı kayıt edilmeli. Bu süreç için <code class="docutils literal notranslate"><span class="pre">doParallel::registerDoParallel()</span></code>, <code class="docutils literal notranslate"><span class="pre">%dopar%</span></code> öncesinde belirtilebilir. Eğer <code class="docutils literal notranslate"><span class="pre">registerDoParallel()</span></code> çağrılırsa mevcut olan çekirdek sayısının yaklaşık yarısı kadar kayıt eder. İstenilirse <code class="docutils literal notranslate"><span class="pre">registerDoParallel(cores=number_cores)</span></code> ile çekirdek sayısını belirtebiliriz.</p>
+<p>Ayrıca R betiği içerisinde SLURM aracılığı ile tahsis edilen iş/çekirdek sayısına erişmek ve o sayı kadar işlerimizi ölçeklendirmek isteyebiliririz. Bu durumda, <code class="docutils literal notranslate"><span class="pre">parallel::detectCores()</span></code> yerine  <code class="docutils literal notranslate"><span class="pre">parallelly::availableCores(omit=1)</span></code> veya <code class="docutils literal notranslate"><span class="pre">Sys.getenv(c(&quot;SLURM_NTASKS&quot;))</span></code> kullanmanız tavsiye edilir. Örnek senaryolar ve çıktıları aşağıda görebilirsiniz. <code class="docutils literal notranslate"><span class="pre">barbun</span></code> suncularında fiziksel 40 çekirdek bulunduğu için <code class="docutils literal notranslate"><span class="pre">detectCores()</span></code> fonksiyonu istenilenden fazlasını yani hepsini buluyor.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-U2VuYXJ5byAx" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-3-U2VuYXJ5byAx" name="U2VuYXJ5byAx" role="tab" tabindex="0">Senaryo 1</button><button aria-controls="panel-3-U2VuYXJ5byAy" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-3-U2VuYXJ5byAy" name="U2VuYXJ5byAy" role="tab" tabindex="-1">Senaryo 2</button></div><div aria-labelledby="tab-3-U2VuYXJ5byAx" class="sphinx-tabs-panel group-tab" id="panel-3-U2VuYXJ5byAx" name="U2VuYXJ5byAx" role="tabpanel" tabindex="0"><div class="highlight-slurm notranslate"><div class="highlight"><pre><span></span><span class="kp">#SBATCH --nodes=1</span>
+<span class="kp">#SBATCH --ntasks=1</span>
+<span class="kp">#SBATCH --cpus-per-task=20</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-3-U2VuYXJ5byAy" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-3-U2VuYXJ5byAy" name="U2VuYXJ5byAy" role="tabpanel" tabindex="0"><div class="highlight-slurm notranslate"><div class="highlight"><pre><span></span><span class="kp">#SBATCH --nodes=1</span>
+<span class="kp">#SBATCH --ntasks=20</span>
+<span class="kp">#SBATCH --cpus-per-task=1</span>
+</pre></div>
+</div>
+</div></div>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-4-U2VuYXJ5byAx" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-4-U2VuYXJ5byAx" name="U2VuYXJ5byAx" role="tab" tabindex="0">Senaryo 1</button><button aria-controls="panel-4-U2VuYXJ5byAy" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-4-U2VuYXJ5byAy" name="U2VuYXJ5byAy" role="tab" tabindex="-1">Senaryo 2</button><button aria-controls="panel-4-4-0" aria-selected="false" class="sphinx-tabs-tab" id="tab-4-4-0" name="4-0" role="tab" tabindex="-1">Slurm</button><button aria-controls="panel-4-4-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-4-4-1" name="4-1" role="tab" tabindex="-1">parallel_R_script.R</button></div><div aria-labelledby="tab-4-U2VuYXJ5byAx" class="sphinx-tabs-panel group-tab" id="panel-4-U2VuYXJ5byAx" name="U2VuYXJ5byAx" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">doParallel</span><span class="p">)</span>
+<span class="c1"># parallel, foreach, iterators</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">parallelly</span><span class="p">)</span>
+
+<span class="n">nc</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">parallel</span><span class="o">::</span><span class="nf">detectCores</span><span class="p">()</span><span class="m">-1</span>
+<span class="nf">paste</span><span class="p">(</span><span class="s">&quot;The number of the cores&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">nc</span><span class="p">)</span>
+
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s">&quot;The number of the cores 79&quot;</span>
+
+<span class="n">nw</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.numeric</span><span class="p">(</span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;SLURM_NTASKS&quot;</span><span class="p">)))</span><span class="m">-1</span>
+<span class="nf">paste</span><span class="p">(</span><span class="s">&quot;The number of the tasks&quot;</span><span class="p">,</span><span class="n">nw</span><span class="p">)</span>
+
+<span class="n">nw1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">foreach</span><span class="o">::</span><span class="nf">getDoParWorkers</span><span class="p">()</span><span class="m">-1</span>
+<span class="nf">paste</span><span class="p">(</span><span class="s">&quot;The number of the tasks&quot;</span><span class="p">,</span><span class="n">nw1</span><span class="p">)</span>
+
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s">&quot;The number of the tasks 0&quot;</span>
+
+<span class="n">ncp</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">parallelly</span><span class="o">::</span><span class="nf">availableCores</span><span class="p">(</span><span class="n">omit</span><span class="o">=</span><span class="m">1</span><span class="p">)</span>
+<span class="nf">paste</span><span class="p">(</span><span class="s">&quot;The number of the available cores&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ncp</span><span class="p">)</span>
+
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s">&quot;The number of the available cores 19&quot;</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-4-U2VuYXJ5byAy" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-4-U2VuYXJ5byAy" name="U2VuYXJ5byAy" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">doParallel</span><span class="p">)</span>
+<span class="c1"># parallel, foreach, iterators</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">parallelly</span><span class="p">)</span>
+
+<span class="n">nc</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">parallel</span><span class="o">::</span><span class="nf">detectCores</span><span class="p">()</span><span class="m">-1</span>
+<span class="nf">paste</span><span class="p">(</span><span class="s">&quot;The number of the cores&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">nc</span><span class="p">)</span>
+
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s">&quot;The number of the cores 79&quot;</span>
+
+<span class="n">nw</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.numeric</span><span class="p">(</span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;SLURM_NTASKS&quot;</span><span class="p">)))</span><span class="m">-1</span>
+<span class="nf">paste</span><span class="p">(</span><span class="s">&quot;The number of the tasks&quot;</span><span class="p">,</span><span class="n">nw</span><span class="p">)</span>
+
+<span class="n">nw1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">foreach</span><span class="o">::</span><span class="nf">getDoParWorkers</span><span class="p">()</span><span class="m">-1</span>
+<span class="nf">paste</span><span class="p">(</span><span class="s">&quot;The number of the tasks&quot;</span><span class="p">,</span><span class="n">nw1</span><span class="p">)</span>
+
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s">&quot;The number of the tasks 19&quot;</span>
+
+<span class="n">ncp</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">parallelly</span><span class="o">::</span><span class="nf">availableCores</span><span class="p">(</span><span class="n">omit</span><span class="o">=</span><span class="m">1</span><span class="p">)</span>
+<span class="nf">paste</span><span class="p">(</span><span class="s">&quot;The number of the available cores&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ncp</span><span class="p">)</span>
+
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s">&quot;The number of the available cores 1&quot;</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-4-4-0" class="sphinx-tabs-panel" hidden="true" id="panel-4-4-0" name="4-0" role="tabpanel" tabindex="0"><div class="highlight-slurm notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="kp">#SBATCH --account=kullanici_adiniz</span>
+<span class="kp">#SBATCH --partition=debug</span>
+<span class="kp">#SBATCH --constraint=barbun</span>
+<span class="kp">#SBATCH --output=%A.out #%A=JOB_ID %a=ArrayIndex</span>
+<span class="kp">#SBATCH --error=%A.err</span>
+<span class="kp">#SBATCH --time=00:15:00</span>
+<span class="kp">#SBATCH --workdir=/arf/scratch/kullanici_adiniz/sw-u/R/script</span>
+<span class="kp">#SBATCH --job-name=1120.1-G</span>
+<span class="kp">#SBATCH --ntasks=1</span>
+<span class="kp">#SBATCH --nodes=1</span>
+<span class="kp">#SBATCH --cpus-per-task=20</span>
+
+
+<span class="c1">### Load modules</span>
+module<span class="w"> </span>purge
+module<span class="w"> </span>load<span class="w"> </span>apps/R/4.3.0-gcc-11.3.1
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;We have the modules: </span><span class="k">$(</span>module<span class="w"> </span>list<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>.info
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">1</span>
+<span class="c1">#export OMP_NUM_THREADS=$SLURM_NTASKS</span>
+<span class="c1">#intel ile derlenmiş R kullanılıyor ise</span>
+<span class="c1">#export MKL_NUM_THREADS=$SLURM_CPUS_PER_TASK</span>
+
+<span class="c1">#### R scripts #####</span>
+Rscript<span class="w"> </span>--vanilla<span class="w"> </span>parallel_R_script.R<span class="w"> </span>&gt;<span class="w"> </span>parallel_R_script1110.Rout
+
+
+<span class="nb">printf</span><span class="w"> </span>--<span class="w"> </span><span class="s1">&#39;-%.0s&#39;</span><span class="w"> </span><span class="o">{</span><span class="m">1</span>..50<span class="o">}</span><span class="w">  </span>&gt;&gt;<span class="w">  </span><span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>.info
+<span class="nb">echo</span><span class="w">  </span>&gt;&gt;<span class="w"> </span><span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>.info
+scontrol<span class="w"> </span>show<span class="w"> </span>job<span class="w"> </span><span class="nv">$SLURM_JOB_ID</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>.info
+
+<span class="nb">exit</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-4-4-1" class="sphinx-tabs-panel" hidden="true" id="panel-4-4-1" name="4-1" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">doParallel</span><span class="p">)</span>
+<span class="c1"># parallel, foreach, iterators</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">parallelly</span><span class="p">)</span>
+
+<span class="n">svd_func</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">x</span><span class="p">){</span>
+<span class="nf">set.seed</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">matrix</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">1e6</span><span class="p">),</span><span class="w"> </span><span class="n">nrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1e3</span><span class="p">)</span>
+<span class="nf">svd</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">ncp</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">parallelly</span><span class="o">::</span><span class="nf">availableCores</span><span class="p">(</span><span class="n">omit</span><span class="o">=</span><span class="m">1</span><span class="p">)</span>
+<span class="nf">paste</span><span class="p">(</span><span class="s">&quot;The number of the available cores&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ncp</span><span class="p">)</span>
+
+<span class="n">doParallel</span><span class="o">::</span><span class="nf">registerDoParallel</span><span class="p">(</span><span class="n">ncp</span><span class="p">)</span>
+<span class="c1"># parallel backend, register and stopregister: otomatik kendisi yapıyor</span>
+
+<span class="nf">system.time</span><span class="p">(</span>
+<span class="nf">foreach</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">)</span><span class="w"> </span><span class="o">%dopar%</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nf">svd_func</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div></div>
+<p>R içerisinde yukarıda belirtilen otomatik paralel kayıt işlemi en etkili olan yöntem olmakla birlikte, istenilirse PSOCK ve FORK tipinde de paralel kümeleme ayarı yapılabilir. Bilindiği üzere FORK tipinde paralel işlerde aynı R ortamları (veriler, fonksiyonlar, paketler) kopyalanmadan master iş tarafından paylaşılırken, PSOCK tipinde aynı R ortamı istenilen paralel iş sayısı kadar kopya oluşturulup işler koşturulur. FORK tipi paralellik sadece Unix-benzeri sistemlerde çalışırken, PSOCK tipi hem Unix-benzeri sistemlerde hem de Windows’ta çalışabilir. Aşağıda bu iki tip için kullanılabilecek taslak bir R betiğini inceleyebilirsiniz.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-5-5-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-5-5-0" name="5-0" role="tab" tabindex="0">PSOCK / FORK</button></div><div aria-labelledby="tab-5-5-0" class="sphinx-tabs-panel" id="panel-5-5-0" name="5-0" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">doParallel</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">parallelly</span><span class="p">)</span>
+
+<span class="n">ncp</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">parallelly</span><span class="o">::</span><span class="nf">availableCores</span><span class="p">(</span><span class="n">omit</span><span class="o">=</span><span class="m">1</span><span class="p">)</span>
+<span class="n">cl</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">parallel</span><span class="o">::</span><span class="nf">makeCluster</span><span class="p">(</span><span class="n">ncp</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;xxxxx&quot;</span><span class="p">)</span>
+<span class="n">doParallel</span><span class="o">::</span><span class="nf">registerDoParallel</span><span class="p">(</span><span class="n">cl</span><span class="p">)</span>
+
+<span class="c1"># To check registration</span>
+<span class="n">foreach</span><span class="o">::</span><span class="nf">getDoParRegistered</span><span class="p">()</span>
+<span class="n">foreach</span><span class="o">::</span><span class="nf">getDoParWorkers</span><span class="p">()</span>
+
+<span class="c1"># Here your parallel codes</span>
+
+<span class="c1"># Stop to clusters</span>
+<span class="n">parallel</span><span class="o">::</span><span class="nf">stopCluster</span><span class="p">(</span><span class="n">cl</span><span class="w"> </span><span class="p">)</span>
+</pre></div>
+</div>
+</div></div>
+<div class="admonition note">
+<p class="admonition-title">Not</p>
+<p>Yukarıda ki örneklerde MPI kullanmadan R paketleri kullanılarak tek sunucu içerisinde paralelleştirme yapılmıştır. Aslında, <code class="docutils literal notranslate"><span class="pre">--ntasks</span></code> parametresi ile MPI iş sayısını belirtmektedir. Dolayısıyla, tek sunucu içerisinde MPI işi gerekmedikçe <code class="docutils literal notranslate"><span class="pre">--ntasks=1</span></code> ve <code class="docutils literal notranslate"><span class="pre">--cpus-per-task=&lt;c&gt;</span></code> seçmek ve <code class="docutils literal notranslate"><span class="pre">doParallel</span></code> paketi kullanmak tavsiye edilir.  MPI işleri için  <a class="reference external" href="https://cran.r-project.org/web/packages/Rmpi/index.html">Rmpi</a> ya da <a class="reference external" href="https://cran.r-project.org/web/packages/pbdMPI/index.html">pbdMPI</a> paketi kullanılarak <a class="reference internal" href="#ornek-mpi-rmpi"><span class="std std-ref">ilgili kılavuz</span></a> takip edilebilir.</p>
+</div>
+<p><strong>2. Çok-Sunucu ve Çok-Çekirdek</strong></p>
+<p>Çok sunucu kullanmak bazen avantaj olmakla beraber işlerin çalışması başlayıncaya kadar geçen süreler sebebiyle dezavantaj durumuna dönüşebilmektedir. Bu bilgiler ışığında işler ayarlanmalıdır. Sadece MPI çalışacak şekilde işler ayarlanabildiği gibi hibrit şekilde işler de olabilir. Aşağıda basit <code class="docutils literal notranslate"><span class="pre">for</span></code> döngüsünü paralel şekilde koşturan iki senaryo için taslak örnekler bulunmaktadır.</p>
+<p><strong>OpenMPI veya Hibrit (OpenMP + OpenMPI) iş verme</strong></p>
+<p>Tek sunucu içerisinde kullanılabilecek maksimum çekirdek sayıısı yetersiz kaldığı durumlarda birden fazla sunucu içerisinde işlerimizi dağıtık olarak çok çekirdek kullanmak bir çözüm olabilmektedir.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-text"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-codespaces secondary" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 3.75C3.5 2.784 4.284 2 5.25 2h13.5c.966 0 1.75.784 1.75 1.75v7.5A1.75 1.75 0 0 1 18.75 13H5.25a1.75 1.75 0 0 1-1.75-1.75Zm-2 12c0-.966.784-1.75 1.75-1.75h17.5c.966 0 1.75.784 1.75 1.75v4a1.75 1.75 0 0 1-1.75 1.75H3.25a1.75 1.75 0 0 1-1.75-1.75ZM5.25 3.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h13.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Zm-2 12a.25.25 0 0 0-.25.25v4c0 .138.112.25.25.25h17.5a.25.25 0 0 0 .25-.25v-4a.25.25 0 0 0-.25-.25Z"></path><path d="M10 17.75a.75.75 0 0 1 .75-.75h6.5a.75.75 0 0 1 0 1.5h-6.5a.75.75 0 0 1-.75-.75Zm-4 0a.75.75 0 0 1 .75-.75h.5a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1-.75-.75Z"></path></svg> R ve SLURM dosyası (Tıklayınız)</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+mpi_R_script.R</label><div class="sd-tab-content docutils">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">doParallel</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">Rmpi</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">doMPI</span><span class="p">)</span>
+
+<span class="n">cl</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">startMPIcluster</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">registerDoMPI</span><span class="p">(</span><span class="n">cl</span><span class="p">)</span>
+
+<span class="n">svd_func</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">x</span><span class="p">){</span>
+<span class="nf">set.seed</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">matrix</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">1e6</span><span class="p">),</span><span class="w"> </span><span class="n">nrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1e3</span><span class="p">)</span>
+<span class="nf">svd</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">system.time</span><span class="p">(</span>
+<span class="nf">foreach</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">)</span><span class="w"> </span><span class="o">%dopar%</span><span class="w"> </span><span class="p">{</span><span class="nf">svd_func</span><span class="p">(</span><span class="n">i</span><span class="p">)}</span>
+<span class="p">)</span>
+
+<span class="nf">closeCluster</span><span class="p">(</span><span class="n">cl</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
+mnode_mtask_acore.sh</label><div class="sd-tab-content docutils">
+<div class="highlight-slurm notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="kp">#SBATCH --account=kullanici_adiniz</span>
+<span class="kp">#SBATCH --partition=debug</span>
+<span class="kp">#SBATCH --constraint=barbun</span>
+<span class="kp">#SBATCH --output=%A.out #%A=JOB_ID %a=ArrayIndex</span>
+<span class="kp">#SBATCH --error=%A.err</span>
+<span class="kp">#SBATCH --time=00:15:00</span>
+<span class="kp">#SBATCH --workdir=/truba/home/kullanici_adiniz/sw-u/R-TRUBA/script</span>
+<span class="kp">#SBATCH --job-name=test</span>
+<span class="kp">#SBATCH --ntasks=10</span>
+<span class="kp">#SBATCH --nodes=2</span>
+<span class="kp">#SBATCH --ntasks-per-node=5</span>
+<span class="kp">#SBATCH --cpus-per-task=1</span>
+
+<span class="c1">### Load modules</span>
+module<span class="w"> </span>purge
+module<span class="w"> </span>load<span class="w"> </span>lib/openmpi/4.1.6
+module<span class="w"> </span>load<span class="w"> </span>apps/R/4.3.0-gcc-11.3.1
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;We have the modules: </span><span class="k">$(</span>module<span class="w"> </span>list<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>.info
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">1</span>
+<span class="c1">#export OMP_NUM_THREADS=$SLURM_NTASKS_PER_NODE</span>
+<span class="c1">#intel ile derlenmiş R kullanılıyor ise</span>
+<span class="c1">#export MKL_NUM_THREADS=$SLURM_CPUS_PER_TASK</span>
+
+mpirun<span class="w"> </span>-np<span class="w"> </span><span class="nv">$SLURM_NTASKS</span><span class="w"> </span>--mca<span class="w"> </span>btl_openib_allow_ib<span class="w"> </span><span class="nb">true</span><span class="w"> </span>R<span class="w"> </span>CMD<span class="w"> </span>BATCH<span class="w"> </span>--vanilla<span class="w">  </span>mpi_R_script.R
+
+<span class="nb">printf</span><span class="w"> </span>--<span class="w"> </span><span class="s1">&#39;-%.0s&#39;</span><span class="w"> </span><span class="o">{</span><span class="m">1</span>..50<span class="o">}</span><span class="w">  </span>&gt;&gt;<span class="w">  </span><span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>.info
+<span class="nb">echo</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>.info
+scontrol<span class="w"> </span>show<span class="w"> </span>job<span class="w"> </span><span class="nv">$SLURM_JOB_ID</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>.info
+
+<span class="nb">exit</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
+mnode_mtask_mcore.sh</label><div class="sd-tab-content docutils">
+<div class="highlight-slurm notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="kp">#SBATCH --account=kullanici_adiniz</span>
+<span class="kp">#SBATCH --partition=debug</span>
+<span class="kp">#SBATCH --constraint=barbun</span>
+<span class="kp">#SBATCH --output=%A.out #%A=JOB_ID %a=ArrayIndex</span>
+<span class="kp">#SBATCH --error=%A.err</span>
+<span class="kp">#SBATCH --time=00:15:00</span>
+<span class="kp">#SBATCH --workdir=/truba/home/kullanici_adiniz/sw-u/R-TRUBA/script</span>
+<span class="kp">#SBATCH --job-name=test</span>
+<span class="kp">#SBATCH --ntasks=10</span>
+<span class="kp">#SBATCH --nodes=2</span>
+<span class="kp">#SBATCH --ntasks-per-node=5</span>
+<span class="kp">#SBATCH --cpus-per-task=2</span>
+
+<span class="c1">### Load modules</span>
+module<span class="w"> </span>purge
+module<span class="w"> </span>load<span class="w"> </span>lib/openmpi/4.1.6
+module<span class="w"> </span>load<span class="w"> </span>apps/R/4.3.0-gcc-11.3.1
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;We have the modules: </span><span class="k">$(</span>module<span class="w"> </span>list<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>.info
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">2</span>
+<span class="c1">#export OMP_NUM_THREADS=$SLURM_NTASKS_PER_NODE</span>
+<span class="c1">#intel ile derlenmiş R kullanılıyor ise</span>
+<span class="c1">#export MKL_NUM_THREADS=$SLURM_CPUS_PER_TASK</span>
+
+mpirun<span class="w"> </span>-np<span class="w"> </span><span class="nv">$SLURM_NTASKS</span><span class="w"> </span>--mca<span class="w"> </span>btl_openib_allow_ib<span class="w"> </span><span class="nb">true</span><span class="w"> </span>R<span class="w"> </span>CMD<span class="w"> </span>BATCH<span class="w"> </span>--vanilla<span class="w">  </span>mpi_R_script.R
+
+<span class="nb">printf</span><span class="w"> </span>--<span class="w"> </span><span class="s1">&#39;-%.0s&#39;</span><span class="w"> </span><span class="o">{</span><span class="m">1</span>..50<span class="o">}</span><span class="w">  </span>&gt;&gt;<span class="w">  </span><span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>.info
+<span class="nb">echo</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>.info
+scontrol<span class="w"> </span>show<span class="w"> </span>job<span class="w"> </span><span class="nv">$SLURM_JOB_ID</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>.info
+
+<span class="nb">exit</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</details><p>SLURM’a <strong>- -ntasks=10 - -nodes=2 - -ntasks-per-node=5</strong> diyerek her sunucuda 5’er iş olmak üzere 2 tane sunucuda toplamda 10 işi  birer çekirdek üzerinde çalışacağını söyleyebiliriz. Hibrit işlerde ise aynı kurgu içerisinde 10 iş çalışırken her işi tek çekirdek değil 2 çekirdek kullanarak kapalı paralelleştirme ile hızlandıralabilir.</p>
+</section>
+</section>
+<section id="is-dizileri-job-array">
+<span id="id5"></span><h2>İş dizileri (job array)<a class="headerlink" href="#is-dizileri-job-array" title="Link to this heading">#</a></h2>
+<p>İş dizileri (job array), SLURM’ün tek bir koddan birden fazla iş oluşturma yeteneğinden yararlanmanıza imkan sağlar. Bunun yararlı olduğu durumları şu şekilde olabilir:</p>
+<ul class="simple">
+<li><p>Koşturulacak işlerin bir listesinin oluşturulması ve listedeki her komuttan bir iş oluşturulması.</p></li>
+<li><p>Bir veri seti üzerinde birden fazla parametre ile aynı anda çalıştırılması.</p></li>
+<li><p>Aynı programın farklı veri setleriyle aynı anda çalıştırılması.</p></li>
+</ul>
+<p>SLURM’de kullanılan <code class="docutils literal notranslate"><span class="pre">--array</span></code> parametresinin atadığı değerlere <code class="docutils literal notranslate"><span class="pre">$(SLURM_ARRAY_TASK_ID)</span></code> ile iş numaralarına ulaşabilriz. Örnek kullanım <code class="docutils literal notranslate"><span class="pre">program</span> <span class="pre">$((SLURM_ARRAY_TASK_ID))</span></code> şeklinde olabilirken parametre durumları aşağıdaki gibi verilebilir:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--array=2,5,8</span></code>: <em>program 2</em>, <em>program 5</em> ve <em>program 8</em> olmak üzere 3 iş başlatılır.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--array=1-10</span></code> : 1’den 10’a kadar değer vererek 10 tane işi aynı anda çalıştırır.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--array=0-9</span></code>: 0, 3, 6, 9 değerleri ile birlikte 4 tane iş başlatılır.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--array=1-10%2</span></code>: Aynı anda 2’şer iş çalıştırmak üzere modifiye eder.</p></li>
+</ul>
+<p>Girdi dosyalarınızı <em>input_1, input_2, … , input_10</em> olduğunda <code class="docutils literal notranslate"><span class="pre">program</span> <span class="pre">input_$((SLURM_ARRAY_TASK_ID))</span></code> ile her iş için ayrı bir girdi dosyasını alarak koşturulabilir.</p>
+<p>Aşağıda 2 tane girdi kabul eden ve girdiler arasında bir liste oluşturup listenin her değeri için rastgele üretilen matrisin tekil değer ayrışımı (Singular Value Decomposition) hesaplayan R betiğini iş dizisi (job-array) kullanılarak bir örnek gösterilmeye çalışılmıştır. SLURM <code class="docutils literal notranslate"><span class="pre">--array=1-9:2</span></code> ile 1,3,5,7 ve 9 değerlerini SLURM_ARRAY_TASK_ID olarak saklayacak ve 5 tane iş çalıştıracaktır. Her işin çıktısı da <em>job_array_1.Rout, job_array_3.Rout, …, job_array_9.Rout</em> şeklinde çalışma dizinine kayıt edilecektir.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-text"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-codespaces secondary" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 3.75C3.5 2.784 4.284 2 5.25 2h13.5c.966 0 1.75.784 1.75 1.75v7.5A1.75 1.75 0 0 1 18.75 13H5.25a1.75 1.75 0 0 1-1.75-1.75Zm-2 12c0-.966.784-1.75 1.75-1.75h17.5c.966 0 1.75.784 1.75 1.75v4a1.75 1.75 0 0 1-1.75 1.75H3.25a1.75 1.75 0 0 1-1.75-1.75ZM5.25 3.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h13.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Zm-2 12a.25.25 0 0 0-.25.25v4c0 .138.112.25.25.25h17.5a.25.25 0 0 0 .25-.25v-4a.25.25 0 0 0-.25-.25Z"></path><path d="M10 17.75a.75.75 0 0 1 .75-.75h6.5a.75.75 0 0 1 0 1.5h-6.5a.75.75 0 0 1-.75-.75Zm-4 0a.75.75 0 0 1 .75-.75h.5a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1-.75-.75Z"></path></svg> Örnek iş dizileri SLURM ve R dosyası (Tıklayınız)</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-8" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-8">
+job_array.R</label><div class="sd-tab-content docutils">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Girdileri karakter vektörü olarak saklar</span>
+<span class="n">args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">commandArgs</span><span class="p">(</span><span class="n">trailingOnly</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+
+<span class="n">start_i</span><span class="w"> </span><span class="o">=</span><span class="nf">as.integer</span><span class="p">(</span><span class="w"> </span><span class="n">args</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="p">)</span>
+<span class="n">end_i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as.integer</span><span class="p">(</span><span class="w"> </span><span class="n">args</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="w"> </span><span class="p">)</span>
+
+
+<span class="nf">print</span><span class="p">(</span><span class="n">start_i</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">end_i</span><span class="p">)</span>
+
+<span class="n">svd_func</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">x</span><span class="p">){</span>
+<span class="nf">set.seed</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">matrix</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">1e6</span><span class="p">),</span><span class="w"> </span><span class="n">nrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1e3</span><span class="p">)</span>
+<span class="nf">svd</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">system.time</span><span class="p">(</span>
+<span class="nf">lapply</span><span class="p">(</span><span class="n">start_i</span><span class="o">:</span><span class="n">end_i</span><span class="p">,</span><span class="w"> </span><span class="n">svd_func</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-9">
+job_array.sh</label><div class="sd-tab-content docutils">
+<div class="highlight-slurm notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="kp">#SBATCH --account=kullanici_adiniz</span>
+<span class="kp">#SBATCH --partition=debug</span>
+<span class="kp">#SBATCH --output=%A_%a.out #%A=JOB_ID %a=ArrayIndex</span>
+<span class="kp">#SBATCH --error=%A_%a.err</span>
+<span class="kp">#SBATCH --time=00:15:00</span>
+<span class="kp">#SBATCH --workdir=/truba/home/kullanici_adiniz/sw-u/R-TRUBA/script</span>
+<span class="kp">#SBATCH --job-name=test</span>
+<span class="kp">#SBATCH --ntasks=1</span>
+<span class="kp">#SBATCH --nodes=1</span>
+<span class="kp">#SBATCH --cpus-per-task=2</span>
+<span class="kp">#SBATCH --ntasks-per-node=1</span>
+<span class="kp">#SBATCH --array=1-9:2</span>
+
+<span class="c1">### Load modules</span>
+module<span class="w"> </span>purge
+module<span class="w"> </span>load<span class="w"> </span>apps/R/4.3.0-gcc-11.3.1
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">1</span>
+<span class="c1">#export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK</span>
+<span class="c1">#intel ile derlenmiş R kullanılıyor ise</span>
+<span class="c1">#export MKL_NUM_THREADS=$SLURM_CPUS_PER_TASK</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;We have the modules: </span><span class="k">$(</span>module<span class="w"> </span>list<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>.info
+
+<span class="nv">SEED</span><span class="o">=</span><span class="si">${</span><span class="nv">SLURM_ARRAY_TASK_ID</span><span class="si">}</span>
+
+<span class="c1">#R CMD BATCH --vanilla &#39;--args 40 50&#39;  job_array_R_script.R</span>
+Rscript<span class="w"> </span>--vanilla<span class="w"> </span>job_array_R_script.R<span class="w"> </span><span class="nv">$SEED</span><span class="w"> </span><span class="k">$((</span><span class="nv">SEED</span><span class="o">+</span><span class="m">2</span><span class="k">))</span><span class="w"> </span>&gt;<span class="w"> </span>job_array_<span class="si">${</span><span class="nv">SEED</span><span class="si">}</span>.Rout
+
+<span class="nb">printf</span><span class="w"> </span>--<span class="w"> </span><span class="s1">&#39;-%.0s&#39;</span><span class="w"> </span><span class="o">{</span><span class="m">1</span>..50<span class="o">}</span><span class="w">  </span>&gt;&gt;<span class="w">  </span><span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>.info
+<span class="nb">echo</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>.info
+scontrol<span class="w"> </span>show<span class="w"> </span>job<span class="w"> </span><span class="nv">$SLURM_JOB_ID</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>.info
+
+<span class="nb">exit</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-10" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-10">
+bash</label><div class="sd-tab-content docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sbatch<span class="w"> </span>job_array.sh
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</details><p>Birbirleri ile bağımlı işler çalıştırmak için <code class="docutils literal notranslate"><span class="pre">--dependency</span></code> parametresi için <a class="reference external" href="https://slurm.schedmd.com/sbatch.html">SLURM’ün sayfası</a> ziyaret edilebilir.</p>
+</section>
+<section id="benchmark-sonuclari">
+<span id="id6"></span><h2>Benchmark Sonuçları<a class="headerlink" href="#benchmark-sonuclari" title="Link to this heading">#</a></h2>
+<p>Aşağıdaki sonuçlar, TRUBA sistemlerinde bulunan iki farklı derleyici ile elde edilmiş R versiyonları üzerinde gerçekleştirilmiştir. Sonuçlar ARF hesaplama kümesinde farklılık gösterebilir. Hangi derleyiciyi kullanmanız gerektiği konusunda fikir sahibi olabilmek için aşağıdaki benchmark sonuçlarını inceleyebilirsiniz.</p>
+<p>Kullanılan optimize paketlerini görmek için <code class="docutils literal notranslate"><span class="pre">sessionInfo()</span></code> fonksiyonu kullanabilirsiniz.
+Intel derleyicisi ile olan modüller yüklendikten sonra R içerisinde <code class="docutils literal notranslate"><span class="pre">sessionInfo()</span></code> çalıştırılırsa BLAS/LAPACK paketlerini <a class="reference external" href="https://www.intel.com/content/www/us/en/developer/articles/technical/using-onemkl-with-r.html">Intel® oneAPI Math Kernel Library (oneMKL)</a> kullanıldığından emin olabiliriz. TRUBA’dan <code class="docutils literal notranslate"><span class="pre">hamsi</span></code> kümelerinde yapılan <a class="reference external" href="https://mac.r-project.org/benchmarks/">R-benchmark-2.5</a> sonuçlarını aşağıda bulabilirsiniz:</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-text"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-codespaces secondary" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 3.75C3.5 2.784 4.284 2 5.25 2h13.5c.966 0 1.75.784 1.75 1.75v7.5A1.75 1.75 0 0 1 18.75 13H5.25a1.75 1.75 0 0 1-1.75-1.75Zm-2 12c0-.966.784-1.75 1.75-1.75h17.5c.966 0 1.75.784 1.75 1.75v4a1.75 1.75 0 0 1-1.75 1.75H3.25a1.75 1.75 0 0 1-1.75-1.75ZM5.25 3.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h13.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Zm-2 12a.25.25 0 0 0-.25.25v4c0 .138.112.25.25.25h17.5a.25.25 0 0 0 .25-.25v-4a.25.25 0 0 0-.25-.25Z"></path><path d="M10 17.75a.75.75 0 0 1 .75-.75h6.5a.75.75 0 0 1 0 1.5h-6.5a.75.75 0 0 1-.75-.75Zm-4 0a.75.75 0 0 1 .75-.75h.5a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1-.75-.75Z"></path></svg> Benchmark Sonuçları (Tıklayınız)</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-11" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-11">
+R-Intel oneAPI MKL</label><div class="sd-tab-content docutils">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w"> </span><span class="nf">sessionInfo</span><span class="p">()</span>
+<span class="n">R</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="m">4.2</span><span class="n">.</span><span class="m">2</span><span class="w"> </span><span class="p">(</span><span class="m">2022-10-31</span><span class="p">)</span>
+<span class="n">Platform</span><span class="o">:</span><span class="w"> </span><span class="n">x86_64</span><span class="o">-</span><span class="n">pc</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="nf">gnu </span><span class="p">(</span><span class="m">64</span><span class="o">-</span><span class="n">bit</span><span class="p">)</span>
+<span class="n">Running</span><span class="w"> </span><span class="n">under</span><span class="o">:</span><span class="w"> </span><span class="n">CentOS</span><span class="w"> </span><span class="n">Linux</span><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="p">(</span><span class="n">Core</span><span class="p">)</span>
+
+<span class="n">Matrix</span><span class="w"> </span><span class="n">products</span><span class="o">:</span><span class="w"> </span><span class="n">default</span>
+<span class="n">BLAS</span><span class="o">/</span><span class="n">LAPACK</span><span class="o">:</span><span class="w"> </span><span class="o">/</span><span class="n">truba</span><span class="o">/</span><span class="n">sw</span><span class="o">/</span><span class="n">centos7.9</span><span class="o">/</span><span class="n">comp</span><span class="o">/</span><span class="n">intel</span><span class="o">/</span><span class="n">oneapi</span><span class="m">-2021.2</span><span class="o">/</span><span class="n">mkl</span><span class="o">/</span><span class="m">2021.2</span><span class="n">.</span><span class="m">0</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">intel64</span><span class="o">/</span><span class="n">libmkl_intel_lp64.so.1</span>
+
+<span class="n">locale</span><span class="o">:</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="n">LC_CTYPE</span><span class="o">=</span><span class="n">en_US.UTF</span><span class="m">-8</span><span class="w">       </span><span class="n">LC_NUMERIC</span><span class="o">=</span><span class="n">C</span>
+<span class="p">[</span><span class="m">3</span><span class="p">]</span><span class="w"> </span><span class="n">LC_TIME</span><span class="o">=</span><span class="n">tr_TR.UTF</span><span class="m">-8</span><span class="w">        </span><span class="n">LC_COLLATE</span><span class="o">=</span><span class="n">en_US.UTF</span><span class="m">-8</span>
+<span class="p">[</span><span class="m">5</span><span class="p">]</span><span class="w"> </span><span class="n">LC_MONETARY</span><span class="o">=</span><span class="n">tr_TR.UTF</span><span class="m">-8</span><span class="w">    </span><span class="n">LC_MESSAGES</span><span class="o">=</span><span class="n">en_US.UTF</span><span class="m">-8</span>
+<span class="p">[</span><span class="m">7</span><span class="p">]</span><span class="w"> </span><span class="n">LC_PAPER</span><span class="o">=</span><span class="n">tr_TR.UTF</span><span class="m">-8</span><span class="w">       </span><span class="n">LC_NAME</span><span class="o">=</span><span class="n">C</span>
+<span class="p">[</span><span class="m">9</span><span class="p">]</span><span class="w"> </span><span class="n">LC_ADDRESS</span><span class="o">=</span><span class="n">C</span><span class="w">               </span><span class="n">LC_TELEPHONE</span><span class="o">=</span><span class="n">C</span>
+<span class="p">[</span><span class="m">11</span><span class="p">]</span><span class="w"> </span><span class="n">LC_MEASUREMENT</span><span class="o">=</span><span class="n">tr_TR.UTF</span><span class="m">-8</span><span class="w"> </span><span class="n">LC_IDENTIFICATION</span><span class="o">=</span><span class="n">C</span>
+
+<span class="n">attached</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="n">packages</span><span class="o">:</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="n">stats</span><span class="w">     </span><span class="n">graphics</span><span class="w">  </span><span class="n">grDevices</span><span class="w"> </span><span class="n">utils</span><span class="w">     </span><span class="n">datasets</span><span class="w">  </span><span class="n">methods</span><span class="w">   </span><span class="n">base</span>
+
+<span class="n">loaded</span><span class="w"> </span><span class="n">via</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="nf">namespace </span><span class="p">(</span><span class="n">and</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">attached</span><span class="p">)</span><span class="o">:</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="n">compiler_4.2.2</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-12" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-12">
+Benchmark Sonuçları</label><div class="sd-tab-content docutils">
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>R Benchmark 2.5
+===============
+Number of times each test is run__________________________:  3
+
+I. Matrix calculation
+---------------------                                          GCC                   Intel
+Creation, transp., deformation of a 2500x2500 matrix (sec):  0.804              0.829666666666667
+2400x2400 normal distributed random matrix ^1000____ (sec):  0.685333333333334  0.381
+Sorting of 7,000,000 random values__________________ (sec):  0.962333333333333  0.893666666666666
+2800x2800 cross-product matrix (b = a&#39; * a)_________ (sec):  16.583             0.0690000000000002
+Linear regr. over a 3000x3000 matrix (c = a \ b&#39;)___ (sec):  7.83566666666667   0.0336666666666664
+                    --------------------------------------------
+                Trimmed geom. mean (2 extremes eliminated):  1.82341634513467   0.279399678965381
+
+II. Matrix functions
+--------------------
+FFT over 2,400,000 random values____________________ (sec):  0.169666666666662  0.207666666666667
+Eigenvalues of a 640x640 random matrix______________ (sec):  0.957666666666673  0.269666666666666
+Determinant of a 2500x2500 random matrix____________ (sec):  3.486              0.054666666666666
+Cholesky decomposition of a 3000x3000 matrix________ (sec):  6.54566666666667   0.03
+Inverse of a 1600x1600 random matrix________________ (sec):  2.97866666666667   0.0686666666666665
+                    --------------------------------------------
+                Trimmed geom. mean (2 extremes eliminated):  2.15040974669976   0.0920333259275001
+
+III. Programmation
+------------------
+3,500,000 Fibonacci numbers calculation (vector calc)(sec):  0.658333333333322  0.302333333333333
+Creation of a 3000x3000 Hilbert matrix (matrix calc) (sec):  0.202999999999993  0.358000000000001
+Grand common divisors of 400,000 pairs (recursion)__ (sec):  0.284666666666662  0.337333333333335
+Creation of a 500x500 Toeplitz matrix (loops)_______ (sec):  0.047333333333332  0.0626666666666651
+Escoufier&#39;s method on a 45x45 matrix (mixed)________ (sec):  0.371000000000009  0.308000000000007
+                    --------------------------------------------
+                Trimmed geom. mean (2 extremes eliminated):  0.277802097935828  0.315523711731498
+
+
+Total time for all 15 tests_________________________ (sec):  42.5723333333333   4.20600000000001
+Overall mean (sum of I, II and III trimmed means/3)_ (sec):  1.02891822888886   0.200940590409758
+                    --- End of test ---
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</details></section>
+<section id="islerin-takibi">
+<span id="id7"></span><h2>İşlerin Takibi<a class="headerlink" href="#islerin-takibi" title="Link to this heading">#</a></h2>
+<p>Çalışmakta olan işlerinizin işlemci  yükünü ve bellek kullanımını
+<a class="reference external" href="http://grafana.yonetim:3000">http://grafana.yonetim:3000</a>  adreslerinden 15 güne kadar takip edebilirsiniz.
+Bu bağlantıya sadece <a class="reference internal" href="../../../0-first-steps/open-vpn/index.html#open-vpn"><span class="std std-ref">openvpn baglantısı ile</span></a> üzerinden erişilebilmektedir.</p>
+<div class="admonition note">
+<p class="admonition-title">Not</p>
+<p>Örnek betik dosyalarına <code class="docutils literal notranslate"><span class="pre">/arf/sw/scripts/R</span></code> dizininden erişim sağlayabilirsiniz.</p>
+</div>
+</section>
+<section id="sorunlar-ve-cozumler">
+<span id="sorunlar-cozumler"></span><h2>Sorunlar ve Çözümler<a class="headerlink" href="#sorunlar-ve-cozumler" title="Link to this heading">#</a></h2>
+<p>R paketlerinin kurulumu sırasında derleyici sorunlarını çözmek için diğer yaklaşımlar:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="R_Source_code.html#r-source-code"><span class="std std-ref">Kaynak kod kullanılarak R kurulumu</span></a> örnek alınarak istenilen derleyici kullanılarak kurulum yapılabilir.</p></li>
+<li><p>R paketleri kurulurken derleyicilerin düzgün bir şekilde çağrılması
+için ~/.R/Makevars dosyasına ilgili flag’ler eklenebilir. Bununla
+ilgili detaylar internette farklı kaynaklardan elde edilebilir.(<a class="reference external" href="https://stackoverflow.com/questions/1616983/building-r-packages-using-alternate-gcc">StackOverflow’dan bir
+örnek</a>) Bu süreç için <code class="docutils literal notranslate"><span class="pre">home</span></code> dizinde iken</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span>~/.R
+vim<span class="w"> </span>~/.R/Makevars
+</pre></div>
+</div>
+<p>ile açılan dosya içerisine aşağıdaki örnek parametrelerden gerekli olanlar kopyala yapıştır yapılabilir.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-warning sd-bg-text-warning">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-zap" viewBox="0 0 16 16" aria-hidden="true"><path d="M9.504.43a1.516 1.516 0 0 1 2.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.249 1.249 0 0 1-.871.354h-.302a1.25 1.25 0 0 1-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429Zm1.047 1.074L3.286 8.571A.25.25 0 0 0 3.462 9H6.75a.75.75 0 0 1 .694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0 0 12.538 7H9.25a.75.75 0 0 1-.683-1.06l2.008-4.418.003-.006a.036.036 0 0 0-.004-.009l-.006-.006-.008-.001c-.003 0-.006.002-.009.004Z"></path></svg></span><span class="sd-summary-text">Örnek bayraklar (flags) (Tıklayınız)</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">## C++ flags</span>
+<span class="nv">CXX</span><span class="o">=</span>g++
+<span class="nv">CXX11</span><span class="o">=</span>g++
+<span class="nv">CXX14</span><span class="o">=</span>g++
+<span class="nv">CXX17</span><span class="o">=</span>g++
+
+<span class="nv">CXXFLAGS</span><span class="o">=</span>-O3<span class="w"> </span>-march<span class="o">=</span>native<span class="w"> </span>-Wno-ignored-attributes
+<span class="nv">CXX11FLAGS</span><span class="o">=</span>-O3<span class="w"> </span>-march<span class="o">=</span>native<span class="w"> </span>-Wno-ignored-attributes
+<span class="nv">CXX14FLAGS</span><span class="o">=</span>-O3<span class="w"> </span>-march<span class="o">=</span>native<span class="w"> </span>-Wno-ignored-attributes
+<span class="nv">CXX17FLAGS</span><span class="o">=</span>-O3<span class="w"> </span>-march<span class="o">=</span>native<span class="w"> </span>-Wno-ignored-attributes
+
+<span class="nv">CXXPICFLAGS</span><span class="o">=</span>-fPIC
+<span class="nv">CXX11PICFLAGS</span><span class="o">=</span>-fPIC
+<span class="nv">CXX14PICFLAGS</span><span class="o">=</span>-fPIC
+<span class="nv">CXX17PICFLAGS</span><span class="o">=</span>-fPIC
+
+<span class="nv">CXX11STD</span><span class="o">=</span>-std<span class="o">=</span>c++11
+<span class="nv">CXX14STD</span><span class="o">=</span>-std<span class="o">=</span>c++14
+<span class="nv">CXX17STD</span><span class="o">=</span>-std<span class="o">=</span>c++17
+
+<span class="c1">## C flags</span>
+<span class="nv">CC</span><span class="o">=</span>gcc
+<span class="nv">CFLAGS</span><span class="o">=</span>-O3<span class="w"> </span>-march<span class="o">=</span>native
+
+<span class="c1">## Fortran flags</span>
+<span class="nv">FC</span><span class="o">=</span>gfortran
+<span class="nv">F77</span><span class="o">=</span>gfortran
+<span class="nv">FFLAGS</span><span class="o">=</span>-O3<span class="w"> </span>-march<span class="o">=</span>native
+<span class="nv">FCFLAGS</span><span class="o">=</span>-O3<span class="w"> </span>-march<span class="o">=</span>native
+</pre></div>
+</div>
+</div>
+</details><ul class="simple">
+<li><p>R paketlerinin kurulumu sırasında TRUBA oturumunda hali hazırda yüklü
+olmayan modüller gerekirse terminal üzerinden ilgili modüller
+yüklenebilir. Bunun için <a class="reference external" href="https://docs.truba.gov.tr/TRUBA/kullanici-el-kitabi/moduller.html">modüller
+kılavuzunu</a>
+inceleyebilirsiniz.</p></li>
+</ul>
+<p>Dokümanla ilgili eksik ya da hata bulmanız durumunda bizlere <a class="reference external" href="mailto:grid-teknik&#37;&#52;&#48;ulakbim&#46;gov&#46;tr">grid-teknik<span>&#64;</span>ulakbim<span>&#46;</span>gov<span>&#46;</span>tr</a> adresinden erişebilirsiniz. Eklenmesini istediğiniz bilgiler için de bizlere aynı adresten ulaşabilirsiniz.</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">önceki</p>
+        <p class="prev-next-title">R Kılavuzu</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="RStudio.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">sonraki</p>
+        <p class="prev-next-title">RStudio Kılavuzu</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> İçindekiler
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-modulleri">R Modülleri</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-paketi-kurulum">R paketi kurulum</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hpc-paketler">HPC Paketler</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminalde-r-ile-calismak">Terminalde R ile çalışmak</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-slurm-ve-paralellestirme">R, SLURM ve Paralelleştirme</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#openmp-ustu-kapali-paralellik">OpenMP-Üstü Kapalı paralellik</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paketler-ile-acik-paralellik">Paketler ile açık paralellik</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is-dizileri-job-array">İş dizileri (job array)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark-sonuclari">Benchmark Sonuçları</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#islerin-takibi">İşlerin Takibi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sorunlar-ve-cozumler">Sorunlar ve Çözümler</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Tarafından TÜBİTAK ULAKBİM
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2021, TÜBİTAK ULAKBİM.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <div class="footer-extra" style="text-align: center; margin-top: 20px;">
+    <table style="margin: 0 auto;">
+        <tr>
+            <td>
+                <a href="https://ulakbim.tubitak.gov.tr" target="_blank" style="margin-right: 30px; display: inline-block;">
+                    <img src="https://www.truba.gov.tr/wp-content/uploads/2025/02/STB-ULAKBIM_doc-footer.png" alt="TÜBİTAK ULAKBİM Web Sitesi" height="60px">
+                </a>
+                <a href="https://www.truba.gov.tr" target="_blank" style="margin-right: 30px; display: inline-block;">
+                    <img src="https://www.truba.gov.tr/wp-content/uploads/2025/02/TRUBA_doc-footer.png" alt="TRUBA Web Sitesi" height="60px">
+                </a>
+                <a href="https://eurocc.truba.gov.tr/" target="_blank" style="margin-right: 30px; display: inline-block;">
+                    <img src="https://www.truba.gov.tr/wp-content/uploads/2025/02/NCCTurkiye-Color.png" alt="EuroCC Türkiye Web Sitesi" height="60px">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; padding-top: 10px;">
+                <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+                    <img src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" alt="CC BY-NC-SA 4.0">
+                </a>
+                Bu çalışma, <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Atıf-Gayri Ticari-Aynı Lisansla Paylaş 4.0 Uluslararası Lisansı</a> ile lisanslanmıştır.
+                <br><br>2025.01.01
+            </td>
+        </tr>
+    </table>
+  </div>
+
+  </body>
+</html>

@@ -1,0 +1,677 @@
+
+<!DOCTYPE html>
+
+
+<html lang="tr" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Apptainer &#8212; TRUBA Kullanıcı Dokümanları</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/site_theme.css?v=80a908aa" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=a88cc430" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=fef41d8b"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../_static/translations.js?v=34f4c3a9"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/tabs.js?v=3030b3cb"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '2-run-jobs/Applications/Apptainer/Apptainer';</script>
+    <link rel="index" title="Dizin" href="../../../genindex.html" />
+    <link rel="search" title="Ara" href="../../../search.html" />
+    <link rel="next" title="GREASY Kullanımı" href="../GREASY/greasy_kullanim.html" />
+    <link rel="prev" title="Amber SLURM Dosyası" href="../AMBER/Amber_slurm_TRUBA.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="tr"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/TRUBA_doc-footer.png" class="logo__image only-light" alt="TRUBA Kullanıcı Dokümanları - Home"/>
+    <script>document.write(`<img src="../../../_static/TRUBA_doc-footer.png" class="logo__image only-dark" alt="TRUBA Kullanıcı Dokümanları - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Ara" aria-label="Ara" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Ara</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../index.html">
+                    TRUBA (Türk Ulusal Bilim e-Altyapısı)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">İçerikler</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../0-first-steps/index.html">İlk Adımlar</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/kullanici-portali/index.html">TRUBA Üyelik ve Kaynak Başvuru Rehberi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/open-vpn/openvpn_info.html">OpenVPN Bağlantısı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/MobaXterm.html">Windows’da MobaXterm Kurulumu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/arf-baglanti.html">ARF Kullanıcı Arayüzüne Bağlantı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/openondemand/index.html">Open OnDemand Arayüzü</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/arf-acc-baglanti.html">ARF-ACC Kullanıcı Arayüzüne Bağlantı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/TRUBA-arf-gecis-rehberi.html">TRUBA Kümesinden ARF Kümesine Geçiş Rehberi</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../1-hardware/index.html">Sistem Bilgileri</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../1-hardware/arf-genel-bilgileri.html">ARF Kümesi Hakkında Genel Bilgiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../1-hardware/hesaplamakumeleri.html">Hesaplama Kümeleri</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../1-hardware/yuksek-performansli-dosya-sistemleri.html">Yüksek Performanslı Dosya Sistemleri</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../index.html">İş Çalıştırma</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../genel_kurulum/index.html">TRUBA’da Uygulama/Kütüphane Kurulumu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../interaktif_is_calistirma.html">İnteraktif İş Çalıştırma</a></li>
+<li class="toctree-l2 current active"><a class="reference internal" href="../index.html">Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../GPU/index.html">GPU Kılavuzu</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../3-user-support/index.html">Kullanıcı Desteği</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../4-access-calls/index.html">EUROHPC ve Erişim Çağrıları</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Tam ekran modu"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Ara" aria-label="Ara" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Apptainer</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> İçindekiler </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#giris">Giriş</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hazir-kullanim">Hazır Kullanım</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konteyner-acma-ekleme-ve-kapatma">Konteyner Açma, Ekleme ve Kapatma</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konteyner-icinde-anaconda">Konteyner içinde Anaconda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konteyner-mpi-ve-gpu">Konteyner, MPI ve GPU</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="apptainer">
+<span id="id1"></span><h1>Apptainer<a class="headerlink" href="#apptainer" title="Link to this heading">#</a></h1>
+<p>Bu belge TRUBA altyapısında <a class="reference external" href="https://apptainer.org/">Apptainer/Singularity</a> platformunun kullanımını kolaylaştırmak için oluşturulmuştur.
+Bu kılavuz aşağıdakileri kapsamaktadır:</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-5 sd-row-cols-xs-5 sd-row-cols-sm-5 sd-row-cols-md-5 sd-row-cols-lg-5 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<a class="reference internal" href="#konteyner-giris"><span class="std std-ref">Giriş</span></a></div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<a class="reference internal" href="#konteyner-kullanma"><span class="std std-ref">Hazır Kullanım</span></a></div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<a class="reference internal" href="#konteyner-insa-etme"><span class="std std-ref">Konteyner Açma, Ekleme ve Kapatma</span></a></div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<a class="reference internal" href="#konteyner-anaconda"><span class="std std-ref">Konteyner içinde Anaconda</span></a></div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<a class="reference internal" href="#konteyner-mpi"><span class="std std-ref">Konteyner, MPI ve GPU</span></a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="giris">
+<span id="konteyner-giris"></span><h2>Giriş<a class="headerlink" href="#giris" title="Link to this heading">#</a></h2>
+<p>Apptainer/Singularity, YBH sistemlerinde kullanılan popüler bir konteyner platformudur.  Apptainer kullanarak dizüstü bilgisayarınızda ya da sanal makinenizde oluşturacağınız, program ve yazılım parçalarını taşınabilir ve üretilebilir bir şekilde paketlenen konteynerlar istenilen başka bir makinede, ofis bilgisayarında, ya da dünyanın pek çok YBH merkezlerinde bile hiç bir kurulum gerçekleştirmeden işlerin çalıştıtırabilir olmasına imkan sağlar. Sistemlerimizde konteyner platformunu kullanmak için apptainer (önceki adı ile singularity) mevcuttur. Konteyner oluşturma işlemleri yerel ya da sanal bilgisayarınızda istenilen mimaride yapılabilir. Kurulum ve daha fazlası için <a class="reference external" href="https://apptainer.org/docs/admin/main/installation.html">ilgili kılavuz</a> ve konteyner kullanımı için <a class="reference external" href="https://singularity-tutorial.github.io/">ilgili öğretici dokümantasyon</a> takip edilebilir. Bu şekilde yerel bilgisayarınızda oluşturulan konteynerları TRUBA’da herhangi bir kuruluma ihtiyaç duymadan kullanabilir ve işlerinizi konteyner içerisinde koşturabilirsiniz.</p>
+</section>
+<section id="hazir-kullanim">
+<span id="konteyner-kullanma"></span><h2>Hazır Kullanım<a class="headerlink" href="#hazir-kullanim" title="Link to this heading">#</a></h2>
+<p>Aşağıda popüler konteyner sağlayıcılarını bulabilirsiniz:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://cloud.sylabs.io/">Sylabs.io Cloud Library</a></p></li>
+<li><p><a class="reference external" href="https://hub.docker.com/">Docker Hub</a></p></li>
+<li><p><a class="reference external" href="https://biocontainers.pro/">BioContainers.pro</a></p></li>
+<li><p><a class="reference external" href="https://catalog.ngc.nvidia.com/?filters=&amp;orderBy=weightPopularASC&amp;query=">NVIDIA GPU Cloud (NGC)</a></p></li>
+</ul>
+<p>Temel apptainer kullanımı <code class="docutils literal notranslate"><span class="pre">apptainer</span> <span class="pre">&lt;COMMAND&gt;</span> <span class="pre">...</span></code> şeklinde olmaktadır.</p>
+<div class="admonition hint">
+<p class="admonition-title">İpucu</p>
+<dl class="simple">
+<dt>COMMAND için popüler seçenekler:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">build</span></code>: Konteyner oluşturmamızı sağlar.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shell</span></code>: Konteyner içinde etkileşimli bir kabuk başlatmanıza olanak sağlar.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">exec</span></code>: Konteyner çalıştırmanın varsayılan yoludur. Konteyner içinde ki terminale gönderilen komutları çalıştırır.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">run</span></code>: Konteyner hazırlanırken ön tanımlı bir çalışma komut dosyasındaki adımları çalıştırır.</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apptainer<span class="w"> </span>build<span class="w"> </span>&lt;Konteyner-ismi.sif&gt;<span class="w"> </span>&lt;Onceden-Insa-Edilmis-Konteyner-URL,<span class="w"> </span>Def<span class="w"> </span>or<span class="w"> </span>Sif<span class="w"> </span>files&gt;
+</pre></div>
+</div>
+<p>ile yukarıda bahsedilen konteyner sağlayıcılarından istenilen program için hazırlanmış olan konteyner elde edilebilir. Sonrasında</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>&lt;Filename.sif&gt;<span class="w"> </span>&lt;Program&gt;<span class="w"> </span>&lt;Betik&gt;<span class="w"> </span>&lt;Arg1&gt;<span class="w"> </span>...
+</pre></div>
+</div>
+<p>ile apptainer içerisinde  kurulu olan programı verilen betik ve <em>Arg1</em> parametresi ile konteyner içerisinde çalıştırabiliriz.</p>
+<div class="admonition note">
+<p class="admonition-title">Not</p>
+<p>Örneğin, ubuntu 22.04 için bir konteyner oluşturmak ve içerisinde bulunan işletim sistemi bilgilerini yazdırmak aşağıdakini örnek alabiliriz:</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Terminal</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Çıktı</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apptainer<span class="w"> </span>build<span class="w"> </span>ubuntu-22.04.sif<span class="w"> </span>docker://ubuntu:22.04
+apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ubuntu-22.04.sif<span class="w"> </span>cat<span class="w"> </span>/etc/os-release
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">PRETTY_NAME</span><span class="o">=</span><span class="s2">&quot;Ubuntu 22.04.2 LTS&quot;</span>
+<span class="nv">NAME</span><span class="o">=</span><span class="s2">&quot;Ubuntu&quot;</span>
+<span class="nv">VERSION_ID</span><span class="o">=</span><span class="s2">&quot;22.04&quot;</span>
+<span class="nv">VERSION</span><span class="o">=</span><span class="s2">&quot;22.04.2 LTS (Jammy Jellyfish)&quot;</span>
+<span class="nv">VERSION_CODENAME</span><span class="o">=</span>jammy
+<span class="nv">ID</span><span class="o">=</span>ubuntu
+<span class="nv">ID_LIKE</span><span class="o">=</span>debian
+<span class="nv">HOME_URL</span><span class="o">=</span><span class="s2">&quot;https://www.ubuntu.com/&quot;</span>
+<span class="nv">SUPPORT_URL</span><span class="o">=</span><span class="s2">&quot;https://help.ubuntu.com/&quot;</span>
+<span class="nv">BUG_REPORT_URL</span><span class="o">=</span><span class="s2">&quot;https://bugs.launchpad.net/ubuntu/&quot;</span>
+<span class="nv">PRIVACY_POLICY_URL</span><span class="o">=</span><span class="s2">&quot;https://www.ubuntu.com/legal/terms-and-policies/privacy-policy&quot;</span>
+<span class="nv">UBUNTU_CODENAME</span><span class="o">=</span>jammy
+</pre></div>
+</div>
+</div></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Uyarı</p>
+<p>Yukarıdaki sağlayıcılardan indirme işlemleri yapmadan önce önbellek için bir dizin belirtmeniz</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">APPTAINER_CACHEDIR</span><span class="o">=</span>/onbellek/icin/dizin
+<span class="nb">export</span><span class="w"> </span><span class="nv">APPTAINER_TMPDIR</span><span class="o">=</span>/tmp/icin/dizin
+</pre></div>
+</div>
+<p>ve gerektiğinde</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apptainer<span class="w"> </span>cache<span class="w"> </span>clean
+</pre></div>
+</div>
+<p>ile temizlemeniz gerekebilir. Daha fazla detay için <a class="reference external" href="https://apptainer.org/docs/user/main/index.html">ilgili kılavuz</a> ziyaret edilebilir.  Yukarıdaki adımlar yerine önbellekte tutulmasını istemiyorsak <code class="docutils literal notranslate"><span class="pre">--disable-cache</span></code> parametresini de kullanabiliriz.</p>
+</div>
+<p><strong>Konteyner dışından klasör bağlama veya dışarda bırakma</strong></p>
+<p>İşlerinizi çalıştırırken konteyner içerisinde  ev dizinine erişimi engellemek istersek <code class="docutils literal notranslate"><span class="pre">--no-home</span></code> parametresi kullanabiliriz. Aksine, ev dizini olarak <code class="docutils literal notranslate"><span class="pre">--home</span> <span class="pre">/path/on/host</span></code> ile farklı bir yer de gösterilebilir.</p>
+<p>Konteyneri <code class="docutils literal notranslate"><span class="pre">apptainer</span> <span class="pre">shell</span> <span class="pre">image-name.sif</span></code> ile çalıştırılırsa <code class="docutils literal notranslate"><span class="pre">ls</span></code>  komutu konteynerin çalıştırıldığı dizin otomatik olarak bağlandığı görülmektedir. Varsayılan olarak, <code class="docutils literal notranslate"><span class="pre">$HOME,</span> <span class="pre">$PWD,</span> <span class="pre">/tmp,</span> <span class="pre">/sys</span></code> gibi klasörleri otomatik olarak konteyner içine bağlanır. Detay için <a class="reference external" href="https://apptainer.org/docs/user/main/bind_paths_and_mounts.html">ilgili kılavuza</a> bakılabilir. İstenilirse <code class="docutils literal notranslate"><span class="pre">--bind</span> <span class="pre">kaynak_klasör:hedef_klasör</span></code> ile dışarda bulunan <code class="docutils literal notranslate"><span class="pre">kaynak_klasör</span></code> içerde bulunan <code class="docutils literal notranslate"><span class="pre">hedef_klasör</span></code> isminde bir dizine bağlantı kurulabilir. Konteyner içinde <code class="docutils literal notranslate"><span class="pre">hedef_klasör</span></code> olmak zorunda değil, yok ise o isimde bir klasör oluşturur. Bunların aksine,  konteyner dışında bulunması istenilen dizin ise <code class="docutils literal notranslate"><span class="pre">--no-mount</span> <span class="pre">/no/access/path</span></code> parametresi ile yapılabilir.</p>
+</section>
+<section id="konteyner-acma-ekleme-ve-kapatma">
+<span id="konteyner-insa-etme"></span><h2>Konteyner Açma, Ekleme ve Kapatma<a class="headerlink" href="#konteyner-acma-ekleme-ve-kapatma" title="Link to this heading">#</a></h2>
+<p>Yeni bir konteyner inşa etmek için bir konteyner servisi, tanım (def) ya da görüntü (image)  dosyalarına ihtiyaç bulunmaktadır. İstenilirse hazır bir konteyner elde edildikten sonra konteyneri bir klasör şeklinde açıp içerisinde bulunan terminal çalıştırılarak manuel olarak program kurabilir ya da kurulu olan bir programa paket eklenebilir. Bu konteyner klasörünü daha sonra kapatılıp kullanıma sunulabilir.</p>
+<div class="admonition hint">
+<p class="admonition-title">İpucu</p>
+<p>Örneğin, Docker içerisinde servis edilen R programlama dili için r-base-4.3.0 konteyneri çekilecek ve içerisine <code class="docutils literal notranslate"><span class="pre">remotes</span></code> paketi kurulumu yapıldıktan sonra kullanıma özelleştirilmiş bir konteyner elde etmek için gerekli komutlar şu şekilde olabilmektedir:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Klasör olarak konteyner çekilir.</span>
+apptainer<span class="w"> </span>build<span class="w"> </span>--sandbox<span class="w">  </span>r-base-4.3.0<span class="w"> </span>docker://r-base:4.3.0
+
+<span class="c1"># SEÇENEK 1</span>
+<span class="c1"># Konteyner yazılabilir şekilde içindeki R çalışır ve bir betik gönderilerek paket kurulur.</span>
+apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>--writable<span class="w"> </span>--no-home<span class="w"> </span>r-base-4.3.0/<span class="w"> </span>R<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;install.packages(&#39;remotes&#39;)&quot;</span>
+
+<span class="c1"># SEÇENEK 2</span>
+<span class="c1"># İstenilen paketler konteyner içindeki terminal vasıtasıyle R aktif edilerek de yapılabilinir.</span>
+apptainer<span class="w"> </span>shell<span class="w"> </span>--writable<span class="w"> </span>--no-home<span class="w"> </span>r-base-4.3.0/
+Apptainer&gt;<span class="w"> </span>R
+&gt;<span class="w"> </span>install.packages<span class="o">(</span><span class="s1">&#39;remotes&#39;</span><span class="o">)</span>
+
+<span class="c1"># Kurulum bittikten sonra klasör şeklinde olan konteynerdan bir görüntü dosyası oluşturulur.</span>
+apptainer<span class="w"> </span>build<span class="w"> </span>r-base-4.3.0.sif<span class="w"> </span>r-base-4.3.0/
+</pre></div>
+</div>
+</div>
+</section>
+<section id="konteyner-icinde-anaconda">
+<span id="konteyner-anaconda"></span><h2>Konteyner içinde Anaconda<a class="headerlink" href="#konteyner-icinde-anaconda" title="Link to this heading">#</a></h2>
+<p>Conda platformunu konteyner içerisinde kullanmak için hazır anaconda ya da miniconda için servis edilen konteynerler kullanılabildiği gibi istenilen bir işletim sistemine ait bir konteyner içerisine de kurulum yapılabilir. Burada örnek olarak, hazır miniconda konteyneri oluşturulacak ve içerisine yeni bir conda ortamı oluşturma ve o ortam içerisinde python 3.9 versiyonu yükleme süreci gösterilecektir.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-1-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-1-1-0" name="1-0" role="tab" tabindex="0">Miniconda3</button><button aria-controls="panel-1-1-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-1" name="1-1" role="tab" tabindex="-1">90-environment.sh</button></div><div aria-labelledby="tab-1-1-0" class="sphinx-tabs-panel" id="panel-1-1-0" name="1-0" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Konteyner indirme işlemi</span>
+apptainer<span class="w"> </span>build<span class="w"> </span>--sandbox<span class="w"> </span>miniconda3-container<span class="w"> </span>docker://continuumio/miniconda3
+<span class="c1"># Konteyner içerisinde terminal açma</span>
+apptainer<span class="w"> </span>shell<span class="w"> </span>--no-home<span class="w"> </span>--writable<span class="w"> </span>--fakeroot<span class="w"> </span>miniconda3-container
+apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>apt-utils<span class="w"> </span>vim
+<span class="c1"># conda aktif edebilmek için yan sekmede sunulan bilgileri vi ile ekleme</span>
+vi<span class="w"> </span>/.singularity.d/env/90-environment.sh
+<span class="c1"># conda base ortamı aktif etme</span>
+<span class="nb">source</span><span class="w"> </span>/.singularity.d/env/90-environment.sh
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-1-1-1" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-1" name="1-1" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># &gt;&gt;&gt; conda initialize &gt;&gt;&gt;</span>
+<span class="c1"># !! Contents within this block are managed by &#39;conda init&#39; !!</span>
+<span class="nb">eval</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span><span class="s1">&#39;/opt/conda/bin/conda&#39;</span><span class="w"> </span><span class="s1">&#39;shell.bash&#39;</span><span class="w"> </span><span class="s1">&#39;hook&#39;</span><span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null<span class="k">)</span><span class="s2">&quot;</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">eval</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$__conda_setup</span><span class="s2">&quot;</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;/opt/conda/etc/profile.d/conda.sh&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span>.<span class="w"> </span><span class="s2">&quot;/opt/conda/etc/profile.d/conda.sh&quot;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/opt/conda/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="k">fi</span>
+<span class="k">fi</span>
+
+<span class="nb">unset</span><span class="w"> </span>__conda_setup
+<span class="c1"># &lt;&lt;&lt; conda initialize &lt;&lt;&lt;</span>
+</pre></div>
+</div>
+</div></div>
+<p>Miniconda için ayarlamalar yapıldıktan sonra istenilirse <code class="docutils literal notranslate"><span class="pre">test</span></code> isminde ortam oluşturalım ve içinde python 3.9 versiyonu kurabiliriz.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-2-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-2-2-0" name="2-0" role="tab" tabindex="0">Miniconda3</button><button aria-controls="panel-2-2-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-2-2-1" name="2-1" role="tab" tabindex="-1">conda-env-settings</button></div><div aria-labelledby="tab-2-2-0" class="sphinx-tabs-panel" id="panel-2-2-0" name="2-0" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apptainer<span class="w"> </span>shell<span class="w"> </span>--no-home<span class="w"> </span>--writable<span class="w"> </span>--fakeroot<span class="w"> </span>miniconda3-container
+<span class="nb">source</span><span class="w"> </span>/.singularity.d/env/90-environment.sh
+<span class="c1"># test isminde bir conda ortamı oluşturma</span>
+conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span><span class="nb">test</span>
+conda<span class="w"> </span>activate<span class="w"> </span><span class="nb">test</span>
+<span class="c1"># istenilen paket kurulumları gerçekleştirme</span>
+conda<span class="w"> </span>install<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9
+<span class="c1"># Konteyner kapatma</span>
+apptainer<span class="w"> </span>build<span class="w"> </span>miniconda3-container.sif<span class="w"> </span>./miniconda3-container
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-2-2-1" class="sphinx-tabs-panel" hidden="true" id="panel-2-2-1" name="2-1" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">MY_ENV_NAME</span><span class="o">=</span><span class="nb">test</span>
+<span class="nv">CONDA_PREFIX</span><span class="o">=</span><span class="s2">&quot;/opt/conda/envs/</span><span class="si">${</span><span class="nv">MY_ENV_NAME</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nv">CONDA_PROMPT_MODIFIER</span><span class="o">=</span><span class="s2">&quot;(</span><span class="si">${</span><span class="nv">MY_ENV_NAME</span><span class="si">}</span><span class="s2">)&quot;</span>
+<span class="nv">CONDA_DEFAULT_ENV</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">MY_ENV_NAME</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nv">CONDA_PREFIX_1</span><span class="o">=</span><span class="s2">&quot;/opt/conda&quot;</span>
+<span class="nb">unset</span><span class="w"> </span>PROMPT_COMMAND
+<span class="nv">PS1</span><span class="o">=</span><span class="s2">&quot;(</span><span class="si">${</span><span class="nv">MY_ENV_NAME</span><span class="si">}</span><span class="s2">) &quot;</span>
+</pre></div>
+</div>
+</div></div>
+<p>Sonrasında konteyner içine girmeden <code class="docutils literal notranslate"><span class="pre">test</span></code> ortamı aktif edilmek ve <code class="docutils literal notranslate"><span class="pre">python3.9</span></code> versiyonu kullanmak için yukarıda belirtilen <code class="docutils literal notranslate"><span class="pre">conda-env-settings</span></code> dosyası içinde conda ortam ismi gibi gerekli değişiklikler yapıldıktan sonra aşağıdaki gibi apptainer terminal çağrılabilir.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apptainer<span class="w"> </span>shell<span class="w"> </span>--env-file<span class="w"> </span>conda-env-settings<span class="w"> </span>miniconda3-container
+</pre></div>
+</div>
+</section>
+<section id="konteyner-mpi-ve-gpu">
+<span id="konteyner-mpi"></span><h2>Konteyner, MPI ve GPU<a class="headerlink" href="#konteyner-mpi-ve-gpu" title="Link to this heading">#</a></h2>
+<p>Konteyner içinde GPU kullanmasına olanak sağlamak için <code class="docutils literal notranslate"><span class="pre">--nv</span></code> parametresi kullanılarak yapılabilir. Daha fazla detay için <a class="reference external" href="https://apptainer.org/docs/user/latest/gpu.html">ilgili GPU kılavuzu</a> ziyaret edilebilir.</p>
+<p>MPI işleri için konteyner içinde ve dışında aynı MPI programı ve versiyonu uyumlu olmalıdır. Program çalıştırırken
+<code class="docutils literal notranslate"><span class="pre">apptainer</span> <span class="pre">exec</span> <span class="pre">mpirun</span> <span class="pre">-n</span> <span class="pre">&lt;mpi-is-sayisi&gt;</span> <span class="pre">&lt;Konteyner&gt;</span> <span class="pre">&lt;Program&gt;</span> <span class="pre">&lt;Betik&gt;</span></code> olarak değil,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mpirun<span class="w"> </span>-n<span class="w"> </span>&lt;mpi-is-sayisi&gt;<span class="w"> </span>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>&lt;Konteyner&gt;<span class="w"> </span>&lt;Program&gt;<span class="w"> </span>&lt;Betik&gt;
+</pre></div>
+</div>
+<p>şeklinde verilmelidir. Daha fazla detay için <a class="reference external" href="https://apptainer.org/docs/user/latest/mpi.html">ilgili MPI kılavuzu</a> ziyaret edilebilir.</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../AMBER/Amber_slurm_TRUBA.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">önceki</p>
+        <p class="prev-next-title">Amber SLURM Dosyası</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../GREASY/greasy_kullanim.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">sonraki</p>
+        <p class="prev-next-title">GREASY Kullanımı</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> İçindekiler
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#giris">Giriş</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hazir-kullanim">Hazır Kullanım</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konteyner-acma-ekleme-ve-kapatma">Konteyner Açma, Ekleme ve Kapatma</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konteyner-icinde-anaconda">Konteyner içinde Anaconda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konteyner-mpi-ve-gpu">Konteyner, MPI ve GPU</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Tarafından TÜBİTAK ULAKBİM
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2021, TÜBİTAK ULAKBİM.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <div class="footer-extra" style="text-align: center; margin-top: 20px;">
+    <table style="margin: 0 auto;">
+        <tr>
+            <td>
+                <a href="https://ulakbim.tubitak.gov.tr" target="_blank" style="margin-right: 30px; display: inline-block;">
+                    <img src="https://www.truba.gov.tr/wp-content/uploads/2025/02/STB-ULAKBIM_doc-footer.png" alt="TÜBİTAK ULAKBİM Web Sitesi" height="60px">
+                </a>
+                <a href="https://www.truba.gov.tr" target="_blank" style="margin-right: 30px; display: inline-block;">
+                    <img src="https://www.truba.gov.tr/wp-content/uploads/2025/02/TRUBA_doc-footer.png" alt="TRUBA Web Sitesi" height="60px">
+                </a>
+                <a href="https://eurocc.truba.gov.tr/" target="_blank" style="margin-right: 30px; display: inline-block;">
+                    <img src="https://www.truba.gov.tr/wp-content/uploads/2025/02/NCCTurkiye-Color.png" alt="EuroCC Türkiye Web Sitesi" height="60px">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; padding-top: 10px;">
+                <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+                    <img src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" alt="CC BY-NC-SA 4.0">
+                </a>
+                Bu çalışma, <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Atıf-Gayri Ticari-Aynı Lisansla Paylaş 4.0 Uluslararası Lisansı</a> ile lisanslanmıştır.
+                <br><br>2025.01.01
+            </td>
+        </tr>
+    </table>
+  </div>
+
+  </body>
+</html>

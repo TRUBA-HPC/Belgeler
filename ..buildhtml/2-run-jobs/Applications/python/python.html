@@ -1,0 +1,886 @@
+
+<!DOCTYPE html>
+
+
+<html lang="tr" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Python Kullanımı &#8212; TRUBA Kullanıcı Dokümanları</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/site_theme.css?v=80a908aa" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=a88cc430" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=fef41d8b"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../_static/translations.js?v=34f4c3a9"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/tabs.js?v=3030b3cb"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '2-run-jobs/Applications/python/python';</script>
+    <link rel="index" title="Dizin" href="../../../genindex.html" />
+    <link rel="search" title="Ara" href="../../../search.html" />
+    <link rel="next" title="Jupyter Araçları" href="jupyter.html" />
+    <link rel="prev" title="Python Kılavuzu" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="tr"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/TRUBA_doc-footer.png" class="logo__image only-light" alt="TRUBA Kullanıcı Dokümanları - Home"/>
+    <script>document.write(`<img src="../../../_static/TRUBA_doc-footer.png" class="logo__image only-dark" alt="TRUBA Kullanıcı Dokümanları - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Ara" aria-label="Ara" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Ara</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../index.html">
+                    TRUBA (Türk Ulusal Bilim e-Altyapısı)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">İçerikler</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../0-first-steps/index.html">İlk Adımlar</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/kullanici-portali/index.html">TRUBA Üyelik ve Kaynak Başvuru Rehberi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/open-vpn/openvpn_info.html">OpenVPN Bağlantısı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/MobaXterm.html">Windows’da MobaXterm Kurulumu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/arf-baglanti.html">ARF Kullanıcı Arayüzüne Bağlantı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/openondemand/index.html">Open OnDemand Arayüzü</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/arf-acc-baglanti.html">ARF-ACC Kullanıcı Arayüzüne Bağlantı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/TRUBA-arf-gecis-rehberi.html">TRUBA Kümesinden ARF Kümesine Geçiş Rehberi</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../1-hardware/index.html">Sistem Bilgileri</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../1-hardware/arf-genel-bilgileri.html">ARF Kümesi Hakkında Genel Bilgiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../1-hardware/hesaplamakumeleri.html">Hesaplama Kümeleri</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../1-hardware/yuksek-performansli-dosya-sistemleri.html">Yüksek Performanslı Dosya Sistemleri</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../index.html">İş Çalıştırma</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../genel_kurulum/index.html">TRUBA’da Uygulama/Kütüphane Kurulumu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../interaktif_is_calistirma.html">İnteraktif İş Çalıştırma</a></li>
+<li class="toctree-l2 current active"><a class="reference internal" href="../index.html">Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../GPU/index.html">GPU Kılavuzu</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../3-user-support/index.html">Kullanıcı Desteği</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../4-access-calls/index.html">EUROHPC ve Erişim Çağrıları</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Tam ekran modu"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Ara" aria-label="Ara" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Python Kullanımı</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> İçindekiler </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merkezi-moduller">Merkezi Modüller</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bashrc-dosyasi-duzenleme">Bashrc Dosyası Düzenleme</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-ve-konteyner">Python ve Konteyner</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konteyner-olusturma">Konteyner Oluşturma</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konteyner-kullanimi">Konteyner Kullanımı</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ornek-betik">Örnek Betik</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="python-kullanimi">
+<span id="id1"></span><h1>Python Kullanımı<a class="headerlink" href="#python-kullanimi" title="Link to this heading">#</a></h1>
+<p>Bu belge TRUBA altyapısında <a class="reference external" href="https://www.python.org/">Python</a> platformunun kullanımını kolaylaştırmak için oluşturulmuştur.
+Bu kılavuz aşağıdakileri kapsamaktadır:</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<a class="reference internal" href="#merkezi-python"><span class="std std-ref">Merkezi Modüller</span></a></div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<a class="reference internal" href="#python-container"><span class="std std-ref">Python ve Konteyner</span></a></div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<a class="reference internal" href="#python-ornek"><span class="std std-ref">Örnek Betik</span></a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Uyarı</p>
+<ul class="simple">
+<li><p><cite>/arf</cite> ve <cite>/truba</cite> depolama sistemlerine anaconda, miniconda, conda  veya herhangi bir Python kütüphanesi kesinlikle yüklenmemelidir, pip ve türevleri kullanılmamalıdır. Küçük boyutlu yüzbinlerce dosyadan oluştuğu için, her kullanıcının kendi ev dizinine kurduğu bu tip kütüphaneler dosya sistemlerinin performanslarını büyük ölçüde düşürmekte ve çalışan işlerin yavaşlamasına neden olmaktadır.</p></li>
+<li><p><cite>/arf/sw/lib</cite> ve <cite>/truba/sw/X/lib</cite> dizinlerinde çok geniş kapsamlı conda kütüphaneleri hali hazırda yüklüdür. Ayrıca YBH sistemleri için oluşturulmuş conda konteynerleri kullanıcılarımızın kullanımına sunulmuş durumdadır. Kullanıcılarımız Python ve conda ihtiyaçları için bu kurulumları kullanabilir ya da kendi Python konteynerlerini oluşturabilirler. Detaylar aşağıdaki bağlantıdan erişilebilir.</p></li>
+</ul>
+</div>
+<section id="merkezi-moduller">
+<span id="merkezi-python"></span><h2>Merkezi Modüller<a class="headerlink" href="#merkezi-moduller" title="Link to this heading">#</a></h2>
+<p>Sistemde bulunan kurulumlari <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">av</span></code> ile listeleyebilirsiniz. Temelde, conda ve standart ortam olmak üzere iki farklı python platformu ve yapay zeka paketlerin kapsayan CPU ve GPU tabanli moduller bulunmaktadır. Conda platformu içerisinde ise standart ve intel optimize edilmiş python olmak üzere iki farklı kullanım mevcuttur.</p>
+<ol class="arabic">
+<li><dl>
+<dt>Standart Python:</dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">comp</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="mf">3.12.2</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Conda ortamında bulunan Python:</dt><dd><ul>
+<li><p>Standart python için</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>miniconda3
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Intel optimize python için</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>miniconda-intelpython3
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Yapay Zeka icin Python paketleri:</dt><dd><p>Yapay zeka alanında sıklıkla kullanılan <code class="docutils literal notranslate"><span class="pre">XGBoost,</span> <span class="pre">Catboost,</span> <span class="pre">TensorFlow,</span> <span class="pre">Keras,</span> <span class="pre">PyTorch,</span> <span class="pre">Lightning,</span> <span class="pre">scikit-learn,</span> <span class="pre">tranformers,</span> <span class="pre">deepspeed,</span> <span class="pre">datasets,</span> <span class="pre">langchain...</span></code> paketleri CPU ve GPU bazli olmak uzere iki farkli kurulum hazırlanmıştır. Bu modülleri kullanmak için aşağıdaki komutları kullanabilirsiniz.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">CPU</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">GPU</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>purge
+module<span class="w"> </span>load<span class="w"> </span>apps/truba-ai/cpu-2024.0
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>purge
+module<span class="w"> </span>load<span class="w"> </span>apps/truba-ai/gpu-2024.0
+</pre></div>
+</div>
+</div></div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>2025 Öncesi TRUBA hesaplama kümesi icin bulunan conda platformları:</dt><dd><p>TRUBA’da merkezi olarak farklı anaconda platformları bulunmaktadır. Bu platformlar, içerisinde bulunan python ve diğer paketlerin farklı versiyonlarına kullanıcılar tarafından ihtiyaç duyulmasından kaynaklı oluşturulmuştur.
+Merkezi anaconda platformları:</p>
+<ul>
+<li><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">eval</span> <span class="s2">&quot;$(/truba/sw/centos7.3/lib/anaconda3/2020.07/bin/conda shell.bash hook)&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">eval</span> <span class="s2">&quot;$(/truba/sw/centos7.3/lib/anaconda3/2021.11/bin/conda shell.bash hook)&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">eval</span> <span class="s2">&quot;$(/truba/sw/centos7.9/lib/anaconda3/2020.07/bin/conda shell.bash hook)&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">eval</span> <span class="s2">&quot;$(/truba/sw/centos7.9/lib/anaconda3/2021.11/bin/conda shell.bash hook)&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">eval</span> <span class="s2">&quot;$(/truba/sw/centos7.9/lib/anaconda3/2023.03/bin/conda shell.bash hook)&quot;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Uyarı</p>
+<p><strong>Hangi kuyruk için hangi platfomu seçmeliyiz?</strong></p>
+<p>İlgili komut çalıştırıldıktan sonra <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">info</span></code> ve <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">list</span></code> ile sanal ortam bilgisine ve içerisinde bulunan paketlerin versiyonlarına erişim sağlayabilirsiniz. Bu bilgiler ile birlikte <a class="reference internal" href="../../../1-hardware/hesaplamakumeleri.html#hesaplama-kumeleri"><span class="std std-ref">Hesaplama Kümeleri</span></a> altinda sunucu bilgilerinden ihtiyacınıza göre hangi platformu hangi kuyruk ile kullanmanız gerektiğine karar verebilirsiniz.</p>
+</div>
+<section id="bashrc-dosyasi-duzenleme">
+<span id="bashrc-ekleme"></span><h3>Bashrc Dosyası Düzenleme<a class="headerlink" href="#bashrc-dosyasi-duzenleme" title="Link to this heading">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Not</p>
+<p>İlgili ortamları kulllanıcı arayüzlerinde ve hesaplama sunucularında aktif olması isteniliyorsa <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> ya da <code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code> dosyanıza ihtiyaç duyduğunuz satırı eklemeniz gerekmektedir.</p>
+<p>Eğer ev dizininizde <code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code> dosyası yoksa dosyayı yaratın. Ayrıca <code class="docutils literal notranslate"><span class="pre">.profile</span></code> ve <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> dosyalarını sembolik olarak <code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code> dosyasına bağlamanız gerekebilir.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>touch<span class="w"> </span>.bash_profile
+rm<span class="w"> </span>.profile<span class="w"> </span>.bashrc
+ln<span class="w"> </span>-s<span class="w"> </span>.bash_profile<span class="w"> </span>.profile
+ln<span class="w"> </span>-s<span class="w"> </span>.bash_profile<span class="w"> </span>.bashrc
+</pre></div>
+</div>
+</div>
+<p>Ayrıca, sadece ihtiyaç duyulan zamanlarda aktif edilmek istenilirse terminalde doğrudan ilgili komutu kullanabilirsiniz. SLURM betik dosyanızda da benzer şekilde ilgili anaconda versiyonu için olan yukarıdaki komutu yazmanız gerekmektedir.</p>
+</section>
+</section>
+<section id="python-ve-konteyner">
+<span id="python-container"></span><h2>Python ve Konteyner<a class="headerlink" href="#python-ve-konteyner" title="Link to this heading">#</a></h2>
+<section id="konteyner-olusturma">
+<h3>Konteyner Oluşturma<a class="headerlink" href="#konteyner-olusturma" title="Link to this heading">#</a></h3>
+<p>Merkezi Python ortamlarını kullanmak istemeyen kullanıcılar, kendi ortamlarını oluşturmak için <code class="docutils literal notranslate"><span class="pre">Docker</span></code> ya da <code class="docutils literal notranslate"><span class="pre">Apptainer</span> <span class="pre">(Singularity)</span></code> konteynerlerini kullanabilirler. Bu konteynerlerin kullanımı detaylı olarak <span class="xref std std-ref">Apptainer-kilavuzu</span> sayfasında anlatılmıştır.</p>
+<p>Aşağıda, <code class="docutils literal notranslate"><span class="pre">/arf/sw/containers/miniconda3</span></code> dizininde yer alan <code class="docutils literal notranslate"><span class="pre">miniconda3-container.sif</span></code> varsayılan konteyneri üzerinden, gerekli paketlerin kurulumu ve kullanıcıya özel konteynerin oluşturulması adımları belirtilmiştir.</p>
+<p>Süreç; Kopyala - Aç - Yaz - Kapat - Kullan adımlarını içerir.</p>
+<ol class="arabic">
+<li><dl>
+<dt>Kopyalama:</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$HOME</span>/container-user<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span>/container-user
+cp<span class="w"> </span>-r<span class="w"> </span>/arf/sw/containers/miniconda3/miniconda3-container.sif<span class="w"> </span>./
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Açma:</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apptainer<span class="w"> </span>build<span class="w"> </span>--sandbox<span class="w"> </span>miniconda3-user<span class="w"> </span>miniconda3-container.sif
+
+apptainer<span class="w"> </span>shell<span class="w"> </span>--no-home<span class="w"> </span>--writable<span class="w"> </span>--fakeroot<span class="w"> </span>miniconda3-user
+<span class="c1"># veya</span>
+apptainer<span class="w"> </span>shell<span class="w"> </span>--no-home<span class="w"> </span>--writable<span class="w"> </span>miniconda3-user
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Yazma:</dt><dd><ul class="simple">
+<li><p>Conda ile:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>seaborn<span class="w"> </span>scikit-learn
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Pip ile:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>teaspoon
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Çıkış:</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">exit</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Kapatma:</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apptainer<span class="w"> </span>build<span class="w"> </span>miniconda3-user.sif<span class="w"> </span>miniconda3-user
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ol>
+</section>
+<section id="konteyner-kullanimi">
+<h3>Konteyner Kullanımı<a class="headerlink" href="#konteyner-kullanimi" title="Link to this heading">#</a></h3>
+<p>Konteyner ortamında önceden yapılandırılmış Python kurulumunu kullanarak, aşağıdaki adımları izleyebilirsiniz:</p>
+<ol class="arabic">
+<li><p>Konteynerde kurulu Python’un versiyonunu kontrol etmek için:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>miniconda3-user.sif<span class="w"> </span>python<span class="w"> </span>--version
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Hazırladığınız Python betiğini konteyner ortamında çalıştırmak için:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>miniconda3-user.sif<span class="w"> </span>python<span class="w"> </span>your_script.py
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>İnteraktif Python oturumu başlatmak için:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-w<span class="w"> </span>miniconda3-user.sif<span class="w"> </span>python
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<dl class="simple">
+<dt>Ek İpucu:</dt><dd><p>Gerekli paketler ve ortam ayarları konteyner içerisinde önceden yapılandırılmıştır. İhtiyaç duyarsanız, ortam değişkenlerini de komut satırından ayarlayabilirsiniz.</p>
+</dd>
+</dl>
+</section>
+<section id="ornek-betik">
+<span id="python-ornek"></span><h3>Örnek Betik<a class="headerlink" href="#ornek-betik" title="Link to this heading">#</a></h3>
+<p>İşlerinizi slurm dosyası hazırlayarak kullanıcı arayüzlerinde <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> ile  sunucularda çalıştırılması üzere kuyruğa gönderilmelidir. Örnek betikler <code class="docutils literal notranslate"><span class="pre">/arf/sw/scripts/python/</span></code> ve <code class="docutils literal notranslate"><span class="pre">/truba/sw/scripts/python/</span></code> dizinlerinde bulunmaktadır.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-text"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-codespaces secondary" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 3.75C3.5 2.784 4.284 2 5.25 2h13.5c.966 0 1.75.784 1.75 1.75v7.5A1.75 1.75 0 0 1 18.75 13H5.25a1.75 1.75 0 0 1-1.75-1.75Zm-2 12c0-.966.784-1.75 1.75-1.75h17.5c.966 0 1.75.784 1.75 1.75v4a1.75 1.75 0 0 1-1.75 1.75H3.25a1.75 1.75 0 0 1-1.75-1.75ZM5.25 3.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h13.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Zm-2 12a.25.25 0 0 0-.25.25v4c0 .138.112.25.25.25h17.5a.25.25 0 0 0 .25-.25v-4a.25.25 0 0 0-.25-.25Z"></path><path d="M10 17.75a.75.75 0 0 1 .75-.75h6.5a.75.75 0 0 1 0 1.5h-6.5a.75.75 0 0 1-.75-.75Zm-4 0a.75.75 0 0 1 .75-.75h.5a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1-.75-.75Z"></path></svg> Örnek Betik -CPU (Tıklayınız)</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<blockquote>
+<div><div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+İş Gönderme</label><div class="sd-tab-content docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sbatch<span class="w"> </span>job.slurm
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+job.slurm</label><div class="sd-tab-content docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --account=kullanici_adiniz</span>
+<span class="c1">#SBATCH --output=slurm-%j.out</span>
+<span class="c1">#SBATCH --error=slurm-%j.err</span>
+<span class="c1">#SBATCH --time=00:15:00</span>
+<span class="c1">#SBATCH --job-name=test</span>
+
+<span class="c1">#SBATCH --partition=orfoz</span>
+<span class="c1">#SBATCH --ntasks=112</span>
+<span class="c1">#SBATCH --nodes=1</span>
+<span class="c1">#SBATCH --cpus-per-task=1</span>
+
+<span class="c1">###SBATCH --mal-user= your_email_address</span>
+<span class="c1">###SBATCH --mail-type=BEGIN,END,FAIL</span>
+<span class="c1">###SBATCH --mail-type=ALL</span>
+
+<span class="c1">### Load modules</span>
+
+module<span class="w"> </span>purge
+module<span class="w"> </span>load<span class="w"> </span>apps/truba-ai/cpu-2024.0
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;We have the modules: </span><span class="k">$(</span>module<span class="w"> </span>list<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>.info
+
+<span class="c1">### jobs</span>
+python<span class="w"> </span>xgboost-test.py
+
+<span class="nb">exit</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+xgboost-test.py</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_classification</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xgboost</span><span class="w"> </span><span class="kn">import</span> <span class="n">XGBClassifier</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyplot</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>  <span class="c1"># Record the start time</span>
+
+<span class="c1"># define dataset</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_classification</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">100000</span><span class="p">,</span> <span class="n">n_features</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">n_informative</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">n_redundant</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># split data into train and test sets</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.50</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># define the model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">XGBClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">eta</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">subsample</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">colsample_bytree</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="c1"># define the datasets to evaluate each iteration</span>
+<span class="n">evalset</span> <span class="o">=</span> <span class="p">[(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">),</span> <span class="p">(</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">)]</span>
+
+<span class="c1"># fit the model</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">eval_metric</span><span class="o">=</span><span class="s1">&#39;logloss&#39;</span><span class="p">,</span> <span class="n">eval_set</span><span class="o">=</span><span class="n">evalset</span><span class="p">)</span>
+
+<span class="c1"># evaluate performance</span>
+<span class="n">yhat</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">score</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">yhat</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy: </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">score</span><span class="p">)</span>
+
+<span class="c1"># retrieve performance metrics</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">evals_result</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+
+<span class="n">evaluation_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span>  <span class="c1"># Calculate the elapsed time</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Evaluation Time:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">evaluation_time</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="s2">&quot;seconds&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></blockquote>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-text"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-codespaces secondary" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 3.75C3.5 2.784 4.284 2 5.25 2h13.5c.966 0 1.75.784 1.75 1.75v7.5A1.75 1.75 0 0 1 18.75 13H5.25a1.75 1.75 0 0 1-1.75-1.75Zm-2 12c0-.966.784-1.75 1.75-1.75h17.5c.966 0 1.75.784 1.75 1.75v4a1.75 1.75 0 0 1-1.75 1.75H3.25a1.75 1.75 0 0 1-1.75-1.75ZM5.25 3.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h13.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Zm-2 12a.25.25 0 0 0-.25.25v4c0 .138.112.25.25.25h17.5a.25.25 0 0 0 .25-.25v-4a.25.25 0 0 0-.25-.25Z"></path><path d="M10 17.75a.75.75 0 0 1 .75-.75h6.5a.75.75 0 0 1 0 1.5h-6.5a.75.75 0 0 1-.75-.75Zm-4 0a.75.75 0 0 1 .75-.75h.5a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1-.75-.75Z"></path></svg> Örnek Betik - GPU (Tıklayınız)</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<blockquote>
+<div><div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+İş Gönderme</label><div class="sd-tab-content docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sbatch<span class="w"> </span>job.slurm
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+job.slurm</label><div class="sd-tab-content docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --account=kullanici_adiniz</span>
+<span class="c1">#SBATCH --output=slurm-%j.out</span>
+<span class="c1">#SBATCH --error=slurm-%j.err</span>
+<span class="c1">#SBATCH --time=00:15:00</span>
+<span class="c1">#SBATCH --job-name=test</span>
+
+<span class="c1">#SBATCH --partition=xxxxx-cuda</span>
+<span class="c1">#SBATCH --ntasks=10</span>
+<span class="c1">#SBATCH --nodes=1</span>
+<span class="c1">#SBATCH --cpus-per-task=1</span>
+<span class="c1">#SBATCH --gres=gpu:1</span>
+
+<span class="c1">###SBATCH --mal-user= your_email_address</span>
+<span class="c1">###SBATCH --mail-type=BEGIN,END,FAIL</span>
+<span class="c1">###SBATCH --mail-type=ALL</span>
+
+<span class="c1">### Load modules</span>
+
+module<span class="w"> </span>purge
+module<span class="w"> </span>load<span class="w"> </span>comp/python/ai-tools-kolyoz-1.0
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;We have the modules: </span><span class="k">$(</span>module<span class="w"> </span>list<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>.info
+
+<span class="c1">### jobs</span>
+python<span class="w"> </span>tensor-torch-test.py
+
+<span class="nb">exit</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+tensor-torch-test.py</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">lightning</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pytorch_lightning</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;######## TORCH ########&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Torch version: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lightning version: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">lightning</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TORCH-GPU available:</span><span class="si">{}</span><span class="s2"> &quot;</span> <span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">())</span>
+
+<span class="c1"># Check if CUDA is available</span>
+<span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">():</span>
+    <span class="c1"># Get the number of available GPUs</span>
+    <span class="n">num_gpus</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">device_count</span><span class="p">()</span>
+
+    <span class="c1"># Loop through each GPU and print its properties</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_gpus</span><span class="p">):</span>
+        <span class="n">props</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">get_device_properties</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;GPU </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">props</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - Total Memory: </span><span class="si">{</span><span class="n">props</span><span class="o">.</span><span class="n">total_memory</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1e9</span><span class="si">}</span><span class="s2"> GB&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - MultiProcessor Count: </span><span class="si">{</span><span class="n">props</span><span class="o">.</span><span class="n">multi_processor_count</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CUDA is not available on this system.&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;#########################&#39;</span><span class="p">)</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;tf version: &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;TF_XLA_FLAGS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;--tf_xla_enable_xla_devices&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GPUs: &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">experimental</span><span class="o">.</span><span class="n">list_physical_devices</span><span class="p">(</span><span class="s1">&#39;GPU&#39;</span><span class="p">)))</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.python.client</span><span class="w"> </span><span class="kn">import</span> <span class="n">device_lib</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Local Devices:&quot;</span><span class="p">,</span> <span class="n">device_lib</span><span class="o">.</span><span class="n">list_local_devices</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;GPU List: &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">list_physical_devices</span><span class="p">(</span><span class="s1">&#39;GPU&#39;</span><span class="p">))</span>
+
+<span class="n">strategy</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">distribute</span><span class="o">.</span><span class="n">MirroredStrategy</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of devices: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">strategy</span><span class="o">.</span><span class="n">num_replicas_in_sync</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></blockquote>
+</div>
+</details></section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">önceki</p>
+        <p class="prev-next-title">Python Kılavuzu</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="jupyter.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">sonraki</p>
+        <p class="prev-next-title">Jupyter Araçları</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> İçindekiler
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merkezi-moduller">Merkezi Modüller</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bashrc-dosyasi-duzenleme">Bashrc Dosyası Düzenleme</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-ve-konteyner">Python ve Konteyner</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konteyner-olusturma">Konteyner Oluşturma</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konteyner-kullanimi">Konteyner Kullanımı</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ornek-betik">Örnek Betik</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Tarafından TÜBİTAK ULAKBİM
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2021, TÜBİTAK ULAKBİM.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <div class="footer-extra" style="text-align: center; margin-top: 20px;">
+    <table style="margin: 0 auto;">
+        <tr>
+            <td>
+                <a href="https://ulakbim.tubitak.gov.tr" target="_blank" style="margin-right: 30px; display: inline-block;">
+                    <img src="https://www.truba.gov.tr/wp-content/uploads/2025/02/STB-ULAKBIM_doc-footer.png" alt="TÜBİTAK ULAKBİM Web Sitesi" height="60px">
+                </a>
+                <a href="https://www.truba.gov.tr" target="_blank" style="margin-right: 30px; display: inline-block;">
+                    <img src="https://www.truba.gov.tr/wp-content/uploads/2025/02/TRUBA_doc-footer.png" alt="TRUBA Web Sitesi" height="60px">
+                </a>
+                <a href="https://eurocc.truba.gov.tr/" target="_blank" style="margin-right: 30px; display: inline-block;">
+                    <img src="https://www.truba.gov.tr/wp-content/uploads/2025/02/NCCTurkiye-Color.png" alt="EuroCC Türkiye Web Sitesi" height="60px">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; padding-top: 10px;">
+                <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+                    <img src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" alt="CC BY-NC-SA 4.0">
+                </a>
+                Bu çalışma, <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Atıf-Gayri Ticari-Aynı Lisansla Paylaş 4.0 Uluslararası Lisansı</a> ile lisanslanmıştır.
+                <br><br>2025.01.01
+            </td>
+        </tr>
+    </table>
+  </div>
+
+  </body>
+</html>

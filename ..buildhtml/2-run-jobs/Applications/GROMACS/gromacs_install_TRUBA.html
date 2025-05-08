@@ -1,0 +1,551 @@
+
+<!DOCTYPE html>
+
+
+<html lang="tr" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>TRUBA’da GROMACS Kurulumu &#8212; TRUBA Kullanıcı Dokümanları</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/site_theme.css?v=80a908aa" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=a88cc430" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=fef41d8b"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../_static/translations.js?v=34f4c3a9"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '2-run-jobs/Applications/GROMACS/gromacs_install_TRUBA';</script>
+    <link rel="index" title="Dizin" href="../../../genindex.html" />
+    <link rel="search" title="Ara" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="tr"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/TRUBA_doc-footer.png" class="logo__image only-light" alt="TRUBA Kullanıcı Dokümanları - Home"/>
+    <script>document.write(`<img src="../../../_static/TRUBA_doc-footer.png" class="logo__image only-dark" alt="TRUBA Kullanıcı Dokümanları - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Ara" aria-label="Ara" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Ara</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../index.html">
+                    TRUBA (Türk Ulusal Bilim e-Altyapısı)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">İçerikler</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../0-first-steps/index.html">İlk Adımlar</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/kullanici-portali/index.html">TRUBA Üyelik ve Kaynak Başvuru Rehberi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/open-vpn/openvpn_info.html">OpenVPN Bağlantısı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/MobaXterm.html">Windows’da MobaXterm Kurulumu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/arf-baglanti.html">ARF Kullanıcı Arayüzüne Bağlantı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/openondemand/index.html">Open OnDemand Arayüzü</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/arf-acc-baglanti.html">ARF-ACC Kullanıcı Arayüzüne Bağlantı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/TRUBA-arf-gecis-rehberi.html">TRUBA Kümesinden ARF Kümesine Geçiş Rehberi</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../1-hardware/index.html">Sistem Bilgileri</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../1-hardware/arf-genel-bilgileri.html">ARF Kümesi Hakkında Genel Bilgiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../1-hardware/hesaplamakumeleri.html">Hesaplama Kümeleri</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../1-hardware/yuksek-performansli-dosya-sistemleri.html">Yüksek Performanslı Dosya Sistemleri</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../index.html">İş Çalıştırma</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../genel_kurulum/index.html">TRUBA’da Uygulama/Kütüphane Kurulumu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../interaktif_is_calistirma.html">İnteraktif İş Çalıştırma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html">Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../GPU/index.html">GPU Kılavuzu</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../3-user-support/index.html">Kullanıcı Desteği</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../4-access-calls/index.html">EUROHPC ve Erişim Çağrıları</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Tam ekran modu"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Ara" aria-label="Ara" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>TRUBA’da GROMACS Kurulumu</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> İçindekiler </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hamsi-sunucularinda-gromacs-programinin-gnu-derleyicileri-ve-openmpi-ile-kurulmasi">Hamsi Sunucularında GROMACS Programının GNU Derleyicileri ve OpenMPI İle Kurulması</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#barbun-sunucularinda-gromacs-programinin-gnu-derleyicileri-ve-open-mpi-ile-kurulmasi">Barbun Sunucularında GROMACS Programının GNU Derleyicileri ve OPEN MPI ile Kurulması</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="truba-da-gromacs-kurulumu">
+<span id="gromacs-install"></span><h1>TRUBA’da GROMACS Kurulumu<a class="headerlink" href="#truba-da-gromacs-kurulumu" title="Link to this heading">#</a></h1>
+<p>Kullanıcılarımız tarafından sıklıkla kullanılan, açık kaynak kodlu olan ve GNU GPL lisansı altında sunulan yazılımlar altyapımızda yer almaktadır. TRUBA’ya terminalden bağlantı sağladıktan sonra barbun1 kullanıcı arayüzünde terminalden</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">available</span>
+</pre></div>
+</div>
+<p>komutunu yazdığınızda TRUBA sisteminde kurulu olan temel programlar listelenecektir. Module isimlendirmesi ile ilgili bilgilere TRUBA <span class="xref std std-ref">moduller-truba</span> sayfamızdan ulaşabilirsiniz.</p>
+<p>Centos7.3 işletim sistemi olan <code class="docutils literal notranslate"><span class="pre">barbun-cuda</span></code> hesaplama kümesinde GROMACS 2021’in CUDA opsiyonu ile kurulu olan versiyonu bulunmaktadır. İlgili module ismi:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">centos7</span><span class="mf">.3</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">gromacs</span><span class="o">/</span><span class="mi">2021</span><span class="o">-</span><span class="n">openmpi</span><span class="o">-</span><span class="mf">4.0.1</span><span class="o">-</span><span class="n">python</span><span class="o">-</span><span class="mf">3.6.5</span><span class="o">-</span><span class="n">gcc</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="n">GOLD</span><span class="o">-</span><span class="n">CUDA</span>
+</pre></div>
+</div>
+<p>İlgili versiyonda <code class="docutils literal notranslate"><span class="pre">plumed</span> <span class="pre">patch</span></code> de yer almaktadır. Bu versiyonu kullanmak için örnek slurm betik dosyasına <code class="docutils literal notranslate"><span class="pre">/truba/sw/scripts/gromacs</span></code> klasörü altından ulaşabilirsiniz. Dosya ismi: <code class="docutils literal notranslate"><span class="pre">gromacs-2021-openmpi-4.0.1-python-3.6.5-gcc-7-GOLD-CUDA.slurm</span></code></p>
+<p>Hamsi hesaplama kümesinde ise Centos 7.9 işletim sistemi yüklüdür ve burada GROMACS 2021.2 versiyonu bulunmaktadır. İlgili modüle ismi:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">centos7</span><span class="mf">.9</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">gromacs</span><span class="o">/</span><span class="mf">2021.2</span><span class="o">-</span><span class="n">impi</span><span class="o">-</span><span class="n">mkl</span><span class="o">-</span><span class="n">oneapi</span><span class="o">-</span><span class="mf">2021.2</span><span class="o">-</span><span class="n">GOLD</span>
+</pre></div>
+</div>
+<p>Bu versiyonu kullanmak için örnek slurm betik dosyasına <code class="docutils literal notranslate"><span class="pre">/truba/sw/scripts/gromacs</span></code> klasörü altından ulaşabilirsiniz. Dosya ismi: <code class="docutils literal notranslate"><span class="pre">gromacs-2021.2-impi-mkl-oneapi-2021.2-GOLD.slurm</span></code></p>
+<p>Aşağıda GROMACS programının gromacs-2021.2 versiyonunun TRUBA altyapısında derlenmesi için gerekli adımlar verilmiştir. Siz de aşağıdaki adımları takip ederek GROMACS programını kendi ev dizininizde kurabilirsiniz.</p>
+<section id="hamsi-sunucularinda-gromacs-programinin-gnu-derleyicileri-ve-openmpi-ile-kurulmasi">
+<span id="hamsi-gromacs-install"></span><h2>Hamsi Sunucularında GROMACS Programının GNU Derleyicileri ve OpenMPI İle Kurulması<a class="headerlink" href="#hamsi-sunucularinda-gromacs-programinin-gnu-derleyicileri-ve-openmpi-ile-kurulmasi" title="Link to this heading">#</a></h2>
+<p><strong>1.</strong> Öncelikle kaynak kodunu aşağıdaki komut yardımıyla kendi ev dizininize indiriniz.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>ftp://ftp.gromacs.org/gromacs/gromacs-2021.2.tar.gz
+</pre></div>
+</div>
+<p>Kendi ev dizininizde <strong>gromacs</strong> adlı yeni bir dizin oluşturup kaynak kodunu buraya taşıyınız. Kaynak kodu arşiv formatlı olduğundan dosyayı açmanız gerekmektedir. Aşağıdaki komutları sırasıyla uygulayınız ve ilgili dizine gidiniz.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>gromacs
+mv<span class="w"> </span>gromacs-2021.2.tar.gz<span class="w"> </span>gromacs
+<span class="nb">cd</span><span class="w"> </span>gromacs
+tar<span class="w"> </span>-zxvf<span class="w"> </span>gromacs-2021.2.tar.gz
+<span class="nb">cd</span><span class="w"> </span>gromacs-2021.2/
+</pre></div>
+</div>
+<p><strong>2.</strong>
+İkinci adım olarak /truba/home/kullaniciadi/gromacs/gromacs-2021.2 adlı dizin içinde <code class="docutils literal notranslate"><span class="pre">build</span></code> klasörü oluşturmanız gerekmektedir. Sonrasında yapılacak derleme işlemleri bu klasör altında gerçekleştirilecektir. Bu yüzden bu klasör altında olduğunuzu <code class="docutils literal notranslate"><span class="pre">pwd</span></code> komutu ile kontrol ediniz.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>build
+<span class="nb">cd</span><span class="w"> </span>build
+</pre></div>
+</div>
+<p><strong>3.</strong>
+Kurulumu <code class="docutils literal notranslate"><span class="pre">hamsi</span></code> kümelerinde yapmak için bu kümelerden kendi kullanıcınız için boş bir node sağlamanız gerekmektedir (<a class="reference internal" href="../../../1-hardware/hesaplamakumeleri.html#hamsi-node"><span class="std std-ref">hamsi kümesi ile ilgili ayıntılı bilgilere ulaşmak için tıklayınız.</span></a>). Bunun için <strong>srun</strong> komutu ile boş sunucu isteği yapmanız gerekmektedir. Aşağıdaki komut satırını kendi terminalinizde uyguladığınızda ilgili hesaplama kümesinden kendi kullanıcınıza node rezerve etmek için sıraya gireceksiniz.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>srun<span class="w"> </span>-A<span class="w"> </span>kullaniciadi<span class="w"> </span>-p<span class="w"> </span>hamsi<span class="w"> </span>-N<span class="w"> </span><span class="m">1</span><span class="w"> </span>--ntasks-per-node<span class="o">=</span><span class="m">28</span><span class="w"> </span>--time<span class="o">=</span><span class="m">01</span>:00:00<span class="w">  </span>--job-name<span class="w"> </span><span class="s2">&quot;install&quot;</span><span class="w"> </span>--pty<span class="w"> </span>bash<span class="w"> </span>-i
+</pre></div>
+</div>
+<p><strong>4.</strong>
+Kurulumun doğru bir şekilde yapılabilmesi için gerekli ortamların hazır olması gerekmektedir. Bu yüzden program için gerekli modulleri yüklemelisiniz. Fakat daha öncesinde çalışan ve programın derlenmesine engel olacak bir modul varsa çakışma olmaması adına onu kapatmanız gerekmektedir. Öncelikle <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">purge</span></code> komutu ile çalışan modülleri kapatınız ve sonrasında derleme için gerekli olan modulleri yükleyiniz. Modullerin isimlerini <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">avail</span></code> komutuyla görebilirsinz.</p>
+<div class="admonition warning">
+<p class="admonition-title">Uyarı</p>
+<p>Kurulum için ayrıca CMake protokolüne de ihtiyacınız bulunmaktadır. Bu noktada dikkat etmeniz gereken en önemli şey CMake parametrelerini doğru seçmektir. Örneğin; sadece CPU destekli kurmak için GPU desteğinin kapalı tutulması gerekir (-DGMX_GPU=OFF). Paralel olarak TRUBA altyapısında çalıştıracağınız için MPI desteğini açık tutmanız gerekmektedir (-DGMX_MPI=on). Bunun gibi pek çok özelliğe <a class="reference external" href="https://manual.gromacs.org/documentation/2021.2/install-guide/index.html">Cmake Flags</a> linkinden erişebilirsiniz.</p>
+</div>
+<p>Gerekli ortamlar (GNU Compiler ve OPEN MPI) için aşağıdaki komut satırlarını terminalinizden uygulayınız.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>purge
+
+module<span class="w"> </span>load<span class="w"> </span>centos7.9/comp/cmake/3.18.0
+module<span class="w"> </span>load<span class="w"> </span>centos7.9/comp/gcc/7
+module<span class="w"> </span>load<span class="w"> </span>centos7.9/lib/openmpi/4.1.1-gcc-7
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">CC</span><span class="o">=</span>mpicc
+<span class="nb">export</span><span class="w"> </span><span class="nv">CXX</span><span class="o">=</span>mpic++
+
+cmake<span class="w"> </span>..<span class="w"> </span>-DCMAKE_C_COMPILER<span class="o">=</span>mpicc<span class="w">  </span>-DCMAKE_CXX_COMPILER<span class="o">=</span>mpic++<span class="w"> </span>-DGMX_MPI<span class="o">=</span>on<span class="w">  </span>-DGMX_SIMD<span class="o">=</span>AVX_512<span class="w"> </span>-DGMX_BUILD_OWN_FFTW<span class="o">=</span>ON<span class="w">  </span>-DGMX_GPU<span class="o">=</span>OFF<span class="w">  </span>-DCMAKE_INSTALL_PREFIX<span class="o">=</span>/truba/home/kullanıcı_adi/bin
+
+make<span class="w">  </span><span class="c1">#bu işlem uzun sürecektir. Tamamlandıktan sonra aşağıdaki kod satırlarını yazmanız tavsiye edilir.</span>
+
+make<span class="w"> </span>check
+
+make<span class="w"> </span>install
+</pre></div>
+</div>
+</section>
+<section id="barbun-sunucularinda-gromacs-programinin-gnu-derleyicileri-ve-open-mpi-ile-kurulmasi">
+<h2>Barbun Sunucularında GROMACS Programının GNU Derleyicileri ve OPEN MPI ile Kurulması<a class="headerlink" href="#barbun-sunucularinda-gromacs-programinin-gnu-derleyicileri-ve-open-mpi-ile-kurulmasi" title="Link to this heading">#</a></h2>
+<p>Barbun sunucularında centos7.3 işletim sistemi kuruludur. Bu nedenle ilgili modülleri centos7.3 kurulu olanlardan yükleyeceğiz. Modülleri listelemek için <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">avail</span></code> komutunu kullanabilirsiniz. Aşağıda verilen adımları izleyerek kendi ev dizininize kurulum yapabilirsiniz.</p>
+<p><strong>1.</strong> Öncelikle kaynak kodunu aşağıdaki komut yardımıyla kendi ev dizininize alınız</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>ftp://ftp.gromacs.org/gromacs/gromacs-2021.2.tar.gz
+</pre></div>
+</div>
+<p>Kendi ev dizininizde <strong>gromacs</strong> adlı yeni bir dizin oluşturup kaynak kodunu buraya taşıyınız. Kaynak kodu arşiv formatlı olduğundan dosyayı açmanız gerekmektedir.
+Aşağıdaki komutları sırasıyla uygulayınız ve ilgili dizine gidiniz.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>gromacs
+mv<span class="w"> </span>gromacs-2021.2.tar.gz<span class="w"> </span>gromacs
+<span class="nb">cd</span><span class="w"> </span>gromacs
+tar<span class="w"> </span>-zxvf<span class="w">  </span>gromacs-2021.2.tar.gz
+<span class="nb">cd</span><span class="w"> </span>gromacs-2021.2/
+</pre></div>
+</div>
+<p><strong>2.</strong>
+İkinci adım olarak /truba/home/kullaniciadi/gromacs/gromacs-2021.2 adlı dizin içinde <code class="docutils literal notranslate"><span class="pre">build</span></code> klasörü oluşturmanız gerekmektedir. Sonrasında yapılacak derleme işlemleri bu klasör altında gerçekleştirilecektir. Bu yüzden bu klasör altında olduğunuzu <code class="docutils literal notranslate"><span class="pre">pwd</span></code> komutu ile kontrol ediniz.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>build
+<span class="nb">cd</span><span class="w"> </span>build
+</pre></div>
+</div>
+<p>Kurulumu <code class="docutils literal notranslate"><span class="pre">barbun</span></code> kümelerinde yapmak için bu kümelerden boş bir işlemci sağlamamız gerekmektedir. Bunun için <strong>srun</strong> komutu ile boş sunucu isteği yapmanız gerekmektedir. Aşağıdaki komut satırını kendi terminalizde uyguladığınızda boş işlemci için sıraya gireceksiniz.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>srun<span class="w"> </span>-A<span class="w"> </span>kullaniciadi<span class="w"> </span>-p<span class="w"> </span>barbun<span class="w"> </span>-N<span class="w"> </span><span class="m">1</span><span class="w"> </span>-n<span class="w"> </span><span class="m">4</span><span class="w"> </span>--time<span class="o">=</span><span class="m">02</span>:00:00<span class="w"> </span>--job-name<span class="w"> </span><span class="s2">&quot;install-gromacs&quot;</span><span class="w"> </span>--pty<span class="w"> </span>bash<span class="w"> </span>-i
+</pre></div>
+</div>
+<p><strong>4.</strong></p>
+<p>Kurulumu doğru bir şekilde yapabilmemiz için gerekli ortamların hazır olması gerekmektedir. Bu yüzden program için gerekli modulleri yüklememiz gerekir. Fakat daha öncesinde çalışan ve derlememize engel olacak bir module varsa çakışma olmaması adına onu kapatmamız gerekir. Öncelikle <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">purge</span></code> komutu ile çalışan modülleri kapatalım ve sonrasında derleme için gerekli olan modulleri yükleyelim.</p>
+<div class="admonition warning">
+<p class="admonition-title">Uyarı</p>
+<p>Kurulum için ayrıca CMake protokolüne de ihtiyacınız bulunmaktadır. Bu noktada dikkat etmemiz gereken en önemli şey CMake optionlarını doğru seçmektir. Örneğin CPU destekli kuracağımız için GPU desteğini kapalı tutmamız gerekir (-DGMX_GPU=OFF). Paralel olarak altyapımızda çalıştıracağınız için  MPI desteğini de açık tutuyoruz (-DGMX_MPI=on). Bunun gibi pek çok özelliğe <a class="reference external" href="https://manual.gromacs.org/documentation/2021.2/install-guide/index.html">Cmake Flags</a> linkinden erişebilirsiniz.</p>
+</div>
+<p>Gerekli ortamlar için aşağıdaki komut satırını terminalinizden uygulayınız.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>purge
+
+module<span class="w"> </span>load<span class="w"> </span>centos7.3/comp/cmake/3.18.0
+module<span class="w"> </span>load<span class="w"> </span>centos7.3/comp/gcc/7
+module<span class="w"> </span>load<span class="w"> </span>centos7.3/lib/openmpi/4.0.1-gcc-7.0.1
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">CC</span><span class="o">=</span>mpicc
+<span class="nb">export</span><span class="w"> </span><span class="nv">CXX</span><span class="o">=</span>mpic++
+
+cmake<span class="w"> </span>..<span class="w"> </span>-DCMAKE_C_COMPILER<span class="o">=</span>mpicc<span class="w">  </span>-DCMAKE_CXX_COMPILER<span class="o">=</span>mpic++<span class="w"> </span>-DGMX_MPI<span class="o">=</span>on<span class="w">  </span>-DGMX_SIMD<span class="o">=</span>AVX_512<span class="w"> </span>-DGMX_BUILD_OWN_FFTW<span class="o">=</span>ON<span class="w">  </span>-DGMX_GPU<span class="o">=</span>OFF<span class="w">  </span>-DCMAKE_INSTALL_PREFIX<span class="o">=</span>/truba/home/kullaniciadi/bin
+
+make
+
+make<span class="w"> </span>install
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> İçindekiler
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hamsi-sunucularinda-gromacs-programinin-gnu-derleyicileri-ve-openmpi-ile-kurulmasi">Hamsi Sunucularında GROMACS Programının GNU Derleyicileri ve OpenMPI İle Kurulması</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#barbun-sunucularinda-gromacs-programinin-gnu-derleyicileri-ve-open-mpi-ile-kurulmasi">Barbun Sunucularında GROMACS Programının GNU Derleyicileri ve OPEN MPI ile Kurulması</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Tarafından TÜBİTAK ULAKBİM
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2021, TÜBİTAK ULAKBİM.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <div class="footer-extra" style="text-align: center; margin-top: 20px;">
+    <table style="margin: 0 auto;">
+        <tr>
+            <td>
+                <a href="https://ulakbim.tubitak.gov.tr" target="_blank" style="margin-right: 30px; display: inline-block;">
+                    <img src="https://www.truba.gov.tr/wp-content/uploads/2025/02/STB-ULAKBIM_doc-footer.png" alt="TÜBİTAK ULAKBİM Web Sitesi" height="60px">
+                </a>
+                <a href="https://www.truba.gov.tr" target="_blank" style="margin-right: 30px; display: inline-block;">
+                    <img src="https://www.truba.gov.tr/wp-content/uploads/2025/02/TRUBA_doc-footer.png" alt="TRUBA Web Sitesi" height="60px">
+                </a>
+                <a href="https://eurocc.truba.gov.tr/" target="_blank" style="margin-right: 30px; display: inline-block;">
+                    <img src="https://www.truba.gov.tr/wp-content/uploads/2025/02/NCCTurkiye-Color.png" alt="EuroCC Türkiye Web Sitesi" height="60px">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; padding-top: 10px;">
+                <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+                    <img src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" alt="CC BY-NC-SA 4.0">
+                </a>
+                Bu çalışma, <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Atıf-Gayri Ticari-Aynı Lisansla Paylaş 4.0 Uluslararası Lisansı</a> ile lisanslanmıştır.
+                <br><br>2025.01.01
+            </td>
+        </tr>
+    </table>
+  </div>
+
+  </body>
+</html>

@@ -1,0 +1,887 @@
+
+<!DOCTYPE html>
+
+
+<html lang="tr" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="article:modified_time" content="2025-03-05T11:36:25+03:00" />
+    <title>TRUBA’da MATLAB Çalıştırmak için Gerekli Konfigürasyonların Yapılandırılması &#8212; TRUBA Kullanıcı Dokümanları</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/site_theme.css?v=80a908aa" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=a88cc430" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=fef41d8b"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../_static/translations.js?v=34f4c3a9"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '2-run-jobs/Applications/MATLAB/MATLAB_TRUBAConfig';</script>
+    <link rel="index" title="Dizin" href="../../../genindex.html" />
+    <link rel="search" title="Ara" href="../../../search.html" />
+    <link rel="next" title="TRUBA’da MATLAB Dosyası Çalıştırmak" href="MATLAB_TRUBARun.html" />
+    <link rel="prev" title="TRUBA’da MATLAB Lisansının Tanıtılması" href="MATLAB_Lisans.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="tr"/>
+    <meta name="docbuild:last-update" content="05 Mar 2025"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/TRUBA_doc-footer.png" class="logo__image only-light" alt="TRUBA Kullanıcı Dokümanları - Home"/>
+    <script>document.write(`<img src="../../../_static/TRUBA_doc-footer.png" class="logo__image only-dark" alt="TRUBA Kullanıcı Dokümanları - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Ara" aria-label="Ara" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Ara</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../index.html">
+                    TRUBA (Türk Ulusal Bilim e-Altyapısı)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">İçerikler</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../0-first-steps/index.html">İlk Adımlar</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/kullanici-portali/index.html">TRUBA Üyelik ve Kaynak Başvuru Rehberi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/open-vpn/openvpn_info.html">OpenVPN Bağlantısı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/MobaXterm.html">Windows’da MobaXterm Kurulumu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/arf-baglanti.html">ARF Kullanıcı Arayüzüne Bağlantı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/openondemand/index.html">Open OnDemand Arayüzü</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/arf-acc-baglanti.html">ARF-ACC Kullanıcı Arayüzüne Bağlantı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/TRUBA-arf-gecis-rehberi.html">TRUBA Kümesinden ARF Kümesine Geçiş Rehberi</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../1-hardware/index.html">Sistem Bilgileri</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../1-hardware/arf-genel-bilgileri.html">ARF Kümesi Hakkında Genel Bilgiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../1-hardware/hesaplamakumeleri.html">Hesaplama Kümeleri</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../1-hardware/yuksek-performansli-dosya-sistemleri.html">Yüksek Performanslı Dosya Sistemleri</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../index.html">İş Çalıştırma</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../genel_kurulum/index.html">TRUBA’da Uygulama/Kütüphane Kurulumu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../interaktif_is_calistirma.html">İnteraktif İş Çalıştırma</a></li>
+<li class="toctree-l2 current active"><a class="reference internal" href="../index.html">Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../GPU/index.html">GPU Kılavuzu</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../3-user-support/index.html">Kullanıcı Desteği</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../4-access-calls/index.html">EUROHPC ve Erişim Çağrıları</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Tam ekran modu"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Ara" aria-label="Ara" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>TRUBA’da MATLAB Çalıştırmak için Gerekli Konfigürasyonların Yapılandırılması</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> İçindekiler </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kisisel-bilgisayarinizda-matlab-calistirirak-truba-ya-is-gondermek">Kişisel Bilgisayarınızda MATLAB Çalıştırırak TRUBA’ya İş Göndermek</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hesap-ve-kuyruk-parametrelerinin-yapilandirmasi">Hesap ve Kuyruk Parametrelerinin Yapılandırması</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ornek-1-dahili-komutlar-ya-da-fonksiyonlar">Örnek 1: Dahili Komutlar ya da Fonksiyonlar</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ornek-2-m-dosyalari">Örnek 2: *.m dosyaları</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ornek-3-lokal-dosyadan-veri-okumak-ve-sonuclari-merkezi-dizinde-dosyaya-yazmak">Örnek 3: Lokal dosyadan veri okumak ve sonuçları merkezi dizinde dosyaya yazmak</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ornek-4-paralel-is-calistirma-paralel-for-mpi">Örnek 4: Paralel iş çalıştırma (paralel for, MPI)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ek-notlar">Ek Notlar</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="truba-da-matlab-calistirmak-icin-gerekli-konfigurasyonlarin-yapilandirilmasi">
+<span id="matlab-config"></span><h1>TRUBA’da MATLAB Çalıştırmak için Gerekli Konfigürasyonların Yapılandırılması<a class="headerlink" href="#truba-da-matlab-calistirmak-icin-gerekli-konfigurasyonlarin-yapilandirilmasi" title="Link to this heading">#</a></h1>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<a class="reference internal" href="#local-matlab"><span class="std std-ref">Kişisel Bilgisayarınızda MATLAB Çalıştırırak TRUBA’ya İş Göndermek</span></a></div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<a class="reference internal" href="#matlab-truba-config"><span class="std std-ref">Hesap ve Kuyruk Parametrelerinin Yapılandırması</span></a></div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<a class="reference internal" href="#matlab-ornekler"><span class="std std-ref">Örnek 1: Dahili Komutlar ya da Fonksiyonlar</span></a></div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<a class="reference internal" href="MATLAB_Lisans.html#matlab-trubalisans"><span class="std std-ref">TRUBA’da MATLAB Lisansının Tanıtılması</span></a></div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<a class="reference internal" href="MATLAB_TRUBARun.html#matlab-run"><span class="std std-ref">TRUBA’da MATLAB Dosyası Çalıştırmak</span></a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="kisisel-bilgisayarinizda-matlab-calistirirak-truba-ya-is-gondermek">
+<span id="local-matlab"></span><h2>Kişisel Bilgisayarınızda MATLAB Çalıştırırak TRUBA’ya İş Göndermek<a class="headerlink" href="#kisisel-bilgisayarinizda-matlab-calistirirak-truba-ya-is-gondermek" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Kullanıcılar tarafından en çok tercih edilen yöntem budur. Bu yöntem ile iş gönderebilmek için kendi bilgisayarınıza ARF kümesi üzerinde yüklü MATLAB versiyonunu yüklemeniz gerekmektedir.</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Uyarı</p>
+<ul>
+<li><p>Mevcut durumda ARF kümesinde yüklü olan uygulamaları, derleyicileri, kütüphaneleri listeleyebilmek için kullanıcı ara yüz sunucusuna bağlı iken terminalden</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>available
+</pre></div>
+</div>
+<p>komutunu yazmanız gerekmektedir.</p>
+</li>
+<li><p>Sistemde yüklü MATLAB versiyonlarını görmek için</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>avail<span class="w"> </span>-t<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>matlab
+</pre></div>
+</div>
+<p>komutunu yazmanız gerekmektedir.</p>
+</li>
+</ul>
+</div>
+<ul class="simple">
+<li><p>Mevcut durumda ARF kümesinde <code class="docutils literal notranslate"><span class="pre">R2024a</span></code> versiyonu kurulu olarak bulunmaktadır.</p></li>
+<li><p>Kendi bilgisayarınızda ilgili versiyon için kurulum yapmak üzere MATLAB’ın resmi web sayfasından <a class="reference external" href="https://www.mathworks.com/downloads/">Mathworks</a> kurulum dosyasını indirebilirsiniz. Akademik lisansa sahipseniz, kullanıcı adı ve şifrenizle giriş yapıp MATLAB’ı indirebilir ve kişisel bilgisayarınıza kurulumu gerçekleştirebilirsiniz. Kurulum sırasında <code class="docutils literal notranslate"><span class="pre">MATLAB``ile</span> <span class="pre">birlikte</span> <span class="pre">``Parallel</span> <span class="pre">Computing</span> <span class="pre">Toolbox</span></code> yüklenmelidir.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../../_images/matlab-installation.png"><img alt="../../../_images/matlab-installation.png" src="../../../_images/matlab-installation.png" style="width: 800px;" />
+</a>
+<div class="admonition note">
+<p class="admonition-title">Not</p>
+<p>ARF kümesinde MATLAB kullanılabilmesi için lisansınızın “<strong>MATLAB Parallel Server</strong>” özelliği olması gerekmektedir. Akademiden kullanıcılarımız bağlı oldukları üniversitelerin Bilgi İşlem Merkezi’nden ilgili lisans özelliğini aktive ettirmesi gerekebilir. Bununla ilgili olarak bağlı olduğunuz birimin Bilgi İşlem Daire Başkanlığı ile iletişime geçiniz. <a class="reference external" href="https://www.mathworks.com/mwaccount">Mathworks hesabınıza</a>  girdiğinizde aşağıdaki gibi “MATLAB Parallel Server” özelliğini görmeniz gerekmektedir.</p>
+</div>
+<a class="reference internal image-reference" href="../../../_images/matlab-lisans.png"><img alt="../../../_images/matlab-lisans.png" src="../../../_images/matlab-lisans.png" style="width: 800px;" />
+</a>
+<ul class="simple">
+<li><p>Kişisel bilgisayarınızdan çalıştırdığınız MATLAB ile ARF kümesinde yer alan hesaplama sunucularına iş gönderebilmek için bir seferlik küme ayarının (“parallel cluster”) yapılması gerekmektedir.</p></li>
+<li><p>MATLAB r2024a versiyonu için ilgili ayar dosyası sıkıştırılmış formatta <code class="docutils literal notranslate"><span class="pre">/arf/sw/scripts/matlab</span></code>  dizininde yer almaktadır (arf.nonshared.R2024a.zip). Buradan ilgili klasörü kendi bilgisayarınıza indirebilirsiniz. Bunu terminal aracılığıyla aşağıdaki gibi <code class="docutils literal notranslate"><span class="pre">scp</span></code> komutu ile yapabileceğiniz gibi <span class="xref std std-ref">winscp, filezilla</span> vb. gibi SFTP yazılımları aracılğıyla da gerçekleştirebilirsiniz.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Not</p>
+<p>arf-ui1 kullanıcı arayüz sunucusuna bağlantı sağlamak için OpenVPN bağlantısını sağladıktan sonra terminalde <code class="docutils literal notranslate"><span class="pre">172.16.6.11</span></code> adresini kullanmanız gerekecektir (<span class="xref std std-ref">openvpn-info</span>).</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scp<span class="w"> </span>-r<span class="w"> </span>username@172.16.6.11:/arf/sw/scripts/matlab/arf.nonshared.R2024a.zip<span class="w"> </span>~/ARF_R2024a
+</pre></div>
+</div>
+<p>İlgili dosyayı ayrıca aşağıdaki ilgili web bağlantısından da indirebilirsiniz:</p>
+<p><a class="reference download internal" download="" href="../../../_downloads/19d0e8d451ce77d900af910c72467ba5/arf.nonshared.R2024a.zip"><code class="xref download docutils literal notranslate"><span class="pre">MATLAB</span> <span class="pre">2024a</span></code></a></p>
+<div class="admonition note">
+<p class="admonition-title">Not</p>
+<ul class="simple">
+<li><p>ARF üzerinde <strong>MATLAB R2024a</strong> versiyonu yüklüdür. Bu yöntem ile çalışmak istiyorsanız sizin de kendi bilgisayarınıza aynı versiyonu yüklemeniz gerekmektedir.</p></li>
+<li><p>İlgili versiyon için kurulumu yaparken kurulum sırasında veya kurulum sonrasında (Adds-On -&gt; Get Adds On -&gt; Add-On Explorer penceresinden) <code class="docutils literal notranslate"><span class="pre">Parallel</span> <span class="pre">Computing</span> <span class="pre">Toolbox</span></code> yüklenmelidir.</p></li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Uyarı</p>
+<ul class="simple">
+<li><p>Aşağıdaki örnek ilgili klasörün yerel bilgisayarınızda <code class="docutils literal notranslate"><span class="pre">'~/ARF_R2024a'</span></code> dizini altında olduğu varsayılarak düzenlenmiştir.</p></li>
+</ul>
+</div>
+<ul class="simple">
+<li><p>Kişisel bilgisayarınızda çalıştırdığınız <strong>MATLAB komut penceresinden</strong> indirmiş olduğunuz ayar dosyasına gidip, <code class="docutils literal notranslate"><span class="pre">configCluster</span></code> komutunu çalıştırınız. Sonrasında TRUBA kullanıcı adınızı giriniz.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">cd</span> <span class="o">~/</span><span class="n">ARF_R2024a</span><span class="o">/</span>
+<span class="o">&gt;&gt;</span> <span class="n">configCluster</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/matlab-config.png"><img alt="../../../_images/matlab-config.png" src="../../../_images/matlab-config.png" style="width: 800px;" />
+</a>
+<div class="admonition note">
+<p class="admonition-title">Not</p>
+<p><code class="docutils literal notranslate"><span class="pre">configCluster</span></code> komutunu çalıştırdığınızda varsayılan kümeniz <code class="docutils literal notranslate"><span class="pre">ARF</span></code> olarak ayarlanacaktır. Eğer lokal makinenizde küme profili oluşturacaksanız <code class="docutils literal notranslate"><span class="pre">c=parcluster('local');</span></code> şeklinde ilgili ayarı değiştirmeniz gerekecektir.</p>
+</div>
+<p>Bu işlemi bir kez gerçekleştirmek yeterlidir. Bundan sonra iş gönderirken çalıştıracağınız işin ihtiyacına göre ilgili iş parametrelerinin belirtilmesi yeterli olacaktır. İlgili yapılandırma ayarları hakkında aşağıda verilen örneği inceleyebilirsiniz.</p>
+<section id="hesap-ve-kuyruk-parametrelerinin-yapilandirmasi">
+<span id="matlab-truba-config"></span><h3>Hesap ve Kuyruk Parametrelerinin Yapılandırması<a class="headerlink" href="#hesap-ve-kuyruk-parametrelerinin-yapilandirmasi" title="Link to this heading">#</a></h3>
+<p>MATLAB’ı çalıştıracağınız küme hakkındaki parametrelerinizi ayarlamanız gerekmektedir. <code class="docutils literal notranslate"><span class="pre">**arf.nonshared.R2024a**</span></code> dizini içerisindeki <strong>arf.m</strong> dosyası parametreleri otomatik olarak yapılandırmaktadır. İhtiyacınıza göre ilgili parametreleri bu dosyadan değiştirebilirsiniz. Sonrasıda <strong>MATLAB komut satırından</strong> <code class="code docutils literal notranslate"><span class="pre">arf</span></code> komutunun çalıştırılması yeterli olacaktir. Ayrıca küme ve işinizle ilgili ayarları MATLAB komut satırı üzerinden de değiştirebilirsiniz. Parametreler ile ilgili aşağıda bir örnek verilmiştir.</p>
+<p>Parametreler hakkında ayrıntılı bilgilere MATLAB’ın dokümantasyon sayfasından erişim sağlayabilirsiniz:
+<cite>Parallel Computing Toolbox &lt;https://www.mathworks.com/help/parallel-computing/run-code-on-parallel-pools.html&gt;`</cite></p>
+<div class="admonition warning">
+<p class="admonition-title">Uyarı</p>
+<p>ARF kullanıcı arayüz sunucularına bağlantı sağlayabilmek için, ULAKNET ağı içinde veya dışında olma durumunuz farketmeksizin, öncelikle <a class="reference internal" href="../../../0-first-steps/open-vpn/index.html#open-vpn"><span class="std std-ref">OpenVPN Bağlantısı</span></a> yapmanız gerekmektedir.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+<span class="o">%</span> <span class="n">İş</span> <span class="n">gönderirken</span> <span class="n">belirtilmesi</span> <span class="n">gereken</span> <span class="n">seçenekler</span>
+<span class="o">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+<span class="o">%</span> <span class="n">kümeyi</span> <span class="n">oluşturun</span>
+<span class="n">c</span><span class="o">=</span><span class="n">parcluster</span><span class="p">;</span>
+
+<span class="o">%</span> <span class="n">Lisansınızı</span> <span class="n">kullanabilmeniz</span> <span class="n">için</span> <span class="n">bu</span> <span class="n">parametreyi</span> <span class="n">aktive</span> <span class="n">etmelisiniz</span><span class="o">.</span>
+<span class="n">c</span><span class="o">.</span><span class="n">RequiresOnlineLicensing</span><span class="o">=</span><span class="n">true</span>
+
+<span class="o">%</span> <span class="n">bağlanacağınız</span> <span class="n">arayüz</span> <span class="n">makinesinin</span> <span class="n">IP</span> <span class="n">adresini</span> <span class="n">belirtiniz</span><span class="o">.</span>
+<span class="o">%</span> <span class="n">OpenVPN</span> <span class="n">ile</span> <span class="n">bağlantınız</span> <span class="n">mevcut</span> <span class="n">iken</span> <span class="n">arf</span><span class="o">-</span><span class="n">ui1</span> <span class="n">için</span> <span class="mf">172.16.6.11</span>
+<span class="n">c</span><span class="o">.</span><span class="n">AdditionalProperties</span><span class="o">.</span><span class="n">ClusterHost</span><span class="o">=</span><span class="s1">&#39;172.16.6.11&#39;</span><span class="p">;</span>
+
+<span class="o">%</span> <span class="n">ssh</span> <span class="n">portunu</span> <span class="n">ayarlayınız</span>
+<span class="n">c</span><span class="o">.</span><span class="n">AdditionalProperties</span><span class="o">.</span><span class="n">UseSshPort</span><span class="o">=</span><span class="mi">22</span><span class="p">;</span>
+
+<span class="o">%</span> <span class="n">işinizi</span> <span class="n">göndereceğiniz</span> <span class="n">kuyruğun</span> <span class="n">adını</span> <span class="n">yazınız</span><span class="p">:</span> <span class="n">orfoz</span><span class="p">,</span> <span class="n">barbun</span><span class="p">,</span> <span class="n">hamsi</span>
+<span class="n">c</span><span class="o">.</span><span class="n">AdditionalProperties</span><span class="o">.</span><span class="n">QueueName</span><span class="o">=</span><span class="s1">&#39;barbun&#39;</span><span class="p">;</span>
+
+<span class="o">%</span> <span class="n">Node</span> <span class="n">sayısını</span> <span class="n">belirtiniz</span><span class="o">.</span> <span class="p">(</span><span class="n">Genelde</span> <span class="n">çalıştırılan</span> <span class="n">işler</span> <span class="n">için</span> <span class="n">bir</span> <span class="n">node</span> <span class="n">yeterlidir</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">AdditionalProperties</span><span class="o">.</span><span class="n">Nodes</span><span class="o">=</span><span class="mi">1</span>
+
+<span class="o">%</span> <span class="n">işinizin</span> <span class="n">süreceği</span> <span class="n">maksimum</span> <span class="n">zamanı</span> <span class="n">giriniz</span><span class="o">.</span> <span class="n">Aksilik</span> <span class="n">yaşamamanız</span> <span class="n">için</span> <span class="n">tahmin</span> <span class="n">ettiğiniz</span> <span class="n">sürenin</span> <span class="o">%</span><span class="mi">20</span> <span class="n">fazlasını</span> <span class="n">belirtiniz</span><span class="o">.</span>
+<span class="o">%</span> <span class="n">Maksimum</span> <span class="n">iş</span> <span class="n">çalıştırma</span> <span class="n">süresi</span> <span class="mi">3</span> <span class="n">gün</span> <span class="n">ile</span> <span class="n">sınırlıdır</span><span class="o">.</span>
+<span class="n">c</span><span class="o">.</span><span class="n">AdditionalProperties</span><span class="o">.</span><span class="n">WallTime</span><span class="o">=</span><span class="s1">&#39;3:00:00&#39;</span><span class="p">;</span>
+
+<span class="o">%</span> <span class="n">Thread</span> <span class="n">sayısını</span> <span class="n">giriniz</span><span class="o">.</span> <span class="p">(</span><span class="o">--</span><span class="n">cpu</span><span class="o">-</span><span class="n">per</span><span class="o">-</span><span class="n">task</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NumThreads</span><span class="o">=</span><span class="mi">40</span><span class="p">;</span>
+
+<span class="o">%</span> <span class="n">küme</span> <span class="n">için</span> <span class="n">mevcut</span> <span class="n">çalışan</span> <span class="n">sayısı</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NumWorkers</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+
+
+<span class="o">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+<span class="o">%</span> <span class="n">Tercihen</span> <span class="n">Değiştirilebilecek</span> <span class="n">Seçenekler</span>
+<span class="o">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+
+<span class="o">%</span> <span class="n">c</span><span class="o">.</span><span class="n">AdditionalProperties</span><span class="o">.</span><span class="n">EmailAddress</span> <span class="o">=</span> <span class="s1">&#39;your-email@your&#39;</span>
+
+<span class="o">%%</span> <span class="n">Eger</span> <span class="n">her</span> <span class="n">seferinde</span> <span class="n">TRUBA</span> <span class="n">şifrenizi</span> <span class="n">yazmak</span> <span class="n">istemiyorsanız</span><span class="p">,</span> <span class="n">ssh</span> <span class="n">anahtar</span> <span class="n">ayarini</span> <span class="n">aktif</span> <span class="n">edebilirsiniz</span><span class="o">.</span>
+<span class="o">%</span><span class="n">c</span><span class="o">.</span><span class="n">AdditionalProperties</span><span class="o">.</span><span class="n">UseIdentityFile</span><span class="o">=</span><span class="mi">1</span>
+<span class="o">%%</span> <span class="n">ssh</span> <span class="n">anahtarinizin</span> <span class="n">yerini</span> <span class="n">belirtin</span>
+<span class="o">%</span><span class="n">c</span><span class="o">.</span><span class="n">AdditionalProperties</span><span class="o">.</span><span class="n">IdentityFile</span><span class="o">=</span><span class="s1">&#39;/Users/kullaniciadi/.ssh/id_rsa_truba&#39;</span>
+<span class="o">%</span><span class="n">c</span><span class="o">.</span><span class="n">AdditionalProperties</span><span class="o">.</span><span class="n">IdentityFileHasPassphrase</span><span class="p">:</span> <span class="mi">0</span>
+
+<span class="o">%%</span> <span class="n">Debugging</span> <span class="n">ozelligini</span> <span class="n">de</span> <span class="n">tercihe</span> <span class="n">gore</span> <span class="n">degistirebilirsiniz</span>
+<span class="o">%</span><span class="n">c</span><span class="o">.</span><span class="n">AdditionalProperties</span><span class="o">.</span><span class="n">EnableDebug</span><span class="o">=</span><span class="n">true</span><span class="p">;</span>
+
+<span class="o">%%</span> <span class="n">isinizle</span> <span class="n">ilgili</span> <span class="n">bir</span> <span class="n">rezervasyona</span> <span class="n">sahipseniz</span> <span class="n">belirtebilirsiniz</span>
+<span class="o">%</span><span class="n">c</span><span class="o">.</span><span class="n">AdditionalProperties</span><span class="o">.</span><span class="n">Reservation</span><span class="o">=</span><span class="s1">&#39;Varsa_rezervasyon_adi&#39;</span>
+
+<span class="o">%%</span> <span class="n">isinizin</span> <span class="n">truba</span> <span class="n">uzerinde</span> <span class="n">nerede</span> <span class="n">saklanacagi</span> <span class="n">ile</span> <span class="n">ilgili</span> <span class="n">yeri</span> <span class="n">belirtebilirsiniz</span>
+<span class="o">%</span> <span class="n">c</span><span class="o">.</span><span class="n">AdditionalProperties</span><span class="o">.</span><span class="n">RemoteJobStorageLocation</span><span class="o">=</span><span class="s1">&#39;/arf/home/kullaniciadi/.matlab/3p_cluster_jobs/arf/kullaniciadi.local/R2024a/nonshared&#39;</span><span class="n">w</span>
+
+<span class="o">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+
+<span class="o">%</span> <span class="n">işinizi</span> <span class="n">kuyruğa</span> <span class="n">göndermeden</span> <span class="n">önce</span> <span class="n">konfigürasyonunuzu</span> <span class="n">tekrar</span> <span class="n">gözden</span> <span class="n">geçirebilirsiniz</span><span class="o">.</span>
+<span class="n">c</span><span class="o">.</span><span class="n">AdditionalProperties</span>
+
+<span class="o">%</span> <span class="n">yapmış</span> <span class="n">olduğunuz</span> <span class="n">değişikliklerin</span> <span class="n">farklı</span> <span class="n">MATLAB</span> <span class="n">oturumlarında</span> <span class="n">kayıtlı</span> <span class="n">kalmasını</span> <span class="n">istiyorsanız</span> <span class="n">yapmış</span> <span class="n">olduğunuz</span> <span class="n">değişiklikleri</span> <span class="n">profilinize</span> <span class="n">kaydedin</span><span class="o">.</span>
+<span class="n">c</span><span class="o">.</span><span class="n">saveProfile</span>
+</pre></div>
+</div>
+<p>Yukarıdaki verilen örnekteki veya <code class="docutils literal notranslate"><span class="pre">**arf.nonshared.R2024a**</span></code> dizini içerisindeki <strong>arf.m</strong> dosyasını çalıştırdığınızda <a href="#id1"><span class="problematic" id="id2">``</span></a>Additional Properties``çıktısı olarak ekranda en son aşağıdaki görseldeki gibi bir çıktı elde edeceksiniz.</p>
+<a class="reference internal image-reference" href="../../../_images/matlab-addprop.png"><img alt="../../../_images/matlab-addprop.png" src="../../../_images/matlab-addprop.png" style="width: 800px;" />
+</a>
+<p>Küme ayarlarınız başarıyla oluşturulmuş durumda. Ayrıca <code class="docutils literal notranslate"><span class="pre">Home</span> <span class="pre">-&gt;</span> <span class="pre">Parallel-&gt;</span> <span class="pre">Create</span> <span class="pre">and</span> <span class="pre">Manage</span> <span class="pre">Clusters</span></code> sekmesi altından oluşturmuş olduğunuz kümenin özelliklerini görebilirsiniz ve bu özellikler üzerinden değişlik yapabilirsiniz. MATLAB’ı kapatıp açsanız da oluşturmuş olduğunuz küme ayarlarınız kayıtlı halde duracaktır. Buradan “default profile” seçimini de gerçekleştirebilirsiniz.</p>
+<p>İşlerinizi göndermeden önce küme ayarlarını komut satırı yerine bu arayüz üzerinden de değiştirebilirsiniz. Ayar değişikliğinin aktif olması için <code class="docutils literal notranslate"><span class="pre">parcluster</span></code> komutunu yeniden çalıştırmanız gerekmektedir:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>clear<span class="w"> </span>c<span class="p">;</span>
+<span class="nv">c</span><span class="o">=</span>parcluster
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/matlab-clusterprofile.png"><img alt="../../../_images/matlab-clusterprofile.png" src="../../../_images/matlab-clusterprofile.png" style="width: 800px;" />
+</a>
+<div class="admonition note">
+<p class="admonition-title">Not</p>
+<p>Küme üzerinde işlerinizin kayıt edildiği yer varsayılan olarak <code class="docutils literal notranslate"><span class="pre">.matlab/3p_cluster_jobs/arf/ARF.R2024a/nonshared</span></code> klasörüdür.  İşinizin durumunu ve sonuçlarını buradan kontrol edebilirsiniz.</p>
+<p>İlgili klasörün yerini <code class="docutils literal notranslate"><span class="pre">arf.m</span></code> dosyası içerisinde</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>c.AdditionalProperties.RemoteJobStorageLocation<span class="o">=</span><span class="s1">&#39;/arf/scratch/username/newpath&#39;</span>
+</pre></div>
+</div>
+<p>komutu ile de değiştirebilirsiniz.</p>
+</div>
+<p>Herhangi bir parametreyi silmek istediğinizde (örneğin e-posta adresi) değişkeni boş bırakmanız yeterlidir.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>c.AdditionalProperties.EmailAddress<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span>
+</pre></div>
+</div>
+<p>MATLAB komut satırından çalıştıracağınız tüm komutlar  kişisel bilgisayarınızda çalışacaktır. İşlem gücü gereken fonksiyon ya da dosyaları ARF üzerinde çalıştırmak için ilgili kod parçasını <code class="code docutils literal notranslate"><span class="pre">batch</span></code> komutu ile kuyruğa göndermeniz gerekecektir. Detaylar için <a class="reference external" href="https://www.mathworks.com/help/parallel-computing/batch.html">MATLAB’ın dokümantasyon sayfasından</a> bilgi edinebilir ve aşağıdaki örnekleri inceleyebilirsiniz.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="id3">
+<caption><span class="caption-text">MATLAB ve SLURM Parametreleri Karşılaştırması</span><a class="headerlink" href="#id3" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 33.3%" />
+<col style="width: 33.3%" />
+<col style="width: 33.3%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Slurm Parametresi</p></th>
+<th class="head"><p>MATLAB Karşılığı</p></th>
+<th class="head"><p>Açıklama</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">--nodes,</span> <span class="pre">-N</span></code></p></td>
+<td><p><code class="code docutils literal notranslate"><span class="pre">c.AdditionalProperties.Nodes</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">--ntasks,</span> <span class="pre">-n</span></code></p></td>
+<td><p><code class="code docutils literal notranslate"><span class="pre">pool=</span></code></p></td>
+<td><p>en fazla <code class="code docutils literal notranslate"><span class="pre">c.NumWorkers</span></code>  kadar olabilir. Herhangi bir değer verilmezse c.NumWorkers değeri kullanılır.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">--cpus-per-task,</span> <span class="pre">-c</span></code></p></td>
+<td><p><code class="code docutils literal notranslate"><span class="pre">c.NumThreads</span></code></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Uyarı</p>
+<p><strong>Orfoz</strong> kuyruğunda sunucu başına minimum 55, maksimum 110 çekirdek kullanılabilir. Orfoz kuyruğuna gönderilecek işler 55 ve katlarında çekirdek kullanmalıdır.</p>
+<p><strong>Hamsi</strong> kuyruğunda sunucu başına minimum 54 çekirdek kullanılabilir. Hamsi kuyruğuna gönderilecek işler 54 ve katlarında çekirdek kullanmalıdır.</p>
+<p><strong>Barbun</strong> kuyruğunda sunucu başına minimum 20, maksimum 40 çekirdek kullanılabilir. Barbun kuyruğuna gönderilecek işler 20 ve katlarında çekirdek kullanmalıdır.</p>
+</div>
+</section>
+<section id="ornek-1-dahili-komutlar-ya-da-fonksiyonlar">
+<span id="matlab-ornekler"></span><h3>Örnek 1: Dahili Komutlar ya da Fonksiyonlar<a class="headerlink" href="#ornek-1-dahili-komutlar-ya-da-fonksiyonlar" title="Link to this heading">#</a></h3>
+<p>Bu örnekte dahili <code class="code docutils literal notranslate"><span class="pre">pwd</span></code> komutu/fonksiyonu kuyruk üzerinde çalıştırılacaktır.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">j</span><span class="o">=</span><span class="n">batch</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="nd">@pwd</span><span class="p">,</span><span class="mi">1</span><span class="p">,{},</span><span class="s1">&#39;CurrentFolder&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="s1">&#39;AutoAddClientPath&#39;</span><span class="p">,</span><span class="n">false</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>İşinizi gönderdiğinizde, şekilde görüldüğü gibi TRUBA şifrenizin girilmesi istenecektir. Bu sorgu ekranı gelmiyorsa yukarıdaki küme ayarlarınızı kontrol ediniz. Ayrıca <code class="docutils literal notranslate"><span class="pre">batch</span></code> komutunun nasıl kullanılacağı ve ilgili parametrelerin ne olduğu hakkında bilgiye <a class="reference external" href="https://www.mathworks.com/help/parallel-computing/batch.html#d123e38009">MATLAB yardım merkezinden</a> erişim sağlayabilirsiniz.</p>
+<a class="reference internal image-reference" href="../../../_images/matlab7.png"><img alt="../../../_images/matlab7.png" src="../../../_images/matlab7.png" style="width: 800px;" />
+</a>
+<p>İşinizi gönderdiğinizde bir “SLURM JobID” si atanacaktır. Ayrıca arf-ui kullanıcı arayüz suncuusu üzerinden <code class="code docutils literal notranslate"><span class="pre">squeue</span></code> komutu ile de işinizin durumunu öğrenebilirsiniz.</p>
+<a class="reference internal image-reference" href="../../../_images/matlab8.png"><img alt="../../../_images/matlab8.png" src="../../../_images/matlab8.png" style="width: 800px;" />
+</a>
+<a class="reference internal image-reference" href="../../../_images/matlab9.png"><img alt="../../../_images/matlab9.png" src="../../../_images/matlab9.png" style="width: 800px;" />
+</a>
+<p>MATLAB komut penceresi üzerinden işinizin durumu hakkında bilgi edinebilirsiniz.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">işinizin</span> <span class="n">durumu</span> <span class="n">hakkındaki</span> <span class="n">bilgi</span> <span class="n">için</span><span class="p">:</span>
+<span class="n">j</span><span class="o">.</span><span class="n">State</span>
+
+<span class="o">%</span> <span class="n">işiniz</span> <span class="n">sonucunu</span> <span class="n">çağırmadan</span> <span class="n">önce</span> <span class="n">bitmesini</span> <span class="n">beklemek</span> <span class="n">için</span><span class="p">:</span>
+<span class="n">j</span><span class="o">.</span><span class="n">wait</span>
+
+<span class="o">%</span> <span class="n">iş</span> <span class="n">bittiğinde</span> <span class="n">sonucu</span> <span class="n">görmek</span> <span class="n">için</span><span class="p">:</span>
+<span class="n">j</span><span class="o">.</span><span class="n">fetchOutputs</span>
+
+<span class="o">%</span> <span class="n">işiniz</span> <span class="n">artık</span> <span class="n">gerekli</span> <span class="n">değilse</span> <span class="n">işinizi</span> <span class="n">silmek</span> <span class="n">için</span><span class="p">:</span>
+<span class="n">j</span><span class="o">.</span><span class="n">delete</span>
+
+<span class="o">%</span> <span class="n">eğer</span> <span class="n">var</span> <span class="n">olan</span> <span class="n">tüm</span> <span class="n">işleri</span> <span class="n">silmek</span> <span class="n">isterseniz</span>
+<span class="n">delete</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">Jobs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ayrıca iş paketi yöneticisi (slurm) ile ilgili kimi parametrelere de MATLAB üzerinden erişebilirsiniz.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">Slurm</span> <span class="n">jobid</span> <span class="n">bilgisini</span> <span class="n">elde</span> <span class="n">etmek</span> <span class="n">icin</span>
+<span class="n">getTaskSchedulerIDs</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+
+<span class="o">%%</span> <span class="n">Gondermis</span> <span class="n">oldugunuz</span> <span class="n">isle</span> <span class="n">ilgili</span> <span class="n">slurm</span> <span class="n">bilgisini</span> <span class="n">ekrana</span> <span class="n">yazdirmak</span> <span class="n">isterseniz</span>
+<span class="n">setSchedulerMessageHandler</span><span class="p">(</span><span class="nd">@disp</span><span class="p">)</span>
+
+<span class="o">%</span> <span class="n">debug</span> <span class="n">bilgisi</span> <span class="n">edinmek</span> <span class="n">icin</span>
+<span class="n">getDebugLog</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">j</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>İşinizin durumunu ayrıca “<strong>MATLAB Job Monitor Tool</strong>” ile de görebilirsiniz. İşinizle ilgili sonucu bu arayüz aracılığıyla da çekebilirsiniz.</p>
+<a class="reference internal image-reference" href="../../../_images/matlab5.png"><img alt="../../../_images/matlab5.png" src="../../../_images/matlab5.png" style="width: 800px;" />
+</a>
+<a class="reference internal image-reference" href="../../../_images/matlab10.png"><img alt="../../../_images/matlab10.png" src="../../../_images/matlab10.png" style="width: 800px;" />
+</a>
+<div class="admonition note">
+<p class="admonition-title">Not</p>
+<p>İşinizi kuyruğa gönderdikten sonra oturumunuzu açık tutmanıza gerek yoktur. İşiniz tamamlandığında MATLAB’ı tekrar çalıştırıp biten işlerinizin durumunu görebilir ve sonuçlarınızı çağırabilirsiniz. Bu işlemi “MATLAB Job Monitor Tool” ile yapabileceğiniz gibi komut satırından da gerçekleştirebilirsiniz.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">=</span><span class="n">parcluster</span><span class="p">;</span>
+<span class="n">jobs</span><span class="o">=</span><span class="n">c</span><span class="o">.</span><span class="n">Jobs</span>
+
+<span class="o">%%</span> <span class="n">ID</span> <span class="n">numarası</span> <span class="mi">2</span> <span class="n">olan</span> <span class="n">işi</span> <span class="n">seç</span>
+ <span class="n">j2</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">Jobs</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+ <span class="n">j2</span><span class="o">.</span><span class="n">fetchOutputs</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/matlab11.png"><img alt="../../../_images/matlab11.png" src="../../../_images/matlab11.png" style="width: 800px;" />
+</a>
+</section>
+<section id="ornek-2-m-dosyalari">
+<h3>Örnek 2: *.m dosyaları<a class="headerlink" href="#ornek-2-m-dosyalari" title="Link to this heading">#</a></h3>
+<p>Dahili komutlar ve fonksiyonların yanı sıra MATLAB betik dosyalarını da (*.m) kuyrukta çalıştırmanız mümkündür.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span> <span class="n">test2</span><span class="o">.</span><span class="n">m</span> <span class="n">içerigi</span>
+<span class="n">pwd</span>
+    <span class="n">ls</span> <span class="o">-</span><span class="n">al</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">7</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">g</span> <span class="o">+</span> <span class="n">sin</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">d</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Bu dosyayı aşağıdaki komutla kuyruğa gönderebilirsiniz:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">j</span><span class="o">=</span><span class="n">batch</span><span class="p">(</span><span class="s1">&#39;test2&#39;</span><span class="p">,</span><span class="s1">&#39;CurrentFolder&#39;</span><span class="p">,</span><span class="s1">&#39;/arf/home/kullanici_calisma_dizini/&#39;</span><span class="p">,</span> <span class="s1">&#39;AutoAddClientPath&#39;</span><span class="p">,</span><span class="n">false</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Bu dosya kuyrukta çalışıp sonlandıktan sonra, ekran çıktılarını</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">diary</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>komutu ile alabilirsiniz. Ayrıca dosya içerisinde kullanılan değişkenlerin son değerlerini,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">load</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>lokal arayüzünüze alabilirsiniz.</p>
+</section>
+<section id="ornek-3-lokal-dosyadan-veri-okumak-ve-sonuclari-merkezi-dizinde-dosyaya-yazmak">
+<h3>Örnek 3: Lokal dosyadan veri okumak ve sonuçları merkezi dizinde dosyaya yazmak<a class="headerlink" href="#ornek-3-lokal-dosyadan-veri-okumak-ve-sonuclari-merkezi-dizinde-dosyaya-yazmak" title="Link to this heading">#</a></h3>
+<p>Aşağıdaki örnekte kuyruğa göndereceğimiz betik, lokal dizinimizdeki veriyi okuyup işleyecek ve sonucu merkezi dizine yazacaktır.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">test3</span><span class="o">.</span><span class="n">m</span> <span class="n">içerigi</span>
+    <span class="n">pwd</span>
+    <span class="n">fileID</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s1">&#39;input.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">);</span>
+    <span class="n">formatSpec</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%d</span><span class="s1"> </span><span class="si">%f</span><span class="s1">&#39;</span><span class="p">;</span>
+    <span class="n">sizeA</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span> <span class="n">Inf</span><span class="p">];</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">fscanf</span><span class="p">(</span><span class="n">fileID</span><span class="p">,</span><span class="n">formatSpec</span><span class="p">,</span><span class="n">sizeA</span><span class="p">)</span>
+    <span class="n">A</span>
+    <span class="n">fclose</span><span class="p">(</span><span class="n">fileID</span><span class="p">);</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">;</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">;</span><span class="n">rand</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)];</span>
+    <span class="n">fileID</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s1">&#39;output.txt&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">);</span>
+    <span class="n">fprintf</span><span class="p">(</span><span class="n">fileID</span><span class="p">,</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1"> </span><span class="si">%4.4f</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+    <span class="n">fclose</span><span class="p">(</span><span class="n">fileID</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Bu dosya kuyruğa aşağıdaki komutla gönderilir.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">j</span><span class="o">=</span><span class="n">batch</span><span class="p">(</span><span class="s1">&#39;test3&#39;</span><span class="p">,</span><span class="s1">&#39;CurrentFolder&#39;</span><span class="p">,</span><span class="s1">&#39;/arf/home/kullanici_calisma_dizini/&#39;</span><span class="p">,</span> <span class="s1">&#39;AutoAddClientPath&#39;</span><span class="p">,</span><span class="n">false</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Bu dosya kuyrukta çalışıp sonlandıktan sonra, ekran çıktılarını</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">diary</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>komutu ile alabilirsiniz. Ayrıca dosya içerisinde kullanılan değişkenlerin son değerlerini,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">load</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>lokal arayüzünüze alabilirsiniz.</p>
+</section>
+<section id="ornek-4-paralel-is-calistirma-paralel-for-mpi">
+<h3>Örnek 4: Paralel iş çalıştırma (paralel for, MPI)<a class="headerlink" href="#ornek-4-paralel-is-calistirma-paralel-for-mpi" title="Link to this heading">#</a></h3>
+<p>MATLAB’ın neredeyse tüm fonksiyonları node için paralelleştirmeyi (OpenMP) hali hazırda desteklemektedir. Bu desteği kullanmak için kodda ekstra değişiklikler yapmaya gerek bulunmamaktadır. Herhangi bir MATLAB  fonksiyonu çalıştırıldığında, kod sunucuda izin verilen tüm çekirdekleri kullanacaktır.</p>
+<p>MATLAB aynı zamanda sunucular arası paralelleştirmeyi (MPI) de desteklemektedir. Büyük <code class="code docutils literal notranslate"><span class="pre">for</span></code> döngüleri ya da destekeleyen diğer fonksiyonlar, birkaç basit  değişiklikle nodelar arası  paralel çalışır hale getirilebilir. Aşağıdaki kod parçasında paralel for döngüsü kullanılmıştır.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span> <span class="n">test4</span><span class="o">.</span><span class="n">m</span> <span class="n">dosyasinin</span> <span class="n">icerigi</span>
+    <span class="n">function</span> <span class="n">t</span> <span class="o">=</span> <span class="n">parallel_example</span><span class="p">(</span><span class="nb">iter</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">nargin</span><span class="o">==</span><span class="mi">0</span><span class="p">,</span> <span class="nb">iter</span> <span class="o">=</span> <span class="mi">16</span><span class="p">;</span> <span class="n">end</span>
+    <span class="n">disp</span><span class="p">(</span><span class="s1">&#39;Start sim&#39;</span><span class="p">)</span>
+
+    <span class="n">t0</span> <span class="o">=</span> <span class="n">tic</span><span class="p">;</span>
+    <span class="n">parfor</span> <span class="n">idx</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span><span class="nb">iter</span>
+            <span class="n">A</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="o">=</span> <span class="n">idx</span><span class="p">;</span>
+            <span class="n">pause</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">end</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">toc</span><span class="p">(</span><span class="n">t0</span><span class="p">);</span>
+
+    <span class="n">disp</span><span class="p">(</span><span class="s1">&#39;Sim completed.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Kodu kuyruğa göndermek için</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">NumThreads</span><span class="o">=</span><span class="mi">7</span><span class="p">;</span>
+<span class="n">j</span> <span class="o">=</span> <span class="n">batch</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="nd">@test4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">{},</span> <span class="s1">&#39;pool&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;CurrentFolder&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="s1">&#39;AutoAddClientPath&#39;</span><span class="p">,</span><span class="n">false</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Uyarı</p>
+<p>işinizi gönderdiğinizde config ayarlarınıza göre aşağıdaki gibi bir çıktı göreceksiniz.
+<code class="docutils literal notranslate"><span class="pre">additionalSubmitArgs</span> <span class="pre">=</span> <span class="pre">'--ntasks=4</span> <span class="pre">--cpus-per-task=7</span> <span class="pre">-p</span> <span class="pre">hamsi</span> <span class="pre">-t</span> <span class="pre">3:00:00</span> <span class="pre">-N</span> <span class="pre">1</span> <span class="pre">'</span></code></p>
+<p>pool sayisi <code class="code docutils literal notranslate"><span class="pre">--ntask</span></code> parametresine karşılık gelmektedir. Bir çekirdek işi orkestra eden olarak ayrıldığından pool sayısı <code class="docutils literal notranslate"><span class="pre">&quot;ntasks-1&quot;</span></code> şeklinde girilmelidir. Hamsi kümesi için  Number_of_nodes x (pool + 1) x num_Threads = 28 ve katlari seklinde belirtilmelidir. Bu parametreleri işinizin yapısına göre düzenlemeniz gerekmektedir. Yüksek çekirdek talebi işinizin daha kısa sürede tamamlanacağı anlamına gelmemektedir, işinizin yapısına düzenlemeniz gerekmektedir.</p>
+</div>
+<section id="ek-notlar">
+<h4>Ek Notlar<a class="headerlink" href="#ek-notlar" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Örnek betik dosyalarına <code class="docutils literal notranslate"><span class="pre">/arf/sw/scripts/matlab</span></code> dizininden erişim sağlayabilirsiniz.</p></li>
+<li><p>Mathworks tarafından organize edilen TRUBA üzerinde MATLAB kullanımı ile ilgili yansılara <a class="reference download internal" download="" href="../../../_downloads/a93453786762e5460233e4d97df750f7/Parallel-Computing-Workshop-Part-II.pdf"><code class="xref download docutils literal notranslate"><span class="pre">buradan</span></code></a> ve seminerin videosuna ise <a class="reference external" href="https://youtu.be/-eUBuyXFDwU">YouTube kanalımızdan</a>  erişebilirsiniz.</p></li>
+</ul>
+<p>Dökümanla ilgili eksik ya da hata bulmanız durumunda bizlere <a class="reference external" href="mailto:grid-teknik&#37;&#52;&#48;ulakbim&#46;gov&#46;tr">grid-teknik<span>&#64;</span>ulakbim<span>&#46;</span>gov<span>&#46;</span>tr</a> adresinden erişebilirsiniz. Eklenmesini istediğiniz bilgiler için de bizlere aynı adresten ulaşabilirsiniz.</p>
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="MATLAB_Lisans.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">önceki</p>
+        <p class="prev-next-title">TRUBA’da MATLAB Lisansının Tanıtılması</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="MATLAB_TRUBARun.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">sonraki</p>
+        <p class="prev-next-title">TRUBA’da MATLAB Dosyası Çalıştırmak</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> İçindekiler
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kisisel-bilgisayarinizda-matlab-calistirirak-truba-ya-is-gondermek">Kişisel Bilgisayarınızda MATLAB Çalıştırırak TRUBA’ya İş Göndermek</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hesap-ve-kuyruk-parametrelerinin-yapilandirmasi">Hesap ve Kuyruk Parametrelerinin Yapılandırması</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ornek-1-dahili-komutlar-ya-da-fonksiyonlar">Örnek 1: Dahili Komutlar ya da Fonksiyonlar</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ornek-2-m-dosyalari">Örnek 2: *.m dosyaları</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ornek-3-lokal-dosyadan-veri-okumak-ve-sonuclari-merkezi-dizinde-dosyaya-yazmak">Örnek 3: Lokal dosyadan veri okumak ve sonuçları merkezi dizinde dosyaya yazmak</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ornek-4-paralel-is-calistirma-paralel-for-mpi">Örnek 4: Paralel iş çalıştırma (paralel for, MPI)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ek-notlar">Ek Notlar</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Tarafından TÜBİTAK ULAKBİM
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2021, TÜBİTAK ULAKBİM.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  Son güncelleme: 05 Mar 2025.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <div class="footer-extra" style="text-align: center; margin-top: 20px;">
+    <table style="margin: 0 auto;">
+        <tr>
+            <td>
+                <a href="https://ulakbim.tubitak.gov.tr" target="_blank" style="margin-right: 30px; display: inline-block;">
+                    <img src="https://www.truba.gov.tr/wp-content/uploads/2025/02/STB-ULAKBIM_doc-footer.png" alt="TÜBİTAK ULAKBİM Web Sitesi" height="60px">
+                </a>
+                <a href="https://www.truba.gov.tr" target="_blank" style="margin-right: 30px; display: inline-block;">
+                    <img src="https://www.truba.gov.tr/wp-content/uploads/2025/02/TRUBA_doc-footer.png" alt="TRUBA Web Sitesi" height="60px">
+                </a>
+                <a href="https://eurocc.truba.gov.tr/" target="_blank" style="margin-right: 30px; display: inline-block;">
+                    <img src="https://www.truba.gov.tr/wp-content/uploads/2025/02/NCCTurkiye-Color.png" alt="EuroCC Türkiye Web Sitesi" height="60px">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; padding-top: 10px;">
+                <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+                    <img src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" alt="CC BY-NC-SA 4.0">
+                </a>
+                Bu çalışma, <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Atıf-Gayri Ticari-Aynı Lisansla Paylaş 4.0 Uluslararası Lisansı</a> ile lisanslanmıştır.
+                <br><br>2025.01.01
+            </td>
+        </tr>
+    </table>
+  </div>
+
+  </body>
+</html>
