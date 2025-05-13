@@ -20,6 +20,7 @@ Ayrıntılı bilgi için `EuroHPC Ortak Girişimi <https://eurohpc-ju.europa.eu/
     :maxdepth: 1
 
     EuroHPC/systems.rst
-    EuroHPC/Marenostrum5/index.rst
     EuroHPC/ffplus.rst
     EuroHPC/inno4scale.rst
+    EuroHPC/ff4eurohpc_shape.rst
+    

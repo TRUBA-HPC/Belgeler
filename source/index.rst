@@ -10,7 +10,7 @@ Günümüzde “TRUBA 2023” projesi ile T.C. Cumhurbaşkanlığı Strateji ve 
 
     <br><br>
 
-Bu dökümantasyona başlamadan önce, aşağıdaki ilk adımları takip etmeniz önerilir.
+Bu dökümantasyona başlamadan önce, aşağıdaki ilk adımlar sekmesini takip etmeniz önerilir.
 
 .. toctree:: 
     :caption: İçerikler

@@ -1,7 +1,7 @@
 .. _arf-gaussview-kilavuzu:
 
 ===========================================================
-ARF Hesaplama Kümesinde GaussView 6 Programının Kullanılması
+GaussView 6 Programının Kullanılması
 ===========================================================
 
 Kimyasal modelleme ve hesaplamalı kimya çalışmalarını kolaylaştırmak amacıyla tasarlanmış olan GaussView, kullanıcıların kompleks moleküler yapıların oluşturulması, görselleştirilmesi ve Gaussian hesaplamalarının yönetilmesi süreçlerinde büyük kolaylık sağlar.
