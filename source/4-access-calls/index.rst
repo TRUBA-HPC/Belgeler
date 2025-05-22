@@ -1,8 +1,18 @@
 .. _access_calls:
 
 =================================
-Erişim Çağrıları
+EuroHPC ve Erişim Çağrıları
 =================================
+
+🚀 Güncel çağrılara ve eğitimlere aşağıdaki linkten ulaşabilirsiniz.
+====================================================================
+
+.. raw:: html
+
+    <p style="font-size: 24px; font-weight: bold;">
+    <a href="https://indico.truba.gov.tr" target="_blank">https://indico.truba.gov.tr</a>
+    </p>
+
 
 EuroHPC Ortak Girişimi (EuroHPC JU), Avrupa’da süper bilgi işlem teknolojileri, uygulamaları ve becerilerinde birinci sınıf bir Yüksek Performans Hesaplama (HPC) altyapısı ve rekabetçi, yenilikçi bir ekosistemi geliştirmek amacıyla Avrupa düzeyinde çabaların (AB ve katılımcı Avrupa ülkelerinin) koordinasyonunu ve kaynakların paylaşımını sağlamak için kurulmuştur.
 
