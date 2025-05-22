@@ -7,9 +7,6 @@ altyapının servise alınmasından itibaren 14 tane Avrupa Birliği Çerçeve P
 
 Günümüzde “TRUBA 2023” projesi ile T.C. Cumhurbaşkanlığı Strateji ve Bütçe Başkanlığı ile desteklenmeye devam etmektedir.
 
-.. raw:: html
-
-    <br><br>
 
 📌 Başlamak İçin Öneri
 ======================

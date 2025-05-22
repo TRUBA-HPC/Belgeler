@@ -5,7 +5,8 @@
 =================================
 
 
-**Bağlantı Araçları:**
+Bağlantı Araçları
+-----------------
 
 .. toctree::
     :maxdepth: 1
@@ -14,7 +15,8 @@
     open-vpn/openvpn_info.rst
     MobaXterm.rst
 
-**Hesaplama Kaynaklarına Erişim:**
+Hesaplama Kaynaklarına Erişim
+------------------------------
 
 .. toctree::
     :maxdepth: 1
