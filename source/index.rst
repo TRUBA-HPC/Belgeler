@@ -1,5 +1,6 @@
+=====================================
 TRUBA (Türk Ulusal Bilim e-Altyapısı)
-=============
+=====================================
 
 Türk Ulusal Bilim e-Altyapısı (TRUBA), 120 farklı araştırma kurumundan 6000’den fazla araştırmacıya, bilimsel çalışmalara katkıda bulunmak üzere yüksek performanslı hesaplama ve depolama kaynakları ile doğrudan hizmet veren, farklı kamu kurumları ve araştırma enstitüleriyle ortak projeler gerçekleştiren ve 
 altyapının servise alınmasından itibaren 14 tane Avrupa Birliği Çerçeve Program Projesinde yer alan stratejik önemi büyük bir Ulusal Araştırma e-Altyapısıdır.

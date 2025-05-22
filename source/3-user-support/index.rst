@@ -1,3 +1,4 @@
+.. _kullanici_destegi:
 
 =================================
 Kullanıcı Desteği

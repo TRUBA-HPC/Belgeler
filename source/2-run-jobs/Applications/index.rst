@@ -4,7 +4,6 @@
 Uygulamalar
 =======================
 
-
 .. toctree::
     :maxdepth: 1
     
@@ -13,11 +12,14 @@ Uygulamalar
     Gaussian/index.rst
     GREASY/greasy_kullanim.rst
     GROMACS/index.rst
-    LLAMMPS/lammps_truba.rst
+    LAMMPS/lammps_truba.rst
     MATLAB/index.rst
     python/index.rst
     QuantumEspresso/index.rst
     R/index.rst
+
+
+ 
 
 
 

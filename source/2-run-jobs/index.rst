@@ -35,12 +35,15 @@ Aşağıda sistemimizde sıklıkla kullanılan bazı uygulamalara yönelik örne
 Bu başlıklar, yüksek başarımlı hesaplama (HPC) ortamlarında yaygın olarak tercih edilen programlara aittir. 
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 4
 
-   genel_kurulum/index.rst
+   genel_kurulum.rst
    interaktif_is_calistirma.rst
    Applications/index.rst
    GPU/index.rst
+
+
+
 
     
     

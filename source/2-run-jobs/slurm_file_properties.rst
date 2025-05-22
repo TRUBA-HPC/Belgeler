@@ -1,8 +1,8 @@
 .. _slurm-betik:
 
-==========================================
+==========================
  SLURM Betik Özellikleri
-==========================================
+==========================
 
 
 Kabuk programlamadan bağımsız olarak, herhangi bir SLURM betik temel olarak üç ana bölümden oluşur. Başlangıç (parametreler, tanımlar), gövde ve iş başlatma/çıkış bölümleri.

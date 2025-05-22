@@ -61,4 +61,4 @@ TRUBA altyapısındaki GPU kaynakları SLURM kaynak yöneticisi ile kullanılabi
 
 .. note::
 
-    palamut-cudav ve kolyoz-cuda kümelerinin kullanım izni ile ilgili bilgiler için lütfen :ref:`palamut-cuda` sayfasını inceleyiniz.
+    palamut-cuda ve kolyoz-cuda kümelerinin kullanım izni ile ilgili bilgiler için lütfen :ref:`palamut-cuda` sayfasını inceleyiniz.
