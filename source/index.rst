@@ -11,16 +11,55 @@ Günümüzde “TRUBA 2023” projesi ile T.C. Cumhurbaşkanlığı Strateji ve 
 
     <br><br>
 
+📌 Başlamak İçin Öneri
+======================
+
 Bu dökümantasyona başlamadan önce, aşağıdaki ilk adımlar sekmesini takip etmeniz önerilir.
 
-.. toctree:: 
-    :caption: İçerikler
+🚀 İlk Adımlar
+==============
+
+.. toctree::
     :maxdepth: 1
 
     0-first-steps/index.rst
-    1-hardware/index.rst
-    2-run-jobs/index.rst
-    3-user-support/index.rst
-    EUROHPC ve Erişim Çağrıları <4-access-calls/index.rst>
-    Fiyatlandırma <5-payment/index.rst>
 
+🖥️ Donanım
+==========
+
+.. toctree::
+    :maxdepth: 1
+
+    1-hardware/index.rst
+
+⚙️ Uygulamalar ve İş Koşumu
+===========================
+
+.. toctree::
+    :maxdepth: 1
+
+    2-run-jobs/index.rst
+
+🧑‍💻 Kullanıcı Destek
+=====================
+
+.. toctree::
+    :maxdepth: 1
+
+    3-user-support/index.rst
+
+🇪🇺 EUROHPC ve Erişim Çağrıları
+===============================
+
+.. toctree::
+    :maxdepth: 1
+
+    4-access-calls/index.rst
+
+💰 Fiyatlandırma
+================
+
+.. toctree::
+    :maxdepth: 1
+
+    5-payment/index.rst
