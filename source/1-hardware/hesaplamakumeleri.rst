@@ -1,7 +1,7 @@
 .. _hesaplama-kumeleri:
 
 ==================
-Hesaplama Kümeleri
+Kuyruklar
 ==================
 
 TRUBA hesaplama kümeleri, her yıl geliştirilerek güncellenmektedir. Yapılan her güncelleme, zamanın ihtiyaçları ve mevcut sunucu teknolojileri gözüne alınarak yapıldığından, alınan hesaplama sunucularının modelleri, işlemcileri, çekirdek sayıları ve bellek miktarı farklılık göstermektedir.

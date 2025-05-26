@@ -21,7 +21,7 @@ Bu dökümantasyona başlamadan önce, aşağıdaki ilk adımlar sekmesini takip
 
     0-first-steps/index.rst
 
-🖥️ Donanım
+🖥️ Kümeler
 ==========
 
 .. toctree::

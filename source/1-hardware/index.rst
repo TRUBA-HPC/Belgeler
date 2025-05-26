@@ -1,15 +1,16 @@
 .. _hardware:
 
 ================
-Sistem Bilgileri
+Kümeler
 ================
 
 .. toctree::
     :maxdepth: 1
 
     
-    arf-acc-genel.rst
     arf-genel-bilgileri.rst
+    arf-acc-genel.rst
+    mn5.rst
     hesaplamakumeleri.rst
     yuksek-performansli-dosya-sistemleri.rst
 
