@@ -1,8 +1,7 @@
 .. _arf-genel-bilgileri:
 
-===================================
-ARF Kümesi Hakkında Genel Bilgiler
-===================================
+ARF 
+=====
 
 
 ARF hesaplama kümesi için ``arf-ui1`` ve ``arf-ui2`` olmak üzere iki tane sunucu, kullanıcı arayüzü olarak hizmete sunulmustur. Bu hesaplama kümesinde bulunan ``orfoz`` ismini atadığımız hesaplama sunucularında iş koşturmak için arf kullanıcı arayüzleri kullanılacaktır. 

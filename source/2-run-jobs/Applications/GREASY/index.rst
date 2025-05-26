@@ -61,10 +61,6 @@ Greasy yazılımının kullanımı ile ilgili ayrıntılı bilgilere aşağıdak
 
 
 
-=================
-GREASY Kullanımı
-=================
-
 Görev Dosyasının Oluşturulması
 --------------------------------
 

@@ -17,107 +17,6 @@ TRUBA Kümesinden ARF Kümesine Geçiş Rehberi
         :text-align: center
 
 
-.. _kullanici-arayuzleri-sunucular:
-
-------------------------------------
-Kullanıcı Arayüzleri ve Kuyruklar
-------------------------------------
-
-Aşağıdaki tabloda, ARF kümesinde yer alan kullanıcı arayüz sunucularının adresleri ve IP bilgileri ile bu sunuculara iş göndermek için kullanılacak kuyruklar ve sunucu türleri hakkında detaylı bilgiler yer almaktadır. Bu bilgiler, kullanıcıların hangi sunucuların ve kuyrukların işlerine uygun olduğunu belirlemelerine yardımcı olacaktır. Daha fazla detaya :ref:`hesaplama kümeleri <hesaplama-kumeleri>`  sayfasından erişilebilir.
-
-
-.. list-table:: ARF kümesinin kullanıcı arayüz sunucuları
-   :widths: 25 25
-   :header-rows: 1
-   :align: center
-
-   * - Adres
-     - IP (tür)
-
-   * - arf-ui1.yonetim
-     - 172.16.6.11  (ssh)
-   * - arf-ui2.yonetim
-     - 172.16.6.12  (ssh)
-   * - arf-ui3.yonetim
-     - 172.16.6.13  (ssh)
-   * - arf-ui4.yonetim
-     - 172.16.6.14  (ssh)
-   * - arf-ui5.yonetim
-     - 172.16.6.15  (ssh)
-   * - openondemand.yonetim
-     - 172.16.6.20 (web / görsel)
-
-ARF kümesinde kuyrukların güncel durumuna ``sinfo`` komutu ile bakılabilmektedir. 
-
-Örneğin;
-
-.. code-block:: bash
-
-    sinfo -p orfoz
-
-Ayrıca kuyruk yapılandırması 
-
-.. code-block:: bash
-
-    scontrol show partition=kuyruk_ismi
-
-komutu ile kontrol edilebilir.
-
-.. list-table:: ARF kümesinde yer alacak kuyruklar ve sunucu türleri
-   :widths: 20 20 20 20 20 20
-   :header-rows: 1
-   :align: center
-
-
-   * - Kuyruk
-     - Sunucu Türü
-     - Çalışma süresi
-     - Çekirdek/Bellek 
-     - Sunucu Sayısı
-     - İşletim Sistemi
-
-   * - debug
-     - orfoz
-     - 4:00:00
-     - 112 çekirdek/256 Gbyte
-     - 100
-     - RockyLinux-9.2
-
-   * - orfoz
-     - orfoz
-     - 3-00:00:00
-     - 112 çekirdek/256 Gbyte
-     - 454
-     - RockyLinux-9.2
-
-   * - hamsi
-     - hamsi
-     - 3-00:00:00
-     - 56 çekirdek/190 Gbyte
-     - 144
-     - RockyLinux-9.2
-
-   * - barbun
-     - barbun
-     - 3-00:00:00
-     - 40 çekirdek/375 Gbyte
-     - 120
-     - RockyLinux-9.2
-
-   * - barbun-cuda
-     - barbun-cuda
-     - 3-00:00:00
-     - 40 çekirdek/375 Gbyte
-     - 24
-     - RockyLinux-9.2
-
-   * - akya-cuda
-     - akya-cuda
-     - 3-00:00:00
-     - 40 çekirdek/375 Gbyte
-     - 20
-     - RockyLinux-9.2
-
 .. _dosya-sistemi:
 
 ----------------
@@ -146,13 +45,12 @@ Ev dizinleri, kullanıcıların kullanacakları uygulamaları kurmaları ve kull
 
 ``/arf/scratch`` altında çalıştırılan işlerin sonuçları ivedilikle kontrol edilmeli, saklanması gerekmeyen dosyalar sistemden silinmeli, saklanması gerekenler kullanıcının kendi kişisel bilgisayarına indirilmelidir. Bazı dosyaların sonraki hesaplar için tekrar kullanılması gerekiyorsa ilgili dosyalar ``/arf/home/$USER`` dizinine taşınabilir ya da ``/arf/scratch`` altında bırakılabilirler. Ancak ``/arf/scratch`` dizinlerindeki dosyaların ömrünün en fazla 1 ay olduğu unutulmamalıdır.
 
-``/truba/home/$USER`` ve ``/truba/scratch/$USER`` dizinleri altındaki dosyalar ivedilikle temizlenmeli, ihtiyaç bulunmayan dosyalar silinmeli, saklanması gereken dosyalar kullanıcının kendi ev bilgisayarına indirilmelidir. ARF hesaplama kümesinde hesaplar sırasında kullanılacak veriler ``/arf/home/$USER`` ve ``/arf/scratch/$USER`` dizinlerine kopyalanabilir. Bu temizlik ve kopyalama işlemi ARF kümesinin kullanıcı arayüzü olan ``arf-ui`` sunucularında gerçekleştirilebilir.
 
 .. note::
 
   **Önemli Notlar:**
     - ``/truba/home/username`` dizini altındaki tüm dosyaların taşınmasına gerek yoktur. Lütfen sadece ihtiyacınız olan dosyaları taşıyınız. 
-    - ``/truba/scratch/username`` dizini artık kullanılmamalıdır. Buradaki önemli veriler kullanıcının kendi bilgisayarına indirilmelidir. Eğer daha sonra ARF kümesindeki sunucularda yapılacak hesaplamalarda kullanılması gereken veriler varsa, bu tür veriler eğer kota yetiyorsa ``/arf/home/username`` dizinine eğer kota yetmiyorsa ``/truba/home/username`` dizinine taşınmalı ve ``/truba/scratch/username``  boşaltılmalıdır. 
+    - ``/truba/scratch/username`` dizini artık kullanım dışıdır.
     - TRUBA ve ARF kümelerindeki dosya sistemlerinden hiç biri kalıcı bir depolama alanı değildir. Buradaki verilerin yedekleri alınmamaktadır. Verilerin yedeklenmesinden kullanıcıların kendileri sorumludur. Saklanması gereken her türlü veri kullanıcının kendi bilgisayarına indirilmelidir. TRUBA ve ARF'ta sadece daha sonraki hesaplar için ihtiyaç olunan veriler saklanmalıdır.
 
 

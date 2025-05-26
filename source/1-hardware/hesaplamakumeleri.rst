@@ -323,21 +323,13 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - 9000MB, 9500MB 
      - Kullanım Dışı
    * - 🟢 debug
-     - orfoz, hamsi, barbun, barbun-cuda, akya-cuda, orkinos
+     - orfoz, hamsi, barbun, barbun-cuda, akya-cuda
      - 238
      - 00-04:00:00
      - 1
      - 8000MB 
      - 9500MB
      - Aktif 
-   * - 🟢 interactive 
-     - levrekv2
-     - 14  
-     - 3-00:00:00 
-     - 1     
-     - 8000MB   
-     - 9000MB
-     - Aktif
    * - 🔑 smp
      - orkinos
      - 1
@@ -404,9 +396,6 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - Aktif
 
 
-.. warning::
-
-   ``Short`` ve ``mid1`` kurukları 1 Aralık 2021 tarihinde kapatılmıştır. Kısa süreli işlerinizi daha yeni nesil işlemcilere sahip olan ve daha çok sayıda sunucu içeren ``hamsi`` kuyruğuna gönderebilirsiniz. 
 
 ..
   ``mid2`` ve ``long`` kuyruklarına gönderilen işler sardalya ya da barbun sunucularının herhangi birinde çalışmaya başlayabilirler. Bu kuyruklara gönderilecek işlerin belli bir sunucu ailesi üzerinde çalışması isteniyorsa, betik dosyalarına aşağıdaki tanımlar yazılmalıdır: 
