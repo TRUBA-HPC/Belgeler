@@ -1,4 +1,4 @@
-.. _example_slurm:
+.. _slurm-betik:
 
 ==========================================
 Örnek SLURM Betik Dosyaları

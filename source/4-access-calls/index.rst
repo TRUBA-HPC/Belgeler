@@ -4,8 +4,8 @@
 EuroHPC ve Erişim Çağrıları
 =================================
 
-🚀 Güncel çağrılara ve eğitimlere aşağıdaki linkten ulaşabilirsiniz.
-====================================================================
+🚀 Güncel çağrılara ve eğitimlere aşağıdaki linklerden ulaşabilirsiniz.
+========================================================================
 
 .. raw:: html
 
@@ -34,8 +34,10 @@ Ayrıntılı bilgi için `EuroHPC Ortak Girişimi <https://eurohpc-ju.europa.eu/
 .. toctree::
     :maxdepth: 1
 
+    EuroHPC/access.rst
     EuroHPC/systems.rst
     EuroHPC/ffplus.rst
     EuroHPC/inno4scale.rst
     EuroHPC/ff4eurohpc_shape.rst
+    EuroHPC/Marenostrum5/index.rst
     

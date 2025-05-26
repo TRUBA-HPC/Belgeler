@@ -83,7 +83,15 @@ TRUBA kullanıcı şifrenizi değiştirmek için terminalde aşağıdaki komutu 
 Standart kullanıcı hesabı özellikleri
 --------------------------------------
 
-Her araştırmacıya kullanıcı adı ile birlikte aynı anda kullanılabilecek çekirdek miktarı, çekirdek saat kotası ve disk kotası ücretsiz olarak tanımlanmaktadır. Mevcut eğitim düzeyine göre tanımlanan kotalar aşağıda belirtilmektedir:
+Her araştırmacıya kullanıcı adı ile birlikte
+
+* aynı anda kullanılabilecek çekirdek miktarı,
+* çekirdek saat kotası ve
+* disk kotası
+
+tanımlanmaktadır.
+
+Mevcut eğitim düzeyine göre tanımlanan kotalar aşağıda belirtilmektedir:
 
 - *Lisans Öğrencileri:*  Danışmanları birlikte bir projeye dahil olmaları durumunda hesap açılmakta olup, sadece ilgili proje hesabının kaynak miktarlarından faydalanabilmektedirler.
 
@@ -136,6 +144,27 @@ Yeniden Sertifika Başvurusu Ne Zaman ve Nasıl Yapılır?
 Tüm araştırmacılara ve servislere verilen sertifika süresi 1(bir) yıldır. Bir yılın sonunda yeniden https://portal.truba.gov.tr adresinde yer alan Sertifika menüsünden başvuruda bulunabilirsiniz. 
 
 Not: Sertifika başvuruları 5 iş günü içerisinde cevaplanmaktadır. 
+
+
+
+.. toctree::
+   :maxdepth: 1
+
+   TRUBAtesekkur.rst
+
+
+-----------
+Yayınlar
+-----------
+
+TRUBA kaynaklarından faydalanılarak gerçekleştirilen bilimsel yayınların bir listesi bu alanda yer almaktadır. Yayınlar içerisinde arama yapılabilmektedir. Bu alanda yer alan yayınlar portal üyeleri tarafından eklenecek olup, kaynak tahsisi isteklerinde burada yer alan yayın listesinden faydalanılacaktır.
+
+``Yayınlar-> Yeni Yayın Ekle`` düğmesi kullanılarak, her portal üyesi kendisi ve/veya araştırma grubu için farklı yayın girişlerinde bulunabilir.
+
+
+TRUBA hesaplama kaynaklarının kullanıldığı tüm bilimsel çalışmalarda (makale, tez, bildiri, poster sunumu, v.b.) değerli araştırmacılarımızın :ref:`tesekkur-truba` sayfasında belirtildiği gibi Teşekkür ("Acknowledgement") metinlerine yayınlarında yer vermeleri gerekmektedir.
+
+
 
 
 ----------------------------

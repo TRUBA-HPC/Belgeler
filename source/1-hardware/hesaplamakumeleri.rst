@@ -37,95 +37,7 @@ TRUBA Kaynakları
      - SPECfp_rate_base2006
      - Teorik Gflops
      - Bellek
-     - Tanımı
-   * - 2003
-     - 128
-     - 1 çekirdek x 1 CPU
-     - Pentium IV 2.66 GHz
-     - *-*
-     - *-*
-     - 1 GB
-     - Kullanım Dışı
-   * - 2006
-     - 64 
-     - 2 çekirdek x 2 CPU
-     - Xeon 5110 1.60 GHz
-     - 17
-     - *-*
-     - 4 GB
-     - Kullanım Dışı
-   * - 2006
-     - 36
-     - 2 çekirdek x 2 CPU
-     - Xeon 5110 1.60 GHz
-     - 17
-     - *-*
-     - 4 GB
-     - Kullanım Dışı
-   * - 2007
-     - 30
-     - 4 çekirdek x 2 CPU
-     - Xeon X5355 2.66GHz
-     - 56.3 
-     - *-*
-     - 16 GB
-     - Kullanım Dışı
-   * - 2008
-     - 16
-     - 4 çekirdek x 2 CPU
-     - Opteron 2356 1.15GHz
-     - 81.3
-     - 36.8
-     - 16 GB
-     - Kullanım Dışı
-   * - 2009
-     - 154
-     - 4 çekirdek x 2 CPU
-     - Xeon X5550 2.67GHz
-     - 184
-     - 85.44
-     - 24 GB
-     - Kullanım Dışı
-   * - 2010
-     - 52
-     - 12 çekirdek x 4 CPU
-     - Opteron 6174 2.20GHz
-     - 574
-     - 422.4
-     - 128 GB
-     - Grid Sitesi&Federe Bulut
-   * - 2011
-     - 192
-     - 12 çekirdek x 2 CPU
-     - Opteron 6176 2.30GHz
-     - 294 
-     - 220.8  
-     - 128 GB  
-     - Kullanım Dışı
-   * - 2013
-     - 128 
-     - 8 çekirdek x 2 CPU
-     - Xeon E5-2690 2.90GHz 
-     - 487 
-     - 371.2 
-     - 256 GB
-     - Özel Küme 
-   * - 2014
-     - 48
-     - 12 çekirdek x 2 CPU
-     - Xeon E5-2680 v3 2.50GHz
-     - 763 
-     - 960
-     - 256 GB
-     - Kullanım Dışı
-   * - 2014
-     - 16
-     - 12 çekirdek x 2 CPU & 2 x Nvidia M2090
-     - Xeon E5-2680 v3 2.50GHz
-     - 763
-     - 960 Gflops & 2x1330 Gflops
-     - 256 GB & 2x 6GB GDR5
-     - Kullanım Dışı
+     - Tanımı 
    * - 2016
      - 1
      - 14 çekirdek x 16 CPU
@@ -265,7 +177,7 @@ Hamsi sunucuları 144 adet INSPUR NF5180M5 sunuculardan oluşmaktadır. Her bir 
 ^^^^^^^^^^^^^^^^^^^^
 Orfoz sunucuları 504 adet Lenovo ThinkSystem SR630 V3 sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet Intel(R) Xeon(R) Platinum 8480+ CPU @ 2.0GHz işlemci ve toplam 112 adet işlemci çekirdeği bulunmaktadır. Sunucular birbirlerine 200Gbps Infiniband ağ kartları ile bağlıdırlar. 
 
-Orfoz sunucularının yer aldığı ARF hesaplama kümesi hakkındaki ayrıntılı bilgilere  :ref:`arf-kumesi` sayfasından erişim sağlayabilirsiniz.
+Orfoz sunucularının yer aldığı ARF hesaplama kümesi hakkındaki ayrıntılı bilgilere  :ref:`arf-genel-bilgileri` sayfasından erişim sağlayabilirsiniz.
 
 .. _kolyoz-cuda:
 
@@ -281,7 +193,7 @@ Kolyoz sunucuları 24 adet `Lenovo ThinkSystem SD650-N V3 <https://www.lenovo.co
   - Driver Version: 565.57.01
   - CUDA Version: 12.7
 
-Kolyoz sunucularının yer aldığı ARF ACC hesaplama kümesi hakkındaki ayrıntılı bilgilere  :ref:`arf-acc-kumesi` sayfasından erişim sağlayabilirsiniz.
+Kolyoz sunucularının yer aldığı ARF ACC hesaplama kümesi hakkındaki ayrıntılı bilgilere  :ref:`arf-acc-genel-bilgiler` sayfasından erişim sağlayabilirsiniz.
 
 .. _palamut-cuda:
 
@@ -305,7 +217,7 @@ Palamut sunucuları 9 adet HP Proliant XL675d Gen10 Plus model sunuculardan olu�
 
   * kolyoz-cuda ve palamut-cuda hesaplama kümeleri için ayrı bir kullanıcı arayüzü kurulmuştur (``cuda-ui``). İlgili cuda kuyruklarına sadece ``cuda-ui`` arayüzü üzerinden iş gönderilebilecektir. 
 
-  *``cuda-ui`` kullanıcı arayüzü üzerinde Rocky Linux 9.2 işletim sistemi bulunmaktadır.
+  * cuda-ui kullanıcı arayüzü üzerinde Rocky Linux 9.2 işletim sistemi bulunmaktadır.
   
   * kolyoz-cuda ve palamut-cuda hesaplama kümelerine erişim izni olan proje kullanıcıları aktif bir OpenVPN bağlantıları mevcut iken ``cuda-ui`` arayüz sunucusuna ``172.16.6.16`` IP adresine veya ``cuda-ui.yonetim`` adresine ssh ile bağlanabilirler.
 
@@ -369,32 +281,24 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
 .. list-table:: Kuyruklar (partitions)
    :widths: 25 25 25 25 25 25 25 25
    :header-rows: 1
-
-   * - partitions 
-     - nodes
-     - #nodes
-     - max run time
-     - min core
-     - defMemPerCore 
-     - maxMemPerCore
-     - Bilgi
-   * - single
+   
+   * - Yıl
+     - Adet
+     - CPU/GPU
+     - İşlemci Modeli
+     - SPECfp_rate_base2006
+     - Teorik Gflops
+     - Bellek
+     - Tanımı
+   * - 🛑 single
      - levrekv2 
      - 8
-     - 15-00:00:00
+     - 3-00:00:00
      - 1
      - 9500MB
      - 10500MB  
      - Kullanım Dışı
-   * - debug
-     - orfoz, hamsi, barbun, barbun-cuda, akya-cuda, orkinos
-     - 238
-     - 00-04:00:00
-     - 1
-     - 8000MB 
-     - 9500MB
-     - Aktif
-   * - mid2
+   * - 🛑 mid2
      - barbun
      - 189
      - 08-00:00:00 
@@ -402,23 +306,39 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - 8000MB     
      - 9000MB
      - Kullanım Dışı
-   * - long
+   * - 🛑 sardalya
+     - sardalya
+     - 100   
+     - 3-00:00:00
+     - 4
+     - 8000MB
+     - 9000MB
+     - Kullanım Dışı 
+   * - 🛑 long
      - barbun
      - 189
-     - 15-00:00:00
+     - 3-00:00:00
      - 4  
      - 8000MB, 8500MB   
      - 9000MB, 9500MB 
      - Kullanım Dışı
-   * - interactive 
+   * - 🟢 debug
+     - orfoz, hamsi, barbun, barbun-cuda, akya-cuda, orkinos
+     - 238
+     - 00-04:00:00
+     - 1
+     - 8000MB 
+     - 9500MB
+     - Aktif 
+   * - 🟢 interactive 
      - levrekv2
      - 14  
-     - 15-00:00:00 
+     - 3-00:00:00 
      - 1     
      - 8000MB   
      - 9000MB
      - Aktif
-   * - smp
+   * - 🔑 smp
      - orkinos
      - 1
      - 3-00:00:00
@@ -426,15 +346,7 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - 17000MB  
      - 18400MB
      - Özel Kuyruk
-   * - sardalya
-     - sardalya
-     - 100   
-     - 15-00:00:00
-     - 4
-     - 8000MB
-     - 9000MB
-     - Kullanım Dışı
-   * - barbun 
+   * - 🟢 barbun 
      - barbun   
      - 119  
      - 03-00:00:00  
@@ -442,7 +354,7 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - 8500MB  
      - 9500MB
      - Aktif
-   * - barbun-cuda 
+   * - 🟢 barbun-cuda 
      - barbun-cuda 
      - 24  
      - 03-00:00:00  
@@ -450,7 +362,7 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - 8500MB    
      - 9500MB   
      - Aktif
-   * - akya-cuda
+   * - 🟢 akya-cuda
      - akya-cuda
      - 24  
      - 03-00:00:00 
@@ -458,15 +370,15 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - 8500MB   
      - 9500MB
      - Aktif
-   * - palamut-cuda
+   * - 🟢 palamut-cuda
      - palamut
      - 9  
      - 03-00:00:00
      - 16   
      - 7500MB  
      - 16384MB
-     - Özel Kuyruk 
-   * - hamsi  
+     - Aktif 
+   * - 🟢 hamsi  
      - hamsi 
      - 144  
      - 03-00:00:00      
@@ -474,7 +386,7 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - 3400MB 
      - 3400MB
      - Aktif
-   * - orfoz 
+   * - 🟢 orfoz 
      - orfoz 
      - 504
      - 03-00:00:00  
@@ -482,14 +394,15 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
      - 2000MB 
      - 2295MB
      - Aktif
-   * - kolyoz-cuda
+   * - 🟢 kolyoz-cuda
      - kolyoz
      - 24
      - 03-00:00:00  
      - 16  
      - 16GB 
      - 16GB
-     - YZ Çalışmaları
+     - Aktif
+
 
 .. warning::
 
@@ -527,7 +440,7 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
 
   Bu kuyruğa tek çekirdeklik (genelde seri) işler gönderilir. Toplam çekirdek sayısı 1'den fazla ise, iş başka bir kuyruğa gönderilmiş olsa bile, otomatik olarak bu kuyruğa yönlendirilir. 
 
-  Bu kuyruktaki herhangi bir işin çalışma süresi en fazla 15 gündür. 15 gün içinde tamamlanmamış işler sistem tarafından otomatik olarak sonlandırılmaktadır. 
+  Bu kuyruktaki herhangi bir işin çalışma süresi en fazla 3 gündür. 3 gün içinde tamamlanmamış işler sistem tarafından otomatik olarak sonlandırılmaktadır. 
 
   Bu kuyruk ile ilgili ayrıntılı bilgi
 
@@ -540,7 +453,7 @@ Her sunucu ailesinde, sunucu üzerindeki çekirdek sayısına ve bellek miktarı
 *Debug*
 ^^^^^^^^^
 
-Bu kuyruğa test amaçlı kısa süreli işler (öreneğin SLURM betik dosyanızın, kodunuzun doğru çalıştığından emin olmak için) gönderilir. Bu kuyruktaki herhangi bir işin çalışma süresi en fazla 15 dakikadır. 15 gün içinde tamamlanmamış işler sistem tarafından otomatik olarak sonlandırılmaktadır. 
+Bu kuyruğa test amaçlı kısa süreli işler (öreneğin SLURM betik dosyanızın, kodunuzun doğru çalıştığından emin olmak için) gönderilir. Bu kuyruktaki herhangi bir işin çalışma süresi en fazla 15 dakikadır. 3 gün içinde tamamlanmamış işler sistem tarafından otomatik olarak sonlandırılmaktadır. 
 
 Bu kuyruk ile ilgili ayrıntılı bilgi
 
@@ -657,7 +570,7 @@ komutu ile görülebilir.
 *Barbun-cuda*
 ^^^^^^^^^^^^^
 
-Her bir sunucuda 40 çekirdek ve 384GB bellek ayrıca 2'şer adet Nvidia P100 16GB GPU kartı bulunmaktadır. Kuyrukta işlerin en fazla çalışma süresi 15 gündür. Sistemin verimli kullanılabilmesi için gönderilecek işler en az 20 çekirdek ve 1 GPU talep etmelidir.
+Her bir sunucuda 40 çekirdek ve 384GB bellek ayrıca 2'şer adet Nvidia P100 16GB GPU kartı bulunmaktadır. Kuyrukta işlerin en fazla çalışma süresi 3 gündür. Sistemin verimli kullanılabilmesi için gönderilecek işler en az 20 çekirdek ve 1 GPU talep etmelidir.
 
 *Aynı sunucuda çalışmaya başlayan birden fazla iş aynı GPU kartını paylaşabilmektedir.*
 
@@ -672,7 +585,7 @@ komutu ile görülebilir.
 *Akya-cuda*
 ^^^^^^^^^^^
 
-Her bir sunucuda 40 çekirdek ve 384GB bellek ayrıca 4'er adet Nvidia V100 16GB GPU (NVLink) kartı bulunmaktadır. Kuyrukta işlerin en fazla çalışma süresi 15 gündür. Ayrıca sistemlerde scratch olarak kullanılmak üzere 1.4TB NVME disk /tmp dizinine bağlanmıştır. Yüksek I/O gerektiren işlerin /tmp dizininde çalıştırılması gerekmektedir.
+Her bir sunucuda 40 çekirdek ve 384GB bellek ayrıca 4'er adet Nvidia V100 16GB GPU (NVLink) kartı bulunmaktadır. Kuyrukta işlerin en fazla çalışma süresi 3 gündür. Ayrıca sistemlerde scratch olarak kullanılmak üzere 1.4TB NVME disk /tmp dizinine bağlanmıştır. Yüksek I/O gerektiren işlerin /tmp dizininde çalıştırılması gerekmektedir.
 
 İşlerde bellek sınırlaması kullanılmaktadır. Gönderilen işlerin sunucuların bellek sınırlamalarına uygun olarak gönderilmesi gerekmektedir. Bu kuyruk ile ilgili ayrıntılı bilgi
 

@@ -14,6 +14,6 @@ Bu belge, ARF kümesindeki sunucularda AMBER programının kurulumu ve kullanım
 .. toctree::
     :maxdepth: 1
 
-    Amber_install_TRUBA.rst
+ 
     Amber_slurm_TRUBA.rst
   

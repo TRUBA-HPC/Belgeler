@@ -1,4 +1,4 @@
-.. _Apptainer:
+.. _apptainer-kilavuzu:
 
 =========
 Apptainer

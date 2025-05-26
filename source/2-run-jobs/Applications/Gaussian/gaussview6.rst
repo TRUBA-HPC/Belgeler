@@ -16,6 +16,7 @@ ARF kümesinde Open OnDemand servisi (http://172.16.6.20) üzerinden GaussView 6
 ARF kümesine erişim ve de Open OnDemand servisini kullanmak için TRUBA VPN bağlantısının başarılı bir şekilde sağlanmış olması gerekmektedir. 
 
 * TRUBA VPN ile ilgili bilgilere ulaşmak için :ref:`open-vpn` sayfasını inceleyebilirsiniz.
+  
 * ARF kümesine bağlantı için :ref:`arf-baglanti` sayfasını inceleyebilirsiniz.
 
 
@@ -99,13 +100,13 @@ komutunu yazdığınızda GaussView 6 açılmaya başlayacaktır.
 .. image:: /assets/gaussian/ondemand-gview.png
    :align: center
    :width: 600px
+   
 Açılan GaussView 6 ekranından /arf/home/kullaniciadi dizininizde yer alan Gaussian input, output dosyalarını açıp analizlerinizi gerçekleştirebilir, yapılarınızı oluşturabilirsiniz.
 
 .. image:: /assets/gaussian/ondemand-gviewopenfile.png
    :align: center
    :width: 600px
 
-Eğer çalışma dosyalarınız /truba/home/kullaniciadi veya /truba/scratch/kullaniciadi dizinlerinde yer alıyorsa ilgili çalışma dizinlerinizi arf-ui1 veya arf-ui2 kullanıcı arayüzünde iken TRUBA dizininizden ARF dizininize kopyalamanız gerekmektedir. Ayrıntılı bilgi için :ref:`arf-truba-aktarim` sayfasındaki bilgileri inceleyebilirsiniz.
 
 
 

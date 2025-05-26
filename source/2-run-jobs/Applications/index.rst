@@ -10,7 +10,7 @@ Uygulamalar
     AMBER/index.rst
     Apptainer/Apptainer.rst
     Gaussian/index.rst
-    GREASY/greasy_kullanim.rst
+    GREASY/index.rst
     GROMACS/index.rst
     LAMMPS/lammps_truba.rst
     MATLAB/index.rst
