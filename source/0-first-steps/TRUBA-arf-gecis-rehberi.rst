@@ -7,8 +7,7 @@ TRUBA Kümesinden ARF Kümesine Geçiş Rehberi
 
 .. grid:: 3
    
-    .. grid-item-card:: :ref:`kullanici-arayuzleri-sunucular`
-        :text-align: center
+
     .. grid-item-card::  :ref:`dosya-sistemi`
         :text-align: center
     .. grid-item-card:: :ref:`yazilim-ve-kutuphaneler`
