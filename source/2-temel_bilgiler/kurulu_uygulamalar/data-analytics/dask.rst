@@ -1,4 +1,5 @@
-=============
+.. _dask-kilavuzu:
+
 Dask Kılavuzu
 =============
 

@@ -1,4 +1,4 @@
-.. _gpu:
+.. _gpu-kilavuzu:
 
 ===============
 GPU Kılavuzu
@@ -56,19 +56,9 @@ TRUBA altyapısındaki GPU kaynakları SLURM kaynak yöneticisi ile kullanılabi
     * barbun-cuda kümesi için 20*[GPU_SAYISI] (Bir sunucuda 2 adet P100 bulunmaktadır.)
     * akya-cuda kümesi için 10*[GPU_SAYISI] (Bir sunucuda 4 adet V100 bulunmaktadır.)
     * palamut-cuda kümesi için 16*[GPU_SAYISI] (Bir sunucuda 8 adet A100 bulunmaktadır.)
+    * kolyoz-cuda kümesi için 16*[GPU_SAYISI] (Bir sunucuda 4 adet H100 bulunmaktadır.)
 
 
 .. note::
 
-    palamut-cuda kümesinin kullanım izni ile ilgili bilgiler için lütfen :ref:`palamut-cuda` sayfasını inceleyiniz.
-
------------------------------------------------
-GPU Kullanımı için Hazırlanan Diğer Kılavuzlar
------------------------------------------------
-
-.. toctree::
-    :maxdepth: 1
-
-    ../deep-learning/index.rst
-    ../GROMACS/gromacs_gpu.rst
-    ../LAMMPS/lammps_gpu.rst
+    palamut-cuda ve kolyoz-cuda kümelerinin kullanım izni ile ilgili bilgiler için lütfen :ref:`palamut-cuda` sayfasını inceleyiniz.

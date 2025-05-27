@@ -10,7 +10,7 @@ Temel Bilgiler
     kaynak_yoneticisi.rst
     slurm_komutlari_ve_dosyalari.rst
     paralel_ve_seri_is_calistirma.rst
-    open-ondemand.rst
+    open_ondemand.rst
     monitoring_grafana.rst
     kurulu_uygulamalar/index.rst
     uygulama_kurulumu.rst

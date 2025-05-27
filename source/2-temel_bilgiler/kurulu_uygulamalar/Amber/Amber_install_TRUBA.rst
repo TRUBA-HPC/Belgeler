@@ -55,7 +55,7 @@ Amber programı kullanım kitapçığındaki standart `CMake prosedürünü <htt
         :text-align: center
 
  
- .. _amber_cpu:
+.. _amber_cpu:
 
 -------------------------------------------
 CPU İçeren Hesaplama Kümeleri İçin Kurulum
