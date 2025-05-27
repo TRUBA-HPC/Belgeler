@@ -1,8 +1,8 @@
 .. _mn5:
 
-==============================
+========================================
 MareNostrum 5 Süperbilgisayarı
-==============================
+========================================
 
 MareNostrum 5 (MN5), Avrupa Yüksek Başarımlı Hesaplama Ortak Girişimi (EuroHPC JU) tarafından geliştirilen ve Avrupa'nın en güçlü süperbilgisayarlarından biri olarak öne çıkan bir sistemdir. Barselona Süper Hesaplama Merkezi'nde (BSC-CNS) konumlandırılan MN5, bilimsel araştırmalar için önemli bir kaynak sunmaktadır.
 
@@ -13,9 +13,9 @@ Amaç ve Vizyon
 
 MareNostrum 5'in temel amacı, Avrupa'daki bilimsel araştırmaların ve yenilikçi teknolojilerin gelişimine katkıda bulunmaktır. Sistem, yüksek başarımlı hesaplamaların yaygınlaşmasını teşvik ederken, Avrupa'nın dijital egemenliğini güçlendirme vizyonuna da hizmet etmektedir. Bu kapsamda, araştırmacılara güçlü bir hesaplama altyapısı sunarak bilimsel keşiflerin önünü açmayı hedeflemektedir.
 
-=====================
+
 TRUBA Üzerinden Başvuru
-=====================
+-----------------------
 
 Türkiye'deki araştırmacılar (üniversiteler, kamu ve özel sektör), özellikle **İTÜ UHeM/TRUBA** altyapısını daha önce kullanmış gruplar, **"Pilot Erişim Başvurusu"** mekanizması ile bu güçlü kaynağa erişebilmektedir. Bu başvurular **20 Eylül 2025** tarihine kadar devam edecek olup, sonrasında daha geniş çaplı bir erişim çağrısı planlanmaktadır.
 

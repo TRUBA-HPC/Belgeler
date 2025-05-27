@@ -4,22 +4,37 @@ Temel Bilgiler
 ==============
 
 
-:ref:`Temel Linux Kursu <temel_linux_kursu>`
+.. :ref:`Temel Linux Kursu <temel_linux_kursu>`
 
-:ref:`Kaynak Yöneticisi <kaynak_yoneticisi>`
+.. :ref:`Kaynak Yöneticisi <kaynak_yoneticisi>`
 
-:ref:`Slurm Komutları ve Dosyaları <slurm_komutlari_ve_dosyalari>`
+.. :ref:`Slurm Komutları ve Dosyaları <slurm_komutlari_ve_dosyalari>`
 
-:ref:`Paralel ve Seri İş Çalıştırma <paralel_ve_seri_is_calistirma>`
+.. :ref:`Paralel ve Seri İş Çalıştırma <paralel_ve_seri_is_calistirma>`
 
-:ref:`OpenOnDemand <open-ondemand>`  
+.. :ref:`OpenOnDemand <open-ondemand>`  
 
-:ref:`Monitoring - Grafana <monitoring_grafana>`
+.. :ref:`Monitoring - Grafana <monitoring_grafana>`
 
-:ref:`Kurulu Uygulamalar <kurulu_uygulamalar>`
+.. :ref:`Kurulu Uygulamalar <kurulu_uygulamalar>`
 
-:ref:`Uygulama Kurulumu <uygulama_kurulumu>` 
+.. :ref:`Uygulama Kurulumu <uygulama_kurulumu>` 
 
-:ref:`Konteyner Kullanımı <konteyner_kullanimi>`
+.. :ref:`Konteyner Kullanımı <konteyner_kullanimi>`
 
-:ref:`GPU Kullanımı <gpu>`
+.. :ref:`GPU Kullanımı <gpu>`
+
+
+.. toctree::
+    :maxdepth: 1
+
+    temel_linux_kursu.rst
+    kaynak_yoneticisi.rst
+    slurm_komutlari_ve_dosyalari.rst
+    paralel_ve_seri_is_calistirma.rst
+    open-ondemand.rst
+    monitoring_grafana.rst
+    kurulu_uygulamalar.rst
+    uygulama_kurulumu.rst
+    konteyner_kullanimi.rst
+    gpu.rst
