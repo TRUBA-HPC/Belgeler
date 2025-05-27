@@ -13,6 +13,8 @@ ARDEB tarafından proje önerisi kabul edilmiş ve/veya ARDEB'e proje önerisi s
 
 :ref:`ardeb-hsbvsb-2025`
 
+:ref:`ardeb-hsbvsb-2024`
+
 Kamu/Özel Kurum Projeleri
 --------------------------
 
@@ -20,12 +22,16 @@ TÜBİTAK ve AB Projeleri kapsamında desteklenen, araştırma odaklı projesi k
 
 :ref:`ozelkurum-hsbvsb-2025`
 
+:ref:`ozelkurum-hsbvsb-2024`
+
 Özel Kurum ve Kuruluşlar Hizmet Bedelleri
 ------------------------------------------
 
 TRUBA kaynaklarından faydalanmak isteyen özel kurum ve kuruluşlar için belirlenen hizmet bedelleri aşağıdaki sayfalarda listelenmiştir.
 
 :ref:`ozel-hsbvsb-2025`
+
+:ref:`ozel-hsbvsb-2024`
 
 
 

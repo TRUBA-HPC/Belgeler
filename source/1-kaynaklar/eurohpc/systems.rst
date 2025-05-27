@@ -1,3 +1,5 @@
+.. _eurohpc_systems:
+
 =====================
 EuroHPC Sistemleri
 =====================

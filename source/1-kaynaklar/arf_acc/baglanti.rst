@@ -1,4 +1,4 @@
-.. _baglanti:
+.. _arf_acc_baglanti:
 
 ========
 Bağlantı

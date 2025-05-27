@@ -1,4 +1,4 @@
-.. _eurohpc-erisim:
+.. _eurohpc_erisim:
 
 ================================================
 EuroHPC Sistemlerine Erişim Modları ve Çağrılar

@@ -4,6 +4,13 @@
 Hesaplama Kümeleri
 ==================
 
+.. warning::
+
+   Bu dokümantasyon, MareNostrum 5 (MN5) resmi sayfasının belirli bölümleri Türkçeye çevrilerek **Haziran 2025** tarihinde hazırlanmıştır. Sistemde yapılan güncellemeler veya değişiklikler bu belgeye yansımamış olabilir. **En güncel ve doğrulanmış bilgiye ulaşmak için lütfen BSC'nin resmi MN5 belgelerine başvurunuz:**
+
+   https://www.bsc.es/supportkc/docs/MareNostrum5/intro/
+
+
 MareNostrum 5 süperbilgisayarı, farklı donanım yapılarına sahip iki ana bölümden oluşur: **Genel Amaçlı İşlem Kümesi (GPP)** ve **Hızlandırılmış GPU Kümesi (ACC)**. Bu iki küme, farklı hesaplama gereksinimlerine cevap verecek şekilde tasarlanmıştır.
 
 ## GPP (General Purpose Partition)

@@ -1,4 +1,4 @@
-.. _ai-dataintensive:
+.. _eurohpc_ai_dataintensive:
 
 ===============================================
 Yapay Zeka ve Veri Yoğun Uygulamalar Çağrısı

@@ -1,4 +1,4 @@
-.. _ffplus-opencall:
+.. _eurohpc_ffplus:
 
 ================
 FFPlus Çağrısı

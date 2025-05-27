@@ -1,4 +1,4 @@
-.. _ff4-eurohpc:
+.. _eurohpc_ff4eurohpc_shape:
 
 ===========
 FF4EuroHPC

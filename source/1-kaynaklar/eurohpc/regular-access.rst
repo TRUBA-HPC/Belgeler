@@ -1,4 +1,4 @@
-.. _regular-access:
+.. _eurohpc_regular_access:
 
 =======================
 Düzenli Erişim Çağrısı

@@ -1,4 +1,4 @@
-.. _hesaplama-kumeleri:
+.. _arf_acc_hesaplama-kumeleri:
 
 ==================
 Hesaplama Kumeleri

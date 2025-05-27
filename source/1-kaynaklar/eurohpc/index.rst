@@ -34,9 +34,8 @@ Ayrıntılı bilgi için `EuroHPC Ortak Girişimi <https://eurohpc-ju.europa.eu/
 .. toctree::
     :maxdepth: 1
 
-    access.rst
     systems.rst
-    ffplus.rst
+    access.rst
     inno4scale.rst
     ff4eurohpc_shape.rst
 

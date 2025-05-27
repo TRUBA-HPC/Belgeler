@@ -17,38 +17,29 @@ Eğitimler
 Bu bölümde, TRUBA ve ilgili alanlarda verilen eğitim ve seminerlerin başlıkları ve kısa açıklamaları sunulmaktadır. Her bir başlık altında, ilgili eğitimin temel içeriği özetlenmiştir.
 
 
-:ref:`Kuantum Hesaplama <qcomp-index>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Kuantum hesaplama ve hibrit ağlar üzerine temel bilgiler ve uygulamalar.
+- :ref:`Kuantum Hesaplama <qcomp-index>`
+    Kuantum hesaplama ve hibrit ağlar üzerine temel bilgiler ve uygulamalar.
 
-:ref:`Keras <keras-index>`
-^^^^^^^^^^^^^^^^^^^^^^^^^
-Keras ile makine öğrenmesi ve derin öğrenme modellerinin TRUBA üzerinde eğitilmesi.
+- :ref:`Keras <keras-index>`
+    Keras ile makine öğrenmesi ve derin öğrenme modellerinin TRUBA üzerinde eğitilmesi.
 
-:ref:`CUDA <cuda-index>`
-^^^^^^^^^^^^^^^^^^^^^^^^^
-GPU programlama ve CUDA ile paralel hesaplama teknikleri.
+- :ref:`CUDA <cuda-index>`
+    GPU programlama ve CUDA ile paralel hesaplama teknikleri.
 
-:ref:`PyTorch <pytorch-index>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-PyTorch ile derin öğrenme, tensör işlemleri ve uygulama örnekleri.
+- :ref:`PyTorch <pytorch-index>`
+    PyTorch ile derin öğrenme, tensör işlemleri ve uygulama örnekleri.
 
-:ref:`Büyük Veri <big-data-index>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Büyük veri işleme, analiz ve dağıtık hesaplama uygulamaları.
+- :ref:`Büyük Veri <big-data-index>`
+    Büyük veri işleme, analiz ve dağıtık hesaplama uygulamaları.
 
-:ref:`OpenMPI <openmpi-index>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Yüksek performanslı hesaplama için MPI ile paralel programlama ve iletişim.
+- :ref:`OpenMPI <openmpi-index>`
+    Yüksek performanslı hesaplama için MPI ile paralel programlama ve iletişim.
 
-:ref:`OpenMP <openmp-index>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Çok çekirdekli işlemcilerde paralel programlama için OpenMP kullanımı.
+- :ref:`OpenMP <openmp-index>`
+    Çok çekirdekli işlemcilerde paralel programlama için OpenMP kullanımı.
 
-:ref:`Hesaplamalı Temel Bilimler <compscience-index>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Bilimsel hesaplamalar ve GROMACS gibi yazılımlarla temel bilimler uygulamaları.
+- :ref:`Hesaplamalı Temel Bilimler <compscience-index>`
+    Bilimsel hesaplamalar ve GROMACS gibi yazılımlarla temel bilimler uygulamaları.
 
-:ref:`Hesaplamalı Akışkanlar Dinamiği (HAD) <cfd-index>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Akışkanlar dinamiği simülasyonları ve ilgili yazılımlar.
+- :ref:`Hesaplamalı Akışkanlar Dinamiği (HAD) <cfd-index>`
+    Akışkanlar dinamiği simülasyonları ve ilgili yazılımlar.

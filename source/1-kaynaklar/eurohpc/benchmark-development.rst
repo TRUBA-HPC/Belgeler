@@ -1,4 +1,4 @@
-.. _benchmark-development:
+.. _eurohpc_benchmark_development:
 
 ==================================================================
 Kıyaslama (Benchmark) ve Geliştirme (Development) Çağrıları

@@ -4,6 +4,13 @@
 BSC Komutları
 =====================
 
+.. warning::
+
+   Bu dokümantasyon, MareNostrum 5 (MN5) resmi sayfasının belirli bölümleri Türkçeye çevrilerek **Haziran 2025** tarihinde hazırlanmıştır. Sistemde yapılan güncellemeler veya değişiklikler bu belgeye yansımamış olabilir. **En güncel ve doğrulanmış bilgiye ulaşmak için lütfen BSC'nin resmi MN5 belgelerine başvurunuz:**
+
+   https://www.bsc.es/supportkc/docs/MareNostrum5/intro/
+
+
 BSC destek ekibi, süperbilgisayar kullanıcılarının sistemle daha verimli çalışabilmesi için bazı yardımcı komutlar sağlamaktadır. Bu komutlar sistem kaynaklarının takibi, proje kullanımı, kuyruklar ve yazılım paketleri hakkında bilgi edinmek için kullanılabilir.
 
 Aşağıda en sık kullanılan BSC komutlarının kısa bir özeti yer almaktadır:
