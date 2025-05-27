@@ -6,15 +6,15 @@ ARF
 
 .. grid:: 3
 
-    .. grid-item-card:: :ref:`arf-baglanti`
+    .. grid-item-card:: :ref:`arf_baglanti`
         :text-align: center
-    .. grid-item-card:: :ref:`arf-kullanici-arayuz`
+    .. grid-item-card:: :ref:`arf_kullanici_arayuz`
         :text-align: center
-    .. grid-item-card:: :ref:`arf-depolama-kaynaklari`
+    .. grid-item-card:: :ref:`arf_depolama_kaynaklari`
         :text-align: center
-    .. grid-item-card:: :ref:`arf-kuyruk-bilgisi`
+    .. grid-item-card:: :ref:`arf_kuyruk_bilgisi`
         :text-align: center
-    .. grid-item-card:: :ref:`arf-hesaplama-kumeleri`
+    .. grid-item-card:: :ref:`arf_hesaplama_kumeleri`
         :text-align: center
 
 2023 yılı sonunda MODSİMMER Veri Merkezi'nde kurulumu gerçekleştirilen ve ARF ismini verdiğimiz yeni hesaplama kümemiz test kullanımına açılmış bulunmaktadır. Sistem hakkında bilgi icin :ref:`arf-kumesi` kısmından erişebilirsiniz.

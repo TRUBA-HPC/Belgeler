@@ -1,4 +1,4 @@
-.. _arf_acc_kullanici-arayuz:
+.. _arf_acc_kullanici_arayuz:
 
 ========
 Kullanıcı Arayüzü

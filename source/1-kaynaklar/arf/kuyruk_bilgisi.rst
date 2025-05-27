@@ -1,4 +1,4 @@
-.. _arf-kuyruk-bilgisi:
+.. _arf_kuyruk_bilgisi:
 
 ========
 Kuyruk Bilgisi

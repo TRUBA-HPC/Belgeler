@@ -6,15 +6,15 @@ ARF-ACC
 
 .. grid:: 3
 
-    .. grid-item-card:: :ref:`arf-acc-baglanti`
+    .. grid-item-card:: :ref:`arf_acc_baglanti`
         :text-align: center
-    .. grid-item-card:: :ref:`arf-acc-kullanici-arayuz`
+    .. grid-item-card:: :ref:`arf_acc_kullanici_arayuz`
         :text-align: center
-    .. grid-item-card:: :ref:`arf-acc-depolama-kaynaklari`
+    .. grid-item-card:: :ref:`arf_acc_depolama_kaynaklari`
         :text-align: center
-    .. grid-item-card:: :ref:`arf-acc-kuyruk-bilgisi`
+    .. grid-item-card:: :ref:`arf_acc_kuyruk_bilgisi`
         :text-align: center
-    .. grid-item-card:: :ref:`arf-acc-hesaplama-kumeleri`
+    .. grid-item-card:: :ref:`arf_acc_hesaplama_kumeleri`
         :text-align: center
 
 ARF ACC hesaplama kümesinde bulunan ``kolyoz`` ismini atadığımız `Lenovo ThinkSystem SD650-N V3 <https://www.lenovo.com/us/en/p/servers-storage/servers/supercomputing/thinksystem-sd650-n-v3-high-density-server/len21ts0028>`_ hesaplama sunucularından oluşan ``kolyoz-cuda`` kuyruğunun genel özellikleri ve bir sunucunun üstten görünümü aşağıdaki gibidir:

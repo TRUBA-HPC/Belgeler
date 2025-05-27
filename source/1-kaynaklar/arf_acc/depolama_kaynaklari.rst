@@ -1,4 +1,4 @@
-.. _arf_acc_depolama-kaynaklari:
+.. _arf_acc_depolama_kaynaklari:
 
 ====================================
 Dosya Sistemleri
