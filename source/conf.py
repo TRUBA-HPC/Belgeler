@@ -75,16 +75,18 @@ html_theme = 'sphinx_book_theme'
 # so a file named "default.css" will overwrite the builtin "default.css".
 
 
-html_logo = '_static/TRUBA_doc-footer.png'
+#html_logo = '_static/TRUBA_doc-footer.png'
+html_logo = '_static/truba_logo.png'
 
 html_static_path = ['_static']
 
 html_theme_options = {
-    "show_toc_level": 1,
-    "body_max_width": "1200px",
-    "home_page_in_toc" : True,
-    "max_navbar_depth" : 2,
-    
+    "search_bar_text": "Ara...",
+    "search_bar_position": "navbar",
+    "search_bar_placeholder": "Dokümanlarda ara...",
+    "search_show_context": True,
+    "search_highlight_language": "python",
+    "search_highlight_style": "monokai"
 }
 
 def setup(app):
