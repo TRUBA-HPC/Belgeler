@@ -7,6 +7,7 @@ Temel Bilgiler
     :maxdepth: 1
 
     temel_linux_kursu.rst
+    yuksek-performansli-dosya-sistemleri.rst
     kaynak_yoneticisi.rst
     slurm_komutlari_ve_dosyalari.rst
     paralel_ve_seri_is_calistirma.rst

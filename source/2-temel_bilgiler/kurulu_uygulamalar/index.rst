@@ -7,6 +7,7 @@ Kurulu Uygulamalar
 .. toctree::
    :maxdepth: 1
 
+   Python - Conda - Miniconda/index.rst
    deep-learning/index.rst
    data-analytics/index.rst   
    Cvmfs/index.rst
@@ -18,7 +19,6 @@ Kurulu Uygulamalar
    Gromacs/index.rst
    GREASY/index.rst
    Gaussian/index.rst
-   Python - Conda - Miniconda/index.rst
    Espresso/index.rst
    Amber/index.rst
    Matlab/index.rst

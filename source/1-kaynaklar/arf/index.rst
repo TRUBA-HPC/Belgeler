@@ -4,6 +4,7 @@
 ARF
 =====
 
+
 .. grid:: 3
 
     .. grid-item-card:: :ref:`arf_baglanti`
@@ -17,12 +18,22 @@ ARF
     .. grid-item-card:: :ref:`arf_hesaplama_kumeleri`
         :text-align: center
 
+
 2023 yılı sonunda MODSİMMER Veri Merkezi'nde kurulumu gerçekleştirilen ve ARF ismini verdiğimiz yeni hesaplama kümemiz test kullanımına açılmış bulunmaktadır. Sistem hakkında bilgi icin :ref:`arf-kumesi` kısmından erişebilirsiniz.
+
+.. toctree::
+   :hidden:
+
+   baglanti.rst
+   kullanici_arayuz.rst
+   depolama_kaynaklari.rst
+   kuyruk_bilgisi.rst
+   hesaplama_kumeleri.rst
 
 
 .. image:: /assets/arf/arf.jpg
 
-ARF hesaplama kümesi için ``arf-ui1`` ve ``arf-ui2`` olmak üzere iki tane sunucu, kullanıcı arayüzü olarak hizmete sunulmustur. Bu hesaplama kümesinde bulunan ``orfoz`` ismini atadığımız hesaplama sunucularında iş koşturmak için arf kullanıcı arayüzleri kullanılacaktır. 
+ARF hesaplama kümesi için ``arf-ui(1-2-3-4-5)`` olmak üzere birçok sunucu kullanıcı arayüzü olarak hizmete sunulmuştur. Bu hesaplama kümesinde bulunan ``orfoz`` ismini atadığımız hesaplama sunucularında iş koşturmak için arf kullanıcı arayüzleri kullanılacaktır. 
 
 Kümenin genel özellikleri aşağıdaki gibidir:
 
