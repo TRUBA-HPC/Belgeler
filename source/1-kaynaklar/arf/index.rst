@@ -19,15 +19,14 @@ ARF
         :text-align: center
 
 
-2023 yılı sonunda MODSİMMER Veri Merkezi'nde kurulumu gerçekleştirilen ve ARF ismini verdiğimiz yeni hesaplama kümemiz test kullanımına açılmış bulunmaktadır. Sistem hakkında bilgi icin :ref:`arf-kumesi` kısmından erişebilirsiniz.
-
 .. toctree::
    :hidden:
+   :caption: ARF Rehberi
 
    baglanti.rst
    kullanici_arayuz.rst
-   depolama_kaynaklari.rst
    kuyruk_bilgisi.rst
+   depolama_kaynaklari.rst
    hesaplama_kumeleri.rst
 
 

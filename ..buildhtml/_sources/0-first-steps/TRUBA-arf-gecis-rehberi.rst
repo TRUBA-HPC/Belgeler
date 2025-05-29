@@ -146,13 +146,13 @@ Ev dizinleri, kullanıcıların kullanacakları uygulamaları kurmaları ve kull
 
 ``/arf/scratch`` altında çalıştırılan işlerin sonuçları ivedilikle kontrol edilmeli, saklanması gerekmeyen dosyalar sistemden silinmeli, saklanması gerekenler kullanıcının kendi kişisel bilgisayarına indirilmelidir. Bazı dosyaların sonraki hesaplar için tekrar kullanılması gerekiyorsa ilgili dosyalar ``/arf/home/$USER`` dizinine taşınabilir ya da ``/arf/scratch`` altında bırakılabilirler. Ancak ``/arf/scratch`` dizinlerindeki dosyaların ömrünün en fazla 1 ay olduğu unutulmamalıdır.
 
-``/truba/home/$USER`` ve ``/truba/scratch/$USER`` dizinleri altındaki dosyalar ivedilikle temizlenmeli, ihtiyaç bulunmayan dosyalar silinmeli, saklanması gereken dosyalar kullanıcının kendi ev bilgisayarına indirilmelidir. ARF hesaplama kümesinde hesaplar sırasında kullanılacak veriler ``/arf/home/$USER`` ve ``/arf/scratch/$USER`` dizinlerine kopyalanabilir. Bu temizlik ve kopyalama işlemi ARF kümesinin kullanıcı arayüzü olan ``arf-ui`` sunucularında gerçekleştirilebilir.
+``/truba/home/$USER`` dizinindeki ihtiyaç bulunmayan dosyalar silinmeli, saklanması gereken dosyalar kullanıcının kendi ev bilgisayarına indirilmelidir. ARF hesaplama kümesinde hesaplar sırasında kullanılacak veriler ``/arf/home/$USER`` ve ``/arf/scratch/$USER`` dizinlerine kopyalanabilir. Bu temizlik ve kopyalama işlemi ARF kümesinin kullanıcı arayüzü olan ``arf-ui`` sunucularında gerçekleştirilebilir.
 
 .. note::
 
   **Önemli Notlar:**
     - ``/truba/home/username`` dizini altındaki tüm dosyaların taşınmasına gerek yoktur. Lütfen sadece ihtiyacınız olan dosyaları taşıyınız. 
-    - ``/truba/scratch/username`` dizini artık kullanılmamalıdır. Buradaki önemli veriler kullanıcının kendi bilgisayarına indirilmelidir. Eğer daha sonra ARF kümesindeki sunucularda yapılacak hesaplamalarda kullanılması gereken veriler varsa, bu tür veriler eğer kota yetiyorsa ``/arf/home/username`` dizinine eğer kota yetmiyorsa ``/truba/home/username`` dizinine taşınmalı ve ``/truba/scratch/username``  boşaltılmalıdır. 
+    - ``/truba/scratch/username``  dizini kapatılmıştır.
     - TRUBA ve ARF kümelerindeki dosya sistemlerinden hiç biri kalıcı bir depolama alanı değildir. Buradaki verilerin yedekleri alınmamaktadır. Verilerin yedeklenmesinden kullanıcıların kendileri sorumludur. Saklanması gereken her türlü veri kullanıcının kendi bilgisayarına indirilmelidir. TRUBA ve ARF'ta sadece daha sonraki hesaplar için ihtiyaç olunan veriler saklanmalıdır.
 
 

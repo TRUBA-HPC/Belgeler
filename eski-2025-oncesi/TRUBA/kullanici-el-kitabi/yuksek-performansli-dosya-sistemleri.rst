@@ -81,21 +81,21 @@ ARF hesaplama kümesi için `/arf/home`, `/arf/scratch` ve `/truba/home` dosya s
      - Bellek: 100GB  |br| Dosya Sayısı: 100K(inode) 
      - Araştırmacının önemli gördüğü, |br| kalıcı dosyalarının bulunacağı |br| hızlı ana dizin.
      - Uygulama kurulumları, |br| Betik dosyaları, |br| İşlerin girdi dosyaları  |br| Yeniden kullanılabilir, |br| Küçük boyutlu çıktı dosyalarının bulunacağı dizindir. |br| Herhangi bir kota arttırımı söz konusu değildir.  |br| Proje kotaları ayrıca belirlenmektedir.
-     - arf-ui1  |br| arf-ui2 |br| OpenOndemand |br| orfoz |br| cuda-ui |br| kolyoz
+     - arf-ui1(2,3,4,5)|br| OpenOndemand |br| orfoz |br| cuda-ui |br| kolyoz
 
    * - `/arf/scratch`
      - Scratch dizini
      - Bellek: 1TB  |br| Dosya Sayısı: 200K(inode) 
      - Araştırmacının işlerini, |br| çalıştırmak için kullanacağı |br| hızlı ana dizin
      - Çalışan işler için kullanılacak dizin, |br| Çalışan işin geçici dosyalarının kullanabileceği dizin, |br| Çalışan işlerin çıktı dosyalarının depolanabileceği dizindir. |br| Bu dizin içerisinde uzun süreli veri depolaması gerçekleştirilemez. |br| Dosyalar periyodik olarak sistem tarafından otomatik silinecektir. |br| Herhangi bir kota arttırımı ve süre uzatımı söz konusu değildir. |br| Proje kotaları ayrıca belirlenmektedir.
-     - arf-ui1  |br| arf-ui2 |br| OpenOndemand |br| orfoz |br| cuda-ui |br| kolyoz
+     - arf-ui1(2,3,4,5)  |br| arf-ui2 |br| OpenOndemand |br| orfoz |br| cuda-ui |br| kolyoz
 
    * - `/truba/home`
      - Depolama
      - Bellek: 2TB  |br| Dosya Sayısı: 100K(inode) 
      - Araştırmacının verilerini |br| geçici olarak depolayacağı dizin
      - `/arf/scratch` dizini |br| otomatik olarak temizleneceği için; |br| girdi ve çıktı dosyalarının |br| proje süresi boyunca depolanabileceği ev dizinidir.
-     - arf-ui1  |br| arf-ui2 |br| OpenOndemand |br| orfoz |br| cuda-ui |br| kolyoz
+     - arf-ui1(2,3,4,5)  |br| arf-ui2 |br| OpenOndemand |br| orfoz |br| cuda-ui |br| kolyoz
 
 .. _truba-dosya-sistemi:
 
@@ -103,16 +103,12 @@ ARF hesaplama kümesi için `/arf/home`, `/arf/scratch` ve `/truba/home` dosya s
 TRUBA Dosya Sistemi
 ----------------------
 
-TRUBA hesaplama kümesi için `/truba/home` ve `/truba/scratch`  dosya sistemleri hakkında detaylı içerik tablo içerisinde belirtilmiştir. Bu dosya sistemlerine bağlı bulunan suncular üzerinden iş gönderilebilir. İşler çalışırken sadece beliritlen dosya sistemlerine erişimi mevcuttur. 
+TRUBA hesaplama kümesi için `/truba/home`  dosya sistemi hakkında detaylı içerik tablo içerisinde belirtilmiştir. Bu dosya sistemlerine bağlı bulunan suncular üzerinden iş gönderilebilir.  
 
-.. warning:: 
-
- `/truba/home` ve `/truba/scratch` dizinleri için kota hesaplaması bu iki dizinin toplamı üzerinden gerçekleştirilmektedir.
 
 .. note:: 
   
-   `barbun, hamsi, barbun-cuda, akya-cuda, palamut-cuda` kümelerinin işletim sistemleri güncellenerek bu sunucular ARF kümesine dahil edilecektir. Bu güncelleme takvimi ayrıca duyurulacaktır. Güncelleme gerçekleştiğinde, tüm sunucular için ev dizini `/arf/home`, scratch dizini `/arf/scratch` ve depolama dizini `/truba/home` olacaktır.  Bu geçiş sonrasında `/truba/scratch` dizini kullanımdan kaldırılacaktır.
-
+  Barbun, hamsi, barbun-cuda, akya-cuda, palamut-cuda kümelerinin işletim sistemleri başarıyla güncellenmiş ve bu sunucular ARF kümesine dahil edilmiştir. Güncelleme sonrasında tüm sunucular için ev dizini /arf/home, scratch dizini /arf/scratch ve depolama dizini /truba/home olarak belirlenmiştir. Ayrıca, /truba/scratch dizini kullanımdan kaldırılmıştır.
 .. list-table:: TRUBA Hesaplama Kümeleri Dosya Sistemleri 
    :widths: 10 15 25 25 25 25
    :header-rows: 1
@@ -130,14 +126,8 @@ TRUBA hesaplama kümesi için `/truba/home` ve `/truba/scratch`  dosya sistemler
      - Bellek: 2TB  |br| Dosya Sayısı: 100K(inode) 
      - Araştırmacının verilerini |br| geçici olarak depolayacağı dizin.
      - `/truba/scratch` dizini |br| otomatik olarak temizleneceği için; |br| girdi ve çıktı dosyalarının |br| proje süresi boyunca depolanabileceği ev dizinidir.
-     - barbun1 |br| OpenOndemand |br| barbun |br| hamsi |br| barbun-cuda |br| akya-cuda |br| palamut-cuda
+     - arf-ui(1,2,3,4,5) |br| OpenOndemand |br|
 
-   * - `/truba/scratch`
-     - Scratch dizini
-     - 
-     - Araştırmacının işlerini, |br| çalıştırmak için kullanacağı |br| hızlı ana dizin
-     - Çalışan işler için kullanılacak dizin, |br| Çalışan ışın geçici dosyalarının kullanabileceği dizin, |br| Çalışan işlerin çıktı dosyalarının depolanabileceği dizindir. |br| Bu dizin içerisinde uzun süreli veri depolaması gerçekleştirilemez. |br| Dosyalar periyodik olarak sistem tarafından otomatik silinecektir. 
-     - barbun1 |br| OpenOndemand |br| barbun |br| hamsi |br| barbun-cuda |br| akya-cuda |br| palamut-cuda
 
 
 .. _sunucu-kuyruklar:
@@ -145,8 +135,6 @@ TRUBA hesaplama kümesi için `/truba/home` ve `/truba/scratch`  dosya sistemler
 ---------------------------------
 Sunucular ve Kullanıcı Arayüzleri
 ---------------------------------
-
-ARF ve TRUBA hesaplama kümelerinde bulunan sunuculara iş gönderebilmek için bağlı bulundukları kullanıcı arayüzleri kullanılmalıdır. İki sistem için merkezi kurulumlar ve erişebildikleri dosya sistemleri farklıdır. Hangi sunucuların veya kuyrukların işleriniz için uygun olduğu bilgisi :ref:`hesaplama kümeleri <hesaplama-kumeleri>`  sayfasından detaylı bilgilere erişilerek karar verilebilir.
 
 
 .. list-table:: ARF ACC Sistemi
@@ -185,49 +173,12 @@ ARF ve TRUBA hesaplama kümelerinde bulunan sunuculara iş gönderebilmek için 
      - `/arf/scratch`
      - `/truba/home`
      - `/tmp` - 800GB
-     - arf-ui1  |br| arf-ui2 |br| OpenOndemand
+     - arf-ui1  |br| arf-ui2  |br| arf-ui3  |br| arf-ui4  |br| arf-ui5 |br| OpenOndemand 
 
+.. note:: 
 
-.. list-table:: TRUBA Sistemi
-   :widths: 10 15 25 25 25
-   :header-rows: 1
-   :align: center
+  /truba/home dizininizde yer alan çalışma dosyalarınıza ARF kullanıcı arayüz sunucuları üzerinden doğrudan erişim sağlayabilirsiniz.
 
-   * - Sunucu Türü
-     - Ev Dizini
-     - Scratch
-     - Yerel
-     - Kullanıcı Arayüzü
-
-   * - barbun
-     - `/truba/home`
-     - `/truba/scratch`
-     - `/tmp` - 1TB
-     - barbun1 |br| OpenOndemand
-
-   * - hamsi
-     - `/truba/home`
-     - `/truba/scratch`
-     - `/tmp` - 1TB
-     - barbun1 |br| OpenOndemand
-
-   * - barbun-cuda
-     - `/truba/home`
-     - `/truba/scratch`
-     - `/tmp` - 1TB
-     - barbun1
-
-   * - akya-cuda
-     - `/truba/home`
-     - `/truba/scratch`
-     - `/tmp` - 1.4TB
-     - barbun1
-
-   * - palamut-cuda
-     - `/truba/home`
-     - `/truba/scratch`
-     - `/tmp` - 800GB |br| `/localscratch` - 12TB
-     - palamut-ui
 
 .. _dosya-sayisi:
 
@@ -241,7 +192,7 @@ Kullanıcının ev dizinlerinin (`../home/$USER` ve `../scratch/$USER`) boyutund
 
   lfs quota -gh $USER /truba
 
-komutu ile kullandığı dosya sayısını(inode) öğrenebilir. Ayrıca terminalden ``barbun1`` kullanıcı arayüzüne bağlantı sağladıktan sonra login ekranına dökülen kota bilgilerine ``dosya kotası`` da % olarak eklenmiştir. Bu değerin %100'un altında olması gerekmektedir.
+komutu ile kullandığı dosya sayısını(inode) öğrenebilir. Ayrıca terminalden ``arf-ui`` kullanıcı arayüzüne bağlantı sağladıktan sonra login ekranına dökülen kota bilgilerine ``dosya kotası`` da % olarak eklenmiştir. Bu değerin %100'un altında olması gerekmektedir.
 
 .. _inode-cozum-tavsiyeleri:
 
@@ -253,14 +204,14 @@ Dosya Sayısı için çözüm önerileri
 
   Kullanıcılarımızdan 
 
-    * kullandıkları uygulamaların merkezi versiyonu varsa (module vb.) merkezi versiyonlarını kullanmalarını
-    * merkezi kurulumda olmayan uygulamaların konteyner teknolojilerinden faydalanarak tek bir imaj dosyası ile konteyner oluşturmaları(bkz. :ref:`konteyner kullanımı <Apptainer>`),
-    * merkezi versiyonu olmayan ve konteyneri bulunmayan uygulamaların kendi ev dizinlerine kurulması gerekiyorsa, kurulum sonrasında kaynak dosyaları silmelerini
-    * yapay zeka veya diğer alanlarda sıklıkla kullanılan ilgili veri setleri herhangi bir lisans sözleşmesi gerektirmeden doğrudan sayfa üzerinden açık olarak paylaşılan bir veri seti ise kullanıcı ev dizinleri yerine ``grid-teknik@ulakbim.gov.tr`` ile iletişime geçerek merkezi :ref:`veri-setleri` dizine oluşturulması için bildirilmesi,
-    * `/arf` ve `/truba` depolama sistemlerine anaconda, miniconda, conda  veya herhagi bir Python kütüphanesi kesinlikle yüklenmemelidir, pip ve türevleri kullanılmamalıdır. Küçük boyutlu yüzbinlerce dosyadan oluştuğu için, her kullanıcının kendi ev dizinine kurduğu bu tip kütüphaneler dosya sistemlerinin performanslarını büyük ölçüde düşürmekte ve çalışan işlerin yavaşlamasına neden olduğundan özellikle ``Anaconda`` kullanıcılarının merkezi Anaconda kurulumunu kullanmalarını (bkz. :ref:`anaconda-miniconda-kurulum`)* 
-    * ihtiyaç duymadıkları her türlü dosyayı silmelerini
-    * saklanması gereken dosyaları kendi bilgisayarlarına indirmelerini
-    * sadece kısa zaman icinde kullanacakları dosyaları sistemde tutmalarını
-    * herhangi bir sebepten silemedikleri dosya ve dizinleri :ref:`tar <tar-kullanimi>` komutu ile arşivleyerek tek bir dosya haline getirmeleri ve mümkünse ilgili arşiv dosyalarını kendi bilgisayarlarına indirmelerini 
+    * Kullandıkları uygulamaların merkezi versiyonu varsa (module vb.) merkezi versiyonlarını kullanmalarını
+    * Merkezi kurulumda olmayan uygulamaların konteyner teknolojilerinden faydalanarak tek bir imaj dosyası ile konteyner oluşturmaları(bkz. :ref:`konteyner kullanımı <Apptainer>`),
+    * Merkezi versiyonu olmayan ve konteyneri bulunmayan uygulamaların kendi ev dizinlerine kurulması gerekiyorsa, kurulum sonrasında kaynak dosyaları silmelerini
+    * Yapay zeka veya diğer alanlarda sıklıkla kullanılan ilgili veri setleri herhangi bir lisans sözleşmesi gerektirmeden doğrudan sayfa üzerinden açık olarak paylaşılan bir veri seti ise kullanıcı ev dizinleri yerine ``grid-teknik@ulakbim.gov.tr`` ile iletişime geçerek merkezi veri setleri dizine oluşturulması için bildirilmesi,
+    * `/arf` ve `/truba` depolama sistemlerine anaconda, miniconda, conda  veya herhagi bir Python kütüphanesi kesinlikle yüklenmemelidir, pip ve türevleri kullanılmamalıdır. Küçük boyutlu yüzbinlerce dosyadan oluştuğu için, her kullanıcının kendi ev dizinine kurduğu bu tip kütüphaneler dosya sistemlerinin performanslarını büyük ölçüde düşürmekte ve çalışan işlerin yavaşlamasına neden olduğundan özellikle ``Anaconda`` kullanıcılarının merkezi Anaconda kurulumunu kullanmaları ve
+    * İhtiyaç duymadıkları her türlü dosyayı silmelerini
+    * Saklanması gereken dosyaları kendi bilgisayarlarına indirmelerini
+    * Sadece kısa zaman icinde kullanacakları dosyaları sistemde tutmalarını
+    * erhangi bir sebepten silemedikleri dosya ve dizinleri -tar komutu ile arşivleyerek tek bir dosya haline getirmeleri ve mümkünse ilgili arşiv dosyalarını kendi bilgisayarlarına indirmelerini 
 
   önemle rica etmekteyiz.

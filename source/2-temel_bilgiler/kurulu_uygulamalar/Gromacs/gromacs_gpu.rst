@@ -3,21 +3,21 @@ GROMACS Programının GPU Destekli Derlenmesi
 ===============================================
 
 GROMACS programını GPU destekli olarak iki şekilde kurabiliriz. Bunlardan ilki hiç module yüklemeden, derleme yapmadan Yüksek Başarımlı Hesaplama' da 
-en çok tercih edilen **Singularity** container kullanmaktır. İkincisi ise TRUBA' da mevcut modüllerin yüklenmesi ile yapılan derlemedir. Aşağıdaki kurulum
+en çok tercih edilen **Apptainer** container kullanmaktır. İkincisi ise TRUBA' da mevcut modüllerin yüklenmesi ile yapılan derlemedir. Aşağıdaki kurulum
 öğreticisinde iki şekilde de gösterilecektir.
 
 ---------------------------------------------------
 Singularity Container Kullanarak GROMACS Kullanımı
 ---------------------------------------------------
 
-TRUBA kuyruklarında **Singularity** kullanarak Gromacs kapsayıcısını ev dizininize yeni bir dizin oluştururak içerisine kayıt ediniz. Bunun için aşağıda verilen 
+TRUBA kuyruklarında **Apptainer** kullanarak Gromacs kapsayıcısını ev dizininize yeni bir dizin oluştururak içerisine kayıt ediniz. Bunun için aşağıda verilen 
 kod satırlarını terminalinize yazınız.
 
 .. code-block:: bash
 
    mkdir gromacs-gpu
    cd gromacs-gpu
-   singularity build gromacs-2021.sif docker://nvcr.io/hpc/gromacs:2021
+   apptainer build gromacs-2021.sif docker://nvcr.io/hpc/gromacs:2021
 
 .. warning:: Daha üst versiyonlarını kontrol etmek için linki verilen sayfaya bakabilirsiniz: https://ngc.nvidia.com/catalog/containers/hpc:gromacs
 
@@ -69,15 +69,11 @@ Fakat daha öncesinde çalışan ve derlememize engel olacak bir module varsa ç
 Gerekli ortamlar için aşağıdaki komut satırını terminalinizden uygulayınız. 
 
 .. code-block:: bash
-   
-   source /truba/sw/centos7.9/comp/intel/oneapi-2021.2/setvars.sh  
-   module load centos7.9/comp/cmake/3.18.0 
-   module load centos7.9/comp/gcc/7 
-   module load centos7.9/lib/cuda/11.4
-   export CC=mpiicc CXX=mpiicpc
-   cmake .. -DCMAKE_C_COMPILER=mpiicc  -DCMAKE_CXX_COMPILER=mpiicpc -DGMX_MPI=on  -DGMX_SIMD=AVX_512 -DGMX_BUILD_OWN_FFTW=mkl  
-   -DGMX_GPU=CUDA -DCUDA_TOOLKIT_ROOT_DIR=/truba/sw/centos7.9/lib/cuda/11.4 
-   -DCMAKE_INSTALL_PREFIX=/truba/home/kullanici_adi/gromacs-derleme/gromacs-2021.3/bin
+
+   Cmake, CUDA ve GCC verisyonlarınızın kurmak istediğiniz GROMACS versiyonu ile uyumuna dikkat ediniz. 
+   `module av` komutu ile sistemdeki mevcut modülleri görebilirsiniz.
+
+
 
 **4.**
 Bütün ortamlar yüklendikten sonra aşaıdaki komut satırlarını sırasıyla terminalinize yazarak kurulumu tamamlayabilirsiniz.

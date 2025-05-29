@@ -61,14 +61,14 @@ Conda sanal ortamına kurulum yapmak uzun sürdüğü için bir ``sbatch`` kodu 
     #SBATCH -c 28
     #SBATCH --time=1:00:00
 
-    hostname
-    eval "$(/truba/home/$USER/miniconda3/bin/conda shell.bash hook)"
+    module load miniconda3
+    
 
-    module load centos7.9/lib/cuda/11.0
+    module load lib/cuda/12.4 
 
-    export CUDA_HOME=/truba/sw/centos7.9/lib/cuda/11.0
+    export CUDA_HOME=/arf/sw/modulefiles/lib/cuda/12.4
     export HOROVOD_CUDA_HOME=$CUDA_HOME
-    export HOROVOD_NCCL_HOME=/truba/home/$USER/miniconda3/envs/horovod-test
+    export HOROVOD_NCCL_HOME=/arf/home/$USER/miniconda3/envs/horovod-test
     export HOROVOD_NCCL_LINK=SHARED
     export HOROVOD_GPU_OPERATIONS=NCCL
 
@@ -94,11 +94,11 @@ Kurulumu interaktif olarak :doc:`cuda kümelerinde <../GPU/index>` test edebilir
 
 .. code-block:: bash
 
-    eval "$(/truba/home/$USER/miniconda3/bin/conda shell.bash hook)"
-    module load centos7.9/lib/cuda/11.0
-    export CUDA_HOME=/truba/sw/centos7.9/lib/cuda/11.0
+    module load miniconda3
+    module load lib/cuda/12.4 
+    export CUDA_HOME=/arf/sw/modulefiles/lib/cuda/12.4
     export HOROVOD_CUDA_HOME=$CUDA_HOME
-    export HOROVOD_NCCL_HOME=/truba/home/$USER/miniconda3/envs/horovod-test
+    export HOROVOD_NCCL_HOME=/arf/home/$USER/miniconda3/envs/horovod-test
     export HOROVOD_NCCL_LINK=SHARED
     export HOROVOD_GPU_OPERATIONS=NCCL
     conda activate horovod-test
@@ -171,18 +171,19 @@ Tek sunucu, çok sayıda GPU
     echo $SLURM_JOB_NODELIST
     echo $SERVER1
 
-    eval "$(/truba/home/$USER/miniconda3/bin/conda shell.bash hook)"
+    module load miniconda3
+    module load lib/cuda/12.4 
 
-    export CUDA_HOME=/truba/sw/centos7.9/lib/cuda/11.0
+    export CUDA_HOME=/arf/sw/modulefiles/lib/cuda/12.4
     export HOROVOD_CUDA_HOME=$CUDA_HOME
-    export HOROVOD_NCCL_HOME=/truba/home/$USER/miniconda3/envs/horovod-gpu
+    export HOROVOD_NCCL_HOME=/arf/home/$USER/miniconda3/envs/horovod-test
     export HOROVOD_NCCL_LINK=SHARED
     export HOROVOD_GPU_OPERATIONS=NCCL
     
     conda activate horovod-test
 
     horovodrun -np $SLURM_NTASKS -H $SERVER1:8 \ 
-	    python /truba/home/$USER/horovod/examples/pytorch/pytorch_synthetic_benchmark.py
+	    python /arf/home/$USER/horovod/examples/pytorch/pytorch_synthetic_benchmark.py
 
 .. note::
 
@@ -245,13 +246,15 @@ Tek sunucu, çok sayıda GPU
     echo $SERVER3
     echo $SERVER4
 
-    eval "$(/truba/home/$USER/miniconda3/bin/conda shell.bash hook)"
+    module load miniconda3 
+    module load lib/cuda/12.4 
 
-    export CUDA_HOME=/truba/sw/centos7.9/lib/cuda/11.0
+    export CUDA_HOME=/arf/sw/modulefiles/lib/cuda/12.4
     export HOROVOD_CUDA_HOME=$CUDA_HOME
-    export HOROVOD_NCCL_HOME=/truba/home/$USER/miniconda3/envs/horovod-gpu
+    export HOROVOD_NCCL_HOME=/arf/home/$USER/miniconda3/envs/horovod-test
     export HOROVOD_NCCL_LINK=SHARED
     export HOROVOD_GPU_OPERATIONS=NCCL
+    
     conda activate horovod-test
 
     horovodrun -np $SLURM_NTASKS -H $SERVER1:8,$SERVER2:8,$SERVER3:8,$SERVER4:8 \ 

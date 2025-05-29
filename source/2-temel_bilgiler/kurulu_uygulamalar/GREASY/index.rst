@@ -1,4 +1,3 @@
-.. _greasy-kilavuzu:
 
 =================
 GREASY Kılavuzu

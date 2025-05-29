@@ -13,7 +13,8 @@ GPU Kaynağı Talep Etme
 TRUBA altyapısındaki GPU kaynakları SLURM kaynak yöneticisi ile kullanılabilir. GPU kaynağı bulunan kümelerde ``–-gres=gpu:n`` tanımı ile bu kaynaklar talep edilir.
 
 .. note::
-    ``–-gres=gpu:n`` tanımındaki ``n`` sayısı her bir sunucuda kullanılacak GPU sayısını belirtir. Kümelerdeki sunucular üzerinde farklı sayıda GPU bulunduğu için bu tanımlamanın işi göndereceğiniz kümeye göre yapılması gerekmektedir. GPU kaynağı bulunan kümeler için :doc:`hesaplama kümeleri belgesine <../../TRUBA/kullanici-el-kitabi/hesaplamakumeleri>` bakınız.
+    ``--gres=gpu:n`` ifadesindeki ``n`` değeri, her bir sunucuda kullanılacak GPU sayısını belirtir. Kümelerde yer alan sunucularda farklı sayıda GPU bulunabileceği için bu değerin, işinizi göndereceğiniz kümeye uygun olarak belirlenmesi gerekir. GPU kaynağı bulunan kümeler hakkında daha fazla bilgi için bkz. `:arfhesaplama_kumeleri:`.
+
 
 ``sbatch`` ile gönderilmek üzere hazırlanan iş betiği örneği:
 

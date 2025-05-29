@@ -1,4 +1,3 @@
-.. _genelkurulum-kilavuzu:
 
 ========================================
 TRUBA'da Uygulama/Kütüphane Kurulumu

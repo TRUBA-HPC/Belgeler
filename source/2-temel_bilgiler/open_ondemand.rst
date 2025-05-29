@@ -1,6 +1,5 @@
 .. _open_ondemand:
 
-========================
 Open OnDemand Arayüzü
 ========================
 
@@ -12,7 +11,7 @@ Open OnDemand **web tabanlı** bir kullanıcı arayüzü servisidir. Bu arayüz,
     Open OnDemand kullanıcılar için pek çok operasyonu kolaylaştırmasına ve pek çok yeni özellik sağlamasına rağmen doğru ve verimli bir şekilde kullanabilmek için tüm kullanıcıların temel linux kullanım bilgisine sahip olması şarttır. Ayrıca Open OnDemand'i kullanabilmek için kullanıcıların daha önce TRUBA kullanım deneyimlerinin olması ve burada bahsedilen kavramları biliyor olmaları gerekmektedir.
 
 Open OnDemand Erişim
-========================
+----------------------
 
 TRUBA'da hizmet veren Open OnDemand servisine https://172.16.6.20 adresinden ulaşılabilmektedir. İnteraktif arayüz ile ilgili güncel bağlantı bilgilerine :ref:`arf-baglanti` sayfasından erişebilirsiniz. Bu servise şimdilik sadece OpenVPN üzerinden sisteme bağlı kullanıcılar erişebilmektedir. 
 
@@ -27,9 +26,9 @@ Web arayüz sunucusuna bağlantı için kullanılan kullanıcı adı ve parolan�
 
 .. _grafik-ekran:
 
-===========================
+
 Grafik Ekran Bağlantısı 
-===========================
+------------------------
 
 TRUBA’da hizmet veren Open OnDemand kullanıcı arayüzü servisi üzerinden ``Desktop`` talep ederek grafik ekran gerektiren uygulamaları çalıştırabilirsiniz. Girdi (input) dosyalarını aracı programlarla hazırlayan ya da işin çıktısını lokal bilgisayarına aktarmadan doğrudan sunucu üzerinde görmek isteyen kullanıcılar bu yöntemi tercih edebilirler. İlgili aracı programları kullanıcıların kendi ev diiznlerine kurmaları gerekmektedir (``/arf/home/kullaniciadi``)
 
@@ -39,7 +38,7 @@ Open OnDemand servisini kullanmak için TRUBA VPN bağlantısının başarılı 
 
 
 Open OnDemand Desktop
-======================
+----------------------
 
 ARF kümesi Open OnDemand servisine internet tarayıcınızı kullanarak http://172.16.6.20 adresinden ulaşabilirsiniz. Karşınıza gelen ekranda TRUBA kullanıcı adı ve şifre bilginizi girmeniz gerekmektedir.
 
@@ -49,9 +48,9 @@ Bundan sonraki adımda interaktif masaüstü talebinde bulunmanız gerekmektedir
 
 .. _sshXforward:
 
-================
+
 ssh X-forwarding
-================
+-----------------
 
 Arayüz sunucularına grafik ekran bağlantısı gerçekleştirerek (X-forwarding) görsel uygulamalar çalıştırmak mümkündür. 
 

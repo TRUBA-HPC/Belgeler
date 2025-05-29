@@ -37,6 +37,10 @@ ARF hesaplama kümesi erişim adresleri şu şekildedir:
     - arf-ui4.yonetim
     - arf-ui4.yonetim
     - 172.16.6.14
+  * - ssh
+    - arf-ui5.yonetim
+    - arf-ui4.yonetim
+    - 172.16.6.15
 
   * - web
     - openondemand.yonetim

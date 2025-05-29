@@ -67,4 +67,3 @@ Kullandığınız işlemciye göre kurulum yapmak için aşağıdaki sayfaları 
 
     mac_openvpn.rst
     linux_openvpn.rst
-    windows_openvpn.rst

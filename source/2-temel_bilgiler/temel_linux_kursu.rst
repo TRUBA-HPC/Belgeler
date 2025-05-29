@@ -1,5 +1,3 @@
-.. _sik_kullanilan_linux_komutlari:
-
 =================================================
 TRUBA Sisteminde Çok Kullanılan Linux Komutları 
 =================================================

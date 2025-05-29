@@ -94,13 +94,7 @@ Burada send komutu ile önce "run-QA.sh” dosyasındaki ilk soru için “1” 
 
     module purge
 
-    module load centos7.3/comp/gcc/7
-    module load centos7.3/lib/openmpi/4.0.1-gcc-7.0.1
-    module load centos7.3/comp/python/3.6.5-gcc
-    module load centos7.3/lib/cuda/10.1
-
-    module load centos7.3/app/plumed/2.7.2-openmpi-4.0.1-python-3.6.5-gcc-7-GOLD-CUDA
-    module load centos7.3/app/gromacs/2021-openmpi-4.0.1-python-3.6.5-gcc-7-GOLD-CUDA
+    module load apps/gromacs/2024.1-oneapi2024
 
     export OMP_NUM_THREADS=1
 

@@ -1,6 +1,5 @@
 .. _yuksek-performansli-dosya-sistemleri:
 
-====================================
 Yüksek Performanslı Dosya Sistemleri
 ====================================
 

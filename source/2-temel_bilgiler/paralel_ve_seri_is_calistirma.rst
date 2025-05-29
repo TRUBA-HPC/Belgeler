@@ -1,8 +1,8 @@
 .. _paralel_ve_seri_is_calistirma:
 
 
-Seri ve Paralel Bölgeler
-========================
+Seri ve Paralel İş Çalıştırma
+==============================
 
 Bir algoritma bir problemi çözmek için takip edilen adımlardan oluşur. Somut bir örnek vermek gerekirse bir araba nakil bandını düşünebiliriz. Nakil bandındaki her adım arabayı oluşturmak için bir işlem teşkil eder. Bu işlemler parça ekleme veya düzeltme olarak düşünülebilir. Bu işlemleri doğru sonuç alınacak şekilde sıraya koymak ve mümkünse bu işlemleri hızlandırmak büyük önem teşkil eder. 
 

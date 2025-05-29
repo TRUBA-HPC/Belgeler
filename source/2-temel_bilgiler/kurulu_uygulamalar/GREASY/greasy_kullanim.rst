@@ -1,6 +1,6 @@
 .. _greasy-kilavuzu:
 
-=================
+
 GREASY Kullanımı
 =================
 
