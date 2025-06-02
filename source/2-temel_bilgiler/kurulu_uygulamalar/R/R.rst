@@ -468,7 +468,7 @@ Tabloda varsayılan parametreler kullanılarak GCC ile derlenmiş R ve Intel ile
                 exit
 
 
-SLURM ayarlamaları için :ref:`Temel SLURM Komutları<basic_slurm_commands>`, :ref:`SLURM Betik Özellikleri <slurm-betik>` ve :ref:`Örnek SLURM Betik Dosyaları <example_slurm>` ziyaret edebilirsiniz.
+SLURM ayarlamaları için :ref:`basic_slurm_commands` ziyaret edebilirsiniz.
 
     
     
