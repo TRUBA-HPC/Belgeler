@@ -100,7 +100,7 @@ Sistemde bulunan kurulumlari ``module av`` ile listeleyebilirsiniz. Temelde, con
 
     **Hangi kuyruk için hangi platfomu seçmeliyiz?**
 
-    İlgili komut çalıştırıldıktan sonra ``conda info`` ve ``conda list`` ile sanal ortam bilgisine ve içerisinde bulunan paketlerin versiyonlarına erişim sağlayabilirsiniz. Bu bilgiler ile birlikte :ref:`hesaplama-kumeleri` altinda sunucu bilgilerinden ihtiyacınıza göre hangi platformu hangi kuyruk ile kullanmanız gerektiğine karar verebilirsiniz.
+    İlgili komut çalıştırıldıktan sonra ``conda info`` ve ``conda list`` ile sanal ortam bilgisine ve içerisinde bulunan paketlerin versiyonlarına erişim sağlayabilirsiniz. Bu bilgiler ile birlikte :ref:`arf_hesaplama_kumeleri` altinda sunucu bilgilerinden ihtiyacınıza göre hangi platformu hangi kuyruk ile kullanmanız gerektiğine karar verebilirsiniz.
 
 .. _bashrc_ekleme:
 
@@ -131,7 +131,7 @@ Python ve Konteyner
 Konteyner Oluşturma 
 -------------------
 
-Merkezi Python ortamlarını kullanmak istemeyen kullanıcılar, kendi ortamlarını oluşturmak için ``Docker`` ya da ``Apptainer (Singularity)`` konteynerlerini kullanabilirler. Bu konteynerlerin kullanımı detaylı olarak :ref:`Apptainer-kilavuzu` sayfasında anlatılmıştır.
+Merkezi Python ortamlarını kullanmak istemeyen kullanıcılar, kendi ortamlarını oluşturmak için ``Docker`` ya da ``Apptainer (Singularity)`` konteynerlerini kullanabilirler. Bu konteynerlerin kullanımı detaylı olarak :ref:`Apptainer` sayfasında anlatılmıştır.
 
 Aşağıda, ``/arf/sw/containers/miniconda3`` dizininde yer alan ``miniconda3-container.sif`` varsayılan konteyneri üzerinden, gerekli paketlerin kurulumu ve kullanıcıya özel konteynerin oluşturulması adımları belirtilmiştir.
 
@@ -153,14 +153,19 @@ Süreç; Kopyala - Aç - Yaz - Kapat - Kullan adımlarını içerir.
         apptainer shell --no-home --writable miniconda3-user
 
 3. Yazma:
-    - Conda ile:
+   
+- Conda ile::
+
     .. code-block:: bash
 
-          conda install -c conda-forge numpy pandas matplotlib seaborn scikit-learn
-    - Pip ile:
+        conda install -c conda-forge numpy pandas matplotlib seaborn scikit-learn
+
+- Pip ile::
+
     .. code-block:: bash
 
-          python -m pip install teaspoon 
+        python -m pip install teaspoon
+
 
 4. Çıkış:
     .. code-block:: bash

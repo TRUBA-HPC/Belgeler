@@ -17,7 +17,7 @@ Matriks-Matriks Çarpımında Veri Erişim Modeli
 
 Genel bir matriks-matriks çarpım işlemindeki bellek erişim modeli aşağıdaki görselde modellenmiştir.
 
-.. image:: ../../../../assets/cuda/04/03/01.PNG
+.. image:: ../../../assets/cuda/04/03/01.PNG
    :width: 400
    :align: center
 
@@ -32,7 +32,7 @@ Yukardaki görselde gözüken **M** matriksindeki satırlar bütünü (görselde
 **N** matriksindeki sütunlar bütünü (görselde dış çizgiler arasında kalan kalın alan) evrensel bellekte bulunmakatadır. 
 Bu satır ve sütunların bölmelere ayrılarak fazlar halinde hesaplanmasına bölmeli (ing., tiled) matriks-matriks çarpımı denir. 
 
-.. image:: ../../../../assets/cuda/04/03/02.PNG
+.. image:: ../../../assets/cuda/04/03/02.PNG
    :width: 400
    :align: center   
 

@@ -19,7 +19,7 @@ Bu gibi paralel hesaplamalarda genellikle uç durumları kontrol edilmek zorunda
 Bu noktada aklımıza **kontrol dağılımının** bu gibi uç durum kontrollerini ne kadar kritik kılacağı gelecektir. 
 Çünkü bu gibi uç durumlar **kontrol dağılmasına** sebep olabilir.
 
-.. image:: ../../../../assets/cuda/05/02/01.png
+.. image:: ../../../assets/cuda/05/02/01.png
    :width: 450
    :align: center
 
@@ -29,7 +29,7 @@ Bu noktada aklımıza **kontrol dağılımının** bu gibi uç durum kontrolleri
 Örnek: Bölmeli matrix çarpımı ve Kontrol Dağılması
 ---------------------------------------------------
 
-.. image:: ../../../../assets/cuda/05/02/02.png
+.. image:: ../../../assets/cuda/05/02/02.png
    :width: 400
    :align: center
 

@@ -14,7 +14,7 @@ CUDA Paralelleşmesi ve İş Parçacıkları
 
 Veri Paralelleşmesi
 -------------------
-.. image:: ../../../../assets/cuda/02/02/01.jpg
+.. image:: ../../../assets/cuda/02/02/01.jpg
    :width: 600
    :align: center
 
@@ -26,7 +26,7 @@ CUDA Hesaplama Modeli
 ---------------------
 İşlemci ve bir veya birden fazla cihazdan oluşan bir sistemdeki kod akışını aşağıdaki görselde görebilirsiniz.
 
-.. image:: ../../../../assets/cuda/02/03/01.png
+.. image:: ../../../assets/cuda/02/03/01.png
    :width: 600
    :align: center
 
@@ -46,7 +46,7 @@ Aynı **örgü** içinde çalışan iş parçacıkları aynı **çekirdek** kodu
 (bkz: biraz önce bahsedilen *Tek Program Çoklu Veri* yapısı). CUDA ekosisteminde (ve başlatılan her çekirdek kodunda) her iş parçacığının indisi bulunmaktadır 
 ve bu indisleri kullanarak iş parçacıkları arasında verinin nasıl dağıtılacağını ayarlayabiliriz. 
 
-.. image:: ../../../../assets/cuda/02/03/02.png
+.. image:: ../../../assets/cuda/02/03/02.png
    :width: 500
    :align: center
 
@@ -61,7 +61,7 @@ Bu değerin hesaplanmasında kullanılan diğer iki değerin ne anlama geldiğin
 CUDA İş Parçacıkları bloklar halinde gruplanırlar. Aşağıdaki görselde *n* adet CUDA İş Parçacığı Bloğu görülmektedir. 
 Bu örnekte, her blokta 256 adet iş parçığı olacak şekilde bir konfigürasyon yapılmıştır. 
 
-.. image:: ../../../../assets/cuda/02/03/03.png
+.. image:: ../../../assets/cuda/02/03/03.png
    :width: 600
    :align: center
 
@@ -98,7 +98,7 @@ Dolayısıyla birbirleri ile sadece evrensel hafıza üzerinden haberleşebilirl
    Çok boyutlu blok veya iş parçacığı kullanılan uygulamalarda **blockdim.y**, **blockDim.z** gibi değerler **evrensel indis** hesaplamasında kullanılabilir. 
    Çok boyutlu blok yapısı içeren örnekler sonraki bölümlerde bulunabilir.  
    
-   .. image:: ../../../../assets/cuda/02/03/04.png
+   .. image:: ../../../assets/cuda/02/03/04.png
       :width: 400
       :align: center
    

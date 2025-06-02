@@ -14,14 +14,6 @@ Bu materyalde kullanılan örneklerde ``python 3.8.11``, ``conda 4.10.3``, ``ten
 
 **Tensorflow** platformunun TRUBA üzerinde nasıl aktif hale getirileceği :ref:`deep-learning-virtual-env` bölümünde anlatılmıştır.
 
-.. toctree::
-    :maxdepth: 2
-    :titlesonly:
-    :caption: Keras ile Makine Öğrenmesi Modellerinin Oluşturulması ve Eğitilmesi
-
-    build/data_load_preprocess.rst
-    build/build_model.rst
-    build/train.rst
 
 .. toctree::
     :maxdepth: 2

@@ -12,7 +12,7 @@ Greasy varsayılan olarak bir yapılandırma dosyası ile kolayca yapılandırı
 
 Mevcut durumda TRUBA'daki ARF hesaplama kümesinde yer alan orfoz sunucularında farklı görevleri yürütmeniz gerektiğinde ilgili yazılımı kullanabilirsiniz. 
 
-* ARF kümesine bağlantı için :ref:`arf-baglanti` sayfasını inceleyebilirsiniz.
+* ARF kümesine bağlantı için :ref:`arf_baglanti` sayfasını inceleyebilirsiniz.
 
 Terminalden ARF kullanıcı arayüzüne bağlantı sağladıktan sonra  
 
@@ -45,7 +45,7 @@ komutunu yazdığınızda ARF kümesinde kurulu olan temel programlar listelenec
 
 .. note::
 
-    /arf/sw/scripts/greasy dizini altında yer alan örnek SLURM betik dosyasını ve *.txt uzantılı olarak verilen iş dosyasını inceleyebilirsiniz.
+    /arf/sw/scripts/greasy dizini altında yer alan örnek SLURM betik dosyasını ve *.txt* uzantılı olarak verilen iş dosyasını inceleyebilirsiniz.
 
 
 

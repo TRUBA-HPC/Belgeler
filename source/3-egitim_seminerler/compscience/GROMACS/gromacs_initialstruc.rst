@@ -189,7 +189,7 @@ Solvate, hücreye kaç tane su molekülü eklendiğini takip eder ve yapılan de
 
 ``sol.gro`` dosyası VMD'de açıldığında ise:
 
-.. image:: ../../../../assets/compmatscience-gromacs-education/solgro_vmd.png
+.. image:: ../../../assets/compmatscience-gromacs-education/solgro_vmd.png
    :align: center
    :width: 300px
 
@@ -209,19 +209,19 @@ Grommp, bir ``.tpr`` dosyası oluşturmak için ``.mdp`` (moleküler dinamik par
 http://www.mdtutorials.com/gmx/lysozyme/Files/ions.mdp
 
 
-.. image:: ../../../../assets/compmatscience-gromacs-education/gmx_ions.png
+.. image:: ../../../assets/compmatscience-gromacs-education/gmx_ions.png
    :align: center
    :width: 300px
 
 Linkteki bu verilerin kopyalayın ve bir dosya oluşturmak için terminale ``nano ions.mdp`` kodunu girerek bir dosya oluşturun:
 
-.. image:: ../../../../assets/compmatscience-gromacs-education/gmx-solvent_topol.png
+.. image:: ../../../assets/compmatscience-gromacs-education/gmx-solvent_topol.png
    :align: center
    :width: 300px
 
 Ve açılan dosyaya ``CTRL+v`` ile yapıştırın ve sayfanın altında çıkan ``kaydedilsin mi?`` uyarısını ``Y``  ve ``Enter`` diyerek onaylayın. Çıktı dosyanızda ``ions.mdp`` olarak görebilirsiniz.  
 
-.. image:: ../../../../assets/compmatscience-gromacs-education/gmx_ions_tpr.png
+.. image:: ../../../assets/compmatscience-gromacs-education/gmx_ions_tpr.png
    :align: center
    :width: 300px
 

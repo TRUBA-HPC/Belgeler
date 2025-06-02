@@ -27,13 +27,13 @@ DRAM içerisindeki veriye ulaşım önce satırın seçilmesi ile başlar. 4096 
 İstenilen satır seçildiğinde o satırda bulunan bütün bitler algılayıcı devreler ile okunur ve bu okunan 4096 bit arasından hangi bit grubunun istendiği son bir 
 adres seçimi ile belirlenir. Tipik bir DRAM temel birimini aşağıda görebilirsiniz.
 
-.. image:: ../../../../assets/cuda/06/01/01.png
+.. image:: ../../../assets/cuda/06/01/01.png
    :width: 400
    :align: center
 
 Basitleştirilmiş bir örnek üzerinden ilerlemek gerekirse:
 
-.. image:: ../../../../assets/cuda/06/01/02.png
+.. image:: ../../../assets/cuda/06/01/02.png
    :width: 400
    :align: center
 
@@ -49,7 +49,7 @@ Fiziksel özellikleri nedeniyle DRAM modülleri oldukça yavaştır. Çünkü he
 küçük kapasitörde duran minik yükün bütün kapasitörlerin bağlı bulunduğu (diğer ucunun da algılayıcı devrelere bağlı olduğu) uzun bir yolu etkilemesi gerekir. 
 Bu da oldukça uzun sürdüğünden bitin okunması oldukça yavaştır. Artan transistör sayısı ile bu durum giderek güçleşmektedir.
 
-.. image:: ../../../../assets/cuda/06/01/03.png
+.. image:: ../../../assets/cuda/06/01/03.png
    :width: 500
    :align: center
 

@@ -113,6 +113,6 @@ Artık Biotin molekülünü Streptavidin bağlama cebinden çekebilirsiniz. Daha
 
 Bu işlemler sonucunda aşağıdaki gibi bir görüntü elde etmelisiniz [https://www.mpibpc.mpg.de/grubmueller/interactivemd (Erişim tarihi: 23.08.2021)].
 
-.. image:: ../../../../assets/compmatscience-gromacs-education/gmx_biotin.png
+.. image:: ../../../assets/compmatscience-gromacs-education/gmx_biotin.png
    :align: center
    :width: 300px

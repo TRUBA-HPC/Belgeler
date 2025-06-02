@@ -15,7 +15,7 @@ DRAM Bursting
 
 DRAM Burstingden bir önceki bölümde bahsetmiştik. Daha genel bir bakış açısı sağlamak gerekirse:
 
-.. image:: ../../../../assets/cuda/06/02/01.png
+.. image:: ../../../assets/cuda/06/02/01.png
    :width: 500
    :align: center
 
@@ -29,7 +29,7 @@ Bellek Birleşimi ve CUDA
 
 CUDA hesaplama modeli ile **bellek birleşimine** bakışımızı anlatan aşağıdaki görseli inceleyiniz.
 
-.. image:: ../../../../assets/cuda/06/02/02.png
+.. image:: ../../../assets/cuda/06/02/02.png
    :width: 500
    :align: center
 
@@ -38,7 +38,7 @@ bellek erişimi ile gerekli bütün veriye ulaşacağından **bellek birleşimi*
 
 Bellek birleşimine sahip olmayan bellek erişim modeli örneği için aşağıdaki görseli inceleyiniz.
 
-.. image:: ../../../../assets/cuda/06/02/03.png
+.. image:: ../../../assets/cuda/06/02/03.png
    :width: 500
    :align: center
 
@@ -49,7 +49,7 @@ birden fazla bellek erişimi yapılmak zorundadır. Bu da bellek erişiminin tam
 2 Boyutlu Matriks ve Bellek Erişim Modeli
 -----------------------------------------
 
-.. image:: ../../../../assets/cuda/06/02/04.png
+.. image:: ../../../assets/cuda/06/02/04.png
    :width: 500
    :align: center
 
@@ -59,13 +59,13 @@ Bu görseli aklımızda bulundurakak matriks-matriks çarpımında bellek erişi
 Daha önceki modüllerde incelediğimiz basit matriks-matriks çarpımını simgeleyen aşağıdaki görseli inceleyiniz. 
 Matriks **A** için sıralı **iş parçacıkları** sıralı satırlara erişirken, Matriks **B** için sıralı **iş parçacıkları** sıralı sutünlara ulaşmaktadır.
 
-.. image:: ../../../../assets/cuda/06/02/05.png
+.. image:: ../../../assets/cuda/06/02/05.png
    :width: 500
    :align: center
 
 Matriks **B** için yapılan bellek erişimleri birleşiktir. Bunu görmek için aşağıdaki görseli inceleyelim.
 
-.. image:: ../../../../assets/cuda/06/02/06.png
+.. image:: ../../../assets/cuda/06/02/06.png
    :width: 500
    :align: center
 
@@ -74,7 +74,7 @@ Görüldüğü üzere ilk iterasyonda **warp** içindeki **iş parçacıkları**
 
 Ancak matriks **A** için yapılan bellek erişimleri **birleşik** (ing., coalesced) değildir. Daha yakından bakmak için aşağıdaki görseli inceleyelim.
 
-.. image:: ../../../../assets/cuda/06/02/07.png
+.. image:: ../../../assets/cuda/06/02/07.png
    :width: 500
    :align: center
 

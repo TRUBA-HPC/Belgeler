@@ -1,11 +1,10 @@
 .. _Apptainer:
 
-=========
-Apptainer
-=========
+===================
+Apptainer Kılavuzu
+===================
 
 Bu belge TRUBA altyapısında `Apptainer/Singularity <https://apptainer.org/>`_ platformunun kullanımını kolaylaştırmak için oluşturulmuştur.
-Bu kılavuz aşağıdakileri kapsamaktadır:
 
 
 .. grid:: 5

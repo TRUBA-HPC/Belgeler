@@ -60,7 +60,8 @@ Derleyicilerden GCC ve Intel versiyonlarını modül olarak kullanmak için aşa
 
 İş vermeden önce kullanılmak istenilen R paketlerini kullanılacak dizine kurmanızı öneririz.
 
-:ref:`interaktif-is-calistirma` kılavuzu ile interaktif sunucuya bağlandıktan sonra yukarıda belirtildiği gibi modüller yüklendikten sonra terminale şunu yazdığımızda 
+:ref:`interaktif-is-calistirma` kılavuzu ile interaktif sunucuya bağlandıktan sonra yukarıda belirtildiği gibi modüller yüklendikten sonra terminale şunu yazdığımızda :
+
 
 .. code-block:: r
 

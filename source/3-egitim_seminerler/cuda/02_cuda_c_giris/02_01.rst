@@ -43,7 +43,7 @@ Bu dokümantasyon serisinde göreceğiniz CUDA kodlarında C/C++ kullanılmış 
 olacağız ancak kullanacağımız terimler ve genel anlamda CUDA hakkında biraz daha bilgi sahibi olmak için CUDA 
 programlarının derlenmesini gösteren aşağıdaki görseli inceleyelim.
 
-.. image:: ../../../../assets/cuda/02/01/01.jpg
+.. image:: ../../../assets/cuda/02/01/01.jpg
    :width: 400
    :align: center
 

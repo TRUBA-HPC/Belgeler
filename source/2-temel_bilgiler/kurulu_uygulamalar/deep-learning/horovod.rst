@@ -20,7 +20,7 @@ Kütüphanelerin Kurulumu
 
 .. warning::
 
-    Belgenin geri kalanda ev dizinine Miniconda kurulumu yapılmış kabul edilmektedir. Ev dizininizde Miniconda kurulu değilse kurulumu :doc:`Python Kılavuzu'nu <../python/anaconda>` takip ederek yapabilirsiniz.
+    Belgenin geri kalanda ev dizinine Miniconda kurulumu yapılmış kabul edilmektedir. Ev dizininizde Miniconda kurulu değilse kurulumu module load miniconda3 (veya sistemdeki güncel conda versiyonu)takip ederek yapabilirsiniz.
 
 Conda sanal ortamına Horovod kurulumu için gerekli kütüphaneler `ilgili GitHub deposundaki <https://github.com/kaust-vislab/horovod-gpu-data-science-project>`_ ``environment.yml`` dosyasında bulunmaktadır. Bu depoyu klonlayın.
 
@@ -83,10 +83,7 @@ Conda sanal ortamına kurulum yapmak uzun sürdüğü için bir ``sbatch`` kodu 
     
     sbatch install-horovod.sh
 
-Kurulumun Test Edilmesi
-========================
 
-Kurulumu interaktif olarak :doc:`cuda kümelerinde <../GPU/index>` test edebilirsiniz:
 
 .. code-block:: bash
     

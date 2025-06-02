@@ -1,4 +1,3 @@
-============================
 Bellek ve Veri Lokalizasyonu
 ============================
 
@@ -18,7 +17,7 @@ Bellek ve Veri Lokalizasyonu
 Bir önceki bölümde incelediğimiz resim bulanıklaştırma çekirdeğini bellek erişimi açısından inceleyelim. 
 Önce, bu çekirdekteki bellek erişimi açısından en kritik satırı gösteren aşağıdaki görsele bakalım.
 
-.. image:: ../../../../assets/cuda/04/01/01.PNG
+.. image:: ../../../assets/cuda/04/01/01.PNG
    :width: 500
    :align: center
 
@@ -43,7 +42,7 @@ Basit Matris-Matris Çarpımı
 En basit haliyle matris-matris çarpımı yapmak için bir matrisin her satırı ile diğer matrisin her sütunu arasında iç çarpım gerçekleşmektedir. 
 Bu işlemi daha iyi anlayabilmek için aşağıdaki görseli inceleyiniz.
 
-.. image:: ../../../../assets/cuda/04/01/02.PNG
+.. image:: ../../../assets/cuda/04/01/02.PNG
    :width: 500
    :align: center
 
@@ -71,13 +70,13 @@ Temel olarak şu ana kadar incelediğimiz çok boyutlu CUDA çekirdekleri ile be
 Gördüğünüz üzere gerekli satır ve sütun indisleri hesaplandıktan sonra her bir iş parçacığı sonuç matrisindeki bir eleman için hesaplamayı gerçekleştiriyor. 
 Bu noktada 4x4 boyutlarında bir matrisi düşünelim ve blok ve şebeke (grid) yapısını aşağıdaki görselde gösterildiği gibi konfigüre edelim.
 
-.. image:: ../../../../assets/cuda/04/01/03.PNG
+.. image:: ../../../assets/cuda/04/01/03.PNG
    :width: 450
    :align: center
 
 Bu noktada her bir sonuç için gerek duyulan veriyi gösteren aşağıdaki görseli inceleyelim.
 
-.. image:: ../../../../assets/cuda/04/01/04.PNG
+.. image:: ../../../assets/cuda/04/01/04.PNG
    :width: 400
    :align: center
 
@@ -90,7 +89,7 @@ CUDA Değişken Tanımlama
 
 Aşağıdaki görselde çeşitli değişken tanımlarını ve bu tanımların hangi CUDA bellek tipine karşılık geldiğini görebilirsiniz.
 
-.. image:: ../../../../assets/cuda/04/01/05.PNG
+.. image:: ../../../assets/cuda/04/01/05.PNG
    :width: 500
    :align: center
 

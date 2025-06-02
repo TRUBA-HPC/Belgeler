@@ -15,7 +15,7 @@ Basit Matriks Çarpımı Evrensel Bellek Erişim Modeli
 
 Bir önceki bölümde incelediğimiz basit matriks çarpımının evrensel belleğe erişim modelini aşağıdaki görsel üzerinden inceleyelim.
 
-.. image:: ../../../../assets/cuda/04/02/01.PNG
+.. image:: ../../../assets/cuda/04/02/01.PNG
    :width: 400
    :align: center
 
@@ -25,14 +25,14 @@ Bu durumda evrensel bellekte aynı veriye farklı iş parçacıkları ulaşmakta
 Bölmeli (Tiled) Bellek Erişimi
 -------------------------------
 
-.. image:: ../../../../assets/cuda/04/02/02.PNG
+.. image:: ../../../assets/cuda/04/02/02.PNG
    :width: 400
    :align: center
 
 Evrensel bellek üzerinde birden fazla kere ulaşılan **bölmeler**  (ing., tiles) çip üzerinde bulunan belleğe (ing., on-chip memory) taşınarak bellek erişimlerinin 
 performansı arttırılabilir. Bu yaklaşımda evrensel bellekler **bölmelere** ayrılır ve sadece gerekli **bölme** çip üzerindeki belleğe taşınır.
 
-.. image:: ../../../../assets/cuda/04/02/03.PNG
+.. image:: ../../../assets/cuda/04/02/03.PNG
    :width: 400
    :align: center
 
@@ -45,7 +45,7 @@ Bizim algoritmamızda ilk  **bölme** ile ilgili işlemler bitince ikinci **böl
 Aşağıdaki görselde iş parçacıklarının bellek erişimlerinin yakın zamanlarda olduğu durum olan **bölmeli** bellek erişimi için daha uygun olan senaryo 
 ve iş parçacıklarının bellek erişimlerinin birbirlerinden uzak olduğu **bölmeli** bellek erişimi için daha az uygun olan senaryo gösterilmiştir.
 
-.. image:: ../../../../assets/cuda/04/02/04.PNG
+.. image:: ../../../assets/cuda/04/02/04.PNG
    :width: 400
    :align: center
 

@@ -1,3 +1,5 @@
+.. _ssh-baglanti:
+
 WinSCP Uygulaması Kurulumu, TRUBA ve Lokal Bilgisayarlar Arasında Dosya Transferi
 =====================================================================================================
 

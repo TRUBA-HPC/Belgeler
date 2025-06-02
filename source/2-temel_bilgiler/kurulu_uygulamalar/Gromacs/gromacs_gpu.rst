@@ -1,4 +1,4 @@
-===============================================
+
 GROMACS Programının GPU Destekli Derlenmesi
 ===============================================
 
@@ -7,7 +7,7 @@ en çok tercih edilen **Apptainer** container kullanmaktır. İkincisi ise TRUBA
 öğreticisinde iki şekilde de gösterilecektir.
 
 ---------------------------------------------------
-Singularity Container Kullanarak GROMACS Kullanımı
+Apptainer Container Kullanarak GROMACS Kullanımı
 ---------------------------------------------------
 
 TRUBA kuyruklarında **Apptainer** kullanarak Gromacs kapsayıcısını ev dizininize yeni bir dizin oluştururak içerisine kayıt ediniz. Bunun için aşağıda verilen 

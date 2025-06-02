@@ -52,7 +52,7 @@ Bu adımda istediğiniz enerji çeşitini seçebilirsiniz ancak bu örnekte pota
 
 Çizilen grafik şu şekilde görünecektir:
 
-.. image:: ../../../../assets/compmatscience-gromacs-education/gmx_minimization.png
+.. image:: ../../../assets/compmatscience-gromacs-education/gmx_minimization.png
    :align: center
    :width: 300px
 

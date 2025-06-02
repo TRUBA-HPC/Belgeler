@@ -23,7 +23,7 @@ Kılavuzda aşağıdaki basamaklar anlatılmıştır:
 Open OnDemand ile Masaüstü Alma
 -------------------------------
 
-Grafiksel arayüz kullanmak için, web tabanlı kullanıcı arayüzü olan :ref:`open_ondemand` tercih edilebilir. İnteraktif arayüz ile ilgili bağlantı bilgilerine :ref:`arf-baglanti` sayfasından erişebilirsiniz. 
+Grafiksel arayüz kullanmak için, web tabanlı kullanıcı arayüzü olan :ref:`open_ondemand` tercih edilebilir. İnteraktif arayüz ile ilgili bağlantı bilgilerine :ref:`arf_baglanti` sayfasından erişebilirsiniz. 
 
 Masaüstüne erişim için 5 aşamalı bir süreç uygulanmaktadır:
 
@@ -87,13 +87,13 @@ Yüksek performanslı işlerin yapılması
    - ``.rds``: *saveRDS(obj, file="/path/to/filename.rds") ve readRDS("/path/to/filename.rds")*
   
 
-   Bahsedildiği gibi oluşturulan betikleri iş kümesine göndermeden önce
-   işinize bağlı olarak küçük parametreler test etmek gerekebilir. Bu amaçla aşağıdaki kod ile ``debug``
-   kuyruğundan 15 dakika boyunca her işte bir çekirdek kullanacak şekilde toplamda 10 iş 
-   çalıştırılacak bir sunucu istenebilir. Böylece ana bilgisayarı meşgul etmeden hesaplama
-   kümesinde size ayrılan bir terminalde işlem yürütebilirsiniz. ``srun``
-   argümanları hakkında ayrıntılı bilgiyi
-   `burada <%5Bhttps://slurm.schedmd.com/srun.html>`__ bulabilirsiniz. :ref:`interaktif-is-calistirma` kılavuzu ile interaktif sunucuya bağlanma hakkında daha fazla bilgiye erişebilirsiniz.
+Bahsedildiği gibi oluşturulan betikleri iş kümesine göndermeden önce
+işinize bağlı olarak küçük parametreler test etmek gerekebilir. Bu amaçla aşağıdaki kod ile ``debug``
+kuyruğundan 15 dakika boyunca her işte bir çekirdek kullanacak şekilde toplamda 10 iş 
+çalıştırılacak bir sunucu istenebilir. Böylece ana bilgisayarı meşgul etmeden hesaplama
+kümesinde size ayrılan bir terminalde işlem yürütebilirsiniz. ``srun``
+argümanları hakkında ayrıntılı bilgiyi
+`burada <%5Bhttps://slurm.schedmd.com/srun.html>`__ bulabilirsiniz. :ref:`interaktif-is-calistirma` kılavuzu ile interaktif sunucuya bağlanma hakkında daha fazla bilgiye erişebilirsiniz.
 
 3. R betiğinin beklenildiği gibi çalıştığından emin olduktan sonra bunu hesaplama
    kümesi için kuyruğa göndermek için aşağıdaki gibi ``.sh`` betiği oluşturup,

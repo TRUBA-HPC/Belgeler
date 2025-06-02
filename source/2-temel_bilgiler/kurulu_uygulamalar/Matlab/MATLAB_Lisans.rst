@@ -25,7 +25,7 @@ Akademik (TAH: Total Academic Headcount) Lisansı Olan Kullanıcılar
 
 EGI ile MATHWORKS arasındaki anlaşma sayesinde kullanıcılar, **"MATLAB Parallel Server lisansları"** ile EGI üyesi ülkelerin süperbilgisayar merkezlerinde MATLAB çalıştırabilmektedirler. Akademik lisansınızın Mathworks üzerinden doğrulanabilmesi için grafik ekrana ihtiyaç duyulmaktadır. Bu lisansa sahip olarak TRUBA üzerinde MATLAB çalıştıracaksanız birkaç metot bulunmaktadır.
 
-- :ref:`Kişisel bilgisayarınızda MATLAB çalıştırarak <localMATLAB>`
+- Kişisel bilgisayarınızda MATLAB çalıştırarak
 
 - TRUBA üzerindeki kullanıcı arayüz sunucularından :ref:`grafik-ekran` alarak
 
@@ -97,7 +97,6 @@ Kayar lisansına sahipseniz bir slurm betik dosyası hazırlayarak, işlerinizi 
 
 TRUBA üzerinde halihazırda bazı MATLAB versiyonları yüklü durumdadır. Bu yazılımlar zaman içerisinde yeni versiyonlar eklendikçe güncellenmektedir
 
-Sistemde yüklü yazılımları ``module available`` komutu ile görebilirsiniz. Moduller hakkındaki ayrıntılı bilgiye :ref:`moduller-truba` sayfasından erişim sağlayabilirsiniz.
 
 ::
 
@@ -109,9 +108,9 @@ Sistemde yüklü yazılımları ``module available`` komutu ile görebilirsiniz.
 
 .. warning::
 
-    TRUBA üzerinde küme yönetimi ve iş zamanlayıcı olarak :ref:`SLURM <slurm-betik>` kullanılmaktadır. Kümede iş çalıştırmadan önce :ref:`SLURM betik özellikleri <slurm-betik>` hakkında bilgi edinmiş olmanız beklenmektedir. İş göndereceğiniz hesaplama kümeleri ile ilgili bilgiye :ref:`hesaplama-kumeleri` sayfasından erişebilirsiniz.
+    TRUBA üzerinde küme yönetimi ve iş zamanlayıcı olarak :ref:`slurm-betik` kullanılmaktadır. Kümede iş çalıştırmadan önce :ref:`slurm-betik` hakkında bilgi edinmiş olmanız beklenmektedir. İş göndereceğiniz hesaplama kümeleri ile ilgili bilgiye :ref:`arf_hesaplama_kumeleri` sayfasından erişebilirsiniz.
 
-Lisans dosyanızı TRUBA arayüz sunucusuna transfer ediniz. Bunu terminal aracılığıyla ``scp`` komutu ile yapabileceğiniz gibi :ref:`winscp, filezilla <ssh-baglanti>` vb. gibi SFTP yazılımları aracılğıyla da gerçekleştirebilirsiniz.
+    Lisans dosyanızı TRUBA arayüz sunucusuna transfer ediniz. Bunu terminal aracılığıyla ``scp`` komutu ile yapabileceğiniz gibi :ref:`ssh-baglanti` vb. gibi SFTP yazılımları aracılğıyla da gerçekleştirebilirsiniz.
 
 ::
 

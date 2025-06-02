@@ -45,7 +45,7 @@ Klasik Torch Katmanlarından oluşan bir nöral ağ oluşturma
 ==========================================================
 
 
-Burada PennyLane kütüphanesindeki bir Quantum Node'un nasıl PyTorch kütüphanesindeki bir layer olarak eklendiğine yönelik bir örnek gösteriliyor. PyTorch hakkında detaylı bilgi için :ref:`pytorch_intro` eğitim materyaline bakabilirsiniz.
+Burada PennyLane kütüphanesindeki bir Quantum Node'un nasıl PyTorch kütüphanesindeki bir layer olarak eklendiğine yönelik bir örnek gösteriliyor. PyTorch hakkında detaylı bilgi için :ref:`pytorch-index` eğitim materyaline bakabilirsiniz.
 
 Aşağıdaki gibi kuantum katmanı içermeyen ikili sınıflandırmada kullanabileceğimiz 2 katmanlı bir network oluşturabiliriz.
 

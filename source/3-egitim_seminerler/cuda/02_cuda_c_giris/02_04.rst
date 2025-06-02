@@ -171,7 +171,7 @@ NVVP
 Program hakkındaki performans bilgileri bir zaman çizgisi üzerinde gösterilir.
 **nvprof** gibi bellek işlemlerinde de kullanışlı bilgiler sağlar.
 
-.. image:: ../../../../assets/cuda/02/04/01.png
+.. image:: ../../../assets/cuda/02/04/01.png
    :width: 600
    :align: center
 
@@ -195,7 +195,7 @@ Ayrıca **-lnvToolsExt** kütüphanesi ile bağlama (ing., linking) işlemi yapm
 
 **NVTX** hakkında daha detaylı bilgi için: http://devblogs.nvidia.com/parallelforall/cuda-pro-tip-generate-custom-application-profile-timelines-nvtx/
 
-.. image:: ../../../../assets/cuda/02/04/02.png
+.. image:: ../../../assets/cuda/02/04/02.png
    :width: 500
    :align: center
 
@@ -232,6 +232,6 @@ CUDA programlarınızı geliştirirken önerilen geliştirme sürecini 4 aşamad
 
 Bu süreç bir döngü içerisinde ilerler. Aşağıdaki görsel sürecin kısa bir özeti olarak incelenebilir.
 
-.. image:: ../../../../assets/cuda/02/04/03.png
+.. image:: ../../../assets/cuda/02/04/03.png
    :width: 400
    :align: center

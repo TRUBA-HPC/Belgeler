@@ -48,6 +48,9 @@ ARF sisteminde kurulu olan GROMACS versiyonları dışında başka bir versiyona
     :maxdepth: 1
 
     gromacs_preprocess.rst
+    gromacs_install_TRUBA.rst
     gromacs_TRUBA.rst
+    gromacs_gpu.rst
+
    
 

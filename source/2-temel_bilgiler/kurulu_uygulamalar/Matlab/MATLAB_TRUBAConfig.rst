@@ -61,7 +61,7 @@ Kişisel Bilgisayarınızda MATLAB Çalıştırırak TRUBA'ya İş Göndermek
 
 - Kişisel bilgisayarınızdan çalıştırdığınız MATLAB ile ARF kümesinde yer alan hesaplama sunucularına iş gönderebilmek için bir seferlik küme ayarının (“parallel cluster”) yapılması gerekmektedir.
 
-- MATLAB r2024a versiyonu için ilgili ayar dosyası sıkıştırılmış formatta ``/arf/sw/scripts/matlab``  dizininde yer almaktadır (arf.nonshared.R2024a.zip). Buradan ilgili klasörü kendi bilgisayarınıza indirebilirsiniz. Bunu terminal aracılığıyla aşağıdaki gibi ``scp`` komutu ile yapabileceğiniz gibi :ref:`winscp` vb. gibi SFTP yazılımları aracılğıyla da gerçekleştirebilirsiniz.
+- MATLAB r2024a versiyonu için ilgili ayar dosyası sıkıştırılmış formatta ``/arf/sw/scripts/matlab``  dizininde yer almaktadır (arf.nonshared.R2024a.zip). Buradan ilgili klasörü kendi bilgisayarınıza indirebilirsiniz. Bunu terminal aracılığıyla aşağıdaki gibi ``scp`` komutu ile yapabileceğiniz gibi :ref:`ssh-baglanti` vb. gibi SFTP yazılımları aracılğıyla da gerçekleştirebilirsiniz.
 
 .. note::
 
@@ -184,7 +184,7 @@ Parametreler hakkında ayrıntılı bilgilere MATLAB'ın dokümantasyon sayfası
     c.saveProfile
 
 
-Yukarıdaki verilen örnekteki veya ``**arf.nonshared.R2024a**`` dizini içerisindeki **arf.m** dosyasını çalıştırdığınızda ``Additional Properties``çıktısı olarak ekranda en son aşağıdaki görseldeki gibi bir çıktı elde edeceksiniz.
+Yukarıdaki örnekte verilen veya ``arf.nonshared.R2024a`` dizini içindeki ``arf.m`` dosyasını çalıştırdığınızda, **Additional Properties** çıktısı olarak ekranda en sonunda aşağıdaki görseldeki gibi bir çıktı elde edilecektir.
 
 .. image:: /assets/matlab-howto/matlab-addprop.png
     :width: 800px

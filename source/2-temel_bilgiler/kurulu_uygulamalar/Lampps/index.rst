@@ -12,7 +12,8 @@ Kullanıcılarımız tarafından sıklıkla kullanılan, açık kaynak kodlu ola
 
   module available
 
-komutunu yazdığınızda TRUBA sisteminde kurulu olan temel programlar listelenecektir. Module isimlendirmesi ile ilgili bilgilere TRUBA :ref:`moduller-truba` sayfamızdan ulaşabilirsiniz.
+
+komutunu yazdığınızda TRUBA sisteminde kurulu olan temel programlar listelenecektir.
 
 TRUBA sisteminde güncel olarak kurulu olan LAMMPS versiyonları aşağıdaki gibidir. 
 

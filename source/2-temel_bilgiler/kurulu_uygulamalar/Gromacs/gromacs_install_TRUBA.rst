@@ -143,16 +143,14 @@ Kurulumu doğru bir şekilde yapabilmemiz için gerekli ortamların hazır olmas
 
   Kurulum için ayrıca CMake protokolüne de ihtiyacınız bulunmaktadır. Bu noktada dikkat etmemiz gereken en önemli şey CMake optionlarını doğru seçmektir. Örneğin CPU destekli kuracağımız için GPU desteğini kapalı tutmamız gerekir (-DGMX_GPU=OFF). Paralel olarak altyapımızda çalıştıracağınız için  MPI desteğini de açık tutuyoruz (-DGMX_MPI=on). Bunun gibi pek çok özelliğe `Cmake Flags <https://manual.gromacs.org/documentation/2021.2/install-guide/index.html>`_ linkinden erişebilirsiniz.
 
-Gerekli ortamlar için aşağıdaki komut satırını terminalinizden uygulayınız. 
+Gerekli ortamlar için aşağıdaki komut satırından mevcut modülleri ve versiyonları görüntüleyip kurduktan sonra devam edebilirsiniz.
 
 .. code-block:: bash
   
   module purge
   
-  module load centos7.3/comp/cmake/3.18.0
-  module load centos7.3/comp/gcc/7
-  module load centos7.3/lib/openmpi/4.0.1-gcc-7.0.1
-
+  module av
+  module load <gerekli versiyonlar>
   export CC=mpicc
   export CXX=mpic++
 

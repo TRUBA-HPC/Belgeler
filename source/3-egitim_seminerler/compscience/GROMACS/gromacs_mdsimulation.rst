@@ -16,7 +16,7 @@ Dengeleme genellikle iki aşamada gerçekleşir. İlk aşama NVT topluluğu (sab
 
 http://www.mdtutorials.com/gmx/lysozyme/Files/nvt.mdp
 
-.. image:: ../../../../assets/compmatscience-gromacs-education/gmx_nvt_mdp.png
+.. image:: ../../../assets/compmatscience-gromacs-education/gmx_nvt_mdp.png
    :align: center
    :width: 300px
 
@@ -46,7 +46,7 @@ Enerji kullanılarak sıcaklık işleyişini inceleyecek olursak:
 
 Sistem sıcaklığını seçmek ve çıkmak için ``16 0`` yazınız. 
 
-.. image:: ../../../../assets/compmatscience-gromacs-education/gmx_temp.png
+.. image:: ../../../assets/compmatscience-gromacs-education/gmx_temp.png
    :align: center
    :width: 300px
 
@@ -58,7 +58,7 @@ Grafiği oluşturmak için:
 
 Oluşturulan grafik aşağıdaki gibi görünmelidir:
 
-.. image:: ../../../../assets/compmatscience-gromacs-education/gmx_time_temp.png
+.. image:: ../../../assets/compmatscience-gromacs-education/gmx_time_temp.png
    :align: center
    :width: 300px
 
@@ -69,7 +69,7 @@ Yapılan NVT dengelemesi, sistem sıcaklığının dengelenmesini sağlamıştı
 100 ps'lik NPT dengelemesi için kullanılan .mdp dosyası aşağıdaki linkten bulunabilir:
 http://www.mdtutorials.com/gmx/lysozyme/Files/npt.mdp
 
-.. image:: ../../../../assets/compmatscience-gromacs-education/gmx_lysozyme-npt.png
+.. image:: ../../../assets/compmatscience-gromacs-education/gmx_lysozyme-npt.png
    :align: center
    :width: 300px
 
@@ -95,13 +95,13 @@ Enerji kullanılarak basınç ilerlemesi analiz edilirse;
 
     gmx energy -f npt.edr -o pressure.xvg
 
-.. image:: ../../../../assets/compmatscience-gromacs-education/gmx_pressure.png
+.. image:: ../../../assets/compmatscience-gromacs-education/gmx_pressure.png
    :align: center
    :width: 300px
 
 Sistemin basıncını seçmek ve çıkmak için ``18 0`` yazın. Grafiği görmek içinse ``xmgrace pressure.xvg`` yazın.
 
-.. image:: ../../../../assets/compmatscience-gromacs-education/gmx-pressure-xmgrace.png
+.. image:: ../../../assets/compmatscience-gromacs-education/gmx-pressure-xmgrace.png
    :align: center
    :width: 300px
 
@@ -115,7 +115,7 @@ Yoğunluk değişimini incelemek için;
 
 Oluşturulan son md dosyasında tüm adımlar basınç incelerkenki gibi ilerler ancak son adımda ``18 0`` yerine ``24 0`` yazılarak yoğunluk seçilir. Diğer tüm adımlar grafik çizerken de aynıdır. Elde edilen grafik aşağıdaki gibidir.
 
-.. image:: ../../../../assets/compmatscience-gromacs-education/gmx_density.png
+.. image:: ../../../assets/compmatscience-gromacs-education/gmx_density.png
    :align: center
    :width: 300px
 
@@ -133,7 +133,7 @@ MD Aşamaları
 
 http://www.mdtutorials.com/gmx/lysozyme/Files/md.mdp
 
-.. image:: ../../../../assets/compmatscience-gromacs-education/gmx_nanomd.png
+.. image:: ../../../assets/compmatscience-gromacs-education/gmx_nanomd.png
    :align: center
    :width: 300px
 

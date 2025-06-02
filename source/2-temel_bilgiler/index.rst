@@ -10,7 +10,9 @@ Kaynak Yönetimi ve İş Döngüsü
 
     temel_linux_kursu.rst
     slurm_komutlari_ve_dosyalari.rst
+    slurm-properties.rst
     yuksek-performansli-dosya-sistemleri.rst
+    interaktif-is-calistirma.rst
 
 
 Sistemde Kurulu Uygulamalar için 

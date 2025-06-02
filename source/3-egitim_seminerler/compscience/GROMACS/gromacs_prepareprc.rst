@@ -21,7 +21,7 @@ Moleküler Dinamik simülasyon, üç temel adımdan oluşmaktadır:
 
 Bu adımları göstermek amacıyla http://www.mdtutorials.com/gmx adresindeki 1 numaralı ``Lysozyme in water`` örneği üzerinden gidilmiştir [http://www.mdtutorials.com/gmx/lysozyme/01_pdb2gmx.html (Erişim tarihi: 15.07.2021)]. Öncelikle https://www.rcsb.org/ adresine gidip arama motoruna ``1AKI`` yazarak lizozimin protein yapısı PDB formatında indirilmelidir:
 
-.. image:: ../../../../assets/compmatscience-gromacs-education/rcsb_Lysozyme_pdb.png
+.. image:: ../../../assets/compmatscience-gromacs-education/rcsb_Lysozyme_pdb.png
    :align: center
    :width: 500px
    
@@ -33,7 +33,7 @@ PDB dosyası indirilenler klasörün içerisinde ``1aki.pdb`` şeklinde bulunabi
     cd Lysozyme_in_water
     ls
 
-.. image:: ../../../../assets/compmatscience-gromacs-education/Lysozyme_folder.png
+.. image:: ../../../assets/compmatscience-gromacs-education/Lysozyme_folder.png
    :align: center
    :width: 300px
 

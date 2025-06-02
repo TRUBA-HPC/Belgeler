@@ -14,7 +14,7 @@ CUDA Bellek İşlemleri
 
 Veri Paralelleşmesi
 -------------------
-.. image:: ../../../../assets/cuda/02/02/01.jpg
+.. image:: ../../../assets/cuda/02/02/01.jpg
    :width: 600
    :align: center
 
@@ -63,7 +63,7 @@ BOLUM-3 ise cihaz üzerinde yapılan hesaplamanın sonucunu sunucu tarafına (CP
 
 Genel bir CUDA programındaki akış aşağıdaki görselle açıklanabilir.
 
-.. image:: ../../../../assets/cuda/02/02/02.jpg
+.. image:: ../../../assets/cuda/02/02/02.jpg
    :width: 350
    :align: center
 
@@ -74,7 +74,7 @@ Genel bir CUDA programındaki akış aşağıdaki görselle açıklanabilir.
 CUDA Bellek Yapısı 
 ------------------
 
-.. image:: ../../../../assets/cuda/02/02/03.jpg
+.. image:: ../../../assets/cuda/02/02/03.jpg
    :width: 500
    :align: center
 

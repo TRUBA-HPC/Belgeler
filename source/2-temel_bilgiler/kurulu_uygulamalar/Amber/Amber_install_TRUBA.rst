@@ -10,7 +10,7 @@ Kendi yerel bilgisayarınızdan TRUBA'ya ilgili AMBER kurulum dosyalarını akta
 
     scp -r /source/folder/path/Amber*tar.bz2 username@172.16.6.11:/arf/home/username
 
-Kurulum yapmak üzere, aktif bir OpenVPN bağlantınız varken, ``arf-ui`` kullanıcı arayüz sunucularından birisine (:ref:`openvpn-info`) bağlanınız. 
+Kurulum yapmak üzere, aktif bir OpenVPN bağlantınız varken, ``arf-ui`` kullanıcı arayüz sunucularından birisine (:ref:`open-vpn`) bağlanınız. 
 
 .. code-block:: bash
 

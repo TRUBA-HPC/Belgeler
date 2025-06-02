@@ -30,9 +30,13 @@ TÜBİTAK ve AB Projeleri kapsamında desteklenen, araştırma odaklı projesi k
 
 TRUBA kaynaklarından faydalanmak isteyen özel kurum ve kuruluşlar için belirlenen hizmet bedelleri aşağıdaki sayfalarda listelenmiştir.
 
-:ref:`ozel-hsbvsb-2025`
+.. toctree:: 
+    :maxdepth: 1
 
-:ref:`ozel-hsbvsb-2024`
+    ozel_kurumlar/ozel-hsbvsb-2024.rst
+
+    ozel_kurumlar/ozel-hsbvsb-2025.rst
+
 
 
 

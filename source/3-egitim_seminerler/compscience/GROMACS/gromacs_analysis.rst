@@ -26,7 +26,7 @@ RMSD, kristal yapıya göre hesaplanmak istenirse;
 
 Çizdirilen grafikse aşağıdaki gibidir:
 
-.. image:: ../../../../assets/compmatscience-gromacs-education/gmx_rmsd.png
+.. image:: ../../../assets/compmatscience-gromacs-education/gmx_rmsd.png
    :align: center
    :width: 300px
 
@@ -40,7 +40,7 @@ Bu örnek için analizi yapılabilecek bir başka özellikse dönme yarıçapıd
 
 Analiz için grup 1'i (Protein) seçin.
 
-.. image:: ../../../../assets/compmatscience-gromacs-education/gmx_rot_radius.png
+.. image:: ../../../assets/compmatscience-gromacs-education/gmx_rot_radius.png
    :align: center
    :width: 300px
 

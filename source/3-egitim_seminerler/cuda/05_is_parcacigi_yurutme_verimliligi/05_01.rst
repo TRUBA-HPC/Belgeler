@@ -28,7 +28,7 @@ gerçeklemesi ile bağlantılı olduğudur. Yeni nesil grafik işlem birimlerind
 SM ve SIMD
 ----------
 
-.. image:: ../../../../assets/cuda/05/01/01.png
+.. image:: ../../../assets/cuda/05/01/01.png
    :width: 500
    :align: center
 
@@ -47,7 +47,7 @@ Fakat bu işlem farklı veri üzerinde gerçekleştirerek anlamlı bir paralelle
 Üstte de bahsettiğimiz gibi blok içerisinde bulunan bloklar 32 li gruplar halinde **warplara** bölünmüştür. 
 Çok boyutlu bloklarda **warplara** bölünme işlemi satır öncelikli (row-major) bir lineerizasyon yapılarak gerçekleştirilir (aşağıdaki görseli inceleyebilirsiniz). 
 
-.. image:: ../../../../assets/cuda/05/01/02.png
+.. image:: ../../../assets/cuda/05/01/02.png
    :width: 600
    :align: center
 

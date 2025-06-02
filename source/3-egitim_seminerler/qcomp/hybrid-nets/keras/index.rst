@@ -3,9 +3,9 @@ Keras Nöral Ağına Kuantum Katmanı Eklemek
 ==========================================
 		
 .. warning::
-    Belgenin geri kalanda ev dizinine Miniconda kurulumu yapılmış kabul edilmektedir. Ev dizininizde Miniconda kurulu değilse kurulumu :ref:`miniconda-kurulum` takip ederek yapabilirsiniz. 
+    Belgenin geri kalanda ev dizinine Miniconda kurulumu yapılmış kabul edilmektedir. Ev dizininizde Miniconda kurulu değilse kurulumunu container ile yapabilirsiniz.
 
-    Merkezi anaconda kullanımı hakkındaki bilgiye ulaşmak için :ref:`tıklayınız... <merkezi-anaconda>`.
+    Merkezi anaconda kullanımı hakkındaki bilgiye ulaşmak için module av komutunu kullanarak sistemdeki güncel conda bilgisine ulaşabilirsiniz..
     
 Mevcut shell oturumunuzda conda’nın temel ortamını etkinleştirin:
 

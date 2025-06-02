@@ -104,7 +104,7 @@ sbatch kullanarak Spark kümesine iş gönderme
 
 .. warning::
 
-    Bu bölümde ``sbatch`` kullanarak **Hamsi kümesinde** Spark kümesi yaratılması ve çalışan kaynaklara iş gönderilmesi anlatılmaktadır. :doc:`Diğer kümeler <../../TRUBA/kullanici-el-kitabi/hesaplamakumeleri>` için aşağıda verilen örnek kodlar yönergelere uygun olarak değiştirilmelidir.
+    Bu bölümde ``sbatch`` kullanarak **Hamsi kümesinde** Spark kümesi yaratılması ve çalışan kaynaklara iş gönderilmesi anlatılmaktadır. :ref:`arf_hesaplama_kumeleri` için aşağıda verilen örnek kodlar yönergelere uygun olarak değiştirilmelidir.
 
 Spark kümesi başlatma ve master düğüm arayüzüne bağlanma
 -----------------------------------------------------------

@@ -77,7 +77,7 @@ Aşağıdaki örnek, çeşitli LAMMPS paketlerinin etkinleştirildiği bir CMake
 
    PLUMED ve MSCG gibi bazı özel paketler için GSL kütüphanesi gereklidir. Bu kütüphaneyi Conda ile kurmak için:
 
-   :ref:`anaconda-miniconda-kurulum`
+   module load miniconda3
 
    .. code-block:: bash
 
