@@ -24,7 +24,5 @@ Hesaplama Kaynaklarına Bağlantı
     :maxdepth: 1
     
     openvpn_info.rst
-    windows-shh/winscp.rst
-    windows-shh/mobaxterm.rst
 
 
