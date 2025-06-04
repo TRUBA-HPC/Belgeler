@@ -1,5 +1,5 @@
 .. _basic_slurm_commands:
-Temel SLURM Komutları
+SLURM Komutları
 ==========================================
 Temelde **sbatch** ve **squeue** komutları iş göndermek işinizin durumunu izlemek için yeterli olsa da ek  olarak diğer SLURM komutlarını bilmek ve kullanmak, kullanım sırasında karşılaşılabilecek pek çok sorunu  hızlıca çözmek ve sistemin genelini daha iyi kavramak açısından önemlidir.
 

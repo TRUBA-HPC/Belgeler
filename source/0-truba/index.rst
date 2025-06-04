@@ -17,12 +17,4 @@ Kullanıcı Hesapları ve Üyelik
     egitim_hesaplari.rst
     kullanim_kurallari.rst
 
-Hesaplama Kaynaklarına Bağlantı
---------------------------------
-
-.. toctree::
-    :maxdepth: 1
-    
-    openvpn_info.rst
-
 

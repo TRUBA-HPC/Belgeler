@@ -1,5 +1,5 @@
 =================================================
-TRUBA Sisteminde Çok Kullanılan Linux Komutları 
+Linux Komutları 
 =================================================
 
 Bir TRUBA kullanıcısı olarak, sık kullanılan komutları öğrenmeniz, sistemimiz üzerinde daha

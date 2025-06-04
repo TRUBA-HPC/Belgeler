@@ -3,6 +3,24 @@
 Temel Bilgiler
 ==============
 
+TRUBA Bilgisayarlarına Bağlantı
+--------------------------------
+
+.. toctree::
+    :maxdepth: 1
+
+    openvpn_installation/index.rst
+    ssh_baglanti/index.rst
+
+
+Dosya Transferi
+----------------
+
+.. toctree::
+    :maxdepth: 1
+
+    dosya_transferi/index.rst
+
 Kaynak Yönetimi ve İş Döngüsü 
 ------------------------------
 .. toctree::
