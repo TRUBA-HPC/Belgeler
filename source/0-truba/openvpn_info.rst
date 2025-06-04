@@ -67,5 +67,4 @@ Kullandığınız işlemciye göre kurulum yapmak için aşağıdaki sayfaları 
 
     openvpn-installation/mac_openvpn.rst
     openvpn-installation/linux_openvpn.rst
-    openvpn-installation/winscp.rst
-    openvpn-installation/mobaxterm.rst
+    openvpn-installation/windows_openvpn.rst

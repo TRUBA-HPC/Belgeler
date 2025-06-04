@@ -1,5 +1,7 @@
+.. _linux-openvpn:
+
 ===========================================
-Linux İşletim Sistemi için OpenVPN Kurulumu
+Linux 
 ===========================================
 
 OpenVPN yapılandırması için öncelikle işletim sistemine OpenVPN kurulumunu yapmanız gerekmektedir. Linux işletim sistemi için gerekli adımlar aşağıda verilmiştir. Adımları sırasıyla takip ederek kurulumu gerçekleştirebilir ve TRUBA bilgisayarlarına erişim sağlayabilirsiniz.

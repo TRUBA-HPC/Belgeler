@@ -1,7 +1,8 @@
-.. _ssh-baglanti:
+.. _winscp:
 
-WinSCP Uygulaması Kurulumu, TRUBA ve Lokal Bilgisayarlar Arasında Dosya Transferi
-=====================================================================================================
+=========================================
+WinSCP
+=========================================
 
 WinSCP uygulaması, Windows platformu için dosya aktarım protokollerini kullanarak yerel bir bilgisayar ile uzak sunucular arasında dosya kopyalamanıza yardımcı olur. Bu uygulamayı bilgisayarınıza indirmek, kurmak ve sonrasında dosyalarınızı transfer etmek için aşağıdaki adımları izleyiniz.
 

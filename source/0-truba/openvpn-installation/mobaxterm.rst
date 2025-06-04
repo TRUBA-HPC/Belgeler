@@ -1,7 +1,7 @@
 .. _mobaxterm:
 
 ==============================
-Windows'da MobaXterm Kurulumu
+MobaXterm
 ==============================
 
 MobaXterm Windows işletim sistemi için kullanılan bir yazılımdır. MobaXterm ile aynı arayüzde hem SSH bağlantısı hem de dosya transferi yapılabilir.
