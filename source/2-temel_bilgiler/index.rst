@@ -36,7 +36,7 @@ Kaynak Yönetimi ve İş Döngüsü
 Sistemde Kurulu Uygulamalar için 
 ---------------------------------
 
-En güncel bilgiyi sisteme girdiğinizde `module av` komutu ile görebileceğinizi hatırlatmak isteriz. Bu sayfa yalnızca bilgilendirme niteliğindedir. 
+En güncel bilgiyi sisteme girdiğinizde `module av` komutu ile görebileceğinizi hatırlatmak isteriz. Bu sayfadaki içerikler yalnızca bilgilendirme niteliğindedir. 
 
 .. toctree::
     :maxdepth: 1
