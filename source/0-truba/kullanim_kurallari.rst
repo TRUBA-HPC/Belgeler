@@ -41,5 +41,5 @@ TRUBA Kullanıcı Politikası
 
 .. note::
 
-  Her türlü soru ve sorununuz için ``grid-teknik@ulakbim.gov.tr`` adresine e-posta yönlendirebilirsiniz. 
+  Her türlü soru ve sorununuz için ``grid-teknik@ulakbim.gov.tr`` adresimize e-posta yönlendirebilirsiniz. 
 

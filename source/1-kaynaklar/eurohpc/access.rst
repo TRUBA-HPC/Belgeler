@@ -1,37 +1,28 @@
 .. _eurohpc_erisim:
 
-================================================
-EuroHPC Sistemlerine Erişim Modları ve Çağrılar
-================================================
+===============================================
+EuroHPC JU Sistemlerine Erişim Çağrıları
+===============================================
 
----------------
-Erişim Modları
----------------
+EuroHPC JU süper bilgisayarlarına erişim için farklı erişim çağrıları bulunmaktadır. Her çağrı, belirli bir kullanıcı grubuna yönelik farklı gereksinimler ve hedefler içermektedir.
 
-Ortak girişim tarafından finanse edilen süper bilgisayarlara erişim süresi tahsisi, `EuroHPC Ortak Girişimi Konsey Yönetmeliği ve Ortak Girişimi’in Erişim Politikası <https://eurohpc-ju.europa.eu/access-our-supercomputers/access-policy-and-faq_en>`_’nda belirtilen ilkelere göre düzenlenecektir.
 
-Bu ilkelere göre bilimsel, endüstriyel ve kamu sektörü kullanıcıları için farklı `EuroHPC erişim çağrıları <https://eurohpc-ju.europa.eu/access-our-supercomputers/eurohpc-access-calls_en>`_ bulunmaktadır:
 
 * :ref:`Kıyaslama (Benchmark) <benchmark-development>`
 * :ref:`Geliştirme (Development) <benchmark-development>`
 * :ref:`Yapay Zeka ve Veri Yoğun Uygulamalar <ai-dataintensive>`
 * :ref:`Düzenli Erişim <regular-access>`
 * :ref:`Aşırı Ölçekli Erişim <extreme-access>`
-* Akademi için hızlı erişim
-* Endüstri için hızlı erişim
 
 
-Bu erişim çağrıları kapsamında endüstriyel kullanıcılar için iki tip kaynak kullanımı tanımlanabilir:
+.. note:: 
 
-* **Araştırma ve İnovasyon (R&I) Erişimi:** Araştırma ve inovasyon için kaynaklar endüstriyel kullanıcılar için yukarıda belirtilen değerlendirmeye dayalı erişim modları kullanılacaktır. Araştırma sonuçlarının yayınlanması gerekmektedir. 
+    Tüm çağrılara ilişkin dokumanlara ve başvuru koşullarına erişmek için `EuroHPC erişim çağrıları <https://eurohpc-ju.europa.eu/access-our-supercomputers/eurohpc-access-calls_en>`_ adresini ziyaret edebilirsiniz.
+    
+    EuroHPC JU tarafından sağlanan süper bilgisayar sistemlerine erişim, Avrupa Birliği ve katılımcı ülkelerin araştırmacıları ve endüstriyel kullanıcıları için ücretsizdir. Ancak, erişim çağrılarına başvuruların kabul edilmesi, belirli kriterlere ve değerlendirme süreçlerine bağlıdır. Bu nedenle, her çağrı için belirlenen kriterleri dikkatlice incelemek önemlidir.
 
-* **Ticari Erişim:** Endüstriyel kullanıcılar sivil uygulamalar için değerlendirmeye dayalı bir süreç olmadan ödeme yaparak kaynakları kullanabilmeleri planlanmaktadır.
+    Çağrılara başvurular `EuroHPC JU Kullanıcı Portalı <https://access.eurohpc-ju.europa.eu/>`_ üzerinden yapılabilmektedir.
 
-İlgili erişim modlarına başvurular, `EuroHPC JU Kullanıcı Portalı <https://access.eurohpc-ju.europa.eu/>`_ üzerinden yapılabilmektedir. 
-
-..
-
-  Başvuru prosedürleri hakkında bilgi edinmek için `tıklayınız... <https://eurohpc-ju.europa.eu/access-our-supercomputers_en>`_
 
 ----------------------------------
 EuroHPC Ortak Girişimi Çağrıları
@@ -58,4 +49,5 @@ Endüstriyel Kullanıcılar için Diğer Çağrılar
 
 
 ..
-
+    inno4scale.rst
+    ff4eurohpc_shape.rst

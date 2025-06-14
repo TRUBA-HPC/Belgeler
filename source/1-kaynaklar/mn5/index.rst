@@ -20,7 +20,7 @@ TRUBA Üzerinden Başvuru
 Türkiye'deki araştırmacılar (üniversiteler, kamu ve özel sektör), özellikle **İTÜ UHeM/TRUBA** altyapısını daha önce kullanmış gruplar, **"Pilot Erişim Başvurusu"** mekanizması ile bu güçlü kaynağa erişebilmektedir. Bu başvurular **20 Eylül 2025** tarihine kadar devam edecek olup, sonrasında daha geniş çaplı bir erişim çağrısı planlanmaktadır.
 
 Daha fazla bilgi ve başvuru için:
-`https://indico.truba.gov.tr/event/166/ <https://indico.truba.gov.tr/event/166/>`_
+`https://indico.truba.gov.tr/e/marenostrum5 <https://indico.truba.gov.tr/e/marenostrum5>`_
 
 
 

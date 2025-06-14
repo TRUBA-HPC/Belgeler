@@ -39,13 +39,13 @@ Bu kılavuz dosya sistemleri hakkında aşağıdaki başlıkları kapsamaktadır
 
 * Kullanıcı ev dizinleri ve merkezimiz tarafından sağlanan yazılımların (derleyici, uygulama ve kütüphaneler) kaydedildiği alan için “kullanıcı ev dizini” terimi kullanılmaktadır. Kullanıcı ev dizinleri için iki farklı dosya sistemi kullanılmaktadır. Kullanıcı dizinleri `../home`  dosya sistemi altında bulunmakla birlikte işlerini çalıştırırken yüksek performanslı dosya sistemi `../scratch` dosya sistemi altında bulunmaktadır. 
 
-* `/truba` ve `/arf` dosya sistemlerinde kullanıcılar için kota uygulaması söz konusudur. Tüm kullanıcıların disk kotaları eşit olarak ayarlanmıştır. ARDEB vasıtası ile hesap açılan ve projeleri kapsamında işlerini çalıştıran kullanıcılar için, standart kota miktarından farklı olarak, projelerinde öngörülen disk kotası miktarı uygulanmaktadır. Detayları aşağıdaki tablolardan erişebilirisiniz.
+* `/truba` ve `/arf` dosya sistemlerinde kullanıcılar için kota uygulaması söz konusudur. Tüm kullanıcıların disk kotaları eşit olarak ayarlanmıştır. Sözleşme kapsamında tahsis edilen proje hesapları ile işlerini çalıştıran kullanıcılar için, standart kota miktarından farklı olarak, projelerinde öngörülen ve sözleşmede belirtilen kapasitede disk kotası miktarı uygulanmaktadır. Disk kotası detaylarına aşağıdaki tablolardan erişebilirsiniz.
 
 * Kullanıcı ev dizinlerinin yedekleri alınmamaktadır. Bu nedenle buradaki kullanıcı verilerinin düzenli olarak kullanıcılar tarafından kendi kişisel bilgisayarlarına aktarılması, önemsiz verilerin ise yine kullanıcının kendisi tarafından silinmesi beklenmektedir. **Kullanıcı ev dizinleri kesinlikle uzun vadeli bir depolama alanı olarak düşünülmemelidir.**
 
 * Kullanıcı ev dizinleri standart olarak sadece dizinin sahibi tarafından erişilebilecek şekilde oluşturulurlar. Ancak zamanla kullanıcılar dizin erişim haklarını bilerek ya da bilmeyerek değiştirebilirler. Kullanıcı ev dizinlerindeki verinin güvenliğinden yine kullanıcın kendisi sorumludur. 
 
-* Kümelerde kullanılan ortak yazılımlar `/truba/sw` ve `/arf/sw` dizininde tutulurlar. Bu dizine tüm kullanıcıların read-only erişimleri vardır. Bu dizindeki yazılımlar genel olarak ücretsiz lisanslı yazılımlardır ve tüm TRUBA kullanıcılarının *yazılımın lisans haklarına uyulması şartı ile* kullanımına açıktır. 
+* Kümelerde kullanılan ortak yazılımlar `/arf/sw` dizininde tutulurlar. Bu dizine tüm kullanıcıların read-only erişimleri vardır. Bu dizindeki yazılımlar genel olarak ücretsiz lisanslı yazılımlardır ve tüm TRUBA kullanıcılarının *yazılımın lisans haklarına uyulması şartı ile* kullanımına açıktır. 
 
 .. * Tüm hesaplama kümelerinde hesaplama performans alanı okarak ``/truba_scratch`` dosya sistemi kullanılmaktadır. Kullanıcıların işlerini bu dosya sisteminde çalıştırması amaçlanmıştır. Bu dosya sistemindeki dosyalar da düzenli olarak kullanıcı tarafından silinmelidir. Dosya sisteminde, 30 gün boyunca hiç erişilmemiş dosyalar düzenli olarak sistem yöneticisi tarafından silinebilmektedir. 
 
@@ -58,7 +58,7 @@ Bu kılavuz dosya sistemleri hakkında aşağıdaki başlıkları kapsamaktadır
 ARF Dosya Sistemi
 ----------------------------------
 
-ARF hesaplama kümesi için `/arf/home`, `/arf/scratch` ve `/truba/home` dosya sistemleri hakkında detaylı içerik tablo içerisinde belirtilmiştir. Bu dosya sistemlerine bağlı bulunan suncular üzerinden iş gönderilebilir. İşler çalışırken sadece beliritlen dosya sistemlerine erişimi mevcuttur. 
+ARF hesaplama kümesi için `/arf/home`, `/arf/scratch` ve `/truba/home` dosya sistemleri hakkında detaylı içerik tablo içerisinde belirtilmiştir. Bu dosya sistemlerine bağlı bulunan sunucular üzerinden iş gönderilebilir. İşler çalışırken sadece belirtilen dosya sistemlerine erişimi mevcuttur. 
 
 .. |br| raw:: html
 

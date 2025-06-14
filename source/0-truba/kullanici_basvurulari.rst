@@ -29,8 +29,7 @@ Altyapının kullanılması için çalışabilir uygulamaların (açık kaynak k
   
 TRUBA kaynaklarından faydalanmak isteyen araştırmacılarımızın üyelik başvuruları, 
 `TRUBA Üyelik Portalı <https://portal.truba.gov.tr>`_ üzerinden gerçekleştirilmektedir. 
-Mevcut üyelerimiz, aynı portal aracılığıyla kaynak taleplerini yönetebilir, kullanıcı bilgilerini güncelleyebilir ve 
-çalışmalarının çıktılarını takip edebilirler.
+Mevcut üyelerimiz, portal üzerinden kullanıcı bilgilerini güncelleyebilir ve TRUBA kaynaklarını kullanarak gerçekleştirdikleri bilimsel yayınları "Yayınlar" bölümüne ekleyebilirler. Ayrıca, bu yayınlarda TRUBA'ya teşekkür etmeleri gerekmektedir.
 
 Üyelik Başvuru Süreci
 ---------------------
@@ -56,26 +55,23 @@ Başvuru sırasında kimlik doğrulaması, e-Devlet Kapısı üzerinden gerçekl
 
 .. note::
 
-   E-posta doğrulama işlemi tamamlanmadan TRUBA Portal’da diğer işlem adımları kullanılamaz 
-   ve üyelik talebiniz sistemde işleme alınmaz.
+   E-posta doğrulama işlemi tamamlanmadan TRUBA Portal’da diğer işlem adımları kullanılamaz ve üyelik talebiniz sistemde işleme alınmaz. İlgili süreçlerin sorunsuz bir şekilde yürütülebilmesi için lütfen e-posta adresinizi doğru şekilde giriniz ve de e-posta doğrulama işleminizi gerçekleştiriniz. 
 
 Üyelik Durumuna Göre İşlem Adımları
 -----------------------------------
 
 * **Mevcut TRUBA Üyeliği Olanlar:**  
-  Kimlik doğrulaması sonrası, TRUBA kullanıcı hesabınız portal üyeliğinizle otomatik olarak eşleştirilir 
-  ve işlem adımlarına erişim sağlanır.
+  Kimlik doğrulaması sonrası, TRUBA kullanıcı hesabınız portal üyeliğinizle otomatik olarak eşleştirilir ve işlem adımlarına erişim sağlanır.
 
 * **Yeni TRUBA Başvurusu Yapanlar:**  
   Profil bilgileriniz ve e-posta doğrulamanız tamamlandıktan sonra, başvurunuz onay sürecine alınır. 
-  Onay işlemi tamamlandığında kullanıcı hesabınız oluşturularak, kullanıcı bilgileriniz e-posta yoluyla tarafınıza iletilir.
+  Onay işlemi tamamlandığında kullanıcı hesabınız oluşturularak, kullanıcı bilgileriniz TRUBA portal üzerinde kayıtlı olan e-posta adresinize iletilir.
 
 Kaynak Talep Süreci
 -------------------
 
 TRUBA Üyelik Portalı üzerinden, araştırma projeleriniz için hesaplama ve depolama kaynağı başvurusunda bulunabilirsiniz.  
-Kaynak talepleri, proje süresi ve ihtiyaca göre değerlendirilir. Kaynak Tahsisi uygulaması sayesinde 
-araştırma gruplarının birlikte çalışabilirliği desteklenir.
+Kaynak talepleri, proje süresi ve ihtiyaca göre değerlendirilir. Kaynak Tahsisi uygulaması sayesinde araştırma gruplarının birlikte çalışabilirliği desteklenir.
 
 Şifre Değişikliği
 -----------------
@@ -100,17 +96,24 @@ tanımlanmaktadır.
 
 Mevcut eğitim düzeyine göre tanımlanan kotalar aşağıda belirtilmektedir:
 
-- *Lisans Öğrencileri:*  Danışmanları birlikte bir projeye dahil olmaları durumunda hesap açılmakta olup, sadece ilgili proje hesabının kaynak miktarlarından faydalanabilmektedirler.
+- *Lisans Öğrencileri:*  Lisans öğrencilerinin hesapları, danışmanları ile birlikte bir projeye dahil olmaları ve ilgili projenin TÜBİTAK ULAKBİM ile yapılan sözleşme kapsamında TRUBA'da bir proje hesabına sahip olması durumunda açılır. Bu durumda, öğrenciler yalnızca ilgili proje hesabının tanımlı kaynaklarını kullanabilirler.
+  
+- *Y. Lisans Öğrencileri:* Yüksek Lisans öğrencilerine TRUBA sisteminde hesap açılabilmesi için "Danışman Onayı" gerekmektedir. TRUBA portal üzerinden yapılan başvuru sonrasında üyelik talebinde bulunan öğrencinin kayıtlı eposta adresine  "Danışman Onayı" maili yönlendirilmektedir. Danışman onaylarından sonra hesapları açılmakta olup, aynı anda 56 çekirdek kullanımı, toplam 200.000 çekirdek saat hesaplama kotası ve 2TByte veri depolama alanı sağlanmaktadır.
 
-- *Y. Lisans Öğrencileri:* Danışman onaylarından sonra hesapları açılmakta olup, aynı anda 56 çekirdek kullanımı, toplam 200.000 çekirdek saat hesaplama kotası ve 2TByte veri depolama alanı sağlanmaktadır.
+   Danışmanları ile birlikte bir projeye dahil olmaları ve ilgili projenin TÜBİTAK ULAKBİM ile olan sözleşme kapsamında TRUBA'da bir proje hesabı bulunması durumunda, ilgili proje hesabının kaynak miktarlarından da faydalanabilmektedirler.
 
-   Danışmanları ile birlikte bir projeye dahil olmaları ve ilgili projenin TRUBA kaynaklarında bir proje hesabı bulunması durumunda, ilgili proje hesabının kaynak miktarlarından da faydalanabilmektedirler.
+   .. note:: 
+      - YL öğrencileri için tez danışmanlarının onayı olmadan TRUBA kullanıcı hesabı, açılmamaktadır. 
+  
+      - YL öğrencileri için tez danışmanı bilgisi TRUBA portal üzerinde yer almamaktadır. Bu bilgi sadece öğrencinin bağlı olduğu üniversitenin enstitü kayıtlarında yer almaktadır.
+  
+      - TRUBA kullanıcı hesabı başvuruları bireysel olarak yapılmaktadır. YÖKSİS entegrasyonu ile tüm öğrencilik bilgileri (aktif/mezun/kayıt dondurmuş) listelenebilmektedir. İlgili tez danışmanı öğretim üyelerinin bilgileri TRUBA portalda ayrıca yer almadığı için ilgili bilgilendirme süreçleri portalda kayıtlı olan e-posta adresi üzerinden yürütülür. 
 
 - *Doktora Öğrencileri ve Akademisyenler:* Hesapları YÖKSİS bilgilerine göre doğrudan açılmaktadır. Aynı anda 168 çekirdek kullanımı, toplam 400.000 çekirdek saat hesaplama kotası ve 2TByte veri depolama alanı sağlanmaktadır.
 
-   Araştırmacılar bir projeye dahil olmaları ve ilgili projenin TRUBA kaynaklarında bir proje hesabı bulunması durumunda, ilgili proje hesabının kaynak miktarlarından da faydalanabilmektedirler.
+  Araştırmacıların, bir projeye dahil olmaları ve ilgili projenin TÜBİTAK ULAKBİM ile yapılan sözleşme kapsamında TRUBA'da bir proje hesabına sahip olması durumunda, söz konusu proje hesabının kaynaklarından da yararlanabilmeleri mümkündür.
 
-Konu ile ilgili her türlü soru ve sorununuzu grid-teknik@ulakbim.gov.tr adresine e-posta ile iletebilirsiniz.
+Konu ile ilgili her türlü soru ve sorununuzu ``grid-teknik@ulakbim.gov.tr`` adresimize e-posta ile iletebilirsiniz.
 
 
 

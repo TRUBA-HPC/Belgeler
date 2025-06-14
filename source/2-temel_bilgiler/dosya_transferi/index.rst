@@ -5,7 +5,7 @@ Dosya Transferi
 ========================================
 
 
-TRUBA sistemine uzaktan erişim sağlamak ve veri aktarımı gerçekleştirmek için öncelikle OpenVPN bağlantısının **aktif hale getirilmiş olması gerekmektedir**. VPN bağlantısı olmadan aşağıdaki işlemlerin gerçekleştirilmesi mümkün değildir.
+TRUBA sistemine uzaktan erişim sağlamak ve veri aktarımı gerçekleştirmek için öncelikle VPN bağlantısının **aktif hale getirilmiş olması gerekmektedir**. VPN bağlantısı olmadan aşağıdaki işlemlerin gerçekleştirilmesi mümkün değildir.
 
 Kullanıcı Arayüzü Tavsiyesi
 ---------------------------
@@ -18,7 +18,7 @@ VPN bağlantısı kurulduktan sonra, **daha hızlı veri aktarımı** için aşa
 Windows İşletim Sistemi için
 ------------------------------
 
-Windows işletim sisteminde dosya transferlerinizi terminaldeki komutların yanı sıra Mobaxterm, FileZilla ve WinSCP gibi araçlarla da gerçekleştirebilirsiniz.
+Windows işletim sisteminde dosya transferlerinizi terminaldeki komutların yanı sıra MobaXTerm, FileZilla ve WinSCP gibi araçlarla da gerçekleştirebilirsiniz.
 İlgili içeriklere dokümantasyon sayfamızdan erişebilirsiniz.
 
 .. toctree::
@@ -72,7 +72,7 @@ Bu uygulamalar sayesinde dosyalar sürükle-bırak yöntemiyle kolaylıkla indir
 Önemli Notlar
 -------------
 - Yukarıdaki tüm işlemler için sistemde bir kullanıcı hesabınızın olması gerekmektedir.
-- İlk bağlantıdan önce **OpenVPN yapılandırma dosyasının ve TRUBA OpenVPN istemcisinin doğru şekilde kurulmuş ve yapılandırılmış olması** gerekir.
+- İlk bağlantıdan önce **VPN yapılandırma dosyasının ve TRUBA VPN istemcisinin doğru şekilde kurulmuş ve yapılandırılmış olması** gerekmektedir.
 - Eğer VPN bağlantınız yoksa, https://docs.truba.gov.tr adresindeki :ref:`open-vpn` bölümünden gerekli yönergeleri takip edebilirsiniz.
 
 

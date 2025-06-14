@@ -4,7 +4,7 @@
 Sıkça Sorulan Sorular
 =======================
 
-Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını aşağıda bulabilirsiniz. Aşağıda cevabını bulamadığınız sorularızı ``grid-teknik@ulakbim.gov.tr`` adresine iletebilirsiniz.
+Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını aşağıda bulabilirsiniz. Aşağıda cevabını bulamadığınız sorularınızı ``grid-teknik@ulakbim.gov.tr`` adresine iletebilirsiniz. Maillerinizde lütfen TRUBA kullanıcı adınızı ve varsa ilgili proje hesabınızı belirtiniz.
 
 :ref:`1. Kullanıcı arayüzü sunucularına erişim kısıtlamaları var mı? <target to ss1>`
 
