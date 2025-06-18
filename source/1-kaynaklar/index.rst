@@ -11,7 +11,7 @@ Kaynaklar
     arf_acc/index.rst
     mn5/index.rst
     eurohpc/index.rst
-    yz-fabrikalari/index.rst
+    yz_fabrikalari/index.rst
 
 
 
