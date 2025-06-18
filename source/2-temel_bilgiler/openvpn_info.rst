@@ -1,13 +1,12 @@
 .. _open-vpn:
 
+=======================
 OpenVPN Bağlantısı 
-========================================
+=======================
 
 OpenVPN, internet üzerinden güvenli ve şifreli bir bağlantı kurmak için kullanılan açık kaynaklı bir VPN (Virtual Private Network) protokolüdür. Özellikle gizliliği korumak, veri güvenliğini sağlamak ve uzaktaki ağlara erişmek amacıyla kullanılır.
 
 Bilgisayarında sabit ve gerçek bir IP adresi tanımlama şansı olmayan kullanıcılar, **OpenVPN** kullanarak TRUBA ağına bağlanabilirler ve kullanıcı arayüzü sunucusuna ulaşabilirler. OpenVPN bağlantısı, sadece kullanıcı adı ve parola kullanarak gerçekleştirilebileceği gibi, bunu desteklemeyen versiyonlarda, TRUBA 'dan temin edilecek geçerli bir sertifika ile de gerçekleştirilebilir.
-
-
 
 OpenVPN bağlantısını, herhangi bir sertifikaya ihtiyaç olmadan, TRUBA kullanıcılarının sistem üzerindeki **kullanıcı adları** ve **parolalarını** kullanarak gerçekleştirmeleri mümkündür. Kullanıcı adı ve parola kullanarak farklı işletim sistemleri üzerinden bağlantı gerçekleştirmek için OpenVPN'in ilgili sürümü indirilerek,  ilgili yapılandırma dosyası OpenVPN kurulum dizinindeki config dizinine kopyalanmalıdır.
 
@@ -46,21 +45,7 @@ Aşağıdaki linklerde farklı işletim sistemleri için OpenVPN dosyalarının 
   
 ARF kullanıcı arayüzlerini kullanırken de diğer kuyruklara iş gönderebilirsiniz. Bu konuda endişelenmenize gerek yoktur.
 
-
-
-
-
-..
-   ULAKNET ağı dışından (örneğin üniversite kampüsü dışından) bağlantı sağlıyorsanız:
-
-   * levrek1 için **levrek1.yonetim** ya da ``172.16.7.1``
-   * sardalya1 için **sardalya1.yonetim** ya da ``172.16.10.1``
-   * barbun1 için **barbun1.yonetim** ya da ``172.16.11.1``
-
-   **Eğer ULAKNET ağı içinden sunuculara bağlantı sağlamak istiyorsanız OpenVPN bağlantısına gerek yoktur.** 
-
-
-Kullandığınız işlemciye göre kurulum yapmak için aşağıdaki sayfaları ziyaret edebilirsiniz.
+Kullandığınız işletim sistemine göre kurulum yapmak için aşağıdaki sayfaları ziyaret edebilirsiniz.
 
 .. toctree::
     :maxdepth: 1

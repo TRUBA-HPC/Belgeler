@@ -13,7 +13,7 @@ Proje başvurusu için son tarihler şaşağıdaki gibidir:
 * 15 Nisan 2024 - 10:00 (Lüksemburg Saati) 
 * 14 Haziran 2024 - 10:00 (Lüksemburg Saati)
 * 11 Ekim 2024 - 10:00 (Lüksemburg Saati)
-* 22 Kasım 2024 - 10:00 (Lüksemburg Saati)
+* 22 Kasım 2025 - 10:00 (Lüksemburg Saati)
 
 .. list-table:: Yapay Zeka ve Veri Yoğun Uygulamalar Erişim Çağrısı için EuroHPC JU Sistemleri
    :widths: 25 25 25 25 25 25

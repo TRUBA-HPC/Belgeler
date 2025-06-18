@@ -4,7 +4,7 @@
 Sıkça Sorulan Sorular
 =======================
 
-Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını aşağıda bulabilirsiniz. Aşağıda cevabını bulamadığınız sorularınızı ``grid-teknik@ulakbim.gov.tr`` adresine iletebilirsiniz. Maillerinizde lütfen TRUBA kullanıcı adınızı ve varsa ilgili proje hesabınızı belirtiniz.
+Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını aşağıda bulabilirsiniz. Aşağıda cevabını bulamadığınız sorularızı ``grid-teknik@ulakbim.gov.tr`` adresimize :ref:`truba_iletisim` sayfasında belirtilen hususlar kapsamında iletebilirsiniz. Maillerinizde lütfen TRUBA kullanıcı adınızı ve varsa ilgili proje hesabınızı belirtiniz. 
 
 :ref:`1. Kullanıcı arayüzü sunucularına erişim kısıtlamaları var mı? <target to ss1>`
 
@@ -89,25 +89,22 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 
 1. Kullanıcı arayüzü sunucularına erişim kısıtlamaları var mı?
 
-    Öncelikle OpenVPN ile TRUBA sanal ağına bağlanılmalı, sonrasında 
+    ULAKNET ağı içinde veya dışında olma durumunuz farketmeksizin VPN ile TRUBA sanal ağına başarılı bir şekilde bağlantı sağlandıktan sonra,
 	
-		- TRUBA için 
-			- 172.16.11.1 ile barbun1
 		- ARF için 
 			- 172.16.6.11 ile arf-ui1
 			- 172.16.6.12 ile arf-ui2
+			- 172.16.6.13 ile arf-ui3
+			- 172.16.6.14 ile arf-ui4
+			- 172.16.6.15 ile arf-ui5
 
-	kullanıcı arayüz suncuularına ssh ile bağlanabilirsiniz. :ref:`OpenVPN hakkında bilgilere erişmek için tıklayınız...<open-vpn>`
-	
-..
-	Evet. Sadece ULAKNET ağına bağlı bilgisayarlardan (tüm kamu üniversiteleri ve bazı vakıf üniversiteleri) levrek1.ulakbim.gov.tr sunucusuna SSH ile doğrudan bağlanabilir.
-    Eğer internete ULAKNET üzerinden bağlanılmıyorsa, öncelikle OpenVPN ile TRUBA sanal ağına bağlanılmalı, sonrasında levrek1.ulakbim.gov.tr (ya da 172.16.7.1 adresine) ssh ile bağlanılmalıdır.  
+	kullanıcı arayüz sunucularından birisine ssh ile bağlanabilirsiniz. :ref:`OpenVPN hakkında bilgilere erişmek için tıklayınız...<open-vpn>`
 
 .. _target to ss2:
 
 2. Kullanıcı arayüzü sunucularına sabit IP'si olmayan bilgisayarlarla bağlanılabilir mi?
 
-    Evet. Kişisel bilgisayarınıza OpenVPN programını kurup, programı https://docs.truba.gov.tr adresinde anlatıldığı şekilde yapılandırarak, herhangi bir IP kısıtlaması olmadan, dünyanın herhangi bir yerinden kullanıcı arayüzü sunucularına erişmek mümkündür. 
+    Evet. Kişisel bilgisayarınıza bir VPN programı (OpenVPN, Tunnelblick vb.) kurup, programı :ref:`open-vpn` sayfasında anlatıldığı şekilde yapılandırarak, herhangi bir IP kısıtlaması olmadan, dünyanın herhangi bir yerinden kullanıcı arayüzü sunucularına erişmek mümkündür. 
 
 .. _target to ss3:
 
@@ -115,9 +112,8 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 
     Sisteme bağlanamamanızın pek çok sebebi olabilir. Olası bazı sebepler:
 
-    * Bağlanırken kullandığınız bilgisayarın IP adresini bize bildirmemiş olabilirsiniz.
     * Kullandığınız bilgisayardaki virus tarama ve firewall benzeri programlar bağlantınızı engelliyor olabilir. Bu programları yeniden yapılandırınız, ya da iptal ediniz.
-    * Kullandığınız bilgisayarın IP'si değişmiş olabilir.
+    * Kullandığınız bilgisayarın IP'si değişmiş olabilir. Bu durumda VPN bağlantınızı yeniden yapılandırmanız gerekebilir. 
     * Bulunduğunuz networkte SSH veya OpenVPN bağlantılarına izin verilmiyor olabilir.
     * Bulunduğunuz networkte bir problem yaşanıyor olabilir.
     * TRUBA networkünde bir problem yaşanıyor olabilir. 
@@ -389,7 +385,7 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 
 .. _target to ss39:
 
-1.  İşlerim "AssocGrpCpuLimit" uyarısı vererek başlamıyor. Neden?
+39.  İşlerim "AssocGrpCpuLimit" uyarısı vererek başlamıyor. Neden?
 
 	Hesabınız için tanımlanmış olan aynı anda kullanabileceğiniz çekirdek sayısının üzerinde kaynak talebinde bulunduğunuz için, işleriniz iş kuyruğuna alınmasına rağmen başlamaz. İşlerinizin başlayabilmesi için TRUBA kullanıcı hesabınıza tanımlı çekirdek sayısı limitini göz önünde bulunudrarak SLURM betik dosyanızı düzenlemeniz gerekmektedir.  
 
