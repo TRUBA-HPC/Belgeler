@@ -1,8 +1,8 @@
 .. _tesekkur-truba:
 
-=====================================================================
-Yapılan Çalışmalarda TRUBA'ya Türkçe ve İngilizce Teşekkür Örnekleri
-=====================================================================
+==============================
+TRUBA'ya Teşekkür Metinleri
+==============================
 
 TRUBA hesaplama kaynaklarını araştırmacılar arasında verimli bir şekilde paylaştırabilmek adına, araştırmacılarımızdan TRUBA kaynaklarını kullanarak daha önceden yapmış olduğu veya ileride yapacağı çalışmalar hakkında (makale, tez, bildiri, poster sunumu, vb.) geri bildirim beklenmektedir. Bu bildirimler doğrultusunda kullanıcılara TRUBA kaynaklarından hesaplama zamanı tahsisine gidilecektir. 
 

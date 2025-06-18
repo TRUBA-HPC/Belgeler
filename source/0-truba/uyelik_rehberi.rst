@@ -1,9 +1,9 @@
 
 .. _uyelik-bilgi:
 
-==========================================
-TRUBA Üyelik ve Kaynak Başvuru Rehberi
-==========================================
+======================
+TRUBA Üyelik Rehberi
+======================
 
 
 -------------------------------------
@@ -32,17 +32,9 @@ Mevcut üyelerimiz, portal üzerinden kullanıcı bilgilerini güncelleyebilir v
   TRUBA Üyelik Portalı üzerinden, araştırma projeleriniz için hesaplama ve depolama kaynağı başvurusunda bulunabilirsiniz.  
   Kaynak talepleri, proje süresi ve ihtiyaca göre değerlendirilir. Kaynak Tahsisi uygulaması sayesinde araştırma gruplarının birlikte çalışabilirliği desteklenir.
 
-Şifre Değişikliği
------------------
+.. _kullanicihesabi-bilgi:
 
-TRUBA kullanıcı şifrenizi değiştirmek için terminalde aşağıdaki komutu kullanabilirsiniz:
-
-.. code-block:: bash
-
-   passwd
-
-
-Standart kullanıcı hesabı özellikleri
+Standart Kullanıcı Hesabı Özellikleri
 --------------------------------------
 
 Her araştırmacıya kullanıcı adı ile birlikte
@@ -55,24 +47,28 @@ tanımlanmaktadır.
 
 Mevcut eğitim düzeyine göre tanımlanan kotalar aşağıda belirtilmektedir:
 
-- *Lisans Öğrencileri:*  Lisans öğrencilerinin hesapları, danışmanları ile birlikte bir projeye dahil olmaları ve ilgili projenin TÜBİTAK ULAKBİM ile yapılan sözleşme kapsamında TRUBA'da bir proje hesabına sahip olması durumunda açılır. Bu durumda, öğrenciler yalnızca ilgili proje hesabının tanımlı kaynaklarını kullanabilirler.
+- **Lisans Öğrencileri:**  Lisans öğrencilerinin hesapları, danışmanları ile birlikte bir projeye dahil olmaları ve ilgili projenin TÜBİTAK ULAKBİM ile yapılan sözleşme kapsamında TRUBA'da bir proje hesabına sahip olması durumunda açılır. Bu durumda, öğrenciler yalnızca ilgili proje hesabının tanımlı kaynaklarını kullanabilirler.
   
-- *Y. Lisans Öğrencileri:* Yüksek Lisans öğrencilerine TRUBA sisteminde hesap açılabilmesi için "Danışman Onayı" gerekmektedir. TRUBA portal üzerinden yapılan başvuru sonrasında üyelik talebinde bulunan öğrencinin kayıtlı eposta adresine  "Danışman Onayı" maili yönlendirilmektedir. Danışman onaylarından sonra hesapları açılmakta olup, aynı anda 56 çekirdek kullanımı, toplam 200.000 çekirdek saat hesaplama kotası ve 2TByte veri depolama alanı sağlanmaktadır.
+- **Yüksek Lisans Öğrencileri:** Yüksek Lisans öğrencilerine TRUBA sisteminde hesap açılabilmesi için "Danışman Onayı" gerekmektedir. TRUBA portal üzerinden yapılan başvuru sonrasında üyelik talebinde bulunan öğrencinin kayıtlı eposta adresine  "Danışman Onayı" maili yönlendirilmektedir. İlgili danışman öğretim üyesi tarafından `grid-teknik@ulakbim.gov.tr`` adresimize iletilen danışman onayından sonra kullanıcı hesapları açılmakta olup, aynı anda 56 çekirdek kullanımı, toplam 200.000 çekirdek saat hesaplama kotası ve 2TByte veri depolama alanı sağlanmaktadır.
 
-   Danışmanları ile birlikte bir projeye dahil olmaları ve ilgili projenin TÜBİTAK ULAKBİM ile olan sözleşme kapsamında TRUBA'da bir proje hesabı bulunması durumunda, ilgili proje hesabının kaynak miktarlarından da faydalanabilmektedirler.
+.. note:: 
 
-   .. note:: 
-      - YL öğrencileri için tez danışmanlarının onayı olmadan TRUBA kullanıcı hesabı, açılmamaktadır. 
+   - YL öğrencileri, danışmanları ile birlikte bir projeye dahil olmaları ve ilgili projenin TÜBİTAK ULAKBİM ile olan sözleşme kapsamında TRUBA'da bir proje hesabı bulunması durumunda, ilgili proje hesabının kaynak miktarlarından da faydalanabilmektedirler.
   
-      - YL öğrencileri için tez danışmanı bilgisi TRUBA portal üzerinde yer almamaktadır. Bu bilgi sadece öğrencinin bağlı olduğu üniversitenin enstitü kayıtlarında yer almaktadır.
+   - YL öğrencileri için tez danışmanlarının onayı olmadan TRUBA kullanıcı hesabı, açılmamaktadır. 
   
-      - TRUBA kullanıcı hesabı başvuruları bireysel olarak yapılmaktadır. YÖKSİS entegrasyonu ile tüm öğrencilik bilgileri (aktif/mezun/kayıt dondurmuş) listelenebilmektedir. İlgili tez danışmanı öğretim üyelerinin bilgileri TRUBA portalda ayrıca yer almadığı için ilgili bilgilendirme süreçleri portalda kayıtlı olan e-posta adresi üzerinden yürütülür. 
+   - YL öğrencileri için tez danışmanı bilgisi TRUBA portal üzerinde yer almamaktadır. Bu bilgi sadece öğrencinin bağlı olduğu üniversitenin enstitü kayıtlarında yer almaktadır.
+  
+   - TRUBA kullanıcı hesabı başvuruları bireysel olarak yapılmaktadır. YÖKSİS entegrasyonu ile tüm öğrencilik bilgileri (aktif/mezun/kayıt dondurmuş) listelenebilmektedir. İlgili tez danışmanı öğretim üyelerinin bilgileri TRUBA portalda ayrıca yer almadığı için ilgili bilgilendirme süreçleri portalda kayıtlı olan e-posta adresiniz üzerinden yürütülür. 
 
-- *Doktora Öğrencileri ve Akademisyenler:* Hesapları YÖKSİS bilgilerine göre doğrudan açılmaktadır. Aynı anda 168 çekirdek kullanımı, toplam 400.000 çekirdek saat hesaplama kotası ve 2TByte veri depolama alanı sağlanmaktadır.
+- **Doktora Öğrencileri ve Akademisyenler:** Hesapları YÖKSİS bilgilerine göre doğrudan açılmaktadır. Aynı anda 168 çekirdek kullanımı, toplam 400.000 çekirdek saat hesaplama kotası ve 2TByte veri depolama alanı sağlanmaktadır.
+
+.. note::
 
   Araştırmacıların, bir projeye dahil olmaları ve ilgili projenin TÜBİTAK ULAKBİM ile yapılan sözleşme kapsamında TRUBA'da bir proje hesabına sahip olması durumunda, söz konusu proje hesabının kaynaklarından da yararlanabilmeleri mümkündür.
 
 Konu ile ilgili her türlü soru ve sorununuzu ``grid-teknik@ulakbim.gov.tr`` adresimize e-posta ile iletebilirsiniz.
+
 
 .. _uyelik-yayinlar:
 
@@ -84,12 +80,8 @@ TRUBA kaynaklarından faydalanılarak gerçekleştirilen bilimsel yayınların b
 
 ``Yayınlar-> Yeni Yayın Ekle`` düğmesi kullanılarak, her portal üyesi kendisi ve/veya araştırma grubu için farklı yayın girişlerinde bulunabilir.
 
-TRUBA hesaplama kaynaklarının kullanıldığı tüm bilimsel çalışmalarda (makale, tez, bildiri, poster sunumu, v.b.) değerli araştırmacılarımızın :ref:`tesekkur-truba` sayfasında belirtildiği gibi Teşekkür ("Acknowledgement") metinlerine yayınlarında yer vermeleri gerekmektedir.
+TRUBA hesaplama kaynaklarının kullanıldığı tüm bilimsel çalışmalarda (makale, tez, bildiri, poster sunumu, v.b.) değerli araştırmacılarımızın :ref:`tesekkur-truba` sayfasında belirtildiği gibi yayınlarında Teşekkür ("Acknowledgement") metinlerine yer vermeleri gerekmektedir.
 
-.. toctree::
-   :maxdepth: 1
-
-   TRUBAtesekkur.rst
 
 .. _yeni-sertifika:
 

@@ -1,8 +1,8 @@
 .. _truba_iletisim:
 
-==============================================
-TRUBA Ekibiyle İletişim Kurmak için Şablonlar
-==============================================
+=============================
+TRUBA Teknik Destek Talebi
+=============================
 
 TRUBA sisteminde karşılaştığınız sorunları ``grid-teknik@ulakbim.gov.tr`` adresine iletebilirsiniz. Sorununuzun hızlı ve etkin bir şekilde çözülebilmesi için, e-posta gönderirken aşağıda belirtilen standart bilgileri eksiksiz olarak iletmeniz önemlidir. 
 
@@ -12,10 +12,11 @@ Lütfen işinizle ilgili yaşadığınız problemi bildirirken aşağıdaki şab
 
     - TRUBA kullanıcı adı:
     - TRUBA proje adı (varsa):
-    - 
+  
     - İş numarası (Job ID):
     - Kullandığınız yazılım/paket + versiyon:
     - Yüklü modüller:
+  
     - Çalıştığınız dizinin tam yolu: 
     - SLURM betik dosyanızın ismi:
     - İşin çalıştığı sunucuların bilgisi (Node List):
