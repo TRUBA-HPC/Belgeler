@@ -11,7 +11,6 @@ Yapay Zeka (YZ) Fabrikaları, Avrupa Birliği'nin YZ için optimize edilmiş sü
     :caption: YZ Fabrikaları Genel Bilgiler ve Erişim Çağrıları
 
     yz-fabrikalari-genel-bilgileri.rst
-    yz-fabrikalari-erisim-cagrilari.rst
 
 .. image:: /assets/eurohpc/AIFactories_20250526.jpg
     :width: 500
