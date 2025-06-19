@@ -29,26 +29,25 @@ Türkiye'nin EuroHPC JU üyeliği, ülke içerisinde hesaplamalı bilimler alan�
 
 Bu kaynaklara erişim, proje bazlı olarak açılan çağrılara başvuru yoluyla sağlanmaktadır. Başvurusu kabul edilen projeler, yürütülecek bilimsel ve endüstriyel çalışmalar için EuroHPC JU süper bilgisayar sistemlerinden önemli ölçüde CPU veya GPU hesaplama zamanı elde etme hakkı kazanır. Bu destek, Türkiye'nin bilimsel araştırma kapasitesini ve teknolojik yenilik potansiyelini doğrudan artırmaktadır.
 
+-------------------------------------------------------------
+EuroHPC JU Erişim Çağrıları ve Süper Bilgisayar Sistemleri
+-------------------------------------------------------------
 
 .. toctree::
     :maxdepth: 1
 
-    access.rst
-    systems.rst
+    eurohpc-erisim.rst
+
+
+----------------------------------------------
+Endüstriyel Kullanıcılar için Diğer Çağrılar
+----------------------------------------------
+
+.. toctree::
+  :maxdepth: 1
+
+  ffplus.rst
 
 ..
-    Güncel çağrılara ve eğitimlere aşağıdaki linklerden ulaşabilirsiniz.
-========================================================================
-
-    .. raw:: html
-        
-        <p style="font-size: 24px; font-weight: bold;">
-        <a href="https://indico.truba.gov.tr" target="_blank">https://indico.truba.gov.tr</a>
-        </p>
-
-    .. raw:: html
-
-        <p style="font-size: 24px; font-weight: bold;">
-        <a href="https://www.linkedin.com/company/eurocc-turkey/" target="_blank">https://www.linkedin.com/company/eurocc-turkey/</a>
-        </p>
-
+    inno4scale.rst
+    ff4eurohpc_shape.rst
