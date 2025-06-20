@@ -1,8 +1,26 @@
 .. _kurulu_uygulamalar:
 
-==============
+===================
 Kurulu Uygulamalar
-==============
+===================
+
+
+.. toctree::
+   :maxdepth: 1
+
+   Python - Conda - Miniconda/index.rst
+   deep-learning/index.rst
+   data-analytics/index.rst   
+   R/index.rst
+   Lampps/index.rst
+   Gromacs/index.rst
+   GREASY/index.rst
+   Gaussian/index.rst
+   Espresso/index.rst
+   Amber/index.rst
+   Matlab/index.rst
+
+
 
 .. toctree::
    :maxdepth: 1

@@ -3,6 +3,7 @@
 ==============================================
 Kaynak kod kullanılarak R kurulumu 
 ==============================================
+
 Kaynak koddan kurulum için :ref:`genelkurulum-kilavuzu` inceleyebilirsiniz.
 Sistemimizde var olan R'ın farklı versiyonları kurmak için temelde şu adımlar izlenebilir.
 
@@ -42,7 +43,7 @@ Detaylı kurulum aşamaları ve yardım için şu sayfalar ziyaret edilebilir:
                     cd R-4.2.2
                     
                     # Programın kurulacağı dizini belirtiyoruz.
-                    install_dir_gcc=/truba/home/kullanici_adiniz/R/R-4.2.2-gcc
+                    install_dir_gcc=/arf/home/kullanici_adiniz/R/R-4.2.2-gcc
                     
                     # Kurulum öncesi derleyici ile birlikte ayarlıyoruz.
                     ./configure --with-pcre1=yes --prefix=$install_dir_gcc --enable-memory-profiling --enable-R-shlib
@@ -70,7 +71,7 @@ Detaylı kurulum aşamaları ve yardım için şu sayfalar ziyaret edilebilir:
                 cd R-4.2.2
 
                 # Programın kurulacağı dizini belirtiyoruz.
-                install_dir_intel=/truba/home/kullanici_adiniz/R/R-4.2.2-intel
+                install_dir_intel=/arf/home/kullanici_adiniz/R/R-4.2.2-intel
 
                 # Kurulum öncesi derleyici ile birlikte ayarlıyoruz.
                 export CC="icc"

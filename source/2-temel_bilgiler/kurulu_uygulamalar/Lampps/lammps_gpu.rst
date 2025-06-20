@@ -23,32 +23,36 @@ kod satırlarını terminalinize yazınız.
 .. warning:: Daha üst versiyonlarını kontrol etmek için linki verilen sayfaya bakabilirsiniz: https://ngc.nvidia.com/catalog/containers/hpc:lammps
 
 Kaydetme işlemi tamamlandıktan sonra LAMMPS uygulamasının gpu destekli hali sorunsuz çalışacaktır. Fakat slurm betik dosyanızı buna uygun düzenlemeniz 
-gerekmektedir. Sizin için hazırlanan gpu destekli slurm betik dosyası örneği aşağıda verilmiştir.
+gerekmektedir. 
 
 .. code-block:: bash
 
-  #!/bin/bash
-  #SBATCH -p palamut-cuda
-  #SBATCH -A kullanici_adi
-  #SBATCH -J lammps
-  #SBATCH -N 1	#number of nodes
-  #SBATCH -n 16	#number of cpus
-  #SBATCH --gres=gpu:1 
-  #SBATCH --time=00-01:00:00
-  #SBATCH --mail-type=ALL
-  #SBATCH --output=slurm-%j.out
-  #SBATCH --error=slurm-%j.err
+   #!/bin/bash
+   #SBATCH -p orfoz
+   #SBATCH -A accountname
+   #SBATCH -J lammps_test
+   #SBATCH -N 1
+   #SBATCH --ntasks=110 # orfoz sunucularinda node basina 55 veya 110 cekirdek talep edilebilir.
+   #SBATCH --cpus-per-task=1
+   #SBATCH -C weka
+   #SBATCH --time=3-00:00:00
 
-  export OMP_NUM_THREADS=1
+   export OMP_NUM_THREADS=1
 
-  echo "SLURM_NODELIST $SLURM_NODELIST"
-  echo "NUMBER OF CORES $SLURM_NTASKS"
 
-  export SIF=/truba/home/kullanici_adi/lammps-gpu/lammps-2021.sif
+   echo "SLURM_NODELIST $SLURM_NODELIST"
+   echo "NUMBER OF CORES $SLURM_NTASKS"
 
-  singularity run --nv  $SIF lmp < input_file
+   module purge
 
-  exit
+   module load comp/oneapi/2024
+
+   module load apps/lammps/2Aug2023_update2-oneapi-2024
+
+   mpirun lmp -var latconst 3.9 -in in.lattice
+
+
+   exit
 
 --------------------------------------------------------
 LAMMPS Programının Palamut-Cuda Kümelerinde Derlenmesi
@@ -92,49 +96,10 @@ Fakat daha öncesinde çalışan ve derlememize engel olacak bir module varsa ç
   Kurulum için ayrıca CMake protokolüne de ihtiyacınız bulunmaktadır. Bu noktada dikkat etmemiz gereken en önemli şey CMake optionlarını doğru seçmektir. 
   Bu protokol için kullanılan tag'ler için `Cmake Flags <https://docs.lammps.org/Build_extras.html>`_ linkinden erişebilirsiniz.
 
-Gerekli ortamlar için aşağıdaki komut satırını terminalinizden uygulayınız. 
+Gerekli ortamlar için aşağıdaki komut satırını terminalinizden uygulayınız. Bu sürümlerin değişiklik gösterebileceği göz önünde bulundurularak sistemi "module av" komutu ile kontrol etmeniz gerektiğini hatırlatırız.
 
 .. code-block:: bash
   
-   source /truba/sw/centos7.9/comp/intel/oneapi-2021.2/setvars.sh
-   module load centos7.9/lib/openmpi/4.1.1-intel-oneapi-2021.2
-   module load centos7.9/comp/cmake/3.18.0
-   module load centos7.9/comp/gcc/7
-   module load centos7.9/lib/cuda/11.4
-   export CC=mpiicc CXX=mpiicpc FC=mpiifort
-   cmake ../cmake  -D PKG_GPU=yes -D GPU_API=cuda -D GPU_ARCH=sm_80  -D BUILD_MPI=on -D BLAS_LIBRARIES="-L${MKLROOT}/lib/intel64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread -lm -ldl" -D LAPACK_LIBRARIES="-L${MKLROOT}/lib/intel64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread -lm -ldl" -D PKG_BODY=yes -D PKG_CLASS2=yes -D PKG_DIPOLE=yes -D PKG_MANYBODY=yes -D PKG_MC=yes -D PKG_LATTE=yes -D PKG_MLIAP=yes -D PKG_SNAP=yes -D PKG_SPIN=yes -D PKG_PYTHON=yes -D PKG_USER-MOLFILE=yes -D PKG_MOLECULE=yes -D PKG_USER-PHONON=yes -D PKG_USER-REAXC=yes -D PKG_KSPACE=yes -D PKG_USER-MEAMC=yes -D PKG_USER-SMTBQ=yes -D PKG_USER-DIFFRACTION=yes -D FFT=MKL 
+   module load apps/lammps/29Aug2024_update1_oneapi-2024-orfoz    
+   module load apps/lammps/29Aug2024_update1_oneapi-2024-hamsi
 
-**4.**
- Son olarak ``cmake --build .`` komutunu çalıştırarak LAMMPS derlemesini tamamlayınız. Build adlı dosyanın içinde **lmp** executable ile programı çalıştırabilirsiniz.
-
-Aşağıdaki slurm betik örneğini kullanarak programı kullanabilirsiniz. 
-
-.. code-block:: bash
-
-  #!/bin/bash
-  #SBATCH -p palamut-cuda
-  #SBATCH -A kullanici_adi
-  #SBATCH -J lammps
-  #SBATCH -N 1    #number of nodes
-  #SBATCH -n 16   #number of cpus
-  #SBATCH --gres=gpu:1 
-  #SBATCH --time=00-01:00:00
-  #SBATCH --mail-type=ALL
-  #SBATCH --output=slurm-%j.out
-  #SBATCH --error=slurm-%j.err
-
-  module purge
-  source /truba/sw/centos7.9/comp/intel/oneapi-2021.2/setvars.sh
-  module load centos7.9/lib/openmpi/4.1.1-intel-oneapi-2021.2
-  module load centos7.9/comp/gcc/7
-  module load centos7.9/lib/cuda/11.4
-
-  export OMP_NUM_THREADS=1
-
-  echo "SLURM_NODELIST $SLURM_NODELIST"
-  echo "NUMBER OF CORES $SLURM_NTASKS"
-
-  LAMMPS_DIR=/truba/home/kullanici_adi/lammps-derleme/lammps-patch_31Aug2021/build
-
-  mpirun $LAMMPS_DIR/lmp  < input_dosyasının_adi >out
-  exit
