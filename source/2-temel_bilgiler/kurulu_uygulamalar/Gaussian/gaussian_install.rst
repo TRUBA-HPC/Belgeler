@@ -36,7 +36,7 @@ olarak değiştirin.
   cp -r g16a3 /arf/home/kullaniciadi/
   mv g16a3 g16
 
-**3.** Programı kullanmak için bazı çevre değişkenleri tanımlanmalıdır. Bu tanımlar .profile (yada .bashrc ) dosyasının içinde yapılabileceği gibi slurm dosyasının içerisinde de yapılabilir.
+**3.** Programı kullanmak için bazı çevre değişkenleri tanımlanmalıdır. Bu tanımlar .profile (ya da .bashrc ) dosyasının içinde yapılabileceği gibi slurm dosyasının içerisinde de yapılabilir.
 
 ---------------------------------
  .bashrc Dosyasının Oluşturulması 
