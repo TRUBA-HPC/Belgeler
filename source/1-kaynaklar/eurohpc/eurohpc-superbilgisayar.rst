@@ -42,7 +42,7 @@ LUMI, Finlandiya'da CSC tarafından işletilen pre-eksasayı bir EuroHPC süper 
 
 *   **Performans:** 379.7 petaflop HPL performansına sahiptir. Sürekli performans 386.00 petaflop, Tepe performans 539.13 petaflop.
 
-*   **Hesaplama Bölümleri:** GPU bölümü (LUMI-G), x86 MİB bölümü (LUMI-C), veri analizi bölümü (LUMI-D), konteyner bulut bölümü (LUMI-K).
+*   **Hesaplama Bölümleri:** GPU bölümü (LUMI-G), x86 CPU bölümü (LUMI-C), veri analizi bölümü (LUMI-D), konteyner bulut bölümü (LUMI-K).
     *   **LUMI-C (Tip 1):** 1376 sunucu, 2x AMD EPYC 7763 (64 Çekirdek, 2.45 GHz), 256 GB Bellek.
 
     *   **LUMI-C (Tip 2):** 128 sunucu, 2x AMD EPYC 7763 (64 Çekirdek, 2.45 GHz), 512 GB Bellek.
@@ -55,9 +55,9 @@ LUMI, Finlandiya'da CSC tarafından işletilen pre-eksasayı bir EuroHPC süper 
 
     *   **LUMI-D (Tip 2):** 8 sunucu, 2x AMD EPYC 7742 (64 Çekirdek, 2.25 GHz), 8x NVIDIA A40 (48 GB Bellek), 2 TB Bellek, 14 TB SSD lokal depolama.
 
-*   **İşlemci (CPU):** LUMI-C bölümü, 64 çekirdekli yeni nesil AMD EPYC™ MİB'lere sahiptir.
+*   **İşlemci (CPU):** LUMI-C bölümü, 64 çekirdekli yeni nesil AMD EPYC™ CPU'lara sahiptir.
 
-*   **Grafik İşlem Birimi (GPU):** LUMI-G, gelecek nesil AMD Instinct™ GİB'ye dayanmaktadır.
+*   **Grafik İşlem Birimi (GPU):** LUMI-G, gelecek nesil AMD Instinct™ GPU'ya dayanmaktadır.
 
 *   **Depolama Kapasitesi:** Üç bileşenden oluşur: 7 petabayt ultra hızlı flash depolama, 80 petabayt geleneksel kapasite depolama (Lustre paralel dosya sistemi tabanlı) ve 30 petabayt Ceph tabanlı veri yönetim hizmeti. Toplamda 117 petabayt depolama ve saniyede 2 terabayt maksimum G/Ç bant genişliği.
 
@@ -81,7 +81,7 @@ Leonardo, Bologna Teknoparkı, İtalya'da bulunan pre-eksasayı bir EuroHPC süp
 
 *   **Performans:** 241.2 petaflop performansına sahiptir. Sürekli performans 249.04 petaflop, Tepe performans 315.74 petaflop.
 
-*   **Hesaplama Bölümleri:** 240 petaflop sağlayan GPU bölümü (Booster) ve DDR5 Bellek ve yerel NVMe içeren 9 petaflop sağlayan x86 MİB bölümü (Veri Merkezli).
+*   **Hesaplama Bölümleri:** 240 petaflop sağlayan GPU bölümü (Booster) ve DDR5 Bellek ve yerel NVMe içeren 9 petaflop sağlayan x86 CPU bölümü (Veri Merkezli).
 
     *   **Booster (Intel Ice-Lake):** 3456 sunucu, 1 x CPU Intel Xeon 8358 (32 çekirdek, 2.6 GHz), 4 x NVidia özel Ampere GPU 64GB HBM2, 512 (8 x 64) GB RAM DDR4 3200 MHz.
 
@@ -89,7 +89,7 @@ Leonardo, Bologna Teknoparkı, İtalya'da bulunan pre-eksasayı bir EuroHPC süp
 
 *   **İşlemci (CPU):** Intel Ice-Lake (Booster), Intel Sapphire Rapids (Veri Merkezli).
 
-*   **Grafik İşlem Birimi (GPU):** NVIDIA Ampere mimarisine dayalı 13824 "Da Vinci" GİB, 10 exaflop FP16 Tensor Flow AI performansı sağlar.
+*   **Grafik İşlem Birimi (GPU):** NVIDIA Ampere mimarisine dayalı 13824 "Da Vinci" GPU, 10 exaflop FP16 Tensor Flow AI performansı sağlar.
 
 *   **Depolama Kapasitesi:** 100 petabaytın üzerinde yeni nesil sabit disk sürücüleri ve 5 petabayt tam flash ve NVMe teknolojileriyle donatılmıştır.
 
@@ -116,7 +116,7 @@ MareNostrum 5, Barselona, İspanya'da bulunan pre-eksasayı bir EuroHPC süper b
 *   **Hesaplama Bölümleri:** GPP (Genel amaçlı bölüm), ACC (Hızlandırılmış bölüm), NGT GPP (Yeni Nesil Teknoloji Genel Amaçlı bölüm) ve NGT ACC (Yeni Nesil Teknoloji Hızlandırılmış bölüm). Ayrıca ön ve son işleme için daha küçük bölümler.
 
 
-*   **İşlemci (CPU):** GPP ve ACC bölümleri Intel Sapphire Rapids MİB'lere dayanmaktadır. NGT ACC, NVIDIA GB200'e ve NGT GPP, NVIDIA Grace'e dayanmaktadır.
+*   **İşlemci (CPU):** GPP ve ACC bölümleri Intel Sapphire Rapids CPU'lara dayanmaktadır. NGT ACC, NVIDIA GB200'e ve NGT GPP, NVIDIA Grace'e dayanmaktadır.
 
 *   **Grafik İşlem Birimi (GPU):** ACC bölümü NVIDIA Hopper'a dayanırken, NGT ACC bölümü NVIDIA GB200 üzerine inşa edilmiştir.
 
@@ -141,11 +141,11 @@ MeluXina, Lüksemburg'da bulunan bir petaölçek EuroHPC süper bilgisayarıdır
 
 *   **Performans:** Sürekli performans 12.81 petaflop, Tepe performans 18.29 petaflop.
 
-*   **Hesaplama Bölümleri:** Hızlandırıcı - GİB (500 AI PetaFlop), Küme (3 PetaFlop tepe), Hızlandırıcı - FPGA ve Büyük Bellek Modülleri.
+*   **Hesaplama Bölümleri:** Hızlandırıcı - GPU (500 AI PetaFlop), Küme (3 PetaFlop tepe), Hızlandırıcı - FPGA ve Büyük Bellek Modülleri.
 
-    *   **MİB:** 573 sunucu, 2x AMD EPYC 7H12 (64 Çekirdek, 2.6 GHz), 512 GB Bellek.
+    *   **CPU:** 573 sunucu, 2x AMD EPYC 7H12 (64 Çekirdek, 2.6 GHz), 512 GB Bellek.
 
-    *   **GİB:** 200 sunucu, 2x AMD EPYC 7452 (32 Çekirdek, 2.35 GHz), 4x NVIDIA A100 (40GB Bellek), 512 GB Bellek, 1.92 TB SSD lokal depolama.
+    *   **GPU:** 200 sunucu, 2x AMD EPYC 7452 (32 Çekirdek, 2.35 GHz), 4x NVIDIA A100 (40GB Bellek), 512 GB Bellek, 1.92 TB SSD lokal depolama.
 
     *   **FPGA:** 20 sunucu, 2x AMD EPYC 7452 (32 Çekirdek, 2.35 GHz), 2x Intel Stratix 10MX (16 GB), 512 GB Bellek, 1.92 TB SSD lokal depolama.
 
@@ -181,7 +181,7 @@ Karolina, Ostrava, Çek Cumhuriyeti'nde bulunan bir petaölçek EuroHPC süper b
 
     *   Standart sayısal simülasyonlar için evrensel bölüm (yaklaşık 720 sunucu, 3.8 PFlop/s tepe performans).
 
-    *   70 sunuculu hızlandırılmış bölüm (her biri 8 GİB hızlandırıcı, standart HPC simülasyonları için 11 PFlop/s, yapay zeka hesaplamaları için 150 PFlop/s'ye kadar).
+    *   70 sunuculu hızlandırılmış bölüm (her biri 8 GPU hızlandırıcı, standart YBH simülasyonları için 11 PFlop/s, yapay zeka hesaplamaları için 150 PFlop/s'ye kadar).
 
     *   Geniş veri kümesi işleme bölümü (24 TB'ye kadar paylaşımlı bellek, 74 TFlop/s performans).
 
@@ -191,13 +191,13 @@ Karolina, Ostrava, Çek Cumhuriyeti'nde bulunan bir petaölçek EuroHPC süper b
 
     *   Veri depolamaları (1 PB'den fazla kullanıcı verisi, 1 TB/s hızında yüksek hızlı depolama).
 
-*   **İşlemci (CPU):** 100.000'den fazla MİB çekirdeği ve 250 TB RAM.
+*   **İşlemci (CPU):** 100.000'den fazla CPU çekirdeği ve 250 TB RAM.
 
-    *   **MİB:** 720 sunucu, 2x AMD EPYC 7H12 (64 Çekirdek, 2.6 GHz), 256 GB Bellek.
+    *   **CPU:** 720 sunucu, 2x AMD EPYC 7H12 (64 Çekirdek, 2.6 GHz), 256 GB Bellek.
 
-*   **Grafik İşlem Birimi (GPU):** 3.8 milyondan fazla CUDA çekirdeği / 240.000 Tensor çekirdeği NVIDIA A100 Tensor Core GİB hızlandırıcılar (toplam 22.4 TB HBM2 bellek).
+*   **Grafik İşlem Birimi (GPU):** 3.8 milyondan fazla CUDA çekirdeği / 240.000 Tensor çekirdeği NVIDIA A100 Tensor Core GPU hızlandırıcılar (toplam 22.4 TB HBM2 bellek).
 
-    *   **GİB:** 72 sunucu, 2x AMD EPYC 7763 (64 Çekirdek, 2.45 GHz), 8x NVIDIA A100 (40GB Bellek), 1 TB Bellek.
+    *   **GPU:** 72 sunucu, 2x AMD EPYC 7763 (64 Çekirdek, 2.45 GHz), 8x NVIDIA A100 (40GB Bellek), 1 TB Bellek.
 
 *   **Depolama Kapasitesi:** 1 petabayttan fazla kullanıcı verisi, 1 TB/s hızında yüksek hızlı veri depolama.
 
@@ -226,9 +226,9 @@ Discoverer, Sofya, Bulgaristan'da bulunan bir petaölçek EuroHPC süper bilgisa
 
 *   **İşlemci (CPU):** AMD EPYC 7H12 64 çekirdek, 2.6GHz, 280W (Kod adı Rome).
 
-*   **Grafik İşlem Birimi (GPU):** 4x NVIDIA DGX H200 sistemi, 32x NVIDIA H200 T GİB (her biri 141GB GİB belleği).
+*   **Grafik İşlem Birimi (GPU):** 4x NVIDIA DGX H200 sistemi, 32x NVIDIA H200 T GPU (her biri 141GB GPU belleği).
 
-*   **Depolama Kapasitesi:** DDN ES7990X ExaScaler (2 PB) ve Cray ClusterStor E1000 (5 PB) (her ikisi de Lustre depolama), doğrudan GİB erişimli Weka AI optimize depolama (442 TB).
+*   **Depolama Kapasitesi:** DDN ES7990X ExaScaler (2 PB) ve Cray ClusterStor E1000 (5 PB) (her ikisi de Lustre depolama), doğrudan GPU erişimli Weka AI optimize depolama (442 TB).
 
 *   **Uygulama Alanları:** n-silico ilaç keşfi, yapı-özellik tahminleri, moleküler keşif, malzeme tasarımı ve ilaç geliştirmeyi geliştirme. İklim tahmini, çevresel modelleme, dijital ürün formülasyonu, karar verme desteği. SLM, makine öğrenimi ve sinir ağı eğitimi, otomasyonu iyileştirir ve veri odaklı çözümler oluşturur.
 
@@ -248,7 +248,7 @@ Vega, Maribor, Slovenya'da bulunan bir petaölçek EuroHPC süper bilgisayarıd�
 
 *   **Performans:** Sürekli performans 6.92 petaflop, Tepe performans 10.05 petaflop.
 
-*   **Hesaplama Bölümleri:** MİB bölümü: 960 düğüm (2 MİB ve 256GB bellek/düğüm, %20'si 1TB/düğüm), 1x HDR100 ve GİB bölümü: 60 düğüm (2 MİB ve 512GB bellek, 2x HDR100, 4x Nvidia A100/düğüm).
+*   **Hesaplama Bölümleri:** CPU bölümü: 960 düğüm (2 CPU ve 256GB bellek/düğüm, %20'si 1TB/düğüm), 1x HDR100 ve GPU bölümü: 60 düğüm (2 CPU ve 512GB bellek, 2x HDR100, 4x Nvidia A100/düğüm).
 
     *   **CPU Standard:** 768 sunucu, 2x AMD EPYC 7H12 (64 Çekirdek, 2.6 GHz), 256 GB Bellek, 1.92 TB M.2 SSD lokal depolama.
 
@@ -258,9 +258,9 @@ Vega, Maribor, Slovenya'da bulunan bir petaölçek EuroHPC süper bilgisayarıd�
 
     *   **Cloud:** 30 sunucu, 2x AMD EPYC 7502 (32 Çekirdek, 2.5 GHz), 512 GB Bellek, 2x 7.6 TB U.2 SSD lokal depolama.
 
-*   **İşlemci (CPU):** 2040x MİB AMD EPYC 7H12 (64c, 2.6-3.3GHz), MİB ve GİB bölümlerinde 130.560 çekirdek.
+*   **İşlemci (CPU):** 2040x CPU AMD EPYC 7H12 (64c, 2.6-3.3GHz), CPU ve GPU bölümlerinde 130.560 çekirdek.
 
-*   **Grafik İşlem Birimi (GPU):** 240x Nvidia A100 (40 GB HBM2), 6912 FP32 CUDA çekirdeği ve GİB başına 432 Tensor çekirdeği.
+*   **Grafik İşlem Birimi (GPU):** 240x Nvidia A100 (40 GB HBM2), 6912 FP32 CUDA çekirdeği ve GPU başına 432 Tensor çekirdeği.
 
 *   **Depolama Kapasitesi:** Yüksek performanslı NVMe Lustre (1PB), büyük kapasiteli Ceph (23PB).
 
@@ -341,7 +341,7 @@ DAEDALUS, orta ölçekli bir petaölçek EuroHPC süper bilgisayarı olacaktır.
 
 *   **Performans:** Beklenen Sürekli performans 89 petaflop, Beklenen Tepe performans 115 petaflop.
 
-*   **Hesaplama Bölümleri:** MİB bölümü, Hızlandırılmış bölüm.
+*   **Hesaplama Bölümleri:** CPU bölümü, Hızlandırılmış bölüm.
 
 *   **İşlemci (CPU):** Her GH200 süperçipinin 72 ARM çekirdeğinden 64'ünü kullanan sanal bölüm.
 

@@ -1,5 +1,16 @@
+
+.. grid:: 3
+
+    .. grid-item-card::  :ref:`gaussian-kurulum`
+        :text-align: center
+    .. grid-item-card:: :ref:`development_cagrisi`
+        :text-align: center
+    .. grid-item-card:: :ref:`arf-g16-kilavuzu`
+ 
+.. _gaussian-kurulum:
+
 ======================================
-TRUBA'da Gaussian Programının Kurulumu
+Gaussian Programının Kurulumu
 ======================================
 
 Altyapıda Gaussian'ın farklı versiyonları sıkıntısız bir şekilde çalışmaktadır. En yüksek performansı almak için işin gönderileceği işlemciye uygun (Intel AVX, AVX2 ve AVX512) Gaussian versiyonunu kullanmak önemlidir. Aksi taktirde eski nesil işlemciler ile yeni nesil işlemciler üzerinde çalışan uygulamada sadece frekans hızından kaynaklı bir farklılık hissedilebilir. 
@@ -9,7 +20,7 @@ Gaussian'da (tüm versiyonları için) performansı (aynı zamanda diğer kullan
 Aşağıda Gaussian programının **g16** versiyonunun TRUBA altyapısında derlenmesi için gerekli adımlar verilmiştir. Siz de aşağıdaki adımları takip  ederek kurulumunu kendi ev dizininizde yapabilirsiniz. **g09** versiyonu aynı adımlar izlenerek kurulabilir.
 
 --------------------
-Uygulanacak adımlar:
+Uygulanacak Adımlar
 --------------------
 
 Kurulum, preprocess gibi işlemlerinizi arf-ui kullanıcı arayüzünde gerçekleştirmemeniz gerekmektedir. Aşağıdaki komut ile inteaktif shell alarak gerçekleştirmelisiniz.
@@ -38,9 +49,9 @@ olarak değiştirin.
 
 **3.** Programı kullanmak için bazı çevre değişkenleri tanımlanmalıdır. Bu tanımlar .profile (ya da .bashrc ) dosyasının içinde yapılabileceği gibi slurm dosyasının içerisinde de yapılabilir.
 
----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  .bashrc Dosyasının Oluşturulması 
----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Bu bölümde .bashrc dosyasının oluşturularak programı çalıştırma işlemi gösterilecektir. İlk olarak terminalinizden ~/.bashrc dosyanınızı herhangi bir editör yardımıyla açınız.
 
@@ -62,9 +73,9 @@ Dosyanın içerisine aşağıdaki komutları yazınız.
 
 Programı çalıştırmak için ``$g16root/g16/g16 <jobname.gjf>> out &`` komutunu giriniz.
 
---------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 SLURM Betik Dosyasının Oluşturulması 
---------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Slurm dosyası oluşturmak için aşağıdaki komut satırlarını kendi işinize göre uyarlayarak kopyalayınız. 
 
