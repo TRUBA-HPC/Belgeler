@@ -43,7 +43,7 @@ Bu ilk iki işlem için gerekli terminal komutları aşağıda sıralanmıştır
    cd gromacs-2021.3
 
 **2.** 
-İkinci adım olarak /truba/home/kullaniciadi/gromacs-derleme/gromacs-2021.3 adlı dizin içinde ``build`` klasörü oluşturmanız gerekmektedir. Sonrasında yapılacak derleme işlemleri bu klasör altında gerçekleştirilecektir. Bu yüzden bu klasör altında olduğunuzu ``pwd`` komutu ile kontrol ediniz.
+İkinci adım olarak /arf/home/kullaniciadi/gromacs-derleme/gromacs-2021.3 adlı dizin içinde ``build`` klasörü oluşturmanız gerekmektedir. Sonrasında yapılacak derleme işlemleri bu klasör altında gerçekleştirilecektir. Bu yüzden bu klasör altında olduğunuzu ``pwd`` komutu ile kontrol ediniz.
 
 .. code-block:: bash
 

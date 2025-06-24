@@ -9,7 +9,8 @@ TRUBA Bilgisayarlarına Bağlantı
 .. toctree::
     :maxdepth: 1
 
-    openvpn_installation/index.rst
+    openvpn_installation/openvpn_info.rst
+
     ssh_baglanti/index.rst
 
 

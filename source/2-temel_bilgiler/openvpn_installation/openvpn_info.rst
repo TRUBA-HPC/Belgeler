@@ -48,8 +48,8 @@ ARF kullanıcı arayüzlerini kullanırken de diğer kuyruklara iş gönderebili
 Kullandığınız işletim sistemine göre kurulum yapmak için aşağıdaki sayfaları ziyaret edebilirsiniz.
 
 .. toctree::
-    :maxdepth: 1
+   :maxdepth: 1
 
-    openvpn-installation/mac_openvpn.rst
-    openvpn-installation/linux_openvpn.rst
-    openvpn-installation/windows_openvpn.rst
+   mac_openvpn.rst
+   linux_openvpn.rst
+   windows_openvpn.rst

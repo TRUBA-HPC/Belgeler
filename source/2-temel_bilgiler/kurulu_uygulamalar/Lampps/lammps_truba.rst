@@ -12,32 +12,32 @@ LAMMPS_run.slurm
 
 .. code-block:: bash
 
-  #!/bin/bash
-  #SBATCH -p mid2
-  #SBATCH -A accountname
-  #SBATCH -J lammps-test
+ #!/bin/bash
+  #SBATCH -p orfoz
+  #SBATCH -A tom
+  #SBATCH -J lammps_test
   #SBATCH -N 1
-  #SBATCH -n 20
-  #SBATCH --time=03:00:00
-  #SBATCH --output=slurm-%j.out
-  #SBATCH --error=slurm-%j.err
+  #SBATCH --ntasks=110 # orfoz sunucularinda node basina 55 veya 110 cekirdek talep edilebilir.
+  #SBATCH --cpus-per-task=1
+  #SBATCH -C weka
+  #SBATCH --time=3-00:00:00
+
+  export OMP_NUM_THREADS=1
 
 
   echo "SLURM_NODELIST $SLURM_NODELIST"
   echo "NUMBER OF CORES $SLURM_NTASKS"
 
-  export OMP_NUM_THREADS=1
-  
-  module load centos7.3/comp/intel/PS2018-update2
-  module load centos7.3/lib/openmpi/4.0.1-intel-PS2018
+  module purge
 
-  LAMMPS_DIR=/truba/home/username/lammps-stable/build-intel18-openmpi4/bin
+  module load apps/lammps/29Aug2024_stable_oneapi-2024
 
-  mpirun  $LAMMPS_DIR/lmp  < in.lammpsinputfile > lammps-outputfile.out
+
+  mpirun lmp -var latconst 3.9 -in in-meam.lattice
+
 
   exit
 
-* :download:`İlgili Slurm dosyasını indirmek için tıklayınız... </assets/LAMMPS-howto/config-files/LAMMPS-barbun_openmpi4-intel18.slurm>`
 
 Çalıştığınız klasör içerisinde yukarıdaki betik dosyasını düzenleyip oluşturduktan sonra aşağıdaki adıma geçebilirsiniz.
 

@@ -2,7 +2,7 @@ TRUBA'da Quantum Espresso Kullanımı
 ==========================================
 
 ------------------------------------------------------
-Barbun Hesaplama Kümesi için Örnek Slurm Dosyası
+Orfoz Hesaplama Kümesi için Örnek Slurm Dosyası
 ------------------------------------------------------
 
 
