@@ -43,7 +43,6 @@ TRUBA sisteminde yer alan ARF kümesi üzerinde Gaussian 16, GaussView 6 ve TCP 
 
 
 
-
 Eğer Gaussian lisansına sahipseniz kendi Gaussian versiyonunuzu kullanmak üzere aşağıdaki sayfada yer alan kurulum/kullanım adımlarını takip edebilirsiniz.
 
 .. toctree::
@@ -51,9 +50,6 @@ Eğer Gaussian lisansına sahipseniz kendi Gaussian versiyonunuzu kullanmak üze
 
     gaussian_install.rst
 
-..
-
-    Gaussian lisanslı bir program olduğu için, lisansı satın almanız gerekmektedir. Lisansı aldıktan sonra programın kurulumunu TRUBA’da yapabilmeniz için gerekli adımları sizlere sunacağız. 
 
 -------
 

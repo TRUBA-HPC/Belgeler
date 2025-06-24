@@ -46,11 +46,6 @@ YZ Fabrikalarının kurulması, Avrupa Komisyonu için stratejik bir önceliktir
 EuroHPC Ortak Girişimi (EuroHPC JU), bu fabrikaları geliştirme ve işletme konusunda yeni bir yetki almıştır. Aralık 2024 itibarıyla, ilk yedi YZ Fabrikasının Finlandiya, Almanya, Yunanistan, İtalya, Lüksemburg, İspanya ve İsveç'te kurulması için yedi konsorsiyum seçilmiştir. Mart 2025 itibarıyla, Avusturya, Bulgaristan, Fransa, Almanya, Polonya ve Slovenya'da altı ek YZ Fabrikası daha seçilmiştir. Toplamda şu ana kadar 13 merkez seçilmiştir. Hedef, 2025-2026 yılları arasında en az 15 YZ Fabrikası ve birkaç Antenanın faaliyete geçirilmesi ve mevcut EuroHPC YZ bilgi işlem kapasitesinin üç katına çıkarılmasıdır. Bu fabrikalar birbirleriyle ve Test ve Deney Tesisleri ile Avrupa Dijital İnovasyon Merkezleri gibi diğer önemli YZ destek girişimleriyle ağ tabanlı olarak bağlanacaktır. 2021-2027 dönemi boyunca AB'deki süper bilgi işlem altyapıları ve YZ Fabrikalarına yapılan toplam yatırımın 10 milyar Avro'ya ulaşması beklenmektedir.
 
 
-
-.. image:: /assets/eurohpc/AIFvisual.png
-    :width: 500
-
-
 -------------------------------------------------------------------------
 Barselona Süper Bilgisayar Merkezi Yapay Zeka Fabrikası (BSC AIF)
 -------------------------------------------------------------------------
@@ -66,3 +61,10 @@ BSC Yapay Zeka Fabrikası, temel olarak üç ana sütun üzerine inşa edilmişt
 3.  **Deneysel YZ Platformu:** Piyasaya çıkan yeni bilgi işlem teknolojilerini test etmek için benzersiz, gelişmiş YZ optimize edilmiş bir deneysel platform kurulacaktır. Bu platform, yenilikçi YZ modelleri ve uygulamaları geliştirmek ve test etmek için son teknoloji bir altyapı görevi görecek, ayrıca Avrupa genelinde iş birliğini teşvik edecektir.
 
 Türkiye'nin bu konsorsiyumdaki varlığı, Türk sanayisinin ve bilim ekosisteminin YZ alanındaki bu ileri düzey yeteneklere erişimini sağlaması açısından büyük önem taşımaktadır. BSC YZ Fabrikası, özellikle kamu yönetimi, sağlık, ilaç ve biyoteknoloji, finans ve hukuk, tarım ve iklim, enerji, iletişim ve medya gibi sektörlere odaklanarak bu alanlarda YZ çözümlerinin benimsenmesini hızlandırmayı hedeflemektedir. Bu iş birliği, Avrupa'nın rekabetçi ve yenilikçi YZ ekosisteminin büyümesine katkıda bulunurken, aynı zamanda Türkiye'nin YZ kapasitesini güçlendirmesine ve ilgili sektörlerdeki yenilikçiliği artırmasına olanak tanıyacaktır.
+
+
+
+.. image:: /assets/eurohpc/EuroHPC_AI_Factories_infographic.png
+    :width: 500
+    :align: center
+

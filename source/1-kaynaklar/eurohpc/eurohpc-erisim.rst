@@ -24,9 +24,9 @@ EuroHPC JU süper bilgisayarlarına erişim için farklı erişim çağrıları 
 
 .. _benchmark_cagrisi:
 
-----------------------------------------------
+---------------------------------------
 Benchmark (Kıyaslama) Erişim Çağrısı
-----------------------------------------------
+---------------------------------------
 
 Bu çağrı, araştırmacılara ve Yüksek Performanslı Hesaplama (HPC) uygulama geliştiricilerine, Extreme Scale ve Regular Erişim çağrılarına başvurmadan önce uygulamalarını mevcut veya yeni EuroHPC JU süper bilgisayar sistemlerinde test etme veya kıyaslama (benchmark) yapma fırsatı sunmayı amaçlar. Özellikle kod ölçeklenebilirlik testleri veya yapay zeka uygulamalarının test edilmesi için tasarlanmıştır ve elde edilen sonuçların gelecekteki daha büyük başvurulara dahil edilmesi hedeflenir. Kullanıcılar süper bilgisayarlara alışmak için de bu çağrıyı kullanabilirler. Bu çağrı kapsamında kullanıcılara sınırlı miktarda kaynak tahsis edilir ve maksimum tahsis süresi üç aydır. Çağrılar sürekli açıktır ve aylık kesim tarihlerine sahiptir. Kaynaklara erişim, başvurunun yapılmasından sonraki 2-3 hafta içinde başlar. Değerlendirme süreci, bilimsel hakem değerlendirmesi olmaksızın idari kontrol ve teknik değerlendirme ile gerçekleşir.
 

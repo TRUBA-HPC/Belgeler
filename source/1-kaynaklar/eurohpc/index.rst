@@ -37,6 +37,7 @@ EuroHPC JU Erişim Çağrıları ve Süper Bilgisayar Sistemleri
     :maxdepth: 1
 
     eurohpc-erisim.rst
+    eurohpc-superbilgisayar.rst
 
 
 ----------------------------------------------
