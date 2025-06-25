@@ -82,10 +82,6 @@ Bilgisayarınıza uygulamayı yükledikten sonra açıp, TRUBA bilgisayarlarına
     :width: 1000  
 
 
-.. image:: /assets/kullanici-arayuzu/ssh-ile-baglanti/putty/images/putty-6.png  
-    :width: 1000 
-
-
 **4.**
 Ip adresini girdiğinizde kullanıcı adınızı ve şifrenizi gireceğiniz bir terminal gelecektir. TRUBA tarafından sizlere verilen kullanıcı adı ve şifreyle giriş yapabilirsiniz.
 

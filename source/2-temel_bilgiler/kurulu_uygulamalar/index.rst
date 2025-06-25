@@ -1,26 +1,22 @@
 .. _kurulu_uygulamalar:
 
-===================
-Kurulu Uygulamalar
-===================
+====================================================
+Kurulu Uygulamalar, Derleyiciler ve Kütüphaneler
+====================================================
 
+Bu bölümde, TRUBA altyapısında kurulu olan uygulamalar, derleyiciler ve kütüphaneler hakkında bilgi verilmektedir. Kullanıcılarımız tarafından sıklıkla kullanılan, açık kaynak kodlu olan ve GNU GPL lisansı altında sunulan yazılımlar altyapımızda yer almaktadır. TRUBA’ya terminalden bağlantı sağladıktan sonra arf-ui kullanıcı arayüzünde terminalden 
 
-.. toctree::
-   :maxdepth: 1
+.. code-block:: bash
 
-   Python - Conda - Miniconda/index.rst
-   deep-learning/index.rst
-   data-analytics/index.rst   
-   R/index.rst
-   Lampps/index.rst
-   Gromacs/index.rst
-   GREASY/index.rst
-   Gaussian/index.rst
-   Espresso/index.rst
-   Amber/index.rst
-   Matlab/index.rst
+   module available  
 
+komutunu yazdığınızda TRUBA sisteminde kurulu olan temel programlar listelenecektir. Bu liste, sistemdeki tüm modülleri ve uygulamaları içerir.
 
+--------------
+Uygulamalar
+--------------
+
+Bu bölümde, TRUBA altyapısında kurulu olan uygulamalar ve bu uygulamaların kullanımı hakkında bilgi verilmektedir. Aşağıda, kurulu uygulamaların listesi ve her birinin detaylarına erişim için bağlantılar bulunmaktadır.
 
 .. toctree::
    :maxdepth: 1
@@ -29,26 +25,40 @@ Kurulu Uygulamalar
    deep-learning/index.rst
    data-analytics/index.rst   
    Cvmfs/index.rst
-   CASTEP/index.rst
+   
    SnakeMake/index.rst
-   Vasp/index.rst
+   
    R/index.rst
-   Lampps/index.rst
-   Gromacs/index.rst
-   GREASY/index.rst
-   Gaussian/index.rst
-   Espresso/index.rst
+
    Amber/index.rst
-   Matlab/index.rst
-   BLAS - LAPACK/index.rst
-   FFTW/index.rst
-   GCC/index.rst
-   MKL/index.rst
+   CASTEP/index.rst
+   Gaussian/index.rst
+   Gromacs/index.rst
+   Lammps/index.rst
    Namd/index.rst
-   OneAPI/index.rst
+   QEspresso/index.rst
+   Vasp/index.rst
+
+   
+   GREASY/index.rst
+   Matlab/index.rst
+  
+
    OpenFoam/index.rst
 
 
+-------------------------------
+Kütüphaneler ve Derleyiciler
+-------------------------------
+
+Bu bölümde, TRUBA altyapısında kurulu olan kütüphaneler ve derleyiciler hakkında bilgi verilmektedir. Aşağıda, kurulu kütüphane ve derleyicilerin listesi ve her birinin detaylarına erişim için bağlantılar bulunmaktadır.
+
+
+.. toctree::
+   :maxdepth: 1
+
+   GCC/index.rst
+   OneAPI/index.rst
 
 
 
