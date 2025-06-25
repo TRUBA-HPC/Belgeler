@@ -26,7 +26,7 @@ TRUBA Kullanıcı Politikası
   
   * TRUBA kaynakları yasadışı herhangi bir amaçla, altyapının yönetimini ve güvenliğini tehdit edecek biçimde kullanılamaz. 
   
-  * Sistemde bir güvenlik açığı gören ya da böyle bir durumdan şüphelenen bir kullanıcının ivedilikle ``grid-teknik@ulakbim.gov.tr`` e-posta adresini kullanarak ya da 0 312 298 93 63 numaralı telefon numarasını arayarak altyapı işletenlerini uyarması gerekmektedir. 
+  * Sistemde bir güvenlik açığı gören ya da böyle bir durumdan şüphelenen bir kullanıcının ivedilikle ``grid-teknik@ulakbim.gov.tr`` e-posta adresini kullanarak  altyapı işletenlerini uyarması gerekmektedir. 
     
   * Kayıtlı kullanıcı bilgisi, TRUBA tarafından sadece yönetsel, operasyonel, kaynakların kullanımında kimlik doğrulama ve yetkilendirme amaçlı kullanılabilir. Bu amaçlar dışında mevcut kimlik bilgilerinin gizli tutulması esastır. 
   

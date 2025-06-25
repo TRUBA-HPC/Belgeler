@@ -1,3 +1,5 @@
+.. _ardeb-hsbvsb-2025:
+
 TRUBA Hizmetlerinden Proje Kapsamında Faydalanacak Akademik İstekliler için HSB ve VSB Hizmeti 2025
 ====================================================================================================
 

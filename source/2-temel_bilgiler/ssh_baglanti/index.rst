@@ -1,9 +1,14 @@
 .. _ssh-baglanti:   
 
-
 ========================================
 SSH Bağlantısı
 ========================================
+
+.. warning::
+
+   Öncelikle, ULAKNET ağı içinde veya dışında olma durumunuz farketmeksizin, :ref:`OpenVPN bağlantısını başarılı bir şekilde sağlamalısınız <open-vpn>`.
+   
+   Bağlanmak istediğiniz arayüz IP adresini, :ref:`ARF bağlantı bilgileri <arf_baglanti>` adresinden öğrenebilirsiniz.
 
 
 Linux ve macOS
@@ -24,69 +29,36 @@ Linux ve macOS işletim sistemlerinde TRUBA bilgisayarlarına bağlanmak için a
 
 4. Ardından kullanıcı şifrenizi girmeniz istenecektir. Şifrenizi girerken ekranda herhangi bir karakter görünmeyecektir, bu normal bir durumdur.
 
-.. note::
-
-   Öncelikle, ULAKNET ağı içinde veya dışında olma durumunuz farketmeksizin, :ref:`OpenVPN bağlantısını başarılı bir şekilde sağlamalısınız <open-vpn>`.
-   
-   Bağlanmak istediğiniz arayüz IP adresini, :ref:`ARF bağlantı bilgileri <arf_baglanti>` adresinden öğrenebilirsiniz.
-
-
 
 
 Windows
---------------------------------
+-------
 
-Windows işletim sisteminde TRUBA bilgisayarlarına bağlanmak için aşağıdaki adımları izleyebilirsiniz.
+Windows 10 (1803 ve sonrası) ile birlikte Microsoft, OpenSSH istemcisini işletim sistemine **varsayılan** olarak entegre etmiştir. Bu sayede kullanıcılar, üçüncü parti yazılımlar (örneğin PuTTY, WinSCP) kullanmadan doğrudan ``ssh``, ``scp`` ve ``sftp`` gibi komutları PowerShell, Komut İstemi (CMD) veya Windows Terminal üzerinden çalıştırabilmektedir.
 
+Kurulum Durumu Kontrolü
+-----------------------
 
-.. _windows_putty:
+OpenSSH istemcisinin kurulu olup olmadığını doğrulamak için aşağıdaki komut terminalde çalıştırılabilir::
 
+    ssh -V
 
-PuTTY, orijinal olarak Windows platformu için açık kaynak bir SSH istemcisidir. Bu uygulamayı bilgisayarınıza indirmek, kurmak ve sonrasında **ssh protokolü** ile bağlanabilmek için aşağıdaki adımları izleyiniz.
+Eğer kurulu değilse, aşağıdaki adımlar izlenerek yüklenebilir:
 
-**1.**
-PuTTY kaynak kodunu https://www.putty.org/ adresinden bilgisayarınıza uygun olan versiyonu seçip indirebilirsiniz.
-
-
-.. image:: /assets/kullanici-arayuzu/ssh-ile-baglanti/putty/images/putty-1.png
-   :width: 2000
-
- 
-.. image:: /assets/kullanici-arayuzu/ssh-ile-baglanti/putty/images/putty-2.png   
-   :width: 1000
+1. **Ayarlar > Uygulamalar > İsteğe Bağlı Özellikler** menüsüne gidin.
+2. ``OpenSSH Client`` bileşeni listede yoksa, **"Özellik ekle"** seçeneği kullanılarak yükleyin.
 
 
-**2.**  
-``.msi`` uzantılı dosyayı kurmak için çift tıklayarak ilerleyiniz. Aşağıdaki ekran görüntüleri sizlere adımlarda yardımcı olacaktır.
- 
-.. image:: /assets/kullanici-arayuzu/ssh-ile-baglanti/putty/images/putty-3.png   
-    :width: 2000
+.. note:: 
 
-.. image:: /assets/kullanici-arayuzu/ssh-ile-baglanti/putty/images/putty-4.png  
-    :width: 1000  
+   Önceki yıllarda yaygın olarak kullanılan **PuTTY** ve **WinSCP** gibi araçlar hâlâ tercih edilebilir; ancak modern Windows sistemlerde OpenSSH istemcisi bu tür ihtiyaçların büyük çoğunluğunu karşılamaktadır.
+   
+   * :ref:`PuTTY ile SSH Bağlantısı <putty>`
 
-**3.**
+**Kaynaklar**
 
-Bilgisayarınıza uygulamayı yükledikten sonra açıp, TRUBA bilgisayarlarına bağlanmak için ``Host Name (or Ip address)`` kutucuğuna ``inet`` adresini giriniz. Aşağıdaki ekran görüntüsünde örnek bağlantı ayarları gösterilmiştir.
+- Microsoft Docs: `OpenSSH Overview <https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh-overview>`_
+- Microsoft Docs: `Installation and First Use of OpenSSH on Windows <https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui&pivots=windows-server-2025>`_
 
-.. note::
-
-    Öncelikle, ULAKNET ağı içinde veya dışında olma durumunuz farketmeksizin, :ref:`OpenVPN bağlantısını başarılı bir şekilde sağlamalısınız <open-vpn>`. Sunucu adı yerine ``172.16.11.1`` yazmanız gerekmektedir. 
-
-..
-   ULAKNET ağı dışından (örneğin üniversite kampüsü dışından) bağlantı sağlıyorsanız eğer öncelikle :ref:`OpenVPN bağlantısını sağlamalısınız <open-vpn>`. Bu durumda sunucu adı yerine ``172.16.11.1`` veya ``levrek1.yonetim`` yazmanız gerekmektedir. 
-
-   ULAKNET ağından sunuculara bağlanmak için ise OpenVPN kullanımına gerek yoktur. Bu durumda sunucu adı yerine ``levrek1.ulakbim.gov.tr`` adresini yazmanız gerekmektedir.
-
-.. image:: /assets/kullanici-arayuzu/ssh-ile-baglanti/putty/images/putty-5.png  
-    :width: 1000  
-
-
-**4.**
-Ip adresini girdiğinizde kullanıcı adınızı ve şifrenizi gireceğiniz bir terminal gelecektir. TRUBA tarafından sizlere verilen kullanıcı adı ve şifreyle giriş yapabilirsiniz.
-
-
-.. image:: /assets/kullanici-arayuzu/ssh-ile-baglanti/putty/images/putty-7.png  
-    :width: 1000 
 
 

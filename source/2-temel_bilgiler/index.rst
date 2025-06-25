@@ -24,6 +24,7 @@ Dosya Transferi
 
 Kaynak Yönetimi ve İş Döngüsü 
 ------------------------------
+
 .. toctree::
     :maxdepth: 1
 
