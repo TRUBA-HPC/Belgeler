@@ -12,7 +12,6 @@ TRUBA Kullanıcı Hesapları ve Üyelik
     uyelik_rehberi.rst
     TRUBAtesekkur.rst
     proje_basvurulari.rst
-    egitim_hesaplari.rst
     kullanim_kurallari.rst
     truba_iletisim.rst
 
