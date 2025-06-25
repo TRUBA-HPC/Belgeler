@@ -6,17 +6,17 @@ Quantum Espresso Kılavuzu
 
 `Quantum ESPRESSO <https://www.quantum-espresso.org/>`_; yoğunluk-fonksiyonel teorisine, düzlem dalga temel setlerine ve psödopotansiyellere dayanan, nano ölçekte elektronik yapı hesaplamaları ve malzeme modellemesi yapılmasını sağlayan GNU Genel Kamu Lisansı altında ücretsiz ve özgür yazılım olarak dağıtılan bir paket programdır. Bu belge, TRUBA altyapısında Quantum ESPRESSO programının kullanımı hakkında bilgi vermek için oluşturulmuştur.
 
-ARF sistemine VPN ile bağlantı sağladıktan sonra (:ref:`open-vpn`) arf-uiX (X=1,2,3,4,5) kullanıcı arayüzünde iken terminalden
+ARF sistemine bağlanmak için öncelikle VPN bağlantınızı kurun (:ref:`open-vpn`). Ardından arf-uiX (X=1,2,3,4,5) kullanıcı arayüzlerinden birine giriş yapın. Terminalde aşağıdaki komutu çalıştırarak ARF sisteminde yüklü olan tüm temel programların listesini görebilirsiniz:
 
 .. code-block::
 
-  module available
+  module avail
 
-komutunu yazdığınızda ARF sisteminde kurulu olan temel programlar listelenecektir. 
+Bu komut, sistemde kurulu olan tüm modülleri listeler.
 
-.. note:: 
+.. note::
 
-    * ARF kümesine bağlantı için :ref:`arf_baglanti` sayfasını inceleyebilirsiniz.
+  * ARF kümesine nasıl bağlanacağınız hakkında detaylı bilgi için :ref:`arf_baglanti` sayfasını inceleyebilirsiniz.
 
 Özel olarak sadece QE programına ait modülleri görüntülemek isterseniz terminalde
 

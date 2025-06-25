@@ -5,17 +5,14 @@ TRUBA'da LAMMPS Kurulumu
 ========================================
 
 ------------------------------------
-Barbun Hesaplama Kümesi'nde Kurulum
+Orfoz Hesaplama Kümesi'nde Kurulum
 ------------------------------------
 
-Kurulumu ``barbun`` kuyruğu için optimize bir şekilde yapmak istiyorsanız iki yol izleyebilirsiniz:
-
-#. ``barbun1`` kullanıcı arayüzüne bağlanarak doğrudan kurulum işlemini başlatabilirsiniz.
-#. Ya da ``srun`` komutu ile ``barbun`` kuyruğundaki 1 makineden 4 CPU'yu interaktif olarak ayırabilirsiniz. Örneğin:
+Kurulumu ``orfoz`` kuyruğu için optimize bir şekilde yapmak istiyorsanız ``srun`` komutu ile ``orfoz`` kuyruğunda interaktif olarak sunucu ayırabilirsiniz. Örneğin:
 
 .. code-block:: bash
 
-   srun -N 1 -A kullaniciadi -p barbun --ntasks-per-node=4 --time=01:00:00 --job-name "lmp install" --pty bash -i
+   srun -p debug -C orfoz -N 1 -n 55 -A kullanici_adi -J lmp-install --time=0:50:00 --pty /usr/bin/bash -i
 
 .. note::
 
@@ -39,127 +36,55 @@ Mevcut ortamınızda yüklü modülleri görmek için:
 
    module purge
 
-Gerekli modülleri yükleyin:
+
+LAMMPS programını Intel derleyicileri ve kütüphaneleri (Intel MKL, IntelMPI) ile kurmak için aşağıdaki gibi modülleri yükleyebilirsiniz. 
 
 .. code-block:: bash
 
-   module load komutu ile yükleyebilirsiniz.
+   module load comp/oneapi/2024
+   module load lib/netcdf/c-4.9.2-fortran-4.6.1-cxx-4.3.1-oneapi-2024
+   module load comp/python/intelpython3
 
-LAMMPS kaynak kodunu klonlayın ve derleme dizinini oluşturun:
+LAMMPS modülü, LAMMPS kullanım kitapçığındaki standart `CMake prosedürünü <https://lammps.sandia.gov/doc/Build_cmake.html>`_ izler. Kurulumu CMake ile yapmak için ilgili modülü yükleyiniz:
 
 .. code-block:: bash
 
-   git clone -b stable https://github.com/lammps/lammps.git lammps-stable
+   module load comp/cmake/3.31.1
+
+
+Kurulum yapmak istediğiniz LAMMPS versiyonu için kaynak kodunu kullanıcı ev dizininize indiriniz ve derleme dizinini oluşturun:
+
+.. code-block:: bash
+
+   wget https://github.com/lammps/lammps/archive/refs/tags/stable_29Aug2024_update1.tar.gz
+   tar -xzf stable_29Aug2024_update1.tar.gz
+   mv lammps-stable_29Aug2024_update1 lammps-stable
+   rm stable_29Aug2024_update1.tar.gz
+
    cd lammps-stable
-   mkdir build-intel18-openmpi4
-   cd build-intel18-openmpi4
+   mkdir build-orfoz
+   cd build-orfoz
 
-Derleyici değişkenlerini tanımlayın:
 
-.. code-block:: bash
-
-   export CC=mpicc CXX=mpic++ FC=mpif90
 
 Aşağıdaki örnek, çeşitli LAMMPS paketlerinin etkinleştirildiği bir CMake komutudur:
 
 .. code-block:: bash
 
-   cmake ../cmake -D BUILD_MPI=on \
-   -D BLAS_LIBRARIES="-L${MKLROOT}/lib/intel64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread -lm -ldl" \
-   -D LAPACK_LIBRARIES="-L${MKLROOT}/lib/intel64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread -lm -ldl" \
-   -D PKG_BODY=yes -D PKG_CLASS2=yes -D PKG_DIPOLE=yes -D PKG_MANYBODY=yes \
-   -D PKG_MC=yes -D PKG_LATTE=yes -D PKG_MLIAP=yes -D PKG_SNAP=yes \
-   -D PKG_SPIN=yes -D PKG_PYTHON=yes -D PKG_USER-MOLFILE=yes -D PKG_MOLECULE=yes \
-   -D PKG_USER-PHONON=yes -D PKG_USER-REAXC=yes -D PKG_KSPACE=yes \
-   -D PKG_USER-MEAMC=yes -D PKG_USER-SMTBQ=yes -D PKG_USER-DIFFRACTION=yes -D FFT=MKL
+   
+   FLAGS="-xHost"; CFLAGS=$FLAGS CXXFLAGS=$CFLAGS CC=mpiicx CXX=mpiicpx FC=mpiifort cmake ../cmake -D CMAKE_INSTALL_PREFIX=/arf/home/username/lammps-stable -D BUILD_MPI=on -D PKG_BODY=yes -D PKG_MISC=yes -D PKG_CLASS2=yes -D PKG_DIPOLE=yes -D PKG_MANYBODY=yes -D PKG_MC=yes -D PKG_SPIN=yes -D PKG_PYTHON=yes -D PKG_MOLFILE=yes -D PKG_MOLECULE=yes -D PKG_KSPACE=yes -D PKG_REAXFF=yes  -D PKG_ML-SNAP=yes -D PKG_ML-IAP=yes -D PKG_DIFFRACTION=yes -D PKG_MEAM=yes -D PKG_MOLFILE=yes -D PKG_PHONON=yes -D PKG_SMTBQ=yes -D PKG_RIGID=yes -D PKG_QEQ=yes -D PKG_EXTRA-COMPUTE=yes -D PKG_GRANULAR=yes -D PKG_BPM=yes -D PKG_DPD-BASIC=yes -D PKG_DPD-MESO=yes -D PKG_DPD-REACT=yes -D PKG_DPD-SMOOTH=yes -D PKG_ELECTRODE=yes -D PKG_EXTRA-DUMP=yes -D PKG_EXTRA-FIX=yes -D PKG_EXTRA-MOLECULE=yes -D PKG_EXTRA-PAIR=yes -D PKG_NETCDF=yes -D PKG_EFF=yes -D FFT=MKL
 
-.. note::
 
-   PLUMED ve MSCG gibi bazı özel paketler için GSL kütüphanesi gereklidir. Bu kütüphaneyi Conda ile kurmak için:
+.. warning:: 
 
-   module load miniconda3
-
-   .. code-block:: bash
-
-      conda install -c conda-forge gsl 
+   Yukarıdaki komutta `CMAKE_INSTALL_PREFIX` parametresini kendi kurulum dizininize göre değiştirmeniz gerekmektedir. Örneğin, `CMAKE_INSTALL_PREFIX=/arf/home/kullanici_adi/lammps-stable` şeklinde ayarlayın.
 
 LAMMPS’i derlemek için:
 
 .. code-block:: bash
 
-   cmake --build .
+   make -j28
+   make install   
 
-Bu işlemler tamamlandığında `build-intel18-openmpi4` dizininde çalıştırılabilir `lmp` dosyası yer alacaktır.
+Bu işlemler tamamlandığında `lammps-stable` dizininde çalıştırılabilir `lmp` dosyası yer alacaktır.
 
-------------------------------------
-Hamsi Hesaplama Kümesi'nde Kurulum
-------------------------------------
-
-Kurulumu ``hamsi`` kuyruğu için optimize bir şekilde yapmak için, ``srun`` komutu ile 28 CPU’yu aşağıdaki gibi ayırabilirsiniz:
-
-.. code-block:: bash
-
-   srun -N 1 -A kullaniciadi -p hamsi --ntasks-per-node=28 --time=01:00:00 --job-name "install" --pty bash -i
-
-.. note::
-
-   Süreyi kurallar dahilinde değiştirebilirsiniz. Ayrıntılı bilgi için :ref:`partitions` sayfasını inceleyin.
-
-Modül sistemini temizleyip uygun modülleri yükleyin:
-
-.. code-block:: bash
-
-   module purge
-   source /truba/sw/comp/intel/oneapi-2021.2/setvars.sh
-   module load cmake/3.18.0
-
-LAMMPS’i klonlayıp derleme dizinini oluşturun:
-
-.. code-block:: bash
-
-   git clone -b stable https://github.com/lammps/lammps.git lammps-stable
-   cd lammps-stable
-   mkdir build-oneapi21-impi
-   cd build-oneapi21-impi
-
-.. note::
-
-   Eğer OpenMPI ile kurmak isterseniz, aşağıdaki modülü yükleyip farklı bir klasörde kuruluma devam edebilirsiniz:
-
-   .. code-block:: bash
-
-      module load openmpi/4.1.1-intelOneApi-2021.2
-
-Intel derleyicilerini tanımlayın:
-
-.. code-block:: bash
-
-   export CC=mpiicc CXX=mpiicpc FC=mpiifort
-
-LAMMPS paketlerini etkinleştirerek CMake komutunu çalıştırın:
-
-.. code-block:: bash
-
-   FLAGS="-xHost"; CFLAGS=$FLAGS CXXFLAGS=$CFLAGS \
-   cmake ../cmake -D BUILD_MPI=on \
-   -D BLAS_LIBRARIES="-L${MKLROOT}/lib/intel64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread -lm -ldl" \
-   -D LAPACK_LIBRARIES="-L${MKLROOT}/lib/intel64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread -lm -ldl" \
-   -D PKG_BODY=yes -D PKG_CLASS2=yes -D PKG_DIPOLE=yes -D PKG_MANYBODY=yes \
-   -D PKG_MC=yes -D PKG_LATTE=yes -D PKG_MLIAP=yes -D PKG_SNAP=yes \
-   -D PKG_SPIN=yes -D PKG_PYTHON=yes -D PKG_USER-MOLFILE=yes -D PKG_MOLECULE=yes \
-   -D PKG_USER-PHONON=yes -D PKG_USER-REAXC=yes -D PKG_KSPACE=yes \
-   -D PKG_USER-MEAMC=yes -D PKG_USER-SMTBQ=yes -D PKG_USER-DIFFRACTION=yes -D FFT=MKL
-
-GSL paketi gerekiyorsa:
-
-.. code-block:: bash
-
-   conda install -c conda-forge gsl
-
-Derlemeyi başlatın:
-
-.. code-block:: bash
-
-   cmake --build .
-
-``build-oneapi21-impi`` dizininde çalıştırılabilir ``lmp`` dosyasını bulacaksınız.
