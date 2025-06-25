@@ -1,7 +1,7 @@
 .. _mac-openvpn:
 
 =========================================
-IOS
+Mac OS
 =========================================
 
 OpenVPN  yapılandırması için öncelikle işletim sistemine OpenVPN kurulumunu yapmanız gerekmektedir. Eğer daha önceden sisteminize OpenVPN kurulu ise, OpenVPN versiyonunun 2.4.0'dan yüksek olması gerekmektedir. Daha eski OpenVPN sürümleri bu belgedeki yapılandırma adımları  ile uyumlu değildir ve bağlantı kurmakta başarısız olacaktır.

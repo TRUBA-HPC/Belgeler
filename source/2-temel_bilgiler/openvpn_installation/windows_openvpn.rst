@@ -1,3 +1,5 @@
+.. _windows-openvpn:
+
 ==============================
 Windows‘da OpenVPN Kurulumu
 ==============================
