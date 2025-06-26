@@ -125,7 +125,7 @@ TRUBA hesaplama kümesi için `/truba/home`  dosya sistemi hakkında detaylı i�
      - Ev dizini
      - Bellek: 2TB  |br| Dosya Sayısı: 100K(inode) 
      - Araştırmacının verilerini |br| geçici olarak depolayacağı dizin.
-     - `/truba/scratch` dizini |br| otomatik olarak temizleneceği için; |br| girdi ve çıktı dosyalarının |br| proje süresi boyunca depolanabileceği ev dizinidir.
+     - `/arf/scratch` dizini |br| otomatik olarak belirli aralıklarla temizleneceği için; |br| girdi ve çıktı dosyalarının |br| proje süresi boyunca depolanabileceği ev dizinidir.
      - arf-ui(1,2,3,4,5) |br| OpenOndemand |br|
 
 
@@ -204,14 +204,14 @@ Dosya Sayısı için çözüm önerileri
 
   Kullanıcılarımızdan 
 
-    * kullandıkları uygulamaların merkezi versiyonu varsa (module vb.) merkezi versiyonlarını kullanmalarını
-    * merkezi kurulumda olmayan uygulamaların konteyner teknolojilerinden faydalanarak tek bir imaj dosyası ile konteyner oluşturmaları(bkz. :ref:`konteyner kullanımı <Apptainer>`),
-    * merkezi versiyonu olmayan ve konteyneri bulunmayan uygulamaların kendi ev dizinlerine kurulması gerekiyorsa, kurulum sonrasında kaynak dosyaları silmelerini
-    * yapay zeka veya diğer alanlarda sıklıkla kullanılan ilgili veri setleri herhangi bir lisans sözleşmesi gerektirmeden doğrudan sayfa üzerinden açık olarak paylaşılan bir veri seti ise kullanıcı ev dizinleri yerine ``grid-teknik@ulakbim.gov.tr`` ile iletişime geçerek merkezi veri setleri dizine oluşturulması için bildirilmesi,
-    * `/arf` ve `/truba` depolama sistemlerine anaconda, miniconda, conda  veya herhagi bir Python kütüphanesi kesinlikle yüklenmemelidir, pip ve türevleri kullanılmamalıdır. Küçük boyutlu yüzbinlerce dosyadan oluştuğu için, her kullanıcının kendi ev dizinine kurduğu bu tip kütüphaneler dosya sistemlerinin performanslarını büyük ölçüde düşürmekte ve çalışan işlerin yavaşlamasına neden olduğundan özellikle ``Anaconda`` kullanıcılarının merkezi Anaconda kurulumunu kullanmaları ve
-    * ihtiyaç duymadıkları her türlü dosyayı silmelerini
-    * saklanması gereken dosyaları kendi bilgisayarlarına indirmelerini
-    * sadece kısa zaman icinde kullanacakları dosyaları sistemde tutmalarını
-    * herhangi bir sebepten silemedikleri dosya ve dizinleri -tar komutu ile arşivleyerek tek bir dosya haline getirmeleri ve mümkünse ilgili arşiv dosyalarını kendi bilgisayarlarına indirmelerini 
+  * kullandıkları uygulamaların merkezi versiyonu varsa (module vb.) merkezi versiyonlarını kullanmalarını
+  * merkezi kurulumda olmayan uygulamaların konteyner teknolojilerinden faydalanarak tek bir imaj dosyası ile konteyner oluşturmaları(bkz. :ref:`konteyner kullanımı <Apptainer>`),
+  * merkezi versiyonu olmayan ve konteyneri bulunmayan uygulamaların kendi ev dizinlerine kurulması gerekiyorsa, kurulum sonrasında kaynak dosyaları silmelerini
+  * yapay zeka veya diğer alanlarda sıklıkla kullanılan ilgili veri setleri herhangi bir lisans sözleşmesi gerektirmeden doğrudan sayfa üzerinden açık olarak paylaşılan bir veri seti ise kullanıcı ev dizinleri yerine ``grid-teknik@ulakbim.gov.tr`` ile iletişime geçerek merkezi veri setleri dizine oluşturulması için bildirilmesi,
+  * `/arf` ve `/truba` depolama sistemlerine anaconda, miniconda, conda  veya herhagi bir Python kütüphanesi kesinlikle yüklenmemelidir, pip ve türevleri kullanılmamalıdır. Küçük boyutlu yüzbinlerce dosyadan oluştuğu için, her kullanıcının kendi ev dizinine kurduğu bu tip kütüphaneler dosya sistemlerinin performanslarını büyük ölçüde düşürmekte ve çalışan işlerin yavaşlamasına neden olduğundan özellikle ``Anaconda`` kullanıcılarının merkezi Anaconda kurulumunu kullanmaları ve
+  * ihtiyaç duymadıkları her türlü dosyayı silmelerini
+  * saklanması gereken dosyaları kendi bilgisayarlarına indirmelerini
+  * sadece kısa zaman icinde kullanacakları dosyaları sistemde tutmalarını
+  * herhangi bir sebepten silemedikleri dosya ve dizinleri -tar komutu ile arşivleyerek tek bir dosya haline getirmeleri ve mümkünse ilgili arşiv dosyalarını kendi bilgisayarlarına indirmelerini 
 
   önemle rica etmekteyiz.

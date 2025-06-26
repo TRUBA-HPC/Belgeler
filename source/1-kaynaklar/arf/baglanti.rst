@@ -62,13 +62,9 @@ OpenVPN bağlantınız olduğu varsayılarak kişisel makinenizden ARF hesaplama
 
         .. code-block:: bash
 
-            ssh -l <kullanici-adiniz> 172.16.6.11
+            ssh -l <kullanici-adiniz> 172.16.6.11(12,13,14,15)
 
-    .. tab:: arf-ui2
 
-        .. code-block:: bash
-    
-            ssh -l <kullanici-adiniz> 172.16.6.12
 
 
 ile bağlantı sağlayabilirsiniz.
