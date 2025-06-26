@@ -25,39 +25,36 @@ Aşağıdaki linklerde farklı işletim sistemleri için OpenVPN dosyalarının 
 
    Linklere tıklayarak bilgisayarınızda kullandığınız işletim sistemine uygun dosyayı tıklayarak bilgisayarınıza indirip kaydettikten sonra dosyanın uzantısını kontrol ediniz. Kaydedilen dosya adının **.ovpn** ile bitmesi önemlidir. Bazı sistemlerde ve web tarayıcılarda dosya adının sonuna **.txt** uzantısı eklenebilmektedir. 
 
-
-.. note::
-
- OpenVPN aktif iken 
-
-   .. code-block:: bash
-
-      172.16.6.11 ile arf-ui1,
-  
-  .. code-block:: bash
-
-      172.16.6.12 ile arf-ui2,
-  
-  .. code-block:: bash
-
-      172.16.6.13 ile arf-ui3,
-  
-  .. code-block:: bash
-
-      172.16.6.14 ile arf-ui4,
-   
-  .. code-block:: bash
-
-      172.16.6.15 ile arf-ui5,
-
-
- kullanıcı arayüzlerinden birisine bağlanabilirsiniz.
-  
-  
-ARF kullanıcı arayüzlerini kullanırken de diğer kuyruklara iş gönderebilirsiniz. Bu konuda endişelenmenize gerek yoktur.
-
 Kullandığınız işletim sistemine göre kurulum yapmak için aşağıdaki sayfaları ziyaret edebilirsiniz.
 
 * :ref:`mac-openvpn`
 * :ref:`linux-openvpn`
 * :ref:`windows-openvpn`
+
+Bağlantı Sorunları ve Güncel Çözüm Önerileri
+--------------------------------------------
+
+OpenVPN bağlantınızda sorun yaşıyorsanız, lütfen aşağıdaki güncel adımları izleyerek problemi gidermeyi deneyin. Buradaki öneriler, yalnızca bir adet OpenVPN bağlantınız olduğunu varsaymaktadır.
+
+1. **OpenVPN bağlantınızı kontrol edin:**  
+   - Bağlantınızın aktif ve yalnızca bir cihazda açık olduğundan emin olun.  
+   - OpenVPN’in 2.4 veya daha güncel bir sürümünü kullandığınızdan emin olun.
+
+2. **Farklı bir yöntem deneyin:**  
+   - Terminal üzerinden SSH ile bağlantı kurmayı deneyin. Aşağıdaki komut ile ayrıntılı hata mesajı alabilirsiniz:
+
+   .. code-block:: bash
+
+      ssh -vv kullanici_adi@arayuz_ip_adresi
+
+   - Alternatif olarak, MobaXterm gibi farklı bir SSH istemcisiyle bağlantı sağlamayı test edebilirsiniz. Kullanıcı arayüz sunucu ip adreslerine :ref:`ARF bağlantı bilgileri <arf_baglanti>` sayfasından ulaşabilirsiniz.
+
+3. **Başka bir cihazdan bağlanmayı deneyin:**  
+   - Sorunun kişisel bilgisayarınızdaki ayarlardan (örneğin kişisel güvenlik duvarı veya antivirüs) kaynaklanıp kaynaklanmadığını anlamak için farklı bir bilgisayardan OpenVPN ve SSH bağlantısı kurmayı deneyin.
+
+4. **Farklı bir ağ kullanın:**  
+   - Kullandığınız ağda (örneğin kampüs veya kurum ağı) VPN bağlantılarına kısıtlama uygulanıyor olabilir.  
+   - Bilgisayarınızı mobil veri (cep telefonu hotspot) gibi farklı bir internet bağlantısına geçirerek tekrar OpenVPN ile bağlantı kurmayı deneyin.  
+   - Eğer mobil veri ile bağlantı sağlanabiliyor, kurum ağında sağlanamıyorsa, sorun büyük ihtimalle ağ kısıtlamalarından kaynaklanmaktadır. Bu durumda kurumunuzun ağ yöneticisiyle iletişime geçerek TRUBA'ya giden OpenVPN bağlantılarına izin verilmesini talep ediniz.
+
+Yukarıdaki adımların çoğu bağlantı sorunlarını çözmektedir. Sorununuz devam ederse, aldığınız hata mesajı ve denediğiniz adımlarla birlikte TRUBA destek ekibiyle iletişime geçebilirsiniz.

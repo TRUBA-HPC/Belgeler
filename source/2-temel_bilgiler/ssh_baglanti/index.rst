@@ -10,6 +10,16 @@ SSH Bağlantısı
    
    Bağlanmak istediğiniz arayüz IP adresini, :ref:`ARF bağlantı bilgileri <arf_baglanti>` adresinden öğrenebilirsiniz.
 
+.. grid:: 2
+    :gutter: 2
+    
+    .. grid-item-card:: :ref:`linux-macos-ssh`
+        :text-align: center
+    .. grid-item-card:: :ref:`windows-ssh`
+        :text-align: center
+
+
+.. _linux-macos-ssh:
 
 Linux ve macOS
 --------------------------------
@@ -29,7 +39,7 @@ Linux ve macOS işletim sistemlerinde TRUBA bilgisayarlarına bağlanmak için a
 
 4. Ardından kullanıcı şifrenizi girmeniz istenecektir. Şifrenizi girerken ekranda herhangi bir karakter görünmeyecektir, bu normal bir durumdur.
 
-
+.. _windows-ssh:
 
 Windows
 -------

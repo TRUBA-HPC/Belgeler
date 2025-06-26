@@ -3,6 +3,8 @@
 Temel Bilgiler
 ==============
 
+.. image:: /assets/openvpn-howto/images/ybh-akis.png
+
 TRUBA Bilgisayarlarına Bağlantı
 --------------------------------
 
