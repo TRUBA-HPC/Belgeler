@@ -10,8 +10,9 @@ TRUBA Bilgisayarlarına Bağlantı
     :maxdepth: 1
 
     openvpn_installation/openvpn_info.rst
-
     ssh_baglanti/index.rst
+    open_ondemand.rst
+    monitoring_grafana.rst
 
 
 Dosya Transferi
@@ -52,8 +53,6 @@ En güncel bilgiyi sisteme girdiğinizde `module av` komutu ile görebileceğini
     :maxdepth: 1
 
     paralel_ve_seri_is_calistirma.rst
-    open_ondemand.rst
-    monitoring_grafana.rst
     uygulama_kurulumu.rst
     konteyner_kullanimi.rst
     gpu.rst

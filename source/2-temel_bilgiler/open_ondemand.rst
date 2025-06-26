@@ -1,8 +1,7 @@
 .. _open_ondemand:
 
 Open OnDemand Arayüzü
-========================
-
+=====================
 
 Open OnDemand **web tabanlı** bir kullanıcı arayüzü servisidir. Bu arayüz, terminal tabanlı klasik kullanıcı arayüzü sunucusunun sağladığı tüm imkanlara ek olarak kullanıcılara pek çok ek özellik sunmaktadır. Open OnDemand ile ilgili ayrıntılı bilgilere `Open OnDemand web sayfasından <https://osc.github.io/ood-documentation/latest/>`_ ulaşabilirsiniz. 
 
@@ -10,75 +9,85 @@ Open OnDemand **web tabanlı** bir kullanıcı arayüzü servisidir. Bu arayüz,
 
     Open OnDemand kullanıcılar için pek çok operasyonu kolaylaştırmasına ve pek çok yeni özellik sağlamasına rağmen doğru ve verimli bir şekilde kullanabilmek için tüm kullanıcıların temel linux kullanım bilgisine sahip olması şarttır. Ayrıca Open OnDemand'i kullanabilmek için kullanıcıların daha önce TRUBA kullanım deneyimlerinin olması ve burada bahsedilen kavramları biliyor olmaları gerekmektedir.
 
-Open OnDemand Erişim
-----------------------
+Erişim
+~~~~~~~~
 
-TRUBA'da hizmet veren Open OnDemand servisine https://172.16.6.20 adresinden ulaşılabilmektedir. İnteraktif arayüz ile ilgili güncel bağlantı bilgilerine :ref:`arf-baglanti` sayfasından erişebilirsiniz. Bu servise şimdilik sadece OpenVPN üzerinden sisteme bağlı kullanıcılar erişebilmektedir. 
+TRUBA'da hizmet veren Open OnDemand servisine erişim adresi ve güncel bağlantı bilgilerine :ref:`ARF bağlantı bilgileri <arf_baglanti>` sayfasından erişebilirsiniz. Bu servise sadece OpenVPN üzerinden sisteme bağlı kullanıcılar erişebilmektedir. 
 
 .. note::
 
-    Doğrudan ULAKNET altyapısından internete bağlı kullanıcılar için doğrudan bir erişim adresi bulunmamaktadır. Bu kullanıcılar da OpenVPN bağlantılarını gerçekleştirerek Open OnDemand servisine erişmelilerdir.
+    * TRUBA VPN ile ilgili bilgilere ulaşmak için :ref:`open-vpn` sayfasını inceleyebilirsiniz.
+    * Doğrudan ULAKNET altyapısından internete bağlı kullanıcılar için doğrudan bir erişim adresi bulunmamaktadır. Bu kullanıcılar da OpenVPN bağlantılarını gerçekleştirerek Open OnDemand servisine erişmelilerdir.
 
+Web arayüz sunucusuna bağlantı için kullanıcı adı ve parolanın girilmesi gerekmektedir.
 
+- Kullanıcı Adı: ``truba-kullanıcı-adınız``
+- Şifre: ``truba-hesap-şifreniz``
 
-Web arayüz sunucusuna bağlantı için kullanılan kullanıcı adı ve parolanın girilmesi gerekmektedir.
 
 
 .. _grafik-ekran:
 
+Uygulamalar
+~~~~~~~~~~~~~
 
-Grafik Ekran Bağlantısı 
-------------------------
+Kullanıcı adı ve şifre bilginizi girdikten sonra Open OnDemand ana sayfasından "My Interactive Sessions" menüsü altında aşağıdaki uygulamaları görüntüleyebilirsiniz:
 
-TRUBA’da hizmet veren Open OnDemand kullanıcı arayüzü servisi üzerinden ``Desktop`` talep ederek grafik ekran gerektiren uygulamaları çalıştırabilirsiniz. Girdi (input) dosyalarını aracı programlarla hazırlayan ya da işin çıktısını lokal bilgisayarına aktarmadan doğrudan sunucu üzerinde görmek isteyen kullanıcılar bu yöntemi tercih edebilirler. İlgili aracı programları kullanıcıların kendi ev diiznlerine kurmaları gerekmektedir (``/arf/home/kullaniciadi``)
+- **Desktop**: Grafik arayüz gerektiren uygulamalar için interaktif masaüstü ortamı
+- **Jupyter Araçları**: Jupyter Notebook ve JupyterLab ortamları
+- **Gnuplot**: Grafik çizim uygulaması
+- **GaussView**: Moleküler modelleme ve görselleştirme yazılımı
 
-Open OnDemand servisini kullanmak için TRUBA VPN bağlantısının başarılı bir şekilde sağlanmış olması gerekmektedir. 
+Uygulama Seçimi ve Kaynak Tahsisi
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* TRUBA VPN ile ilgili bilgilere ulaşmak için :ref:`open-vpn` sayfasını inceleyebilirsiniz.
+1. **Uygulama Seçimi**: İhtiyacınız olan uygulamayı listeden seçiniz.
 
+2. **Kaynak Parametreleri**: Seçilen uygulama için aşağıdaki kaynak parametrelerini belirleyiniz:
+   
+   - **Account**: Hesap bilgisi (örn: kullaniciadi,projeadi)
+   - **Partition**: İş kuyruğu seçimi (örn: orfoz, barbun, hamsi)
+   - **Time Limit**: Talep edilen süre (saat:dakika:saniye)
 
-Open OnDemand Desktop
-----------------------
+3. **Kaynak Talebi**: "Launch" butonuna tıklayarak interaktif oturum için kaynak talebinde bulununuz.
 
-ARF kümesi Open OnDemand servisine internet tarayıcınızı kullanarak http://172.16.6.20 adresinden ulaşabilirsiniz. Karşınıza gelen ekranda TRUBA kullanıcı adı ve şifre bilginizi girmeniz gerekmektedir.
+4. **Oturum Başlatma**: Sistem kaynakları tahsis ettikten sonra oturum otomatik olarak başlatılacaktır. Uygulamayı başlatabilirsiniz.
 
-Kullanıcı adı ve şifre bilginizi girdikten sonra ARF menüsünden Desktop seçeneğine tıklayınız.
+.. note::
 
-Bundan sonraki adımda interaktif masaüstü talebinde bulunmanız gerekmektedir. Karşınıza gelen ekranda "Launch" sekmesine tıklayarak interaktif masaüstü için kaynak talebinde bulununuz. 
+   Grafik ekran gerektiren uygulamaları çalıştırmak için ``Desktop`` uygulamasını seçmeniz önerilir. Bu yöntem, girdi dosyalarını görsel araçlarla hazırlamak veya iş çıktılarını doğrudan sunucu üzerinde görüntülemek isteyen kullanıcılar için idealdir. Gerekli yazılımları kendi ev dizininize (``/arf/home/kullaniciadi``) kurmanız gerekmektedir.
 
 .. _sshXforward:
-
 
 ssh X-forwarding
 -----------------
 
 Arayüz sunucularına grafik ekran bağlantısı gerçekleştirerek (X-forwarding) görsel uygulamalar çalıştırmak mümkündür. 
 
+Sunucu üzerindeki görsel öğeyi kullanıcının kendi bilgisayarına aktarabilmesi için:
 
-Sunucu üzerindeki görsel öğeyi kullanıcının kendi bilgisayarına aktarabilmesi için
+* SSH bağlantısı sırasında X-forwarding seçeneği aktif hale getirilmeli
+* Lokal bilgisayarda bir X-server uygulaması doğru biçimde kurulmuş ve çalışıyor durumda olmalı:
+  
+  * MacOS için `XQuartz <https://www.xquartz.org/>`_
+  * Windows için `Putty <https://www.putty.org/>`_ ya da `MobaXTerm <https://mobaxterm.mobatek.net/>`_
+  * Linux kullanıcılarında Xorg yüklü olarak gelmektedir, yeni bir yazılım yüklenmesine gerek yoktur
 
-* SSH bağlantısı sırasında X-forwarding seçenegi aktif hale getirilmeli
-* Lokal bilgisayarda bir X-server uygulaması (MacOS için XQuartz (https://www.xquartz.org/), Windows için Putty(https://www.putty.org/) ya da MobaXTerm(https://mobaxterm.mobatek.net/) tercih edilebilir) doğru biçimde kurulmuş ve çalışıyor durumda olmalı. Linux kullanıcılarında Xorg yüklü olarak gelmektedir. Yeni bir yazılım yüklenmesine gerek yoktur.
-* Lokal bilgisayardaki güvenlik duvarı ve benzeri yazılımların ayarları doğru şekilde yapılmalıdır. 
-
-
-SSH bağlantısı sağlamak için farklı işletim sistemleri için pek çok farklı uygulama bulunmaktadır.
+* Lokal bilgisayardaki güvenlik duvarı ve benzeri yazılımların ayarları doğru şekilde yapılmalıdır
 
 Windows sistemlerde sık kullanılan SSH istemcilerinden biri PuTTy'dir. PuTTy'de X-forwarding seçeneği ``Connection > SSH > X11`` altındadır. Diğer uygulamalarda bu seçeneğin nerede olduğuna dair uygulamanın yardım dökümanları kontrol edilmelidir.
 
-Terminal üzerinden kullanıcı arayüz sunucularına bağlantı sağlarken ssh komutuna -XY parametresinin eklenmesi yeterlidir. 
+Terminal üzerinden kullanıcı arayüz sunucularına bağlantı sağlarken ssh komutuna -XY parametresinin eklenmesi yeterlidir:
 
 .. code-block::
 
-    ssh -l <kullanici_adi> <arayüz ip adresi>  -XY
+    ssh -l <kullanici_adi> <arayüz_ip_adresi> -XY
 
-
-Bağlantı gerçekleştiğinde xclock komutu ile test yapılabilir.
+Bağlantı gerçekleştiğinde xclock komutu ile test yapılabilir:
 
 .. code-block::
 
     xclock
-
 
 .. image:: /assets/grafik_ekran/xclock-arf.png
   :width: 400
