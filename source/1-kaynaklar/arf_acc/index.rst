@@ -8,8 +8,6 @@ ARF-ACC
 
     .. grid-item-card:: :ref:`arf_acc_baglanti`
         :text-align: center
-    .. grid-item-card:: :ref:`arf_acc_kullanici_arayuz`
-        :text-align: center
     .. grid-item-card:: :ref:`arf_acc_depolama_kaynaklari`
         :text-align: center
     .. grid-item-card:: :ref:`arf_acc_kuyruk_bilgisi`
@@ -23,8 +21,6 @@ ARF ACC hesaplama kümesinde bulunan ``kolyoz`` ismini atadığımız `Lenovo Th
    :hidden:
 
    baglanti.rst
-
-   kullanici_arayuz.rst
    depolama_kaynaklari.rst
    kuyruk_bilgisi.rst
    hesaplama_kumeleri.rst

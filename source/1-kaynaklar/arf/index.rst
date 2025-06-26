@@ -9,8 +9,6 @@ ARF
 
     .. grid-item-card:: :ref:`arf_baglanti`
         :text-align: center
-    .. grid-item-card:: :ref:`arf_kullanici_arayuz`
-        :text-align: center
     .. grid-item-card:: :ref:`arf_depolama_kaynaklari`
         :text-align: center
     .. grid-item-card:: :ref:`arf_kuyruk_bilgisi`
@@ -26,7 +24,6 @@ ARF
    :caption: ARF Rehberi
 
    baglanti.rst
-   kullanici_arayuz.rst
    kuyruk_bilgisi.rst
    depolama_kaynaklari.rst
    hesaplama_kumeleri.rst
