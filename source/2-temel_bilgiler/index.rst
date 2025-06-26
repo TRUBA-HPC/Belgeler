@@ -3,7 +3,11 @@
 Temel Bilgiler
 ==============
 
-.. image:: /assets/openvpn-howto/images/ybh-akis.png
+
+.. toctree::
+    :maxdepth: 1
+   
+    ybh-akis.rst
 
 TRUBA Bilgisayarlarına Bağlantı
 --------------------------------
