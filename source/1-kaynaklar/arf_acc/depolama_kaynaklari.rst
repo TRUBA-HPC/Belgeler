@@ -13,8 +13,6 @@ Bu kılavuz dosya sistemleri hakkında aşağıdaki başlıkları kapsamaktadır
         :text-align: center   
     .. grid-item-card::  :ref:`arf-dosya-sistemi`
         :text-align: center
-    .. grid-item-card:: :ref:`truba-dosya-sistemi`
-        :text-align: center
     .. grid-item-card:: :ref:`sunucu-kuyruklar`
         :text-align: center  
     .. grid-item-card:: :ref:`dosya-sayisi`
@@ -55,16 +53,16 @@ Bu kılavuz dosya sistemleri hakkında aşağıdaki başlıkları kapsamaktadır
 .. _arf-dosya-sistemi:
 
 ----------------------------------
-ARF Dosya Sistemi
+ARF-ACC Dosya Sistemi
 ----------------------------------
 
-ARF hesaplama kümesi için `/arf/home`, `/arf/scratch` ve `/truba/home` dosya sistemleri hakkında detaylı içerik tablo içerisinde belirtilmiştir. Bu dosya sistemlerine bağlı bulunan suncular üzerinden iş gönderilebilir. İşler çalışırken sadece beliritlen dosya sistemlerine erişimi mevcuttur. 
+ARF-ACC hesaplama kümesi için `/arf/home` ve `/arf/scratch`  dosya sistemleri hakkında detaylı içerik tablo içerisinde belirtilmiştir. Bu dosya sistemlerine bağlı bulunan suncular üzerinden iş gönderilebilir. İşler çalışırken sadece beliritlen dosya sistemlerine erişimi mevcuttur. 
 
 .. |br| raw:: html
 
      <br>
 
-.. list-table:: ARF Hesaplama Kümeleri Dosya Sistemleri 
+.. list-table:: ARF-ACC Hesaplama Kümeleri Dosya Sistemleri 
    :widths: 10 15 25 25 25 25
    :header-rows: 1
    :align: center
@@ -90,45 +88,9 @@ ARF hesaplama kümesi için `/arf/home`, `/arf/scratch` ve `/truba/home` dosya s
      - Çalışan işler için kullanılacak dizin, |br| Çalışan işin geçici dosyalarının kullanabileceği dizin, |br| Çalışan işlerin çıktı dosyalarının depolanabileceği dizindir. |br| Bu dizin içerisinde uzun süreli veri depolaması gerçekleştirilemez. |br| Dosyalar periyodik olarak sistem tarafından otomatik silinecektir. |br| Herhangi bir kota arttırımı ve süre uzatımı söz konusu değildir. |br| Proje kotaları ayrıca belirlenmektedir.
      - arf-ui1(2,3,4,5)  |br| arf-ui2 |br| OpenOndemand |br| orfoz |br| cuda-ui |br| kolyoz
 
-   * - `/truba/home`
-     - Depolama
-     - Bellek: 2TB  |br| Dosya Sayısı: 100K(inode) 
-     - Araştırmacının verilerini |br| geçici olarak depolayacağı dizin
-     - `/arf/scratch` dizini |br| otomatik olarak temizleneceği için; |br| girdi ve çıktı dosyalarının |br| proje süresi boyunca depolanabileceği ev dizinidir.
-     - arf-ui1(2,3,4,5)  |br| arf-ui2 |br| OpenOndemand |br| orfoz |br| cuda-ui |br| kolyoz
-
-.. _truba-dosya-sistemi:
-
-----------------------
-TRUBA Dosya Sistemi
-----------------------
-
-TRUBA hesaplama kümesi için `/truba/home`  dosya sistemi hakkında detaylı içerik tablo içerisinde belirtilmiştir. Bu dosya sistemlerine bağlı bulunan suncular üzerinden iş gönderilebilir.  
 
 
-.. note:: 
   
-  Barbun, hamsi, barbun-cuda, akya-cuda, palamut-cuda kümelerinin işletim sistemleri başarıyla güncellenmiş ve bu sunucular ARF kümesine dahil edilmiştir. Güncelleme sonrasında tüm sunucular için ev dizini /arf/home, scratch dizini /arf/scratch ve depolama dizini /truba/home olarak belirlenmiştir. Ayrıca, /truba/scratch dizini kullanımdan kaldırılmıştır.
-.. list-table:: TRUBA Hesaplama Kümeleri Dosya Sistemleri 
-   :widths: 10 15 25 25 25 25
-   :header-rows: 1
-   :align: center
-
-   * - Dizin adı
-     - Kullanım
-     - Kotası
-     - İşlevi
-     - Açıklama
-     - Bağlı bulunduğu sunucular
-
-   * - `/truba/home`
-     - Ev dizini
-     - Bellek: 2TB  |br| Dosya Sayısı: 100K(inode) 
-     - Araştırmacının verilerini |br| geçici olarak depolayacağı dizin.
-     - `/truba/scratch` dizini |br| otomatik olarak temizleneceği için; |br| girdi ve çıktı dosyalarının |br| proje süresi boyunca depolanabileceği ev dizinidir.
-     - arf-ui(1,2,3,4,5) |br| OpenOndemand |br|
-
-
 
 .. _sunucu-kuyruklar:
 
@@ -138,47 +100,28 @@ Sunucular ve Kullanıcı Arayüzleri
 
 
 .. list-table:: ARF ACC Sistemi
-   :widths: 10 15 25 25 25 25
+   :widths: 10 15 25 25 25 
    :header-rows: 1
    :align: center
 
    * - Sunucu Türü
      - Ev Dizini
      - Scratch
-     - Depolama
      - Yerel
      - Kullanıcı Arayüzü
 
-   * - kolyoz
+   * - kolyoz-cuda
      - `/arf/home`
      - `/arf/scratch`
-     - `/truba/home`
      - `/tmp` - 6TB
      - cuda-ui |br| OpenOndemand
-
-.. list-table:: ARF Sistemi
-   :widths: 10 15 25 25 25 25
-   :header-rows: 1
-   :align: center
-
-   * - Sunucu Türü
-     - Ev Dizini
-     - Scratch
-     - Depolama
-     - Yerel
-     - Kullanıcı Arayüzü
-
-   * - orfoz
+      
+   * - palamut-cuda
      - `/arf/home`
      - `/arf/scratch`
-     - `/truba/home`
-     - `/tmp` - 800GB
-     - arf-ui1  |br| arf-ui2  |br| arf-ui3  |br| arf-ui4  |br| arf-ui5 |br| OpenOndemand 
-
-.. note:: 
-
-  /truba/home dizininizde yer alan çalışma dosyalarınıza ARF kullanıcı arayüz sunucuları üzerinden doğrudan erişim sağlayabilirsiniz.
-
+     - `/tmp` - 12TB
+     - cuda-ui |br| OpenOndemand 
+     
 
 .. _dosya-sayisi:
 
@@ -192,15 +135,14 @@ Kullanıcının ev dizinlerinin (`../home/$USER` ve `../scratch/$USER`) boyutund
 
   lfs quota -gh $USER /truba
 
-komutu ile kullandığı dosya sayısını(inode) öğrenebilir. Ayrıca terminalden ``arf-ui`` kullanıcı arayüzüne bağlantı sağladıktan sonra login ekranına dökülen kota bilgilerine ``dosya kotası`` da % olarak eklenmiştir. Bu değerin %100'un altında olması gerekmektedir.
-
+komutu ile kullandığı dosya sayısını(inode) öğrenebilir. 
 .. _inode-cozum-tavsiyeleri:
 
 ---------------------------------
 Dosya Sayısı için çözüm önerileri
 ---------------------------------
 
-.. note:: 
+
 
   Kullanıcılarımızdan 
 
