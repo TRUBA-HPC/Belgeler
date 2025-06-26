@@ -1,13 +1,11 @@
 
 .. _uyelik-bilgi:
 
-======================
-TRUBA Üyelik Rehberi
+
+Üyelik Rehberi
 ======================
 
-
--------------------------------------
-TRUBA Sistemini Kimler Kullanabilir?
+TRUBA Kaynaklarını Kimler Kullanabilir?
 -------------------------------------
 
 Hesaplama kümesi üzerinde çalışabilir uygulamalara sahip Türkiye'deki tüm üniversite, araştırma kurumu ve enstitülerdeki araştırmacılar, öğretim üyeleri, öğrenciler TRUBA kaynaklarını kullanmak üzere TRUBA kullanıcısı olabilir. 
@@ -24,13 +22,6 @@ Altyapının kullanılması için çalışabilir uygulamaların (açık kaynak k
 TRUBA kaynaklarından faydalanmak isteyen araştırmacılarımızın üyelik başvuruları, 
 `TRUBA Üyelik Portalı <https://portal.truba.gov.tr>`_ üzerinden gerçekleştirilmektedir. 
 Mevcut üyelerimiz, portal üzerinden kullanıcı bilgilerini güncelleyebilir ve TRUBA kaynaklarını kullanarak gerçekleştirdikleri bilimsel yayınları "Yayınlar" bölümüne ekleyebilirler. Ayrıca, bu yayınlarda TRUBA'ya teşekkür etmeleri gerekmektedir.
-
-.. 
-  Kaynak Talep Süreci
-  -------------------
-
-  TRUBA Üyelik Portalı üzerinden, araştırma projeleriniz için hesaplama ve depolama kaynağı başvurusunda bulunabilirsiniz.  
-  Kaynak talepleri, proje süresi ve ihtiyaca göre değerlendirilir. Kaynak Tahsisi uygulaması sayesinde araştırma gruplarının birlikte çalışabilirliği desteklenir.
 
 .. _kullanicihesabi-bilgi:
 
@@ -72,7 +63,7 @@ Konu ile ilgili her türlü soru ve sorununuzu ``grid-teknik@ulakbim.gov.tr`` ad
 
 .. _uyelik-yayinlar:
 
------------
+
 Yayınlar
 -----------
 
@@ -85,19 +76,19 @@ TRUBA hesaplama kaynaklarının kullanıldığı tüm bilimsel çalışmalarda (
 
 .. _yeni-sertifika:
 
-----------------------------
+
 TRUBA Sertifika İşlemleri
 ----------------------------
 
 Yeni Sertifika Başvurusu
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Yeni sertifika başvurusu sadece ve sadece Avrupa Araştırma Altyapıları'nda yer alan kaynaklara iş göndermek, ilgili AB projelerinde yetkilendirme servisleri için kullanılmaya başlanmıştır. Bu nedenle sadece ilgili alanlarda ihtiyaç duyanlar https://portal.truba.gov.tr/ üzerinden sertifika başvurusunda bulunabilir veya ca@grid.org.tr adresinden yardım isteyebilirler. 
 
 https://portal.truba.gov.tr sayfasındaki Sertifika menüsünden yeni kullanıcı sertifikası başvurusunda bulunulabilinir. TRUBA sertifika otoritesi (CA) tarafından hazırlanıp imzalanarak size eposta ile gönderilecektir. 
 
 *Sertifikamı Nerede Kullanabilirim?*
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Sertifika kullanım alanları aşağıdaki gibi özetlenebilir: 
 

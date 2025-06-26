@@ -1,7 +1,7 @@
 .. _truba_iletisim:
 
 =============================
-TRUBA Teknik Destek Talebi
+Teknik Destek Talebi
 =============================
 
 TRUBA sisteminde karşılaştığınız sorunları ``grid-teknik@ulakbim.gov.tr`` adresine iletebilirsiniz. Sorununuzun hızlı ve etkin bir şekilde çözülebilmesi için, e-posta gönderirken aşağıda belirtilen standart bilgileri eksiksiz olarak iletmeniz önemlidir. 

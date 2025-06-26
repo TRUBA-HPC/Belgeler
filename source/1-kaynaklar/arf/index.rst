@@ -17,6 +17,8 @@ ARF
         :text-align: center
     .. grid-item-card:: :ref:`arf_hesaplama_kumeleri`
         :text-align: center
+    .. grid-item-card:: :ref:`truba_komutlari`
+        :text-align: center
 
 
 .. toctree::
@@ -28,6 +30,7 @@ ARF
    kuyruk_bilgisi.rst
    depolama_kaynaklari.rst
    hesaplama_kumeleri.rst
+   truba_komutlari.rst
 
 
 .. image:: /assets/arf/arf.jpg

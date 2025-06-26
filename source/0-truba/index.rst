@@ -10,9 +10,9 @@ TRUBA Kullanıcı Hesapları ve Üyelik
     TRUBA_genel.rst
     kullanici_basvurulari.rst
     uyelik_rehberi.rst
-    TRUBAtesekkur.rst
-    proje_basvurulari.rst
     kullanim_kurallari.rst
+    proje_basvurulari.rst
+    TRUBAtesekkur.rst
     truba_iletisim.rst
 
 

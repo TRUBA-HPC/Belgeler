@@ -1,8 +1,8 @@
 .. _mn5:
 
-========================================
-MareNostrum 5 Süperbilgisayarı
-========================================
+==============
+MareNostrum 5
+==============
 
 MareNostrum 5 (MN5), Avrupa Yüksek Başarımlı Hesaplama Ortak Girişimi (EuroHPC JU) tarafından geliştirilen ve Avrupa'nın en güçlü süperbilgisayarlarından biri olarak öne çıkan bir sistemdir. Barselona Süper Hesaplama Merkezi'nde (BSC-CNS) konumlandırılan MN5, bilimsel araştırmalar için önemli bir kaynak sunmaktadır.
 
@@ -29,7 +29,6 @@ Daha fazla bilgi ve başvuru için:
 .. toctree::
    :maxdepth: 1
    :caption: MN5 Dokümantasyonu:
-   :numbered:
 
    baglanti.rst
    hesaplama_kumeleri.rst

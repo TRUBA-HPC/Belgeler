@@ -1,7 +1,7 @@
 .. _kullanici_basvurulari:
 
 ===========================
-TRUBA Kullanıcı Başvurusu
+Kullanıcı Başvurusu
 ===========================
 
 
