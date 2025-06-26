@@ -13,6 +13,7 @@ TRUBA Bilgisayarlarına Bağlantı
     ssh_baglanti/index.rst
     open_ondemand.rst
     monitoring_grafana.rst
+    interaktif-is-calistirma.rst
 
 
 Dosya Transferi
@@ -33,7 +34,6 @@ Kaynak Yönetimi ve İş Döngüsü
     slurm_komutlari_ve_dosyalari.rst
     slurm-properties.rst
     yuksek-performansli-dosya-sistemleri.rst
-    interaktif-is-calistirma.rst
 
 
 Sistemde Kurulu Uygulamalar için 

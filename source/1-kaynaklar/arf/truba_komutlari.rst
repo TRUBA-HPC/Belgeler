@@ -15,9 +15,9 @@ TRUBA Komutları
 
 .. _lssrv:
 
-========
-lssrv
-========
+================
+Kuyruk Bilgisi
+================
 
 **lssrv** komutu, TRUBA sisteminde tanımlı olan kuyrukların durumunu görüntülemek için kullanılır.
 
@@ -53,9 +53,9 @@ Ayrıca ``sinfo`` komutunu kullanarak kuyrukların mevcut doluluk durumunu göre
 .. _avci:
 
 
-========
-avci
-========
+=================
+Modül Arama Aracı
+=================
 
 **Avcı**, HPC ortamlarında `module avail` komutuyla listelenen yazılım modülleri arasında kolay arama yapmanızı sağlar. Arama sonuçlarında yüklü modüller vurgulanır ve eşleşmeler renklendirilerek gösterilir.
 
