@@ -25,7 +25,7 @@ ARF
 
    baglanti.rst
    kuyruk_bilgisi.rst
-   depolama_kaynaklari.rst
+   arf_depolama_kaynaklari.rst
    hesaplama_kumeleri.rst
    truba_komutlari.rst
 

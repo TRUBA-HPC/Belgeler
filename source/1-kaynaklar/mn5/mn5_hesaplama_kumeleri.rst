@@ -2,7 +2,7 @@
 
 =====================
 Hesaplama Kümeleri
-==================
+=====================
 
 .. warning::
 
@@ -21,9 +21,9 @@ Toplamda:
 
 * **726.880 işlemci çekirdeği**
 * **1.75 PiB RAM**
-Düğüm türleri ve özellikleri:
 
-.. list-table:: 
+
+.. list-table:: Düğüm türleri ve özellikleri
    :widths: 20 15 15 20 30
    :header-rows: 1
    :align: center
