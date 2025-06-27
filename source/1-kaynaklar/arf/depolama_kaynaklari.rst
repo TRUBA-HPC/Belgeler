@@ -9,7 +9,7 @@ Bu kılavuz dosya sistemleri hakkında aşağıdaki başlıkları kapsamaktadır
 
 .. grid:: 3
    
-    .. grid-item-card:: :ref:`dosya-sistemleri-onemli-notlar`
+    .. grid-item-card:: :ref:`arf-dosya-sistemi-onemli-notlar`
         :text-align: center   
     .. grid-item-card::  :ref:`arf-dosya-sistemi`
         :text-align: center
@@ -23,7 +23,7 @@ Bu kılavuz dosya sistemleri hakkında aşağıdaki başlıkları kapsamaktadır
 
 
 
-.. _dosya-sistemleri-onemli-notlar:
+.. _arf-dosya-sistemi-onemli-notlar:
 
 -------------
 Önemli Notlar

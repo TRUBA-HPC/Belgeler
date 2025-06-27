@@ -21,7 +21,7 @@ ARF ACC hesaplama kümesinde bulunan ``kolyoz`` ismini atadığımız `Lenovo Th
    :hidden:
 
    baglanti.rst
-   depolama_kaynaklari.rst
+   depolama_kaynaklari-acc.rst
    kuyruk_bilgisi.rst
    hesaplama_kumeleri.rst
 

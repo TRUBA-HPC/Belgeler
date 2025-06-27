@@ -38,7 +38,7 @@ Kaynak Yönetimi ve İş Döngüsü
 
     temel_linux_kursu.rst
     slurm_komutlari_ve_dosyalari.rst
-    slurm-properties.rst
+    slurm-betik-ozellik.rst
     yuksek-performansli-dosya-sistemleri.rst
 
 

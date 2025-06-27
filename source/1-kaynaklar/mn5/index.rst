@@ -30,12 +30,13 @@ Daha fazla bilgi ve başvuru için:
    :maxdepth: 1
    :caption: MN5 Dokümantasyonu:
 
-   baglanti.rst
-   hesaplama_kumeleri.rst
+   mn5_baglanti.rst
+   mn5_hesaplama_kumeleri.rst
    kuyruk_bilgisi.rst
-   kullanici_arayuz.rst
-   program_kurulumu.rst
+   mn5_program_kurulumu.rst
    bsc_komutlari.rst
+   mn5_depolama_kaynaklari.rst
+   mn5_dosya_transferi.rst
 
 Daha Fazla Bilgi
 ----------------

@@ -6,7 +6,7 @@
 ======================
 
 TRUBA Kaynaklarını Kimler Kullanabilir?
--------------------------------------
+-------------------------------------------
 
 Hesaplama kümesi üzerinde çalışabilir uygulamalara sahip Türkiye'deki tüm üniversite, araştırma kurumu ve enstitülerdeki araştırmacılar, öğretim üyeleri, öğrenciler TRUBA kaynaklarını kullanmak üzere TRUBA kullanıcısı olabilir. 
 
