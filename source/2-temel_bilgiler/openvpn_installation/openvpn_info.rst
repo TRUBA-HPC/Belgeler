@@ -47,7 +47,7 @@ OpenVPN bağlantınızda sorun yaşıyorsanız, lütfen aşağıdaki güncel ad�
 
       ssh -vv kullanici_adi@arayuz_ip_adresi
 
-   - Alternatif olarak, MobaXterm gibi farklı bir SSH istemcisiyle bağlantı sağlamayı test edebilirsiniz. Kullanıcı arayüz sunucu ip adreslerine :ref:`ARF bağlantı bilgileri <arf_baglanti>` sayfasından ulaşabilirsiniz.
+   - Kullanıcı arayüz sunucu ip adreslerine :ref:`ARF bağlantı bilgileri <arf_baglanti>` sayfasından ulaşabilirsiniz.
 
 3. **Başka bir cihazdan bağlanmayı deneyin:**  
    - Sorunun kişisel bilgisayarınızdaki ayarlardan (örneğin kişisel güvenlik duvarı veya antivirüs) kaynaklanıp kaynaklanmadığını anlamak için farklı bir bilgisayardan OpenVPN ve SSH bağlantısı kurmayı deneyin.
