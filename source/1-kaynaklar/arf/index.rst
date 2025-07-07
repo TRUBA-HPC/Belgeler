@@ -15,8 +15,6 @@ ARF
         :text-align: center
     .. grid-item-card:: :ref:`arf_hesaplama_kumeleri`
         :text-align: center
-    .. grid-item-card:: :ref:`truba_komutlari`
-        :text-align: center
 
 
 .. toctree::

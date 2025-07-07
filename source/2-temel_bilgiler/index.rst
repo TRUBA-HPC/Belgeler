@@ -36,6 +36,7 @@ Kaynak Yönetimi ve İş Döngüsü
 .. toctree::
     :maxdepth: 1
 
+    truba_komutlari.rst
     temel_linux_kursu.rst
     slurm_komutlari_ve_dosyalari.rst
     slurm-betik-ozellik.rst
