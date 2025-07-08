@@ -108,14 +108,7 @@ ile bağlantı sağlayabilirsiniz.
 
 
 .. warning::
-  Derleme, pre-process, post-process işlerinizi kullanıcı arayüzü sunucuları yerine, ``debug`` kuyruğunda interaktif olarak  gerçekleştirebilirsiniz.
+  Derleme, pre-process, post-process işlerinizi kullanıcı arayüzü sunucuları yerine, ``debug`` kuyruğunda interaktif olarak  gerçekleştirebilirsiniz. İnteraktif is calistirma rehberi icin :ref:`interaktif-is-calistirma` sayfasini inceleyebilirsiniz.
 
-  debug kuyruğundan interaktif shell almak icin
-
-  .. code-block:: 
-    
-    srun -n 1 -N 1 -p debug --time=30:00 --pty /bin/bash -i
-
-  komutunu kullanabilir ya da `Open OnDemand <https://172.16.6.20/>`_  web arayüzünde linux desktop alarak islemlerinizi gerçekleştirebilirsiniz.
 
 

@@ -8,6 +8,8 @@ Temel Bilgiler
     :maxdepth: 1
    
     ybh-akis.rst
+    hesaplama_kumeleri.rst
+    yuksek-performansli-dosya-sistemleri.rst
 
 TRUBA Bilgisayarlarına Bağlantı
 --------------------------------
@@ -40,7 +42,6 @@ Kaynak Yönetimi ve İş Döngüsü
     temel_linux_kursu.rst
     slurm_komutlari_ve_dosyalari.rst
     slurm-betik-ozellik.rst
-    yuksek-performansli-dosya-sistemleri.rst
 
 
 Sistemde Kurulu Uygulamalar için 

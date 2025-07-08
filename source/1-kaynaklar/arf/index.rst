@@ -9,11 +9,9 @@ ARF
 
     .. grid-item-card:: :ref:`arf_baglanti`
         :text-align: center
-    .. grid-item-card:: :ref:`arf_depolama_kaynaklari`
-        :text-align: center
     .. grid-item-card:: :ref:`arf_kuyruk_bilgisi`
         :text-align: center
-    .. grid-item-card:: :ref:`arf_hesaplama_kumeleri`
+    .. grid-item-card:: :ref:`arf_depolama_kaynaklari`
         :text-align: center
 
 
@@ -24,8 +22,6 @@ ARF
    baglanti.rst
    kuyruk_bilgisi.rst
    arf_depolama_kaynaklari.rst
-   hesaplama_kumeleri.rst
-   truba_komutlari.rst
 
 
 .. image:: /assets/arf/arf.jpg
@@ -39,8 +35,8 @@ Kümenin genel özellikleri aşağıdaki gibidir:
 - İşlemci:  2x Intel(R) Xeon(R) Platinum 8480+ (toplam 112 çekirdek)
 - Bellek:   256 GB
 - Network: 200Gbit NDR infiniband
-- Tmp : 750GB name
-- Merkezi depolama : `/arf` (1.6Pbyte)
+- Tmp : 800GB NVME
+- Merkezi depolama : `/arf` (500TB)
 - Ev dizini: `/arf/home`
 - Yazılım: `/arf/sw/(apps,comp,lib)`
 - İşletim sistemi: Rocky Linux 9.2
