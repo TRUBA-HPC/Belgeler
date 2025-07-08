@@ -20,10 +20,7 @@ ARF ACC, yüksek performanslı hesaplama (HPC) ihtiyaçları için özel olarak 
 
    ARF ACC hesaplama kümesinde yer alan ``kolyoz-cuda`` ve ``palamut-cuda`` kümeleri, yalnızca araştırma merkezleri tarafından yürütülen ve T.C. Cumhurbaşkanlığı Strateji ve Bütçe Başkanlığı tarafından desteklenen altyapı projeleri ile TÜBİTAK ULAKBİM kapsamında sözleşmeli proje araştırmacıları tarafından kullanılabilir. ``barbun-cuda`` ve ``akya-cuda`` kümeleri ise tüm kullanıcılarımızın erişimine açıktır.
 
-ARF ACC üzerinde kullanıcı verileri ve hesaplama çıktıları için yüksek performanslı merkezi dosya sistemi olan ``/arf`` kullanılmaktadır. Hesaplama sırasında yüksek I/O performansı ve veri güvenliği için tüm işlerinizde bu dosya sistemini kullanmanız önerilir. Dosya sistemleri, kota ve erişim detayları için :ref:`arf_acc_depolama_kaynaklari` başlığına göz atabilirsiniz.
-
-.. warning:: 
-   Hesaplama sırasında yüksek performans için mutlaka ``/arf`` dosya sistemi kullanılmalıdır. Dosya sistemleri hakkında ayrıntılı bilgiye :ref:`yuksek-performansli-dosya-sistemleri` bölümünden erişebilirsiniz.
+ARF ACC kümesinde kullanıcı verileri ve hesaplama çıktıları için yüksek performanslı merkezi dosya sistemi olan ``/arf`` kullanılmaktadır. Hesaplama işlerinizde yüksek I/O performansı ve veri güvenliği sağlamak için bu dosya sistemini kullanmanız tavsiye edilir. Dosya sistemleri, kota ve erişim detayları için :ref:`arf_acc_depolama_kaynaklari` başlığını inceleyebilirsiniz. Ayrıca, genel dosya sistemleri hakkında daha fazla bilgiye :ref:`yuksek-performansli-dosya-sistemleri` bölümünden ulaşabilirsiniz.
 
 Daha fazla bilgi için aşağıdaki başlıklara göz atabilirsiniz:
 
@@ -37,7 +34,7 @@ Daha fazla bilgi için aşağıdaki başlıklara göz atabilirsiniz:
    arf_acc_baglanti.rst
    arf_acc_kuyruk_bilgisi.rst
    arf_acc_depolama_kaynaklari.rst
-   
+
 ..
     .. image:: /assets/arf-acc/arf-acc.png
     :width: 100%

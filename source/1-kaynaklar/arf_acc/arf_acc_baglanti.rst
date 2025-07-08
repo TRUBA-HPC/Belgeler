@@ -29,10 +29,12 @@ ARF ACC hesaplama kümesine erişim ve iş gönderimi yalnızca ``cuda-ui`` kull
      - 172.16.6.25
 
 .. note::
-   ARF ACC'ye erişim için öncelikle OpenVPN bağlantınızın aktif olması gerekmektedir. OpenVPN bağlantısı sağlandıktan sonra aşağıdaki komut ile ``cuda-ui`` arayüzüne SSH ile erişebilirsiniz:
+  ARF ACC'ye erişim sağlayabilmek için öncelikle OpenVPN bağlantınızın aktif olması gerekmektedir. OpenVPN bağlantısı :ref:`open-vpn` sayfasından sağlanabilir. 
+   
+  Bağlantı sağlandıktan sonra aşağıdaki komut ile ``cuda-ui`` arayüzüne SSH ile bağlanabilirsiniz:
 
-.. code-block:: bash
+    .. code-block:: bash
 
-   ssh -l <kullanici-adiniz> 172.16.6.16
+      ssh -l <kullanici-adiniz> 172.16.6.16
 
-Bağlantı ve erişim sırasında sorun yaşamanız durumunda sistem yöneticinizle iletişime geçebilirsiniz.
+Bağlantı veya erişimle ilgili herhangi bir sorun yaşarsanız, yardım ve destek almak için lütfen :ref:`truba_iletisim` sayfasındaki teknik destek iletişim bilgilerini kullanarak bizimle iletişime geçiniz.
