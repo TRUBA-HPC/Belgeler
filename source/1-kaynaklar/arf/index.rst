@@ -4,6 +4,18 @@
 ARF
 =====
 
+ARF, yüksek başarımlı hesaplama (HPC) ihtiyaçları için tasarlanmış, geniş ölçekli ve modern bir hesaplama kümesidir. Araştırmacılar ve projeler için yüksek çekirdek sayısı, hızlı ağ altyapısı ve merkezi depolama olanakları sunar.
+
+.. admonition:: Kullanım Politikaları
+   :class: important
+
+   ARF hesaplama kümesi, ulusal ve uluslararası araştırma projeleri ile akademik çalışmalar için kullanılabilir. Erişim, TRUBA kullanıcı hesabı ve ilgili projeye dahil olma koşuluna bağlıdır. Kullanıcılar, sistem kaynaklarını verimli ve adil şekilde kullanmakla yükümlüdür.
+
+Daha fazla bilgi için aşağıdaki başlıklara göz atabilirsiniz:
+
+- :ref:`arf_baglanti` — Bağlantı ve erişim yöntemleri
+- :ref:`arf_kuyruk_bilgisi` — Kuyruklar ve teknik detaylar
+- :ref:`arf_depolama_kaynaklari` — Depolama ve dosya sistemleri
 
 .. grid:: 3
 
@@ -14,7 +26,6 @@ ARF
     .. grid-item-card:: :ref:`arf_depolama_kaynaklari`
         :text-align: center
 
-
 .. toctree::
    :hidden:
    :caption: ARF Rehberi
@@ -23,28 +34,5 @@ ARF
    arf_kuyruk_bilgisi.rst
    arf_depolama_kaynaklari.rst
 
-
-.. image:: /assets/arf/arf.jpg
-
-ARF hesaplama kümesi için ``arf-ui(1-2-3-4-5)`` olmak üzere birçok sunucu kullanıcı arayüzü olarak hizmete sunulmuştur. Bu hesaplama kümesinde bulunan ``orfoz`` ismini atadığımız hesaplama sunucularında iş koşturmak için arf kullanıcı arayüzleri kullanılacaktır. 
-
-Kümenin genel özellikleri aşağıdaki gibidir:
-
-- Hesaplama sunucu sayısı: 504
-- Hesaplama sunucu adı: orfoz[1-504]
-- İşlemci:  2x Intel(R) Xeon(R) Platinum 8480+ (toplam 112 çekirdek)
-- Bellek:   256 GB
-- Network: 200Gbit NDR infiniband
-- Tmp : 800GB NVME
-- Merkezi depolama : `/arf` (500TB)
-- Ev dizini: `/arf/home`
-- Yazılım: `/arf/sw/(apps,comp,lib)`
-- İşletim sistemi: Rocky Linux 9.2
-
-Güncel kurulu yazılımları 
-
-.. code-block:: bash
-
-	module available
-
-komutu ile listeleyebilirsiniz. Örnek SLURM betik dosyaları ``/arf/sw/scripts`` dizininde bulunmaktadır.
+..
+    .. image:: /assets/arf/arf.jpg
