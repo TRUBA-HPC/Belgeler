@@ -53,17 +53,21 @@ ARF hesaplama kümesi erişim adresleri şu şekildedir:
     - 172.16.6.25
 
 
-
-OpenVPN bağlantınız olduğu varsayılarak kişisel makinenizden ARF hesaplama kümesine `<kullanici-adiniz>` kısmını kendi kullanıcı adınız ile değiştirerek 
+OpenVPN bağlantınız aktif olduğunda, kişisel bilgisayarınızdan ARF hesaplama kümesine erişmek için aşağıdaki şekilde bağlantı kurabilirsiniz. Burada `<kullanici-adiniz>` kısmını kendi kullanıcı adınızla değiştirmeniz gerekmektedir ve `x` yerine bağlanmak istediğiniz arf-ui sunucusunun numarasını (1-5 arası) yazmalısınız:
 
 .. tabs::
 
-    .. tab:: arf-ui1
+    .. tab:: arf-uiX
 
         .. code-block:: bash
 
-            ssh -l <kullanici-adiniz> 172.16.6.11(12,13,14,15)
+            ssh -l <kullanici-adiniz> 172.16.6.x
 
+Örneğin, kullanıcı adınız `epsilon` ve arf-ui2 sunucusuna bağlanmak istiyorsanız:
+
+.. code-block:: bash
+
+    ssh -l epsilon 172.16.6.12
 
 
 

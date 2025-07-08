@@ -74,40 +74,12 @@ Kuyruk Bilgisi
      - Aktif
 
 
-
-..
-  ``mid2`` ve ``long`` kuyruklarına gönderilen işler sardalya ya da barbun sunucularının herhangi birinde çalışmaya başlayabilirler. Bu kuyruklara gönderilecek işlerin belli bir sunucu ailesi üzerinde çalışması isteniyorsa, betik dosyalarına aşağıdaki tanımlar yazılmalıdır: 
-
-  * barbunlar için 
-
-  .. code-block::
-
-   #SBATCH --constraint=barbun 
-
-  * sardalyalar için 
-
-  .. code-block::
-
-   #SBATCH --constraint=sardalya 
-
-  .. note::
-
-   --contstraint parametresi yerine -C de kullanılabilir. 
-
-  İşler önceden olduğu gibi üst kuyruklar yerine doğrudan sardalya, barbun veya diğer kuyruklarına gönderilebilir. 
-
 .. warning::
 
-  *barbun-cuda, akya-cuda*, *palamut-cuda* ve *kolyoz-cuda* kuyruklarına gönderilen işlerin GPU kullanabilecek ve GPU talep eden işler olması zorunludur.  GPU kümelerinin kullanımı ile ilgili dokümantasyon :ref:`gpu-kilavuzu` sayfamızı inceleyebilirsiniz.
+  *barbun-cuda* ve *akya-cuda* kuyruklarına gönderilen işlerin GPU kullanabilecek ve GPU talep eden işler olması zorunludur.  GPU kümelerinin kullanımı ile ilgili dokümantasyon :ref:`gpu-kilavuzu` sayfamızı inceleyebilirsiniz.
 
 ..
 
- 
-.. code-block:: 
-
-    sinfo
-
-komutunu kullanarak kuyrukların mevcut doluluk durumunu görebilirsiniz. 
 
 *Debug*
 ^^^^^^^^^

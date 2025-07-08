@@ -19,8 +19,8 @@ ARF
    :hidden:
    :caption: ARF Rehberi
 
-   baglanti.rst
-   kuyruk_bilgisi.rst
+   arf_baglanti.rst
+   arf_kuyruk_bilgisi.rst
    arf_depolama_kaynaklari.rst
 
 

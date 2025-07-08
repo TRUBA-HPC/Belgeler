@@ -177,7 +177,7 @@ Hamsi sunucuları 144 adet INSPUR NF5180M5 sunuculardan oluşmaktadır. Her bir 
 ^^^^^^^^^^^^^^^^^^^^
 Orfoz sunucuları 504 adet Lenovo ThinkSystem SR630 V3 sunuculardan oluşmaktadır. Her bir sunucu üzerinde 2 adet Intel(R) Xeon(R) Platinum 8480+ CPU @ 2.0GHz işlemci ve toplam 112 adet işlemci çekirdeği bulunmaktadır. Sunucular birbirlerine 200Gbps Infiniband ağ kartları ile bağlıdırlar. 
 
-Orfoz sunucularının yer aldığı ARF hesaplama kümesi hakkındaki ayrıntılı bilgilere  :ref:`arf-genel-bilgileri` sayfasından erişim sağlayabilirsiniz.
+Orfoz sunucularının yer aldığı ARF hesaplama kümesi hakkındaki ayrıntılı bilgilere  :ref:`arf` sayfasından erişim sağlayabilirsiniz.
 
 .. _kolyoz-cuda:
 
@@ -193,7 +193,7 @@ Kolyoz sunucuları 24 adet `Lenovo ThinkSystem SD650-N V3 <https://www.lenovo.co
   - Driver Version: 565.57.01
   - CUDA Version: 12.7
 
-Kolyoz sunucularının yer aldığı ARF ACC hesaplama kümesi hakkındaki ayrıntılı bilgilere  :ref:`arf-acc-genel-bilgiler` sayfasından erişim sağlayabilirsiniz.
+Kolyoz sunucularının yer aldığı ARF ACC hesaplama kümesi hakkındaki ayrıntılı bilgilere  :ref:`arf-acc` sayfasından erişim sağlayabilirsiniz.
 
 .. _palamut-cuda:
 
