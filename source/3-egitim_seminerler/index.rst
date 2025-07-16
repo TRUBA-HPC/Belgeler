@@ -14,7 +14,9 @@ TRUBA altyapısı hakkında temel bilgilerin yer aldığı seminerlerle ilgili s
 
 Eğitimler
 ---------
-Bu bölümde, TRUBA ve ilgili alanlarda verilen eğitim ve seminerlerin başlıkları ve kısa açıklamaları sunulmaktadır. Her bir başlık altında, ilgili eğitimin temel içeriği özetlenmiştir.
+Bu bölümde, TRUBA ve ilgili alanlarda verilen eğitim ve seminerlerin başlıkları ile kısa açıklamaları sunulmaktadır. Her bir başlık altında, ilgili eğitimin temel içeriği özetlenmiştir.
+
+Eğitimlerde kullanılan yazılım ve paketlerin sürümleri zaman zaman eski olabilmektedir. Yazılımların ve kodların güncellenmesiyle birlikte eğitim içeriklerinde değişiklikler yapılması gerekebilir. Bu nedenle, eğitimleri takip ederken kullanılan paketlerin ve kodların güncel sürümlerini kontrol etmeniz ve olası farklılıklara dikkat etmeniz önerilir.
 
 
 - :ref:`Kuantum Hesaplama <qcomp-index>`
