@@ -53,7 +53,7 @@ ARF hesaplama kümesine erişim için aşağıdaki kullanıcı arayüz sunucular
 
       ssh <kullanici-adiniz>@<ip-adresi>
 
-Bağlantı veya erişimle ilgili herhangi bir sorun yaşarsanız, yardım ve destek almak için lütfen :ref:`truba_iletisim` sayfasındaki teknik destek iletişim bilgilerini kullanarak bizimle iletişime geçiniz.
+Herhangi bir sorun yaşarsanız, yardım ve destek almak için lütfen :ref:`truba_iletisim` sayfasındaki teknik destek iletişim bilgilerini kullanarak bizimle iletişime geçiniz.
 
 
 
