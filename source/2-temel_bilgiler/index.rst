@@ -9,7 +9,6 @@ Temel Bilgiler
    
     ybh-akis.rst
     hesaplama_kumeleri.rst
-    yuksek-performansli-dosya-sistemleri.rst
 
 TRUBA Bilgisayarlarına Bağlantı
 --------------------------------
