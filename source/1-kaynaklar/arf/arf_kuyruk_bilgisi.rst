@@ -76,7 +76,7 @@ ARF hesaplama kümesinde farklı donanım ve özelliklere sahip çeşitli kuyruk
      - Rocky Linux 9.2
    * - debug
      - Çeşitli (orfoz, hamsi, barbun, barbun-cuda, akya-cuda)
-     - 238
+     - 200
      - Çeşitli
      - Çeşitli
      - Çeşitli
