@@ -4,12 +4,12 @@
 ARF
 =====
 
-ARF, yüksek başarımlı hesaplama (HPC) ihtiyaçları için tasarlanmış, geniş ölçekli ve modern bir hesaplama kümesidir. Araştırmacılar ve projeler için yüksek çekirdek sayısı, hızlı ağ altyapısı ve merkezi depolama olanakları sunar.
+ARF, yüksek başarımlı hesaplama ihtiyaçları için tasarlanmış, geniş ölçekli ve modern bir hesaplama kümesidir. Kümede sıvı soğutmalı yüksek performanslı sunucular ve hızlı, NVMe tabanlı dosya sistemleri bulunmaktadır. Araştırmacılar ve projeler için yüksek çekirdek sayısı, hızlı ağ altyapısı ve merkezi depolama olanakları sunar.
 
 .. admonition:: Kullanım Politikaları
    :class: important
 
-   ARF hesaplama kümesi, ulusal ve uluslararası araştırma projeleri ile akademik çalışmalar için kullanılabilir. Erişim, TRUBA kullanıcı hesabı ve ilgili projeye dahil olma koşuluna bağlıdır. Kullanıcılar, sistem kaynaklarını verimli ve adil şekilde kullanmakla yükümlüdür.
+   ARF hesaplama kümesi, ulusal ve uluslararası araştırma projeleri ile akademik çalışmalar için kullanılabilir. Erişim, TRUBA kullanıcı hesabı ve ilgili projeye dahil olma koşuluna bağlıdır. 
 
 Daha fazla bilgi için aşağıdaki başlıklara göz atabilirsiniz:
 

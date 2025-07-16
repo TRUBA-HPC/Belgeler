@@ -7,48 +7,53 @@ Bağlantı
 ARF hesaplama kümesine erişim için aşağıdaki kullanıcı arayüz sunucularını kullanabilirsiniz:
 
 .. list-table:: ARF kullanıcı arayüz sunucuları
-   :widths: 25 25
+   :widths: 25 25 25 25
    :header-rows: 1
    :align: center
 
-   * - Adres
-     - IP (tür)
-   * - arf-ui1.yonetim
-     - 172.16.6.11  (ssh)
-   * - arf-ui2.yonetim
-     - 172.16.6.12  (ssh)
-   * - arf-ui3.yonetim
-     - 172.16.6.13  (ssh)
-   * - arf-ui4.yonetim
-     - 172.16.6.14  (ssh)
-   * - arf-ui5.yonetim
-     - 172.16.6.15  (ssh)
-   * - openondemand.yonetim
-     - 172.16.6.20 (web / görsel)
+   * - Tür
+     - Sunucu
+     - Adres
+     - IP
+   * - SSH
+     - arf-ui1.yonetim
+     - arf-ui1.yonetim
+     - 172.16.6.11
+   * - SSH
+     - arf-ui2.yonetim
+     - arf-ui2.yonetim
+     - 172.16.6.12
+   * - SSH
+     - arf-ui3.yonetim
+     - arf-ui3.yonetim
+     - 172.16.6.13
+   * - SSH
+     - arf-ui4.yonetim
+     - arf-ui4.yonetim
+     - 172.16.6.14
+   * - SSH
+     - arf-ui5.yonetim
+     - arf-ui5.yonetim
+     - 172.16.6.15
+   * - Web
+     - openondemand.yonetim
+     - https://openondemand.yonetim
+     - 172.16.6.20
+   * - Web-Monitör
+     - grafana.yonetim
+     - http://grafana.yonetim:3000/login
+     - 172.16.6.25
 
-SSH ile bağlantı için örnek komut:
+.. note::
+  ARF hesaplama kümesine erişim sağlayabilmek için öncelikle OpenVPN bağlantınızın aktif olması gerekmektedir. OpenVPN bağlantısı :ref:`open-vpn` sayfasından sağlanabilir. 
+   
+  Bağlantı sağlandıktan sonra aşağıdaki komut ile istenilen kullanıcı arayüzüne SSH ile bağlanabilirsiniz:
 
-.. code-block:: bash
+    .. code-block:: bash
 
-   ssh -l <kullanici-adiniz> 172.16.6.11
+      ssh <kullanici-adiniz>@<ip-adresi>
 
-Open OnDemand erişimi için tarayıcınızdan şu adresi kullanabilirsiniz:
-
-   https://openondemand.yonetim
-
-Kuyrukların güncel durumunu görmek için:
-
-.. code-block:: bash
-
-   sinfo -p orfoz
-
-Kuyruk yapılandırmasını görmek için:
-
-.. code-block:: bash
-
-   scontrol show partition=<kuyruk_adi>
-
-Bağlantı ve erişim sırasında sorun yaşamanız durumunda sistem yöneticinizle iletişime geçebilirsiniz.
+Bağlantı veya erişimle ilgili herhangi bir sorun yaşarsanız, yardım ve destek almak için lütfen :ref:`truba_iletisim` sayfasındaki teknik destek iletişim bilgilerini kullanarak bizimle iletişime geçiniz.
 
 
 

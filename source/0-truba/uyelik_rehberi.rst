@@ -14,10 +14,10 @@ Ticari kullanıcılar ve endüstriyel iş birlikli akademik projeler TRUBA oluş
 
 Altyapının kullanılması için çalışabilir uygulamaların (açık kaynak kodlu ve/veya lisanslı) aşağıdaki özelliklerden en az birini içermesi beklenmektedir: 
 
- * Birçok farklı bağımsız alt göreve bölünebilen yüksek geçişli hesaplamalar, 
- * Büyük miktarda verinin işlenmesini gerektiren yüksek performanslı hesaplamalar, 
- * Küçük bir zaman diliminde çok sayıda işlemin yapılmasını gerektiren işlemci merkezli hesaplamalar, 
- * Verilerin bir araya getirilmesi, saklanması ve çözümlenmesini de gerektirebilen veri merkezli hesaplamalar. 
+* Birçok farklı bağımsız alt göreve bölünebilen yüksek geçişli hesaplamalar, 
+* Büyük miktarda verinin işlenmesini gerektiren yüksek performanslı hesaplamalar, 
+* Küçük bir zaman diliminde çok sayıda işlemin yapılmasını gerektiren işlemci merkezli hesaplamalar, 
+* Verilerin bir araya getirilmesi, saklanması ve çözümlenmesini de gerektirebilen veri merkezli hesaplamalar. 
   
 TRUBA kaynaklarından faydalanmak isteyen araştırmacılarımızın üyelik başvuruları, 
 `TRUBA Üyelik Portalı <https://portal.truba.gov.tr>`_ üzerinden gerçekleştirilmektedir. 

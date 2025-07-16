@@ -214,3 +214,5 @@ Dosya Sayısı için çözüm önerileri
     * herhangi bir sebepten silemedikleri dosya ve dizinleri -tar komutu ile arşivleyerek tek bir dosya haline getirmeleri ve mümkünse ilgili arşiv dosyalarını kendi bilgisayarlarına indirmelerini 
 
   önemle rica etmekteyiz.
+
+

@@ -37,7 +37,7 @@ TRUBA, birçok farklı disiplinden araştırmacıya üniversite, kamu ve endüst
 Kaynaklar
 -----------
 
-Yüksek hesaplama ve depolama gücüne sahip olan TRUBA, 80.000’den fazla işlemci çekirdeği, 309 adet grafik işlemci (NVIDIA P100,V100,A100 ve H100), 7.5 PByte Lustre veri depolama ve 500 TByte yüksek hızlı merkezi NVMe tabanlı bir dosya sistemi alanıyla ülkemizde hesaplamalı bilimler alanında çalışan araştırmacılara ve AR-GE faaliyetleri sürdüren kurumlara hizmet vermektedir. 
+Yüksek hesaplama ve depolama gücüne sahip olan TRUBA, 80.000’den fazla işlemci çekirdeği, 312 adet grafik işlemci (NVIDIA P100,V100,A100 ve H100), 7.5 PByte Lustre veri depolama ve 500 TByte yüksek hızlı merkezi NVMe tabanlı bir dosya sistemi alanıyla ülkemizde hesaplamalı bilimler alanında çalışan araştırmacılara ve AR-GE faaliyetleri sürdüren kurumlara hizmet vermektedir. 
 
 
 ------------------------
