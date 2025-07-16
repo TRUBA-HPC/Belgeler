@@ -5,15 +5,19 @@
 YBH Sistemi Kullanım Akışı
 ===========================
 
-Yüksek Başarımlı Hesaplama (YBH) sistemine erişim ve iş gönderme sürecini özetlemektedir.
+Yüksek Başarımlı Hesaplama (YBH) sistemlerinde işler, doğrudan sunucularda çalıştırılmaz; bunun yerine bir kuyruk (queue) sistemi üzerinden yürütülür. Kullanıcılar, kendi bilgisayarlarından önce sisteme güvenli bir şekilde bağlanır ve ardından kullanıcı arayüzü (login node) üzerinden sistemle etkileşime geçerler. Hesaplama veya analiz işleri, kullanıcı arayüzünde hazırlanır ve bir iş betiği (ör. SLURM betiği) ile kuyruk yöneticisine gönderilir.
+
+Kuyruk sistemi, aynı anda çok sayıda kullanıcının kaynak talebini adil ve verimli bir şekilde yönetmek için kullanılır. Kullanıcılar işlerini kuyruklara gönderir; bu işler, sistemdeki mevcut kaynaklara (CPU, GPU, bellek vb.) ve önceliklere göre sırayla çalıştırılır. Böylece, kaynakların aşırı yüklenmesi ve çakışmalar önlenir.
+
+Kısacası, YBH ortamında işler doğrudan başlatılmaz; kullanıcı arayüzü üzerinden hazırlanan işler, kuyruk sistemine gönderilir ve uygun kaynaklar tahsis edildiğinde otomatik olarak çalıştırılır. Bu yaklaşım, hem kaynakların etkin kullanımını sağlar hem de çok kullanıcılı ortamda düzeni korur.
 
 1. Yerel Makineden Bağlantı
 ---------------------------
 
 Kullanıcı, yerel bilgisayarından YBH sistemine şu adımlarla bağlanır:
 
-- **OpenVPN** ile kuruma güvenli bağlantı sağlanır.
-- Ardından **SSH (Secure Shell)** protokolü kullanılarak kullanıcı arayüzüne giriş yapılır.
+- **OpenVPN** ile kuruma güvenli bağlantı sağlanır. Detaylı bilgi için :ref:`open-vpn` sayfasını ziyaret edebilirsiniz.
+- Ardından **SSH (Secure Shell)** protokolü kullanılarak kullanıcı arayüzüne giriş yapılır. Detaylı bilgi için :ref:`ssh-baglanti` sayfasını ziyaret edebilirsiniz.
 
 2. Kullanıcı Arayüzü
 ---------------------
@@ -23,7 +27,11 @@ Kullanıcı arayüzünde yapılması gerekenler:
 - Hesaplama görevi için gerekli dosyalar hazırlanır:
 
   - Hesaplama uygulamasına veya analizine ait kod dosyaları
-  - SLURM iş betiği dosyası
+  - SLURM iş betiği dosyası. Deta
+
+Kullanici arayuz bilgileri icin :ref:`ARF hesaplama kümesi <arf>` sayfasını ziyaret edebilirsiniz.
+
+SLURM betiği icin :ref:`SLURM betiği <slurm-betik>` sayfasını ziyaret edebilirsiniz.
 
 3. Görev Gönderimi
 -------------------
