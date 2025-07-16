@@ -69,8 +69,8 @@ ARF hesaplama kümesinde farklı donanım ve özelliklere sahip çeşitli kuyruk
      - Orkinos
      - 1
      - 4x Intel Xeon Gold 6248R
-     - 112
-     - 768 GB
+     - 224
+     - 4 TB
      - Yok
      - 3 gün
      - Rocky Linux 9.2
