@@ -34,8 +34,6 @@ extensions = [
     'sphinx_design',
     'sphinx_tabs.tabs',
     'sphinx_last_updated_by_git'
-    
-    
 ]
 
 html_css_files = ['custom.css']
@@ -67,7 +65,6 @@ html_theme = 'sphinx_book_theme'
 #html_theme = 'furo'
 #html_theme = 'pydata_sphinx_theme'
 #html_theme = "sphinx_material"
-#html_theme = 'karma_sphinx_theme'
 
 
 # Add any paths that contain custom static files (such as style sheets) here,
@@ -81,12 +78,7 @@ html_logo = '_static/truba_logo.png'
 html_static_path = ['_static']
 
 html_theme_options = {
-    "search_bar_text": "Ara...",
-    "search_bar_position": "navbar",
-    "search_bar_placeholder": "Dokümanlarda ara...",
-    "search_show_context": True,
-    "search_highlight_language": "python",
-    "search_highlight_style": "monokai"
+    "search_bar_text": "Ara..."
 }
 
 def setup(app):
