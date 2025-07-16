@@ -93,7 +93,7 @@ ARF hesaplama kümesinde farklı donanım ve özelliklere sahip çeşitli kuyruk
 
 **Orfoz ve Hamsi Kuyruklarında WEKA ve Çekirdek Kullanımı**
 
-Orfoz ve hamsi kuyruklarında çalışmakta olan sunucularda, cihazların sahip olduğu yüksek çekirdek sayıları nedeniyle yarattıkları yüksek I/O ihtiyacını yönetebilmek için her orfoz ve hamsi sunucusunda 2 adet çekirdek I/O yönetimi için ayrılmıştır. Bu nedenle orfoz sunucularında kullanılabilir çekirdek sayısı 110, hamsi sunucularında ise 54’tür. Orfoz kuyruğuna gönderilen işlerde sunucu başına en fazla 110 çekirdek, hamsi kuyruğuna gönderilen işlerde ise en fazla 54 çekirdek talep edilebilir. Bu kuyruklara gönderilen işlerde #SBATCH -C weka parametresinin kullanılması gerekmektedir.
+Orfoz ve hamsi kuyruklarında çalışmakta olan sunucularda, cihazların sahip olduğu yüksek çekirdek sayıları nedeniyle yarattıkları yüksek I/O ihtiyacını yönetebilmek için her orfoz ve hamsi sunucusunda 2 adet çekirdek I/O yönetimi için ayrılmıştır. Bu nedenle orfoz sunucularında kullanılabilir çekirdek sayısı 110, hamsi sunucularında ise 54’tür. Orfoz kuyruğuna gönderilen işlerde sunucu başına en fazla 110 çekirdek, hamsi kuyruğuna gönderilen işlerde ise en fazla 54 çekirdek talep edilebilir. Bu kuyruklara gönderilen işlerde ``#SBATCH -C weka`` parametresinin kullanılması gerekmektedir.
 
 **Örnek SLURM Betiği (orfoz/hamsi için):**
 
@@ -109,8 +109,10 @@ Orfoz ve hamsi kuyruklarında çalışmakta olan sunucularda, cihazların sahip 
    #SBATCH -C weka
    #SBATCH --time=3-00:00:00
 
-**Diğer Kuyruklara Özel Bilgiler ve Minimum Gereksinimler**
+**Kuyruklara Özel Bilgiler ve Minimum Gereksinimler**
 
+- **orfoz:** En az 55 çekirdek, maksimum 3 gün, 256GB RAM/sunucu.
+- **hamsi:** En az 27 çekirdek, maksimum 3 gün, 192GB RAM/sunucu.
 - **barbun:** En az 20 çekirdek, maksimum 3 gün, 384GB RAM/sunucu.
 - **barbun-cuda:** En az 20 çekirdek ve 1 GPU, maksimum 3 gün, 384GB RAM/sunucu, 2x Nvidia P100 16GB GPU.
 - **akya-cuda:** En az 10 çekirdek ve 1 GPU, maksimum 3 gün, 384GB RAM/sunucu, 4x Nvidia V100 16GB GPU, /tmp altında 1.4TB NVMe disk (yüksek I/O için).
