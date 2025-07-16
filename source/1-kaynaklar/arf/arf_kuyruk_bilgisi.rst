@@ -36,7 +36,7 @@ ARF hesaplama kümesinde farklı donanım ve özelliklere sahip çeşitli kuyruk
      - 40
      - 384 GB
      - Yok
-     - 15 gün
+     - 3 gün
      - Rocky Linux 9.2
    * - barbun-cuda
      - Barbun
@@ -81,7 +81,7 @@ ARF hesaplama kümesinde farklı donanım ve özelliklere sahip çeşitli kuyruk
      - Çeşitli
      - Çeşitli
      - Çeşitli
-     - 15 dakika
+     - 4 saat
      - Rocky Linux 9.2
 
 .. admonition:: Genel Kullanım Kuralları
