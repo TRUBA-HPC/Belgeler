@@ -40,10 +40,12 @@ Kaynak Yönetimi ve İş Döngüsü
     truba_komutlari.rst
     temel_linux_kursu.rst
     slurm_komutlari_ve_dosyalari.rst
-    slurm-betik-ozellik.rst
+    slurm-betik-ozellik.rst    
+    paralel_ve_seri_is_calistirma.rst
+    slurm-mpi.rst
 
 
-Sistemde Kurulu Uygulamalar için 
+Uygulama ve Kütüphaneler için 
 ---------------------------------
 
 En güncel bilgiyi sisteme girdiğinizde `module av` komutu ile görebileceğinizi hatırlatmak isteriz. Bu sayfadaki içerikler yalnızca bilgilendirme niteliğindedir. 
@@ -51,15 +53,8 @@ En güncel bilgiyi sisteme girdiğinizde `module av` komutu ile görebileceğini
 .. toctree::
     :maxdepth: 1
 
-    kurulu_uygulamalar/index.rst
-
-İhtiyaç duyabileceğiniz diğer temel bilgiler
----------------------------------------------
-
-.. toctree::
-    :maxdepth: 1
-
-    paralel_ve_seri_is_calistirma.rst
-    uygulama_kurulumu.rst
+    uygulamalar/index.rst 
     konteyner_kullanimi.rst
     gpu.rst
+
+

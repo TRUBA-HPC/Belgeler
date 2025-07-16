@@ -1,9 +1,13 @@
+.. _uygulamalar_kutuphane:
 
 ========================================
-Uygulama ve Kütüphane Kurulumu
+Yazılımlar ve Uygulamalar
 ========================================
 
-Yaygın olarak kullanılan uygulama ve kütüphanelerin güncel ve farklı sürümleri merkezi olarak kuruludur. Kullanıcıların öncelikli olarak bu merkezi kurulumları kullanmaları önerilir.
+Genel Bilgiler
+--------------
+
+Yaygın olarak kullanılan yazılımlar, uygulamalar ve kütüphanelerin güncel ve farklı sürümleri merkezi olarak kuruludur. Kullanıcıların öncelikli olarak bu merkezi kurulumları kullanmaları önerilir.
 
 Merkezi yazılımları kullanmak için modül sisteminden yararlanabilirsiniz:
 
@@ -40,12 +44,34 @@ Aşağıdaki dizinlerde merkezi yazılımlar, kütüphaneler, konteynerler ve ö
    * - Örnek SLURM dosyaları
      - /arf/sw/scripts 
 
-**İyi Uygulamalar ve Kullanıcı Sorumlulukları**
 
-- Ev dizinlerinizin erişim haklarını değiştirmeyiniz; yalnızca size açık olmalıdır.
-- Gereksiz dosyaları ve kullanılmayan uygulamaları düzenli olarak siliniz.
-- Büyük veri setleri veya çok sayıda küçük dosya gerektiren işler için merkezi kurulumları veya konteynerleri kullanınız.
-- Scratch alanı geçici amaçlıdır; önemli verilerinizi kendi bilgisayarınıza indiriniz.
-- Dosya ve dizinlerinizi arşivleyerek (örn. tar ile) saklamak inode kullanımını azaltır.
-- Ev ve scratch dizinlerinizde kota ve dosya (inode) limiti uygulanmaktadır. Limit aşıldığında yeni dosya oluşturamaz, iş başlatamaz veya veri kaybı yaşayabilirsiniz. 
+
+Uygulamalar Kılavuzu
+--------------------
+
+Bu bölümde, TRUBA altyapısında kurulu olan uygulamalar ve bu uygulamaların kullanımı hakkında bilgi verilmektedir. Aşağıda, kurulu uygulamaların listesi ve her birinin detaylarına erişim için bağlantılar bulunmaktadır.
+
+.. toctree::
+   :maxdepth: 1
+
+   Python/index.rst  
+   Cvmfs/index.rst
+   
+   SnakeMake/index.rst
+   
+   R/index.rst
+
+   Amber/index.rst
+   CASTEP/index.rst
+   Gaussian/index.rst
+   Gromacs/index.rst
+   Lammps/index.rst
+   Namd/index.rst
+   QEspresso/index.rst
+   Vasp/index.rst
+
+   
+   GREASY/index.rst
+   Matlab/index.rst
+  
 

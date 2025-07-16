@@ -13,7 +13,7 @@ GPU Kaynağı Talep Etme
 TRUBA altyapısındaki GPU kaynakları SLURM kaynak yöneticisi ile kullanılabilir. GPU kaynağı bulunan kümelerde ``–-gres=gpu:n`` tanımı ile bu kaynaklar talep edilir.
 
 .. note::
-    ``--gres=gpu:n`` ifadesindeki ``n`` değeri, her bir sunucuda kullanılacak GPU sayısını belirtir. Kümelerde yer alan sunucularda farklı sayıda GPU bulunabileceği için bu değerin, işinizi göndereceğiniz kümeye uygun olarak belirlenmesi gerekir. GPU kaynağı bulunan kümeler hakkında daha fazla bilgi için bkz. `:arfhesaplama_kumeleri:`.
+    ``--gres=gpu:n`` ifadesindeki ``n`` değeri, her bir sunucuda kullanılacak GPU sayısını belirtir. Kümelerde yer alan sunucularda farklı sayıda GPU bulunabileceği için bu değerin, işinizi göndereceğiniz kümeye uygun olarak belirlenmesi gerekir. GPU kaynağı bulunan kümeler hakkında daha fazla bilgi için bkz. :ref:`ARF Kuyruk Bilgisi <arf_kuyruk_bilgisi>` bölümü.
 
 
 ``sbatch`` ile gönderilmek üzere hazırlanan iş betiği örneği:
@@ -37,18 +37,6 @@ TRUBA altyapısındaki GPU kaynakları SLURM kaynak yöneticisi ile kullanılabi
 .. note::
     Betikteki ``[USERNAME]`` yer tutucusunu kullanıcı adınızla değiştirmeyi unutmayın.
 
-``srun`` ile iş çalıştırmak için örnek:
-
-.. code-block:: bash
-    
-    srun -n 1 -N 1 -c 10 --gres=gpu:1 -p akya-cuda --time 1:00:00 # çalıştırılacak komutu buraya ekleyin.
-
-``srun`` kullanarak 1 saat interaktif çalışmak için örnek:
-
-.. code-block:: bash
-    
-    srun -n 1 -N 1 -c 10 --gres=gpu:1 -p akya-cuda --time 1:00:00 --pty /bin/bash
-
 .. _core-gpu-count:
 
 .. warning::
@@ -62,4 +50,4 @@ TRUBA altyapısındaki GPU kaynakları SLURM kaynak yöneticisi ile kullanılabi
 
 .. note::
 
-    palamut-cuda ve kolyoz-cuda kümelerinin kullanım izni ile ilgili bilgiler için lütfen :ref:`palamut-cuda` sayfasını inceleyiniz.
+    palamut-cuda ve kolyoz-cuda kümelerinin kullanım izni ile ilgili bilgiler için lütfen :ref:`arf-acc` sayfasını inceleyiniz.

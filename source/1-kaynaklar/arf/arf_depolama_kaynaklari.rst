@@ -276,4 +276,16 @@ Yaygın Sorunlar ve Çözümleri
    chmod 755 /arf/home/$USER
 
 
+**İyi Uygulamalar ve Kullanıcı Sorumlulukları**
+
+- Ev dizinlerinizin erişim haklarını değiştirmeyiniz; yalnızca size açık olmalıdır.
+- Gereksiz dosyaları ve kullanılmayan uygulamaları düzenli olarak siliniz.
+- Büyük veri setleri veya çok sayıda küçük dosya gerektiren işler için merkezi kurulumları veya konteynerleri kullanınız.
+- Scratch alanı geçici amaçlıdır; önemli verilerinizi kendi bilgisayarınıza indiriniz.
+- Dosya ve dizinlerinizi arşivleyerek (örn. tar ile) saklamak inode kullanımını azaltır.
+- Ev ve scratch dizinlerinizde kota ve dosya (inode) limiti uygulanmaktadır. Limit aşıldığında yeni dosya oluşturamaz, iş başlatamaz veya veri kaybı yaşayabilirsiniz. 
+
+
+
+
 Herhangi bir sorun yaşarsanız, yardım ve destek almak için lütfen :ref:`truba_iletisim` sayfasındaki teknik destek iletişim bilgilerini kullanarak bizimle iletişime geçiniz.

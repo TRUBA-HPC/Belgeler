@@ -111,11 +111,10 @@ Orfoz ve hamsi kuyruklarında çalışmakta olan sunucularda, cihazların sahip 
 
 **Diğer Kuyruklara Özel Bilgiler ve Minimum Gereksinimler**
 
-- **barbun:** En az 20 çekirdek (min 4), maksimum 15 gün, 384GB RAM/sunucu.
+- **barbun:** En az 20 çekirdek (min 4), maksimum 3 gün, 384GB RAM/sunucu.
 - **barbun-cuda:** En az 20 çekirdek ve 1 GPU, maksimum 3 gün, 384GB RAM/sunucu, 2x Nvidia P100 16GB GPU.
-- **akya-cuda:** En az 20 çekirdek ve 1 GPU, maksimum 3 gün, 384GB RAM/sunucu, 4x Nvidia V100 16GB GPU, /tmp altında 1.4TB NVMe disk (yüksek I/O için).
-- **smp:** Özel işler için, maksimum 3 gün, 768GB RAM/sunucu.
-- **debug:** Kısa süreli test işleri, maksimum 15 dakika, çeşitli sunucular.
+- **akya-cuda:** En az 10 çekirdek ve 1 GPU, maksimum 3 gün, 384GB RAM/sunucu, 4x Nvidia V100 16GB GPU, /tmp altında 1.4TB NVMe disk (yüksek I/O için).
+- **debug:** Kısa süreli test işleri, maksimum 4 saat, çeşitli sunucular.
 
 **Yüksek I/O Gereksinimi ve Geçici Disk Kullanımı:**
 

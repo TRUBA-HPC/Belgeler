@@ -18,8 +18,7 @@ ARF ACC hesaplama kümesi için :ref:`arf_depolama_kaynaklari` bölümündeki bi
 - Tüm hesaplama sunucuları (kolyoz ve palamut dahil) ve kullanıcı arayüzleri tarafından erişilebilir durumdadır.
 - Hesaplama sırasında yüksek I/O performansı ve veri güvenliği için tüm işlerinizde bu dosya sistemini kullanmanız önerilir.
 
-.. |br| raw:: html
+Herhangi bir sorun yaşarsanız, yardım ve destek almak için lütfen :ref:`truba_iletisim` sayfasındaki teknik destek iletişim bilgilerini kullanarak bizimle iletişime geçiniz.
 
-     <br>
 
 
