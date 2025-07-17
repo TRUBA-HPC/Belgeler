@@ -61,7 +61,7 @@ Kendi ev dizininizde **gromacs** adlı yeni bir dizin oluşturup kaynak kodunu b
 
 
 **3.**
-Kurulumu ``hamsi`` kümelerinde yapmak için bu kümelerden kendi kullanıcınız için boş bir node sağlamanız gerekmektedir (:ref:`hamsi kümesi ile ilgili ayıntılı bilgilere ulaşmak için tıklayınız. <hamsi-node>`). Bunun için **srun** komutu ile boş sunucu isteği yapmanız gerekmektedir. Aşağıdaki komut satırını kendi terminalinizde uyguladığınızda ilgili hesaplama kümesinden kendi kullanıcınıza node rezerve etmek için sıraya gireceksiniz.
+Kurulumu ``hamsi`` kümelerinde yapmak için bu kümelerden kendi kullanıcınız için boş bir node sağlamanız gerekmektedir. Bunun için **srun** komutu ile boş sunucu isteği yapmanız gerekmektedir. Aşağıdaki komut satırını kendi terminalinizde uyguladığınızda ilgili hesaplama kümesinden kendi kullanıcınıza node rezerve etmek için sıraya gireceksiniz.
 
 .. code-block:: bash
  

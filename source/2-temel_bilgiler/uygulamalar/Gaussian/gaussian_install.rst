@@ -1,11 +1,8 @@
 
-.. grid:: 3
 
-    .. grid-item-card::  :ref:`gaussian-kurulum`
-        :text-align: center
-    .. grid-item-card:: :ref:`development_cagrisi`
-        :text-align: center
-    .. grid-item-card:: :ref:`arf-g16-kilavuzu`
+
+
+
  
 .. _gaussian-kurulum:
 

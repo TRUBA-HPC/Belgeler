@@ -5,7 +5,6 @@ TRUBA'da VASP Kullanımı
 Bir önceki adımda VASP programının kendi ev dizinize nasıl kurulacağı anlatıldı. Bu bölümde bu uygulamanın yine kendi dizininizde çalıştırabilmeniz için örnek bir iş betiği oluşturulacaktır.
 vasp_run.slurm olarak isimlendirilen iş betiği dosyasının içine istediğiniz bir editör kullanarak girip gerekli değişiklikleri kolayca yapabilirsiniz. İş betikleri oluşturulurken iki önemli husus vardır. 
 Programı hangi modulleri kullanarak derlediyseniz, o modüllerin isimleri iş betiği dosyanızda olması gerekmektedir. 
-İş betiği ile ilgili ayrıntılara :ref:`kaynakyoneticisi` sayfasından ulaşabilirsiniz.
 
 -----------------------------------------------
 Barbun kümeleri için VASP SLURM Dosyası Örneği

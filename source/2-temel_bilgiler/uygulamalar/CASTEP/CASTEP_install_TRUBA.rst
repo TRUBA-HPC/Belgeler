@@ -22,7 +22,7 @@ Sıkıştırılmış arşiv dosyalarını açınız ve kurulum dosyalarının ol
     tar -xzvf CASTEP-19.11.tar.gz
     cd CASTEP-19.11
 
-**2.** Kurulumu ``barbun`` hesaplama kümesinde optimize bir şekilde yapmak için``srun`` komutu ile ``barbun`` kuyruğundaki 1 tane makineden 4 tane CPU'yu (Barbun kümesindeki CPU kullanımı için bakınız: :ref:`barbun-node`) kendi kullanıcınız için interaktif olarak ayırabilirsiniz. Aşağıdaki komutu yazdığınızda bekleme listesine gireceksiniz. Sıranız geldiğinde doğrudan ilgili node'a bağlanacaksınız. Hesaplama kuyruğunu ve süreyi kurallar dahilinde değiştirebilirsiniz (:ref:`partitions`).
+**2.** Kurulumu ``barbun`` hesaplama kümesinde optimize bir şekilde yapmak için``srun`` komutu ile ``barbun`` kuyruğundaki 1 tane makineden 4 tane CPU'yu kendi kullanıcınız için interaktif olarak ayırabilirsiniz. Aşağıdaki komutu yazdığınızda bekleme listesine gireceksiniz. Sıranız geldiğinde doğrudan ilgili node'a bağlanacaksınız.
 
 .. code-block:: bash
 

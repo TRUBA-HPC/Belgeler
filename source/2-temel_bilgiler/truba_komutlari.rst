@@ -36,7 +36,7 @@ komutunu yazdığınızda aşağıdaki gibi bir ekran çıktısı verecektir.
 
 Ekran çıktısında
 
-- TRUBA sisteminde tanımlı olan güncel kuyruk isimleri (:ref:`partitions`)
+- TRUBA sisteminde tanımlı olan güncel kuyruk isimleri 
 - Kuyruklardaki boş CPU sayısı
 - Kuyruklardaki toplam CPU sayısı
 - Sırada bekleyen ve durumu ``Resource`` olan iş sayısı

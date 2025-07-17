@@ -41,7 +41,7 @@ Kendi ev-dizininize kolayca dönmek için ``cd ~``, root dizinine geçmek için 
 .. warning::
 
   Hesaplarınızı TRUBA kümelerine ilk bağlantı kurduğunuz dizin /arf/home/kullanici_adi dizinidir. Lütfen hesaplarınızı bu dizinde yapmayınız. Hesaplarınızı **/arf/scratch/kullanici_adi** 
-  dizininde yapmalısınız. Ayrıntılı bilgi için lütfen :ref:`yuksek-performansli-dosya-sistemleri` sayfasını inceleyiniz
+  dizininde yapmalısınız. Ayrıntılı bilgi için lütfen :ref:`arf_depolama_kaynaklari` sayfasını inceleyiniz
 
 
 

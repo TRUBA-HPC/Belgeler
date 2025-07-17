@@ -100,7 +100,7 @@ Sistemde bulunan kurulumlari ``module av`` ile listeleyebilirsiniz. Temelde, con
 
     **Hangi kuyruk için hangi platfomu seçmeliyiz?**
 
-    İlgili komut çalıştırıldıktan sonra ``conda info`` ve ``conda list`` ile sanal ortam bilgisine ve içerisinde bulunan paketlerin versiyonlarına erişim sağlayabilirsiniz. Bu bilgiler ile birlikte :ref:`arf_hesaplama_kumeleri` altinda sunucu bilgilerinden ihtiyacınıza göre hangi platformu hangi kuyruk ile kullanmanız gerektiğine karar verebilirsiniz.
+    İlgili komut çalıştırıldıktan sonra ``conda info`` ve ``conda list`` ile sanal ortam bilgisine ve içerisinde bulunan paketlerin versiyonlarına erişim sağlayabilirsiniz. Bu bilgiler ile birlikte :ref:`arf_kuyruk_bilgisi` altinda sunucu bilgilerinden ihtiyacınıza göre hangi platformu hangi kuyruk ile kullanmanız gerektiğine karar verebilirsiniz.
 
 .. _bashrc_ekleme:
 
