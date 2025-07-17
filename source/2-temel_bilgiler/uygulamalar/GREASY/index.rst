@@ -48,6 +48,11 @@ komutunu yazdığınızda ARF kümesinde kurulu olan temel programlar listelenec
     /arf/sw/scripts/greasy dizini altında yer alan örnek SLURM betik dosyasını ve *.txt* uzantılı olarak verilen iş dosyasını inceleyebilirsiniz.
 
 
+    .. toctree::
+        :maxdepth: 2
+        :caption: Greasy Kullanım
+
+        greasy_kullanim.rst
 
 ----------
 

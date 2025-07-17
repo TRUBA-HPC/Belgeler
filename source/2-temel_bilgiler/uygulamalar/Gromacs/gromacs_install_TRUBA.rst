@@ -10,8 +10,7 @@ Kullanıcılarımız tarafından sıklıkla kullanılan, açık kaynak kodlu ola
 
   module available
 
-komutunu yazdığınızda TRUBA sisteminde kurulu olan temel programlar listelenecektir. Module isimlendirmesi ile ilgili bilgilere TRUBA :ref:`moduller-truba` sayfamızdan ulaşabilirsiniz.
-
+komutunu yazdığınızda TRUBA sisteminde kurulu olan temel programlar listelenecektir. 
 Centos7.3 işletim sistemi olan ``barbun-cuda`` hesaplama kümesinde GROMACS 2021'in CUDA opsiyonu ile kurulu olan versiyonu bulunmaktadır. İlgili module ismi:
 
 .. code-block::

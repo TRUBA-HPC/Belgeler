@@ -1,4 +1,5 @@
 .. _openmp-index:
+
 ======
 OpenMP
 ======

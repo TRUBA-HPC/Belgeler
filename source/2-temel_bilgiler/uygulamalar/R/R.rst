@@ -1,8 +1,8 @@
 .. _R-modules:
 
-===
+==
 R
-===
+==
 
 Bu belge `R <https://www.r-project.org/>`_ platformunun kullanımını kolaylaştırmak için oluşturulmuştur.
 Bu kılavuz aşağıdakileri kapsamaktadır:
@@ -25,6 +25,7 @@ Bu kılavuz aşağıdakileri kapsamaktadır:
         :text-align: center
     .. grid-item-card:: :ref:`sorunlar-cozumler`
         :text-align: center
+        
 .. _r-modulleri:
 
 R Modülleri

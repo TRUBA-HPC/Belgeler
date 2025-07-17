@@ -148,8 +148,11 @@ Aşağıdaki popüler uygulamalar sürükle-bırak yöntemiyle kolay dosya aktar
 
 Detaylı kurulum ve kullanım kılavuzları için:
 
-- :ref:`MobaXTerm <mobaxterm>`
-- :ref:`WinSCP <winscp>`
+.. toctree::
+   :maxdepth: 1
+
+   mobaxterm.rst
+   winscp.rst
 
 Bu uygulamalar sayesinde dosyalar sürükle-bırak yöntemiyle kolaylıkla indirilebilir veya yüklenebilir.
 

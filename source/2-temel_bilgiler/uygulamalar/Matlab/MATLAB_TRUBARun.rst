@@ -101,7 +101,7 @@ TRUBA'da MATLAB Dosyası Çalıştırmak
     - /arf/home  sadece program kurulumları ve küçük işlerin çalıştırılması için düşünülmüştür.. Bu nedenle kotası 100GB'dır.
     - /arf/scratch  sadece  işlerin çalıştırılmalarını için planlanmıştır. Bu nedenle kotası 1TB'dır ve dosyaların maksimum bekleme süreleri 1 aydır.
 
-    :ref:`yuksek-performansli-dosya-sistemleri`
+    :ref:` _arf_depolama_kaynaklari`
 
 
 ``batch`` ile işinizi gönderirken output dosyasını iki farklı şekilde yazdırabilirsiniz (dosyanızın adı "INPUTFILE"  olsun)

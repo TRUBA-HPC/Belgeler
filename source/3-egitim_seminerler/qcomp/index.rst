@@ -1,4 +1,5 @@
 .. _qcomp-index:
+
 =================
 Kuantum Hesaplama
 =================

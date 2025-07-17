@@ -63,7 +63,12 @@ Eğer kurulu değilse, aşağıdaki adımlar izlenerek yüklenebilir:
 
    Önceki yıllarda yaygın olarak kullanılan **PuTTY** ve **WinSCP** gibi araçlar hâlâ tercih edilebilir; ancak modern Windows sistemlerde OpenSSH istemcisi bu tür ihtiyaçların büyük çoğunluğunu karşılamaktadır.
    
-   * :ref:`PuTTY ile SSH Bağlantısı <putty>`
+.. toctree::
+    :maxdepth: 1
+    :caption: PuTTY ile SSH Bağlantısı
+
+    putty.rst
+
 
 **Kaynaklar**
 

@@ -4,7 +4,6 @@
 Kaynak kod kullanılarak R kurulumu 
 ==============================================
 
-Kaynak koddan kurulum için :ref:`genelkurulum-kilavuzu` inceleyebilirsiniz.
 Sistemimizde var olan R'ın farklı versiyonları kurmak için temelde şu adımlar izlenebilir.
 
 - R kaynak kodu indir

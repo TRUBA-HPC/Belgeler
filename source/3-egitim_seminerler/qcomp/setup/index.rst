@@ -8,7 +8,6 @@ Qiskit ve PennyLane Kurulumları
 .. warning::
     Belgenin geri kalanında ev dizinine Miniconda kurulumunun yapılmış olduğu kabul edilmektedir. Ev dizininizde Miniconda kurulu değilse kurulumu :ref:`Python Kılavuzu'nu <python-kilavuzu>` takip ederek yapabilirsiniz.
 
-    Merkezi anaconda kullanımı hakkındaki bilgiye ulaşmak için :ref:`tıklayınız... <merkezi-anaconda>`.
 
 --------------------------
 Qiskit Kurulumu
@@ -132,7 +131,7 @@ Eğer bir CUDA cihazı göremiyorsa yukarıdaki çıktıya ek olarak sistem aşa
 .. admonition:: Çıktı
    :class: dropdown, information
 
-   .. code-block:: python
+   .. code-block:: console
 
         WARNING:qiskit.providers.aer.backends.aerbackend:Simulation failed and returned the following error message:
         ERROR: Failed to load qobj: No CUDA device available!

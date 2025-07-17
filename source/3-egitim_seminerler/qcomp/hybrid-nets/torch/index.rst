@@ -2,16 +2,18 @@
 PyTorch Nöral Ağına Kuantum Katmanı Eklemek
 ============================================
 
-.. warning::
-    Belgenin geri kalanda ev dizinine Miniconda kurulumu yapılmış kabul edilmektedir. Ev dizininizde Miniconda kurulu değilse kurulumu :ref:`miniconda-kurulum` takip ederek yapabilirsiniz. 
-
-    Merkezi anaconda kullanımı hakkındaki bilgiye ulaşmak için :ref:`tıklayınız... <merkezi-anaconda>`.
-        
-Mevcut shell oturumunuzda conda’nın temel ortamını etkinleştirin:
+sistemde mevcut anaconda sürümlerini görmek için aşağıdaki komutu çalıştırarak yükleyiniz:
 
 .. code-block:: bash
-    
-    eval "$(/truba/home/$USER/miniconda3/bin/conda shell.bash hook)"
+
+    module av
+
+.. code-block:: bash
+
+    module load
+
+Mevcut shell oturumunuzda conda’nın temel ortamını etkinleştirin:
+
 
 Conda kullanarak sanal ortam yaratın ve yarattığınız ortamı aktifleştirin.
 
@@ -21,15 +23,8 @@ Conda kullanarak sanal ortam yaratın ve yarattığınız ortamı aktifleştirin
     conda activate qnn-torch-env
     conda list
 
-.. warning::
-    Adımları takip edebilmek için gerekli olan PyTorch paketini yüklemek için :ref:`deep-learning-virtual-env`  PennyLane paketinin kurulumu için de :ref:`qcomp_setup`  sayfasına göz atabilirsiniz.
-    
-.. warning::
-    Ayrıca gerekli olan scikit-learn kütüphanesini aşağıdaki gibi kurabilirsiniz.    
-    
-    .. code-block:: bash
-    
-       pip3 install -U scikit-learn
+
+
 		
 .. note::
     İstediğiniz zaman sanal ortamı kaldırıp baştan başlayabilirsiniz:

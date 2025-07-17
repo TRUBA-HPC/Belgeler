@@ -22,8 +22,6 @@ Conda kullanarak sanal ortam yaratın ve yarattığınız ortamı aktifleştirin
     conda list
 
 
-.. warning::
-    Adımları takip edebilmek için gerekli olan Tensorflow paketini yüklemek için :ref:`deep-learning-virtual-env`  PennyLane paketinin kurulumu için de :ref:`qcomp_setup`  sayfasına göz atabilirsiniz.
     
 .. warning::
     Ayrıca gerekli olan scikit-learn kütüphanesini aşağıdaki gibi kurabilirsiniz.
@@ -45,7 +43,6 @@ Conda kullanarak sanal ortam yaratın ve yarattığınız ortamı aktifleştirin
 Klasik Keras Katmanlarından oluşan bir nöral ağ oluşturma
 ==========================================================
 
-Burada PennyLane kütüphanesindeki bir Quantum Node'un nasıl Keras kütüphanesindeki bir layer olarak eklendiğine yönelik bir örnek gösteriliyor. Keras hakkında detaylı bilgi için :ref:`keras_intro` eğitim materyaline bakabilirsiniz.
 
 Aşağıdaki gibi kuantum katmanı içermeyen ikili sınıflandırmada kullanabileceğimiz 2 katmanlı bir network oluşturabiliriz.
 
@@ -335,8 +332,7 @@ Kuyruğa iş göndermek için bir `slurm betiği <https://slurm.schedmd.com/sbat
 .. note::
     En alttaki ``python sequential_qnn.py`` yerine ``python nonsequential_qnn.py`` yazarak sıralı olmayan hibrit modeli de kuyruğa gönderebilirdik.
 
-.. warning::
-    Kodun GPU'da çalıştığından emin olmak için :ref:`deep-learning-virtual-env` 'daki örnek kodu çalıştırarak Tensorflow'un CUDA cihazını görüp görmediğini kontrol edin.
+
 
 İşi kuyruğa gönderin.
 

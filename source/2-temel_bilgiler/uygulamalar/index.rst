@@ -66,7 +66,6 @@ Bu bölümde, TRUBA altyapısında kurulu olan uygulamalar ve bu uygulamaların 
    Gaussian/index.rst
    Gromacs/index.rst
    Lammps/index.rst
-   Namd/index.rst
    QEspresso/index.rst
    Vasp/index.rst
 

@@ -12,7 +12,6 @@ Bu materyalde kullanılan örneklerde ``python 3.8.11``, ``conda 4.10.3``, ``ten
 **Keras** arayüzü **Tensorflow** platformunun bir parçası olduğu için **Tensorflow** kurulumu ile birlikte otomatik olarak kullanıma hazır olacaktır. 
 **Keras** iş yüklerinin TRUBA sunucuları üzerinde CPU ve GPU kullanılarak nasıl çalıştırılacağı her bir uçtan uca örnek için detaylı olarak gösterilmiş ve betik dosyaları ilgili örneklerde paylaşılmıştır.
 
-**Tensorflow** platformunun TRUBA üzerinde nasıl aktif hale getirileceği :ref:`deep-learning-virtual-env` bölümünde anlatılmıştır.
 
 
 .. toctree::
@@ -20,7 +19,7 @@ Bu materyalde kullanılan örneklerde ``python 3.8.11``, ``conda 4.10.3``, ``ten
     :titlesonly:
     :caption: TRUBA Üzerinde Modellerin Çalıştırılması
 
-    run/how_to_run.rst
+
     Examples/ete1.rst
     Examples/ete3.rst
 

@@ -5,7 +5,7 @@
 Jupyter Araçları 
 --------------------------
 
-Bu belgede sunulan bilgiler yalnızca web arayüzü sunucularında yürütülebilen interaktif çalışmalar içindir. Bu doğrultuda, yüksek performanslı hesaplama merkezinde interaktif işlemlerinizi gerçekleştirebilmeniz için :ref:`open_ondemand` web arayüzü hizmete sunulmuştur. İnteraktif arayüz ile ilgili bağlantı bilgilerine :ref:`arf-baglanti` sayfasından erişebilirsiniz. Web arayüzünde yer alan notebook kullanım özet bilgileri ise aşağıdaki gibidir:
+Bu belgede sunulan bilgiler yalnızca web arayüzü sunucularında yürütülebilen interaktif çalışmalar içindir. Bu doğrultuda, yüksek performanslı hesaplama merkezinde interaktif işlemlerinizi gerçekleştirebilmeniz için :ref:`open_ondemand` web arayüzü hizmete sunulmuştur. İnteraktif arayüz ile ilgili bağlantı bilgilerine :ref:`arf_baglanti` sayfasından erişebilirsiniz. Web arayüzünde yer alan notebook kullanım özet bilgileri ise aşağıdaki gibidir:
 
 1. Jupyter Notebook - XXX:   
     Buradan açılan jupyter notebook, yapay zeka alanında kullanılan temel olarak, ``XGBoost, TensorFlow, Keras, PyTorch, Scikit-learn, accelerate, deepspeed, transformers, ...`` paketlerin kurulumlarını içermektedir. Buradan açılmış bir jupyter notebook içerisinde açılan python ortamları aşağıdaki gibi olacaktır.

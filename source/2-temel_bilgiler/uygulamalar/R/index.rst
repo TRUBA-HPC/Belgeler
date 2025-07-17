@@ -11,3 +11,4 @@ Bu belge TRUBA altyapısında `R <https://www.r-project.org/>`_ platformunun kul
 
     R.rst
     RStudio.rst
+    R_Source_code.rst

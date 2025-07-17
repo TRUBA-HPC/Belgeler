@@ -166,9 +166,6 @@ Hücrenin tanımlanması:
 
 Yukarıdaki komut ``-c`` ile proteini ortalar ve ``-d 1.0`` ile hücre kenarlarından en az 1.0 nm uzağa yerleştirir. ``-bt cubic`` komutuyla da hücrenin kübik olduğu belirtilir. Hücrenin kenarlarına olan mesafe önemli bir parametredir. Periyodik sınır koşulları kullanılacağı için minimum görüntü kuralı sağlanmalıdır. Yani bir protein asla kendi periyodik görüntüsünü görmemelidir, aksi takdirde hesaplanan kuvvetler hatalı olabilir. Çözücü ile hücre arasındaki 1.0 nm'lik mesafenin olması, bir proteinin herhangi iki periyodik görüntüsü arasındaki mesafenin 2.0 nm olduğunu gösterir. Bu mesafe, simülasyonlarda yaygın olarak kullanılan cutoff şeması için yeterlidir. Hücrenin boyutlarıyla ilgili detaylı bilgiler görünecektir:
 
-.. image:: ../../../../assets/compmatscience-gromacs-education/gmx_cell.png
-   :align: center
-   :width: 300px
 
 Hücreye çözücü ekleme işlemi aşağıdaki kodla gerçekleştirilir. Çözücü ekleme işlemi solvate eklenerek yapılmaktadır.
 

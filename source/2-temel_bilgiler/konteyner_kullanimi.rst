@@ -8,20 +8,8 @@ Bu belge TRUBA altyapısında `Apptainer/Singularity <https://apptainer.org/>`_ 
 Bu kılavuz aşağıdakileri kapsamaktadır:
 
 
-.. grid:: 5
 
-    .. grid-item-card::  :ref:`konteyner_giris`
-        :text-align: center
-    .. grid-item-card:: :ref:`konteyner_kullanma`
-        :text-align: center
-    .. grid-item-card:: :ref:`konteyner_inşa_etme`
-        :text-align: center
-    .. grid-item-card:: :ref:`konteyner_anaconda`
-        :text-align: center
-    .. grid-item-card:: :ref:`konteyner_mpi`
-        :text-align: center
 
-.. _konteyner_giris:
 
 Giriş
 -----

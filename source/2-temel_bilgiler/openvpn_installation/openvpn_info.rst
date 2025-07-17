@@ -27,9 +27,14 @@ Aşağıdaki linklerde farklı işletim sistemleri için OpenVPN dosyalarının 
 
 Kullandığınız işletim sistemine göre kurulum yapmak için aşağıdaki sayfaları ziyaret edebilirsiniz.
 
-* :ref:`mac-openvpn`
-* :ref:`linux-openvpn`
-* :ref:`windows-openvpn`
+.. toctree::
+   :maxdepth: 1
+   :caption: OpenVPN Kurulumları
+
+   mac_openvpn.rst
+   linux_openvpn.rst
+   windows_openvpn.rst
+
 
 Bağlantı Sorunları ve Güncel Çözüm Önerileri
 --------------------------------------------

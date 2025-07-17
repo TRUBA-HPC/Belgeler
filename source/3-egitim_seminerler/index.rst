@@ -18,30 +18,16 @@ Bu bölümde, TRUBA ve ilgili alanlarda verilen eğitim ve seminerlerin başlık
 
 Eğitimlerde kullanılan yazılım ve paketlerin sürümleri zaman zaman eski olabilmektedir. Yazılımların ve kodların güncellenmesiyle birlikte eğitim içeriklerinde değişiklikler yapılması gerekebilir. Bu nedenle, eğitimleri takip ederken kullanılan paketlerin ve kodların güncel sürümlerini kontrol etmeniz ve olası farklılıklara dikkat etmeniz önerilir.
 
+.. toctree::
+   :maxdepth: 1
+   :caption: İçindekiler
 
-- :ref:`Kuantum Hesaplama <qcomp-index>`
-    Kuantum hesaplama ve hibrit ağlar üzerine temel bilgiler ve uygulamalar.
-
-- :ref:`Keras <keras-index>`
-    Keras ile makine öğrenmesi ve derin öğrenme modellerinin TRUBA üzerinde eğitilmesi.
-
-- :ref:`CUDA <cuda-index>`
-    GPU programlama ve CUDA ile paralel hesaplama teknikleri.
-
-- :ref:`PyTorch <pytorch-index>`
-    PyTorch ile derin öğrenme, tensör işlemleri ve uygulama örnekleri.
-
-- :ref:`Büyük Veri <big-data-index>`
-    Büyük veri işleme, analiz ve dağıtık hesaplama uygulamaları.
-
-- :ref:`OpenMPI <openmpi-index>`
-    Yüksek performanslı hesaplama için MPI ile paralel programlama ve iletişim.
-
-- :ref:`OpenMP <openmp-index>`
-    Çok çekirdekli işlemcilerde paralel programlama için OpenMP kullanımı.
-
-- :ref:`Hesaplamalı Temel Bilimler <compscience-index>`
-    Bilimsel hesaplamalar ve GROMACS gibi yazılımlarla temel bilimler uygulamaları.
-
-- :ref:`Hesaplamalı Akışkanlar Dinamiği (HAD) <cfd-index>`
-    Akışkanlar dinamiği simülasyonları ve ilgili yazılımlar.
+   qcomp-index <qcomp/index>
+   keras-index <keras/index>
+   cuda-index <cuda/index>
+   pytorch-index <pytorch/index>
+   big-data-index <big-data/index>
+   openmpi-index <openmpi/index>
+   openmp-index <openmp/index>
+   compscience-index <compscience/index>
+   cfd-index <cfd/index>

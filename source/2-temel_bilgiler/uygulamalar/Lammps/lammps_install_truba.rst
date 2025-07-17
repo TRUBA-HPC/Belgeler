@@ -14,9 +14,8 @@ Kurulumu ``orfoz`` kuyruğu için optimize bir şekilde yapmak istiyorsanız ``s
 
    srun -p debug -C orfoz -N 1 -n 55 -A kullanici_adi -J lmp-install --time=0:50:00 --pty /usr/bin/bash -i
 
-.. note::
 
-   Kurulum için gerekli süreyi kurallar dahilinde değiştirebilirsiniz. Ayrıntılı bilgi için :ref:`partitions` sayfasını inceleyin.
+
 
 Sistemde kurulu yazılımları listelemek için:
 

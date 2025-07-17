@@ -108,7 +108,7 @@ TRUBA üzerinde halihazırda bazı MATLAB versiyonları yüklü durumdadır. Bu 
 
 .. warning::
 
-    TRUBA üzerinde küme yönetimi ve iş zamanlayıcı olarak :ref:`slurm-betik` kullanılmaktadır. Kümede iş çalıştırmadan önce :ref:`slurm-betik` hakkında bilgi edinmiş olmanız beklenmektedir. İş göndereceğiniz hesaplama kümeleri ile ilgili bilgiye :ref:`arf_hesaplama_kumeleri` sayfasından erişebilirsiniz.
+    TRUBA üzerinde küme yönetimi ve iş zamanlayıcı olarak :ref:`slurm-betik` kullanılmaktadır. Kümede iş çalıştırmadan önce :ref:`slurm-betik` hakkında bilgi edinmiş olmanız beklenmektedir. İş göndereceğiniz hesaplama kümeleri ile ilgili bilgiye :ref:`arf_depolama_kaynaklari` sayfasından erişebilirsiniz.
 
     Lisans dosyanızı TRUBA arayüz sunucusuna transfer ediniz. Bunu terminal aracılığıyla ``scp`` komutu ile yapabileceğiniz gibi :ref:`ssh-baglanti` vb. gibi SFTP yazılımları aracılğıyla da gerçekleştirebilirsiniz.
 
