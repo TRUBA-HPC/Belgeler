@@ -33,8 +33,9 @@ extensions = [
     'sphinx_copybutton',
     'sphinx_design',
     'sphinx_tabs.tabs',
-    'sphinx_last_updated_by_git'
+    'sphinx_last_updated_by_git',
 ]
+
 
 html_css_files = ['custom.css']
 
