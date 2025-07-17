@@ -1,6 +1,9 @@
 .. _basic_slurm_commands:
+
+========================
 SLURM Komutları
-==========================================
+========================
+
 Temelde **sbatch** ve **squeue** komutları iş göndermek işinizin durumunu izlemek için yeterli olsa da ek  olarak diğer SLURM komutlarını bilmek ve kullanmak, kullanım sırasında karşılaşılabilecek pek çok sorunu  hızlıca çözmek ve sistemin genelini daha iyi kavramak açısından önemlidir.
 
 Aşağıda sık kullanılan bazı komutların temel fonksiyonları hakkında genel bilgiler verilmiştir.  Ancak bu komutların ek özellikleri, komut yanına yazılan parametrelerle sağlayabilmektedir.  Komutların ek özellikleri ve detayları hakkında pek çok bilgiye, komutların yardım sayfalarından  (man pages) ya da SLURM'un web sitesinden (https://slurm.schedmd.com/documentation.html) ulaşılabilir. Komutların yardım sayfasına, kullanıcı arayüzü sunucularından aşağıdaki komutla ulaşılabilir.

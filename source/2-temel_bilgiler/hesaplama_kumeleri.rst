@@ -6,7 +6,7 @@ TRUBA Hesaplama Kümeleri
 
 TRUBA, Türkiye’nin önde gelen yüksek başarımlı hesaplama altyapısı olarak, farklı yıllarda temin edilen ve sürekli güncellenen çeşitli sunucu aileleriyle araştırmacılara hizmet vermektedir. Her sunucu ailesi, işlemci, çekirdek, bellek ve GPU kapasitesi açısından farklılık göstermektedir. Kullanıcılar, ihtiyaçlarına uygun kaynakları ve kuyrukları seçerek hesaplama işlerini yürütebilirler.
 
-----------------
+
 Sunucu Aileleri
 ----------------
 
@@ -99,7 +99,7 @@ TRUBA altyapısında yer alan başlıca sunucu aileleri ve öne çıkan teknik �
 
 Her sunucu ailesi, yüksek hızlı Infiniband ağları ile birbirine bağlıdır ve ortak dosya sistemlerine erişim sunar. GPU kümelerinde güncel NVIDIA sürücüleri ve CUDA desteği mevcuttur. Bazı kümelerde yüksek I/O gerektiren işler için NVMe diskler scratch alanı olarak sunulmaktadır.
 
-----------------------
+
 Kuyruklar (Partitions)
 ----------------------
 
@@ -192,9 +192,8 @@ TRUBA’da işler, farklı özelliklere sahip kuyruklara (partition) gönderilir
 
 Kuyruk ve kaynak durumları için ``sinfo`` ve ``scontrol show partition=<kuyruk_adı>`` komutları kullanılabilir.
 
-----------------------
 Kullanım Notları ve Erişim
-----------------------
+---------------------------
 
 - Her kuyrukta, çekirdek başına ve toplamda bellek limitleri uygulanır. Betiklerde `--mem` veya `--mem-per-core` parametreleri ile bellek talep edilebilir.
 - GPU kuyruklarında, işlerin GPU kullanacak şekilde yapılandırılması zorunludur. Örneğin, palamut-cuda kuyruğunda her GPU için 16 çekirdek talep edilmesi önerilir.
@@ -202,9 +201,9 @@ Kullanım Notları ve Erişim
 - İşlerin `debug` kuyruğunda belirli bir sunucu ailesinde çalışması isteniyorsa, betiklerde ``#SBATCH --constraint=<sunucu_adı>`` parametresi kullanılabilir. Örneğin, orfoz kuyruğunda çalıştırmak için ``#SBATCH --constraint=orfoz`` parametresi kullanılabilir.
 - Yüksek I/O gerektiren işler için bazı kümelerde NVMe diskler scratch alanı olarak sunulmaktadır.
 
-----------------------
+
 Ek Bilgiler
-----------------------
+--------------------------
 
 - Tüm kuyrukların varsayılan çalışma süresi 2 dakikadır. Betik dosyasında zaman bilgisi girilmeyen işler 2 dakika sonunda otomatik olarak sonlandırılır.
 - Kuyruklarda minimum çekirdek ve/veya GPU talep sınırları uygulanır. Sistem verimliliği için bu sınırların altında iş gönderilmemelidir.

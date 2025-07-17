@@ -15,9 +15,9 @@ TRUBA Komutları
 
 .. _lssrv:
 
-================
+
 Kuyruk Bilgisi
-================
+--------------
 
 **lssrv** komutu, TRUBA sisteminde tanımlı olan kuyrukların durumunu görüntülemek için kullanılır.
 
@@ -53,22 +53,22 @@ Ayrıca ``sinfo`` komutunu kullanarak kuyrukların mevcut doluluk durumunu göre
 .. _avci:
 
 
-=================
+
 Modül Arama Aracı
-=================
+------------------
 
 **Avcı**, HPC ortamlarında `module avail` komutuyla listelenen yazılım modülleri arasında kolay arama yapmanızı sağlar. Arama sonuçlarında yüklü modüller vurgulanır ve eşleşmeler renklendirilerek gösterilir.
 
 
 Kullanım
---------
+~~~~~~~~
 
 .. code-block:: bash
 
    ./avci [opsiyonlar] <arama_terimi>
 
 Opsiyonlar
-----------
+~~~~~~~~~~
 
 - ``-exact``  
   Modül adında tam eşleşme aranmasını sağlar. (örn. sadece `openmpi` olan modüller bulunur, `openmpi/4.1.7` gibi versiyonlu olanlar atlanabilir)

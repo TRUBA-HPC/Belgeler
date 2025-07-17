@@ -107,7 +107,7 @@ Merkezi depolama alanı, projeler boyunca geçici veri saklamak için kullanıl�
 .. _kota-asim-cozumleri:
 
 Kota Aşım Çözümleri
-------------------
+-------------------
 
 Kota limitine yaklaştığınızda veya aştığınızda:
 
@@ -145,7 +145,7 @@ Dosya sayısı limiti, sistem performansını korumak için kritik önem taşır
 .. _inode-optimization:
 
 İnode Optimizasyon Stratejileri
-------------------------------
+-------------------------------
 
 **1. Merkezi Yazılımları Kullanın:**
 
@@ -170,12 +170,12 @@ Dosya sayısı limiti, sistem performansını korumak için kritik önem taşır
 .. _veri-guvenlik-politikalari:
 
 Veri Güvenliği ve Politikalar
-============================
+=============================
 
 .. _yedekleme-sorumluluklari:
 
 Yedekleme Sorumlulukları
------------------------
+------------------------
 
 .. danger::
    **Veri Kaybı Riski:** Dosya sistemlerinde hiçbir otomatik yedekleme hizmeti bulunmamaktadır. Tüm veri güvenliği kullanıcının sorumluluğundadır.
@@ -190,7 +190,8 @@ Yedekleme Sorumlulukları
 .. _veri-yasamam-politikalari:
 
 Veri Yaşam Döngüsü Politikaları
-------------------------------
+-------------------------------
+
 
 **Ev Dizini (``/arf/home``):**
 
@@ -212,12 +213,12 @@ Veri Yaşam Döngüsü Politikaları
 .. _en-iyi-uygulamalar:
 
 En İyi Uygulamalar ve Öneriler
-=============================
+==============================
 
 .. _performans-optimizasyonu:
 
 Performans Optimizasyonu
------------------------
+------------------------
 
 **1. Doğru Dosya Sistemi Seçimi:**
 
@@ -239,12 +240,12 @@ Performans Optimizasyonu
 .. _sorun-giderme:
 
 Sorun Giderme ve Destek
-======================
+=======================
 
 .. _yaygın-sorunlar:
 
 Yaygın Sorunlar ve Çözümleri
----------------------------
+----------------------------
 
 **1. Kota Aşım Hatası:**
 
