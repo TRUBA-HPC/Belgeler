@@ -231,15 +231,14 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 
 .. _target to ss19:
 
-19. Disk kotamı nasıl görürüm?
+19. Sistem durum bilgisini nasıl öğrenebilirim?
 
-	barbun1 (veya herhangi bir kullanıcı arayüzü sunucusunda) sunucusu üzerinde “quota” komutunu çalıştırarak ilgili dosya sistemlerindeki ev dizini kotalarınızı ve kullanım durumunuzu görebilirsiniz.
+	Kullanıcı arayüzü sunucusu üzerinde ``lssrv`` komutunu çalıştırarak ilgili sistem kullanım durumunuzu görebilirsiniz.
 
-	Not: TRUBA'da her kullanıcı için bir kullanıcı grubu oluşturulmuştur. Kullanıcı adı ile kullanıcı grubunun adları (UID ve GID) aynıdır. Kotalar UID üzerinden değil GID üzerinden tanımlanmıştır.
 
 .. _target to ss20:
 
-20. Parolamı nasıl değiştiririm?
+20.  Parolamı nasıl değiştiririm?
 
 	Terminalden levrek arayüz sunucusuna bağlandıktan sonra ``passwd`` komutu ile parolanızı değiştirebilirsiniz.
 
@@ -279,7 +278,7 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 
 .. _target to ss26:
 
-1.  Kullandığım parallel uygulamanın performansını arttırmak için ne yapabilirim?
+26.  Kullandığım parallel uygulamanın performansını arttırmak için ne yapabilirim?
 
 	Kullanmak istediğiniz çekirdek sayısı tek bir sunucu tarafından karşılanabiliyorsa, işlerinizi farklı sunuculara dağıtmak yerine tek bir sunucu üzerinde çalıştırmak genelde daha iyi sonuç verir.
 
