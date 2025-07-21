@@ -98,7 +98,7 @@ ile apptainer içerisinde  kurulu olan programı verilen betik ve *Arg1* paramet
 
         apptainer cache clean
 
-    ile temizlemeniz gerekebilir. Daha fazla detay için `ilgili kılavuz <https://apptainer.org/docs/user/main/index.html>`_ ziyaret edilebilir.  Yukarıdaki adımlar yerine önbellekte tutulmasını istemiyorsak ``--disable-cache`` parametresini de kullanabiliriz.
+    ile temizlemeniz gerekebilir. Daha fazla detay için `ilgili dokümantasyon <https://apptainer.org/docs/user/main/index.html>`_ ziyaret edilebilir.  Yukarıdaki adımlar yerine önbellekte tutulmasını istemiyorsak ``--disable-cache`` parametresini de kullanabiliriz.
 
 
 

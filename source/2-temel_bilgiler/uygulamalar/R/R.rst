@@ -305,7 +305,7 @@ daha fazla parametre detayları için
 R, SLURM ve Paralelleştirme
 ---------------------------
 
-Yüksek performans elde edebilmek için kaynakların etkili şekilde kullanılması, yüksek başarımlı hesaplama alanlarında önem arz etmektedir. R ortamı, vektörel işlemler veya paralelleştirme için özel paketler kullanılmadığı sürece tek çekirdek üzerinde çalışmaktadır. Bu amaç doğrultusunda, aşağıda kapalı (implicit) ve açık paralelleştirme (explicit) örnekleriyle birlikte seri kod, çok iş parçacıklı kodlar, çok düğümlü (parallel MPI) veya hibrit işleri (çok iş parçacıklı ve çok düğümlü kodlar) için SLURM parametreleri paylaşılmıştır. Daha fazla detay için `buraya <https://www.john-ros.com/Rcourse/parallel.html>`_ bakabilirsiniz.
+Yüksek performans elde edebilmek için kaynakların etkili şekilde kullanılması, yüksek başarımlı hesaplama alanlarında önem arz etmektedir. R ortamı, vektörel işlemler veya paralelleştirme için özel paketler kullanılmadığı sürece tek çekirdek üzerinde çalışmaktadır. Bu amaç doğrultusunda, aşağıda kapalı (implicit) ve açık paralelleştirme (explicit) örnekleriyle birlikte seri kod, çok iş parçacıklı kodlar, çok düğümlü (parallel MPI) veya hibrit işleri (çok iş parçacıklı ve çok düğümlü kodlar) için SLURM parametreleri paylaşılmıştır. Daha fazla detay için `bu sayfaya <https://www.john-ros.com/Rcourse/parallel.html>`_ bakabilirsiniz.
 
 .. tabs::
 
