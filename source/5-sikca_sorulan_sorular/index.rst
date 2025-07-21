@@ -89,20 +89,16 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 
 1. Kullanıcı arayüzü sunucularına erişim kısıtlamaları var mı?
 
-    ULAKNET ağı içinde veya dışında olma durumunuz farketmeksizin VPN ile TRUBA sanal ağına başarılı bir şekilde bağlantı sağlandıktan sonra,
+    ULAKNET ağı içinde veya dışında olma durumunuz farketmeksizin VPN ile TRUBA sanal ağına başarılı bir şekilde bağlantı sağlandıktan sonra, erişim haklarınıza göre
 	
-		- ARF için 
-			- 172.16.6.11 ile arf-ui1
-			- 172.16.6.12 ile arf-ui2
-			- 172.16.6.13 ile arf-ui3
-			- 172.16.6.14 ile arf-ui4
-			- 172.16.6.15 ile arf-ui5
+   		- ARF için :ref:`ARF kullanıcı arayüz sunucuları bağlantı bilgileri <arf_baglanti>`
+		- ARF-ACC için :ref:`ARF-ACC kullanıcı arayüz sunucuları bağlantı bilgileri <arf_acc_baglanti>`
 
 	kullanıcı arayüz sunucularından birisine ssh ile bağlanabilirsiniz. :ref:`OpenVPN hakkında bilgilere erişmek için tıklayınız...<open-vpn>`
 
 .. _target to ss2:
 
-2. Kullanıcı arayüzü sunucularına sabit IP'si olmayan bilgisayarlarla bağlanılabilir mi?
+1. Kullanıcı arayüzü sunucularına sabit IP'si olmayan bilgisayarlarla bağlanılabilir mi?
 
     Evet. Kişisel bilgisayarınıza bir VPN programı (OpenVPN, Tunnelblick vb.) kurup, programı :ref:`open-vpn` sayfasında anlatıldığı şekilde yapılandırarak, herhangi bir IP kısıtlaması olmadan, dünyanın herhangi bir yerinden kullanıcı arayüzü sunucularına erişmek mümkündür. 
 
@@ -213,7 +209,7 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 
 .. _target to ss16:
 
-16. En Fazla ne kadar kaynak kullanabilirim?
+16. En fazla ne kadar kaynak kullanabilirim?
 
 	Lisans öğrencileri için kendi hesaplarına denemeleri için aynı anda 4 çekirdek kullanımı tanımlanmaktadır. Lisan öğrencileri danışmanlarının sahip olduğu proje hesaplarından faydalanabilirler. Yüksek lisans öğrencileri için tanımlanan en fazla çekirdek sayısı 40'dır. Doktora öğrencisi ve akademik kullanıcılar için tanımlanan en fazla çekirdek sayısı 160'dır. 
 	
@@ -245,7 +241,7 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 
 20. Parolamı nasıl değiştiririm?
 
-	Terminalden levrek arayüz sunucusuna bağlandıktan sonra "passwd" komutu ile parolanızı değiştirebilirsiniz.
+	Terminalden levrek arayüz sunucusuna bağlandıktan sonra ``passwd`` komutu ile parolanızı değiştirebilirsiniz.
 
 .. _target to ss21:
 
@@ -257,7 +253,7 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 
 22. İşlerim tekrar tekrar en baştan başlıyor neden?
 
-	İşin çalıştığı esnada, işin çalıştığı sunucuda meydana gelen bir aksaklık nedeni ile işin durdurulması durumunda, iş sistem tarafından tekrar kuyruğa gönderilir. İşin tekrar kuyruğa gönderilmesi istenmiyorsa, betik dosyasına ==“#SBATCH –no-requeue”== satırı eklenmelidir.
+	İşin çalıştığı esnada, işin çalıştığı sunucuda meydana gelen bir aksaklık nedeni ile işin durdurulması durumunda, iş sistem tarafından tekrar kuyruğa gönderilir. İşin tekrar kuyruğa gönderilmesi istenmiyorsa, betik dosyasına ``#SBATCH –no-requeue`` satırı eklenmelidir.
 
 .. _target to ss23:
 
@@ -279,13 +275,13 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 
 25. Derlediğim uygulamalar bazı neden kuyruklarda çok hızlı çalışıyorken bazılarında çok yavaş çalışıyor?
 
-	Kuyruklarda kullanılan donanımlar arasında işlemci, bellek ve nesil farkı bulunmaktadır. Mercan/Lüfer sunucularında AMD işlemciler bulunurken Levrek sunucularında Intel işlemciler bulunmaktadır. Sunucuların performasları da aynı değildir. Dolayısı ile işlerin farklı hızlarda çalışması normaldir. Ancak donanım performansından ayrı olarak bir performans sıkıntısı yaşanıyor ise, yapılan derleme sisteme uygun olarak yapılmamış olabilir. Uygulamanın çalışacağı işlemci markasına göre, uygulamanızı o işlemci için TUNE edilmiş kütüphanelerle derlemekte fayda vardır. Özellikle blas,lapack,blacs,scalapack,fftw gibi kütüphanelerin kullanıldığı uygulamalarda tune edilmiş kütüphaneler büyük farklılıklar yaratabilir.
+	Kuyruklarda kullanılan donanımlar arasında işlemci, bellek ve nesil farkı bulunmaktadır. Dolayısıyla, sunucuların performasları da aynı olmadığı için işlerin farklı hızlarda çalışması normaldir. Ancak donanım performansından ayrı olarak bir performans sıkıntısı yaşanıyor ise, yapılan derleme sisteme uygun olarak yapılmamış olabilir. Uygulamanın çalışacağı işlemci markasına göre, uygulamanızı o işlemci için TUNE edilmiş kütüphanelerle derlemekte fayda vardır. Özellikle ``blas,lapack, blacs, scalapack, fftw`` gibi kütüphanelerin kullanıldığı uygulamalarda tune edilmiş kütüphaneler büyük farklılıklar yaratabilir.
 
 .. _target to ss26:
 
-26. Kullandığım parallel uygulamanın performansını arttırmak için ne yapabilirim?
+1.  Kullandığım parallel uygulamanın performansını arttırmak için ne yapabilirim?
 
-	Kullanmak istediğiniz çekirdek sayısı tek bir sunucu tarafından karşılanabiliyorsa, işlerinizi farklı sunuculara dagıtmak yerine tek bir sunucu üzerinde çalıştırmak genelde daha iyi sonuç verir.
+	Kullanmak istediğiniz çekirdek sayısı tek bir sunucu tarafından karşılanabiliyorsa, işlerinizi farklı sunuculara dağıtmak yerine tek bir sunucu üzerinde çalıştırmak genelde daha iyi sonuç verir.
 
 .. _target to ss27:
 
@@ -303,17 +299,17 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 
 29. Sunucu başına en fazla ne kadar GPU kullanabilirim?
 
-	Farklı nesil sunucular üzerinde farklı nesil kaynaklar bulunmaktadır. TRUBA'daki hesaplama kaynakları hakkında ayrıntılı bilgiye TRUBA Kaynakları sayfasından erişilebilir.
+	Farklı nesil sunucular üzerinde farklı nesil kaynaklar bulunmaktadır. TRUBA'daki hesaplama kaynakları hakkında ayrıntılı bilgiye ilgili hesaplama kaynakları sayfasından erişilebilir.
 
 .. _target to ss30:
 
-30. Tek çekirdekli işlerim çalışıyorken çok çekirdekli/çok nodlu işlerim çalışmıyor.
+30.  Tek çekirdekli işlerim çalışıyorken çok çekirdekli/çok nodlu işlerim çalışmıyor.
 
-	Paralel işlerin çalışabilmesi için nodelar arasında kullanıcın şifresiz geçiş yapabiliyor olması gerekmektedir. Şifresiz geçiş için SSH anahtar mekanizması kullanılır. Bu geçiş için SSH anahtarlarının ve yapılandırmasının yapılmış olması gerekir. Ayrıntılı bilgi için "Kullanıcı Hesabının Kullanılır Duruma Getirilmesi" başlıklı maddeyi inceleyiniz.
+	Paralel işlerin çalışabilmesi için nodelar arasında kullanıcın şifresiz geçiş yapabiliyor olması gerekmektedir. Şifresiz geçiş için SSH anahtar mekanizması kullanılır. Bu geçiş için SSH anahtarlarının ve yapılandırmasının yapılmış olması gerekir.
 
 .. _target to ss31:
 
-31. Sistemde IDLE node ve IDLE çekirdek olmasına rağmen kuyrukta bekleyen işim neden çalışmıyor?
+31.  Sistemde IDLE node ve IDLE çekirdek olmasına rağmen kuyrukta bekleyen işim neden çalışmıyor?
 
 	Herhangi bir anda sistemde IDLE node ya da çekirdek bulunması, ilgili node ya da çekirdeğin o anda sizin işiniz tarafından kullanılabileceği anlamına gelmemektedir. IDLE node ya da çekirdekler, sizin işinizden önce gönderilen ya da önceliği sizin işinizden daha yüksek olan işlere yeterli kaynak oluşturmak için bekletiliyor olunabilir.
 
@@ -321,7 +317,7 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 
 32. İşlerin daha çabuk başlaması için ne yapabilirim?
 
-	İşleri kuyruğa gönderirken --time parameresi ile işin tahmini çalışma zamanını bildirmek zorunludur. Aksi halde işler 2 dakika içinde sistem tarafından sonlandırılmaktadır. Ancak kullanıcıların çoğu, zaman bilgisini verirken, iş çok daha kısa zamanda sonlanabilecekken bile, iş için verilebilecek en fazla zamanı vermektedirler. İşler planlanırken "backfill" algoritması kullanılmaktadır. Bu algoritmaya göre, önceliği düşük olan veya yeni gönderilmiş işler bile, önceliği yüksek olan ve çok çok önce gönderilmiş işlerden daha çabuk başlayabilir. Çünkü algoritma, sunucuların iş takvimlerini kullanıcıların vermiş oldukları --time bilgisine göre oluşturarak, arada kalan boş zamanlara, o zaman sığacak işleri planlamaktadır.
+	İşleri kuyruğa gönderirken ``--time`` parametresi ile işin tahmini çalışma zamanını bildirmek zorunludur. Aksi halde işler 2 dakika içinde sistem tarafından sonlandırılmaktadır. Ancak kullanıcıların çoğu, zaman bilgisini verirken, iş çok daha kısa zamanda sonlanabilecekken bile, iş için verilebilecek en fazla zamanı vermektedirler. İşler planlanırken "backfill" algoritması kullanılmaktadır. Bu algoritmaya göre, önceliği düşük olan veya yeni gönderilmiş işler bile, önceliği yüksek olan ve çok çok önce gönderilmiş işlerden daha çabuk başlayabilir. Çünkü algoritma, sunucuların iş takvimlerini kullanıcıların vermiş oldukları ``--time`` bilgisine göre oluşturarak, arada kalan boş zamanlara, o zaman sığacak işleri planlamaktadır.
 
 	Bu nedenle işler sıraya gönderilirlen işin çalışması için yeterli, mümkün olan en kısa zaman ile işin sıraya gönderilmesi işlerin çok daha hızlı bir şekilde başlamasını sağlamaktadır.
 
@@ -331,10 +327,10 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 
 	``sinfo`` komutu ile kümelerin anlık kullanım durumlarını görebilir, işinizi buna göre boş olan kümelere gönderebilir, ya da kuyrukta bekleyen işlerinizi bu boş kümelere yönlendirebilirsiniz. Aşağıdaki komutları da denemenizi öneririz:
 
-    .. code-block::
+    .. code-block:: bash
 
-        sinfo -o  ”%P %C ”
-	    sinfo -o  ”%n %C “
+        sinfo -o "%P %C"
+        sinfo -o "%n %C"
 
 .. _target to ss34:
 
@@ -354,9 +350,9 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 
     Kullanıcılar bu ayarlamayı kendileri gerçekleştirebilirler. Örnek /truba/home/user1/ortak_dizin'ine user2 kullanıcısı için izin verilmesi
 
-    user1 kullanıcısı tarafından verilecek komut:
+    ``user1`` kullanıcısı tarafından verilecek komut:
 
-    .. code-block::
+    .. code-block:: bash
 
 	    setfacl -m u:user2:x  /truba/home/user1
 	    setfacl -dm u:user2:rwx  /truba/home/user1/ortak_dizin
@@ -367,11 +363,11 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 
 36. TRUBA kullanıcı hesabı şifresinin değiştirilmesi
 
-	*barbun1* kullanıcı arayüzüne bağlandıktan sonra terminal üzerinden ``passwd`` komutunu yazarak mevcut şifrenizi değiştirebilirsiniz.
+	Kullanıcı arayüzüne bağlandıktan sonra terminal üzerinden ``passwd`` komutunu yazarak mevcut şifrenizi değiştirebilirsiniz.
 
 .. _target to ss37:
 
-37. Yeni TRUBA kullanıcı şifresi talebi
+37.  Yeni TRUBA kullanıcı şifresi talebi
 
 	`TRUBA kullanıcı portalı <https://portal.truba.gov.tr/>`_ üzerinden e-devlet aracılıpıyla giriş yaparak ``Yeni Şifre`` talebinde bulunabilirsiniz.
 
