@@ -27,11 +27,11 @@ Kullanıcı arayüzünde yapılması gerekenler:
 - Hesaplama görevi için gerekli dosyalar hazırlanır:
 
   - Hesaplama uygulamasına veya analizine ait kod dosyaları
-  - SLURM iş betiği dosyası. Deta
+  - SLURM iş betiği dosyası
 
-Kullanici arayuz bilgileri icin :ref:`ARF hesaplama kümesi <arf>` sayfasını ziyaret edebilirsiniz.
+Kullanıcı arayüz bilgileri için :ref:`ARF hesaplama kümesi <arf>` sayfasını ziyaret edebilirsiniz.
 
-SLURM betiği icin :ref:`SLURM betiği <slurm-betik>` sayfasını ziyaret edebilirsiniz.
+SLURM betiği için :ref:`SLURM betiği <slurm-betik>` sayfasını ziyaret edebilirsiniz.
 
 3. Görev Gönderimi
 -------------------
