@@ -43,31 +43,47 @@ Dosya Windows'un farklı sürümünde .msi uzantılı da olabilir. Böyle bir du
 8. SSH kullanarak uzak sunucunuza (TRUBA) erişebilirsiniz. Session type olarak SSH’ı seçin. 
 
 
-9. Eğer kampüsten yani ULAKNET ağına bağlı bilgisayarlardan (tüm kamu üniversiteleri ve bazı vakıf üniversiteleri) bağlanıyorsanız, 
+9. ULAKNET ağı içinde veya dışında olma durumunuz farketmeksizin, :ref:`OpenVPN bağlantısını başarılı bir şekilde sağlamalısınız <open-vpn>`. 
+
+<<<<<<< HEAD:..buildhtml/_sources/0-first-steps/MobaXterm.rst
+**Remote host:** 172.16.6.11 
+=======
+>>>>>>> main:source/TRUBA/kullanici-el-kitabi/kullanici-ara-yuzu/ssh-ile-baglanti/MobaXterm.rst
+
+**Remote host:** kısmına arf-ui kullanıcı arayüz sunucularından birisnin IP adresini yazmanız gerekmektedir. Aşağıda verilen adres arf-ui1 kullanıcı arayüz sunucusuna erişim içindir. Diğer sunucular için farklı adresler :ref:`open-vpn` sayfasında verilmiştir.
+
+
+<<<<<<< HEAD:..buildhtml/_sources/0-first-steps/MobaXterm.rst
 
 **Remote host:** 172.16.6.11 
-
-..
-
-    Eğer kampüs dışından bağlanıyorsanız MobaXterm’ü kullanmak için öncelikle OpenVPN ile TRUBA bilgisayarlarına bağlanmanız gerekmektedir.
-
-
-**Remote host:** 172.16.6.11 
+=======
+**Remote host:** 172.16.6.11
+>>>>>>> main:source/TRUBA/kullanici-el-kitabi/kullanici-ara-yuzu/ssh-ile-baglanti/MobaXterm.rst
 
 **Specify username:** kullaniciadi (örnek:osari)
 
 **Port:** 22
 
 
+<<<<<<< HEAD:..buildhtml/_sources/0-first-steps/MobaXterm.rst
 1.  Terminale bağlandıktan sonra şifrenizi giriniz. (örneğin PuTTY'yi daha önce yükleyip kullandıysanız, kaydedilmiş oturumları ve sol sütunda dosyalarınızı görebilirsiniz.)
 
 
 2.  Dosya transferi için yani dosyayı kendi bilgisayarınıza indirmek için sol sütunda indirmek istediğiniz dosyayı sağ tıklayarak download’u seçerek dosyanızı indirebilirsiniz.
 
+=======
+10.  Terminale bağlandıktan sonra şifrenizi giriniz. (örneğin PuTTY'yi daha önce yükleyip kullandıysanız, kaydedilmiş oturumları ve sol sütunda dosyalarınızı görebilirsiniz.)
+
+11. Dosya transferi için yani dosyayı kendi bilgisayarınıza indirmek için sol sütunda indirmek istediğiniz dosyayı sağ tıklayarak download’u seçerek dosyanızı indirebilirsiniz.
+>>>>>>> main:source/TRUBA/kullanici-el-kitabi/kullanici-ara-yuzu/ssh-ile-baglanti/MobaXterm.rst
 
 
 
+..
 
+    .. image:: /assets/MobaXterm-howto/M9.png
 
+    .. image:: /assets/MobaXterm-howto/M10.png
 
+    .. image:: /assets/MobaXterm-howto/M11.png 
 

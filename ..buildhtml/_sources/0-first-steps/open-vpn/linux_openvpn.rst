@@ -29,8 +29,16 @@ OpenVPN yapılandırması için öncelikle işletim sistemine OpenVPN kurulumunu
 
 	Yukarıdaki işlemleri tamamladıktan sonra terminalinizi kapatmayınız. Kapattığınız takdirde VPN bağlantınız sonlanacaktır.
 
+<<<<<<< HEAD:..buildhtml/_sources/0-first-steps/open-vpn/linux_openvpn.rst
 **5.** VPN uygulamasını çalıştırdığınız terminali kapatmadan yeni bir terminal açarak aşağıdaki kod satırını terminalinize yazarak TRUBA sunucularına erişebilirsiniz.
 
 .. code-block:: bash
      
 	ssh kullanici_adi@172.16.6.11   
+=======
+**5.** VPN uygulamasını çalıştırdığınız terminali kapatmadan, yeni bir terminal açarak aşağıdaki kod satırını terminalinize yazarak arf-ui kullanıcı arayüz sunucularına erişebilirsiniz. Aşağıda verilen adres arf-ui1 kullanıcı arayüz sunucusuna erişim içindir. Diğer sunucular için farklı adresler :ref:`open-vpn` sayfasında verilmiştir.
+
+.. code-block:: bash
+     
+	ssh kullanici_adi@172.16.6.11    
+>>>>>>> main:source/TRUBA/kullanici-el-kitabi/open-vpn/linux_openvpn.rst

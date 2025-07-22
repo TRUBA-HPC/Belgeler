@@ -34,19 +34,25 @@ Bilgisayarınıza uygulamayı yükledikten sonra açıp, TRUBA bilgisayarlarına
 
 .. note::
 
+<<<<<<< HEAD:source/2-temel_bilgiler/ssh_baglanti/putty.rst
     Öncelikle, ULAKNET ağı içinde veya dışında olma durumunuz farketmeksizin, :ref:`OpenVPN bağlantısını başarılı bir şekilde sağlamalısınız <open-vpn>`. Sunucu adı yerine :ref:`ARF bağlantı bilgileri <arf_baglanti>` adresinden öğrenebileceğiniz ``ip`` adresini yazmanız gerekmektedir. 
+=======
+    Öncelikle, ULAKNET ağı içinde veya dışında olma durumunuz farketmeksizin, :ref:`OpenVPN bağlantısını başarılı bir şekilde sağlamalısınız <open-vpn>`. Sunucu adı yerine ``172.16.6.11`` yazmanız gerekmektedir. 
+    
+    Aynı anda sadece bir tane aktif OpenVPN bağlantınız olmalıdır. Eğer başka bir cihazda OpenVPN bağlantınız varsa, bu bağlantıyı sonlandırmadan yeni bir bağlantı kurmaya çalışmayınız.
+>>>>>>> main:source/TRUBA/kullanici-el-kitabi/kullanici-ara-yuzu/ssh-ile-baglanti/putty.rst
 
-..
-   ULAKNET ağı dışından (örneğin üniversite kampüsü dışından) bağlantı sağlıyorsanız eğer öncelikle :ref:`OpenVPN bağlantısını sağlamalısınız <open-vpn>`. Bu durumda sunucu adı yerine ``172.16.11.1`` veya ``levrek1.yonetim`` yazmanız gerekmektedir. 
-
-   ULAKNET ağından sunuculara bağlanmak için ise OpenVPN kullanımına gerek yoktur. Bu durumda sunucu adı yerine ``levrek1.ulakbim.gov.tr`` adresini yazmanız gerekmektedir.
 
 .. image:: /assets/kullanici-arayuzu/ssh-ile-baglanti/putty/images/putty-5.png  
     :width: 1000  
 
 
+<<<<<<< HEAD:source/2-temel_bilgiler/ssh_baglanti/putty.rst
+=======
+
+>>>>>>> main:source/TRUBA/kullanici-el-kitabi/kullanici-ara-yuzu/ssh-ile-baglanti/putty.rst
 **4.**
-Ip adresini girdiğinizde kullanıcı adınızı ve şifrenizi gireceğiniz bir terminal gelecektir. TRUBA tarafından sizlere verilen kullanıcı adı ve şifreyle giriş yapabilirsiniz.
+IP adresini girdiğinizde kullanıcı adınızı ve şifrenizi gireceğiniz bir terminal gelecektir. TRUBA tarafından sizlere verilen kullanıcı adı ve şifreyle giriş yapabilirsiniz.
 
 
 .. image:: /assets/kullanici-arayuzu/ssh-ile-baglanti/putty/images/putty-7.png  

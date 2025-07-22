@@ -91,10 +91,26 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 
     ULAKNET ağı içinde veya dışında olma durumunuz farketmeksizin VPN ile TRUBA sanal ağına başarılı bir şekilde bağlantı sağlandıktan sonra, erişim haklarınıza göre
 	
+<<<<<<< HEAD:source/5-sikca_sorulan_sorular/index.rst
    		- ARF için :ref:`ARF kullanıcı arayüz sunucuları bağlantı bilgileri <arf_baglanti>`
 		- ARF-ACC için :ref:`ARF-ACC kullanıcı arayüz sunucuları bağlantı bilgileri <arf_acc_baglanti>`
 
 	kullanıcı arayüz sunucularından birisine ssh ile bağlanabilirsiniz. :ref:`OpenVPN hakkında bilgilere erişmek için tıklayınız...<open-vpn>`
+=======
+			- 172.16.6.11 ile arf-ui1
+			- 172.16.6.12 ile arf-ui2
+			- 172.16.6.13 ile arf-ui3
+			- 172.16.6.14 ile arf-ui4
+			- 172.16.6.15 ile arf-ui5
+
+	kullanıcı arayüz sunucularından birisine ssh ile bağlanabilirsiniz. :ref:`OpenVPN hakkında bilgilere erişmek için tıklayınız...<open-vpn>`
+
+	Aynı anda sadece bir tane aktif OpenVPN bağlantınız olmalıdır. Eğer başka bir cihazda OpenVPN bağlantınız varsa, bu bağlantıyı sonlandırmadan yeni bir bağlantı kurmaya çalışmayınız.
+	
+..
+	Evet. Sadece ULAKNET ağına bağlı bilgisayarlardan (tüm kamu üniversiteleri ve bazı vakıf üniversiteleri) levrek1.ulakbim.gov.tr sunucusuna SSH ile doğrudan bağlanabilir.
+    Eğer internete ULAKNET üzerinden bağlanılmıyorsa, öncelikle OpenVPN ile TRUBA sanal ağına bağlanılmalı, sonrasında levrek1.ulakbim.gov.tr (ya da 172.16.7.1 adresine) ssh ile bağlanılmalıdır.  
+>>>>>>> main:source/TRUBA/sss.rst
 
 .. _target to ss2:
 
