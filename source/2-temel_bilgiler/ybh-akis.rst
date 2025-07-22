@@ -42,9 +42,14 @@ Hazırlanan SLURM betiği SLURM zamanlayıcısına aşağıdaki komut ile gönde
 
    sbatch job.slurm
 
+Daha fazla bilgi için :ref:`SLURM komutları <basic_slurm_commands>` sayfasını ziyaret edebilirsiniz.
+
 4. Hesaplama Kaynakları
 ------------------------
 
 Görev SLURM tarafından uygun kaynaklara (CPU veya GPU) yönlendirilerek çalıştırılır.
 
 Sistem, kaynakları otomatik olarak tahsis eder ve kullanıcı görevini ilgili düğümlerde yürütür.
+
+* ARF hesaplama kümesi için :ref:`ARF kuyruk bilgisi <arf_kuyruk_bilgisi>` sayfasını ziyaret edebilirsiniz.
+* ARF-ACC hesaplama kümesi için :ref:`ARF-ACC kuyruk bilgisi <arf_acc_kuyruk_bilgisi>` sayfasını ziyaret edebilirsiniz.
