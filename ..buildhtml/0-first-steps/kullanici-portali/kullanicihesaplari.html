@@ -1,0 +1,617 @@
+
+<!DOCTYPE html>
+
+
+<html lang="tr" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="article:modified_time" content="2025-04-21T13:52:41+03:00" />
+    <title>Kullanıcı Hesapları &#8212; TRUBA Kullanıcı Dokümanları</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/site_theme.css?v=80a908aa" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=a88cc430" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=fef41d8b"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../_static/translations.js?v=34f4c3a9"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '0-first-steps/kullanici-portali/kullanicihesaplari';</script>
+    <link rel="index" title="Dizin" href="../../genindex.html" />
+    <link rel="search" title="Ara" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="tr"/>
+    <meta name="docbuild:last-update" content="21 Nis 2025"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/TRUBA_doc-footer.png" class="logo__image only-light" alt="TRUBA Kullanıcı Dokümanları - Home"/>
+    <script>document.write(`<img src="../../_static/TRUBA_doc-footer.png" class="logo__image only-dark" alt="TRUBA Kullanıcı Dokümanları - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Ara" aria-label="Ara" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Ara</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    TRUBA (Türk Ulusal Bilim e-Altyapısı)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">İçerikler</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../index.html">İlk Adımlar</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html">TRUBA Üyelik ve Kaynak Başvuru Rehberi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../open-vpn/openvpn_info.html">OpenVPN Bağlantısı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../MobaXterm.html">Windows’da MobaXterm Kurulumu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arf-baglanti.html">ARF Kullanıcı Arayüzüne Bağlantı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../openondemand/index.html">Open OnDemand Arayüzü</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../arf-acc-baglanti.html">ARF-ACC Kullanıcı Arayüzüne Bağlantı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../TRUBA-arf-gecis-rehberi.html">TRUBA Kümesinden ARF Kümesine Geçiş Rehberi</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../1-hardware/index.html">Sistem Bilgileri</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../1-hardware/arf-genel-bilgileri.html">ARF Kümesi Hakkında Genel Bilgiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1-hardware/hesaplamakumeleri.html">Hesaplama Kümeleri</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1-hardware/yuksek-performansli-dosya-sistemleri.html">Yüksek Performanslı Dosya Sistemleri</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2-run-jobs/index.html">İş Çalıştırma</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2-run-jobs/genel_kurulum/index.html">TRUBA’da Uygulama/Kütüphane Kurulumu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2-run-jobs/interaktif_is_calistirma.html">İnteraktif İş Çalıştırma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2-run-jobs/Applications/index.html">Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2-run-jobs/GPU/index.html">GPU Kılavuzu</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3-user-support/index.html">Kullanıcı Desteği</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../4-access-calls/index.html">EUROHPC ve Erişim Çağrıları</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Bu sayfayı indirin">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/0-first-steps/kullanici-portali/kullanicihesaplari.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Kaynak dosyayı indirin"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="PDF olarak yazdır"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Tam ekran modu"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Ara" aria-label="Ara" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Kullanıcı Hesapları</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> İçindekiler </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#truba-sistemini-kimler-kullanabilir">TRUBA Sistemini Kimler Kullanabilir?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basvuru-ve-hesap-acilma-proseduru">Başvuru ve Hesap Açılma Prosedürü</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standart-kullanici-hesabi-ozellikleri">Standart kullanıcı hesabı özellikleri</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ayricalikli-kullanim-ardeb-projeleri">Ayrıcalıklı Kullanım / ARDEB Projeleri</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#truba-sertifika-islemleri">TRUBA Sertifika İşlemleri</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#yeni-sertifika-basvurusu">Yeni Sertifika Başvurusu</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sertifikami-nerede-kullanabilirim"><em>Sertifikamı Nerede Kullanabilirim?</em></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#truba-kullanici-politikasi">TRUBA Kullanıcı Politikası</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="kullanici-hesaplari">
+<span id="id1"></span><h1>Kullanıcı Hesapları<a class="headerlink" href="#kullanici-hesaplari" title="Link to this heading">#</a></h1>
+<section id="truba-sistemini-kimler-kullanabilir">
+<h2>TRUBA Sistemini Kimler Kullanabilir?<a class="headerlink" href="#truba-sistemini-kimler-kullanabilir" title="Link to this heading">#</a></h2>
+<p>Hesaplama kümesi üzerinde çalışabilir uygulamalara sahip Türkiye’deki tüm üniversite, araştırma kurumu ve enstitülerdeki araştırmacılar, öğretim üyeleri, öğrenciler TRUBA kaynaklarını kullanmak üzere TRUBA kullanıcısı olabilir.</p>
+<p>Ticari kullanıcılar ve endüstriyel iş birlikli akademik projeler TRUBA oluşumu tarafından değerlendirilerek kabul edilir.</p>
+<p>Altyapının kullanılması için çalışabilir uygulamaların (açık kaynak kodlu ve/veya lisanslı) aşağıdaki özelliklerden en az birini içermesi beklenmektedir:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Birçok farklı bağımsız alt göreve bölünebilen yüksek geçişli hesaplamalar,</p></li>
+<li><p>Büyük miktarda verinin işlenmesini gerektiren yüksek performanslı hesaplamalar,</p></li>
+<li><p>Küçük bir zaman diliminde çok sayıda işlemin yapılmasını gerektiren işlemci merkezli hesaplamalar,</p></li>
+<li><p>Verilerin bir araya getirilmesi, saklanması ve çözümlenmesini de gerektirebilen veri merkezli hesaplamalar.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="basvuru-ve-hesap-acilma-proseduru">
+<h2>Başvuru ve Hesap Açılma Prosedürü<a class="headerlink" href="#basvuru-ve-hesap-acilma-proseduru" title="Link to this heading">#</a></h2>
+<p>Yukarıdaki ve başvuru sayfasındaki kullanım şartlarını sağlayan ve Linux işletim sistemi temel kullanım bilgisine sahip araştırmacı <a class="reference external" href="http://portal.truba.gov.tr/">portal.truba.gov.tr</a> adresine kayıt olduktan sonra 5 iş günü içerisinde portaldaki kayıtlı e-posta adresine bilgilendirme e-postaları gönderilecektir. Bilgilendirme e-postalarının iletilebilmesi için de öncelikli olarak araştırmacının e-posta adresi dorulamasını gerçekleştirmiş olması gerekmektedir (<a class="reference internal" href="index.html#uyelik-bilgi"><span class="std std-ref">TRUBA Üyelik ve Kaynak Başvuru Rehberi</span></a>).</p>
+<p>Ön onaydan geçen araştırmacının kimlik bilgileri, e-Devlet ve YÖKSİS üzerinden onaylanmaktadır. Bu nedenle, araştırmacının herhangi bir kimlik bilgisini e-posta ve/veya başka yöntemlerle göndermesine gerek bulunmamaktadır.</p>
+<p>Yüksek Lisans öğrenimine devam etmekte olan araştırmacılara kullanıcı hesabı tahsisi yapılabilmesi için <a class="reference external" href="http://portal.truba.gov.tr/">TRUBA portal</a> başvurusundan sonra portal üzerinden kayıtlı e-posta adreslerine “Danışman Onayı” ile ilgili bir e-posta iletilmektedir. İlgili bilgilendirme mailine istinaden birlikte çalıştıkları danışmanları tarafından <code class="docutils literal notranslate"><span class="pre">grid-teknik&#64;ulakbim.gov.tr</span></code> adresimize mail gönderilmesi gerekmektedir.</p>
+<p>Kullanıcının kimlik doğrulamasının e-Devlet ve YÖKSİS üzerinden yapılmasının ardından, kullanıcının sistem üzerindeki kullanıcı hesabı (user account), ve kümeye iş gönderebilmesi için kaynak yöneticisi hesabı (bank account) kısa süre içerisinde açılarak, kullanıcıya e-posta ile kullanıcı adı ve şifresi hakkında geri bildirim yapılacaktır. TRUBA hesabı açılan araştırmacı, kullanıcı hesabı başvuru sayfasındaki kullanım politikasını kabul eder ve bu şartlara göre çalışmalarını yürütür.</p>
+<div class="admonition note">
+<p class="admonition-title">Not</p>
+<p>TRUBA sistemini kullanan araştırmacılarımız bilimsel çalışmalar yürüttükleri için, yayınları ile eşleştirmek amacıyla, ORCID ID’lerine de ihtiyaç duymaktayız. Dolayısıyla, TRUBA sistemini kullanmak üzere başvuruda bulunacak araştırmacılarımızın <a class="reference external" href="https://orcid.org/">https://orcid.org/</a> adresinden e-posta adresleri ile eşlesen bir ORCID ID alıp portaldaki (<a class="reference external" href="http://portal.truba.gov.tr/">portal.truba.gov.tr</a>) profillerine eklemeleri gerekmektedir.</p>
+</div>
+<section id="standart-kullanici-hesabi-ozellikleri">
+<span id="kullanici-hesabi-ozellik"></span><h3>Standart kullanıcı hesabı özellikleri<a class="headerlink" href="#standart-kullanici-hesabi-ozellikleri" title="Link to this heading">#</a></h3>
+<p>Her araştırmacıya kullanıcı adı ile birlikte aynı anda kullanılabilecek çekirdek miktarı, çekirdek saat kotası ve disk kotası tanımlanmaktadır. Mevcut eğitim düzeyine göre tanımlanan kotalar aşağıda belirtilmektedir:</p>
+<ul>
+<li><p><em>Lisans Öğrencileri:</em>  Danışmanları birlikte bir projeye dahil olmaları durumunda hesap açılmakta olup, sadece ilgili proje hesabının kaynak miktarlarından faydalanabilmektedirler.</p></li>
+<li><p><em>Y. Lisans Öğrencileri:</em> Danışman onaylarından sonra hesapları açılmakta olup, aynı anda 56 çekirdek kullanımı, toplam 200.000 çekirdek saat hesaplama kotası ve 2TByte veri depolama alanı sağlanmaktadır.</p>
+<blockquote>
+<div><p>Danışmanları ile birlikte bir projeye dahil olmaları ve ilgili projenin TRUBA kaynaklarında bir proje hesabı bulunması durumunda, ilgili proje hesabının kaynak miktarlarından da faydalanabilmektedirler.</p>
+</div></blockquote>
+</li>
+<li><p><em>Doktora Öğrencileri ve Akademisyenler:</em> Hesapları YÖKSİS bilgilerine göre doğrudan açılmaktadır. Aynı anda 168 çekirdek kullanımı, toplam 400.000 çekirdek saat hesaplama kotası ve 2TByte veri depolama alanı sağlanmaktadır.</p>
+<blockquote>
+<div><p>Araştırmacılar bir projeye dahil olmaları ve ilgili projenin TRUBA kaynaklarında bir proje hesabı bulunması durumunda, ilgili proje hesabının kaynak miktarlarından da faydalanabilmektedirler.</p>
+</div></blockquote>
+</li>
+</ul>
+<p>Konu ile ilgili her türlü soru ve sorununuzu <a class="reference external" href="mailto:grid-teknik&#37;&#52;&#48;ulakbim&#46;gov&#46;tr">grid-teknik<span>&#64;</span>ulakbim<span>&#46;</span>gov<span>&#46;</span>tr</a> adresine e-posta ile iletebilirsiniz.</p>
+<p>Tüm standart kullanıcı hesaplarının ev dizini kotaları 1 TB’dır. Yine zaman içerisinde TRUBA bu miktarı değiştirme esnekliğine sahiptir. Herhangi bir proje kapsamında çalışan kullanıcıların projeleri için ayrıca proje disk kotası tanımlanmaktadır. TRUBA da hem kullanıcı hem de proje kotaları grup temelli hesaplanır. Herhangi bir kullanıcının ya da projenin kullandığı disk miktarı hesaplanırken, disk sistemi üzerinde grubu ilgili kullanıcıya ya da projeye ait olan dosyaların toplam büyüklüğü göz önüne alınır.</p>
+<p>Ev dizinlerinde oluşturulan dosya ve dizinlerin grupları, dosyayı oluşturan kullanıcının ki ile aynı olur, proje dizinlerinde oluşturulan dosya ve dizinlerin grupları ilgili projenin grubu ile aynı olur. Kullanıcılar varsayılan olarak kendi kullanıcı adı ile aynı grupta bulunurlar. Herhangi bir proje dolayısı ile birden fazla gruba dahil olan kullanıcılar dosya ya da dizinlerinin gruplarını dahil oldukları gruplardan herhangi birine <code class="docutils literal notranslate"><span class="pre">chown,</span> <span class="pre">chgrp</span></code> gibi komutlar yardımıyla değiştirebilirler.</p>
+<p>Ayrıca herhangi bir projeye dahil olan kullanıcı, kendi ev dizininde projesi ile ilgili çalışırken oluşturduğu ve daha sonra oluşturacağı dosya veya dizinlerin gruplarının kendi kişisel grubu yerine otomatik olarak proje grubu olması sağlayabilir.</p>
+<div class="admonition note">
+<p class="admonition-title">Not</p>
+<p>Örneğin; /truba/home/sefa/test dizininde oluşturulacak dosya ve dizinlerin gruplarının “sefa” yerine otomatik “grid-teknik” olarak tanımlaması için aşağıdaki komut satırlarının uygulanması gerekmektedir:</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">/</span><span class="n">truba</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">sefa</span><span class="o">/</span><span class="n">test</span>
+<span class="n">chown</span> <span class="o">-</span><span class="n">R</span>  <span class="n">grid</span><span class="o">-</span><span class="n">teknik</span> <span class="o">/</span><span class="n">truba</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">sefa</span><span class="o">/</span><span class="n">test</span>
+<span class="n">chmod</span> <span class="n">g</span><span class="o">+</span><span class="n">s</span> <span class="o">/</span><span class="n">truba</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">sefa</span><span class="o">/</span><span class="n">test</span>
+</pre></div>
+</div>
+<p>Bu aşamadan sonra test dizini içerisinde oluşturulacak dosya ve dizinlerin grubu <code class="docutils literal notranslate"><span class="pre">grid-teknik</span></code> olacaktır.</p>
+<p>TRUBA tarafından standart kullanıcılara verilen hizmet best-effort niteliğindedir (<a class="reference external" href="https://en.wikipedia.org/wiki/Best-effort_delivery">https://en.wikipedia.org/wiki/Best-effort_delivery</a>). Bu nedenle kullanıcılara hizmetin devamlılığı, kalitesi, verilerin saklanması ve korunması, ve diğer TRUBA hizmetleri konusunda TRUBA’nın herhangi bir sorumluluğu yoktur, herhangi bir güvence ya da garanti sunmaz.</p>
+<p>Güncel olarak tüm kullanıcı hesaplarının TRUBA’daki tüm kuyruklara iş gönderme yetkisi vardır. Sadece yeni nesil kaynaklardan <strong>hamsi</strong> kümesine doktora öğrencileri, akademisyenler, proje hesapları iş gönderebilirler. Ayrıca yeni nesil A100 GPU’ların bulunduğu <strong>palamut</strong> kümesi kullanımı sadece Yapay Zeka çalışmalarına ayrılmış olup, bu alanda çalışma yapan araştırmacılar tarafından kullanılabilmektedir.</p>
+<p>Konu ile ilgili her türlü soru ve sorununuzu <code class="docutils literal notranslate"><span class="pre">grid-teknik&#64;ulakbim.gov.tr</span></code> adresine e-posta ile iletebilirsiniz.</p>
+</section>
+<section id="ayricalikli-kullanim-ardeb-projeleri">
+<h3>Ayrıcalıklı Kullanım / ARDEB Projeleri<a class="headerlink" href="#ayricalikli-kullanim-ardeb-projeleri" title="Link to this heading">#</a></h3>
+<p>Standart kullanıcı hesaplarına tanınan hesaplama kaynaklarının yeterli olmadığı ya da zaman kısıtlı projelerin yürütülmekte olduğu durumlarda, cüzi bir hizmet bedeli karşılığında kuyruk önceliği olan, ayrıcalıklı hizmet almak mümkündür. Talep edilen kaynak miktarı için verilecek hizmet bedeli, ilgili donanımın talep edilen kullanım süresinde harcayacağı elektrik enerjisi miktarı ve altyapı bakım-onarım maliyetleri göz önüne alınarak hesaplanmaktadır.</p>
+<p>ARDEB’e proje başvurusunda bulunacak kullanıcılar proje başvurusu sırasında, yeni hesaplama donanımı alımı için fon talebinde bulunabilecekleri gibi, uygulamalarının TRUBA üzerinde çalışması mümkünse, hesaplarını TRUBA’da yürütmeyi tercih edebilirler.</p>
+<p>Ayrıntılı bilgi için <a class="reference internal" href="../../5-payment/index.html#hizmet-bedelleri"><span class="std std-ref">Proje Kapsamında TRUBA HSB ve VSB hizmetleri</span></a> sayfamızı inceleyebilirsiniz.</p>
+</section>
+</section>
+<section id="truba-sertifika-islemleri">
+<span id="yeni-sertifika"></span><h2>TRUBA Sertifika İşlemleri<a class="headerlink" href="#truba-sertifika-islemleri" title="Link to this heading">#</a></h2>
+<section id="yeni-sertifika-basvurusu">
+<h3>Yeni Sertifika Başvurusu<a class="headerlink" href="#yeni-sertifika-basvurusu" title="Link to this heading">#</a></h3>
+<p>Yeni sertifika başvurusu sadece ve sadece Avrupa Araştırma Altyapıları’nda yer alan kaynaklara iş göndermek, ilgili AB projelerinde yetkilendirme servisleri için kullanılmaya başlanmıştır. Bu nedenle sadece ilgili alanlarda ihtiyaç duyanlar <a class="reference external" href="https://portal.truba.gov.tr/">https://portal.truba.gov.tr/</a> üzerinden sertifika başvurusunda bulunabilir veya <a class="reference external" href="mailto:ca&#37;&#52;&#48;grid&#46;org&#46;tr">ca<span>&#64;</span>grid<span>&#46;</span>org<span>&#46;</span>tr</a> adresinden yardım isteyebilirler.</p>
+<p><a class="reference external" href="https://portal.truba.gov.tr">https://portal.truba.gov.tr</a> sayfasındaki Sertifika menüsünden yeni kullanıcı sertifikası başvurusunda bulunulabilinir. TRUBA sertifika otoritesi (CA) tarafından hazırlanıp imzalanarak size eposta ile gönderilecektir.</p>
+<section id="sertifikami-nerede-kullanabilirim">
+<h4><em>Sertifikamı Nerede Kullanabilirim?</em><a class="headerlink" href="#sertifikami-nerede-kullanabilirim" title="Link to this heading">#</a></h4>
+<p>Sertifika kullanım alanları aşağıdaki gibi özetlenebilir:</p>
+<ul class="simple">
+<li><p>Uluslararası projelerde kişisel olarak yetkilendirme</p></li>
+<li><p>Uluslararası araştırma projelerinin web sayfalarına erişim için</p></li>
+</ul>
+<p>Yeniden Sertifika Başvurusu Ne Zaman ve Nasıl Yapılır?</p>
+<p>Tüm araştırmacılara ve servislere verilen sertifika süresi 1(bir) yıldır. Bir yılın sonunda yeniden <a class="reference external" href="https://portal.truba.gov.tr">https://portal.truba.gov.tr</a> adresinde yer alan Sertifika menüsünden başvuruda bulunabilirsiniz.</p>
+<p>Not: Sertifika başvuruları 5 iş günü içerisinde cevaplanmaktadır.</p>
+</section>
+</section>
+</section>
+<section id="truba-kullanici-politikasi">
+<h2>TRUBA Kullanıcı Politikası<a class="headerlink" href="#truba-kullanici-politikasi" title="Link to this heading">#</a></h2>
+<p><strong>TRUBA kullanıcısının aşağıdaki ilkelere uyması beklenmektedir.</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>TRUBA kaynakları bu politika metninde belirtilen ilkeler doğrultusunda kullanılabilir.</p></li>
+<li><p>TRUBA kaynaklarını kullanarak elde edilmiş sonuçların doğrudan ya da dolaylı olarak kullanıldığı tüm makale, bildiri, tez (yüksek lisans, doktora) veya diğer (poster, vb) çalışmalarında, kullanıcının TRUBA oluşumuna teşekkür etmesi zorunludur. Teşekkür örneklerine ulaşmak için  <span class="xref std std-ref">tesekkur-truba</span> sayfasını ziyaret edebilirsiniz.</p></li>
+<li><p>Kullanıcıların TRUBA’ya başvuru sırasında belirtilmiş uygulamalardan farklı bir iş çalıştırmaması beklenir. Böyle bir ihtiyaç durumunda kullanıcının <code class="docutils literal notranslate"><span class="pre">grid-teknik&#64;ulakbim.gov.tr</span></code> adresine e-posta atarak yeni uygulamalar konusunda yeniden kullanıcı talebinde bulunması gerekmektedir.</p></li>
+<li><p>Arayüz makinesi veya portal kullanıcı hesabı şifresinin güvenli bir şekilde saklanmasından kullanıcı sorumludur. Arayüz makinası veya portal kullanıcı hesabı şifresinin güvenli bir şekilde saklanmasından kullanıcı sorumludur. TRUBA kullanıcı hesabı kişiye özeldir. TRUBA kullanıcı hesabının, hesap sahibinden farklı bir kişi(ler) tarafından kullanılması durumunda, ilgili TRUBA kullanıcı hesabına erişim engellenir.</p></li>
+<li><p>Bir başkasının hesabını kullanan TRUBA kullanıcısının hesabı, erişime kapatılır.</p></li>
+<li><p>Kullanıcılar tarafından TRUBA kullanıcı sertifikası güvenliğinin sağlanması gerekmektedir.</p></li>
+<li><p>Depolama elemanlarının uygulamalar dışında farklı amaçlar için kullanılmaması gerekmektedir.</p></li>
+<li><p>TRUBA kaynakları yasadışı herhangi bir amaçla, altyapının yönetimini ve güvenliğini tehdit edecek biçimde kullanılamaz.</p></li>
+<li><p>Sistemde bir güvenlik açığı gören ya da böyle bir durumdan şüphelenen bir kullanıcının ivedilikle <code class="docutils literal notranslate"><span class="pre">grid-teknik&#64;ulakbim.gov.tr</span></code> e-posta adresini kullanarak ya da 0 312 298 93 63 numaralı telefon numarasını arayarak altyapı işletenlerini uyarması gerekmektedir.</p></li>
+<li><p>Kayıtlı kullanıcı bilgisi, TRUBA tarafından sadece yönetsel, operasyonel, kaynakların kullanımında kimlik doğrulama ve yetkilendirme amaçlı kullanılabilir. Bu amaçlar dışında mevcut kimlik bilgilerinin gizli tutulması esastır.</p></li>
+<li><p>TRUBA altyapısı uygulama geliştirme amaçlı kullanılamaz. Kullanıcılar ancak geliştirilmiş uygulamalarını (arayüz makinesinde ya da kendi makinelerinde derlenmiş çalıştırılabilir iş ve veri dosyalarını) TRUBA altyapısına aktarabilirler.</p></li>
+<li><p>Kullanıcı arayüz makinesinden konsol aracılığıyla gridi kullanan kullanıcılar programlarını arayüz makinesinde derleyip derlenmiş çalıştırılabilir dosyalarını küme bilgisayara ya da Grid’e göndermek durumundadırlar.</p></li>
+<li><p>TRUBA kullanıcılarının yürütmekte oldukları çalışma ve projeler yıllık olarak değerlendirilecektir.</p></li>
+<li><p>Kullanıcı kabul edilebilir kullanım politikasında yer alan şartlardan herhangi birine uymamasından doğacak sonuçlardan sorumludur.</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> İçindekiler
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#truba-sistemini-kimler-kullanabilir">TRUBA Sistemini Kimler Kullanabilir?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basvuru-ve-hesap-acilma-proseduru">Başvuru ve Hesap Açılma Prosedürü</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standart-kullanici-hesabi-ozellikleri">Standart kullanıcı hesabı özellikleri</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ayricalikli-kullanim-ardeb-projeleri">Ayrıcalıklı Kullanım / ARDEB Projeleri</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#truba-sertifika-islemleri">TRUBA Sertifika İşlemleri</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#yeni-sertifika-basvurusu">Yeni Sertifika Başvurusu</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sertifikami-nerede-kullanabilirim"><em>Sertifikamı Nerede Kullanabilirim?</em></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#truba-kullanici-politikasi">TRUBA Kullanıcı Politikası</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Tarafından TÜBİTAK ULAKBİM
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2021, TÜBİTAK ULAKBİM.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  Son güncelleme: 21 Nis 2025.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <div class="footer-extra" style="text-align: center; margin-top: 20px;">
+    <table style="margin: 0 auto;">
+        <tr>
+            <td>
+                <a href="https://ulakbim.tubitak.gov.tr" target="_blank" style="margin-right: 30px; display: inline-block;">
+                    <img src="https://www.truba.gov.tr/wp-content/uploads/2025/02/STB-ULAKBIM_doc-footer.png" alt="TÜBİTAK ULAKBİM Web Sitesi" height="60px">
+                </a>
+                <a href="https://www.truba.gov.tr" target="_blank" style="margin-right: 30px; display: inline-block;">
+                    <img src="https://www.truba.gov.tr/wp-content/uploads/2025/02/TRUBA_doc-footer.png" alt="TRUBA Web Sitesi" height="60px">
+                </a>
+                <a href="https://eurocc.truba.gov.tr/" target="_blank" style="margin-right: 30px; display: inline-block;">
+                    <img src="https://www.truba.gov.tr/wp-content/uploads/2025/02/NCCTurkiye-Color.png" alt="EuroCC Türkiye Web Sitesi" height="60px">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; padding-top: 10px;">
+                <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+                    <img src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" alt="CC BY-NC-SA 4.0">
+                </a>
+                Bu çalışma, <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Atıf-Gayri Ticari-Aynı Lisansla Paylaş 4.0 Uluslararası Lisansı</a> ile lisanslanmıştır.
+                <br><br>2025.01.01
+            </td>
+        </tr>
+    </table>
+  </div>
+
+  </body>
+</html>

@@ -1,0 +1,665 @@
+
+<!DOCTYPE html>
+
+
+<html lang="tr" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GREASY Kullanımı &#8212; TRUBA Kullanıcı Dokümanları</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/site_theme.css?v=80a908aa" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=a88cc430" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=fef41d8b"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../_static/translations.js?v=34f4c3a9"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '2-run-jobs/Applications/GREASY/greasy_kullanim';</script>
+    <link rel="index" title="Dizin" href="../../../genindex.html" />
+    <link rel="search" title="Ara" href="../../../search.html" />
+    <link rel="next" title="GROMACS Kılavuzu" href="../GROMACS/index.html" />
+    <link rel="prev" title="Apptainer" href="../Apptainer/Apptainer.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="tr"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/TRUBA_doc-footer.png" class="logo__image only-light" alt="TRUBA Kullanıcı Dokümanları - Home"/>
+    <script>document.write(`<img src="../../../_static/TRUBA_doc-footer.png" class="logo__image only-dark" alt="TRUBA Kullanıcı Dokümanları - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Ara" aria-label="Ara" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Ara</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../index.html">
+                    TRUBA (Türk Ulusal Bilim e-Altyapısı)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">İçerikler</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../0-first-steps/index.html">İlk Adımlar</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/kullanici-portali/index.html">TRUBA Üyelik ve Kaynak Başvuru Rehberi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/open-vpn/openvpn_info.html">OpenVPN Bağlantısı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/MobaXterm.html">Windows’da MobaXterm Kurulumu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/arf-baglanti.html">ARF Kullanıcı Arayüzüne Bağlantı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/openondemand/index.html">Open OnDemand Arayüzü</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/arf-acc-baglanti.html">ARF-ACC Kullanıcı Arayüzüne Bağlantı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/TRUBA-arf-gecis-rehberi.html">TRUBA Kümesinden ARF Kümesine Geçiş Rehberi</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../1-hardware/index.html">Sistem Bilgileri</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../1-hardware/arf-genel-bilgileri.html">ARF Kümesi Hakkında Genel Bilgiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../1-hardware/hesaplamakumeleri.html">Hesaplama Kümeleri</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../1-hardware/yuksek-performansli-dosya-sistemleri.html">Yüksek Performanslı Dosya Sistemleri</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../index.html">İş Çalıştırma</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../genel_kurulum/index.html">TRUBA’da Uygulama/Kütüphane Kurulumu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../interaktif_is_calistirma.html">İnteraktif İş Çalıştırma</a></li>
+<li class="toctree-l2 current active"><a class="reference internal" href="../index.html">Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../GPU/index.html">GPU Kılavuzu</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../3-user-support/index.html">Kullanıcı Desteği</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../4-access-calls/index.html">EUROHPC ve Erişim Çağrıları</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Tam ekran modu"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Ara" aria-label="Ara" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>GREASY Kullanımı</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> İçindekiler </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gorev-dosyasinin-olusturulmasi">Görev Dosyasının Oluşturulması</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#log-dosyasi">Log Dosyası</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#restart-dosyasi">Restart Dosyası</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="greasy-kullanimi">
+<span id="greasy-kilavuzu"></span><h1>GREASY Kullanımı<a class="headerlink" href="#greasy-kullanimi" title="Link to this heading">#</a></h1>
+<section id="gorev-dosyasinin-olusturulmasi">
+<h2>Görev Dosyasının Oluşturulması<a class="headerlink" href="#gorev-dosyasinin-olusturulmasi" title="Link to this heading">#</a></h2>
+<p>Kullanıcının yürütmek istediği  görevlerin tanımlanacağı <code class="docutils literal notranslate"><span class="pre">görev</span> <span class="pre">dosyası</span></code> en önemli unsurdur. Daha önce de belirtildiği gibi, dosyanın her bir satırı Greasy tarafından bir görev olarak alınır. Dolayısıyla, görev dosyasındaki her satır tam olarak ne çalıştırmak istediğinizi içerir. Örneğin, çalıştırmak istediğiniz program için çalıştırılabilir komutun yer aldığı dosyanın tam yolu ve ardından gerekli yönlendirmelerle birlikte argümanlar. Satır numarası, görev kimliği (ID) dediğimiz şeye karşılık gelir. Bu ID, günlük dosyasını ve kullanıcı tarafından tanımlanan bağımlılıkların ne zaman gerekli olduğunu anlamak için kullanışlıdır.</p>
+<p># ile başlayan satırlar yorum olarak değerlendirilir ve işlenmez, ancak yine de ilgili satır için bir ID numarası ayırır. Bu, örneğin, ilk satırda bir açıklama/yorum yer alıyorsa ve ikinci satır geçerli bir görev içeriyorsa, bu görevin ID=2 olacağı anlamına gelmektedir. Bu şekilde, dosya satır numaralarını göstermek için bir editör kullanmak (örn: vim) ve herhangi bir görevi ID aracılığıyla sadece ilgili dosya satır numarasına giderek bulmak kolaydır.</p>
+<p>Çalışma dizini görev dosyasında ilgili satırın başında, görev komutundan önce ve <code class="docutils literal notranslate"><span class="pre">[&#64;</span> <span class="pre">ve</span> <span class="pre">&#64;]</span></code> arasında belirtilir. Bu sözdizimi, görevin belirtilen dizinde yürütülmesini sağlar. Örnek olarak:</p>
+<p>görev 1 # Greasy’nin başlatıldığı dizinde yürütülür (SLURM betik dosyası ve ilgili görev dosyasının yer aldığı, işin submit edildiği dizin)
+[&#64; /home/user/greasy &#64;] görev 2 # Belirtilen klasördeki görev 2 yürütülür (<code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/home/user/greasy</span> <span class="pre">&amp;&amp;</span> <span class="pre">görev</span> <span class="pre">2</span></code>)</p>
+<p>Bağımlılıklar satırın başında, görevden hemen önce ve [# ve #] arasında belirtilir. Geçerli görevden önce bitmesi gereken tüm görevler buraya dahil edilmelidir ve birden fazla görev bağımlılık olarak dahil edilebilir. Aşağıda, görevler arasında bazı bağımlılıklar içeren örnek bir görev dosyasını görebilirsiniz:</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-text"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-codespaces secondary" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 3.75C3.5 2.784 4.284 2 5.25 2h13.5c.966 0 1.75.784 1.75 1.75v7.5A1.75 1.75 0 0 1 18.75 13H5.25a1.75 1.75 0 0 1-1.75-1.75Zm-2 12c0-.966.784-1.75 1.75-1.75h17.5c.966 0 1.75.784 1.75 1.75v4a1.75 1.75 0 0 1-1.75 1.75H3.25a1.75 1.75 0 0 1-1.75-1.75ZM5.25 3.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h13.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Zm-2 12a.25.25 0 0 0-.25.25v4c0 .138.112.25.25.25h17.5a.25.25 0 0 0 .25-.25v-4a.25.25 0 0 0-.25-.25Z"></path><path d="M10 17.75a.75.75 0 0 1 .75-.75h6.5a.75.75 0 0 1 0 1.5h-6.5a.75.75 0 0 1-.75-.75Zm-4 0a.75.75 0 0 1 .75-.75h.5a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1-.75-.75Z"></path></svg> Görev Dosyası (Tıklayınız)</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<blockquote>
+<div><div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+greasy_list.txt</label><div class="sd-tab-content docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>task1
+<span class="o">[</span><span class="c1"># 1 #] task2</span>
+<span class="o">[</span><span class="c1"># -2, 2 #] task3</span>
+task4
+<span class="o">[</span><span class="c1"># 2-4 #] task5</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+job-greasy.slurm</label><div class="sd-tab-content docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --account=kullanici_adiniz</span>
+<span class="c1">#SBATCH --output=slurm-%j.out</span>
+<span class="c1">#SBATCH --error=slurm-%j.err</span>
+<span class="c1">#SBATCH --time=01:00:00</span>
+<span class="c1">#SBATCH --job-name=greasy-test</span>
+
+<span class="c1">#SBATCH --partition=orfoz</span>
+<span class="c1">#SBATCH --ntasks=112</span>
+<span class="c1">#SBATCH --nodes=1</span>
+<span class="c1">#SBATCH --cpus-per-task=1</span>
+
+<span class="c1">#SBATCH --mail-user= your_email_address</span>
+<span class="c1">#SBATCH --mail-type=BEGIN,END,FAIL</span>
+<span class="c1">#SBATCH --mail-type=ALL</span>
+
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot; GREASY &quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;SLURM_NODELIST </span><span class="nv">$SLURM_NODELIST</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;NUMBER OF TASKS </span><span class="nv">$SLURM_NTASKS</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;NUMBER OF CORES=</span><span class="nv">$SLURM_NPROCS</span><span class="s2">&quot;</span>
+
+<span class="c1">### Load modules</span>
+
+module<span class="w"> </span>purge
+module<span class="w"> </span>load<span class="w"> </span>lib/greasy/greasy
+
+<span class="c1">### module listesinden kullanilacak program varsa ilgili program icin gerekli moduller de ayrica yuklenmelidir.</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;We have the modules: </span><span class="k">$(</span>module<span class="w"> </span>list<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>.info
+
+<span class="c1">### calistirilacak islerin sirali listesinin yer aldigi dosya</span>
+<span class="nv">FILE</span><span class="o">=</span>greasy_list.txt
+
+<span class="c1">#Ayni anda çalistirilacak is sayisi</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">GREASY_NWORKERS</span><span class="o">=</span><span class="m">112</span>
+
+greasy<span class="w"> </span><span class="nv">$FILE</span>
+
+<span class="nb">exit</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+İş Gönderme</label><div class="sd-tab-content docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sbatch<span class="w"> </span>job-greasy.slurm
+</pre></div>
+</div>
+</div>
+</div>
+</div></blockquote>
+</div>
+</details><p>greasy_list.txt dosyasında verilen görev 1 ve 4’ün herhangi bir bağımlılığı yoktur. Görev 2, görev 1’e bağlıdır ve görev 3, görev 1 ve 2’ye bağlıdır. <code class="docutils literal notranslate"><span class="pre">-2</span></code> ile göreceli bir bağımlılık belirtilmiştir: 2 satır yukarıdaki görevi, yani görev 1’i işaret etmektedir. Ve son olarak, görev 5 ise görev 2, 3 ve 4’e bağlıdır. Bu durumda, bağımlılıkları bir aralık olarak belirtilmiştir. Görev 3’te olduğu gibi, öğeleri virgülle ayırarak daha fazla bağımlılık ekleyebilirsiniz.</p>
+<p>Yalnızca geriye dönük bağımlılıklara izin verilmektedir. Bu, yalnızca geçerli ID’den daha küçük ID’ye sahip görevlere bağımlılık ekleyebileceğiniz anlamına gelir. Başka bir deyişle, görev dosyasında yalnızca önceki satırlarda tanımlanan görevlere bağımlılık ekleyebilirsiniz.</p>
+<div class="admonition note">
+<p class="admonition-title">Not</p>
+<p>Bir Greasy görev dosyası oluştururken aşağıdaki basit kuralları aklınızda bulundurmanız yeterlidir:</p>
+<ul>
+<li><p>Her satır bir görevdir</p></li>
+<li><p># ile başlayan satırlar yorumlardır.</p></li>
+<li><p>Dosya satır numarası ile görev kimliği (ID) arasında bire bir ilişki vardır.</p></li>
+<li><p>Her görev için çalışma dizinini [&#64; &lt;path&gt; &#64;] ile belirtmek mümkündür.</p></li>
+<li><p>Bağımlılıkları ifade etmek için satır başında ve köşeli parantezler arasında görev kimliğini kullanın [# &lt;bağımlılıkların listesi buraya gider&gt; #] .</p></li>
+<li><p>Ve bağımlılıklarla ilgili olarak, aşağıdaki hususları unutmayın:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Yalnızca geriye dönük bağımlılıklara izin verilir.</p></li>
+<li><p>Bağımlılıkları ayırmak için <code class="docutils literal notranslate"><span class="pre">,</span></code> kullanın.</p></li>
+<li><p>Belirli bir aralıktaki bağımlılıkların sıralamasını ifade etmek için <code class="docutils literal notranslate"><span class="pre">-</span></code> kullanın. Örneğin: [# 3-6 #] geçerli görevin görev 3’ten 6’ya (her ikisi de dahil) bağlı olduğu anlamına gelir.</p></li>
+<li><p>Daha önceki sıralarda yer alan bağımlılıkları ifade etmek için de <code class="docutils literal notranslate"><span class="pre">-</span></code> kullanın. örneğin: [# -1 #] geçerli görevin önceki göreve bağlı olduğu anlamına gelir.</p></li>
+<li><p>ID’leri ayırmak için <code class="docutils literal notranslate"><span class="pre">,</span></code> ve <code class="docutils literal notranslate"><span class="pre">-</span></code> simgelerini istediğiniz gibi birleştirebilirsiniz.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<p>Bağlı görevleri içeren bir örneği aşağıda bulabilirsiniz:</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-text"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-codespaces secondary" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 3.75C3.5 2.784 4.284 2 5.25 2h13.5c.966 0 1.75.784 1.75 1.75v7.5A1.75 1.75 0 0 1 18.75 13H5.25a1.75 1.75 0 0 1-1.75-1.75Zm-2 12c0-.966.784-1.75 1.75-1.75h17.5c.966 0 1.75.784 1.75 1.75v4a1.75 1.75 0 0 1-1.75 1.75H3.25a1.75 1.75 0 0 1-1.75-1.75ZM5.25 3.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h13.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Zm-2 12a.25.25 0 0 0-.25.25v4c0 .138.112.25.25.25h17.5a.25.25 0 0 0 .25-.25v-4a.25.25 0 0 0-.25-.25Z"></path><path d="M10 17.75a.75.75 0 0 1 .75-.75h6.5a.75.75 0 0 1 0 1.5h-6.5a.75.75 0 0 1-.75-.75Zm-4 0a.75.75 0 0 1 .75-.75h.5a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1-.75-.75Z"></path></svg> Bağlılık İçeren Görev Dosyası (Tıklayınız)</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<blockquote>
+<div><div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+greasy_dependency_list.txt</label><div class="sd-tab-content docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># this line is a comment</span>
+/bin/sleep<span class="w"> </span><span class="m">2</span>
+<span class="c1"># the following task is 4. Tasks IDs 1 and 3 do not exist.</span>
+/bin/sleep<span class="w"> </span><span class="m">4</span>
+/bin/sleep<span class="w"> </span><span class="m">5</span>
+/bin/sleep<span class="w"> </span><span class="m">6</span>
+/bin/sleep<span class="w"> </span><span class="m">7</span>
+<span class="c1"># the following task will be run after completion of the &quot;sleep 5&quot;</span>
+<span class="o">[</span><span class="c1"># 5 #] /bin/sleep 9</span>
+<span class="c1"># the following task will be run after completion of the &quot;sleep 9&quot;</span>
+<span class="o">[</span><span class="c1"># -2 #] /bin/sleep 11</span>
+<span class="c1"># the following task is invalid because tasks 1 and 3 do not exist</span>
+<span class="o">[</span><span class="c1">#1-3#] /bin/sleep 13</span>
+<span class="c1"># the following task will be run after completion of tasks 2, 5, 6 and 7</span>
+<span class="o">[</span><span class="c1">#2, 5 - 7 #] /bin/sleep 15</span>
+<span class="c1"># the following task will be executed on the directory /tmp/scratch</span>
+<span class="o">[</span>@<span class="w"> </span>/tmp/scratch<span class="w"> </span>@<span class="o">]</span><span class="w"> </span><span class="nb">pwd</span>
+<span class="c1"># it is possible to combine dependencies and working directory for a task</span>
+<span class="o">[</span>@<span class="w"> </span>/tmp/scratch<span class="w"> </span>@<span class="o">][</span><span class="c1"># -2 #] echo “It works!”</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></blockquote>
+</div>
+</details></section>
+<section id="log-dosyasi">
+<h2>Log Dosyası<a class="headerlink" href="#log-dosyasi" title="Link to this heading">#</a></h2>
+<p>Greasy hala çalışırken veya tamamlandıktan sonra, log dosyasını kontrol edebilirsiniz. Log dosyası, herhangi bir zamanda ne yapıldığı, görevlerin ne zaman ve nerede yürütüldüğü ve yürütme sırasında meydana gelen olası hatalar veya sorunlar hakkında bilgi sağlar. LogLevel 3 (Bilgi modu) yalnızca minimum yararlı bilgi üretmektedir. Aşağıda, ornek-liste.txt dosyasının 3 çalışanla yürütülmesinden elde edilen günlük kayıtlarına bir örnek verilmiştir.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-text"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-codespaces secondary" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 3.75C3.5 2.784 4.284 2 5.25 2h13.5c.966 0 1.75.784 1.75 1.75v7.5A1.75 1.75 0 0 1 18.75 13H5.25a1.75 1.75 0 0 1-1.75-1.75Zm-2 12c0-.966.784-1.75 1.75-1.75h17.5c.966 0 1.75.784 1.75 1.75v4a1.75 1.75 0 0 1-1.75 1.75H3.25a1.75 1.75 0 0 1-1.75-1.75ZM5.25 3.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h13.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Zm-2 12a.25.25 0 0 0-.25.25v4c0 .138.112.25.25.25h17.5a.25.25 0 0 0 .25-.25v-4a.25.25 0 0 0-.25-.25Z"></path><path d="M10 17.75a.75.75 0 0 1 .75-.75h6.5a.75.75 0 0 1 0 1.5h-6.5a.75.75 0 0 1-.75-.75Zm-4 0a.75.75 0 0 1 .75-.75h.5a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1-.75-.75Z"></path></svg> Örnek Log Dosyası (Tıklayınız)</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<blockquote>
+<div><div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+greasy-logfile.log</label><div class="sd-tab-content docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="m">2024</span>-09-16<span class="w"> </span><span class="m">16</span>:50:15<span class="o">]</span><span class="w"> </span>Start<span class="w"> </span>greasing<span class="w"> </span>short-example.txt
+<span class="o">[</span><span class="m">2024</span>-09-16<span class="w"> </span><span class="m">16</span>:50:15<span class="o">]</span><span class="w"> </span>INFO:<span class="w"> </span>BASIC<span class="w"> </span>engine<span class="w"> </span>is<span class="w"> </span>ready<span class="w"> </span>to<span class="w"> </span>run<span class="w"> </span>with<span class="w"> </span><span class="m">3</span><span class="w"> </span>workers
+<span class="o">[</span><span class="m">2024</span>-09-16<span class="w"> </span><span class="m">16</span>:50:15<span class="o">]</span><span class="w"> </span>INFO:<span class="w"> </span>Allocating<span class="w"> </span>task<span class="w"> </span><span class="m">1</span>
+<span class="o">[</span><span class="m">2024</span>-09-16<span class="w"> </span><span class="m">16</span>:50:15<span class="o">]</span><span class="w"> </span>INFO:<span class="w"> </span>Allocating<span class="w"> </span>task<span class="w"> </span><span class="m">2</span>
+<span class="o">[</span><span class="m">2024</span>-09-16<span class="w"> </span><span class="m">16</span>:50:15<span class="o">]</span><span class="w"> </span>INFO:<span class="w"> </span>Allocating<span class="w"> </span>task<span class="w"> </span><span class="m">3</span>
+<span class="o">[</span><span class="m">2024</span>-09-16<span class="w"> </span><span class="m">16</span>:50:20<span class="o">]</span><span class="w"> </span>INFO:<span class="w"> </span>Task<span class="w"> </span><span class="m">3</span><span class="w"> </span>completed<span class="w"> </span>successfully<span class="w"> </span>on<span class="w"> </span>node<span class="w"> </span>orfoz9.<span class="w"> </span>Elapsed:<span class="w"> </span><span class="m">00</span>:00:05
+<span class="o">[</span><span class="m">2024</span>-09-16<span class="w"> </span><span class="m">16</span>:50:25<span class="o">]</span><span class="w"> </span>INFO:<span class="w"> </span>Task<span class="w"> </span><span class="m">2</span><span class="w"> </span>completed<span class="w"> </span>successfully<span class="w"> </span>on<span class="w"> </span>node<span class="w"> </span>orfoz9.<span class="w"> </span>Elapsed:<span class="w"> </span><span class="m">00</span>:00:10
+<span class="o">[</span><span class="m">2024</span>-09-16<span class="w"> </span><span class="m">16</span>:50:35<span class="o">]</span><span class="w"> </span>INFO:<span class="w"> </span>Task<span class="w"> </span><span class="m">1</span><span class="w"> </span>completed<span class="w"> </span>successfully<span class="w"> </span>on<span class="w"> </span>node<span class="w"> </span>orfoz9.<span class="w"> </span>Elapsed:<span class="w"> </span><span class="m">00</span>:00:20
+<span class="o">[</span><span class="m">2024</span>-09-16<span class="w"> </span><span class="m">16</span>:50:35<span class="o">]</span><span class="w"> </span>INFO:<span class="w"> </span>BASIC<span class="w"> </span>engine<span class="w"> </span>finished
+<span class="o">[</span><span class="m">2024</span>-09-16<span class="w"> </span><span class="m">16</span>:50:35<span class="o">]</span><span class="w"> </span>INFO:<span class="w"> </span>Summary<span class="w"> </span>of<span class="w"> </span><span class="m">3</span><span class="w"> </span>tasks:<span class="w"> </span><span class="m">3</span><span class="w"> </span>OK,<span class="w"> </span><span class="m">0</span><span class="w"> </span>FAILED,<span class="w"> </span><span class="m">0</span><span class="w"> </span>CANCELLED,<span class="w"> </span><span class="m">0</span><span class="w"> </span>INVALID.
+<span class="o">[</span><span class="m">2024</span>-09-16<span class="w"> </span><span class="m">16</span>:50:35<span class="o">]</span><span class="w"> </span>INFO:<span class="w"> </span>Total<span class="w"> </span>time:<span class="w"> </span><span class="m">00</span>:00:20
+<span class="o">[</span><span class="m">2024</span>-09-16<span class="w"> </span><span class="m">16</span>:50:35<span class="o">]</span><span class="w"> </span>INFO:<span class="w"> </span>Resource<span class="w"> </span>Utilization:<span class="w"> </span><span class="m">58</span>.33%
+<span class="o">[</span><span class="m">2024</span>-09-16<span class="w"> </span><span class="m">16</span>:50:35<span class="o">]</span><span class="w"> </span>Finished<span class="w"> </span>greasing<span class="w"> </span>short-example.txt
+</pre></div>
+</div>
+</div>
+</div>
+</div></blockquote>
+</div>
+</details><p>Log dosyasından gördüğünüz gibi, her kayıt ön ek olarak bir zaman damgası ile birlikte gelir, bu da Greasy’nin davranışını ve tüm iş süreci boyunca görev planlamasını anlamayı kolaylaştırır. Günlüğe hızlıca baktığımızda, programın 16:50:15’te başladığını ve 16:50:35’te bittiğini görüyoruz.  Kullanılan aracın “BASIC” olduğunu ve 3 işçi ile yapılandırıldığını da gözlemleyebiliriz.</p>
+<p>Tahsis edilecek sadece 3 görev ve 3 işçi olduğundan, Greasy başlangıçta tüm görevleri tüm işçilere tahsis eder. Daha sonra Greasy, başarı veya hata bildiren görev tamamlamalarını, görevin başlatıldığı düğümü ve çalıştırılması için geçen süreyi kaydeder.</p>
+<p>Son olarak, tüm görevler çalışıp tamamlandığında, Greasy log dosyasında başarıyla tamamlanan görevler, başarısızlıklar veya iptal edilen görevler gibi işin çalışması hakkında bazı istatistikler gösterir. Genel olarak işin çalışması için geçen süreyi ve kaynak kullanımını kontrol etmek de faydalıdır. Kaynak kullanımı değeri ne kadar yüksekse, Greasy görevleri çalıştırmak için mevcut kaynakları o kadar verimli kullanmış demektir. Bu sayının çok düşük olduğunu düşünüyorsanız, mümkün olan en uzun süre meşgul olmalarını sağlamak için işçi sayısını değiştirmeyi düşünün.</p>
+</section>
+<section id="restart-dosyasi">
+<h2>Restart Dosyası<a class="headerlink" href="#restart-dosyasi" title="Link to this heading">#</a></h2>
+<p>Bazen işler beklendiği gibi çalışmayabilir ve bazı görevlerin hatta tüm Greasy işleminin anormal bir şekilde bitmesi mümkündür. Böyle bir durum söz konusu olduğunda Greasy; başarısız olan, iptal edilen veya yürütülmeyen görevleri içeren bir yeniden başlatma dosyası oluşturur. Yeniden başlatma dosyası Greasy için geçerli bir görev dosyasıdır, bu nedenle ilk seferde düzgün çalışamayan görevleri çalıştırmak için kullanılabilir. Aşağıda example.txt dosyasını çalıştıran bir yeniden başlatma dosyası örneğini görebilirsiniz.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-text"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-codespaces secondary" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 3.75C3.5 2.784 4.284 2 5.25 2h13.5c.966 0 1.75.784 1.75 1.75v7.5A1.75 1.75 0 0 1 18.75 13H5.25a1.75 1.75 0 0 1-1.75-1.75Zm-2 12c0-.966.784-1.75 1.75-1.75h17.5c.966 0 1.75.784 1.75 1.75v4a1.75 1.75 0 0 1-1.75 1.75H3.25a1.75 1.75 0 0 1-1.75-1.75ZM5.25 3.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h13.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Zm-2 12a.25.25 0 0 0-.25.25v4c0 .138.112.25.25.25h17.5a.25.25 0 0 0 .25-.25v-4a.25.25 0 0 0-.25-.25Z"></path><path d="M10 17.75a.75.75 0 0 1 .75-.75h6.5a.75.75 0 0 1 0 1.5h-6.5a.75.75 0 0 1-.75-.75Zm-4 0a.75.75 0 0 1 .75-.75h.5a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1-.75-.75Z"></path></svg> Restart Dosyası (Tıklayınız)</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<blockquote>
+<div><div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-5" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+greasy-restartfile</label><div class="sd-tab-content docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1"># Greasy restart file generated at 2024-09-16 16:53:50</span>
+<span class="c1"># Original task file: example.txt</span>
+<span class="c1"># Log file: greasy.log</span>
+<span class="c1">#</span>
+<span class="c1"># Warning: Task 2 failed</span>
+/usr/bin/hostname
+<span class="c1"># Warning: Task 13 was cancelled due to a dependency failure</span>
+<span class="o">[</span><span class="c1"># 8 #] /bin/sleep 13</span>
+<span class="c1"># Warning: Task 15 failed</span>
+/usr/bin/hostname
+<span class="c1"># Warning: Task 22 failed</span>
+<span class="o">[</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">]</span><span class="w"> </span>/bin/sleep<span class="w"> </span><span class="m">22</span>
+<span class="c1"># Warning: Task 24 failed</span>
+<span class="o">[</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="c1">#] /bin/sleep 24</span>
+<span class="c1"># Invalid tasks were found. Check these lines on example.txt:</span>
+<span class="c1"># 23, 26, 27, 29, 31, 32</span>
+<span class="c1"># End of restart file</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></blockquote>
+</div>
+</details><p>Yeniden başlatma dosyasının kendisi hakkında bilgi veren küçük bir başlık vardır: dosyanın ne zaman oluşturulduğu, yürütülmekte olan orijinal görev dosyası ve yürütmenin log dosyası. Bu bilgiler, yeniden başlatmadaki görevleri orijinal iş dosyasındaki görevler ile ilişkilendirmek ve ne olduğunu anlamak için çok kullanışlıdır.</p>
+<p>Bir görev başarısız olduğunda veya iptal edildiğinde, Greasy orijinal dosyadaki görevi tanımlayan ve neden yeniden başlatmada olduğunu belirten bir yorum ekler. Görev, Greasy’ye daha önce çıkması söylendiği için çalıştırılamadıysa, herhangi bir yorum eklenmeyecektir. Son olarak, yeniden başlatma dosyasının sonunda, orijinal görev dosyasında sözdizimi veya anlamsal hatalar nedeniyle geçersiz görevler varsa, bunlar ilgili ID bilgileri ile birlikte listelenir.</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../Apptainer/Apptainer.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">önceki</p>
+        <p class="prev-next-title">Apptainer</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../GROMACS/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">sonraki</p>
+        <p class="prev-next-title">GROMACS Kılavuzu</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> İçindekiler
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gorev-dosyasinin-olusturulmasi">Görev Dosyasının Oluşturulması</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#log-dosyasi">Log Dosyası</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#restart-dosyasi">Restart Dosyası</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Tarafından TÜBİTAK ULAKBİM
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2021, TÜBİTAK ULAKBİM.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <div class="footer-extra" style="text-align: center; margin-top: 20px;">
+    <table style="margin: 0 auto;">
+        <tr>
+            <td>
+                <a href="https://ulakbim.tubitak.gov.tr" target="_blank" style="margin-right: 30px; display: inline-block;">
+                    <img src="https://www.truba.gov.tr/wp-content/uploads/2025/02/STB-ULAKBIM_doc-footer.png" alt="TÜBİTAK ULAKBİM Web Sitesi" height="60px">
+                </a>
+                <a href="https://www.truba.gov.tr" target="_blank" style="margin-right: 30px; display: inline-block;">
+                    <img src="https://www.truba.gov.tr/wp-content/uploads/2025/02/TRUBA_doc-footer.png" alt="TRUBA Web Sitesi" height="60px">
+                </a>
+                <a href="https://eurocc.truba.gov.tr/" target="_blank" style="margin-right: 30px; display: inline-block;">
+                    <img src="https://www.truba.gov.tr/wp-content/uploads/2025/02/NCCTurkiye-Color.png" alt="EuroCC Türkiye Web Sitesi" height="60px">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; padding-top: 10px;">
+                <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+                    <img src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" alt="CC BY-NC-SA 4.0">
+                </a>
+                Bu çalışma, <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Atıf-Gayri Ticari-Aynı Lisansla Paylaş 4.0 Uluslararası Lisansı</a> ile lisanslanmıştır.
+                <br><br>2025.01.01
+            </td>
+        </tr>
+    </table>
+  </div>
+
+  </body>
+</html>

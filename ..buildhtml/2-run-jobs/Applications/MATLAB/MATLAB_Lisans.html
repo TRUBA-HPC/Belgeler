@@ -1,0 +1,558 @@
+
+<!DOCTYPE html>
+
+
+<html lang="tr" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="article:modified_time" content="2025-03-05T11:36:25+03:00" />
+    <title>TRUBA’da MATLAB Lisansının Tanıtılması &#8212; TRUBA Kullanıcı Dokümanları</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/site_theme.css?v=80a908aa" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=a88cc430" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=fef41d8b"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../_static/translations.js?v=34f4c3a9"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '2-run-jobs/Applications/MATLAB/MATLAB_Lisans';</script>
+    <link rel="index" title="Dizin" href="../../../genindex.html" />
+    <link rel="search" title="Ara" href="../../../search.html" />
+    <link rel="next" title="TRUBA’da MATLAB Çalıştırmak için Gerekli Konfigürasyonların Yapılandırılması" href="MATLAB_TRUBAConfig.html" />
+    <link rel="prev" title="MATLAB Kılavuzu" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="tr"/>
+    <meta name="docbuild:last-update" content="05 Mar 2025"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/TRUBA_doc-footer.png" class="logo__image only-light" alt="TRUBA Kullanıcı Dokümanları - Home"/>
+    <script>document.write(`<img src="../../../_static/TRUBA_doc-footer.png" class="logo__image only-dark" alt="TRUBA Kullanıcı Dokümanları - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Ara" aria-label="Ara" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Ara</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../index.html">
+                    TRUBA (Türk Ulusal Bilim e-Altyapısı)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">İçerikler</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../0-first-steps/index.html">İlk Adımlar</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/kullanici-portali/index.html">TRUBA Üyelik ve Kaynak Başvuru Rehberi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/open-vpn/openvpn_info.html">OpenVPN Bağlantısı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/MobaXterm.html">Windows’da MobaXterm Kurulumu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/arf-baglanti.html">ARF Kullanıcı Arayüzüne Bağlantı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/openondemand/index.html">Open OnDemand Arayüzü</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/arf-acc-baglanti.html">ARF-ACC Kullanıcı Arayüzüne Bağlantı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../0-first-steps/TRUBA-arf-gecis-rehberi.html">TRUBA Kümesinden ARF Kümesine Geçiş Rehberi</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../1-hardware/index.html">Sistem Bilgileri</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../1-hardware/arf-genel-bilgileri.html">ARF Kümesi Hakkında Genel Bilgiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../1-hardware/hesaplamakumeleri.html">Hesaplama Kümeleri</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../1-hardware/yuksek-performansli-dosya-sistemleri.html">Yüksek Performanslı Dosya Sistemleri</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../index.html">İş Çalıştırma</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../genel_kurulum/index.html">TRUBA’da Uygulama/Kütüphane Kurulumu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../interaktif_is_calistirma.html">İnteraktif İş Çalıştırma</a></li>
+<li class="toctree-l2 current active"><a class="reference internal" href="../index.html">Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../GPU/index.html">GPU Kılavuzu</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../3-user-support/index.html">Kullanıcı Desteği</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../4-access-calls/index.html">EUROHPC ve Erişim Çağrıları</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Tam ekran modu"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Ara" aria-label="Ara" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>TRUBA’da MATLAB Lisansının Tanıtılması</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> İçindekiler </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#akademik-tah-total-academic-headcount-lisansi-olan-kullanicilar">Akademik (TAH: Total Academic Headcount) Lisansı Olan Kullanıcılar</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arf-ui-uzerinde-matlab-calistirarak-truba-ya-is-gondermek-icin-akademik-lisans-tanimlamasi">ARF-UI Üzerinde MATLAB Çalıştırarak TRUBA’ya İş Göndermek İçin Akademik Lisans Tanımlaması</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kayar-floating-lisansi-olan-kullanicilar">Kayar (Floating) Lisansı Olan Kullanıcılar</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="truba-da-matlab-lisansinin-tanitilmasi">
+<span id="matlab-trubalisans"></span><h1>TRUBA’da MATLAB Lisansının Tanıtılması<a class="headerlink" href="#truba-da-matlab-lisansinin-tanitilmasi" title="Link to this heading">#</a></h1>
+<p>TRUBA üzerinde MATLAB çalıştırmak isteyen kullanıcıların <strong>kendilerine ait bir lisansa</strong> sahip olması gerekmektedir. Bu lisans <strong>akademik ya da floating (kayar) lisans</strong> olabilir.</p>
+<p>Lisans türleri hakkında bilgiye <a class="reference external" href="https://www.mathworks.com/pricing-licensing.html">https://www.mathworks.com/pricing-licensing.html</a> adresinden erişebilirsiniz. Ayrıca üniversitelerin bilgi işlem merkezlerinden de lisansınız hakkında detaylı bilgi edinebilirsiniz.</p>
+<p>MATLAB, sahip olunan lisans türüne göre TRUBA üzerinde farklı şekillerde çalıştırılabilir.</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<a class="reference internal" href="#matlab-akademik"><span class="std std-ref">Akademik (TAH: Total Academic Headcount) Lisansı Olan Kullanıcılar</span></a></div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<a class="reference internal" href="#matlab-floatinglisans"><span class="std std-ref">Kayar (Floating) Lisansı Olan Kullanıcılar</span></a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="akademik-tah-total-academic-headcount-lisansi-olan-kullanicilar">
+<span id="matlab-akademik"></span><h2>Akademik (TAH: Total Academic Headcount) Lisansı Olan Kullanıcılar<a class="headerlink" href="#akademik-tah-total-academic-headcount-lisansi-olan-kullanicilar" title="Link to this heading">#</a></h2>
+<p>EGI ile MATHWORKS arasındaki anlaşma sayesinde kullanıcılar, <strong>“MATLAB Parallel Server lisansları”</strong> ile EGI üyesi ülkelerin süperbilgisayar merkezlerinde MATLAB çalıştırabilmektedirler. Akademik lisansınızın Mathworks üzerinden doğrulanabilmesi için grafik ekrana ihtiyaç duyulmaktadır. Bu lisansa sahip olarak TRUBA üzerinde MATLAB çalıştıracaksanız birkaç metot bulunmaktadır.</p>
+<ul class="simple">
+<li><p><span class="xref std std-ref">Kişisel bilgisayarınızda MATLAB çalıştırarak</span></p></li>
+<li><p>TRUBA üzerindeki kullanıcı arayüz sunucularından <a class="reference internal" href="../../../0-first-steps/openondemand/index.html#grafik-ekran"><span class="std std-ref">Grafik Ekran Bağlantısı</span></a> alarak</p></li>
+</ul>
+<section id="arf-ui-uzerinde-matlab-calistirarak-truba-ya-is-gondermek-icin-akademik-lisans-tanimlamasi">
+<span id="matlab-arfui"></span><h3>ARF-UI Üzerinde MATLAB Çalıştırarak TRUBA’ya İş Göndermek İçin Akademik Lisans Tanımlaması<a class="headerlink" href="#arf-ui-uzerinde-matlab-calistirarak-truba-ya-is-gondermek-icin-akademik-lisans-tanimlamasi" title="Link to this heading">#</a></h3>
+<p>Öncelikle kişisel lisansınızın TRUBA üzerinde aktif edilmesi gerekmektedir. Lisansınızı aktifleştirmek için <strong>arf-ui</strong> kullanıcı arayüz sunucularından herhangi birine grafik arayüzü desteği ile bağlanmak gereklidir. TRUBA kullanıcı arayüzlerine iki farklı şekilde grafik arayüzü bağlantısı yapılabilir.</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="../../../0-first-steps/openondemand/index.html#open-ondemand"><span class="std std-ref">Open OnDemand</span></a> ile bağlanarak. “Interactive Apps” sekmesinden <code class="docutils literal notranslate"><span class="pre">ARF</span> <span class="pre">Desktop</span></code> <strong>(Linux XFCE Desktop)</strong> oturumu başlatılabilir. Linux Masaüstü üzerinde çalıştırılacak uygulamalar, küme üzerindeki hesaplama sunucularında çalıştırılmış olacaktır. Linux Masaüstünde <strong>terminal</strong> uygulamasından verilecek komutlarla sunucu üzerinde MATLAB da dahil olmak üzere herhangi bir görsel uygulama çalıştırılabilir.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-XY</span> <span class="pre">username&#64;sunucu_adi</span></code> komutu aracılığıyla <a class="reference internal" href="../../../0-first-steps/openondemand/index.html#sshxforward"><span class="std std-ref">grafik arayüz</span></a> alarak</p></li>
+</ol>
+<p>Arayüz sunucusunda terminal ekranı aldıktan sonra MATLAB ile küme profili oluşturmaya başlayabiliriz.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sistemde yüklü MATLAB versiyonlarını görmek için</span>
+<span class="n">module</span> <span class="n">avail</span> <span class="o">-</span><span class="n">t</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span> <span class="o">|</span> <span class="n">grep</span> <span class="o">-</span><span class="n">i</span> <span class="n">matlab</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/matlab-module.png"><img alt="../../../_images/matlab-module.png" src="../../../_images/matlab-module.png" style="width: 800px;" />
+</a>
+<p>Sistem üzerinde farklı versiyonlar yüklü olabilir (R2021b, R2024a vb). Mevcut durumda ARF kümesinde R2024a versiyonu kurulu olarak bulunmaktadır.  İlgili versiyonu kullanmak için öncelikle bu yazılımı <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span></code> komutu ile yüklemeniz gerekecektir.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## sisteminizde daha önceden yüklü modülleriniz olabilir.</span>
+<span class="c1">## Dolayısıyla herhangi bir çakışma olmaması için öncelikle yüklü modülleri temizleyiniz</span>
+<span class="n">module</span> <span class="n">purge</span>
+
+<span class="c1">## modülü yüklemek için</span>
+<span class="n">module</span> <span class="n">load</span> <span class="n">apps</span><span class="o">/</span><span class="n">matlab</span><span class="o">/</span><span class="mi">2024</span><span class="n">a</span>
+
+<span class="c1">## modülün doğru şekilde yüklendiğini doğrulamak için</span>
+<span class="n">module</span> <span class="nb">list</span>
+
+<span class="c1">## MATLAB&#39;i calistirmak icin</span>
+<span class="n">matlab</span> <span class="o">-</span><span class="n">nosplash</span>
+</pre></div>
+</div>
+<p>MATLAB’ı ilk kez çalıştırdığınızda aşağıdaki gibi bir sorgu ekranı açılacak ve lisansınızı aktive etmeniz istenecektir.</p>
+<a class="reference internal image-reference" href="../../../_images/matlab2.png"><img alt="../../../_images/matlab2.png" src="../../../_images/matlab2.png" style="width: 800px;" />
+</a>
+<p>Lisans doğrulamasını gerçekleştirdikten sonra kendi (yerel) bilgisayarınızda MATLAB’ı çalıştırarak SLURM küme ayarlarını gerçekleştirebilirsiniz.</p>
+<ul class="simple">
+<li><p>Yerel bilgisarınızda kurulum ile ilgili önemli bilgilendirmeler için ve ilgili küme ayarlarını yapmak üzere gerekli işlem adımları için <a class="reference internal" href="MATLAB_TRUBAConfig.html#local-matlab"><span class="std std-ref">Kişisel Bilgisayarınızda MATLAB Çalıştırırak TRUBA’ya İş Göndermek</span></a> yönergesini takip edebilirsiniz.</p></li>
+<li><p>Ayar dosyasını bir kez çalıştırmanız yeterlidir. Daha sonra <a class="reference internal" href="MATLAB_TRUBAConfig.html#matlab-truba-config"><span class="std std-ref">Hesap ve Kuyruk Parametrelerinin Yapılandırması</span></a> yönergelerini takip ederek hesaplama kümelerine iş gönderebilirsiniz.</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Uyarı</p>
+<p>Kişisel bilgisayar üzerinden çalıştırdığınız MATLAB ile TRUBA kümesine iş göndermek için <code class="docutils literal notranslate"><span class="pre">/arf/sw/scripts/matlab/matlabScripts/truba.nonshared.R2024a</span></code> ayar dosyasını kullanmanız gerekecektir. Aksi takdirde işlerinizde hata ile karşılaşırsınız.</p>
+</div>
+</section>
+</section>
+<section id="kayar-floating-lisansi-olan-kullanicilar">
+<span id="matlab-floatinglisans"></span><h2>Kayar (Floating) Lisansı Olan Kullanıcılar<a class="headerlink" href="#kayar-floating-lisansi-olan-kullanicilar" title="Link to this heading">#</a></h2>
+<p>Lisans doğrulaması, kullanıcının kendi kurumundaki lisans sunucusu tarafından yapılır. Bu nedenle kurumdaki lisans sunucusunun TRUBA sunucularına lisans doğrulaması için erişim izni vermesi gereklidir. TRUBA’nın çıkış IP adresi <strong>193.140.99.241</strong>’dir. Bu yetki ile ilgili kurumunuzun bilgi işlem daire başkanlığıyla iletişime geçiniz.</p>
+<p>Kayar lisansına sahipseniz bir slurm betik dosyası hazırlayarak, işlerinizi <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> komutu ile iş kuyruğuna gönderebilirsiniz.</p>
+<p>TRUBA üzerinde halihazırda bazı MATLAB versiyonları yüklü durumdadır. Bu yazılımlar zaman içerisinde yeni versiyonlar eklendikçe güncellenmektedir</p>
+<p>Sistemde yüklü yazılımları <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">available</span></code> komutu ile görebilirsiniz. Moduller hakkındaki ayrıntılı bilgiye <span class="xref std std-ref">moduller-truba</span> sayfasından erişim sağlayabilirsiniz.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sistemde yüklü matlab versiyonlarını görmek için</span>
+<span class="n">module</span> <span class="n">avail</span> <span class="o">-</span><span class="n">t</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span> <span class="o">|</span> <span class="n">grep</span> <span class="o">-</span><span class="n">i</span> <span class="n">matlab</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/matlab1.png"><img alt="../../../_images/matlab1.png" src="../../../_images/matlab1.png" style="width: 800px;" />
+</a>
+<div class="admonition warning">
+<p class="admonition-title">Uyarı</p>
+<p>TRUBA üzerinde küme yönetimi ve iş zamanlayıcı olarak <a class="reference internal" href="../../slurm_file_properties.html#slurm-betik"><span class="std std-ref">SLURM</span></a> kullanılmaktadır. Kümede iş çalıştırmadan önce <a class="reference internal" href="../../slurm_file_properties.html#slurm-betik"><span class="std std-ref">SLURM betik özellikleri</span></a> hakkında bilgi edinmiş olmanız beklenmektedir. İş göndereceğiniz hesaplama kümeleri ile ilgili bilgiye <a class="reference internal" href="../../../1-hardware/hesaplamakumeleri.html#hesaplama-kumeleri"><span class="std std-ref">Hesaplama Kümeleri</span></a> sayfasından erişebilirsiniz.</p>
+</div>
+<p>Lisans dosyanızı TRUBA arayüz sunucusuna transfer ediniz. Bunu terminal aracılığıyla <code class="docutils literal notranslate"><span class="pre">scp</span></code> komutu ile yapabileceğiniz gibi <span class="xref std std-ref">winscp, filezilla</span> vb. gibi SFTP yazılımları aracılğıyla da gerçekleştirebilirsiniz.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## username kısmını TRUBA kullanıcı adınızla değiştirmeyi unutmayin</span>
+<span class="n">scp</span> <span class="o">-</span><span class="n">r</span> <span class="s2">&quot;lisans_dosyanızın_bilgisayarınızdaki_yeri&quot;</span> <span class="n">username</span><span class="o">@</span><span class="mf">172.16.6.11</span><span class="p">:</span><span class="o">/</span><span class="n">arf</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">username</span><span class="o">/</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">önceki</p>
+        <p class="prev-next-title">MATLAB Kılavuzu</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="MATLAB_TRUBAConfig.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">sonraki</p>
+        <p class="prev-next-title">TRUBA’da MATLAB Çalıştırmak için Gerekli Konfigürasyonların Yapılandırılması</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> İçindekiler
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#akademik-tah-total-academic-headcount-lisansi-olan-kullanicilar">Akademik (TAH: Total Academic Headcount) Lisansı Olan Kullanıcılar</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arf-ui-uzerinde-matlab-calistirarak-truba-ya-is-gondermek-icin-akademik-lisans-tanimlamasi">ARF-UI Üzerinde MATLAB Çalıştırarak TRUBA’ya İş Göndermek İçin Akademik Lisans Tanımlaması</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kayar-floating-lisansi-olan-kullanicilar">Kayar (Floating) Lisansı Olan Kullanıcılar</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Tarafından TÜBİTAK ULAKBİM
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2021, TÜBİTAK ULAKBİM.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  Son güncelleme: 05 Mar 2025.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <div class="footer-extra" style="text-align: center; margin-top: 20px;">
+    <table style="margin: 0 auto;">
+        <tr>
+            <td>
+                <a href="https://ulakbim.tubitak.gov.tr" target="_blank" style="margin-right: 30px; display: inline-block;">
+                    <img src="https://www.truba.gov.tr/wp-content/uploads/2025/02/STB-ULAKBIM_doc-footer.png" alt="TÜBİTAK ULAKBİM Web Sitesi" height="60px">
+                </a>
+                <a href="https://www.truba.gov.tr" target="_blank" style="margin-right: 30px; display: inline-block;">
+                    <img src="https://www.truba.gov.tr/wp-content/uploads/2025/02/TRUBA_doc-footer.png" alt="TRUBA Web Sitesi" height="60px">
+                </a>
+                <a href="https://eurocc.truba.gov.tr/" target="_blank" style="margin-right: 30px; display: inline-block;">
+                    <img src="https://www.truba.gov.tr/wp-content/uploads/2025/02/NCCTurkiye-Color.png" alt="EuroCC Türkiye Web Sitesi" height="60px">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; padding-top: 10px;">
+                <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+                    <img src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" alt="CC BY-NC-SA 4.0">
+                </a>
+                Bu çalışma, <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Atıf-Gayri Ticari-Aynı Lisansla Paylaş 4.0 Uluslararası Lisansı</a> ile lisanslanmıştır.
+                <br><br>2025.01.01
+            </td>
+        </tr>
+    </table>
+  </div>
+
+  </body>
+</html>

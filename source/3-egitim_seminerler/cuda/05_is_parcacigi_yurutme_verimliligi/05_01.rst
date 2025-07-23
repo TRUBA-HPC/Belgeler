@@ -1,0 +1,91 @@
+=======================
+Warplar ve SIMD Donanım
+=======================
+
+Öğrenim Hedefleri
+-----------------
+
+*  CUDA iş parçacıklarının SIMD donanım ile nasıl yürütüldüğünü öğrenmek
+
+   *  Warplara bölme, 
+   *  SIMD donanım,
+   *  Kontrol dağılımı.
+
+Programlama Birimi Olarak Warplar 
+---------------------------------------------------
+
+Her CUDA bloğu her biri 32 iş parçacığından oluşacak şekilde **warplara** bölünür. 
+Daha sonra SM tarafından bir programlama birimi olarak kullanılırlar. 
+SM bir **warpı** belli bir noktaya kadar çalıştırıp, durdurup, yürütmeye başka bir **warpdan** devam edebilir. 
+GPUlar bunu çok fazla bir ek yük gerektirmeden yapabildiğinden veri erişimi yapan **warpları** durdurarak hesaplama ve veri iletişimini aynı anda verimli bir şekilde yapabilir. 
+Kısacası SM tarafından zamanlanacak en küçük birim **warp** olmaktadır. 
+Bu da aynı **warp** içerisindeki iş parçacıklarının gerçek anlamda tek komut çoklu veri (SIMD) şeklinde yürütülmesi anlamına gelmektedir. 
+Çünkü bir SM içerisine aynı anda gelen iş parçacıklarını tek bir kontrol ünitesinden yönetilir. 
+Bu da aynı komutu işlemlerini gerektirir. Kısacası SM tarafından iş parçacıkları **warplar** olarak işleme alındığından bir **warp** içerisindeki bütün 
+iş parçacıklarının aynı komutla yürütüldüğünü söyleyebiliriz. Bu noktada belirtilmesi gereken bir başka nokta da 32 sayısının şu anki donanımsal 
+gerçeklemesi ile bağlantılı olduğudur. Yeni nesil grafik işlem birimlerinde farklı sayılarda iş parçacığı içeren **warplar** bulunabilir.
+
+SM ve SIMD
+----------
+
+.. image:: ../../../assets/cuda/05/01/01.png
+   :width: 500
+   :align: center
+
+Tipik bir SM'in modellemesini yukarıdaki görselde görebilirsiniz. 
+Bu görselde SM üzerinde birden fazla işlem birimi bulunmaktadır. 
+Bu işlem birimleri, iş parçacıklarının yapması gereken aritmatik veya mantıksal işlemi gerçekleştirmektedirler. 
+Bunu da, paylaşımlı belleği ve kontrol ünitesini paylaşarak yaparkar. 
+Bu bize şunu göstermektedir: Bu işlem birimleri belirli bir zamanda tek bir komut (ing., instruction) çalıştırabilirler. 
+Dolayısıyla, SM tarafından yürütülecek olan iş parçacıkları aynı işlemi gerçekleştirmek zorundadırlar. 
+Fakat bu işlem farklı veri üzerinde gerçekleştirerek anlamlı bir paralelleşmeye ulaşılabilir (toplama işleminin, vektörlerin farklı elemanları 
+üzerinde gerçekleştirilmesi örneğini hatırlayınız).
+
+Çok Boyutlu CUDA Bloklarının Warplara Bölünmesi
+------------------------------------------------
+
+Üstte de bahsettiğimiz gibi blok içerisinde bulunan bloklar 32 li gruplar halinde **warplara** bölünmüştür. 
+Çok boyutlu bloklarda **warplara** bölünme işlemi satır öncelikli (row-major) bir lineerizasyon yapılarak gerçekleştirilir (aşağıdaki görseli inceleyebilirsiniz). 
+
+.. image:: ../../../assets/cuda/05/01/02.png
+   :width: 600
+   :align: center
+
+Lineerize edilen bloklar **warplara** bölünür. 
+**Warp** içerisindeki iş parçacıları sıralı olarak artmaktadırlar. 
+Dolayısıyla **warp 0**, iş parçacığı 0 ile başlamaktadır. Ancak **warplar** arasında yürütülme sırası bulunmamaktadır. 
+**warp 0'ın warp 1'den** önce yürütüleceğine dair bir zorunluluk bulunmaz. 
+Aynı şekilde **warp** içerisindeki iş parçacıklarının işlemi bitirme açısından bir sıra söz konusu değildir. 
+Yani **warp 0** içerisindeki iş parçacığı 0'ın iş parçacığı 1'den önce işlemini bitirmek gibi bir zorunluluğu bulunmamaktadır. 
+Eğer aynı blok içerisindeki iş parçacıklarının yürütülmesi hakkında bir eşitlemede bulunmak istiyorsanız **__syncthreads()** kullanmanız gerekmektedir. 
+Bu konudan daha önce bahsetmiştik.
+
+Kontrol Dağılması (ing., control divergence)
+---------------------------------------------
+
+SM donanımsal yapısından dolayı aynı **warp** içindeki iş parçacıklarının aynı komutu (ing., instruction) çalıştırmak zorunda olduğundan bahsetmiştik. 
+Ancak program akışında dallanma oluşturan bazı komutlar yürütüldükleri veri ile bağımlı olarak farklı komutların yürütülmesine yol açabilirler. 
+Örneğin bir **if** ifadesi aynı **warp** içerisindeki bir iş parçacığında **doğru** (true) olarak hesaplanıp dallanmaya neden 
+olurken (program akışının **if** bloğunun içinden devam etmesi) **yanlış** (false) olarak hesaplanıp dallanmaya neden olmaması da mümkündür. 
+Bu gibi durumlara kontrol dağılması denilmektedir. Özetle bu durum, bir **warp** içerisindeki iş parçacıklarının birbirinden farklı komutları çalıştırması durumudur. 
+Ancak donanımsal olarak bu mümkün olmadığından bu iş parçacıkları **sıralı** (ing., serial) olarak yürütülür. 
+Dolayısıyla, **warpın** içindeki 32 iş parçacığından 30 tanesi bir dallanma yaşarken 2 tanesi yaşamıyorsa, 30 tane iş parçacığı paralel olarak 
+yürütüldükten sonra, kalan 2 iş parçacığı yürütülür ve diğer 30'u bekler. 
+Kaç farklı program akışı oluşursa o kadar sayıda seri yürütme işlemi gerçekleştirilmektedir. Bu durum da hesaplamanın oldukça yavaşlamasına neden olabilir. 
+Bu yüzden bir **warp** içerisindeki kontrol dağılımını en aza indirmeyi hedefleyerek kod yazmak performans açısından çok daha doğru olacaktır. 
+İç içe geçmiş kontrol ifadelerinin (**if**, **else** gibi) çok sayıda farklı program akışı oluşturabileceğini unutmayınız. 
+
+Aşağıdaki iki örneği inceleyelim. 
+
+.. code-block:: C++
+
+    if (threadIdx.x > 2) { }
+
+Yukardaki örnekte aynı blok içerisindeki 0., 1. ve 2. iş parçacıkları ile geriye kalan iş parçacıkları için program akışı farklı olacağından kontrol dağılması vardır.
+
+.. code-block:: C++
+
+    if (blockIdx.x > 2) { }
+
+Bu örnekte ise bu kontrol ifadesinin kısıtladığı boyut birden fazla blok boyutunda olduğundan bir **warp** içerisindeki iş parçacıklarının 
+program akışı birbirleriyle aynı olacaktır. Kontrol dağılması yaşanmayacaktır.

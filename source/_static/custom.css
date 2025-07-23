@@ -1,0 +1,15 @@
+img[alt="CC BY-NC-SA 4.0"] {
+    width: 66px !important;
+    height: auto !important;
+}
+
+/*Bu custom.css dosyası Creative commons lisansının logosunu küçültmek içindir.*/
+
+
+.fixed-width-content {
+    max-width: 900px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 15px;
+    padding-right: 15px;
+  }

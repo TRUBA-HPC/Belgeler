@@ -20,6 +20,7 @@
 project = 'TRUBA Kullanıcı Dokümanları'
 copyright = '2021, TÜBİTAK ULAKBİM'
 author = 'TÜBİTAK ULAKBİM'
+html_title = "TRUBA Kullanıcı Dokümanları"
 
 
 # -- General configuration ---------------------------------------------------
@@ -32,9 +33,12 @@ extensions = [
     'sphinx_copybutton',
     'sphinx_design',
     'sphinx_tabs.tabs',
-    'sphinx_last_updated_by_git'
+    'sphinx_last_updated_by_git',
+
 ]
 
+
+html_css_files = ['custom.css']
 
 
 # Add any paths that contain templates here, relative to this directory.
@@ -58,12 +62,31 @@ exclude_patterns = []
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'sphinx_rtd_theme'
+#html_theme = 'sphinx_rtd_theme'
+html_theme = 'sphinx_book_theme'
+#html_theme = 'furo'
+#html_theme = 'pydata_sphinx_theme'
+#html_theme = "sphinx_material"
+
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
+
+
+#html_logo = '_static/TRUBA_doc-footer.png'
+html_logo = '_static/truba_logo.png'
+
 html_static_path = ['_static']
+
+html_theme_options = {
+    "search_bar_text": "Ara..."
+}
 
 def setup(app):
     app.add_css_file('site_theme.css')
+
+html_show_sourcelink = False
+
+
+#"body_max_width": "1200px",  # Tüm sayfaya yayılmasını sağlar
