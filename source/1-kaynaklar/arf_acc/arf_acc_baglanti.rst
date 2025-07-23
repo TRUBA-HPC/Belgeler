@@ -33,8 +33,8 @@ ARF ACC hesaplama kümesine erişim ve iş gönderimi yalnızca ``cuda-ui`` kull
    
   Bağlantı sağlandıktan sonra aşağıdaki komut ile ``cuda-ui`` arayüzüne SSH ile bağlanabilirsiniz:
 
-    .. code-block:: bash
+  .. code-block:: bash
 
-      ssh -l <kullanici-adiniz> 172.16.6.16
+    ssh -l <kullanici-adiniz> 172.16.6.16
 
 Herhangi bir sorun yaşarsanız, yardım ve destek almak için lütfen :ref:`truba_iletisim` sayfasındaki teknik destek iletişim bilgilerini kullanarak bizimle iletişime geçiniz.

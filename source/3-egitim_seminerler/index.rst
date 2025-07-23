@@ -18,16 +18,13 @@ Bu bölümde, TRUBA ve ilgili alanlarda verilen eğitim ve seminerlerin başlık
 
 Eğitimlerde kullanılan yazılım ve paketlerin sürümleri zaman zaman eski olabilmektedir. Yazılımların ve kodların güncellenmesiyle birlikte eğitim içeriklerinde değişiklikler yapılması gerekebilir. Bu nedenle, eğitimleri takip ederken kullanılan paketlerin ve kodların güncel sürümlerini kontrol etmeniz ve olası farklılıklara dikkat etmeniz önerilir.
 
-.. toctree::
-   :maxdepth: 1
-   :caption: İçindekiler
 
-   qcomp-index <qcomp/index>
-   keras-index <keras/index>
-   cuda-index <cuda/index>
-   pytorch-index <pytorch/index>
-   big-data-index <big-data/index>
-   openmpi-index <openmpi/index>
-   openmp-index <openmp/index>
-   compscience-index <compscience/index>
-   cfd-index <cfd/index>
+- :ref:`qcomp-index`
+- :ref:`keras-index`
+- :ref:`cuda-index`
+- :ref:`pytorch-index`
+- :ref:`big-data-index`
+- :ref:`openmpi-index`
+- :ref:`openmp-index`
+- :ref:`compscience-index`
+- :ref:`cfd-index`
