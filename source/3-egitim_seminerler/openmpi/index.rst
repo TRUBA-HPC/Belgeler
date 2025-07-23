@@ -1,3 +1,5 @@
+:orphan:
+
 .. _openmpi-index:
 
 OpenMPI
