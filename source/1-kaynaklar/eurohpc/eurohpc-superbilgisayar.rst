@@ -8,6 +8,30 @@ EuroHPC JU, Avrupa'ya dünya lideri bir süper bilgi işlem altyapısı sağlama
 
 Bu sistemlerden, EuroHPC JU'ya üye ülkelerde yerleşik olan akademi, kamu sektörü ve endüstriden gelen kullanıcılar, EuroHPC Erişim Çağrıları aracılığıyla faydalanabilirler. Türkiye'deki araştırmacılar, EuroHPC JU'ya üye ülke olarak bu sistemlere erişim sağlayabilirler.
 
+.. grid:: 3
+
+    .. grid-item-card:: :ref:`lumi`
+        :text-align: center
+    .. grid-item-card:: :ref:`leonardo`
+        :text-align: center
+    .. grid-item-card:: :ref:`marenostrum5`
+        :text-align: center
+    .. grid-item-card:: :ref:`meluxina`
+        :text-align: center
+    .. grid-item-card:: :ref:`karolina`
+        :text-align: center
+    .. grid-item-card:: :ref:`discoverer`
+        :text-align: center
+    .. grid-item-card:: :ref:`vega`
+        :text-align: center
+    .. grid-item-card:: :ref:`deucalion`
+        :text-align: center
+    .. grid-item-card:: :ref:`jupiter`
+        :text-align: center
+    .. grid-item-card:: :ref:`daedalus`
+        :text-align: center
+
+
 ---------------------------------------------
 Haziran 2025 TOP500 ve Green500 Listeleri
 ---------------------------------------------
@@ -29,6 +53,7 @@ Haziran 2025 TOP500 ve Green500 Listeleri
 EuroHPC Süper Bilgisayar Sistemleri
 ---------------------------------------------
 
+.. _lumi:
 
 ^^^^^^^^^^^^^^^
 LUMI
@@ -69,6 +94,8 @@ LUMI, Finlandiya'da CSC tarafından işletilen pre-eksasayı bir EuroHPC süper 
 
 *   **Diğer Detaylar:** Tamamen karbonsuz hidroelektrik yenilenebilir enerjiyle çalışır ve işlemcilerini soğutmak için sıvı soğutma kullanırken, atık ısıyı yerel bölge ısıtması için değerlendirir. 150m2'den fazla alan kaplar ve yaklaşık 150.000 kilogram ağırlığındadır.
 
+.. _leonardo:
+
 ^^^^^^^^^^^^^^^
 LEONARDO
 ^^^^^^^^^^^^^^^
@@ -101,6 +128,8 @@ Leonardo, Bologna Teknoparkı, İtalya'da bulunan pre-eksasayı bir EuroHPC süp
 
 *   **Diğer Detaylar:** Leonardo, Tecnopolo di Bologna'nın tesislerinde yer almaktadır. EuroHPC Leonardo sistemi için ayrılan alan 1240 metrekare hesaplama odası ve 900 metrekare yardımcı alanı içerir.
 
+.. _marenostrum5:
+
 ^^^^^^^^^^^^^^^
 MARENOSTRUM 5
 ^^^^^^^^^^^^^^^
@@ -129,6 +158,8 @@ MareNostrum 5, Barselona, İspanya'da bulunan pre-eksasayı bir EuroHPC süper b
 *   **Green500 Sıralaması (Haziran 2025):** Watt başına 48 binden fazla milyon işlemle Green500 listesinde 44. sırada yer almıştır. (Kasım 2024 sıralaması: 30. sırada).
 
 *   **Diğer Detaylar:** Doğrudan sıvı soğutma ve enerji verimli HPC teknolojilerini içerir ve tamamen yeşil enerjiyle desteklenmektedir. BSC'nin yeni tesislerinde yer almaktadır.
+
+.. _meluxina:
 
 ^^^^^^^^^^^^^^^
 MELUXINA
@@ -164,6 +195,8 @@ MeluXina, Lüksemburg'da bulunan bir petaölçek EuroHPC süper bilgisayarıdır
 *   **TOP500 Sıralaması (Kasım 2024):** Küresel olarak 112. sırada.
 
 *   **Green500 Sıralaması (Kasım 2024):** Küresel olarak 55. sırada.
+
+.. _karolina:
 
 ^^^^^^^^^^^^^^^
 KAROLINA
@@ -207,6 +240,8 @@ Karolina, Ostrava, Çek Cumhuriyeti'nde bulunan bir petaölçek EuroHPC süper b
 
 *   **Green500 Sıralaması (Kasım 2024):** Küresel olarak 52. sırada.
 
+.. _discoverer:
+
 ^^^^^^^^^^^^^^^
 DISCOVERER
 ^^^^^^^^^^^^^^^
@@ -235,6 +270,8 @@ Discoverer, Sofya, Bulgaristan'da bulunan bir petaölçek EuroHPC süper bilgisa
 *   **TOP500 Sıralaması (Kasım 2024):** Küresel olarak 223. sırada.
 
 *   **Green500 Sıralaması (Kasım 2024):** Küresel olarak 223. sırada.
+
+.. _vega:
 
 ^^^^^^^^^^^^^^^
 VEGA
@@ -270,6 +307,8 @@ Vega, Maribor, Slovenya'da bulunan bir petaölçek EuroHPC süper bilgisayarıd�
 
 *   **Green500 Sıralaması (Kasım 2024):** Küresel olarak 268. sırada.
 
+.. _deucalion:
+
 ^^^^^^^^^^^^^^^
 DEUCALION
 ^^^^^^^^^^^^^^^
@@ -299,6 +338,7 @@ Deucalion, Guimarães, Portekiz'de bulunan bir petaölçek EuroHPC süper bilgis
 
 *   **Green500 Sıralaması (Kasım 2024):** Küresel olarak 94. sırada.
 
+.. _jupiter:
 
 ^^^^^^^^^^^^^^^
 JUPITER
@@ -328,6 +368,8 @@ JUPITER, EuroHPC'nin ilk eksasayı süper bilgisayarı olacak ve Almanya'daki J�
 
 *   **Diğer Detaylar:** JUPITER, son aşama ince ayar ve teknik kabul sürecindedir. Yüksek verimli sıcak su soğutma sistemi ile çalışır ve operasyonda oluşan atık ısıyı binaları ısıtmak için kullanmayı amaçlamaktadır.
   
+.. _daedalus:
+
 ^^^^^^^^^^^^^^^
 DAEDALUS
 ^^^^^^^^^^^^^^^

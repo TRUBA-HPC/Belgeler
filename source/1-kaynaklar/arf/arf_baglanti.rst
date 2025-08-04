@@ -49,9 +49,9 @@ ARF hesaplama kümesine erişim için aşağıdaki kullanıcı arayüz sunucular
    
   Bağlantı sağlandıktan sonra aşağıdaki komut ile istenilen kullanıcı arayüzüne SSH ile bağlanabilirsiniz:
 
-    .. code-block:: bash
+  .. code-block:: bash
 
-      ssh <kullanici-adiniz>@<ip-adresi>
+    ssh <kullanici-adiniz>@<ip-adresi>
 
 Herhangi bir sorun yaşarsanız, yardım ve destek almak için lütfen :ref:`truba_iletisim` sayfasındaki teknik destek iletişim bilgilerini kullanarak bizimle iletişime geçiniz.
 

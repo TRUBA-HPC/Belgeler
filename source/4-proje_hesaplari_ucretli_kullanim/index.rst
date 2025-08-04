@@ -4,39 +4,27 @@
 Proje Hesapları - Ücretli Kullanım
 ==================================
 
-Bu bölümde, TÜBİTAK, BAP ve özel kurumlar gibi çeşitli proje türleri için TRUBA kaynaklarının kullanımına ilişkin hizmet bedelleri yıllara göre sunulmaktadır.
 
-.. toctree::
-    :maxdepth: 1
 
-    ardeb_bap/ardeb-hsbvsb-2025.rst
-    ardeb_bap/ardeb-hsbvsb-2024.rst
-    ardeb_bap/ardeb-hsbvsb-2023.rst
+Proje Kapsamında Faydalanacak Akademik İstekliler
+-------------------------------------------------
 
-Kamu/Özel Kurum Projeleri
---------------------------
+- :ref:`ardeb-hsbvsb-2025`
+- :ref:`ardeb-hsbvsb-2024`
+- :ref:`ardeb-hsbvsb-2023`
 
-TÜBİTAK ve AB Projeleri kapsamında desteklenen, araştırma odaklı projesi kabul edilmiş ve/veya proje önerisi sunacak özel kurum araştırmacıları için belirlenen hizmet bedelleri aşağıda sunulmaktadır.
 
-.. toctree::
-    :maxdepth: 1
+Araştırma Odaklı Desteklenen Projeler Kapsamında Faydalanacak Kamu ve Özel Kurumlar
+-----------------------------------------------------------------------------------
 
-    kamu_ve_ozel_kurumlar/ozelkurum-hsbvsb-2025.rst
-    kamu_ve_ozel_kurumlar/ozelkurum-hsbvsb-2024.rst
-    kamu_ve_ozel_kurumlar/ozelkurum-hsbvsb-2023.rst
-
-Özel Kurum ve Kuruluşlar Hizmet Bedelleri
-------------------------------------------
-
-.. toctree::
-    :maxdepth: 1
-
-    ozel_kurumlar/ozel-hsbvsb-2025.rst
-    ozel_kurumlar/ozel-hsbvsb-2024.rst
+- :ref:`ozelkurum-hsbvsb-2025`
+- :ref:`ozelkurum-hsbvsb-2024`
+- :ref:`ozelkurum-hsbvsb-2023`
 
 
 
+Özel Kurum ve Kuruluşlar 
+-------------------------
 
-
-
-
+- :ref:`ozel-hsbvsb-2025`
+- :ref:`ozel-hsbvsb-2024`

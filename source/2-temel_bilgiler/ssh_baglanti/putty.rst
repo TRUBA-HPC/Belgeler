@@ -34,23 +34,13 @@ Bilgisayarınıza uygulamayı yükledikten sonra açıp, TRUBA bilgisayarlarına
 
 .. note::
 
-<<<<<<< HEAD:source/2-temel_bilgiler/ssh_baglanti/putty.rst
     Öncelikle, ULAKNET ağı içinde veya dışında olma durumunuz farketmeksizin, :ref:`OpenVPN bağlantısını başarılı bir şekilde sağlamalısınız <open-vpn>`. Sunucu adı yerine :ref:`ARF bağlantı bilgileri <arf_baglanti>` adresinden öğrenebileceğiniz ``ip`` adresini yazmanız gerekmektedir. 
-=======
-    Öncelikle, ULAKNET ağı içinde veya dışında olma durumunuz farketmeksizin, :ref:`OpenVPN bağlantısını başarılı bir şekilde sağlamalısınız <open-vpn>`. Sunucu adı yerine ``172.16.6.11`` yazmanız gerekmektedir. 
-    
-    Aynı anda sadece bir tane aktif OpenVPN bağlantınız olmalıdır. Eğer başka bir cihazda OpenVPN bağlantınız varsa, bu bağlantıyı sonlandırmadan yeni bir bağlantı kurmaya çalışmayınız.
->>>>>>> main:source/TRUBA/kullanici-el-kitabi/kullanici-ara-yuzu/ssh-ile-baglanti/putty.rst
 
 
 .. image:: /assets/kullanici-arayuzu/ssh-ile-baglanti/putty/images/putty-5.png  
     :width: 1000  
 
 
-<<<<<<< HEAD:source/2-temel_bilgiler/ssh_baglanti/putty.rst
-=======
-
->>>>>>> main:source/TRUBA/kullanici-el-kitabi/kullanici-ara-yuzu/ssh-ile-baglanti/putty.rst
 **4.**
 IP adresini girdiğinizde kullanıcı adınızı ve şifrenizi gireceğiniz bir terminal gelecektir. TRUBA tarafından sizlere verilen kullanıcı adı ve şifreyle giriş yapabilirsiniz.
 
