@@ -15,9 +15,9 @@ ARF hesaplama kümesinde farklı donanım ve özelliklere sahip çeşitli kuyruk
      - Sunucu Modeli
      - Sunucu Adet
      - İşlemci Modeli
-     - Çekirdek/Sunucu
-     - Toplam Bellek/Sunucu
-     - GPU/Sunucu
+     - Çekirdek
+     - Toplam Bellek
+     - GPU
      - Maksimum Süre
      - İşletim Sistemi
    * - orfoz

@@ -80,8 +80,15 @@ html_logo = '_static/truba_logo.png'
 html_static_path = ['_static']
 
 html_theme_options = {
-    "search_bar_text": "Ara..."
-}
+    "search_bar_text": "Ara...",
+
+        "light_css_variables": {
+        "body-max-width": "auto",
+    },
+    "dark_css_variables": {
+        "body-max-width": "auto",
+    }
+    }
 
 def setup(app):
     app.add_css_file('site_theme.css')

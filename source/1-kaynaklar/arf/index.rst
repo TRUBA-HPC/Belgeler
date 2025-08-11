@@ -15,6 +15,13 @@ ARF
 
 ARF, yüksek başarımlı hesaplama ihtiyaçları için tasarlanmış, geniş ölçekli ve modern bir hesaplama kümesidir. Kümede sıvı soğutmalı yüksek performanslı sunucular ve hızlı, NVMe tabanlı dosya sistemleri bulunmaktadır. Araştırmacılar ve projeler için yüksek çekirdek sayısı, hızlı ağ altyapısı ve merkezi depolama olanakları sunar.
 
+
+.. image:: /../source/assets/arf/arf.jpeg
+   :alt: ARF 
+   :width: 800px
+   :align: center
+
+
 .. admonition:: Kullanım Politikaları
    :class: important
 

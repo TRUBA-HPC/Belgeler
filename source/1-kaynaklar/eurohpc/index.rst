@@ -1,7 +1,7 @@
 .. _eurohpc:
 
 =================================================
-EuroHPC JU ve Erişim Çağrıları
+EuroHPC JU ve Erişim Kaynakları
 =================================================
 
 2018 yılında Lüksemburg merkezli olarak kurulan **Avrupa Yüksek Başarımlı Hesaplama Ortak Girişimi (European High-Perfomance Computing Joint Undertaking-EuroHPC JU)**, Avrupa'yı süper bilgisayar alanında küresel bir lider yapma amacıyla Avrupa Birliği (AB) ve katılımcı ülkelerin kaynaklarını ve çabalarını birleştiren stratejik bir oluşumdur. Bu girişim, Avrupa'nın bilimsel mükemmelliğini, endüstriyel gücünü ve teknolojik egemenliğini artırırken, aynı zamanda ekonomisinin dijital dönüşümünü desteklemeyi de hedeflemektedir.
@@ -34,7 +34,7 @@ EuroHPC JU Erişim Çağrıları ve Süper Bilgisayar Sistemleri
 -------------------------------------------------------------
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
 
     eurohpc-erisim.rst
     eurohpc-superbilgisayar.rst

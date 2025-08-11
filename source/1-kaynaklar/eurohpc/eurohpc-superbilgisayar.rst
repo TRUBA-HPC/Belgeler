@@ -4,10 +4,14 @@
 EuroHPC JU Süper Bilgisayar Sistemleri
 ========================================
 
+
 EuroHPC JU, Avrupa'ya dünya lideri bir süper bilgi işlem altyapısı sağlamak için Avrupa genelinde konumlandırılmış on adet süper bilgisayar tedarik etmiştir (https://eurohpc-ju.europa.eu/supercomputers/our-supercomputers_en). Bu süper bilgisayarlar, mimari, hesaplama bölümleri, depolama ve kaynak yöneticisi açısından birbirinden farklılık gösterir.
 
 Bu sistemlerden, EuroHPC JU'ya üye ülkelerde yerleşik olan akademi, kamu sektörü ve endüstriden gelen kullanıcılar, EuroHPC Erişim Çağrıları aracılığıyla faydalanabilirler. Türkiye'deki araştırmacılar, EuroHPC JU'ya üye ülke olarak bu sistemlere erişim sağlayabilirler.
 
+
+   
+   
 .. grid:: 3
 
     .. grid-item-card:: :ref:`lumi`
@@ -53,11 +57,12 @@ Haziran 2025 TOP500 ve Green500 Listeleri
 EuroHPC Süper Bilgisayar Sistemleri
 ---------------------------------------------
 
+
 .. _lumi:
 
-^^^^^^^^^^^^^^^
+
 LUMI
-^^^^^^^^^^^^^^^
+------
 
 LUMI, Finlandiya'da CSC tarafından işletilen pre-eksasayı bir EuroHPC süper bilgisayarıdır.
 
@@ -96,9 +101,9 @@ LUMI, Finlandiya'da CSC tarafından işletilen pre-eksasayı bir EuroHPC süper 
 
 .. _leonardo:
 
-^^^^^^^^^^^^^^^
+
 LEONARDO
-^^^^^^^^^^^^^^^
+----------
 
 Leonardo, Bologna Teknoparkı, İtalya'da bulunan pre-eksasayı bir EuroHPC süper bilgisayarıdır.
 
