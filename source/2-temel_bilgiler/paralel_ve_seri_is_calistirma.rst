@@ -19,73 +19,71 @@ OMP ile deney yapmak için aşağıdaki MPI programını kullanacağız (şimdil
 
 .. code-block:: c
 
-   #include <stdio.h>
-   #include <omp.h>
-   #include <limits.h>
-   #include <unistd.h>
-   static long long num_steps=1000000000;
-   double step;
-   char hostname[HOST_NAME_MAX];
+        #include <mpi.h>
+        #include <stdio.h>
 
-   int main(int argc, char** argv){
-           gethostname(hostname, HOST_NAME_MAX);
-           int i, myid, num_procs;
-           double x, pi, remote_sum, sum=0, start=0, end=0;;
-           MPI_Init(&argc, &argv);
-           MPI_Barrier(MPI_COMM_WORLD);
-           MPI_Comm_rank(MPI_COMM_WORLD, &myid);
-           MPI_Comm_size(MPI_COMM_WORLD, &num_procs);
-           start = MPI_Wtime();
-           step = 1.0/(double) num_steps;
-           for (i = myid; i< num_steps; i=i+num_procs){
-                   x =(i+0.5)*step;
-                   sum +=4.0/(1.0+x*x);
-           }
-           printf("Process %d running on %s\n", myid, hostname);
-           if (myid==0){
-                   for (i = 1; i< num_procs;i++){
-                           MPI_Status status;
-                           MPI_Recv(&remote_sum, 1, MPI_DOUBLE, i, 0, MPI_COMM_WORLD, &status);
-                           sum +=remote_sum;
-                   }
-                   pi=sum*step;
-           } else {
-                   MPI_Send(&sum, 1, MPI_DOUBLE, 0, 0, MPI_COMM_WORLD);
-           }
-           MPI_Finalize();
+        int main(int argc, char** argv) {
+        // Initialize the MPI environment
+        MPI_Init(NULL, NULL);
 
-           if (myid ==0){
-                   end = MPI_Wtime();
-                   printf("Processes %d, took %f \n", num_procs, end-start);
-           }
-           return 0;
-   }
+        // Get the number of processes
+        int world_size;
+        MPI_Comm_size(MPI_COMM_WORLD, &world_size);
 
-Aynı prosedür üzerinde çalışmak için birden çok düğüm (ve düğüm başına birden çok görev) kullanarak MPI programlarını yürütme
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        // Get the rank of the process
+        int world_rank;
+        MPI_Comm_rank(MPI_COMM_WORLD, &world_rank);
+
+        // Get the name of the processor
+        char processor_name[MPI_MAX_PROCESSOR_NAME];
+        int name_len;
+        MPI_Get_processor_name(processor_name, &name_len);
+
+        // Print off a hello world message
+        printf("Hello world from processor %s, rank %d out of %d processors\n",
+                processor_name, world_rank, world_size);
+
+        // Finalize the MPI environment.
+        MPI_Finalize();
+        }
+
+
 
 Aşağıda gösterilen mpi.slurm betiği, MPI görevlerini yürütmek için birden çok düğümü nasıl kullanabileceğimizi gösterir:
 
 .. code-block:: bash
 
-   #!/bin/bash
+        #!/bin/bash
+        #SBATCH -p orfoz
+        #SBATCH -J mpi_test
+        #SBATCH -N 1
+        #SBATCH -n 1
+        #SBATCH -c 110
+        #SBATCH -C weka
+        #SBATCH --time=3-00:00:00
 
-   #SBATCH --account=<my_account>
-   #SBATCH --job-name=<job_name>
-   #SBATCH --partition=<part>
-   #SBATCH --time=d-hh:mm:ss
-   #SBATCH --nodes=<N> # Number of nodes that will take part in the MPI procedure
-   #SBATCH --ntasks-per-node=<npn> # maximum limit of processes that can run in parallel
-                   # on a single node
-   #SBATCH --workdir=<dir>
-   #SBATCH --output=<out>
-   #SBATCH --error=<err>
 
-   # This MPI procedure will use <n1> tasks only
-   mpirun -np=<n1> ./my_mpi_program
+        export OMP_NUM_THREADS=1
 
-   # Thsi MPI procedure will use <npn> * <N> tasks
-   mpirun ./my_mpi_program
+
+        echo "SLURM_NODELIST $SLURM_NODELIST"
+        echo "NUMBER OF TASKS $SLURM_NTASKS"
+
+        module purge
+
+        #module load lib/openmpi/4.0.5
+        #mpicc mpi-hello.c -o mpi-hello
+
+
+        module load lib/openmpi/5.0.0
+        mpicc mpi-hello.c -o mpi-hello
+
+        #module load oneapi
+        #mpiicx mpi-hello.c -o mpi-hello
+
+        mpirun -np $SLURM_NTASKS ./mpi-hello 
+
+        exit
 
 Ardından, bu komut dosyasını yürütmek üzere TRUBA'ya aşağıdaki komutu kullanarak göndeririz:
 
@@ -132,4 +130,4 @@ Ardından, bu komut dosyasını yürütmek üzere TRUBA'ya aşağıdaki komutu k
 
 Aşağıda gösterilen ``mpi_example.slurm`` betiği, MPI programlarının TRUBA'da nasıl çalıştırılabileceğini gösterir ve yürütme için ayrılmış görev sayısının ``-np`` seçeneği kullanılarak nasıl değiştirilebileceğini gösterir. Komut dosyasını, kullanmak istediğimiz düğüm sayısını ve her bir düğümde kullanmak istediğimiz görev sayısını tanımlayarak başlatıyoruz. Ardından, gerekli modülleri yükleyerek ve MPI kodumuzu derleyerek yürütme ortamını kuruyoruz. Son olarak iki MPI iş adımı çalıştırıyoruz. Her iş adımı farklı sayıda görev kullanır, ancak, ``srun``\ 'dan farklı olarak, bir iş adımı ``mpirun`` kullanılarak başlatıldığında, oluşturduğu görevlerin tümü bağımsız olmak yerine aynı prosedür üzerinde çalışacaktır.
 
-Bu iş ``short`` bölümüne eklenecek ve 20 dakika içinde bitecektir. ``mpi.c`` dosyası ``/truba/home/my_account/`` konumunda bulunur. İşlerin çıktıları ``/truba/home/my_account/output.txt`` dosyasına ve hatalar ``/truba/home/my_account/error.txt`` dosyasına yazdırılacaktır.
+`module av` komutu ile mevcut OpenMPI kütüphanelerini görüntüleyebilirsiniz. 

@@ -38,6 +38,9 @@ EuroHPC JU Erişim Çağrıları ve Süper Bilgisayar Sistemleri
 
     eurohpc-erisim.rst
     eurohpc-superbilgisayar.rst
+    lumi
+    leonardo
+    
 
 
 ----------------------------------------------
