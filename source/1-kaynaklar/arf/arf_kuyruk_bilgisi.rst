@@ -7,7 +7,7 @@ Kuyruk Bilgisi
 ARF hesaplama kümesinde farklı donanım ve özelliklere sahip çeşitli kuyruklar bulunmaktadır. Her kuyruk, farklı iş yükleri ve kullanıcı gereksinimleri için optimize edilmiştir. Aşağıdaki tabloda tüm kuyrukların teknik ve donanım özellikleri özetlenmiştir:
 
 .. list-table:: ARF Kuyrukları ve Donanım Özellikleri
-   :widths: 12 12 12 18 18 12 12 12 12
+   :widths: 12 12 12 12 12 12 12 12 12
    :header-rows: 1
    :align: center
 
@@ -15,7 +15,7 @@ ARF hesaplama kümesinde farklı donanım ve özelliklere sahip çeşitli kuyruk
      - Sunucu Modeli
      - Sunucu Adet
      - İşlemci Modeli
-     - Çekirdek
+     - Çekirdek /Sunucu
      - Toplam Bellek
      - GPU
      - Maksimum Süre
@@ -24,7 +24,7 @@ ARF hesaplama kümesinde farklı donanım ve özelliklere sahip çeşitli kuyruk
      - Orfoz
      - 504
      - 2x Intel Xeon Platinum 8480+
-     - 112 (110 kullanılabilir)
+     - 112 (110 kullanılabilir)                          
      - 256 GB
      - Yok
      - 3 gün
@@ -33,7 +33,7 @@ ARF hesaplama kümesinde farklı donanım ve özelliklere sahip çeşitli kuyruk
      - Barbun
      - 119
      - 2x Intel Xeon Gold 6248R
-     - 40
+     - 40                              
      - 384 GB
      - Yok
      - 3 gün
@@ -42,7 +42,7 @@ ARF hesaplama kümesinde farklı donanım ve özelliklere sahip çeşitli kuyruk
      - Barbun
      - 24
      - 2x Intel Xeon Gold 6248R
-     - 40
+     - 40                                 
      - 384 GB
      - 2x Nvidia P100 16GB
      - 3 gün
@@ -51,7 +51,7 @@ ARF hesaplama kümesinde farklı donanım ve özelliklere sahip çeşitli kuyruk
      - Akya
      - 24
      - 2x Intel Xeon Gold 6248R
-     - 40
+     - 40                            
      - 384 GB
      - 4x Nvidia V100 16GB NVLink
      - 3 gün
@@ -60,7 +60,7 @@ ARF hesaplama kümesinde farklı donanım ve özelliklere sahip çeşitli kuyruk
      - Hamsi
      - 144
      - 2x Intel Xeon Gold 6338
-     - 56 (54 kullanılabilir)
+     - 56 (54 kullanılabilir)                          
      - 192 GB
      - Yok
      - 3 gün
@@ -69,7 +69,7 @@ ARF hesaplama kümesinde farklı donanım ve özelliklere sahip çeşitli kuyruk
      - Orkinos
      - 1
      - 4x Intel Xeon Gold 6248R
-     - 224
+     - 224                          
      - 4 TB
      - Yok
      - 3 gün

@@ -3,6 +3,12 @@
 ^^^^^^^^^^^^^^^
 DISCOVERER
 ^^^^^^^^^^^^^^^
+
+
+.. image:: https://discoverer.bg/wp-content/uploads/2024/03/discoverer-supercomputer-01.jpg
+   :alt: Discoverer Süperbilgisayarı Görseli
+   :width: 600px
+
 Discoverer, Sofya, Bulgaristan'da bulunan bir petaölçek EuroHPC süper bilgisayarıdır.
 
 *   **Konum ve İşletici:** Sofya, Bulgaristan (Sofia Tech Park)

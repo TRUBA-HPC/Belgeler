@@ -4,6 +4,11 @@
 KAROLINA
 ^^^^^^^^^^^^^^^
 
+.. image:: https://www.it4i.cz/en/file/0c4054808beb0a2d12a5062b8fff1f8e/5437/SZ6_0425n.jpg
+   :alt: Karolina Süperbilgisayarı Görseli
+   :width: 800px
+
+
 Karolina, Ostrava, Çek Cumhuriyeti'nde bulunan bir petaölçek EuroHPC süper bilgisayarıdır.
 
 *   **Konum ve İşletici:** Ostrava, Çek Cumhuriyeti (IT4Innovations Ulusal Süper Hesaplama Merkezi)

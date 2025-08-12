@@ -26,14 +26,6 @@ Bu sistemlerden, EuroHPC JU'ya üye ülkelerde yerleşik olan akademi, kamu sekt
 
 
 
-
-
-
-
-
-
-
-
    
 .. grid:: 3
 

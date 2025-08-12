@@ -38,8 +38,13 @@ extensions = [
 ]
 
 
-html_css_files = ['custom.css']
+html_css_files = ['custom.css',
+                  'feedback.css',]
 
+
+html_js_files = [
+    'feedback.js',
+]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

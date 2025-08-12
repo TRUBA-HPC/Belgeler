@@ -14,19 +14,19 @@ ARF ACC hesaplama kümesinde, GPU tabanlı iki ana kuyruk bulunmaktadır: ``koly
 Kuyrukların teknik ve donanım özellikleri aşağıda özetlenmiştir:
 
 .. list-table:: Kuyruk ve Donanım Özellikleri
-   :widths: 18 10 10 18 18 18 18 18 18 18
+   :widths: 18 10 10 18 18 18 18 18 12 12
    :header-rows: 1
 
    * - Kuyruk Adı
      - Yıl
      - Sunucu Adet
      - Sunucu Modeli
-     - CPU/GPU
+     - CPU /GPU
      - İşlemci Modeli
      - Bellek
      - Ağ Kartı
      - İşletim Sistemi
-     - Maksimum Süre
+     - Max Süre
    * - palamut-cuda
      - 2021
      - 9

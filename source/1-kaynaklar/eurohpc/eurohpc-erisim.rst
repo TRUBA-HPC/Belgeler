@@ -1,7 +1,7 @@
 .. _eurohpc_erisim:
 
 ===============================================
-EuroHPC JU Sistemlerine Erişim Kaynakları
+EuroHPC JU Sistemlerine Erişim Çağrıları
 ===============================================
 
 EuroHPC JU süper bilgisayarlarına erişim için farklı erişim çağrıları bulunmaktadır. Her çağrı, belirli bir kullanıcı grubuna yönelik farklı gereksinimler ve hedefler içermektedir.

@@ -4,6 +4,10 @@
 DEUCALION
 ^^^^^^^^^^^^^^^
 
+.. image:: https://www.greeknewsagenda.gr/wp-content/uploads/sites/2/2024/11/daidalos_yperypologistis.jpg
+   :alt: Deucalion Süperbilgisayarı Görseli
+   :width: 600px
+
 Deucalion, Guimarães, Portekiz'de bulunan bir petaölçek EuroHPC süper bilgisayarıdır.
 
 *   **Konum ve İşletici:** Guimarães, Portekiz (FCT tarafından barındırılmakta ve CNCA tarafından yönetilmektedir)

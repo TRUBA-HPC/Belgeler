@@ -4,6 +4,10 @@
 JUPITER
 ^^^^^^^^^^^^^^^
 
+.. image:: https://nvidianews.nvidia.com/_gallery/get_file/?file_id=6847f2ee3d6332ec8fd5b35b
+   :alt: Jupyter Süperbilgisayarı Görseli
+   :width: 800px
+
 JUPITER, EuroHPC'nin ilk eksasayı süper bilgisayarı olacak ve Almanya'daki Jülich Süper Hesaplama Merkezi'nde (JSC) işletilecektir. Eviden tarafından sağlanan BullSequana XH3000 doğrudan sıvı soğutmalı mimariye dayanmaktadır.
 
 *   **Konum ve İşletici:** Jülich Süper Hesaplama Merkezi (JSC), Almanya

@@ -36,10 +36,12 @@ EuroHPC JU Erişim Çağrıları ve Süper Bilgisayar Sistemleri
 .. toctree::
     :maxdepth: 2
 
-    eurohpc-erisim.rst
     eurohpc-superbilgisayar.rst
-    lumi
-    leonardo
+
+
+
+
+
     
 
 
@@ -48,9 +50,9 @@ Endüstriyel Kullanıcılar için Diğer Çağrılar
 ----------------------------------------------
 
 .. toctree::
-  :maxdepth: 1
+   :maxdepth: 1
 
-  ffplus.rst
+   ffplus.rst
 
 ..
     inno4scale.rst

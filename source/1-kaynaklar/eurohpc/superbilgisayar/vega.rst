@@ -4,6 +4,12 @@
 VEGA
 ^^^^^^^^^^^^^^^
 
+
+
+.. image:: https://eurohpc-ju.europa.eu/sites/default/files/styles/oe_theme_medium_no_crop/public/2022-04/210322_VEGA_052.jpg?itok=9YMPJDbu
+   :alt: Vega Süperbilgisayarı Görseli
+   :width: 800px
+
 Vega, Maribor, Slovenya'da bulunan bir petaölçek EuroHPC süper bilgisayarıdır.
 
 *   **Konum ve İşletici:** Maribor, Slovenya (IZUM)

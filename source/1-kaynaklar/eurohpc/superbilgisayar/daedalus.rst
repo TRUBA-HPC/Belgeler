@@ -4,6 +4,11 @@
 DAEDALUS
 ^^^^^^^^^^^^^^^
 
+.. image:: https://www.greeknewsagenda.gr/wp-content/uploads/sites/2/2024/11/daidalos_yperypologistis.jpg
+   :alt: Daedalus Süperbilgisayarı Görseli
+   :width: 600px
+
+
 DAEDALUS, orta ölçekli bir petaölçek EuroHPC süper bilgisayarı olacaktır.
 
 

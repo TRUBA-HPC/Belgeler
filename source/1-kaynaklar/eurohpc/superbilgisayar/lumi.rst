@@ -4,6 +4,11 @@
 LUMI
 ------
 
+
+.. image:: https://www.lumi-supercomputer.eu/content/uploads/2022/11/ln_lumi_5_cabinets-1024x538.jpg
+   :alt: Lumi Süperbilgisayarı Görseli
+   :width: 800px
+
 LUMI, Finlandiya'da CSC tarafından işletilen pre-eksasayı bir EuroHPC süper bilgisayarıdır.
 
 *   **Konum ve İşletici:** Kajaani, Finlandiya (CSC – IT Center for Science)

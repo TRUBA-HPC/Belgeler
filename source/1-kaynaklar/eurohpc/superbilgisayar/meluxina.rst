@@ -3,6 +3,13 @@
 ^^^^^^^^^^^^^^^
 MELUXINA
 ^^^^^^^^^^^^^^^
+
+
+.. image:: https://www.luxprovide.lu/wp-content/uploads/2024/02/20231207-Luxprovide-106-scaled.jpg
+   :alt: Meluxina Süperbilgisayarı Görseli
+   :width: 800px
+
+
 MeluXina, Lüksemburg'da bulunan bir petaölçek EuroHPC süper bilgisayarıdır.
 
 *   **Konum ve İşletici:** Bissen, Lüksemburg (LuxProvide)

@@ -4,6 +4,11 @@
 MARENOSTRUM 5
 ^^^^^^^^^^^^^^^
 
+.. image:: https://www.bsc.es/sites/default/files/public/styles/bscw2_-_simple_crop_style_-_news_image/public/bscw2/content/news/horizontal-image/marenostrum5.jpg?itok=z5poWNTU&sc=208e5a37dd0aaac580c1c190cf0e10be
+   :alt: Marenostrum 5 Süperbilgisayarı Görseli
+   :width: 800px
+
+
 MareNostrum 5, Barselona, İspanya'da bulunan pre-eksasayı bir EuroHPC süper bilgisayarıdır.
 
 *   **Konum ve İşletici:** Barselona, İspanya (Barselona Süper Hesaplama Merkezi - BSC)

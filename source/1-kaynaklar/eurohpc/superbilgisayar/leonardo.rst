@@ -4,6 +4,11 @@
 LEONARDO
 ----------
 
+
+.. image:: https://www.nextplatform.com/wp-content/uploads/2024/09/cineca-leonardo-system-923x438.jpg
+   :alt: Leonardo Süperbilgisayarı Görseli
+   :width: 800px
+
 Leonardo, Bologna Teknoparkı, İtalya'da bulunan pre-eksasayı bir EuroHPC süper bilgisayarıdır.
 
 *   **Konum ve İşletici:** Bologna Teknoparkı, İtalya (CINECA)
