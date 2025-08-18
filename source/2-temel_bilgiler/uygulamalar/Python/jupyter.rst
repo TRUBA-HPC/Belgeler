@@ -10,22 +10,22 @@ Bu belgede sunulan bilgiler yalnızca web arayüzü sunucularında yürütülebi
 1. Jupyter Notebook - XXX:   
     Buradan açılan jupyter notebook, yapay zeka alanında kullanılan temel olarak, ``XGBoost, TensorFlow, Keras, PyTorch, Scikit-learn, accelerate, deepspeed, transformers, ...`` paketlerin kurulumlarını içermektedir. Buradan açılmış bir jupyter notebook içerisinde açılan python ortamları aşağıdaki gibi olacaktır.
 
-        .. tabs::
+    .. tabs::
 
-            .. tab:: Jupyter Notebook - CPU
+        .. tab:: Jupyter Notebook - CPU
 
-                .. code-block:: bash
+            .. code-block:: bash
 
-                    module purge
-                    module load apps/truba-ai/cpu-2024.0
-                    
+                module purge
+                module load apps/truba-ai/cpu-2024.0
+                
 
-            .. tab:: Jupyter Notebook - GPU
+        .. tab:: Jupyter Notebook - GPU
 
-                .. code-block:: bash
-            
-                    module purge
-                    module load apps/truba-ai/gpu-2024.0
+            .. code-block:: bash
+        
+                module purge
+                module load apps/truba-ai/gpu-2024.0
 
 
 2. Jupyter Notebook - Custom:   

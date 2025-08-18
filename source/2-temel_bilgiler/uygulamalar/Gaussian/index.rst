@@ -49,6 +49,7 @@ Eğer Gaussian lisansına sahipseniz kendi Gaussian versiyonunuzu kullanmak üze
     :maxdepth: 1
 
     gaussian_install.rst
+    Gaussian-licence/gaussian16_arf.rst
 
 
 -------

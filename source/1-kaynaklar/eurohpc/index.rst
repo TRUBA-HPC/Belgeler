@@ -34,7 +34,9 @@ EuroHPC JU Erişim Çağrıları ve Süper Bilgisayar Sistemleri
 -------------------------------------------------------------
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
+
+    eurohpc-erisim.rst
 
     eurohpc-superbilgisayar.rst
 

@@ -55,7 +55,7 @@ Bu sistemlerden, EuroHPC JU'ya üye ülkelerde yerleşik olan akademi, kamu sekt
 Haziran 2025 TOP500 ve Green500 Listeleri
 ---------------------------------------------
 
-10 Haziran 2025'te Hamburg, Almanya'daki ISC Yüksek Performanslı Konferansı'nda TOP500 ve Green500 listelerinin en son sürümleri yayınlandı. Tüm operasyonel EuroHPC JU süper bilgisayarları, dünyanın en güçlü sistemlerinin listelendiği TOP500'de yer almakta olup, ikisi küresel ilk 10'da yer almaktadır. EuroHPC JU, yeşil süper bilgisayarlar tedarik etme çabalarını sürdürmekte ve birçok sistemi Green500 listesinde üst sıralarda yer almaktadır
+10 Haziran 2025'te Hamburg, Almanya'daki ISC Yüksek Performanslı Konferansı'nda `TOP500 & Green500 <https://www.top500.org>`_ listelerinin en son sürümleri yayınlandı. Tüm operasyonel EuroHPC JU süper bilgisayarları, dünyanın en güçlü sistemlerinin listelendiği TOP500'de yer almakta olup, ikisi küresel ilk 10'da yer almaktadır. EuroHPC JU, yeşil süper bilgisayarlar tedarik etme çabalarını sürdürmekte ve birçok sistemi Green500 listesinde üst sıralarda yer almaktadır
 
 
 .. image:: /assets/eurohpc/June2025-Tableranking.png

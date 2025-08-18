@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     var btn = document.createElement("button");
     btn.id = "feedback-button";
-    btn.textContent = "Feedback";
+    btn.textContent = "Geri Bildirim";
   
     btn.onclick = function() {
       // Buraya feedback formu URL'si ya da başka aksiyon ekle

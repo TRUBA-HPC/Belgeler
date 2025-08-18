@@ -45,7 +45,8 @@ TRUBA altyapısındaki GPU kaynakları SLURM kaynak yöneticisi ile kullanılabi
     * barbun-cuda kümesi için 20*[GPU_SAYISI] (Bir sunucuda 2 adet P100 bulunmaktadır.)
     * akya-cuda kümesi için 10*[GPU_SAYISI] (Bir sunucuda 4 adet V100 bulunmaktadır.)
     * palamut-cuda kümesi için 16*[GPU_SAYISI] (Bir sunucuda 8 adet A100 bulunmaktadır.)
-    * kolyoz-cuda kümesi için 16*[GPU_SAYISI] (Bir sunucuda 4 adet H100 bulunmaktadır.)
+    * kolyoz-cuda kümesinde H100 için 16*[GPU_SAYISI] (Kolyoz1-24 arası sunucularda 4 adet H100 bulunmaktadır.)
+    * kolyoz-cuda kümesinde H200 için 16*[GPU_SAYISI] (Kolyoz24-72 arası sunucularda 4 adet H200 bulunmaktadır.)
 
 
 .. note::

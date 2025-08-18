@@ -96,7 +96,14 @@ TRUBA altyapısında yer alan başlıca sunucu aileleri ve öne çıkan teknik �
      - 5Tflops & 4x34Tflops
      - 1 TB & 4x80GB HBM
      - kolyoz-cuda 
-
+   * - 2025
+     - 48
+     - 32 çekirdek x 2CPU & 4xNvidia H200 GPU
+     - Intel(R) Xeon(R) GOLD 6548Y+ 2.5GHz
+     - *-*
+     - 5Tflops & 4x34Tflops
+     - 1 TB & 4x141GB HBM
+     - kolyoz-cuda 
 Her sunucu ailesi, yüksek hızlı Infiniband ağları ile birbirine bağlıdır ve ortak dosya sistemlerine erişim sunar. GPU kümelerinde güncel NVIDIA sürücüleri ve CUDA desteği mevcuttur. Bazı kümelerde yüksek I/O gerektiren işler için NVMe diskler scratch alanı olarak sunulmaktadır.
 
 
@@ -182,13 +189,21 @@ TRUBA’da işler, farklı özelliklere sahip kuyruklara (partition) gönderilir
      - 16384MB
      - Aktif
    * - kolyoz-cuda
-     - kolyoz
+     - kolyoz1-kolyoz24
      - 24
      - 3 gün
      - 16
      - 16GB
      - 16GB
      - Aktif
+   * - kolyoz-cuda
+     - kolyoz25-kolyoz72
+     - 24
+     - 3 gün
+     - 16
+     - 14GB
+     - 16GB
+     - Aktif 
 
 Kuyruk ve kaynak durumları için ``sinfo`` ve ``scontrol show partition=<kuyruk_adı>`` komutları kullanılabilir.
 

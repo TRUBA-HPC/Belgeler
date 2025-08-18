@@ -17,73 +17,81 @@ MPI, HPC için çok önemli olan bir şeye izin verir - birden çok düğümün 
 
 OMP ile deney yapmak için aşağıdaki MPI programını kullanacağız (şimdilik bu programı anlamaya çalışmanıza gerek yok :) İlerki bölümleri takip ettikten sonra geri dönüp anlamaya çalışmanızı tavsiye ederiz :)):
 
-.. code-block:: c
+        .. tab-set::
 
-        #include <mpi.h>
-        #include <stdio.h>
+            .. tab-item:: İş dosyası
 
-        int main(int argc, char** argv) {
-        // Initialize the MPI environment
-        MPI_Init(NULL, NULL);
+                .. code-block:: c
 
-        // Get the number of processes
-        int world_size;
-        MPI_Comm_size(MPI_COMM_WORLD, &world_size);
+                        #include <mpi.h>
+                        #include <stdio.h>
 
-        // Get the rank of the process
-        int world_rank;
-        MPI_Comm_rank(MPI_COMM_WORLD, &world_rank);
+                        int main(int argc, char** argv) {
+                        // Initialize the MPI environment
+                        MPI_Init(NULL, NULL);
 
-        // Get the name of the processor
-        char processor_name[MPI_MAX_PROCESSOR_NAME];
-        int name_len;
-        MPI_Get_processor_name(processor_name, &name_len);
+                        // Get the number of processes
+                        int world_size;
+                        MPI_Comm_size(MPI_COMM_WORLD, &world_size);
 
-        // Print off a hello world message
-        printf("Hello world from processor %s, rank %d out of %d processors\n",
-                processor_name, world_rank, world_size);
+                        // Get the rank of the process
+                        int world_rank;
+                        MPI_Comm_rank(MPI_COMM_WORLD, &world_rank);
 
-        // Finalize the MPI environment.
-        MPI_Finalize();
-        }
+                        // Get the name of the processor
+                        char processor_name[MPI_MAX_PROCESSOR_NAME];
+                        int name_len;
+                        MPI_Get_processor_name(processor_name, &name_len);
 
+                        // Print off a hello world message
+                        printf("Hello world from processor %s, rank %d out of %d processors\n",
+                                processor_name, world_rank, world_size);
 
-
-Aşağıda gösterilen mpi.slurm betiği, MPI görevlerini yürütmek için birden çok düğümü nasıl kullanabileceğimizi gösterir:
-
-.. code-block:: bash
-
-        #!/bin/bash
-        #SBATCH -p orfoz
-        #SBATCH -J mpi_test
-        #SBATCH -N 1
-        #SBATCH -n 1
-        #SBATCH -c 110
-        #SBATCH -C weka
-        #SBATCH --time=3-00:00:00
+                        // Finalize the MPI environment.
+                        MPI_Finalize();
+                        }
 
 
-        export OMP_NUM_THREADS=1
+            .. tab-item:: SLURM betik
+                                
+                Aşağıda gösterilen mpi.slurm betiği, MPI görevlerini yürütmek için birden çok düğümü nasıl kullanabileceğimizi gösterir:
+
+                .. code-block:: bash
+
+                        #!/bin/bash
+                        #SBATCH -p orfoz
+                        #SBATCH -J mpi_test
+                        #SBATCH -N 1
+                        #SBATCH -n 1
+                        #SBATCH -c 110
+                        #SBATCH -C weka
+                        #SBATCH --time=3-00:00:00
 
 
-        echo "SLURM_NODELIST $SLURM_NODELIST"
-        echo "NUMBER OF TASKS $SLURM_NTASKS"
-
-        module purge
-
-        #module load lib/openmpi/4.0.5
-        #mpicc mpi-hello.c -o mpi-hello
+                        export OMP_NUM_THREADS=1
 
 
-        module load lib/openmpi/5.0.0
-        mpicc mpi-hello.c -o mpi-hello
+                        echo "SLURM_NODELIST $SLURM_NODELIST"
+                        echo "NUMBER OF TASKS $SLURM_NTASKS"
 
-        #module load oneapi
-        #mpiicx mpi-hello.c -o mpi-hello
+                        module purge
 
-        mpirun -np $SLURM_NTASKS ./mpi-hello 
+                        #module load lib/openmpi/4.0.5
+                        #mpicc mpi-hello.c -o mpi-hello
 
-        exit
+
+                        module load lib/openmpi/5.0.0
+                        mpicc mpi-hello.c -o mpi-hello
+
+                        #module load oneapi
+                        #mpiicx mpi-hello.c -o mpi-hello
+
+                        mpirun -np $SLURM_NTASKS ./mpi-hello 
+
+                        exit
+
+
+
 
 Ardından, bu komut dosyasını yürütmek üzere TRUBA'ya aşağıdaki komutu kullanarak göndeririz:
 
