@@ -38,8 +38,13 @@ extensions = [
 ]
 
 
-html_css_files = ['custom.css']
+html_css_files = ['custom.css',
+                  'feedback.css',]
 
+
+html_js_files = [
+    'feedback.js',
+]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -80,8 +85,8 @@ html_logo = '_static/truba_logo.png'
 html_static_path = ['_static']
 
 html_theme_options = {
-    "search_bar_text": "Ara..."
-}
+    "search_bar_text": "Ara...",
+    }
 
 def setup(app):
     app.add_css_file('site_theme.css')

@@ -10,94 +10,132 @@ Araba üretimi hızlandırmak isteyen bir şirket yeni bir nakil bandı satın v
 
 Mesela butik bir araba üreticisiyseniz, sadece bir avuç araba yapmak için yeni bir montaj hattı inşa etmek, tasarruf edeceğinden daha fazla zaman ve paraya mal olmaktaysa, nasıl daha hızlı araba üretebilirsiniz? Tek yol, birden fazla kişinin aynı anda tek bir araba üzerinde çalışmasını sağlamaktır. Bunun için birbirini engellemeyen ve aynı anda uygulanabilecek adımların belirlenmesi gerekir, mesela arabanın moturu ve şasisi eş zamanlı inşa edilebilir. Algoritmalar da aynı özellikleri taşımaktadır. Bu dokümanda araba nakil bandı örneği ile tanıttığımız paralel algoritmaların özellikleri anlatılacaktır.
 
-Veri Bağımlılığı
-----------------
+Slurm ile MPI kullanımı
+=======================
 
-Birçok farklı alanda ve uygulamada birbirine veri olarak bağlı işlemler sonucunda bir hesaplama yaparız. Bir başka deyişle yinelemeli işlemler, bir değerin hesaplanıp bu değerin bir sonraki hesaplamada kullanıldığı, seri işlemler teşkil etmektedir ve bu tarz işlemler büyük ölçüde paralelleştirilemez. Aşağıda bir seri kod örneği verilmiştir:
+MPI, HPC için çok önemli olan bir şeye izin verir - birden çok düğümün (sunucunun) aynı prosedür üzerinde çalışmasını sağlar. Sunucular arasındaki bu işbirliği oldukça sorunsuzdur ve TRUBA gibi bir sistemde çalışmak kolaydır. MPI içeren görevleri yürütmek için, iş adımlarını ``mpirun`` komutunu kullanarak başlatmamız gerekir (şimdiye kadar kullanılan ``srun`` komutu yerine). ``mpirun`` komutu kullanılarak oluşturulan iş adımları yine birden fazla görev oluşturacaktır, ancak bu görevler aynı MPI prosedürü üzerinde çalışacaktır. Öte yandan, ``srun`` komutu kullanılarak oluşturulan görevler birbirinden bağımsızdır.
 
-.. code-block:: c
+OMP ile deney yapmak için aşağıdaki MPI programını kullanacağız (şimdilik bu programı anlamaya çalışmanıza gerek yok :) İlerki bölümleri takip ettikten sonra geri dönüp anlamaya çalışmanızı tavsiye ederiz :)):
 
-   old_value = starting_point
-   for iteration in 1 ... 10000
-      new_value = function(old_value)
-      old_value = new_value
+        .. tab-set::
 
-Örnekte ``new_value`` ``old_value`` kullanılarak elde edilmekte ve bu değer tekrar ``old_value``\ 'ya eşitlenmektedir. Yani döngünün bir önceki tekrarında hesaplanan değer bir sonraki tekrarda kullanılmaktadır. Bu durum veri bağımlılığı olarak adlandırılmaktadır. Döngü tekrarı ``k+1``\ 'deki ``new_value`` döngü tekrarı ``k``\ 'daki ``old_value``\ 'ya bağımlıdır. Veri bağımlılığı bir programdaki paralel ve seri bölgeleri belirler.
+            .. tab-item:: İş dosyası
 
-Yukarda bahsettiğimiz araba nakil bandında da bu şekilde kısıtlamalar ve bağımlılıklar düşünebiliriz. Mesela, bir arabanın tekerleklerini aynı anda, *paralel* bir şekilde, monte edebiliriz. Fakat bunu yapabilmek için arabanın aksının monte edilmiş olması gerekir. Araba aksının monte edilmesi ve tekerleklerin mont edilmesi aynı anda yapılamayacak işlemleri teşkil etmektedir. Bu analojide tekerlekleri monte etme işleminin aksı monte etme işlemine bağımlı olduğunu söyleyebiliriz.
+                .. code-block:: c
 
-Paralel bir şekilde çalıştırılamayan kısımları **Seri Bölgeler**\ , ve paralel olarak çalıştırılabilen kısımları **Paralel Bölgeler** olarak adlandırmaktayız. Bir program hiçbir zaman seri bölgelerin toplam süresinden daha hızlı çalıştırılamaz. Aşağıda seri ve paralel bölge örnekleri verilmiştir:
+                        #include <mpi.h>
+                        #include <stdio.h>
 
-.. code-block:: c
+                        int main(int argc, char** argv) {
+                        // Initialize the MPI environment
+                        MPI_Init(NULL, NULL);
 
-   serial   | vector_0[0] = 1;
-            | vector_1[1] = 1;
-            | for i in 2 ... 1000
-            |   vector_1[i] = vector_1[i-1] + vector_1[i-2];
+                        // Get the number of processes
+                        int world_size;
+                        MPI_Comm_size(MPI_COMM_WORLD, &world_size);
 
-   parallel | for i in 0 ... 1000
-            |   vector_2[i] = i;
+                        // Get the rank of the process
+                        int world_rank;
+                        MPI_Comm_rank(MPI_COMM_WORLD, &world_rank);
 
-   parallel | for i in 0 ... 1000
-            |   vector_3[i] = vector_2[i] + vector_1[i];
-            |   print("The sum of the vectors is.", vector_3[i]);
+                        // Get the name of the processor
+                        char processor_name[MPI_MAX_PROCESSOR_NAME];
+                        int name_len;
+                        MPI_Get_processor_name(processor_name, &name_len);
 
-Ölçeklenebilirlik
------------------
+                        // Print off a hello world message
+                        printf("Hello world from processor %s, rank %d out of %d processors\n",
+                                processor_name, world_rank, world_size);
 
-Bir parallel programın hızlanması, bu programın tek bir işlemci ile çalışma süresinin, N işlemci ile çalışma süresine olan oranı olarak tanımlanmıştır. İdeal olarak hızlanmanın kullanılan işlemci sayısına eşit olmasını, ``hızlanma = N``\ , isteriz. Böylece bütün işlemciler işlemci gücünün tamamını kullanmış olurlar. Fakat birazdan bahsedeceğimiz sebepler yüzünden bu durum çoğu zaman gerçekleştirilemez.
-
-Amdahl Yasası ve Güçlü Ölçekleme
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Amdahl yasası paralel programlama ile elde edilebilecek teorik hızlanma limitini tanımlamaktadır: Sabit bir problem için hızlanmanın üst sınırı kodun seri kısmı tarafından belirlenir. Buna güçlü ölçekleme denir ve sonuçları aşağıdaki şekilden anlaşılabilir.
-
-
-.. image:: /assets/openmpi-education/images/amdahl.png
-   :target: /assets/openmpi-education/images/amdahl.png
-   :alt: /assets/openmpi-education/images/amdahl.png
+                        // Finalize the MPI environment.
+                        MPI_Finalize();
+                        }
 
 
-Bir programın 20 saatte çalışmasını tamamladığını ve bu programın seri bölgesinin programın yüzde 5 ini kapsadığını kabul edersek, Amdahl yasasına göre programın hızlanması yukardaki şekilde gibi mavi çizgi ile gösterilebilir. Programın yüzde 5'i yani 1 saati seri olduğundan program hiçbir zaman 1 saatten daha fazla çalıştırılamaz ve, ne kadar işlemci kullanılırsa kullanılsın, elde edilebilecek hızlanma en fazla 20 olabilir.
+            .. tab-item:: SLURM betik
+                                
+                Aşağıda gösterilen mpi.slurm betiği, MPI görevlerini yürütmek için birden çok düğümü nasıl kullanabileceğimizi gösterir:
 
-Güçlü Ölçekleme
-^^^^^^^^^^^^^^^
+                .. code-block:: bash
 
-
-* Sabit bir toplam sorun boyutu için çözüm süresinin işlemci sayısıyla nasıl değiştiği olarak tanımlanır.
-* İletişim ek yükü tipik olarak kullanılan işlem sayısıyla arttığından, daha büyük işlem sayılarında iyi bir güçlü ölçekleme elde etmek daha zordur.
-
-Pratikte problemin boyutu, işlem için ayrılan kaynak miktarı ile artmaktadır. Bu nedenle problem büyüklüğüne göreceli hızlanmanın ölçülmesi de yüksek performanslı uygulamalar için önemlidir.
-
-Gustafson Yasası ve Zayıf Ölçekleme
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Gustafson yasası, programdaki paralel bölgenin kaynak miktarı ile doğrusal olarak ölçeklendiği ve seri bölgenin problemin boyutuna göre artmadığı yaklaşımlarına dayanmaktadır. 
-
-
-.. image:: /assets/openmpi-education/images/gustafson.png
-   :target: /assets/openmpi-education/images/gustafson.png
-   :alt: /assets/openmpi-education/images/gustafson.png
+                        #!/bin/bash
+                        #SBATCH -p orfoz
+                        #SBATCH -J mpi_test
+                        #SBATCH -N 1
+                        #SBATCH -n 1
+                        #SBATCH -c 110
+                        #SBATCH -C weka
+                        #SBATCH --time=3-00:00:00
 
 
-Yasaya göre işlemci saysı arttıkça ölçekli hızlanma linear olarak artar. Yukarıdaki figürde gösterildiği gibi ölçekli hızlanma eğimi 1'den küçük olmakla birlikte lineer bir ilişki göstermektedir.
-
-Zayıf ölçekleme işlemci başına sabit bir sorun boyutu için çözüm süresinin işlemci sayısına göre nasıl değiştiği olarak tanımlanır. Güçlü ölçeklemede problem bütün işlemcilerin toplamı için sabitken, zayıf ölçeklemede işlemci sayısı arttıkça problemin boyutu da artmaktadır.
-
-İletişimin Önemi
-----------------
-
-Paralel bir programdaki en önemli konseptlerden birisi işlemcinin hafıza ya da işlemciler arası gerçekleştirdiği iletişimin hızıdır. İletişim hızı, bir kişinin göndermesi/alması gereken veri miktarı ve iletişim için temel alınan donanımın bant genişliği ve sistemin gecikme sabiti ile belirlenir. Gecikme, yazılım gecikmesinden (işletim sisteminin bir iletişime hazırlanmak için ihtiyaç duyduğu süre) ve donanım gecikmesinden (donanımın küçük bir veriyi göndermesi/alması için gereken süre) oluşur. Genel olarak paralel programı çözen işlemci saysını arttırdıkça iletişim miktarı da artmaktadır. İletişim bir noktadan sonra darboğaz haline gelip hızlanmayı durdurup yavaşlamaya sebep olabilir.
-
-Yüzey Hacim Oranı
------------------
-
-Paralel bir algoritmada bir işlemci tarafından kullanılan veri iki türlü değerlendirilmektedir:
+                        export OMP_NUM_THREADS=1
 
 
-* İşlemcinin ihtiyacı olan fakat başka işlemciler tarafından kontrol edilen veriler.
-* İşlemcinin kendi kontrol ettiği ve hesaplayabildiği veriler.
+                        echo "SLURM_NODELIST $SLURM_NODELIST"
+                        echo "NUMBER OF TASKS $SLURM_NTASKS"
 
-Bahsedilen ilk veri tipi yüzey ikincisi ise hacim olarak adlandırılmaktadır. Yüzey tipi veriler işlemciler arasında iletişim teşkil eder ve yüzey veri tipi ne kadar artarsa işlem süresi o kadar yavaşlar.
+                        module purge
 
-Amdahl yasası nedeniyle, her bir iletişimin hazırlanması sonlu bir zaman aldığından (gecikme süresi) aynı yüzey için iletişim sayısını en aza indirilmelidir. Bu, mümkünse yüzey verilerinin, birçok seferde iletilmesindense tek bir iletişimde değiş tokuş edilmesini önerir.
+                        #module load lib/openmpi/4.0.5
+                        #mpicc mpi-hello.c -o mpi-hello
+
+
+                        module load lib/openmpi/5.0.0
+                        mpicc mpi-hello.c -o mpi-hello
+
+                        #module load oneapi
+                        #mpiicx mpi-hello.c -o mpi-hello
+
+                        mpirun -np $SLURM_NTASKS ./mpi-hello 
+
+                        exit
+
+
+
+
+Ardından, bu komut dosyasını yürütmek üzere TRUBA'ya aşağıdaki komutu kullanarak göndeririz:
+
+.. code-block:: bash
+
+   $ sbatch example_mt1.slurm
+
+``<my_account>``\ : TRUBA'daki hesap adı
+
+``<job_name>``\ : iş kuyruğunda görünen gönderilen işin adı.
+
+``<part>``\ : çalışmayı sıraya alacağınız bölümün adı.
+
+`<time>`: Çalışmanızın çalışacağı maksimum süre. Bu girdinin biçimi `d-hh: mm: ss\ ``şeklindedir, burada``\ d\ ``günü,``\ hh\ ``saati,``\ mm\ ``dakikayı ve``\ ss` saniyeyi temsil eder. Not: Yürütülebilir dosya belirtilen bu zaman aralığında sona ermezse, otomatik olarak sonlandırılacaktır.
+
+``<N>``\ : bu komut dosyasındaki görevleri çalıştırmak için kullanılacak düğüm (sunucu) sayısı.
+
+``<n>``\ : komut dosyası içinde paralel olarak çalışacak maksimum görev sayısı.
+
+``<n1>``\ : ilgili MPI iş adımına katkıda bulunacak görev sayısı
+
+``<c>``\ : her görevin yürütülmesi için ayrılmış CPU sayısı
+
+``<dir>``\ : TRUBA'da komut dosyasının yürütüleceği yol. Burası genellikle girdi ve çıktı dosyalarının bulunduğu yerdir. Komut dosyasında tanımlanan tüm göreli yollar ``<out>`` ile göreli olacaktır.
+
+``<out>``\ : bu işin ``stdout`` unun yazdırılacağı dosya. Bu, koddaki yürütmelerin ürettiği tüm çıktıları içerir.
+
+``<err>``\ : bu işin ``stderr`` inin yazdırılacağı dosya.
+
+``Sbatch`` komutunu çağırdığımızda, işi TRUBA kuyruğuna kaydedeceğiz. Kaynaklar mevcut olduğunda ve işimiz sıranın en üstünde olduğunda, aşağıdakiler gerçekleşecektir:
+
+
+#. Talep edilen kaynaklar, talep edilen zaman aralığı için tahsis edilecektir ve bu durumda talep ettiklerimiz:
+
+   #. ``<N>`` düğüm
+   #. ``<npn> * <N>`` görev yürütme yetkisi
+   #. her görev için ``<c>`` işemci, yani totalde ``<c> * (<npn> * <N>)`` işlemci
+
+#. the lines starting with ``mpirun`` will start job-steps that will  run the program my_mpi_omp_program using ``<N>`` nodes. The first job-step will use ``<n1>`` tasks to run its procedure. The second will use ``<n>`` tasks.  Both of these job-steps' tasks will use ``<c>`` threads. 
+#. ``mpirun`` ile başlayan satırlar, my_mpi_omp_program programını ``<N>`` düğüm kullanarak çalıştıracak iş adımlarını başlatacaktır. İlk iş adımı, prosedürünü çalıştırmak için ``<n1>`` görev kullanacaktır. İkincisi, ``<n>`` görev kullanacaktır. Bu iş adımlarının her iki görevi de ``<c>`` iş parçacığı kullanacaktır.
+
+Örnek\ **:**
+^^^^^^^^^^^^^^
+
+Aşağıda gösterilen ``mpi_example.slurm`` betiği, MPI programlarının TRUBA'da nasıl çalıştırılabileceğini gösterir ve yürütme için ayrılmış görev sayısının ``-np`` seçeneği kullanılarak nasıl değiştirilebileceğini gösterir. Komut dosyasını, kullanmak istediğimiz düğüm sayısını ve her bir düğümde kullanmak istediğimiz görev sayısını tanımlayarak başlatıyoruz. Ardından, gerekli modülleri yükleyerek ve MPI kodumuzu derleyerek yürütme ortamını kuruyoruz. Son olarak iki MPI iş adımı çalıştırıyoruz. Her iş adımı farklı sayıda görev kullanır, ancak, ``srun``\ 'dan farklı olarak, bir iş adımı ``mpirun`` kullanılarak başlatıldığında, oluşturduğu görevlerin tümü bağımsız olmak yerine aynı prosedür üzerinde çalışacaktır.
+
+`module av` komutu ile mevcut OpenMPI kütüphanelerini görüntüleyebilirsiniz. 

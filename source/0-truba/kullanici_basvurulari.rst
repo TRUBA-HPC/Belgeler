@@ -48,4 +48,9 @@ TRUBA kullanıcı şifrenizi değiştirmek için kullanıcı arayüz sunucuları
 .. code-block:: bash
 
   passwd
-   
+
+Yeni Şifre Talebi
+-----------------
+
+Şifrenizi unutmanız ya da güvenlik sebebiyle şifrenizin değiştirilmesini talep ettiğiniz durumlarda 
+https://portal.truba.gov.tr adresinden Profilim sekmesinden yeni şifre talebinde bulunabilirsiniz. 
