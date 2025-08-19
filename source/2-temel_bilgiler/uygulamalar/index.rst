@@ -45,6 +45,16 @@ Aşağıdaki dizinlerde merkezi yazılımlar, kütüphaneler, konteynerler ve ö
      - /arf/sw/scripts 
 
 
+Lisanslı Yazılımlar
+--------------------
+Sistemde kullanılabilen uygulamaların bir kısmı lisansı ücretli olan uygulamalardır. Bu tür uygulamaları kullanmak isteyen kullanıcılar TRUBA'da çalışmaya uygun lisansı da kendileri (ya da bağlı bulundukları kurum aracılığıyla) sağlamalıdır.
+
+.. toctree::
+   :maxdepth: 1
+
+   yazilimlar.rst
+
+
 
 Uygulamalar Kılavuzu
 --------------------
@@ -68,9 +78,10 @@ Bu bölümde, TRUBA altyapısında kurulu olan uygulamalar ve bu uygulamaların 
    Lammps/index.rst
    QEspresso/index.rst
    Vasp/index.rst
-
+   
    
    GREASY/index.rst
    Matlab/index.rst
+   
   
 
