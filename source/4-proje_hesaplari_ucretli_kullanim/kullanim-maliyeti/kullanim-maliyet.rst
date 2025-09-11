@@ -2,15 +2,23 @@
 
 .. _kullanim_maliyeti:
 
-Tahmini Kullanım Maliyeti
-=========================
+
+Global Servislerde Kullanım Ücretleri
+====================================
+
+Bilgilendirme mesajı hakkında:
+
+Şu an için akademik dünyaya verdiğimiz hizmetler belirli sınırlar dahilinde ücretsiz olarak devam etmektedir. Bu şekilde hizmet vermeye de devam edeceğiz. Ancak kuyruklarda öncelik isteyen veya daha fazla kaynak kullanmak isteyen kullanıcılarımız ücreti dahilinde ek hizmet talep edebilmektedirler.
+
+TRUBA karşılama mesajında gösterilen fiyat bilgisi (Value of Usage), mesajda da belirtildiği üzere, *"Fiyat bilgisi kullanılan kaynağın kullanım maliyetini en düşük çekirdek-saat tutarı üzerinden göstermektedir. Bilgi amaçlıdır. Fatura bilgisi değildir."*  kullanıcıların kaynak tüketimi hakkında genel bir fikir edinmelerini sağlamak amacıyla sunulmaktadır.
 
 .. warning::
+    Bu bilgi mesajı, kaynakların daha verimli ve amacına uygun olarak kullanılması ayrıca kullanılan kaynak miktarının TÜBİTAK'a ve ülkeye maliyeti konusunda kullanıcıların farkındalığının arttırılması amacı ile gösterilmektedir.
 
-   Bu bölüm yalnızca bilgilendirme ve farkındalık oluşturma amacıyla hazırlanmıştır. Burada yer alan fiyatlar TRUBA için geçerli değildir; herhangi bir şekilde resmi ücretlendirme politikası olarak değerlendirilmemelidir.
+Global Servislerde Kullanım Ücretleri
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-TRUBA altyapısı, akademik araştırma ve eğitim faaliyetleri için ücretsiz olarak sunulmaktadır. Ancak kullanıcıların yararlandıkları yüksek performanslı hesaplama (HPC) kaynaklarının gerçek ekonomik değerini kavrayabilmeleri amacıyla, aynı donanım kapasitesinin önde gelen ticari bulut sağlayıcıları üzerinden temin edilmesi halinde ortaya çıkabilecek yaklaşık maliyetlere ilişkin bilgiler aşağıda sunulmaktadır.
+TRUBA'da verilen servislerin  benzer kaynaklarla hizmet veren global servis sağlayıcılardaki maliyeti kabaca aşağıdaki tabloda gösterilmektedir.  Her sağlayıcıda fiyatlar dinamik olarak değişmektedir. O nedenle güncel fiyatlar için servis sağlayıcıların kendi web sayfalarını kontrol etmek önem arzetmektedir.
 
 Burada belirtilen fiyatlandırmalar, 2025 yılı itibarıyla yaygın olarak hizmet veren `Amazon Web Services (AWS) <https://aws.amazon.com/ec2/pricing/on-demand/>`_, `Google Cloud Platform (GCP) <https://cloud.google.com/compute/vm-instance-pricing?hl=en#accelerator-optimized>`_ ve `Microsoft Azure <https://azure.microsoft.com/en-us/pricing/details/machine-learning/#pricing>`_ tarafından sağlanan on-demand (liste fiyatı, taahhütsüz) GPU tabanlı sanal sunucu ücretlerine dayanmaktadır. Bölgesel fiyat farklılıkları, uzun vadeli rezervasyonlar (reserved instances), spot kullanımlar, depolama ve ağ maliyetleri hesaba katılmamıştır. Bu nedenle, aşağıdaki tablolar yalnızca TRUBA kaynaklarının piyasa değerine dair **farkındalık oluşturma amacıyla hazırlanmıştır.**
 
