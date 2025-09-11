@@ -3,10 +3,11 @@
 .. _kullanim_maliyeti:
 
 
-Global Servislerde Kullanım Ücretleri
+Diğer Sağlayıcılarda Kullanım Ücretleri
 ====================================
 
 Bilgilendirme mesajı hakkında:
+------------------------------
 
 Şu an için akademik dünyaya verdiğimiz hizmetler belirli sınırlar dahilinde ücretsiz olarak devam etmektedir. Bu şekilde hizmet vermeye de devam edeceğiz. Ancak kuyruklarda öncelik isteyen veya daha fazla kaynak kullanmak isteyen kullanıcılarımız ücreti dahilinde ek hizmet talep edebilmektedirler.
 
@@ -15,8 +16,8 @@ TRUBA karşılama mesajında gösterilen fiyat bilgisi (Value of Usage), mesajda
 .. warning::
     Bu bilgi mesajı, kaynakların daha verimli ve amacına uygun olarak kullanılması ayrıca kullanılan kaynak miktarının TÜBİTAK'a ve ülkeye maliyeti konusunda kullanıcıların farkındalığının arttırılması amacı ile gösterilmektedir.
 
-Global Servislerde Kullanım Ücretleri
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Global Sağlayıcılarda Kullanım Ücretleri
+----------------------------------------
 
 TRUBA'da verilen servislerin  benzer kaynaklarla hizmet veren global servis sağlayıcılardaki maliyeti kabaca aşağıdaki tabloda gösterilmektedir.  Her sağlayıcıda fiyatlar dinamik olarak değişmektedir. O nedenle güncel fiyatlar için servis sağlayıcıların kendi web sayfalarını kontrol etmek önem arzetmektedir.
 
