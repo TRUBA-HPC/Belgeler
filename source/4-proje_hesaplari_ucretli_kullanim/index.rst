@@ -30,7 +30,7 @@ Araştırma Odaklı Desteklenen Projeler Kapsamında Faydalanacak Kamu ve Özel 
 - :ref:`ozel-hsbvsb-2024`
 
 
-Tahmini Kullanım Maliyeti
+Diğer Sağlayıcılarda Kullanım Ücretleri
 -------------------------
 
 - :ref:`kullanim_maliyeti`
