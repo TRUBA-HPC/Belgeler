@@ -13,97 +13,87 @@ Sunucu Aileleri
 TRUBA altyapısında yer alan başlıca sunucu aileleri ve öne çıkan teknik özellikleri aşağıda özetlenmiştir:
 
 .. list-table:: TRUBA Kaynakları
-   :widths: 25 25 25 25 25 25 25 25
+   :widths: 15 15 25 25 25 25 25
    :header-rows: 1
 
    * - Yıl
      - Adet
      - CPU/GPU
      - İşlemci Modeli
-     - SPECfp_rate_base2006
      - Teorik Gflops
      - Bellek
      - Tanımı 
    * - 2016
      - 1
-     - 14 çekirdek x 16 CPU
+     - 14 x 16 CPU
      - Xeon E7-4850 v3 2.20GHz
-     - *-*
      - 7.9 Tflops
      - 4 TB 
      - orkinos
    * - 2017
      - 128 
-     - 14 çekirdek x 2 CPU 
+     - 14 x 2 CPU 
      - Xeon E5-2690 v3 2.60GHz
-     - 970 
      - 1164 Gflops
      - 256 GB 
      - sardalya
    * - 2018
      - 120
-     - 20 çekirdek x 2 CPU
+     - 20 x 2 CPU
      - Xeon 6148 2.40GHz
-     - 1400
      - 2048Gflops
      - 384 GB
      - barbun
    * - 2018
      - 24
-     - 20 çekirdek x 2CPU & 2xNvidia P100 GPU
+     - 20 x 2CPU & 2xNvidia P100 GPU
      - Xeon 6148 2.40GHz
-     - 1400
      - 2048Gflops & 9400Gflops 
      - 384 GB & 2x16 GB HBM2
      - barbun-cuda
    * - 2018
      - 24
-     - 20 çekirdek x 2CPU & 4xNvidia V100 GPU
+     - 20 x 2CPU & 4xNvidia V100 GPU
      - Xeon 6148 2.40GHz
-     - 1400 
      - 2048Gflops & 4x7800Gflops
      - 384 GB & 4x16 GB HBM 
      - akya-cuda
    * - 2021
      - 144
-     - 28 çekirdek x 2 CPU
+     - 28 x 2 CPU
      - Xeon 6258R 2.70GHz
-     - *-*
      - 3.234 Tflops
      - 192 GB 
      - hamsi
    * - 2021
      - 9
-     - 64 çekirdek x 2CPU & 8xNvidia A100 GPU
+     - 64 x 2CPU & 8xNvidia A100 GPU
      - AMD 7742 2.24GHz
-     - *-*
      - 4.600Gflops & 8x9.7Tflops
      - 1 TB & 8x80GB HBM
      - palamut-cuda
    * - 2023
      - 504
-     - 56 çekirdek x 2CPU 
+     - 56 x 2CPU 
      - Intel(R) Xeon(R) Platinum 8480+ 2.0GHz
-     - *-*
      - 7 Tflops
      - 256 GB
      - orfoz
    * - 2024
      - 24
-     - 32 çekirdek x 2CPU & 4xNvidia H100 GPU
+     - 32 x 2CPU & 4xNvidia H100 GPU
      - Intel(R) Xeon(R) GOLD 6548Y+ 2.5GHz
-     - *-*
      - 5Tflops & 4x34Tflops
      - 1 TB & 4x80GB HBM
      - kolyoz-cuda 
    * - 2025
      - 48
-     - 32 çekirdek x 2CPU & 4xNvidia H200 GPU
+     - 32 x 2CPU & 4xNvidia H200 GPU
      - Intel(R) Xeon(R) GOLD 6548Y+ 2.5GHz
-     - *-*
      - 5Tflops & 4x34Tflops
      - 1 TB & 4x141GB HBM
      - kolyoz-cuda 
+
 Her sunucu ailesi, yüksek hızlı Infiniband ağları ile birbirine bağlıdır ve ortak dosya sistemlerine erişim sunar. GPU kümelerinde güncel NVIDIA sürücüleri ve CUDA desteği mevcuttur. Bazı kümelerde yüksek I/O gerektiren işler için NVMe diskler scratch alanı olarak sunulmaktadır.
 
 
