@@ -8,6 +8,21 @@ TRUBA, bilimsel çalışmalara doğrudan katkı sağlamanın yanı sıra, çeşi
 
 Günümüzde "TRUBA 2023" projesi ile T.C. Cumhurbaşkanlığı Strateji ve Bütçe Başkanlığı ile desteklenmeye devam etmektedir.
 
+.. admonition:: TRUBA Kaynaklarının Kullanımı ve Yayınlarda Teşekkür
+   :class: important
+
+   TRUBA hesaplama kaynaklarının kullanıldığı tüm bilimsel çalışmalarda (makale, tez, bildiri, poster sunumu vb.), aşağıda sunulan Teşekkür (“Acknowledgement”) metinlerinin yayınlarda yer alması gerekmektedir (:ref:`tesekkur-truba` ).
+
+   Türkçe Teşekkür Örneği
+   ------------------------
+
+      Bu araştırmada yer alan tüm/kısmi nümerik hesaplamalar TÜBİTAK ULAKBİM, Yüksek Başarım ve Grid Hesaplama Merkezi'nde (TRUBA kaynaklarında) gerçekleştirilmiştir.
+
+
+   İngilizce Teşekkür Örneği
+   --------------------------
+
+      The numerical calculations reported in this paper were fully/partially performed at TUBITAK ULAKBIM, High Performance and Grid Computing Center (TRUBA resources).
 
 .. toctree::
    :maxdepth: 1

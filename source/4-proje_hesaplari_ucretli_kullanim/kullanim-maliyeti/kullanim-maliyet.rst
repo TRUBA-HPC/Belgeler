@@ -4,9 +4,9 @@
 
 
 Diğer Sağlayıcılarda Kullanım Ücretleri
-====================================
+==========================================
 
-Bilgilendirme mesajı hakkında:
+Bilgilendirme Mesajı Hakkında:
 ------------------------------
 
 Şu an için akademik dünyaya verdiğimiz hizmetler belirli sınırlar dahilinde ücretsiz olarak devam etmektedir. Bu şekilde hizmet vermeye de devam edeceğiz. Ancak kuyruklarda öncelik isteyen veya daha fazla kaynak kullanmak isteyen kullanıcılarımız ücreti dahilinde ek hizmet talep edebilmektedirler.
@@ -15,6 +15,15 @@ TRUBA karşılama mesajında gösterilen fiyat bilgisi (Value of Usage), mesajda
 
 .. warning::
     Bu bilgi mesajı, kaynakların daha verimli ve amacına uygun olarak kullanılması ayrıca kullanılan kaynak miktarının TÜBİTAK'a ve ülkeye maliyeti konusunda kullanıcıların farkındalığının arttırılması amacı ile gösterilmektedir.
+
+.. admonition:: TRUBA Kaynaklarının Kullanımı ve Yayınlarda Teşekkür
+   :class: important
+
+   TRUBA hesaplama kaynaklarının kullanıldığı tüm bilimsel çalışmalarda (makale, tez, bildiri, poster sunumu vb.), aşağıda sunulan Teşekkür (“Acknowledgement”) metinlerinin yayınlarda yer alması gerekmektedir.
+
+   Ayrıntılı bilgi için lütfen :ref:`tesekkur-truba` sayfasını ziyaret ediniz.
+
+
 
 Global Sağlayıcılarda Kullanım Ücretleri
 ----------------------------------------
