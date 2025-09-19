@@ -335,15 +335,18 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 
 34. İşlerim AssociationJobLimit veya AssocGrpCPUMinutesLimit uyarısı vererek başlamıyor. Neden?
 
-	Hesabınız için tanımlanmış olan çekirdek-saat kotasının tamamını kullanmış olduğunuz için, işleriniz iş kuyruğuna alınmasına rağmen başlamaz. İşlerinizin başlayabilmesi için çekirdek-saat kotanızın arttırılması gerekir.
+	Hesabınız için tanımlanmış çekirdek-saat kotasını tamamen kullandığınızda, işleriniz iş kuyruğuna alınsa bile başlatılamaz. Yeni işlerinizin başlayabilmesi için çekirdek-saat kotanızın artırılması gerekmektedir.
 
-	https://portal.truba.gov.tr/ adresindeki profilinizi güncelleyerek şu ana kadar TRUBA kaynaklarını kullanarak yapmış olduğunuz, ve talep edeceğiniz ek kaynakla yapmak istediğiniz çalışmalar hakkında özet bilgi girmeniz ve yine portaldaki Yayınlar menüsünden çalışmalar sonunucunda hazırladğınız tez, bildiri, makale vs. yayınların listesini girmeniz durumunda yeni kaynak talebiniz değerlendirilerek bir uzatma sağlanabilir.
+	TRUBA portalı (https://portal.truba.gov.tr/) üzerinden profilinizi güncelleyerek, “Yayınlar” menüsüne TRUBA kaynaklarını kullanarak gerçekleştirdiğiniz ve teşekkür kısmında TRUBA'ya yer verdiğiniz (:ref:`tesekkur-truba`) tez, bildiri, makale gibi bilimsel yayınlarınızı lütfen ekleyiniz.
 
-	Profil ve yayın bilgileri güncellendikten sonra ``grid-teknik@ulakbim.gov.tr`` adresine bildirimde bulunmayı unutmayınız.
+	Profil ve yayın bilgilerinizi güncelledikten sonra, ek kaynak talebinizi ve TRUBA kaynaklarıyla gerçekleştirdiğiniz veya gerçekleştirmeyi planladığınız bilimsel çalışmaları özetleyen bir bilgilendirme e-postasını ``grid-teknik@ulakbim.gov.tr`` adresine iletiniz.
+
+	İlgili bilgilendirmeler iletildikten sonra yeni kaynak talebiniz değerlendirilerek uygun görülmesi halinde çekirdek-saat kotanızda arttırım sağlanabilir.
+
 
 .. _target to ss35:
 
-35. Kullanıcı dizinlerinin başka kullanıcıların erişimine açılması (ACL)
+1.  Kullanıcı dizinlerinin başka kullanıcıların erişimine açılması (ACL)
 
     Güvenlik sebebi ile kullanıcı ev dizinleri ve dosyaları sadece ilgili kullanıcının erişimine açıktır. Ancak aynı projeler üzerinde çalışan kullanıcılar bazı durumlarda birbirlerinin verilerine erişmek isteyebilirler. Bu tip talepler sıklıkla teknik ekibimize ulaştırılmaktadır. Ancak bunun takibini ve düzenlenmesini yapmak tarafımızca mümkün değildir.
 
