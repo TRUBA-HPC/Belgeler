@@ -87,15 +87,15 @@ Her araştırmacıya kullanıcı adı ile birlikte aynı anda kullanılabilecek 
 
 - *Lisans Öğrencileri:*  Danışmanları birlikte bir projeye dahil olmaları durumunda hesap açılmakta olup, sadece ilgili proje hesabının kaynak miktarlarından faydalanabilmektedirler.
 
-- *Y. Lisans Öğrencileri:* Danışman onaylarından sonra hesapları açılmakta olup, aynı anda 56 çekirdek kullanımı, toplam 200.000 çekirdek saat hesaplama kotası ve 2TByte veri depolama alanı sağlanmaktadır.
+- *Y. Lisans Öğrencileri:* Danışman onaylarından sonra hesapları açılmaktadır.
 
    Danışmanları ile birlikte bir projeye dahil olmaları ve ilgili projenin TRUBA kaynaklarında bir proje hesabı bulunması durumunda, ilgili proje hesabının kaynak miktarlarından da faydalanabilmektedirler.
 
-- *Doktora Öğrencileri ve Akademisyenler:* Hesapları YÖKSİS bilgilerine göre doğrudan açılmaktadır. Aynı anda 168 çekirdek kullanımı, toplam 400.000 çekirdek saat hesaplama kotası ve 2TByte veri depolama alanı sağlanmaktadır.
+- *Doktora Öğrencileri ve Akademisyenler:* Hesapları YÖKSİS bilgilerine göre doğrudan açılmaktadır.
 
    Araştırmacılar bir projeye dahil olmaları ve ilgili projenin TRUBA kaynaklarında bir proje hesabı bulunması durumunda, ilgili proje hesabının kaynak miktarlarından da faydalanabilmektedirler.
 
-Konu ile ilgili her türlü soru ve sorununuzu grid-teknik@ulakbim.gov.tr adresine e-posta ile iletebilirsiniz.
+Konu ile ilgili her türlü soru ve sorununuzu ``grid-teknik@ulakbim.gov.tr`` adresimize e-posta ile iletebilirsiniz.
 
 
 
