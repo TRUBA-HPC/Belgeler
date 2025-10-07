@@ -4,6 +4,10 @@
 ARF Hesaplama Kümesinde GaussView 6 Programının Kullanılması
 ============================================================
 
+.. warning:: 
+
+   TRUBA'da Gaussview programını kullanabilmek için https://portal.truba.gov.tr/ adresinden dilekçe yüklemeniz. gerekmektedir. İlgili dilekçeye :ref:`arf-g16-erisim` sayfasından erişebilirsiniz. 
+
 Kimyasal modelleme ve hesaplamalı kimya çalışmalarını kolaylaştırmak amacıyla tasarlanmış olan GaussView, kullanıcıların kompleks moleküler yapıların oluşturulması, görselleştirilmesi ve Gaussian hesaplamalarının yönetilmesi süreçlerinde büyük kolaylık sağlar.
 
 GaussView 6, Gaussian 16 yazılımı için mevcut olan en gelişmiş ve güçlü grafik arayüzüdür. Gaussian 16'da bulunan tüm yeni modelleme yöntemleri ve yetenekleri için tam destek sağlar.
