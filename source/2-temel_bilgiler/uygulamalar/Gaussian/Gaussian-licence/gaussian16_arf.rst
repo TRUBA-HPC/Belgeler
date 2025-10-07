@@ -11,6 +11,24 @@ ARF Hesaplama Kümesinde Gaussian 16 Programının Kullanılması
         :text-align: center
     .. grid-item-card:: :ref:`arf-g16-kilavuzu`
 
+
+Erişim 
+-------
+
+:ref:`arf-g16-erisim` sayfasında da anlatıldığı üzere TRUBA hesaplama kümelerinde Gaussian 16 Lisanslı yazılımını kullanmak isteyen araştırmacılarımızın aşağıdaki bağlantıda yer alan ve TÜBİTAK ile Gaussian Inc. arasında imzalanan "License to Use Agreement" dokümanındaki tüm maddeleri dikkatli bir şekilde okuması gerekmektedir.
+
+* :download:`Gaussian 16 License to Use Agreement </assets/gaussian/user_agreement/License_to_Use_Agreement.pdf>`
+
+"License to Use Agreement" dokümanını okuduktan sonra aşağıdaki bağlantıda yer alan "Kullanıcı Sözleşmesi" formunu indirip imzaladıktan sonra PDF olarak taratmalı ve dosya ismi "AdSoyad_kullaniciadi_GunAyYil.pdf" şeklinde kaydedilmelidir. İmzalanmış PDF dosyası TRUBA Portal profilinize eklenmelidir. Bunun için;  https://portal.truba.gov.tr/ adresinden TRUBA Portala giriş yapılması, profilim sekmesinde profil bilgilerini güncelle alanının en aşağısında yer alan "Dilekçe Yükle" kısmı kullanılmalıdır. İlgili form teknik ekibimize ulaştıktan sonra 5 iş günü içerisinde kullanıcı hesabınızın ilgili lisanlı yazılıma erişimi tanımlanacak ve e-posta adresinize geri bildirimde bulunulacaktır.
+
+.. warning:: 
+    
+    "Kullanıcı Sözleşmesi" formunun sadece İngilizce veya Türkçe kısmını doldurup imzalamanız yeterli olacaktır. 
+
+* :download:`Gaussian 16 Kullanıcı Sözleşmesi Formu </assets/gaussian/user_agreement/Gaussian-Agreement_to_Terms-petitionform_KullaniciSozlesmesi-dilekce.pdf>`
+* :download:`Gaussian 16 User Agreement Form </assets/gaussian/user_agreement/Gaussian-Agreement_to_Terms-petitionform_KullaniciSozlesmesi-dilekce.pdf>`
+
+
 `Gaussian'ın sayfasında <http://gaussian.com/>`_ verilen kullanıcı el kitabına aşağıdaki linkten ulaşarak ilgili program ve de kullanımı hakkında detaylı bilgilere ulaşabilirsiniz.
 
 * `Gaussian 16 El Kitabı <http://gaussian.com/man/>`_

@@ -33,6 +33,8 @@ Lisanslı olarak dağıtılan Gaussian 16, GaussView 6 ve TCP Linda programları
 
     * ÖNEMLİ NOT: İlgili yazılım savunma sanayisine hizmet eden askeri amaçlı projelerde kullanılamaz.
 
+**Gaussian erişimi için aşağıdaki linki ziyaret ediniz.**
+
 .. toctree::
     :maxdepth: 1
 
