@@ -7,37 +7,36 @@ ARF Hesaplama Kümesinde Gaussian 16 Programının Kullanılması
 
 .. grid:: 3
 
-    .. grid-item-card::  :ref:`gaussian-kurulum`
+    .. grid-item-card::  :ref:`g16-lisansli-erisim`
         :text-align: center
-    .. grid-item-card:: :ref:`arf-g16-kilavuzu`
+    .. grid-item-card:: :ref:`g16-arf-kullanim`
+        :text-align: center
+    .. grid-item-card::  :ref:`arf-g16-slurm`
+        :text-align: center
 
+.. _g16-lisansli-erisim:
 
+-------
 Erişim 
 -------
 
-:ref:`arf-g16-erisim` sayfasında da anlatıldığı üzere TRUBA hesaplama kümelerinde Gaussian 16 Lisanslı yazılımını kullanmak isteyen araştırmacılarımızın aşağıdaki bağlantıda yer alan ve TÜBİTAK ile Gaussian Inc. arasında imzalanan "License to Use Agreement" dokümanındaki tüm maddeleri dikkatli bir şekilde okuması gerekmektedir.
+TRUBA hesaplama kümelerinde TÜBİTAK ULAKBİM tarafından sağlanan Gaussian 16 Lisanslı yazılımını kullanmak isteyen araştırmacılarımızın :ref:`arf-g16-erisim` sayfasında yer alan bilgileri kontrol etmesi ve ilgili erişim dilekçesini TRUBA Portal'a yüklemesi gerekmektedir.
 
-* :download:`Gaussian 16 License to Use Agreement </assets/gaussian/user_agreement/License_to_Use_Agreement.pdf>`
+.. _g16-arf-kullanim:
 
-"License to Use Agreement" dokümanını okuduktan sonra aşağıdaki bağlantıda yer alan "Kullanıcı Sözleşmesi" formunu indirip imzaladıktan sonra PDF olarak taratmalı ve dosya ismi "AdSoyad_kullaniciadi_GunAyYil.pdf" şeklinde kaydedilmelidir. İmzalanmış PDF dosyası TRUBA Portal profilinize eklenmelidir. Bunun için;  https://portal.truba.gov.tr/ adresinden TRUBA Portala giriş yapılması, profilim sekmesinde profil bilgilerini güncelle alanının en aşağısında yer alan "Dilekçe Yükle" kısmı kullanılmalıdır. İlgili form teknik ekibimize ulaştıktan sonra 5 iş günü içerisinde kullanıcı hesabınızın ilgili lisanlı yazılıma erişimi tanımlanacak ve e-posta adresinize geri bildirimde bulunulacaktır.
-
-.. warning:: 
-    
-    "Kullanıcı Sözleşmesi" formunun sadece İngilizce veya Türkçe kısmını doldurup imzalamanız yeterli olacaktır. 
-
-* :download:`Gaussian 16 Kullanıcı Sözleşmesi Formu </assets/gaussian/user_agreement/Gaussian-Agreement_to_Terms-petitionform_KullaniciSozlesmesi-dilekce.pdf>`
-* :download:`Gaussian 16 User Agreement Form </assets/gaussian/user_agreement/Gaussian-Agreement_to_Terms-petitionform_KullaniciSozlesmesi-dilekce.pdf>`
-
+--------------------------------------
+Gaussian 16 Programının Kullanılması
+--------------------------------------
 
 `Gaussian'ın sayfasında <http://gaussian.com/>`_ verilen kullanıcı el kitabına aşağıdaki linkten ulaşarak ilgili program ve de kullanımı hakkında detaylı bilgilere ulaşabilirsiniz.
 
 * `Gaussian 16 El Kitabı <http://gaussian.com/man/>`_
 
-Mevcut durumda TRUBA'daki ARF hesaplama kümesinde ilgili lisanslı Gaussian programları kullanılabilmektedir.
+Mevcut durumda TRUBA'daki ARF hesaplama kümesinde ilgili lisanslı Gaussian programları kullanılabilmektedir. Öncelikle ilgili lisanslı programa erişiminizin olduğundan emin olunuz (:ref:`arf-g16-erisim`). 
 
 * ARF kümesine bağlantı için :ref:`arf_baglanti` sayfasını inceleyebilirsiniz.
 
-Terminalden ARF kümesine arf-ui1 veya arf-ui2 kullanıcı arayüzü üzerinden bağlantı sağladıktan sonra  
+Terminalden ARF kümesine ``arf-ui`` kullanıcı arayüz sunucularından birisine bağlantı sağladıktan sonra  
 
 .. code-block:: bash
 
@@ -64,6 +63,12 @@ komutunu yazdığınızda ARF kümesinde kurulu olan temel programlar listelenec
 
 .. code-block:: bash
 
+    avci gaussian
+
+veya
+
+.. code-block:: bash
+
     module avail |& grep gaussian
 
 veya
@@ -83,6 +88,7 @@ Gaussian 16 programına erişimi tanımlı olan araştırmacılar kendi kullanı
     cd g16-test
     touch gaussian16-orfoz.slurm    #*.slurm uzantılı bos bir text dosyası olusturmak icin
 
+.. _arf-g16-slurm:
 
 --------------------------------------
 SLURM Betik Dosyasının Oluşturulması 
@@ -194,7 +200,7 @@ modülünü kullanmaları önerilir.
             #SBATCH -J jobname
             #SBATCH -N 1
             #SBATCH -n 1
-            #SBATCH -c 20   # barbun sunucularinda 20 ve katlari olacak sekilde cekirdek talep edilebilir. 
+            #SBATCH -c 40   # barbun sunucularinda node basina 40 cekirdek talep edilebilir. 
             #SBATCH --time=3-00:00:00
             #SBATCH --output=jobname.out
             #SBATCH --error=slurm-%j.err
@@ -234,15 +240,14 @@ komutu ile sisteme submit edebilirsiniz.
 
 .. warning:: 
 
-    Gaussian input dosyanızda nprocshared parametresinin, SLURM betik dosyanızda talep ettiğiniz çekirdek sayısı ile aynı olması gerekmektedir.
+    Gaussian input dosyanızda **nprocshared** parametresinin, SLURM betik dosyanızda talep ettiğiniz çekirdek sayısı ile aynı olması gerekmektedir.
 
     Çalışmakta olan işlerinizin işlemci yükünü ve bellek kullanımını [http://grafana.yonetim:3000] veya [http://172.16.6.25:3000] adreslerinden takip edebilirsiniz.
 
 
-
-
 .. note::
 
+    Eğer Gaussian ile tek çekirdek gerektiren birden fazla işinizi çalıştırmak istiyorsanız, SLURM betik dosyasında aşağıdaki gibi ard arda satırlarda belirtebilirsiniz. Böylece olası en fazla sayıda çekirdeği kullanabilirsiniz.
 
     GREASY ile tek çekirdek gerektiren işlerinizi iş listesinde ard arda satırlarda belirtebilirsiniz. Böylece olası en fazla sayıda çekirdeği kullanabilirsiniz. GREASY ile iş çalıştırmak için :ref:`greasy-kilavuzu` sayfasını inceleyebilirsiniz.
 
@@ -257,6 +262,8 @@ komutu ile sisteme submit edebilirsiniz.
         srun -n 1 -c 1 command_line &
 
         srun -n 1 -c 1 command_line
+
+        wait
 
         exit
 
@@ -278,6 +285,8 @@ komutu ile sisteme submit edebilirsiniz.
     
         srun -n 1 -c 12 command_line > out7 2>&1 
 
+        wait
+
         exit
 
 
@@ -296,6 +305,8 @@ komutu ile sisteme submit edebilirsiniz.
         cd /path/to/yet/another/directory
 
         srun -n 1 -c 1 command_line 
+
+        wait
 
         exit
 

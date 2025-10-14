@@ -15,17 +15,13 @@ Günümüzde "TRUBA 2023" projesi ile T.C. Cumhurbaşkanlığı Strateji ve Büt
 
    TÜBİTAK ARDEB ve/veya BAP destekli projeler kapsamında yürütülen çalışmalarda TRUBA kaynaklarının kullanılması durumunda, ilgili bilimsel çıktılarda TRUBA’ya da ayrıca teşekkür edilmesi önemlidir.
 
-   
-      Türkçe Teşekkür Örneği
-      ------------------------
+   **Türkçe Teşekkür Örneği**
 
-      Bu araştırmada yer alan tüm/kısmi nümerik hesaplamalar TÜBİTAK ULAKBİM, Yüksek Başarım ve Grid Hesaplama Merkezi'nde (TRUBA kaynaklarında) gerçekleştirilmiştir.
+   Bu araştırmada yer alan tüm/kısmi nümerik hesaplamalar TÜBİTAK ULAKBİM, Yüksek Başarım ve Grid Hesaplama Merkezi'nde (TRUBA kaynaklarında) gerçekleştirilmiştir.
 
+   **İngilizce Teşekkür Örneği**
 
-      İngilizce Teşekkür Örneği
-      --------------------------
-
-      The numerical calculations reported in this paper were fully/partially performed at TUBITAK ULAKBIM, High Performance and Grid Computing Center (TRUBA resources).
+   The numerical calculations reported in this paper were fully/partially performed at TUBITAK ULAKBIM, High Performance and Grid Computing Center (TRUBA resources).
 
 .. toctree::
    :maxdepth: 1
