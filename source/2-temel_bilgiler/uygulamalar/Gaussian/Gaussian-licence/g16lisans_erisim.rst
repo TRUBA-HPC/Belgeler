@@ -8,14 +8,13 @@ TRUBA hesaplama kümelerinde Gaussian 16 Lisanslı yazılımını kullanmak iste
 
 * :download:`Gaussian 16 License to Use Agreement </assets/gaussian/user_agreement/License_to_Use_Agreement.pdf>`
 
-"License to Use Agreement" dokümanını okuduktan sonra aşağıdaki bağlantıda yer alan "Kullanıcı Sözleşmesi" formunu indirip imzaladıktan sonra PDF olarak taratmalı ve dosya ismi "AdSoyad_kullaniciadi_GunAyYil.pdf" şeklinde kaydedilmelidir. İmzalanmış PDF dosyası TRUBA Portal profilinize eklenmelidir. Bunun için;  https://portal.truba.gov.tr/ adresinden TRUBA Portala giriş yapılması, profilim sekmesinde profil bilgilerini güncelle alanının en aşağısında yer alan "Dilekçe Yükle" kısmı kullanılmalıdır. İlgili form teknik ekibimize ulaştıktan sonra 5 iş günü içerisinde kullanıcı hesabınızın ilgili lisanlı yazılıma erişimi tanımlanacak ve e-posta adresinize geri bildirimde bulunulacaktır.
+"License to Use Agreement" dokümanını okuduktan sonra, aşağıdaki bağlantıdan "Kullanıcı Sözleşmesi" formunu indirip imzalayınız. İmzalı formu PDF olarak taratıp dosya adını “AdSoyad_kullaniciadi_GunAyYil.pdf” şeklinde kaydediniz. Bu PDF dosyasını TRUBA Portal’a yüklemek için https://portal.truba.gov.tr/ adresinden giriş yapınız, “Profilim” sekmesinde “profil bilgilerini güncelle” alanına gidiniz ve en altta bulunan “Dilekçe Yükle” bölümünden dosyanızı yükleyiniz. Form teknik ekibimize ulaştıktan sonra, en geç 5 iş günü içinde hesabınıza ilgili lisanslı yazılıma erişim tanımlanacak ve e-posta ile bilgilendirileceksiniz.
 
 .. warning:: 
     
     "Kullanıcı Sözleşmesi" formunun sadece İngilizce veya Türkçe kısmını doldurup imzalamanız yeterli olacaktır. 
 
 * :download:`Gaussian 16 Kullanıcı Sözleşmesi Formu </assets/gaussian/user_agreement/Gaussian-Agreement_to_Terms-petitionform_KullaniciSozlesmesi-dilekce.pdf>`
-
 
 ===========================================================
 Access to Gaussian16 & GaussView 6 & TCP Linda Programs 
