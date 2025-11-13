@@ -16,6 +16,13 @@ Giriş
 
 Apptainer/Singularity, YBH sistemlerinde kullanılan popüler bir konteyner platformudur.  Apptainer kullanarak dizüstü bilgisayarınızda ya da sanal makinenizde oluşturacağınız, program ve yazılım parçalarını taşınabilir ve üretilebilir bir şekilde paketlenen konteynerlar istenilen başka bir makinede, ofis bilgisayarında, ya da dünyanın pek çok YBH merkezlerinde bile hiç bir kurulum gerçekleştirmeden işlerin çalıştıtırabilir olmasına imkan sağlar. Sistemlerimizde konteyner platformunu kullanmak için apptainer (önceki adı ile singularity) mevcuttur. Konteyner oluşturma işlemleri yerel ya da sanal bilgisayarınızda istenilen mimaride yapılabilir. Kurulum ve daha fazlası için `ilgili kılavuz <https://apptainer.org/docs/admin/main/installation.html>`_ ve konteyner kullanımı için `ilgili öğretici dokümantasyon <https://singularity-tutorial.github.io/>`_ takip edilebilir. Bu şekilde yerel bilgisayarınızda oluşturulan konteynerları TRUBA'da herhangi bir kuruluma ihtiyaç duymadan kullanabilir ve işlerinizi konteyner içerisinde koşturabilirsiniz.
 
+
+.. warning::
+
+    Konteyner oluşturma işlemleri doğrudan kullanıcı arayüzü (``arf-ui[1-5]`` ve ``cuda-ui``) sunucularında yapılmamalıdır. Bunun yerine, ``srun`` komutuyla interaktif oturum açıp bir hesaplama sunucusuna geçiş yaptıktan sonra konteyner oluşturma işlemlerini gerçekleştirmeniz gerekmektedir. Detaylı bilgi için :ref:`interaktif-is-calistirma` bölümüne göz atabilirsiniz.
+
+
+
 .. _konteyner_kullanma:
 
 Hazır Kullanım
