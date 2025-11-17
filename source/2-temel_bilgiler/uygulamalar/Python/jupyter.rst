@@ -41,8 +41,13 @@ Bu belgede sunulan bilgiler yalnızca web arayüzü sunucularında yürütülebi
 
 
 4. Jupyter Notebook - Container:   
-    Bu araç, temel paketlerin bulunduğu ve Python, Julia ile R programlarının entegre edildiği bir konteyner ortamında jupyter notebook'unuzu başlatır.
+    Bu araç, varsayılan konteyner ortamında temel paketlerin bulunduğu ve Python, Julia ile R programlarının entegre edildiği bir konteyner içinde jupyter notebook'unuzu başlatır.
+    Eğer kullanıcının ev dizininde tanımlı bir konteyner ortamında jupyter notebook'u başlatmak isterseniz, `.bashrc` dosyanızda aşağıdaki değişkeni tanımlamanız gerekmektedir. 
+    Örneğin, sistemde mevcut bir konteyner icinde jupyter notebook'u baslatmak icin:
 
+    .. code-block:: bash
+
+        export CONTAINER_JUPYTER=/arf/sw/containers/truba-ai/pytorch-25.10-py3.sif
 
 
 5. Jupyter ile R kernel kullanma:
