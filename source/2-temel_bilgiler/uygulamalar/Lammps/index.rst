@@ -74,9 +74,8 @@ LAMMPS programını TRUBA sisteminde çalıştırmak için örnek iş betiği do
             #SBATCH -A kullanici_adi
             #SBATCH -J lammps-orfoz
             #SBATCH -N 1
-            #SBATCH -n 110
+            #SBATCH -n 112
             #SBATCH -c 1  
-            #SBATCH -C weka
             #SBATCH --time=3-00:00:00
 
 
@@ -103,9 +102,8 @@ LAMMPS programını TRUBA sisteminde çalıştırmak için örnek iş betiği do
             #SBATCH -A kullanici_adi
             #SBATCH -J lammps-hamsi
             #SBATCH -N 1
-            #SBATCH -n 54
+            #SBATCH -n 56
             #SBATCH -c 1    
-            #SBATCH -C weka
             #SBATCH --time=3-00:00:00
 
 

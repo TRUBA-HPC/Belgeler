@@ -63,8 +63,7 @@ OMP ile deney yapmak için aşağıdaki MPI programını kullanacağız (şimdil
                         #SBATCH -J mpi_test
                         #SBATCH -N 1
                         #SBATCH -n 1
-                        #SBATCH -c 110
-                        #SBATCH -C weka
+                        #SBATCH -c 112
                         #SBATCH --time=3-00:00:00
 
 

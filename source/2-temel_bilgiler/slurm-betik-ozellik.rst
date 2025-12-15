@@ -151,9 +151,8 @@ Aşağıda Quantum Espresso programı için hazırlanan örnek betik dosyası ko
    #SBATCH -p orfoz
    #SBATCH -J qe_test
    #SBATCH -N 1
-   #SBATCH -n 110
+   #SBATCH -n 112
    #SBATCH -c 1
-   #SBATCH -C weka
    #SBATCH --time=3-00:00:00
 
    export OMP_NUM_THREADS=1

@@ -79,9 +79,8 @@ ARF sisteminde mevcut olan QE sürümleri dışında farklı bir sürüme ihtiya
             #SBATCH -A kullanici_adi
             #SBATCH -J qe74-test
             #SBATCH -N 1
-            #SBATCH -n 110
+            #SBATCH -n 112
             #SBATCH -c 1   
-            #SBATCH -C weka
             #SBATCH --time=3-00:00:00
 
 
@@ -108,9 +107,8 @@ ARF sisteminde mevcut olan QE sürümleri dışında farklı bir sürüme ihtiya
             #SBATCH -A kullanici_adi
             #SBATCH -J qe72-test
             #SBATCH -N 1
-            #SBATCH -n 110
+            #SBATCH -n 112
             #SBATCH -c 1   
-            #SBATCH -C weka
             #SBATCH --time=3-00:00:00
 
 
