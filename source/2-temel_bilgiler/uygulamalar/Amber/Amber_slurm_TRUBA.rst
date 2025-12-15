@@ -24,8 +24,7 @@ Amber_MPI.slurm
             #SBATCH -J jobname
             #SBATCH -N 1
             #SBATCH -n 1
-            #SBATCH -c 55
-            #SBATCH -C weka
+            #SBATCH -c 56
             #SBATCH --time=3-00:00:00
 
             export OMP_NUM_THREADS=1
@@ -53,8 +52,7 @@ Amber_MPI.slurm
             #SBATCH -J jobname
             #SBATCH -N 1
             #SBATCH -n 1
-            #SBATCH -c 54
-            #SBATCH -C weka
+            #SBATCH -c 56
             #SBATCH --time=3-00:00:00
 
             export OMP_NUM_THREADS=1

@@ -93,8 +93,7 @@ SLURM dosyası oluşturmak için aşağıdaki komut satırlarını lütfen kendi
             #SBATCH -J jobname
             #SBATCH -N 1
             #SBATCH -n 1
-            #SBATCH -c 55   # orfoz sunucularinda node basina 55 veya 110 cekirdek talep edilebilir. 
-            #SBATCH -C weka
+            #SBATCH -c 56
             #SBATCH --time=3-00:00:00
             #SBATCH --output=jobname.out
             #SBATCH --error=slurm-%j.err
@@ -131,8 +130,7 @@ SLURM dosyası oluşturmak için aşağıdaki komut satırlarını lütfen kendi
             #SBATCH -J jobname
             #SBATCH -N 1
             #SBATCH -n 1
-            #SBATCH -c 54   # hamsi sunucularinda node basina 54 cekirdek talep edilebilir. 
-            #SBATCH -C weka
+            #SBATCH -c 56
             #SBATCH --time=3-00:00:00
             #SBATCH --output=jobname.out
             #SBATCH --error=slurm-%j.err

@@ -91,10 +91,6 @@ ARF hesaplama kümesinde farklı donanım ve özelliklere sahip çeşitli kuyruk
    - Bellek ve süre limitlerine dikkat ediniz. Aksi takdirde işleriniz otomatik olarak sonlandırılabilir.
    - GPU kuyruklarında sadece GPU kullanan işler çalıştırılabilir.
 
-**Orfoz ve Hamsi Kuyruklarında WEKA ve Çekirdek Kullanımı**
-
-Orfoz ve hamsi kuyruklarında çalışmakta olan sunucularda, cihazların sahip olduğu yüksek çekirdek sayıları nedeniyle yarattıkları yüksek I/O ihtiyacını yönetebilmek için her orfoz ve hamsi sunucusunda 2 adet çekirdek I/O yönetimi için ayrılmıştır. Bu nedenle orfoz sunucularında kullanılabilir çekirdek sayısı 110, hamsi sunucularında ise 54’tür. Orfoz kuyruğuna gönderilen işlerde sunucu başına en fazla 110 çekirdek, hamsi kuyruğuna gönderilen işlerde ise en fazla 54 çekirdek talep edilebilir. Bu kuyruklara gönderilen işlerde ``#SBATCH -C weka`` parametresinin kullanılması gerekmektedir.
-
 **Örnek SLURM Betiği (orfoz/hamsi için):**
 
 .. code-block:: bash
@@ -105,14 +101,13 @@ Orfoz ve hamsi kuyruklarında çalışmakta olan sunucularda, cihazların sahip 
    #SBATCH -J jobname
    #SBATCH -N 1
    #SBATCH -n 1
-   #SBATCH -c 110
-   #SBATCH -C weka
+   #SBATCH -c 112
    #SBATCH --time=3-00:00:00
 
 **Kuyruklara Özel Bilgiler ve Minimum Gereksinimler**
 
-- **orfoz:** En az 55 çekirdek, maksimum 3 gün, 256GB RAM/sunucu.
-- **hamsi:** En az 27 çekirdek, maksimum 3 gün, 192GB RAM/sunucu.
+- **orfoz:** En az 56 çekirdek, maksimum 3 gün, 256GB RAM/sunucu.
+- **hamsi:** En az 28 çekirdek, maksimum 3 gün, 192GB RAM/sunucu.
 - **barbun:** En az 20 çekirdek, maksimum 3 gün, 384GB RAM/sunucu.
 - **barbun-cuda:** En az 20 çekirdek ve 1 GPU, maksimum 3 gün, 384GB RAM/sunucu, 2x Nvidia P100 16GB GPU.
 - **akya-cuda:** En az 10 çekirdek ve 1 GPU, maksimum 3 gün, 384GB RAM/sunucu, 4x Nvidia V100 16GB GPU, /tmp altında 1.4TB NVMe disk (yüksek I/O için).

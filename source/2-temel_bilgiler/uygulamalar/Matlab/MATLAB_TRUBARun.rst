@@ -47,8 +47,7 @@ TRUBA'da MATLAB Dosyası Çalıştırmak
                 #SBATCH -p hamsi #isi gondermek istediginiz kuyrugun adini yaziniz.
                 #SBATCH -N 1 
                 #SBATCH -n 1 
-                #SBATCH -c 54
-                #SBATCH -C weka 
+                #SBATCH -c 56
                 #SBATCH --time=1:00:00
 
                 echo "SLURM_NODELIST $SLURM_NODELIST"

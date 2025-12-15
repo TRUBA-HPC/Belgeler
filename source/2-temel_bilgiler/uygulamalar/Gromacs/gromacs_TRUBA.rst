@@ -21,9 +21,8 @@ Orfoz hesaplama kümesinde GROMACS 2024.1 versiyonunu kullanarak işinizi çalı
   #SBATCH -A kullanici_adi
   #SBATCH -J jobname
   #SBATCH -N 1
-  #SBATCH -n 55
+  #SBATCH -n 56
   #SBATCH -c 1
-  #SBATCH -C weka
   #SBATCH --time=3-00:00:00
 
   echo "SLURM_NODELIST $SLURM_NODELIST"
