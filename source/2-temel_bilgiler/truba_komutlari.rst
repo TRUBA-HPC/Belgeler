@@ -65,7 +65,7 @@ Kullanım
 
 .. code-block:: bash
 
-   ./avci [opsiyonlar] <arama_terimi>
+   avci [opsiyonlar] <arama_terimi>
 
 Opsiyonlar
 ~~~~~~~~~~
@@ -86,7 +86,7 @@ Opsiyonlar
 
    .. code-block:: bash
 
-      ./avci gcc
+      avci gcc
 
    ``gcc`` içeren tüm modülleri arar. Çıktı renklidir, yüklü modüller yeşil renkte gösterilir.
 
@@ -94,7 +94,7 @@ Opsiyonlar
 
    .. code-block:: bash
 
-      ./avci -exact openmpi
+      avci -exact openmpi
 
    Sadece adı tam olarak ``openmpi`` olan modülleri listeler (sürüm dahil değildir).
 
@@ -102,7 +102,7 @@ Opsiyonlar
 
    .. code-block:: bash
 
-      ./avci -no-color cuda
+      avci -no-color cuda
 
    Renk kullanılmadan, ``cuda`` içeren modüller listelenir.
 
@@ -110,7 +110,7 @@ Opsiyonlar
 
    .. code-block:: bash
 
-      ./avci -help
+      avci -help
 
    Kullanım ve opsiyonlar hakkında bilgi verir.
 

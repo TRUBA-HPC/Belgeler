@@ -38,12 +38,12 @@ ederek VASP kurulumunu kendi dizinizde kurabilirsiniz.
     $>module load centos7.3/comp/intel/PS2018-update2
     $>module load centos7.3/lib/openmpi/4.0.1-intel-PS2018
 
-**5.** Program openmpi ile derleneceği için, verilen adresteki  **/truba/home/kullanici_adi/derleme/vasp.6.2.0/arch/ makefile.include.linux_intel_omp** dosyayı bu adrese kopyalayınız **/truba/home/kullanici_adi/derleme/vasp.6.2.0**. Bu işlemden sonra kopyalanan dosyanın ismi,
+**5.** Program openmpi ile derleneceği için, verilen adresteki  **/arf/home/kullanici_adi/derleme/vasp.6.2.0/arch/ makefile.include.linux_intel_omp** dosyayı bu adrese kopyalayınız **/arf/home/kullanici_adi/derleme/vasp.6.2.0**. Bu işlemden sonra kopyalanan dosyanın ismi,
 ``makefile.include`` olarak değiştiriniz. Bu işlemlerin hepsi aşağıda komut satırı olarak verilmiştir. 
 
 .. code-block:: bash 
 
-    $>cp /truba/home/kullanici_adi/derleme/vasp.6.2.0/arch/makefile.include.linux_intel_omp /truba/home/kullanici_adi/derleme/vasp.6.2.0/
+    $>cp /arf/home/kullanici_adi/derleme/vasp.6.2.0/arch/makefile.include.linux_intel_omp /arf/home/kullanici_adi/derleme/vasp.6.2.0/
     $>mv makefile.include.linux_intel_omp makefile.include
 
 

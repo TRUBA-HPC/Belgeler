@@ -75,7 +75,7 @@ OMP ile deney yapmak için aşağıdaki MPI programını kullanacağız (şimdil
                         #SBATCH --time=0-00:02:00
                         #SBATCH --nodes=2
                         #SBATCH --ntasks-per-node=4
-                        #SBATCH --workdir=/truba/home/my_account/
+                        #SBATCH --workdir=/arf/home/my_account/
                         #SBATCH --output=output.txt
                         #SBATCH --error=error.txt
 

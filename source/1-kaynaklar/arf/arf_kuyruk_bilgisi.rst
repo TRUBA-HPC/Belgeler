@@ -24,7 +24,7 @@ ARF hesaplama kümesinde farklı donanım ve özelliklere sahip çeşitli kuyruk
      - Orfoz
      - 504
      - 2x Intel Xeon Platinum 8480+
-     - 112 (110 kullanılabilir)                          
+     - 112                          
      - 256 GB
      - Yok
      - 3 gün
@@ -60,7 +60,7 @@ ARF hesaplama kümesinde farklı donanım ve özelliklere sahip çeşitli kuyruk
      - Hamsi
      - 144
      - 2x Intel Xeon Gold 6338
-     - 56 (54 kullanılabilir)                          
+     - 56                         
      - 192 GB
      - Yok
      - 3 gün

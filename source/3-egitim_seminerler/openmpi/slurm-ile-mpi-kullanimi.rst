@@ -121,7 +121,7 @@ Ardından, bu komut dosyasını yürütmek üzere TRUBA'ya aşağıdaki komutu k
 
 Aşağıda gösterilen ``mpi_example.slurm`` betiği, MPI programlarının TRUBA'da nasıl çalıştırılabileceğini gösterir ve yürütme için ayrılmış görev sayısının ``-np`` seçeneği kullanılarak nasıl değiştirilebileceğini gösterir. Komut dosyasını, kullanmak istediğimiz düğüm sayısını ve her bir düğümde kullanmak istediğimiz görev sayısını tanımlayarak başlatıyoruz. Ardından, gerekli modülleri yükleyerek ve MPI kodumuzu derleyerek yürütme ortamını kuruyoruz. Son olarak iki MPI iş adımı çalıştırıyoruz. Her iş adımı farklı sayıda görev kullanır, ancak, ``srun``\ 'dan farklı olarak, bir iş adımı ``mpirun`` kullanılarak başlatıldığında, oluşturduğu görevlerin tümü bağımsız olmak yerine aynı prosedür üzerinde çalışacaktır.
 
-Bu iş ``short`` bölümüne eklenecek ve 20 dakika içinde bitecektir. ``mpi.c`` dosyası ``/truba/home/my_account/`` konumunda bulunur. İşlerin çıktıları ``/truba/home/my_account/output.txt`` dosyasına ve hatalar ``/truba/home/my_account/error.txt`` dosyasına yazdırılacaktır.
+Bu iş ``short`` bölümüne eklenecek ve 20 dakika içinde bitecektir. ``mpi.c`` dosyası ``/arf/home/my_account/`` konumunda bulunur. İşlerin çıktıları ``/arf/home/my_account/output.txt`` dosyasına ve hatalar ``/arf/home/my_account/error.txt`` dosyasına yazdırılacaktır.
 
 .. code-block:: bash
 
@@ -134,7 +134,7 @@ Bu iş ``short`` bölümüne eklenecek ve 20 dakika içinde bitecektir. ``mpi.c`
    #SBATCH --nodes=2
    #SBATCH --ntasks-per-node=4
            # Job-steps created in this job will be able to create up to 8 tasks
-   #SBATCH --workdir=/truba/home/my_account/
+   #SBATCH --workdir=/arf/home/my_account/
    #SBATCH --output=output.txt
    #SBATCH --error=error.txt
 

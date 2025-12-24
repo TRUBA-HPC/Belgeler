@@ -52,7 +52,7 @@ Kendi ev dizininizde **gromacs** adlı yeni bir dizin oluşturup kaynak kodunu b
   cd gromacs-2021.2/ 
 
 **2.** 
-İkinci adım olarak /truba/home/kullaniciadi/gromacs/gromacs-2021.2 adlı dizin içinde ``build`` klasörü oluşturmanız gerekmektedir. Sonrasında yapılacak derleme işlemleri bu klasör altında gerçekleştirilecektir. Bu yüzden bu klasör altında olduğunuzu ``pwd`` komutu ile kontrol ediniz.
+İkinci adım olarak /arf/home/kullaniciadi/gromacs/gromacs-2021.2 adlı dizin içinde ``build`` klasörü oluşturmanız gerekmektedir. Sonrasında yapılacak derleme işlemleri bu klasör altında gerçekleştirilecektir. Bu yüzden bu klasör altında olduğunuzu ``pwd`` komutu ile kontrol ediniz.
 
 .. code-block:: bash
 
@@ -88,7 +88,7 @@ Gerekli ortamlar (GNU Compiler ve OPEN MPI) için aşağıdaki komut satırları
   export CC=mpicc
   export CXX=mpic++
 
-  cmake .. -DCMAKE_C_COMPILER=mpicc  -DCMAKE_CXX_COMPILER=mpic++ -DGMX_MPI=on  -DGMX_SIMD=AVX_512 -DGMX_BUILD_OWN_FFTW=ON  -DGMX_GPU=OFF  -DCMAKE_INSTALL_PREFIX=/truba/home/kullanıcı_adi/bin
+  cmake .. -DCMAKE_C_COMPILER=mpicc  -DCMAKE_CXX_COMPILER=mpic++ -DGMX_MPI=on  -DGMX_SIMD=AVX_512 -DGMX_BUILD_OWN_FFTW=ON  -DGMX_GPU=OFF  -DCMAKE_INSTALL_PREFIX=/arf/home/kullanıcı_adi/bin
 
   make  #bu işlem uzun sürecektir. Tamamlandıktan sonra aşağıdaki kod satırlarını yazmanız tavsiye edilir.
   
@@ -121,7 +121,7 @@ Aşağıdaki komutları sırasıyla uygulayınız ve ilgili dizine gidiniz.
   cd gromacs-2021.2/ 
 
 **2.** 
-İkinci adım olarak /truba/home/kullaniciadi/gromacs/gromacs-2021.2 adlı dizin içinde ``build`` klasörü oluşturmanız gerekmektedir. Sonrasında yapılacak derleme işlemleri bu klasör altında gerçekleştirilecektir. Bu yüzden bu klasör altında olduğunuzu ``pwd`` komutu ile kontrol ediniz.
+İkinci adım olarak /arf/home/kullaniciadi/gromacs/gromacs-2021.2 adlı dizin içinde ``build`` klasörü oluşturmanız gerekmektedir. Sonrasında yapılacak derleme işlemleri bu klasör altında gerçekleştirilecektir. Bu yüzden bu klasör altında olduğunuzu ``pwd`` komutu ile kontrol ediniz.
 
 .. code-block:: bash
 
@@ -153,7 +153,7 @@ Gerekli ortamlar için aşağıdaki komut satırından mevcut modülleri ve vers
   export CC=mpicc
   export CXX=mpic++
 
-  cmake .. -DCMAKE_C_COMPILER=mpicc  -DCMAKE_CXX_COMPILER=mpic++ -DGMX_MPI=on  -DGMX_SIMD=AVX_512 -DGMX_BUILD_OWN_FFTW=ON  -DGMX_GPU=OFF  -DCMAKE_INSTALL_PREFIX=/truba/home/kullaniciadi/bin
+  cmake .. -DCMAKE_C_COMPILER=mpicc  -DCMAKE_CXX_COMPILER=mpic++ -DGMX_MPI=on  -DGMX_SIMD=AVX_512 -DGMX_BUILD_OWN_FFTW=ON  -DGMX_GPU=OFF  -DCMAKE_INSTALL_PREFIX=/arf/home/kullaniciadi/bin
   
   make 
   

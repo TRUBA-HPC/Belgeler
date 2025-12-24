@@ -54,12 +54,11 @@ olarak kopyalamak için
   
   cp job.slurm calc.slurm 
 
-Kendi ev dizinimizde olan bir dosyayı /truba_scratch/kullanici_adi dizinine kopyalamak için aşağıdaki komut satırını kullanabiliriz. 
+Kendi ev dizinimizde olan bir dosyayı /arf/scratch/kullanici_adi dizinine kopyalamak için aşağıdaki komut satırını kullanabiliriz. 
 
 .. code-block:: bash
  
-  cp job.slurm  /truba_scratch/kullanici_adi
-
+  cp job.slurm  /arf/scratch/kullanici_adi
 Yukarıdaki örnekler bir dosyayı bir dizine kayıt etmekle ilgiliydi. Bazen direkt dizinleri kopyalamamız gerekir. O zaman ``cp -r dizin_adi kopyalanacagi_adres`` şeklinde kullanabiliriz.
 
 
@@ -69,8 +68,8 @@ Dosyalarımızın ve dizinlerimizin isimlerini değiştirmek için kullanabiliri
 
 ``mv file1 file2`` komutuyla file1 isimli dosyayı file2 ismiyle değiştirebiliriz.  
 
-Bu komutla bir dizindeki bir dosyayı başka bir dizine göndermek için de kullanabiliriz. ``mv job.slurm /truba_scratch/kullanici_adi`` bu komutla job.slurm adlı dosyayı  
-**/truba_scratch/kullanici_adi** dizinine göndermiş olduk. Aynı işlemi dizinler için yapmak istersek **-r** eklemeniz gerekmektedir. (``cp -r job1 /truba_scratch/kullanici_adi`` komutuyla job1 adlı dizini /truba_scratch/kullanici_adi dizinine 
+Bu komutla bir dizindeki bir dosyayı başka bir dizine göndermek için de kullanabiliriz. ``mv job.slurm /arf/scratch/kullanici_adi`` bu komutla job.slurm adlı dosyayı  
+**/arf/scratch/kullanici_adi** dizinine göndermiş olduk. Aynı işlemi dizinler için yapmak istersek **-r** eklemeniz gerekmektedir. (``cp -r job1 /arf/scratch/kullanici_adi`` komutuyla job1 adlı dizini /arf/scratch/kullanici_adi dizinine 
 taşımış olduk)
 
 .. warning::
@@ -92,7 +91,7 @@ Dosyaları silmek için kullanılan bir komuttur. ``rm job.slurm`` komutuyla bul
 ile kullanılabilir. 
 
 Buraya kadar anlatılan komutları bir örnek üzerinde özeteleyelim. Kendi ev dizinimizde öncelikle **ads** adlı bir dizin oluşturalım. Bu dizine girip **co.in** adlı bir dosya oluşturalım. İkinci adım 
-olarak bu dizini **/truba_scratch/kullanici_adi** isimli dosyaya kopyalayalım. Üçünücü adım olarak dizinin ismini **ads_co**  olarak değiştirdikten sonra, son olarak oluşturduğumuz co.in adlı dosyayı 
+olarak bu dizini **/arf/scratch/kullanici_adi** isimli dosyaya kopyalayalım. Üçünücü adım olarak dizinin ismini **ads_co**  olarak değiştirdikten sonra, son olarak oluşturduğumuz co.in adlı dosyayı 
 silelim. Bu örnek için aşağıdaki kod bloğunu takip ederek kolayca uygulayabilirsiniz. 
 
 .. code-block:: bash
@@ -101,9 +100,9 @@ silelim. Bu örnek için aşağıdaki kod bloğunu takip ederek kolayca uygulaya
   cd ads
   touch co.in
   cd ..
-  cp -r ads /truba_scratch/kullanici_adi
-  mv  /truba_scratch/kullanici_adi/ads /truba_scratch/kullanici_adi/ads_co
-  rm /truba_scratch/kullanici_adi/ads_co/co.in
+  cp -r ads /arf/scratch/kullanici_adi
+  mv  /arf/scratch/kullanici_adi/ads /arf/scratch/kullanici_adi/ads_co
+  rm /arf/scratch/kullanici_adi/ads_co/co.in
 
 **9.** ``emacs`` ve ``vim``
 
@@ -160,7 +159,7 @@ Ayrıca terminalden ``man tar`` komutu ile tar komutunun kulllanımı ile ilgili
 
 **11.** ``scp``
   
-Hesaplarınızı tamamladıktan sonra, TRUBA kümelerinden input ve output dosyalarınızı kendi bilgisayarınıza göndermek için ``scp`` komutunu kullanabilirsiniz. Bunun en kolay yolu kendi bilgisayarınızdan terminalinizi açarak, TRUBA kümelerinden ilgili dizindeki dosyaları alabilirsiniz. Dizin kopyalamak için, komutu ``scp -r`` şeklinde kullanmanız gerekmektedir. Aşağıdaki örnekte, /truba_scratch/kullanici_adi/ads_co/co.in adresindeki **co.in** isimli dosyayı kendi bilgisayarınızdaki Desktop klasörüne gönderelim. Öncelikle bilgisayarınızda TRUBA' ya bağlı olmayan bir terminal açarak aşağıdaki komut satırını kopyalayarak yapabilirsiniz. 
+Hesaplarınızı tamamladıktan sonra, TRUBA kümelerinden input ve output dosyalarınızı kendi bilgisayarınıza göndermek için ``scp`` komutunu kullanabilirsiniz. Bunun en kolay yolu kendi bilgisayarınızdan terminalinizi açarak, TRUBA kümelerinden ilgili dizindeki dosyaları alabilirsiniz. Dizin kopyalamak için, komutu ``scp -r`` şeklinde kullanmanız gerekmektedir. Aşağıdaki örnekte, /arf/scratch/kullanici_adi/ads_co/co.in adresindeki **co.in** isimli dosyayı kendi bilgisayarınızdaki Desktop klasörüne gönderelim. Öncelikle bilgisayarınızda TRUBA' ya bağlı olmayan bir terminal açarak aşağıdaki komut satırını kopyalayarak yapabilirsiniz. 
 
 .. code-block:: bash 
 

@@ -415,10 +415,10 @@ sağlar.
 
     #general config
     query_ids: ["P01008", "P22033", "P68871"]
-    workdir: /truba/home/emrah/WORKFOLDER/TEST/TUTORIAL_0921/exp5
+    workdir: /arf/home/emrah/WORKFOLDER/TEST/TUTORIAL_0921/exp5
 
     ##blast
-    blastdb: "/truba/home/emrah/shared/blastdb/all_eu.fasta"
+    blastdb: "/arf/home/emrah/shared/blastdb/all_eu.fasta"
     outfmt: "0"
     max_target_seqs: "5000"
     num_iterations: "2"
