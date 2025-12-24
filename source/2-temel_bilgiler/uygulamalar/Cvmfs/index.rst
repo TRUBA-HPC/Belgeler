@@ -91,9 +91,9 @@ Aşağıda verilen örnek;
     #SBATCH -N 1 ## node sayisi 
     #SBATCH --ntasks-per-node=28 ## hamsi kumelerinde 28 ve katlari seklinde girilmseli
     #SBATCH --time=00-01:00:00 ## isinizin maksimum suresi 
-    #SBATCH --workdir=/truba/home/kullaniciadi/atlas_test  ### calisma klasorunuzu belirtebilirsiniz. Cikti dosylariniz da bunun icerisinde yer alacaktir.
-    #SBATCH --output=/truba/home/kullaniciadi/atlas_test/slurm-%j.out  ## slurm cikti dosyasi ile ilgili bilgi
-    #SBATCH --error=/truba/home/kullaniciadi/atlas_test/slurm-%j.err ## slurm ile ilgili aldiginiz hata dosyasinin yeri
+    #SBATCH --workdir=/arf/home/kullaniciadi/atlas_test  ### calisma klasorunuzu belirtebilirsiniz. Cikti dosylariniz da bunun icerisinde yer alacaktir.
+    #SBATCH --output=/arf/home/kullaniciadi/atlas_test/slurm-%j.out  ## slurm cikti dosyasi ile ilgili bilgi
+    #SBATCH --error=/arf/home/kullaniciadi/atlas_test/slurm-%j.err ## slurm ile ilgili aldiginiz hata dosyasinin yeri
     #SBATCH --mail-user=eposta@metu.edu.tr ## isinizin baslama ve bitisi durumunda e-posta bilgisi almak icin belirtin
     #SBATCH --mail-type=ALL
 
@@ -108,12 +108,12 @@ Aşağıda verilen örnek;
     ./cvmfsexec/makedist default
 
     ## mount edeceginiz ekstra repositoryleri $CVMFSMOUNT ile ekleyebilirsiniz. root icin atlas repositorysinin disinda sft.cern.ch repositorysi de gerekmekte
-    ./cvmfsexec/cvmfsexec atlas.cern.ch $CVMFSMOUNT sft.cern.ch -- bash /truba/home/kullaniciadi/atlas_test/atlas_test.sh
+    ./cvmfsexec/cvmfsexec atlas.cern.ch $CVMFSMOUNT sft.cern.ch -- bash /arf/home/kullaniciadi/atlas_test/atlas_test.sh
 
 
     # cvmfsexec klasorunu isiniz bittiginde silebilirsiniz
 
-    rm -rf /truba/home/kullaniciadi/atlas_test/cvmfsexec
+    rm -rf /arf/home/kullaniciadi/atlas_test/cvmfsexec
 
 
 - slurm betiğiniz de hazir olduktan sonra isinizi ``sbatch`` komutu ile kumeye gonderebilirsiniz.

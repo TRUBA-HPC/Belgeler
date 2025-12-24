@@ -29,7 +29,7 @@ CASTEP SLURM Dosyası Örneği
     module purge
     module load centos7.3/comp/intel/PS2018-update2
 
-    CASTEP_DIR=/truba/home/USERNAME/CASTEP/CASTEP-19.11/bin-barbun-intel-PS2018/linux_x86_64_ifort18--mpi
+    CASTEP_DIR=/arf/home/USERNAME/CASTEP/CASTEP-19.11/bin-barbun-intel-PS2018/linux_x86_64_ifort18--mpi
 
     mpirun $CASTEP_DIR/castep.mpi inputfile
 

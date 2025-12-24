@@ -74,7 +74,7 @@ Aşağıdaki komut ile Intel MKL path i hakkında bilgi elde edebilirsiniz:
 
 .. code-block::
 
-    make COMMS_ARCH=mpi FFT=mkl FFTLIBDIR=$MKLROOT/lib/intel64_lin MATHLIBS=mkl10 MATHLIBDIR=$MKLROOT/lib/intel64_lin INSTALL_DIR=/truba/home/USERNAME/CASTEP/CASTEP-19.11/bin-barbun-intel-PS2018
+    make COMMS_ARCH=mpi FFT=mkl FFTLIBDIR=$MKLROOT/lib/intel64_lin MATHLIBS=mkl10 MATHLIBDIR=$MKLROOT/lib/intel64_lin INSTALL_DIR=/arf/home/USERNAME/CASTEP/CASTEP-19.11/bin-barbun-intel-PS2018
 
 **6.** Kurulum bittikten sonra obj klasörü altında ``linux_x86_64_ifort18--mpi`` isimli bir klasör ve ``linux_x86_64_ifort18--mpi.mk`` dosyasını göreceksiniz. Yeni oluşturulan bu klasör ve dosyayı aşağıdaki komut ile tanımladığınız bin klasörüne taşıyınız.
 

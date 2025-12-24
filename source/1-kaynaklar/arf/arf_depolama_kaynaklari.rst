@@ -3,10 +3,23 @@
 ====================================
 Dosya Sistemleri ve Depolama
 ====================================
+.. important:: 
+   **KRİTİK UYARI !**
+   
+   ``/truba/home`` altında bulunan veriler, geçiş süreci kapsamında ``/arf/truba_old/home`` altında tutulmaktadır. 
+   
+   31 Mart 2026 tarihinden itibaren ``/arf/truba_old/home`` altındaki tüm veriler kalıcı olarak silinecektir.
+   
+   **Lütfen aşağıdaki adımları takip ediniz:**
+   
+   - İhtiyaç duyduğunuz verileri ``/arf/home/`` altına taşıyınız.
+   - Önemli verilerinizi kendi yerel bilgisayarınıza yedekleyiniz.
+   - Gereksiz verileri hemen temizleyiniz.
 
-Hesaplama kümelerinde, kullanıcı verileri ile hesaplama çıktılarının yönetimi için yüksek performanslı merkezi dosya sistemleri kullanılmaktadır. Bu sistemler, paralel dosya sistemi altyapısı ile yapılandırılmış olup, farklı kullanım amaçlarına yönelik üç ana dosya sistemi sunmaktadır: WEKA tabanlı ev dizini (``/arf/home``), scratch alanı (``/arf/scratch``) ve LUSTRE tabanlı merkezi depolama alanı (``/truba/home``).
 
-.. important::
+Hesaplama kümelerinde, kullanıcı verileri ile hesaplama çıktılarının yönetimi için yüksek performanslı merkezi dosya sistemleri kullanılmaktadır. Bu sistemler, paralel dosya sistemi altyapısı ile yapılandırılmış olup, farklı kullanım amaçlarına yönelik iki ana dosya sistemi sunmaktadır: (``/arf/home``), scratch alanı (``/arf/scratch``).
+
+.. note:: 
    **Kritik Güvenlik Uyarısı:** Bu dosya sistemleri kalıcı veri depolama amacıyla tasarlanmamıştır. Tüm veri güvenliği ve yedekleme sorumluluğu kullanıcılara aittir. Ev dizinlerinin merkezi yedeklemesi yapılmamaktadır.
 
 .. _dosya-sistemleri-genel-bakis:
@@ -40,11 +53,7 @@ Hesaplama kümelerinde bulunan dosya sistemleri, farklı performans karakteristi
      - 1 TB |br| 200K dosya
      - Yüksek hız |br| Paralel I/O
      - En fazla 1 ay
-   * - ``/truba/home``
-     - Merkezi depolama
-     - 2 TB |br| 100K dosya
-     - Orta hız
-     - Geçici depolama
+
 
 .. _dosya-sistemi-detaylari:
 
@@ -91,18 +100,6 @@ Scratch dizini, aktif hesaplama işleri için yüksek performanslı geçici depo
 - Önemli veriler mutlaka başka konuma kopyalanmalıdır
 - Uzun süreli veri saklanamaz
 
-.. _truba-home-dizini:
-
-TRUBA Merkezi Depolama (``/truba/home/$USER``)
-----------------------------------------------
-
-Merkezi depolama alanı, projeler boyunca geçici veri saklamak için kullanılır.
-
-**Önerilen Kullanım:**
-
-- Proje verilerinin geçici depolanması
-- Scratch alanından çıktıların transferi
-- Büyük veri setlerinin geçici saklanması
 
 .. _kota-asim-cozumleri:
 
@@ -165,7 +162,7 @@ Dosya sayısı limiti, sistem performansını korumak için kritik önem taşır
 **3. Anaconda/Conda Kullanımından Kaçının:**
 
 .. warning::
-   ``/arf`` ve ``/truba`` dosya sistemlerine Anaconda, Miniconda, conda veya pip ile paket kurulumu yapılmamalıdır. Bu araçlar binlerce küçük dosya oluşturarak sistem performansını ciddi şekilde düşürür. Kullanım detayına :ref:`python-kilavuzu` bölümünden ulaşabilirsiniz.  
+   ``/arf`` dosya sistemine Anaconda, Miniconda, conda veya pip ile paket kurulumu yapılmamalıdır. Bu araçlar binlerce küçük dosya oluşturarak sistem performansını ciddi şekilde düşürür. Kullanım detayına :ref:`python-kilavuzu` bölümünden ulaşabilirsiniz.  
 
 .. _veri-guvenlik-politikalari:
 
@@ -205,11 +202,6 @@ Veri Yaşam Döngüsü Politikaları
 - Otomatik temizleme uygulanır
 - Geçici dosyalar için tasarlanmıştır
 
-**Merkezi Depolama (``/truba/home``):**
-
-- Proje süresi boyunca geçici depolama
-- Uzun vadeli arşivleme için uygun değil
-
 .. _en-iyi-uygulamalar:
 
 En İyi Uygulamalar ve Öneriler
@@ -224,7 +216,6 @@ Performans Optimizasyonu
 
 - Hesaplama işleri için ``/arf/scratch`` kullanın
 - Küçük dosyalar için ``/arf/home`` tercih edin
-- Büyük veri setleri için ``/truba/home`` değerlendirin
 
 **2. Geçici Dosya Yönetimi:**
 

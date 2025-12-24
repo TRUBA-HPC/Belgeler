@@ -20,8 +20,8 @@ Bu kılavuz aşağıdakileri kapsamaktadır:
 
 .. warning:: 
     
-    * `/arf` ve `/truba` depolama sistemlerine anaconda, miniconda, conda  veya herhangi bir Python kütüphanesi kesinlikle yüklenmemelidir, pip ve türevleri kullanılmamalıdır. Küçük boyutlu yüzbinlerce dosyadan oluştuğu için, her kullanıcının kendi ev dizinine kurduğu bu tip kütüphaneler dosya sistemlerinin performanslarını büyük ölçüde düşürmekte ve çalışan işlerin yavaşlamasına neden olmaktadır.
-    * `/arf/sw/lib` ve `/truba/sw/X/lib` dizinlerinde çok geniş kapsamlı conda kütüphaneleri hali hazırda yüklüdür. Ayrıca YBH sistemleri için oluşturulmuş conda konteynerleri kullanıcılarımızın kullanımına sunulmuş durumdadır. Kullanıcılarımız Python ve conda ihtiyaçları için bu kurulumları kullanabilir ya da kendi Python konteynerlerini oluşturabilirler. Detaylar aşağıdaki bağlantıdan erişilebilir.
+    * `/arf` depolama sistemine anaconda, miniconda, conda  veya herhangi bir Python kütüphanesi kesinlikle yüklenmemelidir, pip ve türevleri kullanılmamalıdır. Küçük boyutlu yüzbinlerce dosyadan oluştuğu için, her kullanıcının kendi ev dizinine kurduğu bu tip kütüphaneler dosya sistemlerinin performanslarını büyük ölçüde düşürmekte ve çalışan işlerin yavaşlamasına neden olmaktadır.
+    * `/arf/sw/lib` dizininde çok geniş kapsamlı conda kütüphaneleri hali hazırda yüklüdür. Ayrıca YBH sistemleri için oluşturulmuş conda konteynerleri kullanıcılarımızın kullanımına sunulmuş durumdadır. Kullanıcılarımız Python ve conda ihtiyaçları için bu kurulumları kullanabilir ya da kendi Python konteynerlerini oluşturabilirler. Detaylar aşağıdaki bağlantıdan erişilebilir.
 
 
 .. _merkezi-python:
@@ -69,32 +69,6 @@ Sistemde bulunan kurulumlari ``module av`` ile listeleyebilirsiniz. Temelde, con
         
                 module purge
                 module load apps/truba-ai/gpu-2024.0
-
-
-4. 2025 Öncesi TRUBA hesaplama kümesi icin bulunan conda platformları:
-    TRUBA'da merkezi olarak farklı anaconda platformları bulunmaktadır. Bu platformlar, içerisinde bulunan python ve diğer paketlerin farklı versiyonlarına kullanıcılar tarafından ihtiyaç duyulmasından kaynaklı oluşturulmuştur.
-    Merkezi anaconda platformları:
-
-*   .. code-block::
-
-      eval "$(/truba/sw/centos7.3/lib/anaconda3/2020.07/bin/conda shell.bash hook)"
-
-*    .. code-block::
-
-      eval "$(/truba/sw/centos7.3/lib/anaconda3/2021.11/bin/conda shell.bash hook)"
-
-*    .. code-block::
-
-      eval "$(/truba/sw/centos7.9/lib/anaconda3/2020.07/bin/conda shell.bash hook)"
-
-*    .. code-block::
-
-      eval "$(/truba/sw/centos7.9/lib/anaconda3/2021.11/bin/conda shell.bash hook)"
-
-*    .. code-block::
-
-      eval "$(/truba/sw/centos7.9/lib/anaconda3/2023.03/bin/conda shell.bash hook)"
-
 
 .. warning:: 
 
@@ -215,7 +189,7 @@ Ek İpucu:
 Örnek Betik
 -----------
 
-İşlerinizi slurm dosyası hazırlayarak kullanıcı arayüzlerinde ``sbatch`` ile  sunucularda çalıştırılması üzere kuyruğa gönderilmelidir. Örnek betikler ``/arf/sw/scripts/python/`` ve ``/truba/sw/scripts/python/`` dizinlerinde bulunmaktadır.
+İşlerinizi slurm dosyası hazırlayarak kullanıcı arayüzlerinde ``sbatch`` ile  sunucularda çalıştırılması üzere kuyruğa gönderilmelidir. Örnek betikler ``/arf/sw/scripts/python/`` dizininde bulunmaktadır.
 
 .. dropdown:: :octicon:`codespaces;1.5em;secondary` Örnek Betik -CPU (Tıklayınız)
     :color: info

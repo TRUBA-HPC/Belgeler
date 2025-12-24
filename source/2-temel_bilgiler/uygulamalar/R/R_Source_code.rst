@@ -32,7 +32,7 @@ Detaylı kurulum aşamaları ve yardım için şu sayfalar ziyaret edilebilir:
                     cd /tmp/
                     # Yüklü modülleri kaldırıp derleyicimizi yüklüyoruz.
                     module purge
-                    module load centos7.9/comp/gcc/7
+                    module load comp/gcc/14.1.0
                     
                     # R kaynak kodu indiriyoruz.
                     wget https://cran.rstudio.com/src/base/R-4/R-4.2.2.tar.gz
@@ -60,8 +60,7 @@ Detaylı kurulum aşamaları ve yardım için şu sayfalar ziyaret edilebilir:
                 cd /tmp/
                 # Yüklü modülleri kaldırıp derleyicimizi yüklüyoruz.
                 module purge
-                source /truba/sw/centos7.9/comp/intel/oneapi-2021.2/setvars.sh intel64
-
+                module load comp/oneapi/2022
                 # R kaynak kodu indiriyoruz.
                 wget https://cran.rstudio.com/src/base/R-4/R-4.2.2.tar.gz
                 # Sıkıştırılmış dosyayı açıyoruz.

@@ -709,7 +709,7 @@ Tek sunucu içerisinde kullanılabilecek maksimum çekirdek sayıısı yetersiz 
                 #SBATCH --output=%A.out #%A=JOB_ID %a=ArrayIndex
                 #SBATCH --error=%A.err
                 #SBATCH --time=00:15:00
-                #SBATCH --workdir=/truba/home/kullanici_adiniz/sw-u/R-TRUBA/script
+                #SBATCH --workdir=/arf/home/kullanici_adiniz/sw-u/R-TRUBA/script
                 #SBATCH --job-name=test
                 #SBATCH --ntasks=10
                 #SBATCH --nodes=2
@@ -747,7 +747,7 @@ Tek sunucu içerisinde kullanılabilecek maksimum çekirdek sayıısı yetersiz 
                 #SBATCH --output=%A.out #%A=JOB_ID %a=ArrayIndex
                 #SBATCH --error=%A.err
                 #SBATCH --time=00:15:00
-                #SBATCH --workdir=/truba/home/kullanici_adiniz/sw-u/R-TRUBA/script
+                #SBATCH --workdir=/arf/home/kullanici_adiniz/sw-u/R-TRUBA/script
                 #SBATCH --job-name=test
                 #SBATCH --ntasks=10
                 #SBATCH --nodes=2
@@ -837,7 +837,7 @@ Aşağıda 2 tane girdi kabul eden ve girdiler arasında bir liste oluşturup li
                 #SBATCH --output=%A_%a.out #%A=JOB_ID %a=ArrayIndex
                 #SBATCH --error=%A_%a.err
                 #SBATCH --time=00:15:00
-                #SBATCH --workdir=/truba/home/kullanici_adiniz/sw-u/R-TRUBA/script
+                #SBATCH --workdir=/arf/home/kullanici_adiniz/sw-u/R-TRUBA/script
                 #SBATCH --job-name=test
                 #SBATCH --ntasks=1
                 #SBATCH --nodes=1
@@ -900,7 +900,7 @@ Intel derleyicisi ile olan modüller yüklendikten sonra R içerisinde ``session
                 Running under: CentOS Linux 7 (Core)
 
                 Matrix products: default
-                BLAS/LAPACK: /truba/sw/centos7.9/comp/intel/oneapi-2021.2/mkl/2021.2.0/lib/intel64/libmkl_intel_lp64.so.1
+                BLAS/LAPACK: $MKLROOT/lib/intel64/libmkl_intel_lp64.so.1
 
                 locale:
                 [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
