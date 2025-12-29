@@ -27,32 +27,31 @@ Hesaplama kümelerinde, kullanıcı verileri ile hesaplama çıktılarının yö
 Dosya Sistemleri Genel Bakış
 ============================
 
-Hesaplama kümelerinde bulunan dosya sistemleri, farklı performans karakteristikleri ve kullanım amaçlarına göre tasarlanmıştır:
+Hesaplama kümelerinde bulunan dosya sistemleri, farklı performans karakteristikleri ve kullanım amaçlarına göre tasarlanmıştır. Kullanım kota bilgilerinize ``arf-ui1`` kullanıcı arayüzüne giriş yaparak ulaşabilirsiniz.
 
 .. |br| raw:: html
 
      <br>
 
 .. list-table:: Dosya Sistemleri Özeti
-   :widths: 15 20 20 25 20
+   :widths: 27 35 20 18
    :header-rows: 1
    :align: center
 
    * - Dosya Sistemi
      - Kullanım Amacı
-     - Kota
      - Performans
      - Yaşam Süresi
    * - ``/arf/home``
      - Ev dizini
-     - 100 GB |br| 100K dosya
      - Yüksek hız |br| Güvenilir
      - Kullanıcı kontrolü
    * - ``/arf/scratch``
      - Geçici hesaplama
-     - 1 TB |br| 200K dosya
      - Yüksek hız |br| Paralel I/O
-     - En fazla 1 ay
+     - Kullanıcı kontrolü
+
+Kota: ``/arf/home`` ve ``/arf/scratch`` için kullanıcı başına **2 TB** ve **500K dosya sayısı (inode)** tanımlıdır.
 
 
 .. _dosya-sistemi-detaylari:
