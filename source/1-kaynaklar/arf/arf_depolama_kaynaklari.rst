@@ -51,7 +51,7 @@ Hesaplama kümelerinde bulunan dosya sistemleri, farklı performans karakteristi
      - Yüksek hız |br| Paralel I/O
      - Kullanıcı kontrolü
 
-Kota: ``/arf/home`` ve ``/arf/scratch`` için kullanıcı başına **2 TB** ve **100K dosya sayısı (inode)** tanımlıdır.
+Kota: ``/arf/home`` ve ``/arf/scratch`` için kullanıcı başına **2 TB** ve **500K dosya sayısı (inode)** tanımlıdır.
 
 
 .. _dosya-sistemi-detaylari:
