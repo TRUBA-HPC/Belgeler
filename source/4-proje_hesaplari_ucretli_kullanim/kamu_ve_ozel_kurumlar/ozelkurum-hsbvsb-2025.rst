@@ -1,9 +1,9 @@
 :orphan:
 
-.. _ozelkurum-hsbvsb-2026:
+.. _ozelkurum-hsbvsb-2025:
 
 ===============================================================================================================================
-TRUBA Hizmetlerinden Araştırma Odaklı Desteklenen Projeler Kapsamında Faydalanacak Özel İstekliler için HSB ve VSB Hizmeti 2026
+TRUBA Hizmetlerinden Araştırma Odaklı Desteklenen Projeler Kapsamında Faydalanacak Özel İstekliler için HSB ve VSB Hizmeti 2025
 ===============================================================================================================================
 
 
@@ -17,24 +17,31 @@ Bu kapsamda proje önerisinde hesaplama ve veri depolama isteği bulunan kurumla
 +-----------------------+----------------------------+----------------------------------------------------+
 |                                  Hesaplama Servis Birimi (HSB)                                          |
 +=======================+============================+====================================================+
-| Hamsi                 |    0,42 TL                 | Intel Xeon Gold 6258R 2.70GHz, 2x28 çekirdek       |
+| Sunucu Tipi           | Saatlik İşlemci            | Sunucu Özelliği                                    |
+|                       | Çekirdeği Bedeli [#note1]_ |                                                    |
++-----------------------+----------------------------+----------------------------------------------------+
+| Akya [#note2]_        |    0,76 TL                 | Intel Xeon Gold 6148 2.40GHz, 2x20 çekirdek,       |
+|                       |                            | çekirdek başına 9.6 GB bellek, EDR IB bağlantı,    |
+|                       |                            | 4 x Tesla V100 16 GB GPU                           |
++-----------------------+----------------------------+----------------------------------------------------+
+| Palamut               |    1,24 TL                 | AMD EPYC 7742 2.25GHz, 2x64 çekirdek,              |
+|                       |                            | çekirdek başına 1.5 GB bellek, 4xHDR IB bağlantı,  |
+|                       |                            | 8 x NVidia A100 80G GPU                            |
++-----------------------+----------------------------+----------------------------------------------------+
+| Hamsi                 |    0,40 TL                 | Intel Xeon Gold 6258R 2.70GHz, 2x28 çekirdek,      |
 |                       |                            | çekirdek başına 3.42 GB bellek, HDR100 IB bağlantı |
 +-----------------------+----------------------------+----------------------------------------------------+
 | Orfoz                 |    0,26 TL                 | Intel Xeon Platinum 8480+ 2.0GHz, 2x56 çekirdek,   |
 |                       |                            | çekirdek başına 2.28 GB bellek, NDR200 IB bağlantı |
 +-----------------------+----------------------------+----------------------------------------------------+
-| Kolyoz(H100)          |    2,70 TL                 | Intel Xeon Gold 6548Y+ 2.50GHz, 2x32 çekirdek,     |
+| Kolyoz                |    3,26 TL                 | Intel Xeon Gold 6548Y+ 2.50GHz, 2x32 çekirdek,     |
 |                       |                            | çekirdek başına 16 GB bellek, 4xHDR200 IB bağlantı |
 |                       |                            | 4 x NVidia H100 80 GB GPU                          |
-+-----------------------+----------------------------+----------------------------------------------------+
-| Kolyoz(H200)          |    4,62 TL                 | Intel Xeon Gold 6548Y+ 2.50GHz, 2x32 çekirdek,     |
-|                       |                            | çekirdek başına 16 GB bellek, 4xHDR200 IB bağlantı |
-|                       |                            | 4 x NVidia H200 141 GB GPU                         |
 +-----------------------+----------------------------+----------------------------------------------------+
 
 .. [#note1] Saatlik hesaplama servis biriminin KDV hariç bedelidir.Herhangi bir hesaplama, veri depolama alanı olmadan kullanılamayacağı için ilgili bedele en az 1TB depolama alanı saatlik bedeli dahil edilmelidir.
 
-.. [#note2] Kolyoz kümesi için çekirdek/saat hesaplaması en az 16 çekirdek ve 16'ın katları olarak yapılmalıdır. 
+.. [#note2] Akya kümesi için çekirdek/saat hesaplaması en az 10 çekirdek ve 10'un katları olarak, Palamut ve Kolyoz kümesi için çekirdek/saat hesaplaması en az 16 çekirdek ve 16'ın katları olarak yapılmalıdır. 
 
 
 
@@ -44,7 +51,10 @@ Bu kapsamda proje önerisinde hesaplama ve veri depolama isteği bulunan kurumla
 | Depolama Tipi        | Saatlik 1 TB              | Sunucu Özelliği                             |
 |                      | Depoloma Bedeli [#note3]_ |                                             |
 +----------------------+---------------------------+---------------------------------------------+
-| YBH Depolama         |    0,49 TL                | Tüm hesaplama sunucuları tarafından         |
+| YBH Depolama         |    0,27 TL                | Tüm hesaplama sunucuları tarafından         |
+|                      |                           | görünen performans disk alanı               |
++----------------------+---------------------------+---------------------------------------------+
+| YZ  Depolama         |    1,86 TL                | Tüm hesaplama sunucuları tarafından         |
 |                      |                           | görünen performans disk alanı               |
 +----------------------+---------------------------+---------------------------------------------+
 
@@ -87,9 +97,9 @@ Eğer kullanıcı hesaplarını, Hamsi sunucuları üzerinde gerçekleştirmek v
 
  .. code-block::
 
-    Toplam HSB = 138.240 saat x 0,42 TL = 58.060,80 TL
-    Toplam VSB = 120 gün x 24 saat  x 1 TB x 0,49 = 1.411,20 TL
-    Toplam Tutar = 58.060,80 TL + 1.411,20 TL = 59.472,00 TL (KDV Hariç)
+    Toplam HSB = 138.240 saat x 0,40 TL = 55.296,00 TL
+    Toplam VSB = 120 gün x 24 saat  x 1 TB x 0,27 = 777,60 TL
+    Toplam Tutar = 55.296,00 TL + 777,60 TL = 56.073,60 TL (KDV Hariç)
 
 .. [#note5] Aynı anda kullanılabilecek çekirdek sayısı sınırlıdır. En fazla aynı anda kullanılacak çekirdek sayısını bildirmek gerekmektedir. İlgili sayı proje yürütücüsü ve TÜBİTAK ULAKBİM Müdürlüğü arasında imzalanacak olan sözleşmede yer alacaktır.
 
@@ -113,8 +123,8 @@ Eğer kullanıcı hesaplarını Orfoz sunucuları üzerinde gerçekleştirmek is
     Toplam Çalışma Süresi  = 120 gün x 24 saat = 2880 Saat
     Toplam Çekirdek Zamanı = 120 gün x 24 saat x 112 = 322560 çekirdeksaat
     Toplam HSB = 2880 Saat x 112 x 0,26 TL = 83.865,60 TL 
-    Toplam VSB = 2880 saat x 1 TB x 0,49 = 1.411,20 TL 
-    Toplam Tutar = 83.865,60 TL + 1.411,20 TL = 85.276,80 TL (KDV Hariç)
+    Toplam VSB = 2880 saat x 1 TB x 0,27 = 777,60 TL 
+    Toplam Tutar = 83.865,60 TL + 777,60 TL = 84.643,20 TL (KDV Hariç)
 
 .. [#note8] Hesaplanan miktarlar KDV hariç tutarlar olup, projenizin bütçesini belirlerken %20 KDV miktarının da dahil edilmesi gerekmektedir. 
 
@@ -124,9 +134,9 @@ Eğer kullanıcı hesaplarını Orfoz sunucuları üzerinde gerçekleştirmek is
 
     Toplam Çalışma Süresi  = 120 gün x 24 saat = 2880 Saat
     Toplam Çekirdek Zamanı = 120 gün x 24 saat x 128 çekirdek = 368640 çekirdeksaat
-    Toplam HSB = 2880 Saat x 128 x 2,70 TL = 995.328,00 TL 
-    Toplam VSB = 2880 saat x 1 TB x 0,49 = 1.411,20 TL 
-    Toplam Tutar = 995.328,00 TL + 1.411,20 TL = 996.739,20 TL (KDV Hariç)
+    Toplam HSB = 2880 Saat x 128 x 3,26 TL = 1.201.766,40 TL 
+    Toplam VSB = 2880 saat x 1 TB x 0,27 = 777,60 TL 
+    Toplam Tutar = 1.201.766,40 TL + 777,60 TL = 1.202.544,00 TL (KDV Hariç)
 
 
 .. [#note9] Hesaplanan miktarlar KDV hariç tutarlar olup, projenizin bütçesini belirlerken %20 KDV miktarının da dahil edilmesi gerekmektedir. 
