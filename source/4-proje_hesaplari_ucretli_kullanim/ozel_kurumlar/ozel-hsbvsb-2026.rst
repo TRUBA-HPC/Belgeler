@@ -1,9 +1,9 @@
 :orphan:
 
-.. _ozelkurum-hsbvsb-2026:
+.. _ozel-hsbvsb-2026:
 
 ===============================================================================================================================
-TRUBA Hizmetlerinden Araştırma Odaklı Desteklenen Projeler Kapsamında Faydalanacak Özel İstekliler için HSB ve VSB Hizmeti 2026
+TRUBA Hizmetlerinden Özel Kurumlar için HSB ve VSB Hizmeti 2026
 ===============================================================================================================================
 
 
@@ -11,30 +11,33 @@ Hesaplama ve veri depolama ihtiyacı olan isteklilerin, ihtiyaçlarının TRUBA 
 
 Bu kapsamda proje önerisinde hesaplama ve veri depolama isteği bulunan kurumların TRUBA Hizmetleri'nden faydalanmak istemesi durumunda ilgili *Çerçeve İlkeler* kapsamında proforma fatura hazırlanarak, projesinin kabul edilmesinden sonra ilgili kurum ve TÜBİTAK ULAKBİM Müdürlüğü arasında imzalanan sözleşme kapsamında HSB ve VSB Hizmeti verilmekteydi. Günümüzde ilgili hizmetlerin saatlik birim bedelleri her yıl başında belirlenerek, web sayfasında ilan edilmektedir. Bu nedenle proforma hazırlanmamaktadır. İlgili hizmetin alımına karar verildikten sonra karşılıklı olarak sözleşme imzalanmaktadır.
 
-**Araştırma Odaklı Desteklenen Projelerde (TÜBİTAK, AB Projeleri) Yer Alan Özel Kurum Araştırmacıları** aşağıda yer alan ücret bedelleri ile projeleri için TRUBA Hizmetleri'nden faydalanmak üzere ücretlendirme çalışması yapabilirler. Ancak, ilgili çalışmayı tamamladıktan sonra kaynakların uygunluk durumu ve mevcut hesaplamanın doğruluğu ile ilgili ``trubaservis@ulakbim.gov.tr`` adresine e-posta göndermeleri beklenmektedir. Tarifenin web sayfasında yayınlaması nedeni ile uygunluk mesajı alan kurumlar, ilgili hesaplamayı proforma olarak kullanabileceklerdir. Talep edilirse, TÜBİTAK ULAKBİM Müdürlüğü tarafından proforma düzenlenecektir. 
+**Özel Kurumlar** aşağıda yer alan ücret bedelleri ile projeleri için TRUBA Hizmetleri'nden faydalanmak üzere ücretlendirme çalışması yapabilirler. Ancak, ilgili çalışmayı tamamladıktan sonra kaynakların uygunluk durumu ve mevcut hesaplamanın doğruluğu ile ilgili ``trubaservis@ulakbim.gov.tr`` adresine e-posta göndermeleri beklenmektedir. Tarifenin web sayfasında yayınlaması nedeni ile uygunluk mesajı alan kurumlar, ilgili hesaplamayı proforma olarak kullanabileceklerdir. Talep edilirse, TÜBİTAK ULAKBİM Müdürlüğü tarafından proforma düzenlenecektir. 
 
 
 +-----------------------+----------------------------+----------------------------------------------------+
 |                                  Hesaplama Servis Birimi (HSB)                                          |
 +=======================+============================+====================================================+
-| Hamsi                 |    0,42 TL                 | Intel Xeon Gold 6258R 2.70GHz, 2x28 çekirdek       |
+| Sunucu Tipi           | Saatlik İşlemci            | Sunucu Özelliği                                    |
+|                       | Çekirdeği Bedeli [#note1]_ |                                                    |
++-----------------------+----------------------------+----------------------------------------------------+
+| Hamsi                 |    0,48 TL                 | Intel Xeon Gold 6258R 2.70GHz, 2x28 çekirdek,      |
 |                       |                            | çekirdek başına 3.42 GB bellek, HDR100 IB bağlantı |
 +-----------------------+----------------------------+----------------------------------------------------+
-| Orfoz                 |    0,26 TL                 | Intel Xeon Platinum 8480+ 2.0GHz, 2x56 çekirdek,   |
+| Orfoz                 |    0,29 TL                 | Intel Xeon Platinum 8480+ 2.0GHz, 2x56 çekirdek,   |
 |                       |                            | çekirdek başına 2.28 GB bellek, NDR200 IB bağlantı |
 +-----------------------+----------------------------+----------------------------------------------------+
-| Kolyoz(H100)          |    2,70 TL                 | Intel Xeon Gold 6548Y+ 2.50GHz, 2x32 çekirdek,     |
+| Kolyoz(H100)          |    3,02 TL                 | Intel Xeon Gold 6548Y+ 2.50GHz, 2x32 çekirdek,     |
 |                       |                            | çekirdek başına 16 GB bellek, 4xHDR200 IB bağlantı |
 |                       |                            | 4 x NVidia H100 80 GB GPU                          |
 +-----------------------+----------------------------+----------------------------------------------------+
-| Kolyoz(H200)          |    4,62 TL                 | Intel Xeon Gold 6548Y+ 2.50GHz, 2x32 çekirdek,     |
+| Kolyoz(H200)          |    5,17 TL                 | Intel Xeon Gold 6548Y+ 2.50GHz, 2x32 çekirdek,     |
 |                       |                            | çekirdek başına 16 GB bellek, 4xHDR200 IB bağlantı |
 |                       |                            | 4 x NVidia H200 141 GB GPU                         |
 +-----------------------+----------------------------+----------------------------------------------------+
 
 .. [#note1] Saatlik hesaplama servis biriminin KDV hariç bedelidir.Herhangi bir hesaplama, veri depolama alanı olmadan kullanılamayacağı için ilgili bedele en az 1TB depolama alanı saatlik bedeli dahil edilmelidir.
 
-.. [#note2] Kolyoz kümesi için çekirdek/saat hesaplaması en az 16 çekirdek ve 16'ın katları olarak yapılmalıdır. 
+.. [#note2] Kolyoz kümeleri için çekirdek/saat hesaplaması en az 16 çekirdek ve 16'ın katları olarak yapılmalıdır. 
 
 
 
@@ -44,11 +47,12 @@ Bu kapsamda proje önerisinde hesaplama ve veri depolama isteği bulunan kurumla
 | Depolama Tipi        | Saatlik 1 TB              | Sunucu Özelliği                             |
 |                      | Depoloma Bedeli [#note3]_ |                                             |
 +----------------------+---------------------------+---------------------------------------------+
-| YBH Depolama         |    0,49 TL                | Tüm hesaplama sunucuları tarafından         |
+| YBH Depolama         |    1,87 TL                | Tüm hesaplama sunucuları tarafından         |
 |                      |                           | görünen performans disk alanı               |
 +----------------------+---------------------------+---------------------------------------------+
 
-.. [#note3] Saatlik 1 TB veri servis birimin KDV hariç bedelidir. Kullanımlarda yüksek performanslı hesaplama alanı olan YBH Depolama'dan alan tercih edilebilir. YZ teknolojilerinde çalışan işler için YZ Depolama'dan alan tercihi yapılabilir. YZ depolama alanının kısıtlı miktarda depolama alanına sahip olduğu göz önünde bulundurulmalıdır.  
+
+.. [#note3] Saatlik 1 TB veri servis birimin KDV hariç bedelidir.
 
 .. note:: 
 
@@ -56,18 +60,18 @@ Bu kapsamda proje önerisinde hesaplama ve veri depolama isteği bulunan kurumla
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Araştırma Odaklı Desteklenen Projelerde (TÜBİTAK, AB Projeleri) Yer Alan Özel Kurum Araştırmacıları kapsamında TRUBA'dan Hizmet Almak İsteyen Kurumlar İçin Yaklaşık Maaliyet Belirlenmesi 
+Hizmet Almak İsteyen Özel Kurumlar İçin Yaklaşık Maaliyet Belirlenmesi 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 TÜBİTAK ULAKBİM tarafından işletilen TRUBA kaynaklarından proje kapsamında destek almak isteyen kurumlar, proje önerisinde bulunmadan önce ihtiyaç duydukları kaynak miktarlarına göre, yukarıdaki tablodan projeleri için ihtiyaç duyulan bütçeyi hazırlayabilirler. Her türlü soru ve sorun ``trubaservis@ulakbim.gov.tr`` e-posta adresine yönlendirilebilir. 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Projesi Kabul Edilerek TRUBA'dan Hizmet Almak İsteyen Araştırma Odaklı Desteklenen Projelerde (TÜBİTAK, AB Projeleri) Yer Alan Özel Kurum Araştırmacıları İçin Sözleşme Düzenlenmesi
+Özel Kurumlar İçin Sözleşme Düzenlenmesi
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-TÜBİTAK, AB Projeleri tarafından desteklenecek kesinleşen projeler kapsamında, TÜBİTAK ULAKBİM'den hizmet alacak olan projeler için, yukarıdaki tabloda yer alan işlemci saat bedeli üzerinden istenilen kaynak miktarları belirlenebilir. Karşılıklı olarak ihtiyaç duyulan HSB ve VSB değerleri üzerinden proje boyunca kullanılacak çekirdek saat miktarı belirlenerek, en son HSB ve VSB değerlerine göre yeni sözleşme oluşturularak, Proje Yürütücüsü [#note4]_ ve TÜBİTAK ULAKBİM Müdürlüğü arasında imzalanır. İmzalanan sözleşme tarihlerine göre alınan hizmet aylık/dönemsel olarak Proje Yürütücüsü adına faturalandırılır. Her türlü soru ve sorun trubaservis@ulakbim.gov.tr e-posta adresine yönlendirilebilir.
+TÜBİTAK ULAKBİM'den hizmet alacak olan özel kurumlar için, yukarıdaki tabloda yer alan işlemci saat bedeli üzerinden istenilen kaynak miktarları belirlenebilir. Karşılıklı olarak ihtiyaç duyulan HSB ve VSB değerleri üzerinden hizmet süresi boyunca kullanılacak çekirdek saat miktarı belirlenerek, en son HSB ve VSB değerlerine göre yeni sözleşme oluşturularak, Kurum Yetkilisi [#note4]_ ve TÜBİTAK ULAKBİM Müdürlüğü arasında imzalanır. İmzalanan sözleşme tarihlerine göre alınan hizmet aylık/dönemsel olarak Kurum adına faturalandırılır. Her türlü soru ve sorun trubaservis@ulakbim.gov.tr e-posta adresine yönlendirilebilir.
 
-.. [#note4] Proje Yürütücüsü kurum tarafından ilgili hizmeti almaya yetkili kişi olmalıdır. Bu konuda TÜBİTAK ULAKBİM Müdürlüğü ek bilgi isteme hakkına sahiptir. 
+.. [#note4] Kurum yetkilisi, özel kurum tarafından ilgili hizmeti almaya yetkili kişi olmalıdır. Bu konuda TÜBİTAK ULAKBİM Müdürlüğü ek bilgi isteme hakkına sahiptir. 
 
 
 Örnek Hesaplama - I
@@ -87,9 +91,9 @@ Eğer kullanıcı hesaplarını, Hamsi sunucuları üzerinde gerçekleştirmek v
 
  .. code-block::
 
-    Toplam HSB = 138.240 saat x 0,42 TL = 58.060,80 TL
-    Toplam VSB = 120 gün x 24 saat  x 1 TB x 0,49 = 1.411,20 TL
-    Toplam Tutar = 58.060,80 TL + 1.411,20 TL = 59.472,00 TL (KDV Hariç)
+    Toplam HSB = 138.240 saat x 0,48 TL = 66.355,20 TL
+    Toplam VSB = 120 gün x 24 saat  x 1 TB x 1,87 = 5.385,60 TL
+    Toplam Tutar = 66.355,20 TL + 5.385,60 TL = 71.740,80 TL (KDV Hariç)
 
 .. [#note5] Aynı anda kullanılabilecek çekirdek sayısı sınırlıdır. En fazla aynı anda kullanılacak çekirdek sayısını bildirmek gerekmektedir. İlgili sayı proje yürütücüsü ve TÜBİTAK ULAKBİM Müdürlüğü arasında imzalanacak olan sözleşmede yer alacaktır.
 
@@ -111,10 +115,10 @@ Eğer kullanıcı hesaplarını Orfoz sunucuları üzerinde gerçekleştirmek is
  .. code-block::
 
     Toplam Çalışma Süresi  = 120 gün x 24 saat = 2880 Saat
-    Toplam Çekirdek Zamanı = 120 gün x 24 saat x 112 = 322560 çekirdeksaat
-    Toplam HSB = 2880 Saat x 112 x 0,26 TL = 83.865,60 TL 
-    Toplam VSB = 2880 saat x 1 TB x 0,49 = 1.411,20 TL 
-    Toplam Tutar = 83.865,60 TL + 1.411,20 TL = 85.276,80 TL (KDV Hariç)
+    Toplam Çekirdek Zamanı = 120 gün x 24 saat x 112 = 322560 Saat
+    Toplam HSB = 2880 Saat x 112 x 0,29 TL = 93.542,40 TL 
+    Toplam VSB = 2880 saat x 1 TB x 1,87 = 5.385,60 TL 
+    Toplam Tutar = 93.542,40 + 5.385,60 TL = 98.928,00 TL (KDV Hariç)
 
 .. [#note8] Hesaplanan miktarlar KDV hariç tutarlar olup, projenizin bütçesini belirlerken %20 KDV miktarının da dahil edilmesi gerekmektedir. 
 
@@ -123,10 +127,10 @@ Eğer kullanıcı hesaplarını Orfoz sunucuları üzerinde gerçekleştirmek is
  .. code-block::
 
     Toplam Çalışma Süresi  = 120 gün x 24 saat = 2880 Saat
-    Toplam Çekirdek Zamanı = 120 gün x 24 saat x 128 çekirdek = 368640 çekirdeksaat
-    Toplam HSB = 2880 Saat x 128 x 2,70 TL = 995.328,00 TL 
-    Toplam VSB = 2880 saat x 1 TB x 0,49 = 1.411,20 TL 
-    Toplam Tutar = 995.328,00 TL + 1.411,20 TL = 996.739,20 TL (KDV Hariç)
+    Toplam Çekirdek Zamanı = 120 gün x 24 saat x 128 çekirdek = 368640 Saat
+    Toplam HSB = 2880 Saat x 128 x 3,02 TL = 1.113.292,80 TL 
+    Toplam VSB = 2880 saat x 1 TB x 1,87 =  5.385,60 TL 
+    Toplam Tutar = 1.113.292,80 TL + 5.385,60 TL  = 1.118.678,40 TL (KDV Hariç)
 
 
 .. [#note9] Hesaplanan miktarlar KDV hariç tutarlar olup, projenizin bütçesini belirlerken %20 KDV miktarının da dahil edilmesi gerekmektedir. 
