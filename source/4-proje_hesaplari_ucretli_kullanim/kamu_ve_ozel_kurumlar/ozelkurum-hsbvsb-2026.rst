@@ -17,7 +17,10 @@ Bu kapsamda proje önerisinde hesaplama ve veri depolama isteği bulunan kurumla
 +-----------------------+----------------------------+----------------------------------------------------+
 |                                  Hesaplama Servis Birimi (HSB)                                          |
 +=======================+============================+====================================================+
-| Hamsi                 |    0,42 TL                 | Intel Xeon Gold 6258R 2.70GHz, 2x28 çekirdek       |
+| Sunucu Tipi           | Saatlik İşlemci            | Sunucu Özelliği                                    |
+|                       | Çekirdeği Bedeli [#note1]_ |                                                    |
++-----------------------+----------------------------+----------------------------------------------------+
+| Hamsi                 |    0,42 TL                 | Intel Xeon Gold 6258R 2.70GHz, 2x28 çekirdek,      |
 |                       |                            | çekirdek başına 3.42 GB bellek, HDR100 IB bağlantı |
 +-----------------------+----------------------------+----------------------------------------------------+
 | Orfoz                 |    0,26 TL                 | Intel Xeon Platinum 8480+ 2.0GHz, 2x56 çekirdek,   |
@@ -31,7 +34,6 @@ Bu kapsamda proje önerisinde hesaplama ve veri depolama isteği bulunan kurumla
 |                       |                            | çekirdek başına 16 GB bellek, 4xHDR200 IB bağlantı |
 |                       |                            | 4 x NVidia H200 141 GB GPU                         |
 +-----------------------+----------------------------+----------------------------------------------------+
-
 .. [#note1] Saatlik hesaplama servis biriminin KDV hariç bedelidir.Herhangi bir hesaplama, veri depolama alanı olmadan kullanılamayacağı için ilgili bedele en az 1TB depolama alanı saatlik bedeli dahil edilmelidir.
 
 .. [#note2] Kolyoz kümesi için çekirdek/saat hesaplaması en az 16 çekirdek ve 16'ın katları olarak yapılmalıdır. 
@@ -48,7 +50,7 @@ Bu kapsamda proje önerisinde hesaplama ve veri depolama isteği bulunan kurumla
 |                      |                           | görünen performans disk alanı               |
 +----------------------+---------------------------+---------------------------------------------+
 
-.. [#note3] Saatlik 1 TB veri servis birimin KDV hariç bedelidir. Kullanımlarda yüksek performanslı hesaplama alanı olan YBH Depolama'dan alan tercih edilebilir. YZ teknolojilerinde çalışan işler için YZ Depolama'dan alan tercihi yapılabilir. YZ depolama alanının kısıtlı miktarda depolama alanına sahip olduğu göz önünde bulundurulmalıdır.  
+.. [#note3] Saatlik 1 TB veri servis birimin KDV hariç bedelidir. 
 
 .. note:: 
 
