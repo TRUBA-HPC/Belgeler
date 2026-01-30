@@ -15,7 +15,7 @@ Proje Kapsamında Faydalanacak Akademik İstekliler
 - :ref:`ardeb-hsbvsb-2023`
 
 
-Araştırma Odaklı Desteklenen Projeler Kapsamında Faydalanacak Kamu ve Özel Kurumlar
+Kamu ve Araştırma Odaklı Desteklenen Projeler Kapsamında Faydalanacak Özel Kurumlar
 -----------------------------------------------------------------------------------
 
 - :ref:`ozelkurum-hsbvsb-2026`
