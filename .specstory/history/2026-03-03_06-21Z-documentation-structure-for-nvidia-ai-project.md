@@ -2991,3 +2991,732 @@ Cancelled
 
 ---
 
+_**User**_
+
+sanki nemo da trainin isleri icin kullaniliyor. belki nemonun docsuna gidip bakmak iyi olabilir
+
+---
+
+_**Agent (model claude-4.6-opus-high-thinking, mode Agent)**_
+
+<tool-use data-tool-type="search" data-tool-name="web_search">
+<details>
+            <summary>Tool use: **web_search** • Searched web `undefined` • **1** results</summary>
+        
+| Title | URL | Chunk |
+|-------|-----|-------|
+| Web search results for query: NVIDIA NeMo framework training LLM example command pretraining fine-tuning 2025 |  | Links:<br/>1. [Fine-Tuning — NVIDIA NeMo Framework User Guide](https://docs.nvidia.com/nemo-framework/user-guide/24.09/multimodalmodels/multimodallanguagemodel/neva/finetune.html)<br/>2. [LLM Pre-Training with NeMo Automodel — NeMo-AutoModel](https://docs.nvidia.com/nemo/automodel/0.2.0/guides/llm/pretraining.html)<br/>3. [NeMo Command Line Interface — NVIDIA NeMo Framework User Guide](https://docs.nvidia.com/nemo-framework/user-guide/25.07/nemo-2.0/features/cli.html)<br/>4. [Quickstart with NeMo-Run #](https://docs.nvidia.com/nemo-framework/user-guide/latest/nemo-2.0/quickstart.html)<br/>5. [Configure NeMo-Run #](https://docs.nvidia.com/nemo-framework/user-guide/latest/nemorun/guides/configuration.html)<br/><br/># NVIDIA NeMo Framework: LLM Training Guide<br/><br/>## Command Line Interface (CLI)<br/><br/>NeMo 2.0 provides a unified CLI for LLM training tasks.[3] The basic syntax is:<br/><br/>```<br/>nemo [collection] [command] [options]<br/>```<br/><br/>For LLM operations, available commands include:[3]<br/>- `nemo llm pretrain` - Pre-train models from scratch<br/>- `nemo llm finetune` - Fine-tune existing models<br/>- `nemo llm train` - General training<br/>- `nemo llm generate` - Generate text<br/><br/>To view available pre-training recipes:<br/>```<br/>nemo llm pretrain --help<br/>```<br/><br/>## Pre-training Example<br/><br/>For pre-training, NeMo provides pre-configured recipes. Using NeMo-Run with a small model like Nemotron 3 4B:[4]<br/><br/>```python<br/>import nemo_run as run<br/>from nemo.collections import llm<br/><br/>recipe = llm.nemotron3_4b.pretrain_recipe(<br/>    dir="/checkpoints/nemotron",<br/>    name="nemotron_pretraining",<br/>    tensor_parallelism=2,<br/>    num_nodes=1,<br/>    num_gpus_per_node=2,<br/>    max_steps=100<br/>)<br/>```<br/><br/>For dataset preparation with FineWeb, use the data processor:[2]<br/>```bash<br/>python tools/nanogpt_data_processor.py \<br/>  --dataset HuggingFaceFW/fineweb \<br/>  --set-name sample-10BT \<br/>  --max-tokens 500M<br/>```<br/><br/>## Fine-tuning Example<br/><br/>To enable fine-tuning, update your configuration file:[1]<br/><br/>```yaml<br/>defaults:<br/>  - fine_tuning: neva/llama2_7b_chat<br/><br/>stages:<br/>  - fine_tuning<br/>```<br/><br/>Then execute: `python3 main.py`[1]<br/><br/>Key requirement: Set the `restore_from_path` field to point to your pretrained checkpoint in `.nemo` format.[1]<br/><br/>## Requirements<br/><br/>Minimum GPU requirements: 2 GPUs with 48GB memory each for pre-training, or 1 GPU with 48GB for fine-tuning.[4] |
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+Error fetching URL, status code: 404 Not Found
+
+---
+
+<tool-use data-tool-type="search" data-tool-name="web_search">
+<details>
+            <summary>Tool use: **web_search** • Searched web `undefined` • **1** results</summary>
+        
+| Title | URL | Chunk |
+|-------|-----|-------|
+| Web search results for query: NVIDIA NeMo framework container NGC srun sbatch SLURM HPC cluster training example |  | Links:<br/>1. [Run on a Cluster (Slurm / Multi-node) — NeMo-AutoModel](https://docs.nvidia.com/nemo/automodel/latest/launcher/cluster.html)<br/>2. [BioNeMo Training Scripts for SLURM - BioNeMo](https://docs.nvidia.com/bionemo-framework/latest/main/getting-started/using-slurm/index.html)<br/>3. [NeMo Framework Foundation Model Pre-training ](https://docs.nvidia.com/nemo-framework/user-guide/24.07/playbooks/pretraining.html)<br/>4. [Search code, repositories, users, issues, pull requests...](https://github.com/NVIDIA/NeMo-Framework-Launcher/blob/main/examples/README.md)<br/>5. [Quickstart with NeMo-Run #](https://docs.nvidia.com/nemo-framework/user-guide/latest/nemo-2.0/quickstart.html)<br/><br/># NVIDIA NeMo Framework Container Training on HPC Clusters<br/><br/>## Container and NGC Access<br/><br/>NeMo Framework training uses Docker containers available on NVIDIA NGC. You can access the latest NeMo Framework training container at the NGC registry.[3] The containers include the complete NeMo codebase and are designed to run on Slurm clusters with the pyxis plugin.[3]<br/><br/>## Submitting Jobs with SLURM<br/><br/>### Using NeMo Automodel CLI (Recommended)<br/><br/>The preferred method for submitting distributed training jobs is the Automodel CLI, which automatically handles SLURM configuration:[1]<br/><br/>```<br/>automodel finetune llm -c your_config_with_slurm.yaml<br/>```<br/><br/>Configure the `slurm` section in your YAML with parameters like nodes, tasks per node, container image, and GPU allocation.[1]<br/><br/>### Using srun with Containers<br/><br/>For direct container execution, use `srun` with container-specific flags:[2]<br/><br/>```<br/>srun \<br/>    --output results/slurm-%j.out \<br/>    --container-image=$IMAGE_NAME \<br/>    --container-mounts $\{MOUNTS\} \<br/>    bash -c "$\{COMMAND\}"<br/>```<br/><br/>This approach allows mounting data directories and setting job-specific parameters.[2]<br/><br/>## Key SLURM Configuration<br/><br/>Essential `#SBATCH` directives include:[2]<br/>- `--account`: SLURM billing account<br/>- `--nodes`: Number of nodes<br/>- `--partition`: Cluster partition<br/>- `--ntasks-per-node`: Tasks per node<br/>- `--time`: Job time limit<br/>- `--gpus-per-node`: GPU allocation<br/><br/>## Multi-Node Training<br/><br/>For distributed training across multiple nodes, use the NeMo-Framework-Launcher with example scripts provided for GPT, LLAMA2, and other models on A100/H100 GPUs.[4] Configuration files specify cluster environment settings, data directories, and training parameters.[4]<br/><br/>## Requirements<br/><br/>- Access to NeMo Framework NGC containers<br/>- Slurm cluster with pyxis plugin<br/>- Minimum 2 DGX nodes for multi-node communication testing[3] |
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="web_fetch">
+<details>
+<summary>Tool use: **web_fetch**</summary>
+
+
+Parameters:
+
+```json
+{
+  "url": "https://docs.nvidia.com/nemo-framework/user-guide/24.07/playbooks/pretraining.html"
+}
+```
+Additional data:
+
+```json
+{
+  "reviewData": {
+    "status": "Done",
+    "selectedOption": "run",
+    "isShowingInput": false
+  }
+}
+```
+Result:
+
+```json
+{
+  "url": "https://docs.nvidia.com/nemo-framework/user-guide/24.07/playbooks/pretraining.html",
+  "markdown": "NeMo Framework Foundation Model Pre-training — NVIDIA NeMo Framework User Guide\n\n[NVIDIA NeMo Framework User Guide](https://docs.nvidia.com/nemo-framework/user-guide/24.07/index.html)\n\nChoose version\n\n[Is this page helpful?](https://surveys.hotjar.com/4904bf71-6484-47a7-83ff-4715cceabdb5)\n\nImportant\n\nNeMo 2.0 is an experimental feature and currently released in the dev container only: [nvcr.io/nvidia/nemo:dev](https://docs.nvidia.com/nemo-framework/user-guide/24.07/playbooks/nvcr.io/nvidia/nemo:dev). Please refer to [NeMo 2.0 overview](https://docs.nvidia.com/nemo-framework/user-guide/24.07/nemo-2.0/index.html#nemo-2-overview) for information on getting started.\n\n# NeMo Framework Foundation Model Pre-training#\n\n## Project Description#\n\n### Learning Goals#\n\nThis module focuses on successfully launching a foundation model pretraining job on your infrastructure and to get the necessary training artifacts as the output of the successful runs. The objective of this playbook is:\n\nTo understand and execute the workflow of pretraining Foundation Models (GPT3, T5, mT5, Bert) using NeMo Framework\n\nTo successfully produce the training artifacts such as checkpoints, logs, and event files using NeMo Framework\n\n### NeMo Tools and Resources#\n\n[GitHub - NVIDIA/NeMo-Framework-Launcher: NeMo Megatron launcher and tools](https://github.com/NVIDIA/NeMo-Framework-Launcher)\n\n[NeMo Framework Open Beta - example | NVIDIA Developer](https://developer.nvidia.com/nemo-framework-open-beta)\n\nREADME in [NeMo Framework NGC](https://docs.nvidia.com/nemo-framework/user-guide/latest/index.html)\n\n### Data#\n\nFor this module, we can use the Pile dataset to launch model training. We do not need the entire dataset and you can download a few shards for this task. The instructions for downloading the dataset are explained in the Project Instructions and Milestones section.\n\nThe dataset should have .bin and .idx files and well as the relevant tokenizer files (vocab and merge files) to successfully initialize the training job. This is accomplished as part of the data download steps outlined in the Project Instructions and Milestones section.\n\n### Requirements#\n\n#### Software#\n\nAccess to latest NeMo Framework NGC Containers\n\nDGX SuperPOD SW stack: Base Command Manager, Slurm (with pyxis plugin)\n\n#### Hardware#\n\nMinimum: 2 DGX nodes (A100 or H100). For reference, a 5B model takes 9.8 days to train on 8 DGX A100s. The goal of this playbook is to launch and monitor the jobs successfully and not necessarily to train the model to convergence. It is therefore advised to have at least 2 nodes to establish multi-node communication required for training large language models.\n\nRecommended: 10-20 nodes on DGX SuperPod or DGX Cloud\n\n## Project Instructions and Milestones#\n\nSelect a model type (from GPT-3, T5, mT5 and Bert) and model size (such as 5B, 20B, etc. based on your available compute) and proceed to perform the following steps. You can select the smallest model GPT3 126M for this playbook if you would like.\n\nStep 1: Download the NeMo Framework Training Container and Prepare the Environment\n\nThe whole solution uses a set of Docker containers executed on a Slurm cluster (using the [pyxis](https://github.com/NVIDIA/pyxis) plug-in) or a Base Command Platform cluster. For this playbook, we will use a Slurm cluster and the NeMo Framework training container.\n\nGo to [NeMo Framework Training | NVIDIA NGC](https://registry.ngc.nvidia.com/orgs/ea-bignlp/teams/ga-participants/containers/nemofw-training) to get the latest NeMo Framework training container.\n\nThe NeMo Framework codebase is included as part of the training container. To download the container and copy the contents to a local directory in the cluster, the following command can be executed: (enter the path to the local directory based on your setup and always select the latest container tag):\n\n&#96;&#96;&#96;\nsrun -p &lt;partition&gt; -N 1 --container-mounts=/path/to/local/dir:/workspace/mount_dir --container-image=&lt;container_tag&gt; bash -c \"cp -r /opt/NeMo-Framework-Launcher/launcher_scripts /opt/NeMo-Framework-Launcher/auto_configurator /workspace/mount_dir/\"\n\n&#96;&#96;&#96;\n\nAfter that, install the NeMo Framework scripts dependencies on the head node of the cluster::\n\n&#96;&#96;&#96;\npip install -r requirements.txt\n\n&#96;&#96;&#96;\n\nStep 2: Setting up cluster configuration in the launcher scripts\n\nIf using a Slurm based cluster, the config file located at&#96;conf/cluster/bcm.yaml&#96; has the parameters to set the generic cluster related information, such as the partition or account parameters.\n\nGo to&#96;/launcher_scripts/conf/cluster/bcm.yaml&#96;\n\nModify the cluster configuration based on your system configuration. Name the cluster partition, account, job_name_prefix and other arguments for your cluster.\n\nStep 3: Changing config.yaml to run different stages of LLM training such as data preparation, training, fine-tuning, evaluation, etc.\n\nAfter setting the cluster config, the first parameter that must be set is the launcher_scripts_path parameter inside the&#96;conf/config.yaml&#96; file. This parameter must point to the absolute path where the launcher_scripts repository is stored in the file system.\n\nThe&#96;launcher_scripts_path&#96; parameter will automatically be mounted to the container at the same path as in the local file system. The&#96;data_dir&#96; parameter can also be modified to point to where the dataset will be loaded from or saved. The&#96;base_results_dir&#96; can also be modified to point to where the results, checkpoints and logs will be stored. These last two parameters will be automatically mounted into the container. The parameters cluster and cluster_type must be set to bcm for all the tasks.\n\nWithin&#96;conf/config.yaml&#96;, set the defaults at the top of the file corresponding to the model of choice. For example, if you would like to perform training and checkpoint conversion to .nemo (which is required for all the subsequent tasks such as fine-tuning, PEFT, etc.) here is an example of defaults for 5B GPT-3 model. Please change these for your specific model choice.\n\nStep 4: Data Preparation\n\nWithin&#96;conf/config.yaml&#96;, in the stages section, specify the model development stages that you would like to run. To run data_preparation, you will need to specify it as such in the “stages” section as shown here:\n\nAfter specifying “data_preparation” as a “stage” in&#96;config.yaml&#96;, as well as&#96;gpt3/download_gpt3_pile&#96; in the “defaults” section of&#96;config.yaml&#96;, modify the data preparation parameters in the /conf/data_preparation/gpt3/download_gpt3_pile.yaml file.\n\nGo to&#96;/launcher_scripts&#96; and run the following::\n\n&#96;&#96;&#96;\npython3 main.py\n\n&#96;&#96;&#96;\n\nOutput:\n\nTo check whether this was successful, head over to the data directory (data_dir) specified in the config.yaml. Depending on how many shards of Pile were downloaded, you should expect to see files such 00.jsonl.zst, 01.jsonl.zst, and so on. As well as a directory “bpe” which contains merges.txt and vocab.json\n\nStep 5: Submitting a training job successfully\n\nTo initiate model training, go to&#96;conf/config.yaml&#96;, and within the stages section, uncomment “training” as shown in the screenshot below. You can add more stages to this section as your project demands. Each stage will be executed once the prior stage has successfully concluded.\n\nAfter setting the stage, go to&#96;/conf/training&#96; followed by the model of your choice and navigate to the appropriate config file corresponding to the model size you are interested in. Make sure that the same has been specified in the “defaults” section of the&#96;config.yaml&#96; file. For example, for the GPT-3 5B model, proceed to&#96;/conf/training/gpt3/5b.yaml&#96; and modify the yaml file based on your project.\n\nCorresponding to each stage specified here, you would then go to&#96;/conf&#96; directory, and select the appropriate directory corresponding to the stage (for ex. training and data_preparation in this case) and modify the corresponding config files.\n\nAfter setting the appropriate training yaml file, go to&#96;/launcher_scripts&#96; and run the following::\n\n&#96;&#96;&#96;\npython3 main.py\n\n&#96;&#96;&#96;\n\nThe expected output from this stage is explained in the next step.\n\nStep 6: Checking errors, log files and training artifacts\n\nOnce the training job is successfully submitted, check for a successful run by monitoring the log files, error files as well as the checkpoints – all of which can be found in the base_results_dir specified in&#96;/conf/config.yaml&#96;\n\nFor this sample run, we launched a gpt3 5B parameter model. Accordingly, within the results folder, you can find a&#96;gpt3_5b&#96; folder created. It contains the log files and error files as can be seen in the file name.\n\nWithin gpt3_5b, go to&#96;/results/&#96; to locate the Tensorboard event files, hyperparameter records, and logs for the training runs.\n\nWithin the gpt3_5b folder, go to&#96;/results/checkpoints/&#96; to locate the checkpoints in the .ckpt format.\n\nStep 7: Restoring a checkpoint and relaunching a training run\n\nTo launch a training run from an already existing checkpoint, make sure that the tensor parallel and pipeline parallel hyperparameters are the same as what was set to get this checkpoint. Also make sure that the global batch size remains unchanged to preserve the same training behavior.\n\nTo resume pretraining from an already existing checkpoint, go to&#96;/conf/training&#96; and direct to the appropriate folder of your model of choice. In our example, we will go to /gpt3/ and within that we open the 5b.yaml file\n\nInside the 5b.yaml, look for model section, and specify the location of the checkpoint that you would like to restore from, as shown in this figure: (the hyperparamters shown below may not correspond to the model of your choice).\n\nAfter specifying the restore location, go back to&#96;/launcher_scripts&#96; and run&#96;python3 main.py&#96; to relaunch the training job.\n\n## Project Deliverables#\n\nSubmit a screenshot of the results folder showing checkpoints, logs, and error files as well as the tensorboard event files\n\nSubmit a screenshot of the loss curves as shown in the tensorboard summaries or the W&amp;Bs summaries based on your preference.\n\n## Project Evaluation#\n\nThis project will be evaluated based on the following criteria:\n\nAbility to successfully launch a chosen model type and model size on your cluster and get the training artifacts.\n\nAbility to explain the workflow for all 4 model types: GPT-3, T5, mT5 and Bert\n\nAbility to modify the config files appropriately based on the requirements of specific models\n\nAbility to explain all the hyperparameters listed in all the config files that are modified to launch the different stages of LLM development\n\nAbility to save and restore checkpoints i.e. re-launch a training session based on existing checkpoint\n\nAbility to explain performance of a training run based on the metrics shown in the log files\n\nAbility to explain the debugging process in case of any errors\n\nAbility to change the cluster configuration for different infrastructure settings\n\nOn this page\n\nso the DOM is not blocked --"
+}
+```
+User decision: **accepted**
+
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="web_fetch">
+<details>
+<summary>Tool use: **web_fetch**</summary>
+
+
+Parameters:
+
+```json
+{
+  "url": "https://docs.nvidia.com/nemo/automodel/latest/launcher/cluster.html"
+}
+```
+Additional data:
+
+```json
+{
+  "reviewData": {
+    "status": "Done",
+    "selectedOption": "run",
+    "isShowingInput": false
+  }
+}
+```
+Result:
+
+```json
+{
+  "url": "https://docs.nvidia.com/nemo/automodel/latest/launcher/cluster.html",
+  "markdown": "Run on a Cluster (Slurm / Multi-node) — NeMo-AutoModel\n\n[NeMo-AutoModel](https://docs.nvidia.com/nemo/automodel/latest/index.html)\n\nChoose version\n\n# Run on a Cluster (Slurm / Multi-node)#\n\nIn this guide, you will learn how to submit distributed training jobs on Slurm clusters (single- or multi-node). For single-node workstation usage, see [Run on Your Local Workstation](https://docs.nvidia.com/nemo/automodel/latest/launcher/local-workstation.html). For setup details, refer to our [Installation Guide](https://docs.nvidia.com/nemo/automodel/latest/guides/installation.html).\n\nNeMo Automodel uses recipes to run end-to-end workflows. If you’re new to recipes, see the [Repository Structure](https://docs.nvidia.com/nemo/automodel/latest/repository-structure.html) guide.\n\nNote\n\nKubernetes support is coming soon.\n\n## Quickstart: Choose Your Job Launch Option#\n\nSlurm jobs support two modes of execution:&#96;batch&#96; and&#96;interactive&#96;. In&#96;batch&#96; mode, the job is submitted to the cluster queue and is executed without any other input from the user (e.g., no keyboard input), whereas the&#96;interactive&#96; mode, as the name implies, enables keyboard input.\n\nCLI (recommended for Slurm) This only requires you to configure the&#96;slurm&#96; section in the YAML file, and the launcher will render the SBATCH script.\n\n&#96;&#96;&#96;\nautomodel finetune llm -c your_config_with_slurm.yaml\n\n&#96;&#96;&#96;\n\nDirect recipe script (typically for interactive testing) You can also launch an interactive job on a Slurm node, and on the node run:\n\nSingle node, single GPU\n\n&#96;&#96;&#96;\npython3 examples/llm_finetune/finetune.py -c your_config.yaml\n\n&#96;&#96;&#96;\n\nSingle node, multiple GPUs\n\n&#96;&#96;&#96;\ntorchrun --nproc-per-node=8 examples/llm_finetune/finetune.py -c your_config.yaml\n\n&#96;&#96;&#96;\n\nNote: For multi-node, prefer the CLI with&#96;slurm&#96; configuration.\n\n## Submit a Batch Job with Slurm#\n\nFor distributed training on Slurm clusters, add a&#96;slurm&#96; section to your YAML configuration:\n\n&#96;&#96;&#96;\n# Your existing model, dataset, training config...\nstep_scheduler:\n  grad_acc_steps: 4\n  num_epochs: 1\n\nmodel:\n  _target_: nemo_automodel.NeMoAutoModelForCausalLM.from_pretrained\n  pretrained_model_name_or_path: meta-llama/Llama-3.2-1B\n\ndataset:\n  _target_: nemo_automodel.components.datasets.llm.squad.make_squad_dataset\n  dataset_name: rajpurkar/squad\n  split: train\n\n# Add Slurm configuration\nslurm:\n  job_name: llm-finetune\n  nodes: 1\n  ntasks_per_node: 8\n  time: 00:30:00\n  account: your_account\n  partition: gpu\n  container_image: nvcr.io/nvidia/nemo-automodel:25.11.00\n  gpus_per_node: 8 # Adds an SBATCH line: \"#SBATCH --gpus-per-node=8\"\n  # Optional: Add extra mount points if needed\n  extra_mounts:\n    - /lustre:/lustre\n  # Optional: Specify custom HF_HOME location (will auto-create if not specified)\n  hf_home: /path/to/your/HF_HOME\n  # Optional: Specify custom env vars\n  # env_vars:\n  #   ENV_VAR: value\n  # Optional: Specify custom job directory (defaults to cwd/slurm_jobs)\n  # job_dir: /path/to/slurm/jobs\n\n&#96;&#96;&#96;\n\nThen submit the job:\n\n&#96;&#96;&#96;\nautomodel finetune llm -c your_config_with_slurm.yaml\n\n&#96;&#96;&#96;\n\nThe Automodel CLI is the preferred method for most users. It provides a unified interface for running jobs, from local environments (e.g., [workstation](https://docs.nvidia.com/nemo/automodel/latest/launcher/local-workstation.html)) to large clusters (e.g., Slurm batch jobs). The CLI will automatically submit the job to Slurm and handle the distributed setup. The above example launches one node with eight workers per node using torchrun (&#96;--nproc_per_node=8&#96;). The Slurm script itself uses&#96;#SBATCH --ntasks-per-node 1&#96;, and when&#96;gpus_per_node&#96; is set, it adds&#96;#SBATCH --gpus-per-node=8&#96; as well.\n\nThe CLI follows this format:\n\n&#96;&#96;&#96;\nautomodel &lt;command&gt; &lt;domain&gt; -c &lt;config_file&gt; [options]\n\n&#96;&#96;&#96;\n\nWhere:\n\n&#96; &#96;: The operation to perform (&#96;finetune&#96;)\n\n&#96; &#96;: The model domain (&#96;llm&#96; or&#96;vlm&#96;)\n\n&#96; &#96;: Path to your YAML configuration file\n\n### Launch a Batch Job on Slurm with Modified Code#\n\nIf the command is executed from within a Git repository accessible to Slurm workers, the generated SBATCH script will prioritize the repository source over the Automodel installation inside the container image.\n\nFor example:\n\n&#96;&#96;&#96;\ngit clone git@github.com:NVIDIA-NeMo/Automodel.git automodel_test_repo\ncd automodel_test_repo/\nautomodel finetune llm -c examples/llm_finetune/llama3_2/llama3_2_1b_squad.yaml --nproc-per-node=2\n\n&#96;&#96;&#96;\n\nThis will launch the job using the source code in the&#96;automodel_test_repo&#96; directory instead of the version bundled in the Docker image.\n\n## Standalone Slurm Script (Advanced)#\n\nIf you prefer to submit with your own Slurm script, here is a standalone bash script adapted from the Automodel launcher template. See the upstream template for the authoritative reference: [Automodel Slurm template](https://github.com/NVIDIA-NeMo/Automodel/blob/main/nemo_automodel/components/launcher/slurm/template.py).\n\n&#96;&#96;&#96;\n#!/bin/bash\n#SBATCH -A &lt;account&gt;\n#SBATCH -p &lt;partition&gt;\n#SBATCH -N &lt;nodes&gt;\n#SBATCH --ntasks-per-node 1 &lt;gpus_per_node_directive&gt;\n#SBATCH --time &lt;HH:MM:SS&gt;\n#SBATCH --mail-type=FAIL\n#SBATCH --exclusive\n#SBATCH --output=&lt;job_dir&gt;/slurm_%x_%j.out\n#SBATCH -J &lt;job_name&gt;\n\n# Multi-node env\nexport MASTER_ADDR=$(scontrol show hostnames $SLURM_JOB_NODELIST | head -n 1)\nexport MASTER_PORT=&lt;master_port&gt;\nexport NUM_GPUS=&lt;num_gpus&gt;\nexport WORLD_SIZE=$(($NUM_GPUS * $SLURM_NNODES))\n\nexport CUDA_DEVICE_MAX_CONNECTIONS=1\nexport TORCH_NCCL_AVOID_RECORD_STREAMS=1\nexport NCCL_NVLS_ENABLE=0\n\n# Experiment env\nexport WANDB_API_KEY=&lt;wandb_key&gt;\nexport HF_HOME=&lt;hf_home&gt;\nexport HF_TOKEN=&lt;hf_token&gt;\n# Add any custom env vars below, e.g.:\n# export MY_ENV_VAR=value\n\n# User command\nread -r -d '' CMD &lt;&lt;'EOF'\ncd &lt;chdir&gt;; whoami; date; pwd;\n&lt;command&gt;\nEOF\necho \"$CMD\"\n\nsrun \\\n    --mpi=pmix \\\n    --container-entrypoint \\\n    --no-container-mount-home \\\n    --container-image=&lt;container_image&gt; \\\n    --container-mounts=&lt;container_mounts&gt; \\\n    --export=ALL \\\n    bash -c \"$CMD\"\n\n&#96;&#96;&#96;\n\nReplace bracketed placeholders (e.g.,&#96; &#96;,&#96; &#96;,&#96; &#96;) with your values. For multi-node training, ensure your&#96; &#96; uses&#96;torchrun&#96; with&#96;--nnodes=$SLURM_NNODES --nproc-per-node=$NUM_GPUS --rdzv_backend=c10d --rdzv_endpoint=$MASTER_ADDR:$MASTER_PORT&#96; or rely on the Automodel CLI, which configures this for you.\n\n## Run with uv (Development Mode)#\n\nWhen developing on clusters, you can use&#96;uv&#96; to prepare and test scripts locally. For single-node&#96;torchrun&#96; examples, see [Run on Your Local Workstation](https://docs.nvidia.com/nemo/automodel/latest/launcher/local-workstation.html). Cluster execution should be done through the CLI with&#96;slurm&#96; configs above.\n\nFor Slurm-based execution, rely on the&#96;slurm&#96; section in your YAML and submit with the CLI.\n\n### Why Use uv?#\n\nuv provides several advantages for development and experimentation:\n\nAutomatic environment management: uv automatically creates and manages virtual environments, ensuring consistent dependencies without manual setup.\n\nLock file synchronization: Keeps your local environment perfectly synchronized with the project’s&#96;uv.lock&#96; file.\n\nNo installation required: Run scripts directly from the repository without installing packages system-wide.\n\nDevelopment flexibility: Direct access to Python scripts for debugging, profiling, and customization.\n\nDependency isolation: Each project gets its own isolated environment, preventing conflicts.\n\n## Run with Torchrun#\n\nFor cluster usage, prefer submitting via the CLI with&#96;slurm&#96; configuration. Direct&#96;torchrun&#96; is recommended for single-node development; see [Run on Your Local Workstation](https://docs.nvidia.com/nemo/automodel/latest/launcher/local-workstation.html).\n\n### Standard PyTorch Multi-Node Example#\n\nIf you need a straightforward reference for manual multi-node launching with PyTorch (outside of Slurm helpers), use the pattern below. Run this on each node, updating&#96;NODE_RANK&#96; per node and adjusting&#96;--nnodes&#96;/&#96;--nproc-per-node&#96; as needed for your setup.\n\n&#96;&#96;&#96;\nexport MASTER_ADDR=node0.hostname   # master node's host/IP\nexport MASTER_PORT=29500\nexport NODE_RANK=0                  # node0 -&gt; 0, node1 -&gt; 1, ...\n\ntorchrun \\\n  --nnodes=2 \\\n  --nproc_per_node=8 \\\n  --node_rank=${NODE_RANK} \\\n  --rdzv_backend=c10d \\\n  --rdzv_endpoint=${MASTER_ADDR}:${MASTER_PORT} \\\n  train.py --batch_size 32\n\n&#96;&#96;&#96;\n\nNotes:\n\nSet&#96;NODE_RANK=0&#96; on the master node (where&#96;MASTER_ADDR&#96; resolves),&#96;NODE_RANK=1&#96; on the second node, and so on.\n\nEnsure&#96;--nproc_per_node&#96; matches the number of GPUs per node.\n\nNote\n\nSet&#96;NODE_RANK=0&#96; on the master node (where&#96;MASTER_ADDR&#96; resolves),&#96;NODE_RANK=1&#96; on the second node, and so on.\n\nEnsure&#96;--nproc_per_node&#96; matches the number of GPUs per node.\n\nWhen launching under Slurm, prefer the CLI&#96;slurm&#96; configuration above or ensure equivalent rendezvous/env settings are provided via the scheduler.\n\n## Customize Configuration Settings#\n\nAll approaches use the same YAML configuration files. You can easily customize training by following the steps in this section.\n\nOverride config values: Use command-line arguments to directly replace default settings. For example, if you want to fine-tune&#96;Qwen/Qwen3-0.6B&#96; instead of&#96;meta-llama/Llama-3.2-1B&#96;, you can use:\n\n&#96;&#96;&#96;\nautomodel finetune llm -c config.yaml --model.pretrained_model_name_or_path Qwen/Qwen3-0.6B\n\n&#96;&#96;&#96;\n\nEdit the config file: Modify the YAML directly for persistent changes.\n\nCreate custom configs: Copy and modify existing configurations from the&#96;examples/&#96; directory.\n\n## When to Use Which Approach#\n\nUse the Automodel CLI when:\n\nYou want a simple, unified interface\n\nYou are submitting jobs to production clusters (Slurm)\n\nUse uv when:\n\nYou’re developing or debugging the codebase\n\nYou want automatic dependency management\n\nUse Torchrun when:\n\nYou have a stable, pre-configured environment\n\nYou prefer explicit control over Python execution\n\nAll approaches use the same configuration files. For single-node workflows, see our [Run on Your Local Workstation](https://docs.nvidia.com/nemo/automodel/latest/launcher/local-workstation.html) guide.\n\nOn this page\n\nso the DOM is not blocked --"
+}
+```
+User decision: **accepted**
+
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+Now let me read the current state of the ornekler.rst file to understand what's there for NeMo currently.</details></think>
+
+---
+
+Mevcut `ornekler.rst` dosyasındaki NeMo bölümünü görmek için dosyayı okuyayım.
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: /Users/iguzel/Desktop/Belgeler/source/1-kaynaklar/arf_ai_ent/ornekler.rst</summary>
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+The user is saying that NeMo is used for training (LLM pretraining, fine-tuning), and we should check NeMo's docs to make a more accurate example. Currently, the NeMo tab in ornekler.rst (lines 79-86) just shows a simple `srun --pty bash` command, which doesn't show how NeMo is actually used for training.
+
+Based on my research, NeMo Framework is used for:
+1. LLM pretraining (from scratch)
+2. Fine-tuning (LoRA, SFT, etc.)
+3. It has its own CLI (`nemo llm pretrain`, `nemo llm finetune`)
+
+
+4. NeMo-Framework-Launcher with config files for orchestrating training
+5. NeMo Automodel with its own fine-tuning CLI
+6. Multi-node distributed training on SLURM clusters using containers with pyxis
+
+The real issue is that the current example treats NeMo as just a container to shell into, when it's actually a complete training framework. I need to rewrite the example to demonstrate actual NeMo training workflows—either pretraining or fine-tuning—with proper sbatch submissions and distributed training setup.
+
+Now I'm planning how to restructure the NeMo section in ornekler.rst to be more accurate and professional.</details></think>
+
+---
+
+Haklısınız, NeMo gerçekten LLM pretraining ve fine-tuning için kullanılan bir framework. Şu anki örnekte sadece `--pty bash` ile konteyner açılıyor, gerçek kullanımı yansıtmıyor. NeMo dokümanlarına baktığımda önemli noktalar var:
+
+1. **NeMo CLI**: `nemo llm pretrain`, `nemo llm finetune` gibi komutlar mevcut
+2. **NeMo-Framework-Launcher**: YAML config dosyaları + `python3 main.py` ile eğitim başlatma
+3. **SLURM entegrasyonu**: Container içinden `torchrun` ile dağıtık eğitim, `--container-mounts` ile veri ve checkpoint dizinleri bağlama
+4. **Tipik iş akışı**: Veri hazırlama -> Config ayarlama -> Training job gönderme -> Checkpoint yönetimi
+
+Mevcut NeMo sekmesi (satır 79-86) sadece interaktif bir kabuk açıyor. Bunu gerçekçi bir NeMo eğitim örneğine çevirmemiz gerekiyor.
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="create_plan">
+<details>
+<summary>Tool use: **create_plan**</summary>
+
+
+Parameters:
+
+```json
+{
+  "plan": "# NeMo Eğitim Örneklerini Güncelleme\n\n## Mevcut Durum\n\n&#96;ornekler.rst&#96; (satır 79-86) içindeki NeMo sekmesi yalnızca interaktif kabuk açan bir &#96;srun --pty bash&#96; komutu içeriyor. NeMo, LLM pretraining ve fine-tuning için tasarlanmış kapsamlı bir framework olduğundan bu örnek yetersiz.\n\n## Yapılacak Degisiklik\n\n[&#96;source/1-kaynaklar/arf_ai_ent/ornekler.rst&#96;](source/1-kaynaklar/arf_ai_ent/ornekler.rst) dosyasındaki NeMo sekmesini genisletmek veya ayri sekmeler halinde vermek:\n\n### 1. NeMo -- Interaktif (mevcut, korunacak)\n- Keşif ve ortam kontrolü icin &#96;srun --pty bash&#96; ornegi (mevcut hali kalabilir)\n\n### 2. NeMo -- Pretraining (sbatch)\n- NeMo CLI kullanarak pretraining ornegi\n- &#96;nemo llm pretrain&#96; komutu veya NeMo-Framework-Launcher (&#96;python3 main.py&#96;) yaklaşımı\n- Çoklu GPU (4 GPU), checkpoint ve log dizinleri icin mount ayarları\n- Ornek komut:\n&#96;&#96;&#96;bash\n#!/bin/bash\n#SBATCH -J nemo-pretrain\n#SBATCH -A kullanici_adi\n#SBATCH -N 1  -n 1  -c 64  --gres=gpu:4\n#SBATCH --time=2-00:00:00\n#SBATCH --container-image=/arf/ai-ent/enroot/squashfs/ngc/nvidia/nemo_25.11.sqsh\n#SBATCH --container-mounts=/arf/home/kullanici_adi:/workspace,/arf/repo:/repo\n\npython /opt/NeMo-Framework-Launcher/launcher_scripts/main.py \\\n  training=gpt3/5b \\\n  training.model.data.data_prefix=/repo/dataset/pile \\\n  training.trainer.max_steps=1000 \\\n  training.exp_manager.checkpoint_callback_params.save_top_k=3\n&#96;&#96;&#96;\n\n### 3. NeMo -- Fine-tuning (sbatch)\n- Mevcut bir modeli (ornegin Llama) SFT veya LoRA ile fine-tune etme ornegi\n- &#96;nemo llm finetune&#96; veya config-tabanli yaklasim\n- Checkpoint restore ornegi\n\n### Karar Noktası\n- NeMo 2.0 CLI (&#96;nemo llm pretrain/finetune&#96;) mi yoksa eski NeMo-Framework-Launcher (&#96;python3 main.py&#96; + YAML config) yaklaşımı mı kullanılmalı? NeMo 2.0 daha yeni ama hala \"dev container\" seviyesinde olabilir. Kümede hangi NeMo sürümü kurulu olduğuna göre karar vermek gerekebilir.\n- Alternatif olarak, her iki yaklaşımı da kısaca gösterip kullanıcıya esneklik tanınabilir.\n",
+  "name": "NeMo Training Examples",
+  "todos": [
+    {
+      "content": "ornekler.rst dosyasındaki NeMo sekmesini interaktif + pretraining + fine-tuning olarak genislet",
+      "status": "pending",
+      "id": "update-nemo-tabs"
+    }
+  ],
+  "overview": "NeMo sekmesini ornekler.rst dosyasında gerçekçi LLM eğitim/fine-tuning örnekleriyle güncellemek. Interaktif keşif, NeMo CLI ile pretraining ve sbatch ile fine-tuning senaryolarını eklemek."
+}
+```
+Additional data:
+
+```json
+{
+  "reviewData": {
+    "status": "Requested",
+    "selectedOption": "none",
+    "isShowingInput": false
+  },
+  "planUri": "file:///Users/iguzel/.cursor/plans/nemo_training_examples_db289799.plan.md",
+  "hasOpenedEditor": true
+}
+```
+Result:
+
+```json
+{
+  "rejected": {}
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+_**User**_
+
+Implement the plan as specified, it is attached for your reference. Do NOT edit the plan file itself.
+
+To-do's from the plan have already been created. Do not create them again. Mark them as in_progress as you work, starting with the first one. Don't stop until you have completed all the to-dos.
+
+---
+
+_**Agent (model claude-4.6-opus-high-thinking, mode Agent)**_
+
+<think><details><summary>Thought Process</summary>
+The user wants me to implement the plan for updating the NeMo training examples in `ornekler.rst`. Let me start by marking the todo as in_progress and then reading the current file to make the changes.
+
+Let me first read the current state of the file and understand what needs to be changed.</details></think>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="todo_write">
+<details><summary>Tool use: **todo_write** • Todo List</summary>
+
+- [-] ornekler.rst dosyasındaki NeMo sekmesini interaktif + pretraining + fine-tuning olarak genislet
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: /Users/iguzel/Desktop/Belgeler/source/1-kaynaklar/arf_ai_ent/ornekler.rst</summary>
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+Now I need to replace the NeMo tab (lines 79-86) with expanded NeMo tabs that include:
+1. NeMo -- İnteraktif (keep the existing one)
+2. NeMo -- Pretraining (sbatch)
+3. NeMo -- Fine-tuning (sbatch)
+
+Based on my research:
+- NeMo Framework uses `python3 main.py` with YAML configs via NeMo-Framework-Launcher
+- NeMo 2.0 has `nemo llm pretrain` and `nemo llm finetune` CLI commands
+- For SLURM clusters, the launcher scripts handle job submission
+
+
+- In containerized HPC environments with Pyxis/Enroot, you'd run the training script directly from within the container, using either the launcher's Python approach or the newer CLI commands depending on the NeMo version.
+
+Now I'm thinking through how to structure the documentation examples. I should expand the single NeMo tab into three separate tabs covering interactive usage, pretraining workflows, and fine-tuning approaches, replacing the current content in the tab structure rather than adding duplicates.</details></think>
+
+---
+
+Now I'll update the NeMo tab in `ornekler.rst`, replacing the single basic interactive example with three tabs: interactive, pretraining, and fine-tuning.
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: /Users/iguzel/Desktop/Belgeler/source/1-kaynaklar/arf_ai_ent/ornekler.rst</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+Now let me verify the full file looks correct.
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: /Users/iguzel/Desktop/Belgeler/source/1-kaynaklar/arf_ai_ent/ornekler.rst</summary>
+
+</details>
+</tool-use>
+
+---
+
+Dosya iyi görünüyor. Şimdi build edip RST söz diziminin doğru olduğunu kontrol edeyim.
+
+---
+
+Cancelled
+
+---
+
+_**User**_
+
+sanki pytorch ve nemo kisimlari da nim giib ayri alt bolum olmali sanki.. birde ornek senaryolar girisinde grid olabilir.
+
+---
+
+_**Agent (model claude-4.6-opus-high-thinking, mode Agent)**_
+
+<think><details><summary>Thought Process</summary>
+The user wants me to:
+
+1. Restructure the "Framework ve Bilimsel Konteynerler" section similar to how "Dil Modeli Servise Alma (NIM)" is a separate subsection - make PyTorch and NeMo separate subsections too
+2. Add a grid at the beginning of the examples page for navigation between subsections
+
+Let me read the current state of the file first to understand what we're working with.</details></think>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: /Users/iguzel/Desktop/Belgeler/source/1-kaynaklar/arf_ai_ent/ornekler.rst</summary>
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+The user wants:
+1. PyTorch and NeMo to be separate subsections (like NIM is), not tabs within "Framework ve Bilimsel Konteynerler"
+2. A grid at the beginning of the examples page for navigation between the subsections
+
+Let me also check the index.rst to see how grids are used there for reference.</details></think>
+
+---
+
+Şimdi `index.rst` dosyasındaki grid yapısını referans olarak kontrol edeyim.
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: /Users/iguzel/Desktop/Belgeler/source/1-kaynaklar/arf_ai_ent/index.rst</summary>
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+Now I understand the structure. The user wants me to:
+
+1. Restructure `ornekler.rst` so that:
+   - There's a grid at the top for navigation between the subsections
+   - PyTorch becomes its own subsection (like NIM)
+   - NeMo becomes its own subsection (like NIM)
+   - AlphaFold2 and Stable Diffusion can be in a "Bilimsel Konteynerler" subsection or similar
+   - NIM stays as its own subsection
+
+Let me restructure the file. I'll create three main subsections:
+1. PyTorch ile Model Eğitimi (with tabs for interactive, sbatch, distributed)
+
+
+2. NeMo Framework ile LLM Eğitimi (with tabs for interactive, pretraining, fine-tuning)
+3. Bilimsel Konteynerler (AlphaFold2, Stable Diffusion as tabs)
+4. Dil Modeli Servise Alma (NIM) (already exists)
+
+And I'll add a grid at the top linking to these subsections using ref labels for internal page anchors.</details></think>
+
+---
+
+Tamam, dosyayı yeniden yapılandırıyorum: PyTorch, NeMo ve NIM ayrı alt bölümler olacak, sayfanın girişinde de navigasyon grid'i yer alacak.
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="todo_write">
+<details><summary>Tool use: **todo_write** • Todo List</summary>
+
+- [-] ornekler.rst: PyTorch, NeMo, NIM ayrı alt bölümler + giriş grid'i
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: /Users/iguzel/Desktop/Belgeler/source/1-kaynaklar/arf_ai_ent/ornekler.rst</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+Şimdi build edip kontrol edeyim.
+
+---
+
+Cancelled
+
+---
+
+_**User**_
+
+grid-item-card sekilinde olmali. her sayfada bu onemli
+
+---
+
+_**Agent (model claude-4.6-opus-high-thinking, mode Agent)**_
+
+<think><details><summary>Thought Process</summary>
+The user wants the grid items in `ornekler.rst` to use the same format as in `index.rst` - using `grid-item-card` with `:ref:` inside the card title, not with `:link:` and `:link-type:` parameters. Let me check the index.rst format again and update accordingly.
+
+Looking at index.rst:
+```rst
+.. grid:: 3
+
+    .. grid-item-card:: :ref:`arf_ai_ent_baglanti`
+        :text-align: center
+    .. grid-item-card:: :ref:`arf_ai_ent_konteyner_kullanim`
+        :text-align: center
+    .. grid-item-card:: :ref:`arf_ai_ent_ornekler`
+        :text-align: center
+```
+
+So the format uses `:ref:` directly in the card title, not `:link:` parameters. I need to update the grid in ornekler.rst to match this pattern using the ref labels I created for the different example sections.</details></think>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: /Users/iguzel/Desktop/Belgeler/source/1-kaynaklar/arf_ai_ent/ornekler.rst</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+Grid kartları artık `index.rst` ile aynı formatta: `grid-item-card:: :ref:`label`` ve `:text-align: center`. Sphinx bu label'ları ilgili bölüm başlıklarıyla eşleştirerek kart metinlerini otomatik oluşturacak.
+
+Build etmemi ister misiniz?
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="todo_write">
+<details><summary>Tool use: **todo_write** • Todo List</summary>
+
+- [x] ornekler.rst: PyTorch, NeMo, NIM ayrı alt bölümler + giriş grid'i
+
+</details>
+</tool-use>
+
+---
+
+_**User**_
+
+simdi Nim kismina bakalim. ya da sunu sorayim once benchmark yapmak icin nasil bir searyo olabilir. nemo mu kullanilir yok nim mi kullanilir? ya da baska birsey mi
+
+---
+
+_**Agent (model claude-4.6-opus-high-thinking, mode Agent)**_
+
+<think><details><summary>Thought Process</summary>
+The user is asking about benchmarking scenarios - whether NeMo, NIM, or something else would be used for benchmarking. Let me think about this:
+
+1. **NIM (Inference Microservices)** - These are for serving/inference. You'd benchmark inference throughput, latency, tokens/second etc.
+
+2. **NeMo** - This is for training/fine-tuning. You'd benchmark training throughput, time-to-convergence etc.
+
+3. **For LLM inference benchmarking specifically**, there are dedicated tools:
+   - **GenAI-Perf** (from Triton) - NVIDIA's official tool for benchmarking LLM inference
+   - **vLLM** and **SGLang** (which has a container available in the cluster) for inference benchmarking
+   - **Triton Inference Server** with its perf_analyzer
+
+4. **For HPC/GPU benchmarking**, there's an HPC benchmarks container in the cluster that likely includes NVIDIA's standard benchmarks like HPL and HPCG.
+
+For this cluster specifically, if the goal is benchmarking LLM inference performance like tokens per second and latency, I'd use NIM containers paired with a benchmarking client.  Training performance would require NeMo or PyTorch, while raw GPU and cluster performance would use the HPC benchmarks container. The user already has access to the HPC benchmarks container, SGLang, and Triton with vLLM built in, so they have solid options depending on what they're actually trying to measure.
+
+Looking at this more carefully, the user is working on documentation and deciding whether to include a benchmarking example section. For an AI Enterprise cluster, the most relevant scenarios would be LLM inference benchmarking with NIM and GenAI-Perf to measure throughput and latency, GPU and cluster performance using HPL and HPCG, and training benchmarking with NeMo or PyTorch.
+
+Since NIM functions as an API server, I'd need to demonstrate starting the server and then using GenAI-Perf to send requests and capture performance metrics. Let me provide a clear answer to their question about whether to include this and which tools make sense.</details></think>
+
+---
+
+Benchmark senaryosu, neyi ölçmek istediğinize göre değişir. Kümede mevcut konteynerlerle üç temel benchmark senaryosu var:
+
+**1. LLM Çıkarım (Inference) Benchmark -- NIM + GenAI-Perf**
+
+NIM konteyneri modeli sunucu olarak başlatır, ardından NVIDIA'nın `GenAI-Perf` aracıyla performans ölçülür (tokens/saniye, ilk token süresi, gecikme, eşzamanlı istek kapasitesi). Bu, araştırmacılar için en pratik senaryodur: "Bu model bu GPU sayısıyla ne kadar hızlı yanıt veriyor?"
+
+**2. Eğitim (Training) Benchmark -- NeMo veya PyTorch**
+
+Model eğitiminin ne kadar hızlı ilerlediğini ölçmek için: adım başına süre, samples/saniye, ölçekleme verimliliği (1 GPU vs 4 GPU vs 8 GPU). NeMo kendi eğitim loglarında bunları raporlar.
+
+**3. GPU/Küme Donanım Benchmark -- HPC Benchmarks**
+
+Kümede `hpc-benchmarks_25.09.sqsh` konteyneri mevcut. Bu, HPL (FLOPS), HPCG ve NCCL testleri (GPU'lar arası iletişim bant genişliği) gibi ham donanım performansını ölçer.
+
+Araştırmacılar için en yaygın ve faydalı senaryo **1. seçenek** olur: NIM ile modeli sunup GenAI-Perf ile benchmark yapmak. Dokümantasyona eklemek ister misiniz? Eğer isterseniz, NIM bölümüne bir "Performans Testi" sekmesi veya ayrı bir benchmark alt bölümü olarak ekleyebiliriz.
+
+---
+
+_**User**_
+
+evet birincisini istiyorum. 
+
+---
+
+_**Agent (model claude-4.6-opus-high-thinking, mode Agent)**_
+
+<think><details><summary>Thought Process</summary>
+The user wants me to add a benchmark section for NIM + GenAI-Perf. Let me first research GenAI-Perf to make sure I provide accurate information, then add it to the ornekler.rst file.</details></think>
+
+---
+
+Cancelled
+
+---
+
+_**User**_
+
+biraz arastirdim. Nvidia dynamo diye birsey var. path burda https://github.com/ai-dynamo 
+genai perf yerine yenisi de bu https://github.com/ai-dynamo/aiperf 
+bu dokumanlara gore bu ai enterprise kisimlarina guncelleme yapar misin. Sonrasinda dil modeli kismini detaylandiralim
+
+---
+
+_**Agent (model claude-4.6-opus-high-thinking, mode Agent)**_
+
+<think><details><summary>Thought Process</summary>
+The user wants me to:
+1. Update the AI Enterprise documentation to include NVIDIA Dynamo and AIPerf (the successor to GenAI-Perf)
+2. Add a benchmark section to the examples page using AIPerf
+
+Let me first understand what needs to be updated:
+1. `index.rst` - Add Dynamo to the "Platformun Sağladığı Temel Bileşenler" section
+2. `ornekler.rst` - Add a benchmark section using AIPerf with NIM
+
+Let me also check what Dynamo is about from the search results:
+
+
+Dynamo is a modular inference framework that handles distributed LLM serving across multiple GPU nodes with dynamic resource allocation, featuring disaggregated serving, intelligent routing, and KV cache management. Now I need to read both files to understand their current structure before making these additions.</details></think>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="todo_write">
+<details><summary>Tool use: **todo_write** • Todo List</summary>
+
+- [-] index.rst: Dynamo bilgisini Platformun Temel Bileşenleri bölümüne ekle
+- [ ] ornekler.rst: AIPerf ile NIM benchmark bölümü ekle
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: /Users/iguzel/Desktop/Belgeler/source/1-kaynaklar/arf_ai_ent/index.rst</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: /Users/iguzel/Desktop/Belgeler/source/1-kaynaklar/arf_ai_ent/ornekler.rst</summary>
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+Now I need to:
+1. Add NVIDIA Dynamo and AIPerf to the `index.rst` platform components section
+2. Add a benchmark section (AIPerf + NIM) to `ornekler.rst`
+
+Let me start with `index.rst` - adding Dynamo after NIM or near the inference-related components.
+
+For `ornekler.rst`, I'll add a new "Performans Testi (AIPerf)" section with a grid card, showing how to benchmark a NIM server using AIPerf.
+
+Let me do both edits.</details></think>
+
+---
+
+Önce `index.rst`'ye Dynamo ve AIPerf bilgisini ekleyeyim, sonra `ornekler.rst`'ye benchmark bölümünü.
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: /Users/iguzel/Desktop/Belgeler/source/1-kaynaklar/arf_ai_ent/index.rst</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="todo_write">
+<details><summary>Tool use: **todo_write** • Todo List</summary>
+
+- [x] index.rst: Dynamo ve AIPerf bilgisini Platformun Temel Bileşenleri bölümüne ekle
+- [-] ornekler.rst: AIPerf ile NIM benchmark bölümü ekle
+
+</details>
+</tool-use>
+
+---
+
+Şimdi `ornekler.rst`'ye AIPerf benchmark bölümünü ve grid kartını ekleyeyim.
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: /Users/iguzel/Desktop/Belgeler/source/1-kaynaklar/arf_ai_ent/ornekler.rst</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+Şimdi dosyanın sonuna benchmark bölümünü ekleyeyim.
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: /Users/iguzel/Desktop/Belgeler/source/1-kaynaklar/arf_ai_ent/ornekler.rst</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+Grid'i de 5 öğeye uygun olarak güncelleyeyim (2x3 veya responsive).
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: /Users/iguzel/Desktop/Belgeler/source/1-kaynaklar/arf_ai_ent/ornekler.rst</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+Şimdi son halini doğrulayalım.
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: /Users/iguzel/Desktop/Belgeler/source/1-kaynaklar/arf_ai_ent/ornekler.rst</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: /Users/iguzel/Desktop/Belgeler/source/1-kaynaklar/arf_ai_ent/index.rst</summary>
+
+</details>
+</tool-use>
+
+---
+
+Her iki dosya da güncel. Yapılan değişikliklerin özeti:
+
+**`index.rst` -- Platformun Sağladığı Temel Bileşenler:**
+- **NVIDIA Dynamo** eklendi: Dağıtık çıkarım framework'ü, disaggregated serving, akıllı yönlendirme, KV Cache yönetimi. GitHub ve developer sayfası linkleriyle.
+- **AIPerf** eklendi: Çıkarım benchmark aracı (GenAI-Perf'in devamı), desteklenen çözümler ve metrikler. GitHub linki ile.
+
+**`ornekler.rst` -- Yeni bölüm:**
+- **Performans Testi (AIPerf)** alt bölümü eklendi, grid kartıyla birlikte
+- Temel metriklerin açıklaması (TTFT, ITL, Throughput)
+- Kurulum adımları (`pip install aiperf`)
+- Sekmeli örnekler: Temel Benchmark ve Yük Testi (farklı concurrency seviyeleri)
+- Sunucu hazırlık kontrolü için tip
+
+Build etmemi ister misiniz?
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="todo_write">
+<details><summary>Tool use: **todo_write** • Todo List</summary>
+
+- [x] index.rst: Dynamo ve AIPerf bilgisini Platformun Temel Bileşenleri bölümüne ekle
+- [x] ornekler.rst: AIPerf ile NIM benchmark bölümü ekle
+
+</details>
+</tool-use>
+
+---
+
+_**User**_
+
+aiperf icin konteyner eklendi. ona gore guncelle./arf/ai-ent/enroot/squashfs/ngc/nvidia/ai-dynamo/aiperf_0.5.0.sqsh
+
+---
+
+_**Agent (model claude-4.6-opus-high-thinking, mode Agent)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: /Users/iguzel/Desktop/Belgeler/source/1-kaynaklar/arf_ai_ent/ornekler.rst</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+AIPerf kurulum adımı (`pip install`) kaldırıldı, yerine doğrudan kümedeki hazır konteyner (`aiperf_0.5.0.sqsh`) kullanılacak şekilde güncellendi.
+
+---
+

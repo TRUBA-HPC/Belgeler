@@ -6,14 +6,29 @@
 
 Bu sayfada, ARF-AI kümesindeki konteynerlerin farklı kullanım senaryolarına göre örnekleri yer almaktadır. Temel ``srun``, ``sbatch`` ve ``--container-*`` parametrelerinin detaylı açıklaması için :ref:`arf_ai_ent_konteyner_kullanim` sayfasına bakınız.
 
-Framework ve Bilimsel Konteynerler
-====================================
+.. grid:: 2 3 5 5
 
-Framework ve bilimsel hesaplama konteynerleri hem interaktif (``srun --pty bash``) hem de iş betiği (``sbatch``) ile kullanılabilir.
+    .. grid-item-card:: :ref:`ornekler_pytorch`
+        :text-align: center
+    .. grid-item-card:: :ref:`ornekler_nemo`
+        :text-align: center
+    .. grid-item-card:: :ref:`ornekler_bilimsel`
+        :text-align: center
+    .. grid-item-card:: :ref:`ornekler_nim`
+        :text-align: center
+    .. grid-item-card:: :ref:`ornekler_benchmark`
+        :text-align: center
+
+.. _ornekler_pytorch:
+
+PyTorch ile Model Eğitimi
+===========================
+
+PyTorch konteyneri, derin öğrenme modellerinin geliştirilmesi ve eğitimi için kullanılır. İnteraktif keşiften çoklu düğümlü dağıtık eğitime kadar geniş bir kullanım aralığı sunar.
 
 .. tab-set::
 
-    .. tab-item:: PyTorch -- İnteraktif
+    .. tab-item:: İnteraktif
 
         Keşif, hata ayıklama veya kısa denemeler için:
 
@@ -24,7 +39,7 @@ Framework ve bilimsel hesaplama konteynerleri hem interaktif (``srun --pty bash`
              --container-mounts=/arf/home/kullanici_adi:/workspace,/arf/repo:/repo \
              --pty bash
 
-    .. tab-item:: PyTorch -- Eğitim (sbatch)
+    .. tab-item:: Eğitim (sbatch)
 
         Uzun süreli model eğitimi için:
 
@@ -41,7 +56,7 @@ Framework ve bilimsel hesaplama konteynerleri hem interaktif (``srun --pty bash`
            cd /workspace
            python train.py --data-dir /repo/dataset --epochs 50
 
-    .. tab-item:: PyTorch -- Dağıtık Eğitim
+    .. tab-item:: Dağıtık Eğitim
 
         Çoklu GPU ve çoklu düğüm ile dağıtık eğitim:
 
@@ -58,7 +73,85 @@ Framework ve bilimsel hesaplama konteynerleri hem interaktif (``srun --pty bash`
            cd /workspace
            torchrun --nproc_per_node=4 --nnodes=2 train.py
 
+.. _ornekler_nemo:
+
+NeMo Framework ile LLM Eğitimi
+=================================
+
+`NeMo Framework <https://docs.nvidia.com/nemo-framework/user-guide/latest/index.html>`_, büyük dil modeli (LLM) ön eğitimi ve ince ayar (fine-tuning) için tasarlanmış NVIDIA'nın uçtan uca eğitim platformudur. Konteyner içinde ``/opt/NeMo-Framework-Launcher/`` dizini altında yapılandırma dosyaları ve başlatıcı betikler yer alır; eğitim parametreleri Hydra tabanlı YAML yapılandırmaları ile yönetilir.
+
+.. tab-set::
+
+    .. tab-item:: İnteraktif
+
+        Keşif, ortam kontrolü veya veri ön işleme için interaktif kabuk:
+
+        .. code-block:: bash
+
+           srun -n 1 -c 64 -N 1 --gres=gpu:4 \
+             --container-image=/arf/ai-ent/enroot/squashfs/ngc/nvidia/nemo_25.11.sqsh \
+             --container-mounts=/arf/home/kullanici_adi:/workspace,/arf/repo:/repo \
+             --pty bash
+
+    .. tab-item:: Ön Eğitim (Pretraining)
+
+        NeMo Framework Launcher ile LLM ön eğitimi. Aşağıdaki örnekte GPT-3 5B modeli 4 GPU üzerinde eğitilmektedir:
+
+        .. code-block:: bash
+
+           #!/bin/bash
+           #SBATCH -J nemo-pretrain
+           #SBATCH -A kullanici_adi
+           #SBATCH -N 1  -n 1  -c 64  --gres=gpu:4
+           #SBATCH --time=2-00:00:00
+           #SBATCH --container-image=/arf/ai-ent/enroot/squashfs/ngc/nvidia/nemo_25.11.sqsh
+           #SBATCH --container-mounts=/arf/home/kullanici_adi:/workspace,/arf/repo:/repo
+
+           cd /opt/NeMo-Framework-Launcher/launcher_scripts
+           python main.py \
+             training=gpt3/5b \
+             training.model.data.data_prefix=/repo/dataset \
+             training.trainer.devices=4 \
+             training.trainer.max_steps=5000 \
+             training.exp_manager.explicit_log_dir=/workspace/results
+
+        Dağıtık ön eğitim için düğüm ve GPU sayılarını artırın (``-N 2 --gres=gpu:4`` gibi) ve ``training.trainer.num_nodes=2`` parametresini ekleyin.
+
+    .. tab-item:: İnce Ayar (Fine-tuning)
+
+        Önceden eğitilmiş bir modeli (ör. Llama 3) kendi veri kümenizle ince ayar (SFT/LoRA) yapmak için:
+
+        .. code-block:: bash
+
+           #!/bin/bash
+           #SBATCH -J nemo-sft
+           #SBATCH -A kullanici_adi
+           #SBATCH -N 1  -n 1  -c 64  --gres=gpu:4
+           #SBATCH --time=1-00:00:00
+           #SBATCH --container-image=/arf/ai-ent/enroot/squashfs/ngc/nvidia/nemo_25.11.sqsh
+           #SBATCH --container-mounts=/arf/home/kullanici_adi:/workspace,/arf/repo:/repo
+
+           cd /opt/NeMo-Framework-Launcher/launcher_scripts
+           python main.py \
+             peft=llama/sft \
+             peft.model.restore_from_path=/repo/checkpoints/llama3-8b.nemo \
+             peft.model.data.train_ds.file_path=/workspace/data/train.jsonl \
+             peft.trainer.devices=4 \
+             peft.trainer.max_epochs=3 \
+             peft.exp_manager.explicit_log_dir=/workspace/results/sft
+
+        Checkpoint ``.nemo`` formatında olmalıdır. `NGC Catalog <https://catalog.ngc.nvidia.com/models>`_ üzerinden uyumlu modeller indirilebilir. LoRA için ``peft=llama/lora`` yapılandırması kullanılabilir.
+
+.. _ornekler_bilimsel:
+
+Bilimsel Konteynerler
+=======================
+
+.. tab-set::
+
     .. tab-item:: AlphaFold2
+
+        Protein yapı tahmini için:
 
         .. code-block:: bash
 
@@ -69,6 +162,8 @@ Framework ve bilimsel hesaplama konteynerleri hem interaktif (``srun --pty bash`
 
     .. tab-item:: Stable Diffusion
 
+        Görüntü üretimi için:
+
         .. code-block:: bash
 
            srun -n 1 -c 16 -N 1 --gres=gpu:1 \
@@ -76,14 +171,7 @@ Framework ve bilimsel hesaplama konteynerleri hem interaktif (``srun --pty bash`
              --container-mounts=/arf/home/kullanici_adi:/workspace \
              --pty bash
 
-    .. tab-item:: NeMo
-
-        .. code-block:: bash
-
-           srun -n 1 -c 64 -N 1 --gres=gpu:4 \
-             --container-image=/arf/ai-ent/enroot/squashfs/ngc/nvidia/nemo_25.11.sqsh \
-             --container-mounts=/arf/home/kullanici_adi:/workspace,/arf/repo:/repo \
-             --pty bash
+.. _ornekler_nim:
 
 Dil Modeli Servise Alma (NIM)
 ===============================
@@ -165,3 +253,64 @@ API ile Sorgu Gönderme
 .. note::
 
    NIM sunucusu OpenAI API formatıyla uyumludur. Mevcut OpenAI istemci kütüphanelerini ``base_url`` parametresini değiştirerek doğrudan kullanabilirsiniz.
+
+.. _ornekler_benchmark:
+
+Performans Testi (AIPerf)
+===========================
+
+`AIPerf <https://github.com/ai-dynamo/aiperf>`_, çıkarım sunucularının performansını ölçmek için NVIDIA tarafından geliştirilen kapsamlı bir benchmark aracıdır. NIM, Triton, vLLM ve SGLang gibi çıkarım çözümlerini destekler. Ölçülen temel metrikler:
+
+- **TTFT (Time to First Token):** İlk token üretim süresi
+- **ITL (Inter-Token Latency):** Tokenlar arası gecikme
+- **Throughput:** Saniyedeki toplam token üretim hızı (tokens/s)
+- **Eşzamanlılık:** Farklı yük seviyelerinde performans davranışı
+
+Kurulum ve Kullanım
+---------------------
+
+AIPerf, NIM sunucusunun çalıştığı düğümden veya aynı ağdaki başka bir düğümden çalıştırılabilir. Sistemde hazır konteyner mevcuttur:
+
+.. code-block:: bash
+
+   srun -n 1 -c 16 -N 1 --gres=gpu:1 \
+     --container-image=/arf/ai-ent/enroot/squashfs/ngc/nvidia/ai-dynamo/aiperf_0.5.0.sqsh \
+     --container-mounts=/arf/home/kullanici_adi:/workspace \
+     --pty bash
+
+Çalışan bir NIM sunucusuna yönelik benchmark testi:
+
+.. tab-set::
+
+    .. tab-item:: Temel Benchmark
+
+        .. code-block:: bash
+
+           aiperf profile \
+             --model meta/llama-3.1-70b-instruct \
+             --url http://SUNUCU_IP:8000 \
+             --endpoint-type chat \
+             --concurrency 10 \
+             --request-count 100 \
+             --streaming
+
+    .. tab-item:: Yük Testi
+
+        Farklı eşzamanlılık seviyelerinde performans karşılaştırması:
+
+        .. code-block:: bash
+
+           for C in 1 5 10 20 50; do
+             echo "=== Concurrency: $C ==="
+             aiperf profile \
+               --model meta/llama-3.1-70b-instruct \
+               --url http://SUNUCU_IP:8000 \
+               --endpoint-type chat \
+               --concurrency $C \
+               --request-count 200 \
+               --streaming
+           done
+
+.. tip::
+
+   Benchmark testi öncesinde NIM sunucusunun tamamen hazır olduğundan emin olun. Sunucunun hazır olup olmadığını ``curl http://SUNUCU_IP:8000/v1/models`` komutuyla kontrol edebilirsiniz. AIPerf'in detaylı kullanım seçenekleri ve ileri düzey yapılandırmaları için `AIPerf dokümantasyonu <https://github.com/ai-dynamo/aiperf>`_ sayfasına bakınız.

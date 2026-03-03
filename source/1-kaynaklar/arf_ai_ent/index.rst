@@ -55,6 +55,14 @@ Transfer öğrenme tabanlı bir model geliştirme aracıdır. Önceden eğitilmi
 
 Büyük dil modelleri (LLM), konuşma tanıma (ASR) ve metin-konuşma (TTS) modelleri için kapsamlı bir eğitim ve ince ayar çerçevesidir. Çoklu GPU ve çoklu düğüm eğitimi için optimize edilmiştir. (`NeMo Dokümantasyonu <https://docs.nvidia.com/nemo-framework/user-guide/latest/index.html>`_)
 
+**NVIDIA Dynamo**
+
+Büyük dil modellerinin çok düğümlü dağıtık ortamlarda sunulması için tasarlanmış modüler bir çıkarım framework'üdür. Prefill ve decode aşamalarını ayıran ayrıştırılmış servis mimarisi, önek tabanlı akıllı yönlendirme ve dağıtık KV Cache yönetimi ile GPU kaynaklarını dinamik olarak tahsis ederek çıkarım performansını optimize eder. (`Dynamo GitHub <https://github.com/ai-dynamo/dynamo>`_ | `Geliştirici Sayfası <https://developer.nvidia.com/dynamo>`_)
+
+**AIPerf**
+
+Çıkarım sunucularının performansını ölçmek için tasarlanmış kapsamlı bir benchmark aracıdır (GenAI-Perf'in devamı niteliğindedir). NIM, Triton, vLLM ve SGLang gibi çıkarım çözümlerini destekler; token üretim hızı, ilk token süresi (TTFT), gecikme ve eşzamanlı istek kapasitesi gibi metrikleri raporlar. (`AIPerf GitHub <https://github.com/ai-dynamo/aiperf>`_)
+
 **Desteklenen Framework'ler**
 
 NVIDIA AI Enterprise; PyTorch, TensorFlow, TensorRT, RAPIDS, JAX ve daha pek çok popüler yapay zeka framework'ünü destekler. Tüm bu framework'ler NGC üzerinden optimize edilmiş konteynerler olarak sunulur.
