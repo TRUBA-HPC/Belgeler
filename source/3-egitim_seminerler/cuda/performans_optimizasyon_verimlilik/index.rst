@@ -1,8 +1,8 @@
 :orphan:
 
-=====================================
-Performans Optimizasyon ve Verimlilik
-=====================================
+====================================================
+İleri Seviye Performans Analizi ve Ölçeklenebilirlik
+====================================================
 
 Bu bölümde CUDA programlarında performans optimizasyonu ve verimlilik konuları ele alınmaktadır.
 
