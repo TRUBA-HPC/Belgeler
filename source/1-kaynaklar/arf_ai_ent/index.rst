@@ -4,18 +4,14 @@
 NVIDIA AI Enterprise - ARF-AI
 ====================================
 
-.. grid:: 4
+.. grid:: 2
 
     .. grid-item-card:: :ref:`arf_ai_ent_baglanti`
         :text-align: center
     .. grid-item-card:: :ref:`arf_ai_ent_konteyner_kullanim`
         :text-align: center
-    .. grid-item-card:: `NVIDIA AI Enterprise Dokümantasyonu <https://docs.nvidia.com/ai-enterprise/>`_
-        :text-align: center
-    .. grid-item-card:: :download:`Base Command Manager Kullanım Kılavuzu (PDF) </_static/pdf/nvidia/bcm-user-manual.pdf>`
-        :text-align: center
 
-ARF-AI, yapay zeka alanında çalışan araştırmacılara hizmet etmek amacıyla kurulan özel bir hesaplama kümesidir. Bu küme için TRUBA tarafından 96 GPU kapasitesinde `NVIDIA AI Enterprise <https://www.nvidia.com/en-us/data-center/products/ai-enterprise/>`_ lisansı satın alınmıştır.
+ARF-AI, yapay zeka alanında çalışan araştırmacılara hizmet etmek amacıyla kurulan özel bir hesaplama kümesidir. Bu küme için TRUBA tarafından  `NVIDIA AI Enterprise <https://www.nvidia.com/en-us/data-center/products/ai-enterprise/>`_ lisansı satın alınmıştır.
 
 NVIDIA AI Enterprise Nedir?
 ============================
@@ -28,6 +24,10 @@ Platformun Sağladığı Temel Bileşenler
 **NVIDIA NIM (Inference Microservices)**
 
 Önceden optimize edilmiş, dağıtıma hazır AI model mikroservisleridir. Her NIM konteyneri; Triton Inference Server, TensorRT, TensorRT-LLM ve PyTorch gibi bileşenleri içerir. Büyük dil modelleri (LLM), görüntü üretimi ve bilimsel modeller gibi pek çok alanda kullanıma hazır konteynerler sunar. (`NIM Dokümantasyonu <https://docs.nvidia.com/nim/index.html>`_ | `API Deneme Platformu <https://build.nvidia.com/explore/discover>`_)
+
+**NVIDIA AI Blueprint**
+
+Yapay zeka uygulamalarının hızla geliştirilmesi için sunulan hazır referans iş akışlarıdır. Blueprint'ler; önceden eğitilmiş modelleri, NIM mikroservislerini ve altyapı bileşenlerini bir araya getirerek RAG (Retrieval-Augmented Generation) tabanlı soru-cevap sistemleri, dijital asistanlar ve çok modlu veri işleme gibi uçtan uca çözümler oluşturmayı kolaylaştırır. (`AI Blueprint Dokümantasyonu <https://docs.nvidia.com/nim/agent-blueprints/overview/latest/index.html>`_ | `GitHub <https://github.com/NVIDIA-AI-Blueprints>`_)
 
 **NGC Kataloğu Erişimi**
 

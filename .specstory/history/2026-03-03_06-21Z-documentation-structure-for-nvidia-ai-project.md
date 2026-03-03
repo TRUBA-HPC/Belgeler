@@ -2506,3 +2506,31 @@ Cancelled
 
 ---
 
+_**User**_
+
+patformun sagladigi temel bilesenler altina blueprint kismini da ekleyebiliriz
+
+---
+
+_**Agent (model claude-4.6-opus-high-thinking, mode Agent)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="web_search">
+<details>
+<summary>Tool use: **web_search**</summary>
+
+
+Parameters:
+
+```json
+{
+  "searchTerm": "NVIDIA AI Blueprint what is RAG NIM Agent workflow 2025"
+}
+```
+Status: **loading**
+
+
+</details>
+</tool-use>
+
+---
+
