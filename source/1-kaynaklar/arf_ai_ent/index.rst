@@ -4,11 +4,13 @@
 NVIDIA AI Enterprise - ARF-AI
 ====================================
 
-.. grid:: 2
+.. grid:: 3
 
     .. grid-item-card:: :ref:`arf_ai_ent_baglanti`
         :text-align: center
     .. grid-item-card:: :ref:`arf_ai_ent_konteyner_kullanim`
+        :text-align: center
+    .. grid-item-card:: :ref:`arf_ai_ent_ornekler`
         :text-align: center
 
 ARF-AI, yapay zeka alanında çalışan araştırmacılara hizmet etmek amacıyla kurulan özel bir hesaplama kümesidir. Bu küme için TRUBA tarafından  `NVIDIA AI Enterprise <https://www.nvidia.com/en-us/data-center/products/ai-enterprise/>`_ lisansı satın alınmıştır.
@@ -65,7 +67,8 @@ NVIDIA AI Enterprise; PyTorch, TensorFlow, TensorRT, RAPIDS, JAX ve daha pek ço
 Daha fazla bilgi için aşağıdaki başlıklara göz atabilirsiniz:
 
 - :ref:`arf_ai_ent_baglanti` — Erişim bilgileri, mevcut AI konteynerleri ve konteyner talebi
-- :ref:`arf_ai_ent_konteyner_kullanim` — SLURM ile konteyner çalıştırma ve kullanım örnekleri
+- :ref:`arf_ai_ent_konteyner_kullanim` — SLURM ile konteyner çalıştırma, mount ve özelleştirme
+- :ref:`arf_ai_ent_ornekler` — Framework, bilimsel hesaplama ve dil modeli servise alma örnekleri
 - :download:`NVIDIA Base Command Manager Kullanım Kılavuzu (PDF) </_static/pdf/nvidia/bcm-user-manual.pdf>` — Küme kullanımı, Slurm, MPI, GPU ve konteyner yönetimi hakkında kapsamlı referans doküman
 
 .. toctree::
@@ -73,3 +76,4 @@ Daha fazla bilgi için aşağıdaki başlıklara göz atabilirsiniz:
 
    baglanti.rst
    konteyner_kullanim.rst
+   ornekler.rst

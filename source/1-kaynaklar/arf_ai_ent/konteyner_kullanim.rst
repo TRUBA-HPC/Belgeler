@@ -227,39 +227,3 @@ Konteyner içinde ek paketlerinizi kurabilirsiniz (ör. ``pip install ...``). İ
 
 Oluşturulan ``.sqsh`` dosyasını ``--container-image`` parametresiyle kullanabilirsiniz.
 
-Örnek Kullanım Senaryoları
-============================
-
-.. tab-set::
-
-    .. tab-item:: PyTorch
-
-        .. code-block:: bash
-
-           srun -n 1 -c 16 -N 1 --gres=gpu:1 \
-             --container-image=/arf/ai-ent/enroot/squashfs/ngc/nvidia/pytorch_25.11-py3.sqsh \
-             --pty bash
-
-    .. tab-item:: Llama 3.1 70B
-
-        .. code-block:: bash
-
-           srun -n 1 -c 16 -N 1 --gres=gpu:1 \
-             --container-image=/arf/ai-ent/enroot/squashfs/ngc/nvidia/nim/meta_llama-3.1-70b-instruct.1.15.sqsh \
-             --pty bash
-
-    .. tab-item:: AlphaFold2
-
-        .. code-block:: bash
-
-           srun -n 1 -c 16 -N 1 --gres=gpu:1 \
-             --container-image=/arf/ai-ent/enroot/squashfs/ngc/google/alphafold2_latest.sqsh \
-             --pty bash
-
-    .. tab-item:: Stable Diffusion
-
-        .. code-block:: bash
-
-           srun -n 1 -c 16 -N 1 --gres=gpu:1 \
-             --container-image=/arf/ai-ent/enroot/squashfs/ngc/stabilityai/stable-diffusion-3.5-large_1.0.0.sqsh \
-             --pty bash
