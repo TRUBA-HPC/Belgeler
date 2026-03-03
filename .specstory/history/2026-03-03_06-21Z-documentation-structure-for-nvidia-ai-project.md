@@ -3720,3 +3720,56 @@ AIPerf kurulum adımı (`pip install`) kaldırıldı, yerine doğrudan kümedeki
 
 ---
 
+_**User**_
+
+dynamo ve omniverse icin te girise biseyler ekleyeblir misin
+
+---
+
+_**Agent (model claude-4.6-opus-high-thinking, mode Agent)**_
+
+<think><details><summary>Thought Process</summary>
+The user wants me to add information about Dynamo and Omniverse to the index.rst page. Dynamo is already added, but let me check. And Omniverse - there's an `ov-base-ubuntu-22_2025.2.0.sqsh` container in the cluster. Let me search for what NVIDIA Omniverse is about, especially in the context of AI Enterprise.
+
+Actually, I already added Dynamo to index.rst. Let me re-read to confirm, and then add Omniverse.
+
+Looking at the container list, there's:
+- `nvidia/omniverse/ov-base-ubuntu-22_2025.2.0.sqsh`
+
+
+- `isaac-sim_5.1.0.sqsh` which is NVIDIA's robotics simulation platform built on Omniverse
+
+So Omniverse is the foundational platform for 3D applications and virtual worlds, supporting digital twins and industrial simulations, while Isaac Sim is the robotics-focused simulation tool built on top of it. Let me check the current index.rst to see where these should fit.</details></think>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: /Users/iguzel/Desktop/Belgeler/source/1-kaynaklar/arf_ai_ent/index.rst</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="web_search">
+<details>
+<summary>Tool use: **web_search**</summary>
+
+
+Parameters:
+
+```json
+{
+  "searchTerm": "NVIDIA Omniverse platform AI Enterprise digital twin simulation overview 2025"
+}
+```
+User decision: **accepted**
+
+Status: **loading**
+
+
+</details>
+</tool-use>
+
+---
+

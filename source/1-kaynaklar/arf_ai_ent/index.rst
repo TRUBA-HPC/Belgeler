@@ -55,6 +55,10 @@ Transfer öğrenme tabanlı bir model geliştirme aracıdır. Önceden eğitilmi
 
 Büyük dil modelleri (LLM), konuşma tanıma (ASR) ve metin-konuşma (TTS) modelleri için kapsamlı bir eğitim ve ince ayar çerçevesidir. Çoklu GPU ve çoklu düğüm eğitimi için optimize edilmiştir. (`NeMo Dokümantasyonu <https://docs.nvidia.com/nemo-framework/user-guide/latest/index.html>`_)
 
+**NVIDIA Omniverse**
+
+Fiziksel AI uygulamaları, endüstriyel dijital ikizler ve robotik simülasyon geliştirmek için tasarlanmış bir platformdur. OpenUSD (Universal Scene Description) standardı üzerine inşa edilmiştir. RTX tabanlı sensör simülasyonu, PhysX ve Warp ile GPU-hızlandırılmış fizik hesaplamaları ve gerçek zamanlı render yetenekleri sunar. Isaac Sim ile robotik öğrenme ve otonom araç simülasyonu, Cosmos modelleri ile sentetik veri üretimi gibi kullanım alanlarını kapsar. (`Omniverse Dokümantasyonu <https://docs.omniverse.nvidia.com/>`_ | `Isaac Sim <https://docs.omniverse.nvidia.com/isaacsim/latest/index.html>`_)
+
 **NVIDIA Dynamo**
 
 Büyük dil modellerinin çok düğümlü dağıtık ortamlarda sunulması için tasarlanmış modüler bir çıkarım framework'üdür. Prefill ve decode aşamalarını ayıran ayrıştırılmış servis mimarisi, önek tabanlı akıllı yönlendirme ve dağıtık KV Cache yönetimi ile GPU kaynaklarını dinamik olarak tahsis ederek çıkarım performansını optimize eder. (`Dynamo GitHub <https://github.com/ai-dynamo/dynamo>`_ | `Geliştirici Sayfası <https://developer.nvidia.com/dynamo>`_)
