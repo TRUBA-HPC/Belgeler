@@ -176,7 +176,7 @@ Bilimsel Konteynerler
 Dil Modeli Servise Alma (NIM)
 ===============================
 
-NIM dil modeli konteynerleri (Llama, GPT-OSS vb.) interaktif bir kabuk yerine **OpenAI uyumlu bir API sunucusu** başlatır. Sunucu varsayılan olarak ``8000`` portunda çalışır. Konteynerin kendi başlangıç betiğini çalıştırması için ``--container-entrypoint`` parametresi kullanılır.
+NIM dil modeli konteynerleri (Llama, GPT-OSS vb.) interaktif bir kabuk yerine **OpenAI uyumlu bir API sunucusu** başlatır. Sunucu varsayılan olarak ``8000`` portunda çalışır. Konteyner içindeki ``/opt/nim/start_server.sh`` betiği ile başlatılır ve NGC API anahtarı ``--export`` parametresiyle iletilmelidir.
 
 Sunucuyu Başlatma
 ------------------
@@ -190,8 +190,9 @@ Sunucuyu Başlatma
         .. code-block:: bash
 
            srun -n 1 -c 64 -N 1 --gres=gpu:4 \
+             --export NGC_API_KEY="<api-anahtariniz>" \
              --container-image=/arf/ai-ent/enroot/squashfs/ngc/nvidia/nim/meta_llama-3.1-70b-instruct.1.15.sqsh \
-             --container-entrypoint
+             --pty /opt/nim/start_server.sh
 
     .. tab-item:: GPT-OSS 120B (8 GPU, 2 Düğüm)
 
@@ -200,8 +201,9 @@ Sunucuyu Başlatma
         .. code-block:: bash
 
            srun -n 2 -c 64 -N 2 --gres=gpu:4 \
+             --export NGC_API_KEY="<api-anahtariniz>" \
              --container-image=/arf/ai-ent/enroot/squashfs/ngc/openai/gpt-oss-120b_1.5.2-variant.sqsh \
-             --container-entrypoint
+             --pty /opt/nim/start_server.sh
 
     .. tab-item:: sbatch ile
 
@@ -214,8 +216,10 @@ Sunucuyu Başlatma
            #SBATCH -A kullanici_adi
            #SBATCH -N 1  -n 1  -c 64  --gres=gpu:4
            #SBATCH --time=0-06:00:00
+           #SBATCH --export=NGC_API_KEY="<api-anahtariniz>"
            #SBATCH --container-image=/arf/ai-ent/enroot/squashfs/ngc/nvidia/nim/meta_llama-3.1-70b-instruct.1.15.sqsh
-           #SBATCH --container-entrypoint
+
+           /opt/nim/start_server.sh
 
 Sunucu hazır olduktan sonra (başlatma süreci model boyutuna göre birkaç dakika sürebilir), aynı düğümden sorgu gönderebilirsiniz.
 
