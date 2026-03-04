@@ -1,7 +1,7 @@
 .. _arf_ai_ent_ornekler:
 
 ===========================
-Örnek Kullanım Senaryoları
+Kullanım Senaryoları
 ===========================
 
 Bu sayfada, ARF-AI kümesindeki konteynerlerin farklı kullanım senaryolarına göre örnekleri yer almaktadır. Temel ``srun``, ``sbatch`` ve ``--container-*`` parametrelerinin detaylı açıklaması için :ref:`arf_ai_ent_konteyner_kullanim` sayfasına bakınız.
