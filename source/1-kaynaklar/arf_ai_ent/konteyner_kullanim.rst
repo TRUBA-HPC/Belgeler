@@ -71,6 +71,8 @@ ARF-AI kümesine bağlandığınızda sistemde çeşitli modüller hazır olarak
 
       module load slurm/ai-ent/24.11
 
+.. _interaktif_kullanim_konteyner:
+
 İnteraktif Kullanım (srun)
 ============================
 
@@ -209,14 +211,13 @@ sbatch betiğinde kullanımı:
 Konteyner Özelleştirme
 ========================
 
-Mevcut konteynerlere ek paket veya kütüphane yüklemek istediğinizde, Enroot ile konteyneri yazılabilir hale getirip özelleştirebilirsiniz.
+Konteyner özellieştirme adımından önce :ref:`interaktif_kullanim_konteyner` ile kaynak tahsis edilmelidir. Mevcut konteynerlere ek paket veya kütüphane yüklemek istediğinizde, Enroot ile konteyneri yazılabilir hale getirip özelleştirebilirsiniz.
 
 **Konteyneri içe aktarma ve başlatma:**
 
 .. code-block:: bash
 
-   enroot import /arf/ai-ent/enroot/squashfs/ngc/nvidia/pytorch_25.11-py3.sqsh
-   enroot create --name pytorch-ozel pytorch_25.11-py3.sqsh
+   enroot create --name pytorch-ozel /arf/ai-ent/enroot/squashfs/ngc/nvidia/pytorch_25.11-py3.sqsh
    enroot start --rw pytorch-ozel
 
 Konteyner içinde ek paketlerinizi kurabilirsiniz (ör. ``pip install ...``). İşlem tamamlandıktan sonra özelleştirilmiş konteyneri dışa aktarabilirsiniz:
