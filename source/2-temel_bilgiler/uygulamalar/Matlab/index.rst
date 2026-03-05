@@ -2,15 +2,26 @@
 MATLAB Kılavuzu
 =================================
 
-MATLAB, **lisansı ücretlli** olan bir uygulamadır. TRUBA, lisansı ücretli olan hiçbir uygulamayı (Intel derleyicileri hariç) sağlamamaktadır. TRUBA üzerinde MATLAB çalıştırmak isteyen kullanıcıların **kendilerine ait bir lisansa** sahip olması gerekmektedir. Bu lisans **kişisel, akademik ya da floating (kayar) lisans** olabilir.
+.. admonition:: Note
 
-Lisans türleri hakkında bilgiye `https://www.mathworks.com/pricing-licensing.html <https://www.mathworks.com/pricing-licensing.html>`_ adresinden erişebilirsiniz. Ayrıca üniversitelerin bilgi işlem merkezlerinden de lisansınız hakkında detaylı bilgi edinebilirsiniz.
+   This page is available in two languages. / Bu sayfa iki dilde mevcuttur.
 
-MATLAB, sahip olunan lisans türüne göre TRUBA üzerinde farklı şekillerde çalıştırılabilir.
+   **🇹🇷 Türkçe**
+
+   `TRUBA'da MATLAB Kullanımı <truba_matlab_tr.html>`_
+
+   **🇬🇧 English**
+
+   `Using MATLAB on TRUBA <truba_matlab.html>`_
 
 .. toctree::
     :maxdepth: 2
+    :caption: 🇹🇷 Türkçe
 
-    MATLAB_Lisans.rst
-    MATLAB_TRUBAConfig.rst
-    MATLAB_TRUBARun.rst
+    truba_matlab_tr.rst
+
+.. toctree::
+    :maxdepth: 2
+    :caption: 🇬🇧 English
+
+    truba_matlab.rst
