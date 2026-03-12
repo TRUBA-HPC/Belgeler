@@ -59,7 +59,10 @@ language = 'tr'
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = []
+exclude_patterns = [
+    '2-temel_bilgiler/uygulamalar/Matlab/old/*',
+    '2-temel_bilgiler/uygulamalar/Gaussian/Gaussian-licence/index-old-check.rst',
+]
 
 
 # -- Options for HTML output -------------------------------------------------
