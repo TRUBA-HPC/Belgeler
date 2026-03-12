@@ -1,3 +1,0 @@
-[tool.esbonio.sphinx]
-pythonCommand = ["/Users/iguzel/miniforge3/envs/belgeler-truba/bin/python"]
-buildCommand = ["sphinx-build", "-M", "html", "source", "build"]

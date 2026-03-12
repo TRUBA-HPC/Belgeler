@@ -34,6 +34,6 @@ Kamu ve Araştırma Odaklı Desteklenen Projeler Kapsamında Faydalanacak Özel 
 
 
 Diğer Sağlayıcılarda Kullanım Ücretleri
--------------------------
+---------------------------------------
 
 - :ref:`kullanim_maliyeti`

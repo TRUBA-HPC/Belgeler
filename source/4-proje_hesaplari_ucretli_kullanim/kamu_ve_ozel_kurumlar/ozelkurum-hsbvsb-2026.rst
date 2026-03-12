@@ -34,9 +34,10 @@ Bu kapsamda proje önerisinde hesaplama ve veri depolama isteği bulunan kurumla
 |                       |                            | çekirdek başına 16 GB bellek, 4xHDR200 IB bağlantı |
 |                       |                            | 4 x NVidia H200 141 GB GPU                         |
 +-----------------------+----------------------------+----------------------------------------------------+
+
 .. [#note1] Saatlik hesaplama servis biriminin KDV hariç bedelidir.Herhangi bir hesaplama, veri depolama alanı olmadan kullanılamayacağı için ilgili bedele en az 1TB depolama alanı saatlik bedeli dahil edilmelidir.
 
-.. [#note2] Kolyoz kümesi için çekirdek/saat hesaplaması en az 16 çekirdek ve 16'ın katları olarak yapılmalıdır. 
+.. [#note2] Kolyoz kümesi [#note2]_ için çekirdek/saat hesaplaması en az 16 çekirdek ve 16'ın katları olarak yapılmalıdır. 
 
 
 

@@ -59,6 +59,7 @@ Kendi ev dizinimizde olan bir dosyayı /arf/scratch/kullanici_adi dizinine kopya
 .. code-block:: bash
  
   cp job.slurm  /arf/scratch/kullanici_adi
+
 Yukarıdaki örnekler bir dosyayı bir dizine kayıt etmekle ilgiliydi. Bazen direkt dizinleri kopyalamamız gerekir. O zaman ``cp -r dizin_adi kopyalanacagi_adres`` şeklinde kullanabiliriz.
 
 

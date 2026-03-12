@@ -37,7 +37,7 @@ Bu kapsamda proje önerisinde hesaplama ve veri depolama isteği bulunan kurumla
 
 .. [#note1] Saatlik hesaplama servis biriminin KDV hariç bedelidir.Herhangi bir hesaplama, veri depolama alanı olmadan kullanılamayacağı için ilgili bedele en az 1TB depolama alanı saatlik bedeli dahil edilmelidir.
 
-.. [#note2] Kolyoz kümeleri için çekirdek/saat hesaplaması en az 16 çekirdek ve 16'ın katları olarak yapılmalıdır. 
+.. [#note2] Kolyoz kümeleri [#note2]_ için çekirdek/saat hesaplaması en az 16 çekirdek ve 16'ın katları olarak yapılmalıdır. 
 
 
 

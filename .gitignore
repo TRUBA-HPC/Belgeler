@@ -5,3 +5,5 @@ truba-belgeler.code-workspace
 .DS_Store
 **/.DS_Store
 .tours/start-documenting-with-code-server.json
+.specstory
+.cursorindexingignore
