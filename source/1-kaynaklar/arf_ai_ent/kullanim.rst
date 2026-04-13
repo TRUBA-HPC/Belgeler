@@ -1,4 +1,4 @@
-.. _arf_ai_ent_konteyner_kullanim:
+.. _arf_ai_ent_kullanim:
 
 =============================
 Konteyner Kullanımı

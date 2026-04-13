@@ -8,10 +8,11 @@ ARF-AI
 
     .. grid-item-card:: :ref:`arf_ai_ent_baglanti`
         :text-align: center
-    .. grid-item-card:: :ref:`arf_ai_ent_konteyner_kullanim`
+    .. grid-item-card:: :ref:`arf_ai_ent_kullanim`
         :text-align: center
 
 TRUBA'da NVIDIA AI Enterprise platformu lisanslı olarak kullanıma sunulmuştur. Detaylar için `NVIDIA AI Enterprise ürün sayfası <https://www.nvidia.com/en-us/data-center/products/ai-enterprise/>`_ ziyaret edilebilir.
+NVIDIA AI Enterprise lisans kapsamındaki konteynerler sistem tarafından hazır olarak oluşturulmuş olup Apptainer aracı ile doğrudan kullanılabilmektedir.
 
 NVIDIA AI Enterprise Nedir?
 ============================
@@ -73,10 +74,10 @@ NVIDIA AI Enterprise; PyTorch, TensorFlow, TensorRT, RAPIDS, JAX ve daha pek ço
 Daha fazla bilgi için aşağıdaki başlıklara göz atabilirsiniz:
 
 - :ref:`arf_ai_ent_baglanti` - Erişim bilgileri, mevcut AI konteynerleri ve konteyner talebi
-- :ref:`arf_ai_ent_konteyner_kullanim` - Slurm ile konteyner çalıştırma, mount ve özelleştirme
+- :ref:`arf_ai_ent_kullanim` - Slurm ile konteyner çalıştırma, mount ve özelleştirme
 
 .. toctree::
    :hidden:
 
    baglanti.rst
-   konteyner_kullanim.rst
+   kullanim.rst
