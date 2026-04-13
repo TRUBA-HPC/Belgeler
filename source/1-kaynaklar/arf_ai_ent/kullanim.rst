@@ -1,8 +1,8 @@
 .. _arf_ai_ent_kullanim:
 
-=============================
+==============================
 NVIDIA AI Enterprise Kullanımı
-=============================
+==============================
 
 Bu bölüm, ARF-AI üzerinde merkezi olarak sunulan NVIDIA AI Enterprise SIF imajlarının Apptainer ile nasıl çalıştırılacağını açıklar.
 
