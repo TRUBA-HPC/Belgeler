@@ -10,11 +10,33 @@ En güncel duyurular üstte yer alır.
 Duyurular
 ---------
 
-.. dropdown:: :octicon:`broadcast;1.2em;secondary` Genel Duyuru Alanı
-   :color: warning
+Bu bölümde her duyuru ayrı bir açılır kutu (dropdown) olarak paylaşılır.
 
-   - Bu bölüm sistem, bakım, kesinti ve operasyonel bilgilendirmeler için kullanılacaktır.
-   - Yeni duyurular eklendikçe en güncel olan en üstte gösterilir.
+.. dropdown:: :octicon:`alert;1.2em;secondary` 30 Haziran 2026 - Veri Silme Hatırlatması
+   :color: danger
+
+   .. important::
+
+      ``/truba/home`` altında bulunan veriler, geçiş süreci kapsamında
+      ``/arf/truba_old/home`` altında tutulmaktadır.
+
+      30 Haziran 2026 tarihinden itibaren ``/arf/truba_old/home`` altındaki tüm veriler
+      kalıcı olarak silinecektir.
+
+      **Lütfen aşağıdaki adımları takip ediniz:**
+
+      - İhtiyaç duyduğunuz verileri ``/arf/home/`` altına taşıyınız.
+      - Önemli verilerinizi kendi yerel bilgisayarınıza yedekleyiniz.
+      - Gereksiz verileri temizleyiniz.
+
+.. 
+   .. dropdown:: :octicon:`broadcast;1.2em;secondary` [Tarih] - [Yeni Duyuru Başlığı]
+      :color: warning
+
+      - Bu alan yeni sistem/bakım/operasyon duyuruları için şablon olarak bırakılmıştır.
+      - Yeni duyurular her zaman en üste eklenmelidir.
+
+
 
 .. _guncellemeler:
 
