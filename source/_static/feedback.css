@@ -1,7 +1,7 @@
 /* Sağ alt köşede kayan buton */
 #feedback-button {
     position: fixed;
-    bottom: 20px;
+    bottom: 72px;
     right: 20px;
     background-color: #007acc;
     color: white;
@@ -13,6 +13,8 @@
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     transition: background-color 0.3s ease;
     z-index: 1000;
+    min-width: 150px;
+    text-align: center;
   }
   
   #feedback-button:hover {
