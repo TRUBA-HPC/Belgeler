@@ -13,8 +13,8 @@ Detaylı açıklamalar için aşağıdaki dökümanı inceleyebilirsiniz:
 
 .. raw:: html
 
-   <object data="../../../../_static/pdf/cuda/Multi_GPU_Metin.pdf" type="application/pdf" width="100%" height="600px">
-       <p>PDF görüntülenemiyor. <a href="../../../../_static/pdf/cuda/Multi_GPU_Metin.pdf">Buradan indirebilirsiniz.</a></p>
+   <object data="../../../../cuda/pdf/Multi_GPU_Metin.pdf" type="application/pdf" width="100%" height="600px">
+       <p>PDF görüntülenemiyor. <a href="../../../../cuda/pdf/Multi_GPU_Metin.pdf">Buradan indirebilirsiniz.</a></p>
    </object>
 
 Örnek Kodlar

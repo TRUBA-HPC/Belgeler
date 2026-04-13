@@ -14,8 +14,8 @@ CUDA Streams konusundaki detaylı açıklamalar için aşağıdaki dökümanı i
 
 .. raw:: html
 
-   <object data="../../../../_static/pdf/cuda/CUDA_Streams_Metin.pdf" type="application/pdf" width="100%" height="600px">
-       <p>PDF görüntülenemiyor. <a href="../../../../_static/pdf/cuda/CUDA_Streams_Metin.pdf">Buradan indirebilirsiniz.</a></p>
+   <object data="../../../../cuda/pdf/CUDA_Streams_Metin.pdf" type="application/pdf" width="100%" height="600px">
+       <p>PDF görüntülenemiyor. <a href="../../../../cuda/pdf/CUDA_Streams_Metin.pdf">Buradan indirebilirsiniz.</a></p>
    </object>
 
 Örnek Kodlar

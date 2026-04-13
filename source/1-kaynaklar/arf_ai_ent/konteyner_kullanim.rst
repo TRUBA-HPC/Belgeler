@@ -6,42 +6,45 @@ Konteyner Kullanımı
 
 Bu bölüm, ARF-AI üzerinde merkezi olarak sunulan NVIDIA AI Enterprise SIF imajlarının Apptainer ile nasıl çalıştırılacağını açıklar.
 
-Temel Kullanım
---------------
+Lisanslı NVIDIA AI Enterprise SIF Konteynerleri
+-----------------------------------------------
 
-GPU erişimi için ``--nv`` parametresi kullanılır:
-
-.. code-block:: bash
-
-   apptainer exec --nv /yol/imaj.sif python -c "import torch; print(torch.cuda.is_available())"
-
-Host dizini bağlamak için:
+ARF-AI platformunda çeşitli NVIDIA AI Enterprise konteynerleri lisanslı olarak aşağıdaki dizinde sunulmaktadır:
 
 .. code-block:: bash
 
-   apptainer exec --nv --bind /project:/workspace /yol/imaj.sif bash
+   /arf/ai-ent/apptainer/sif/nvidia
 
-Slurm ile Çalıştırma
---------------------
+Sık kullanılan bazı örnek konteynerler:
 
-Örnek iş betiği:
+- ``nemo-26.02.sif``
+- ``pytorch-26.03-py3.sif``
+- ``sglang-26.03-py3.sif``
+- ``tensorflow-25.02-tf2-py3.sif``
+- ``tensorrt-26.03-py3.sif``
+- ``vllm-26.03-py3.sif``
+- ``ai-dynamo/sglang-runtime-1.1.0-dev.2.sif``
+
+Daha güncel veya tam listeyi görmek için doğrudan ilgili dizinde aşağıdaki gibi komutları kullanabilirsiniz:
 
 .. code-block:: bash
 
-   #!/bin/bash
-   #SBATCH -p barbun-cuda
-   #SBATCH -A <proje>
-   #SBATCH -N 1
-   #SBATCH --gres=gpu:1
-   #SBATCH -t 01:00:00
-
-   module load apptainer
-   apptainer exec --nv /yol/imaj.sif python /workspace/train.py
-
-.. warning::
-
-   I/O yoğun işlerde veri yolu olarak ``/arf`` veya ilgili proje/scratch alanlarını kullanınız.
+   ls -lh /arf/ai-ent/apptainer/sif/nvidia
+   ls -lh /arf/ai-ent/apptainer/sif/nvidia/ai-dynamo
 
 .. seealso::
 
    Apptainer temel kavramları için :ref:`Apptainer` sayfasını inceleyiniz.
+
+
+İhtiyaç Duyulan Konteyner Bildirimi
+-----------------------------------
+
+Listede bulunmayan bir NVIDIA AI Enterprise konteynerine ihtiyaç duyuyorsanız, aşağıdaki bilgilerle talep iletebilirsiniz:
+
+- Talep edilen konteyner adı ve sürümü
+- Kullanım amacı (eğitim, çıkarım, servis vb.)
+- Gerekli ek paketler veya bağımlılıklar
+- Hedef kuyruk/GPU gereksinimi
+
+Talep ve destek için :ref:`truba_iletisim` sayfasındaki iletişim kanallarını kullanınız.

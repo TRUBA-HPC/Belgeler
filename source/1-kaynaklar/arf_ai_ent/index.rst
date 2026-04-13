@@ -11,64 +11,64 @@ ARF-AI
     .. grid-item-card:: :ref:`arf_ai_ent_konteyner_kullanim`
         :text-align: center
 
-ARF-AI, yapay zeka alanında çalışan araştırmacılara hizmet etmek amacıyla kurulan özel bir hesaplama kümesidir. Bu küme için TRUBA tarafından `NVIDIA AI Enterprise ürün sayfası <https://www.nvidia.com/en-us/data-center/products/ai-enterprise/>`_ kapsamı kullanıma alınmıştır.
+TRUBA'da NVIDIA AI Enterprise platformu lisanslı olarak kullanıma sunulmuştur. Detaylar için `NVIDIA AI Enterprise ürün sayfası <https://www.nvidia.com/en-us/data-center/products/ai-enterprise/>`_ ziyaret edilebilir.
 
 NVIDIA AI Enterprise Nedir?
 ============================
 
-`NVIDIA AI Enterprise <https://docs.nvidia.com/ai-enterprise/>`_, yapay zeka modellerinin gelistirilmesi, optimize edilmesi ve dagitilmasi icin tasarlanmis kapsamli bir yazilim platformudur. Bu platform, arastirmacilara ve gelistiricilere GPU-hizlandirilmis araclar, onceden optimize edilmis konteynerler ve hazir AI mikroservisleri sunarak yapay zeka projelerini onemli olcude hizlandirir.
+`NVIDIA AI Enterprise <https://docs.nvidia.com/ai-enterprise/>`_, yapay zeka modellerinin geliştirilmesi, optimize edilmesi ve dağıtılması için tasarlanmış kapsamlı bir yazılım platformudur. Bu platform, araştırmacılara ve geliştiricilere GPU-hızlandırılmış araçlar, önceden optimize edilmiş konteynerler ve hazır AI mikroservisleri sunarak yapay zeka projelerini önemli ölçüde hızlandırır.
 
 Platformun Sağladığı Temel Bileşenler
 =======================================
 
 **NVIDIA NIM (Inference Microservices)**
 
-Onceden optimize edilmis, dagitima hazir AI model mikroservisleridir. Her NIM konteyneri; Triton Inference Server, TensorRT, TensorRT-LLM ve PyTorch gibi bilesenleri icerir. Buyuk dil modelleri (LLM), goruntu uretimi ve bilimsel modeller gibi pek cok alanda kullanima hazir konteynerler sunar. (`NIM Dokumantasyonu <https://docs.nvidia.com/nim/index.html>`_ | `API Deneme Platformu <https://build.nvidia.com/explore/discover>`_)
+Önceden optimize edilmiş, dağıtıma hazır AI model mikroservisleridir. Her NIM konteyneri; Triton Inference Server, TensorRT, TensorRT-LLM ve PyTorch gibi bileşenleri içerir. Büyük dil modelleri (LLM), görüntü üretimi ve bilimsel modeller gibi pek çok alanda kullanıma hazır konteynerler sunar. (`NIM Dokümantasyonu <https://docs.nvidia.com/nim/index.html>`_ | `API Deneme Platformu <https://build.nvidia.com/explore/discover>`_)
 
 **NVIDIA AI Blueprint**
 
-Yapay zeka uygulamalarinin hizla gelistirilmesi icin sunulan hazir referans is akislaridir. Blueprint'ler; onceden egitilmis modelleri, NIM mikroservislerini ve altyapi bilesenlerini bir araya getirerek RAG (Retrieval-Augmented Generation) tabanli soru-cevap sistemleri, dijital asistanlar ve cok modlu veri isleme gibi uctan uca cozumler olusturmayi kolaylastirir. (`AI Blueprint Dokumantasyonu <https://docs.nvidia.com/nim/agent-blueprints/overview/latest/index.html>`_ | `GitHub <https://github.com/NVIDIA-AI-Blueprints>`_)
+Yapay zeka uygulamalarının hızla geliştirilmesi için sunulan hazır referans iş akışlarıdır. Blueprint'ler; önceden eğitilmiş modelleri, NIM mikroservislerini ve altyapı bileşenlerini bir araya getirerek RAG (Retrieval-Augmented Generation) tabanlı soru-cevap sistemleri, dijital asistanlar ve çok modlu veri işleme gibi uçtan uca çözümler oluşturmayı kolaylaştırır. (`AI Blueprint Dokümantasyonu <https://docs.nvidia.com/nim/agent-blueprints/overview/latest/index.html>`_ | `GitHub <https://github.com/NVIDIA-AI-Blueprints>`_)
 
-**NGC Katalogu Erisimi**
+**NGC Kataloğu Erişimi**
 
-NVIDIA GPU Cloud (NGC) katalogu uzerinden 100'den fazla AI framework'une ve onceden egitilmis modele erisim saglanir. NGC, yapay zeka ve HPC uygulamalari icin optimize edilmis konteyner imajlarinin merkezi deposudur. (`NGC Katalogu <https://catalog.ngc.nvidia.com/>`_)
+NVIDIA GPU Cloud (NGC) kataloğu üzerinden 100'den fazla AI framework'üne ve önceden eğitilmiş modele erişim sağlanır. NGC, yapay zeka ve HPC uygulamaları için optimize edilmiş konteyner imajlarının merkezi deposudur. (`NGC Kataloğu <https://catalog.ngc.nvidia.com/>`_)
 
 **NVIDIA RAPIDS**
 
-GPU-hizlandirilmis veri bilimi kutuphaneleri ailesidir. cuDF (veri cerceveleri), cuML (makine ogrenmesi) ve cuGraph (graf analitigi) gibi bilesenlerle veri bilimi sureclerini 70 kata kadar hizlandirabilir. (`RAPIDS Dokumantasyonu <https://docs.rapids.ai/>`_)
+GPU-hızlandırılmış veri bilimi kütüphaneleri ailesidir. cuDF (veri çerçeveleri), cuML (makine öğrenmesi) ve cuGraph (graf analitiği) gibi bileşenlerle veri bilimi süreçlerini 70 kata kadar hızlandırabilir. (`RAPIDS Dokümantasyonu <https://docs.rapids.ai/>`_)
 
 **NVIDIA Triton Inference Server**
 
-Birden fazla framework'ten (PyTorch, TensorFlow, TensorRT, ONNX vb.) gelen modelleri yuksek performansla sunmak icin tasarlanmis acik kaynakli bir cikarim sunucusudur. Dinamik gruplama ve model birlestirme gibi ozelliklerle 100 kata kadar dusuk gecikme saglayabilir. (`Triton Dokumantasyonu <https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/index.html>`_)
+Birden fazla framework'ten (PyTorch, TensorFlow, TensorRT, ONNX vb.) gelen modelleri yüksek performansla sunmak için tasarlanmış açık kaynaklı bir çıkarım sunucusudur. Dinamik gruplama ve model birleştirme gibi özelliklerle 100 kata kadar düşük gecikme sağlayabilir. (`Triton Dokümantasyonu <https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/index.html>`_)
 
 **NVIDIA TensorRT**
 
-Derin ogrenme modellerini GPU uzerinde en yuksek verimlilikle calistirmak icin optimize eden bir cikarim motorudur. Egitilmis modelleri otomatik olarak optimize ederek cikarim hizini onemli olcude artirir. (`TensorRT Dokumantasyonu <https://docs.nvidia.com/deeplearning/tensorrt/index.html>`_)
+Derin öğrenme modellerini GPU üzerinde en yüksek verimlilikle çalıştırmak için optimize eden bir çıkarım motorudur. Eğitilmiş modelleri otomatik olarak optimize ederek çıkarım hızını önemli ölçüde artırır. (`TensorRT Dokümantasyonu <https://docs.nvidia.com/deeplearning/tensorrt/index.html>`_)
 
 **NVIDIA TAO Toolkit**
 
-Transfer ogrenme tabanli bir model gelistirme aracidir. Onceden egitilmis modelleri kendi veri kumenizle ince ayar yaparak, sifirdan egitime kiyasla AI model gelistirme surecini 10 kata kadar hizlandirir. (`TAO Toolkit Dokumantasyonu <https://docs.nvidia.com/tao/tao-toolkit/index.html>`_)
+Transfer öğrenme tabanlı bir model geliştirme aracıdır. Önceden eğitilmiş modelleri kendi veri kümenizle ince ayar yaparak, sıfırdan eğitime kıyasla AI model geliştirme sürecini 10 kata kadar hızlandırır. (`TAO Toolkit Dokümantasyonu <https://docs.nvidia.com/tao/tao-toolkit/index.html>`_)
 
 **NeMo Framework**
 
-Buyuk dil modelleri (LLM), konusma tanima (ASR) ve metin-konusma (TTS) modelleri icin kapsamli bir egitim ve ince ayar cercevesidir. Coklu GPU ve coklu dugum egitimi icin optimize edilmistir. (`NeMo Dokumantasyonu <https://docs.nvidia.com/nemo-framework/user-guide/latest/index.html>`_)
+Büyük dil modelleri (LLM), konuşma tanıma (ASR) ve metin-konuşma (TTS) modelleri için kapsamlı bir eğitim ve ince ayar çerçevesidir. Çoklu GPU ve çoklu düğüm eğitimi için optimize edilmiştir. (`NeMo Dokümantasyonu <https://docs.nvidia.com/nemo-framework/user-guide/latest/index.html>`_)
 
 **NVIDIA Dynamo**
 
-Buyuk dil modellerinin cok dugumlu dagitik ortamlarda sunulmasi icin tasarlanmis moduler bir cikarim framework'udur. Prefill ve decode asamalarini ayiran ayristirilmis servis mimarisi, onek tabanli akilli yonlendirme ve dagitik KV Cache yonetimi ile GPU kaynaklarini dinamik olarak tahsis ederek cikarim performansini optimize eder. (`Dynamo GitHub <https://github.com/ai-dynamo/dynamo>`_ | `Gelistirici Sayfasi <https://developer.nvidia.com/dynamo>`_)
+Büyük dil modellerinin çok düğümlü dağıtık ortamlarda sunulması için tasarlanmış modüler bir çıkarım framework'üdür. Prefill ve decode aşamalarını ayıran ayrıştırılmış servis mimarisi, önek tabanlı akıllı yönlendirme ve dağıtık KV Cache yönetimi ile GPU kaynaklarını dinamik olarak tahsis ederek çıkarım performansını optimize eder. (`Dynamo GitHub <https://github.com/ai-dynamo/dynamo>`_ | `Geliştirici Sayfası <https://developer.nvidia.com/dynamo>`_)
 
 **AIPerf**
 
-Cikarim sunucularinin performansini olcmek icin tasarlanmis kapsamli bir benchmark aracidir (GenAI-Perf'in devami niteligindedir). NIM, Triton, vLLM ve SGLang gibi cikarim cozumlerini destekler; token uretim hizi, ilk token suresi (TTFT), gecikme ve eszamanli istek kapasitesi gibi metrikleri raporlar. (`AIPerf GitHub <https://github.com/ai-dynamo/aiperf>`_)
+Çıkarım sunucularının performansını ölçmek için tasarlanmış kapsamlı bir benchmark aracıdır (GenAI-Perf'in devamı niteliğindedir). NIM, Triton, vLLM ve SGLang gibi çıkarım çözümlerini destekler; token üretim hızı, ilk token süresi (TTFT), gecikme ve eşzamanlı istek kapasitesi gibi metrikleri raporlar. (`AIPerf GitHub <https://github.com/ai-dynamo/aiperf>`_)
 
 **Desteklenen Framework'ler**
 
-NVIDIA AI Enterprise; PyTorch, TensorFlow, TensorRT, RAPIDS, JAX ve daha pek cok populer yapay zeka framework'unu destekler. Tum bu framework'ler NGC uzerinden optimize edilmis konteynerler olarak sunulur.
+NVIDIA AI Enterprise; PyTorch, TensorFlow, TensorRT, RAPIDS, JAX ve daha pek çok popüler yapay zeka framework'ünü destekler. Tüm bu framework'ler NGC üzerinden optimize edilmiş konteynerler olarak sunulur.
 
 .. admonition:: Erişim Politikası
    :class: important
 
-   NVIDIA AI Enterprise lisansi kapsamindaki kaynaklar, yapay zeka alaninda aktif arastirma yurutten kullanicilara tahsis edilmistir. Erisim talepleri ve kullanim kosullari hakkinda detayli bilgi icin sistem yoneticinizle iletisime geciniz.
+   NVIDIA AI Enterprise lisansı kapsamındaki kaynaklar, yapay zeka alanında aktif araştırma yürüten kullanıcılara tahsis edilmiştir. Erişim talepleri ve kullanım koşulları hakkında detaylı bilgi için sistem yöneticiniz ile iletişime geçiniz.
 
 Daha fazla bilgi için aşağıdaki başlıklara göz atabilirsiniz:
 
