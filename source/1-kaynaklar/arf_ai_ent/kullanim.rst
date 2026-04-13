@@ -42,7 +42,7 @@ Daha güncel veya tam listeyi görmek için doğrudan ilgili dizinde aşağıdak
 
 Listede bulunmayan bir NVIDIA AI Enterprise konteynerine ihtiyaç duyuyorsanız, aşağıdaki bilgilerle talep iletebilirsiniz:
 
-- Talep edilen konteyner adı ve sürümü
+- Talep edilen konteyner adı ve sürümü (`NGC Kataloğu <https://catalog.ngc.nvidia.com/>`_ üzerinden öğrenilebilir)
 - Kullanım amacı (eğitim, çıkarım, servis vb.)
 - Gerekli ek paketler veya bağımlılıklar
 - Hedef kuyruk/GPU gereksinimi

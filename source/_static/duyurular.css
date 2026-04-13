@@ -1,0 +1,20 @@
+/* Sağ altta, geri bildirim butonunun üstünde duyurular butonu */
+#duyurular-button {
+    position: fixed;
+    bottom: 72px;
+    right: 20px;
+    background-color: #1e8e3e;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+#duyurular-button:hover {
+    background-color: #166b2f;
+}

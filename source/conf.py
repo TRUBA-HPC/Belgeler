@@ -39,11 +39,13 @@ extensions = [
 
 
 html_css_files = ['custom.css',
-                  'feedback.css',]
+                  'feedback.css',
+                  'duyurular.css',]
 
 
 html_js_files = [
     'feedback.js',
+    'duyurular.js',
 ]
 
 # Add any paths that contain templates here, relative to this directory.

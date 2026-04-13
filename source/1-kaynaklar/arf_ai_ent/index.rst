@@ -66,15 +66,10 @@ Büyük dil modellerinin çok düğümlü dağıtık ortamlarda sunulması için
 
 NVIDIA AI Enterprise; PyTorch, TensorFlow, TensorRT, RAPIDS, JAX ve daha pek çok popüler yapay zeka framework'ünü destekler. Tüm bu framework'ler NGC üzerinden optimize edilmiş konteynerler olarak sunulur.
 
-.. admonition:: Erişim Politikası
-   :class: important
-
-   NVIDIA AI Enterprise lisansı kapsamındaki kaynaklar, yapay zeka alanında aktif araştırma yürüten kullanıcılara tahsis edilmiştir. Erişim talepleri ve kullanım koşulları hakkında detaylı bilgi için sistem yöneticiniz ile iletişime geçiniz.
-
 Daha fazla bilgi için aşağıdaki başlıklara göz atabilirsiniz:
 
-- :ref:`arf_ai_ent_baglanti` - Erişim bilgileri, mevcut AI konteynerleri ve konteyner talebi
-- :ref:`arf_ai_ent_kullanim` - Slurm ile konteyner çalıştırma, mount ve özelleştirme
+- :ref:`arf_ai_ent_baglanti` 
+- :ref:`arf_ai_ent_kullanim`
 
 .. toctree::
    :hidden:
