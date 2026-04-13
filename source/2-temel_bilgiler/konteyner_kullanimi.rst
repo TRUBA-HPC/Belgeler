@@ -242,3 +242,19 @@ MPI işleri için konteyner içinde ve dışında aynı MPI programı ve versiyo
     mpirun -n <mpi-is-sayisi> apptainer exec <Konteyner> <Program> <Betik>
 
 şeklinde verilmelidir. Daha fazla detay için `ilgili MPI kılavuzu <https://apptainer.org/docs/user/latest/mpi.html>`_ ziyaret edilebilir.
+
+
+TRUBA Apptainer Eğitimi
+-----------------------
+
+Apptainer kullanımına yönelik uygulamalı eğitim materyalleri için aşağıdaki depoyu inceleyebilirsiniz:
+
+- `TRUBA-HPC/Intro2ContainerUsageHPC <https://github.com/TRUBA-HPC/Intro2ContainerUsageHPC>`_
+
+Bu eğitim deposunda özellikle aşağıdaki içerikler öne çıkmaktadır:
+
+- Apptainer hızlı başlangıç ve komut özeti (cheat sheet)
+- Slurm ile tek GPU örneği
+- MPI ile konteynerli iş örneği
+- Çoklu GPU (multi-GPU) eğitim senaryosu
+- Def dosyalarıyla konteyner özelleştirme örnekleri
