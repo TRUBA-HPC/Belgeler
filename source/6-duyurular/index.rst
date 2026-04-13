@@ -17,7 +17,7 @@ Bu bölümde her duyuru ayrı bir açılır kutu (dropdown) olarak paylaşılır
 
    TRUBA teknik destek e-posta adresi güncellenmiştir.
 
-   - Eski adres(ler): ``grid-teknik@ulakbim.gov.tr`` ve ``gridteknik@ulakbim.gov.tr``
+   - Eski adres: ``grid-teknik@ulakbim.gov.tr``
    - Yeni destek adresi: ``trubadestek@tubitak.gov.tr``
 
    Lütfen bundan sonraki tüm destek taleplerinizi yeni adres üzerinden iletiniz.
