@@ -7,6 +7,15 @@ Konteyner Kullanımı
 Bu belge TRUBA altyapısında `Apptainer/Singularity <https://apptainer.org/>`_ platformunun kullanımını kolaylaştırmak için oluşturulmuştur.
 Bu kılavuz aşağıdakileri kapsamaktadır:
 
+.. grid:: 1
+
+   .. grid-item-card:: TRUBA Apptainer Eğitimi
+      :link: #truba-apptainer-egitimi
+      :link-type: url
+      :text-align: center
+
+      Uygulamalı eğitim deposuna hızlı erişim.
+
 
 
 
@@ -243,6 +252,8 @@ MPI işleri için konteyner içinde ve dışında aynı MPI programı ve versiyo
 
 şeklinde verilmelidir. Daha fazla detay için `ilgili MPI kılavuzu <https://apptainer.org/docs/user/latest/mpi.html>`_ ziyaret edilebilir.
 
+
+.. _truba-apptainer-egitimi:
 
 TRUBA Apptainer Eğitimi
 -----------------------
