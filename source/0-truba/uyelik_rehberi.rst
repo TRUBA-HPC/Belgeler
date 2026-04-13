@@ -40,7 +40,7 @@ Mevcut eğitim düzeyine göre tanımlanan kotalar aşağıda belirtilmektedir:
 
 - **Lisans Öğrencileri:**  Lisans öğrencilerinin hesapları, danışmanları ile birlikte bir projeye dahil olmaları ve ilgili projenin TÜBİTAK ULAKBİM ile yapılan sözleşme kapsamında TRUBA'da bir proje hesabına sahip olması durumunda açılır. Bu durumda, öğrenciler yalnızca ilgili proje hesabının tanımlı kaynaklarını kullanabilirler.
   
-- **Yüksek Lisans Öğrencileri:** Yüksek Lisans öğrencilerine TRUBA sisteminde hesap açılabilmesi için "Danışman Onayı" gerekmektedir. TRUBA portal üzerinden yapılan başvuru sonrasında üyelik talebinde bulunan öğrencinin kayıtlı eposta adresine  "Danışman Onayı" maili yönlendirilmektedir. İlgili danışman öğretim üyesi tarafından `grid-teknik@ulakbim.gov.tr`` adresimize iletilen danışman onayından sonra kullanıcı hesapları açılmaktadır.
+- **Yüksek Lisans Öğrencileri:** Yüksek Lisans öğrencilerine TRUBA sisteminde hesap açılabilmesi için "Danışman Onayı" gerekmektedir. TRUBA portal üzerinden yapılan başvuru sonrasında üyelik talebinde bulunan öğrencinin kayıtlı eposta adresine  "Danışman Onayı" maili yönlendirilmektedir. İlgili danışman öğretim üyesi tarafından ``trubadestek@tubitak.gov.tr`` adresimize iletilen danışman onayından sonra kullanıcı hesapları açılmaktadır.
 
 .. note:: 
 
@@ -58,7 +58,7 @@ Mevcut eğitim düzeyine göre tanımlanan kotalar aşağıda belirtilmektedir:
 
   Araştırmacıların, bir projeye dahil olmaları ve ilgili projenin TÜBİTAK ULAKBİM ile yapılan sözleşme kapsamında TRUBA'da bir proje hesabına sahip olması durumunda, söz konusu proje hesabının kaynaklarından da yararlanabilmeleri mümkündür.
 
-Konu ile ilgili her türlü soru ve sorununuzu ``grid-teknik@ulakbim.gov.tr`` adresimize e-posta ile iletebilirsiniz.
+Konu ile ilgili her türlü soru ve sorununuzu ``trubadestek@tubitak.gov.tr`` adresimize e-posta ile iletebilirsiniz.
 
 
 .. _uyelik-yayinlar:

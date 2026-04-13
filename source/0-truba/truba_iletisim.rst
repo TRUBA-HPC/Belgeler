@@ -4,7 +4,7 @@
 Teknik Destek Talebi
 =============================
 
-TRUBA sisteminde karşılaştığınız sorunları ``grid-teknik@ulakbim.gov.tr`` adresine iletebilirsiniz. Sorununuzun hızlı ve etkin bir şekilde çözülebilmesi için, e-posta gönderirken aşağıda belirtilen standart bilgileri eksiksiz olarak iletmeniz önemlidir. 
+TRUBA sisteminde karşılaştığınız sorunları ``trubadestek@tubitak.gov.tr`` adresine iletebilirsiniz. Sorununuzun hızlı ve etkin bir şekilde çözülebilmesi için, e-posta gönderirken aşağıda belirtilen standart bilgileri eksiksiz olarak iletmeniz önemlidir.
 
 Lütfen işinizle ilgili yaşadığınız problemi bildirirken aşağıdaki şablonu kullanınız:
 
@@ -47,4 +47,4 @@ Lütfen işinizle ilgili yaşadığınız problemi bildirirken aşağıdaki şab
 
     Sorunlarınızı kişisel e-posta adreslerine göndermeyiniz ve telefonla iletişim kurmak yerine, lütfen teknik destek taleplerinizi e-posta yoluyla iletmeyi tercih ediniz. Yaşanan sorunların ve yapılan işlemlerin yazılı olarak kaydedilmesi, çözüm sürecinin takibi açısından büyük önem taşımaktadır.
 
-    TRUBA sisteminin kullanımı, karşılaştığınız sorunlar veya taleplerinizle ilgili olarak mutlaka ``grid-teknik@ulakbim.gov.tr`` teknik destek e-posta adresini kullanınız. Size gönderilen yanıtlara cevap verirken, e-posta programınızda "Tümünü Cevapla" (Reply-All) seçeneğini kullanarak, yanıtınızın hem ``grid-teknik@ulakbim.gov.tr`` adresine hem de ilgili tüm kişilere ulaştığından emin olunuz.
+    TRUBA sisteminin kullanımı, karşılaştığınız sorunlar veya taleplerinizle ilgili olarak mutlaka ``trubadestek@tubitak.gov.tr`` teknik destek e-posta adresini kullanınız. Size gönderilen yanıtlara cevap verirken, e-posta programınızda "Tümünü Cevapla" (Reply-All) seçeneğini kullanarak, yanıtınızın hem ``trubadestek@tubitak.gov.tr`` adresine hem de ilgili tüm kişilere ulaştığından emin olunuz.

@@ -12,6 +12,16 @@ Duyurular
 
 Bu bölümde her duyuru ayrı bir açılır kutu (dropdown) olarak paylaşılır.
 
+.. dropdown:: :octicon:`mail;1.2em;secondary` 13 Nisan 2026 - Destek E-posta Adresi Güncellendi
+   :color: info
+
+   TRUBA teknik destek e-posta adresi güncellenmiştir.
+
+   - Eski adres(ler): ``grid-teknik@ulakbim.gov.tr`` ve ``gridteknik@ulakbim.gov.tr``
+   - Yeni destek adresi: ``trubadestek@tubitak.gov.tr``
+
+   Lütfen bundan sonraki tüm destek taleplerinizi yeni adres üzerinden iletiniz.
+
 .. dropdown:: :octicon:`alert;1.2em;secondary` 30 Haziran 2026 - Veri Silme Hatırlatması
    :color: danger
 
@@ -29,12 +39,11 @@ Bu bölümde her duyuru ayrı bir açılır kutu (dropdown) olarak paylaşılır
       - Önemli verilerinizi kendi yerel bilgisayarınıza yedekleyiniz.
       - Gereksiz verileri temizleyiniz.
 
-.. 
-   .. dropdown:: :octicon:`broadcast;1.2em;secondary` [Tarih] - [Yeni Duyuru Başlığı]
-      :color: warning
+.. dropdown:: :octicon:`broadcast;1.2em;secondary` [Tarih] - [Yeni Duyuru Başlığı]
+   :color: warning
 
-      - Bu alan yeni sistem/bakım/operasyon duyuruları için şablon olarak bırakılmıştır.
-      - Yeni duyurular her zaman en üste eklenmelidir.
+   - Bu alan yeni sistem/bakım/operasyon duyuruları için şablon olarak bırakılmıştır.
+   - Yeni duyurular her zaman en üste eklenmelidir.
 
 
 

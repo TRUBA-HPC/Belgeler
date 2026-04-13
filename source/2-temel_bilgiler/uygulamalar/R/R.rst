@@ -1035,5 +1035,5 @@ ile açılan dosya içerisine aşağıdaki örnek parametrelerden gerekli olanla
    kılavuzunu <https://docs.truba.gov.tr/TRUBA/kullanici-el-kitabi/moduller.html>`__
    inceleyebilirsiniz.
 
-Dokümanla ilgili eksik ya da hata bulmanız durumunda bizlere grid-teknik@ulakbim.gov.tr adresinden erişebilirsiniz. Eklenmesini istediğiniz bilgiler için de bizlere aynı adresten ulaşabilirsiniz. 
+Dokümanla ilgili eksik ya da hata bulmanız durumunda bizlere trubadestek@tubitak.gov.tr adresinden erişebilirsiniz. Eklenmesini istediğiniz bilgiler için de bizlere aynı adresten ulaşabilirsiniz.
 

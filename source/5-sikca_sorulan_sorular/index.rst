@@ -4,7 +4,7 @@
 Sıkça Sorulan Sorular
 =======================
 
-Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını aşağıda bulabilirsiniz. Aşağıda cevabını bulamadığınız sorularızı ``grid-teknik@ulakbim.gov.tr`` adresimize :ref:`truba_iletisim` sayfasında belirtilen hususlar kapsamında iletebilirsiniz. Maillerinizde lütfen TRUBA kullanıcı adınızı ve varsa ilgili proje hesabınızı belirtiniz. 
+Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını aşağıda bulabilirsiniz. Aşağıda cevabını bulamadığınız sorularızı ``trubadestek@tubitak.gov.tr`` adresimize :ref:`truba_iletisim` sayfasında belirtilen hususlar kapsamında iletebilirsiniz. Maillerinizde lütfen TRUBA kullanıcı adınızı ve varsa ilgili proje hesabınızı belirtiniz.
 
 :ref:`1. Kullanıcı arayüzü sunucularına erişim kısıtlamaları var mı? <target to ss1>`
 
@@ -258,7 +258,7 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 
 23. Bazı e-postalarım cevaplanmıyor, e-postaları okuyor musunuz?
 
-	``grid-teknik@ulakbim.gov.tr`` adresine gönderilen tüm e-postalar okunmaktadır. E-postada belirtilen şikayet konusu genel bir soruna işaret ediyor, ve üzerinde çalışılıyorsa, sorun düzeltildikten sonra, sorunun giderildiğine dair kullanıcıya herhangi bir geri dönüş yapmıyoruz. Kullanıcı sayısı ve aynı genel sorun için gönderilen e-posta sayısı göz önüne alındığında, her kullanıcıya geri dönüş yapılması mümkün görünmüyor.
+	``trubadestek@tubitak.gov.tr`` adresine gönderilen tüm e-postalar okunmaktadır. E-postada belirtilen şikayet konusu genel bir soruna işaret ediyor, ve üzerinde çalışılıyorsa, sorun düzeltildikten sonra, sorunun giderildiğine dair kullanıcıya herhangi bir geri dönüş yapmıyoruz. Kullanıcı sayısı ve aynı genel sorun için gönderilen e-posta sayısı göz önüne alındığında, her kullanıcıya geri dönüş yapılması mümkün görünmüyor.
 
 	E-postada belirtilen sorun, sadece o kullanıcı ile ilgili ise, sorun ilgilenilmek üzere sıraya alınıyor. Ancak bazı durumlarda sıranın ilgili soruna gelmesi zaman alabiliyor. Dolayısıyla, geri dönüş e-postasının gönderilmesi zaman alabiliyor.
 
@@ -339,7 +339,7 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 
 	TRUBA portalı (https://portal.truba.gov.tr/) üzerinden profilinizi güncelleyerek, “Yayınlar” menüsüne TRUBA kaynaklarını kullanarak gerçekleştirdiğiniz ve teşekkür kısmında TRUBA'ya yer verdiğiniz (:ref:`tesekkur-truba`) tez, bildiri, makale gibi bilimsel yayınlarınızı lütfen ekleyiniz.
 
-	Profil ve yayın bilgilerinizi güncelledikten sonra, ek kaynak talebinizi ve TRUBA kaynaklarıyla gerçekleştirdiğiniz veya gerçekleştirmeyi planladığınız bilimsel çalışmaları özetleyen bir bilgilendirme e-postasını ``grid-teknik@ulakbim.gov.tr`` adresine iletiniz.
+	Profil ve yayın bilgilerinizi güncelledikten sonra, ek kaynak talebinizi ve TRUBA kaynaklarıyla gerçekleştirdiğiniz veya gerçekleştirmeyi planladığınız bilimsel çalışmaları özetleyen bir bilgilendirme e-postasını ``trubadestek@tubitak.gov.tr`` adresine iletiniz.
 
 	İlgili bilgilendirmeler iletildikten sonra yeni kaynak talebiniz değerlendirilerek uygun görülmesi halinde çekirdek-saat kotanızda arttırım sağlanabilir.
 
@@ -379,7 +379,7 @@ Kullanıcılar tarafından sıklıkla sorulan bazı soruları ve cevaplarını a
 
 	Kullanıcı arayüzünde iş çalıştırıldığında ve de ilgili kullanıcı tarafından sisteme fazla yük bindirildiği durumlarda sistem kullanıcı hesabını otomatik olarak askıya almaktadır. Lütfen arayüz makinelerinde yoğunluğa sebep olacak işler çalıştırmayınız.
 	
-	TRUBA kullanıcı hesabınızın tekrardan erişime açılabilmesi için ilgili dokümantasyon sayfalarını okuduktan sonra ``grid-teknik@ulakbim.gov.tr`` adresine bilgilendirme epostası göndermeniz gerekmektedir.
+	TRUBA kullanıcı hesabınızın tekrardan erişime açılabilmesi için ilgili dokümantasyon sayfalarını okuduktan sonra ``trubadestek@tubitak.gov.tr`` adresine bilgilendirme epostası göndermeniz gerekmektedir.
 
 .. _target to ss39:
 
