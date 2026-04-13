@@ -1,14 +1,30 @@
-=========
-Duyurular
-=========
+=======================
+Güncel Bilgilendirmeler
+=======================
 
-TRUBA ile ilgili resmi duyurular ve bilgilendirmeler bu sayfada paylaşılır.
+TRUBA ile ilgili duyurular ve dokümantasyon güncellemeleri bu sayfada paylaşılır.
 En güncel duyurular üstte yer alır.
 
-.. dropdown:: :octicon:`megaphone;1.2em;secondary` 13 Nisan 2026 - Dokümantasyon Güncellemeleri (Nisan 2025 - Nisan 2026)
+.. _duyurular:
+
+Duyurular
+---------
+
+.. dropdown:: :octicon:`broadcast;1.2em;secondary` Genel Duyuru Alanı
+   :color: warning
+
+   - Bu bölüm sistem, bakım, kesinti ve operasyonel bilgilendirmeler için kullanılacaktır.
+   - Yeni duyurular eklendikçe en güncel olan en üstte gösterilir.
+
+.. _guncellemeler:
+
+Güncellemeler
+-------------
+
+.. dropdown:: :octicon:`megaphone;1.2em;secondary` Dokümantasyon Güncellemeleri
    :color: info
 
-   :Konu: Dokümantasyon Güncellemeleri (Nisan 2025 - 2026)
+   :Konu: Dokümantasyon Güncellemeleri
 
    Aşağıda, ilgili dönemde gerçekleştirilen güncellemeler ters kronolojik sırada sunulmaktadır.
 

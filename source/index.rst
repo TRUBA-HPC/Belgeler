@@ -26,7 +26,7 @@ Günümüzde "TRUBA 2023" projesi ile T.C. Cumhurbaşkanlığı Strateji ve Büt
 .. toctree::
    :maxdepth: 1
    
-   6-duyurular/index.rst
+   Güncel Bilgilendirmeler <6-duyurular/index.rst>
    0-truba/index.rst
    1-kaynaklar/index.rst
    2-temel_bilgiler/index.rst

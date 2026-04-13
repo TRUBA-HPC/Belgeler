@@ -45,7 +45,7 @@ html_css_files = ['custom.css',
 
 html_js_files = [
     'feedback.js',
-    'duyurular.js',
+    'guncellemeler.js',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
