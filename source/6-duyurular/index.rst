@@ -39,14 +39,6 @@ Bu bölümde her duyuru ayrı bir açılır kutu (dropdown) olarak paylaşılır
       - Önemli verilerinizi kendi yerel bilgisayarınıza yedekleyiniz.
       - Gereksiz verileri temizleyiniz.
 
-.. dropdown:: :octicon:`broadcast;1.2em;secondary` [Tarih] - [Yeni Duyuru Başlığı]
-   :color: warning
-
-   - Bu alan yeni sistem/bakım/operasyon duyuruları için şablon olarak bırakılmıştır.
-   - Yeni duyurular her zaman en üste eklenmelidir.
-
-
-
 .. _guncellemeler:
 
 Güncellemeler
