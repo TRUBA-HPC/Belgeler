@@ -28,7 +28,7 @@ Platformun Sağladığı Temel Bileşenler
 
 **NVIDIA AI Blueprint**
 
-Yapay zeka uygulamalarının hızla geliştirilmesi için sunulan hazır referans iş akışlarıdır. Blueprint'ler; önceden eğitilmiş modelleri, NIM mikroservislerini ve altyapı bileşenlerini bir araya getirerek RAG (Retrieval-Augmented Generation) tabanlı soru-cevap sistemleri, dijital asistanlar ve çok modlu veri işleme gibi uçtan uca çözümler oluşturmayı kolaylaştırır. (`AI Blueprint Dokümantasyonu < https://build.nvidia.com/blueprints>`_ | `GitHub <https://github.com/NVIDIA-AI-Blueprints>`_)
+Yapay zeka uygulamalarının hızla geliştirilmesi için sunulan hazır referans iş akışlarıdır. Blueprint'ler; önceden eğitilmiş modelleri, NIM mikroservislerini ve altyapı bileşenlerini bir araya getirerek RAG (Retrieval-Augmented Generation) tabanlı soru-cevap sistemleri, dijital asistanlar ve çok modlu veri işleme gibi uçtan uca çözümler oluşturmayı kolaylaştırır. (`AI Blueprint Dokümantasyonu <https://build.nvidia.com/blueprints>`_ | `GitHub <https://github.com/NVIDIA-AI-Blueprints>`_)
 
 **NGC Kataloğu Erişimi**
 
