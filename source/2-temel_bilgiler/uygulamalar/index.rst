@@ -9,12 +9,20 @@ Genel Bilgiler
 
 Yaygın olarak kullanılan yazılımlar, uygulamalar ve kütüphanelerin güncel ve farklı sürümleri merkezi olarak kuruludur. Kullanıcıların öncelikli olarak bu merkezi kurulumları kullanmaları önerilir.
 
-Merkezi yazılımları kullanmak için modül sisteminden yararlanabilirsiniz:
+Merkezi olarak kurulu yazılımları kullanmak için modül sisteminden yararlanabilirsiniz. Modul sistemi, farklı yazılım ve kütüphanelerin kolayca yüklenip kullanılmasına olanak tanır.
 
 .. code-block:: bash
 
-   module available      # Yüklü yazılımları listeler
-   module load <modül>   # İlgili yazılımı yükler
+   module avail           # Kurulu ve erişilebilir yazılımları listeler
+   module load <modül>    # Seçili yazılımı çalışma ortamına ekler
+
+Ek modül koleksiyonlarını (ör. ek-moduller) yüklemek için ilgili modülü şu şekilde etkinleştirebilirsiniz:
+
+.. code-block:: bash
+
+   module load ek-moduller   # Ek yazılım modüllerini kullanımınıza açar
+
+Daha sonra, tekrar `module avail` komutunu kullandığınızda ek yazılımlar da listede görünecektir.
 
 Eğer ihtiyacınız olan yazılım merkezi olarak kurulu değilse veya mevcut sürümler gereksinimlerinizi karşılamıyorsa, yazılımı kendi ev dizininize (``/arf/home/$USER``) kurabilirsiniz. Kurulum sırasında güncel derleyici ve kütüphaneleri kullanmanız tavsiye edilir.
 

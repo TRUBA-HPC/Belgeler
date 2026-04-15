@@ -53,6 +53,7 @@ Güncellemeler
 
    **Mart - Nisan 2026**
 
+   - Modül sistemiyle ilgili modül listesi, EasyBuild kullanılarak hazırlanmış ek-moduller koleksiyonu ile genişletildi.
    - ARF AI ENT kapsamında NVIDIA AI Enterprise lisans ve konteyner eğitimi odaklı güncellemeler yapıldı.
    - MATLAB dokümantasyonu ağ lisansı desteğini kapsayacak şekilde kapsamlı biçimde yenilendi.
    - CUDA performans materyalleri düzenlenerek assets yapısına taşındı.
