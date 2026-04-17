@@ -141,4 +141,4 @@ Sıklıkla kullandığınız spesifik yazılımları (cok fazla inode içermeyen
     ## lxplus uzerinden root_numpy paketinin kendi ev dizininize kopyalayabilirsiniz.
     scp -r your_user_name@lxplus.cern.ch:/cvmfs/sft.cern.ch/lcg/releases/root_numpy/4.8.0-ff7a9 ./
 
-- Dökümantasyona katkı yapmak isterseniz grid-teknik@ulakbim.gov.tr adresinden bize ulasabilirsiniz.
+- Dökümantasyona katkı yapmak isterseniz trubadestek@tubitak.gov.tr adresinden bize ulasabilirsiniz.

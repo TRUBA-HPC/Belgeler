@@ -14,7 +14,7 @@ TRUBA Kullanıcı Politikası
 
 * TRUBA kaynaklarını kullanarak elde edilmiş sonuçların doğrudan ya da dolaylı olarak kullanıldığı tüm makale, bildiri, tez (yüksek lisans, doktora) veya diğer (poster, vb) çalışmalarında, kullanıcının TRUBA oluşumuna teşekkür etmesi zorunludur. Teşekkür örneklerine ulaşmak için  :ref:`tesekkur-truba` sayfasını ziyaret edebilirsiniz.
 
-* Kullanıcıların TRUBA'ya başvuru sırasında belirtilmiş uygulamalardan farklı bir iş çalıştırmaması beklenir. Böyle bir ihtiyaç durumunda kullanıcının ``grid-teknik@ulakbim.gov.tr`` adresine e-posta atarak yeni uygulamalar konusunda yeniden kullanıcı talebinde bulunması gerekmektedir. 
+* Kullanıcıların TRUBA'ya başvuru sırasında belirtilmiş uygulamalardan farklı bir iş çalıştırmaması beklenir. Böyle bir ihtiyaç durumunda kullanıcının ``trubadestek@tubitak.gov.tr`` adresine e-posta atarak yeni uygulamalar konusunda yeniden kullanıcı talebinde bulunması gerekmektedir.
 
 * Arayüz makinesi veya portal kullanıcı hesabı şifresinin güvenli bir şekilde saklanmasından kullanıcı sorumludur. Arayüz makinası veya portal kullanıcı hesabı şifresinin güvenli bir şekilde saklanmasından kullanıcı sorumludur. TRUBA kullanıcı hesabı kişiye özeldir. TRUBA kullanıcı hesabının, hesap sahibinden farklı bir kişi(ler) tarafından kullanılması durumunda, ilgili TRUBA kullanıcı hesabına erişim engellenir. 
 
@@ -26,7 +26,7 @@ TRUBA Kullanıcı Politikası
 
 * TRUBA kaynakları yasadışı herhangi bir amaçla, altyapının yönetimini ve güvenliğini tehdit edecek biçimde kullanılamaz. 
 
-* Sistemde bir güvenlik açığı gören ya da böyle bir durumdan şüphelenen bir kullanıcının ivedilikle ``grid-teknik@ulakbim.gov.tr`` e-posta adresini kullanarak  altyapı işletenlerini uyarması gerekmektedir. 
+* Sistemde bir güvenlik açığı gören ya da böyle bir durumdan şüphelenen bir kullanıcının ivedilikle ``trubadestek@tubitak.gov.tr`` e-posta adresini kullanarak  altyapı işletenlerini uyarması gerekmektedir.
   
 * Kayıtlı kullanıcı bilgisi, TRUBA tarafından sadece yönetsel, operasyonel, kaynakların kullanımında kimlik doğrulama ve yetkilendirme amaçlı kullanılabilir. Bu amaçlar dışında mevcut kimlik bilgilerinin gizli tutulması esastır. 
 
@@ -41,5 +41,5 @@ TRUBA Kullanıcı Politikası
 
 .. note::
 
-  Her türlü soru ve sorununuz için ``grid-teknik@ulakbim.gov.tr`` adresimize e-posta yönlendirebilirsiniz. 
+  Her türlü soru ve sorununuz için ``trubadestek@tubitak.gov.tr`` adresimize e-posta yönlendirebilirsiniz.
 

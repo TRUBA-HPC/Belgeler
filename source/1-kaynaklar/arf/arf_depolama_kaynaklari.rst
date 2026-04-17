@@ -3,19 +3,6 @@
 ====================================
 Dosya Sistemleri ve Depolama
 ====================================
-.. important:: 
-   **KRİTİK UYARI !**
-   
-   ``/truba/home`` altında bulunan veriler, geçiş süreci kapsamında ``/arf/truba_old/home`` altında tutulmaktadır. 
-   
-   31 Mart 2026 tarihinden itibaren ``/arf/truba_old/home`` altındaki tüm veriler kalıcı olarak silinecektir.
-   
-   **Lütfen aşağıdaki adımları takip ediniz:**
-   
-   - İhtiyaç duyduğunuz verileri ``/arf/home/`` altına taşıyınız.
-   - Önemli verilerinizi kendi yerel bilgisayarınıza yedekleyiniz.
-   - Gereksiz verileri hemen temizleyiniz.
-
 
 Hesaplama kümelerinde, kullanıcı verileri ile hesaplama çıktılarının yönetimi için yüksek performanslı merkezi dosya sistemleri kullanılmaktadır. Bu sistemler, paralel dosya sistemi altyapısı ile yapılandırılmış olup, farklı kullanım amaçlarına yönelik iki ana dosya sistemi sunmaktadır: (``/arf/home``), scratch alanı (``/arf/scratch``).
 

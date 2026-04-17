@@ -39,11 +39,13 @@ extensions = [
 
 
 html_css_files = ['custom.css',
-                  'feedback.css',]
+                  'feedback.css',
+                  'duyurular.css',]
 
 
 html_js_files = [
     'feedback.js',
+    'guncellemeler.js',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -86,6 +88,7 @@ html_theme = 'sphinx_book_theme'
 html_logo = '_static/truba_logo.png'
 
 html_static_path = ['_static']
+html_extra_path = ['assets']
 
 html_theme_options = {
     "search_bar_text": "Ara...",
