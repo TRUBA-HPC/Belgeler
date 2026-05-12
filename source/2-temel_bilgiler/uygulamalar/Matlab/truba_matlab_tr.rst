@@ -305,7 +305,7 @@ Adım 2: TRUBA Cluster Plugin Kurulumu
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  **TRUBA MATLAB Plugin (ZIP)** dosyasını indirin:
-   :download:`TRUBA MATLAB Plugin (ZIP) <../../../assets/matlab-howto/config-files/tubitak.Desktop.zip>` (11 May 2026 tarihinde güncellendi)
+   :download:`TRUBA MATLAB Plugin (ZIP) <../../../assets/matlab-howto/config-files/tubitak.Desktop.zip>` (12 May 2026 tarihinde güncellendi)
 -  İçeriği doğrudan ``userpath`` tarafından döndürülen klasöre çıkartın.
 -  MATLAB Komut Penceresinde şunu çalıştırın:
 
