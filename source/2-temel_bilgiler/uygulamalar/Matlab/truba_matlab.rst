@@ -310,7 +310,7 @@ If the folder does not exist yet, create it manually:
 Step 2: Install the TRUBA Cluster Plugin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Download the **TRUBA MATLAB Plugin (ZIP)**:
+-  Download the **TRUBA MATLAB Plugin (ZIP)** updated on (12 May 2026):
    :download:`TRUBA MATLAB Plugin (ZIP) <../../../assets/matlab-howto/config-files/tubitak.Desktop.zip>`
 -  Extract the contents directly into the folder returned by
    ``userpath``.

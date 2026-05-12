@@ -51,6 +51,9 @@ Güncellemeler
 
    Aşağıda, ilgili dönemde gerçekleştirilen güncellemeler ters kronolojik sırada sunulmaktadır.
 
+   **Mayıs 2026**
+   - MATLAB dokümantasyonu TRUBA Cluster Plugin güncellemesi yapıldı.
+
    **Mart - Nisan 2026**
 
    - Modül sistemiyle ilgili modül listesi, EasyBuild kullanılarak hazırlanmış ek-moduller koleksiyonu ile genişletildi.
