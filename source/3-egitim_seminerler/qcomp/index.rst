@@ -12,5 +12,6 @@ Kuantum Hesaplama
     
     setup/index.rst
     hybrid-nets/index.rst
+    ghz/index.rst
 
     
