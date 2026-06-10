@@ -46,7 +46,7 @@ Bu rehberin amacı:
     - /arf/home/$USER yalnızca program kurulumları ve küçük işlerin çalıştırılması içindir.
     - /arf/scratch/$USER dizini ise işlerin çalıştırılması için planlanmıştır. 
 
-    :ref:` _arf_depolama_kaynaklari`
+    :ref:`arf_depolama_kaynaklari`
 
 Önerilen içerik:
 
@@ -187,7 +187,7 @@ Aşağıdaki Python betiği, MPI rank bilgilerini okuyarak rank-GPU eşleşmesin
             print(f"[GHZ] P(0..0)={p0:.12f} P(1..1)={p1:.12f} fidelity={fid:.12f}", flush=True)
 
 
-    .. tab-item:: job_singlenode.slurm
+    .. tab-item:: job_ghz_singlenode.slurm
 
       .. code-block:: bash
 
@@ -231,8 +231,9 @@ Aşağıdaki Python betiği, MPI rank bilgilerini okuyarak rank-GPU eşleşmesin
         '
 
     .. tab-item:: İş Gönderme
-
-      sbatch job_singlenode.slurm
+        .. code-block:: bash
+    
+          sbatch job_ghz_singlenode.slurm
 
 
 
@@ -243,52 +244,61 @@ Slurm Betiği: İki Node Doğrulama Örneği
 
 Aşağıdaki örnek, 2 node / 8 rank / node başına 4 GPU kullanarak GHZ betiğini çalıştırmak üzere hazırlanmış olan SLURM betik dosyasıdır.
 
-.. code-block:: bash
+.. tab-set:: 
 
-    #!/bin/bash
-    #SBATCH -p kolyoz-cuda
-    #SBATCH -A [USERNAME]
-    #SBATCH -J ghz_ucx_2node_8r
-    #SBATCH -N 2
-    #SBATCH --ntasks-per-node=4
-    #SBATCH -n 8
-    #SBATCH -c 16
-    #SBATCH --gres=gpu:4
-    #SBATCH --time=0-00:30:00
-    #SBATCH -o logs/%x_%j.out
-    #SBATCH -e logs/%x_%j.err
+    .. tab-item:: job_multinode.slurm
 
-    set -euo pipefail
-    mkdir -p logs
+      .. code-block:: bash
 
-    module purge
-    module load lib/openmpi/5.0.4-cuda-12.4
+        #!/bin/bash
+        #SBATCH -p kolyoz-cuda
+        #SBATCH -A [USERNAME]
+        #SBATCH -J ghz_ucx_2node_8r
+        #SBATCH -N 2
+        #SBATCH --ntasks-per-node=4
+        #SBATCH -n 8
+        #SBATCH -c 16
+        #SBATCH --gres=gpu:4
+        #SBATCH --time=0-00:30:00
+        #SBATCH -o logs/%x_%j.out
+        #SBATCH -e logs/%x_%j.err
 
-    export OMPI_MCA_pml=ucx
-    export UCX_TLS=rc,tcp
-    export UCX_NET_DEVICES=all
-    export OMPI_MCA_opal_cuda_support=true
-    export UCX_LOG_LEVEL=warn
-    export UCX_MEMTYPE_CACHE=n
-    export PRRTE_MCA_hwloc_base_disable_io=1
-    export PRRTE_MCA_hwloc_base_use_hwloc=1
-    export HWLOC_COMPONENTS=-nvml
+        set -euo pipefail
+        mkdir -p logs
 
-    SIF="$HOME/containers/cuquantum/cuquantum_25.11_cuda12.9.1.sif"
+        module purge
+        module load lib/openmpi/5.0.4-cuda-12.4
 
-    srun --mpi=pmix -n 8 apptainer exec --nv -B "${SLURM_SUBMIT_DIR}:/work" "$SIF" bash -lc '
-      export PYTHONUNBUFFERED=1
-      export CUDA_DEVICE_ORDER=PCI_BUS_ID
-      export CUDA_VISIBLE_DEVICES=${SLURM_LOCALID:-0}
-      cd /work
-      python3 -u ghz_gpu_mpi.py
-    '
+        export OMPI_MCA_pml=ucx
+        export UCX_TLS=rc,tcp
+        export UCX_NET_DEVICES=all
+        export OMPI_MCA_opal_cuda_support=true
+        export UCX_LOG_LEVEL=warn
+        export UCX_MEMTYPE_CACHE=n
+        export PRRTE_MCA_hwloc_base_disable_io=1
+        export PRRTE_MCA_hwloc_base_use_hwloc=1
+        export HWLOC_COMPONENTS=-nvml
 
-Hazırlanan SLURM dosyası kuyruğa aşağıdaki şekilde gönderilebilir. 
+        SIF="$HOME/containers/cuquantum/cuquantum_25.11_cuda12.9.1.sif"
 
-.. code-block:: bash
+        srun --mpi=pmix -n 8 apptainer exec --nv -B "${SLURM_SUBMIT_DIR}:/work" "$SIF" bash -lc '
+        export PYTHONUNBUFFERED=1
+        export CUDA_DEVICE_ORDER=PCI_BUS_ID
+        export CUDA_VISIBLE_DEVICES=${SLURM_LOCALID:-0}
+        cd /work
+        python3 -u ghz_gpu_mpi.py
+        '
 
-    NQ=34 AER_PRECISION=single sbatch --exclude=kolyoz17,kolyoz31 submit-ghz-2node.sh
+    .. tab-item:: İş Gönderme
+        
+        Hazırlanan SLURM dosyası kuyruğa aşağıdaki şekilde gönderilebilir.
+
+        .. code-block:: bash
+    
+          NQ=34 AER_PRECISION=single sbatch --exclude=kolyoz17,kolyoz31 job_ghz_multinode.slurm
+
+ 
+
 
 Beklenen Çıktı
 ==============
