@@ -51,6 +51,10 @@ Güncellemeler
 
    Aşağıda, ilgili dönemde gerçekleştirilen güncellemeler ters kronolojik sırada sunulmaktadır.
 
+   **Haziran 2026**
+   - Kuantum Hesaplama dökümantasyonu altında :ref:`ghz_benchmark` eklendi.
+
+
    **Mayıs 2026**
    - MATLAB dokümantasyonu TRUBA Cluster Plugin güncellemesi yapıldı.
 
