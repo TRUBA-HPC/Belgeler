@@ -2,9 +2,9 @@
 
 .. _ghz-benchmark:
 
-====================
+=====================
 GHZ Benchmark Rehberi
-====================
+=====================
 
 Bu doküman, TRUBA sisteminde NVIDIA cuQuantum, Qiskit Aer GPU backend ve MPI kullanılarak GHZ benchmark'ın SLURM ile çalıştırılması için temel adımları açıklamaktadır.
 
