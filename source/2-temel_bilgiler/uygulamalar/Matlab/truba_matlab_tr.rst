@@ -15,6 +15,15 @@ işlemesine ve çok sayıda MATLAB worker'ını aynı anda çalıştırarak hesa
 süresini önemli ölçüde azaltmasına olanak tanır. Bu rehber, TRUBA'nın akademik
 kullanıcıları için hazırlanmıştır.
 
+.. grid:: 1
+
+   .. grid-item-card:: TRUBA'da MATLAB Ölçeklendirme Eğitimi
+      :link: https://indico.truba.gov.tr/event/256/
+      :link-type: url
+      :text-align: center
+
+      12 Mayıs 2026 uygulamalı çevrimiçi eğitim — kayıt, kayıtlar ve materyaller.
+
 Test Edilen Ortam
 =================
 
@@ -305,7 +314,7 @@ Adım 2: TRUBA Cluster Plugin Kurulumu
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  **TRUBA MATLAB Plugin (ZIP)** dosyasını indirin:
-   :download:`TRUBA MATLAB Plugin (ZIP) <../../../assets/matlab-howto/config-files/tubitak.Desktop.zip>` (12 May 2026 tarihinde güncellendi)
+   :download:`TRUBA MATLAB Plugin (ZIP) <../../../assets/matlab-howto/config-files/tubitak.Desktop.zip>` (30 June 2026 tarihinde güncellendi)
 -  İçeriği doğrudan ``userpath`` tarafından döndürülen klasöre çıkartın.
 -  MATLAB Komut Penceresinde şunu çalıştırın:
 

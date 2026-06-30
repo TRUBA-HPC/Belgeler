@@ -13,6 +13,15 @@ high-end CPUs and GPUs, handle datasets too large for a standard laptop,
 and run multiple MATLAB workers simultaneously to dramatically reduce
 computation time. This guide is intended for academic users of TRUBA.
 
+.. grid:: 1
+
+   .. grid-item-card:: Scaling MATLAB to the TRUBA HPC Cluster
+      :link: https://indico.truba.gov.tr/event/256/
+      :link-type: url
+      :text-align: center
+
+      Online hands-on workshop (12 May 2026) — registration, recordings, and materials.
+
 Tested Environment
 ==================
 
@@ -310,7 +319,7 @@ If the folder does not exist yet, create it manually:
 Step 2: Install the TRUBA Cluster Plugin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Download the **TRUBA MATLAB Plugin (ZIP)** updated on (12 May 2026):
+-  Download the **TRUBA MATLAB Plugin (ZIP)** updated on (30 June 2026):
    :download:`TRUBA MATLAB Plugin (ZIP) <../../../assets/matlab-howto/config-files/tubitak.Desktop.zip>`
 -  Extract the contents directly into the folder returned by
    ``userpath``.
